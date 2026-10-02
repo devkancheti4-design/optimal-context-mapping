@@ -17,3 +17,6 @@ ocm = "ocm.__main__:main"
 
 [tool.setuptools.packages.find]
 include = ["ocm*"]
+
+[tool.setuptools.package-data]
+ocm = ["data/*.json"]

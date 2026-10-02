@@ -60,11 +60,13 @@ questions 1.7 to 1.8x fewer tokens and 4.5 to 9.1x fewer requests.
 
 | repeat share | lookups only | with 30% deep dives |
 |---|---|---|
-| 0% | 2.39x fewer requests (2.02 to 2.84) | 1.56x (1.37 to 1.79) |
-| 50% | 3.17x (2.83 to 3.57) | 1.63x (1.47 to 1.83) |
-| 90% | 4.33x (3.92 to 4.77) | 1.69x (1.46 to 1.99) |
+| 0% | 2.39x fewer requests (2.03 to 2.84) | 1.56x (1.37 to 1.79) |
+| 50% | 3.17x (2.83 to 3.57) | 1.63x (1.47 to 1.82) |
+| 90% | 4.33x (3.91 to 4.78) | 1.69x (1.47 to 1.97) |
 
-95% bootstrap intervals over 395 measured question-runs. Projections, not a live test at that size.
+95% bootstrap intervals over 395 measured question-runs (`python -m ocm calc --table` reproduces this table exactly).
+At 16,800 questions a month (40 engineers x 20 a day x 21 days, an assumption), lookup work makes about 27,700 to
+36,000 fewer requests a month. Projections, not a live test at that size.
 
 ## Limits
 - One run per condition in most tests; questions written by Claude; judges Claude; open-source code, one client app
