@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+ocm-workspace/
+*-workspace/
+.pytest_cache/
