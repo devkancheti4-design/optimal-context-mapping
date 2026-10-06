@@ -1,74 +1,152 @@
 # Optimal Context Mapping
 
-**A shared workspace memory your team's AI agents ask first and teach back, so the same research is not paid for twice.**
+**A shared memory over your team's code that sits inside your AI agents' loop, so the same research is not paid for
+twice.**
 
-When engineers use AI agents (Claude Code, Cursor, Windsurf and others) on the same codebases, each agent searches and
-re-reads the code on its own, every time, and each step is a paid model request. Optimal context mapping gives the whole
-team one workspace over its code and docs: an agent asks it first, gets the few code blocks, sentences or teammates'
-notes most likely to answer, searches only when that misses, and at the end teaches back what it found in one call.
-The next person's agent, asking the same thing in other words, gets the answer straight away.
+When engineers use AI agents (Claude Code, Cursor and others) on the same codebases, each agent searches and re-reads
+the code on its own, every time, and each step is a paid model request. Optimal context mapping scans your
+repositories once into a workspace of meaning fingerprints. Before each request, it hands the model the few code
+blocks, doc lines or teammates' notes nearest to the question. After the reply, it learns what the model found. The next
+person's agent, asking the same thing in other words, starts from that.
 
 ## What it achieved in our tests
 
-Live, pre-registered tests with fresh Claude agents and blind judges (details and evidence in `results/RESULTS.md`):
+Live tests with fresh Claude agents and blind judges, each plan fixed with a hash before it ran (evidence in
+`results/RESULTS.md`):
 
 | test | accuracy | model requests |
 |---|---|---|
-| A seven-role project team (PM, team lead, senior, backend, frontend, junior, HR) on a real codebase plus web research | same (41/41 both ways) | **1.66x fewer** with batched teaching; research (searches and reads) halved |
-| Single-fact questions over 7 real codebases (7M tokens) | same (28/28) | **6.1x fewer**, billed input 2.8x lower |
-| Repeated questions on a 10.8M-token codebase (a teammate asked before, in other words) | same (30/30) | **9.2x fewer** |
-| Multi-file deep dives | same (40/40) | 1.2x fewer (the honest weak spot) |
+| **The kit as shipped, in the loop**: a five-role team on a real app (Full Stack FastAPI Template), one fresh agent per question | same (24/25 both) | **1.62x fewer** than the same agents without it; 2.4x fewer on questions a teammate asked before |
+| A seven-role project team on a real codebase plus web research (research harness) | same (41/41) | 1.66x fewer with batched teaching |
+| Single-fact questions over 7 real codebases (7M tokens) | same (28/28) | 6.1x fewer, billed input 2.8x lower |
+| Repeated questions on a 10.8M-token codebase | same (30/30) | 9.2x fewer |
+| Multi-file deep dives | same (40/40) | 1.2x fewer (the weak spot) |
 
-The cost arithmetic in this kit predicted a live run before it ran: 83 requests predicted, **84 measured**; 1.66x
-predicted, **1.66x measured**. `python -m ocm calc` uses the same arithmetic on your mix of questions.
+Where it did not help:
+- **As a tool the agent calls**, it cost more requests than it saved (section 6).
+- **Against agents that keep a short 5-question session**, in the loop came out about even (71 against 67 requests,
+  section 7).
 
-## How it works
+The saving grows with repetition and with session length.
 
-1. **Build** a workspace over your repositories and docs: every code block and doc sentence becomes a 1,024-bit meaning
-   fingerprint, made by a small embedding model on your machine. Nothing is sent anywhere.
-2. **Serve** it to the team. The router law (eight free checks, no model) picks each readout: the one note a teammate
-   taught for this question, or the 10 best units by meaning, by keyword, or both.
-3. **Connect** each person's agent through the MCP plugin: four tools, `workspace_ask`, `workspace_next`,
-   `workspace_recall`, `workspace_teach`.
-4. **Teach**: at the end of a session the agent teaches every finding in one call. Notes never overwrite anything.
+## How to use it
 
-## Quick start
+### 1. Install (Python 3.10+)
 
 ```bash
-pip install -e .                                   # Python 3.10+; numpy, torch, transformers
-python -m ocm build ~/code/our-service ~/code/our-docs --out ~/ocm-workspace
-python -m ocm serve ~/ocm-workspace --port 7700    # one per team; --host 0.0.0.0 to share on your network
+pip install -e .
 ```
 
-Connect Claude Code (or any MCP client) to it: add to the project's `.mcp.json` (Cursor: `.cursor/mcp.json`, same shape)
+This installs numpy, torch and transformers. The embedding model (bge-base-en-v1.5) downloads once on the first build;
+after that you can set `OCM_OFFLINE=1`.
+
+### 2. Scan your repositories into a workspace
+
+```bash
+python -m ocm build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-workspace
+```
+
+- **What gets kept:** every code and doc file under the folders you pass. Code is cut into blocks and docs into
+  sentences, and each becomes a 1,024-bit fingerprint, computed on your machine.
+- **What is skipped:** `.env` files, keys, certificates, credential files, lockfiles, dependency and build folders, and
+  anything over 512 KB.
+- **Device:** a GPU is used automatically when present (CUDA, or Apple silicon); `--device cpu` forces the CPU.
+
+### 3. Serve it to the team
+
+```bash
+python -m ocm serve ~/ocm-workspace --port 7700                  # just you
+python -m ocm serve ~/ocm-workspace --port 7700 --host 0.0.0.0   # your team, on your network
+```
+
+Run one server per team; everyone's agents share it. Every call is logged to `<workspace>/calls.jsonl`.
+
+### 4. Put it in your agents' loop
+
+**Claude Code (recommended): two hooks, nothing for the model to call.** Add this to the project's
+`.claude/settings.json`, and point `OCM_URL` at the team's server if it is not local:
+
+```json
+{"env": {"OCM_URL": "http://127.0.0.1:7700"},
+ "hooks": {
+  "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "python -m ocm hook prompt"}]}],
+  "Stop": [{"hooks": [{"type": "command", "command": "python -m ocm hook stop"}]}]
+}}
+```
+
+- **Before each request**, the prompt hook adds the workspace's nearest matches for the question: a teammate's note when
+  one is close, or else the nearest code and docs.
+- **The model** answers from them when they answer the question, searches when they do not, and ends its reply with
+  `TEACH: <question> | <answer, with files and lines>`.
+- **After the reply**, the stop hook teaches those lines to the workspace on your machine, at no model cost.
+
+**Cursor and other MCP clients: as tools.** Add this to `.mcp.json` (Cursor: `.cursor/mcp.json`), and add
+`pilot/AGENT_INSTRUCTIONS.md` to the agent's rules:
 
 ```json
 {"mcpServers": {"ocm": {"command": "python", "args": ["-m", "ocm", "mcp"], "env": {"OCM_URL": "http://127.0.0.1:7700"}}}}
 ```
 
-and add `pilot/AGENT_INSTRUCTIONS.md` to the project's `CLAUDE.md` (or your agent's rules file), so agents ask the
-workspace first and teach once at the end.
+This costs a round trip per question, and in our team proof it did not save requests on its own (section 6). Use the
+hooks where you can.
 
-## Run a pilot
+**Any other agent loop:** call `ocm.loop.prefetch(question)` before the model call, put the result in the prompt, and
+call `ocm.loop.teach_from_reply(reply)` after it.
 
-`pilot/PILOT.md` is a two-to-four-week plan: two comparable groups (or two periods), the same kind of work, measured from
-the agents' own transcripts with `python -m ocm measure compare <before> <after>`. Fix the plan before you start
-(`pilot/PREREGISTRATION.md`).
+### 5. Measure what it saves you
+
+```bash
+python -m ocm calc --repeat 0.5 --deep 0.3 --questions-per-month 16800   # an estimate for your mix
+python -m ocm measure compare ~/before-transcripts ~/after-transcripts    # the real thing, from your agents' transcripts
+```
+
+`pilot/PILOT.md` is a two-to-four-week plan for a fair before-and-after; fix it before you start
+(`pilot/PREREGISTRATION.md`). Run the kit's tests with `python -m pytest -q tests`.
+
+## Big repositories
+
+What we measured with this kit on a MacBook (Apple silicon; its GPU was picked automatically):
+
+| | measured |
+|---|---|
+| Scanning | 3,898 units in 13 s (about 300 units a second); a 10.8M-token codebase is 183,875 units, about 10 minutes at that rate |
+| Storage | 128 bytes of fingerprint per unit: 183,875 units take 23.5 MB |
+| Readout per request | 0.07 s over 183,875 units (the bit comparison itself takes 2.5 ms) |
+| Results at size | 9.2x fewer requests on repeated questions over 10.8M tokens; 6.1x over 7 codebases at once (7M tokens) |
+
+- **Scope it.** Build one workspace over the repositories a team actually works in; one workspace over everything beat
+  one per codebase in our test.
+- **Recall falls as size grows.** First-time questions find their answer less often in the first readout. Repeated
+  questions, matched to a teammate's note, hold up.
+- **Rebuild after large code changes.** A rebuild starts fresh, and notes taught to the old workspace are not carried
+  over yet.
+
+## How it works
+
+Nothing here is trained:
+- **The vector law** ranks every unit by bits shared with the question: first with notes teammates taught, then with
+  the unit's own text.
+- **The router law** picks which readout to send from eight free checks: the nearest teammate's note alone, the 10
+  nearest by meaning, by keyword, or both.
+
+It is ranking math. A "teammate's note" readout is the nearest match, not a verified answer, so the model is told to use
+it only if it answers the question. In our tests the agents rejected the 2 near matches that were about a different
+fact.
 
 ## Privacy
 
-Everything runs on your machines. The embedding model is downloaded once from Hugging Face (set `OCM_OFFLINE=1`
-afterwards); your code, questions and notes never leave your network. The builder skips `.env` files, keys,
-certificates, credential files, lockfiles, dependency and build folders, and anything over 512 KB.
+Everything runs on your machines. Only the embedding model is downloaded, once; your code, questions and notes never
+leave your network.
 
 ## Limits, stated plainly
 
-- Savings come mostly from **repetition**: the more your team asks about the same code, the more it saves. Brand-new,
-  one-off questions save less (about 2.4x fewer requests on lookups, about 1.6x with deep dives in the mix).
-- **Deep dives** that chain across many files save little today: a taught note covers one answer, not a whole trail.
-- **Billed input falls less than requests** (1.40x when requests fell 1.66x), because the readouts add reading.
-- Notes cannot be edited once taught (append-only); rebuild the workspace after large code changes.
-- Tested on open-source libraries, one client app and a web snapshot, with Claude agents and judges; your codebase
-  is the real test.
+- **Repetition drives savings.** One-off questions save less, and short sessions that keep their own context gain
+  little.
+- **Deep dives** that chain across many files save little today: a note covers one answer, not a whole trail.
+- **Billed input falls less than requests**, because readouts add reading.
+- **Not everything is indexed yet:** files without an extension, such as `Dockerfile`.
+- **Notes are append-only**, and they are not carried over a rebuild.
+- **The tests are narrow:** open-source code and one client app, with Claude agents and judges. Your codebase is the
+  real test.
 
 Copyright (c) 2026 Devieswar Kancheti. Shared privately for evaluation; see `LICENSE`.

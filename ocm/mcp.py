@@ -17,7 +17,7 @@ Q = {"type": "object", "properties": {"question": {"type": "string", "descriptio
 TOOLS = [
     {"name": "workspace_ask", "inputSchema": Q,
      "description": "Ask the team's shared workspace FIRST, before searching the code. Returns the most relevant code blocks, "
-                    "doc sentences and notes teammates taught, or a single certified answer if a teammate taught this question "
+                    "doc sentences and notes teammates taught, or the single nearest teammate's note when one is close (ranked by meaning, not verified) "
                     "before. If it answers the question, answer from it without searching."},
     {"name": "workspace_next", "inputSchema": Q,
      "description": "The workspace's next readout for the same question (a different lane), when the first did not answer it."},

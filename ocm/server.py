@@ -3,7 +3,7 @@
     python -m ocm serve <workspace folder> [--port 7700] [--host 127.0.0.1]
 
 POST JSON to these paths (the MCP plugin, `python -m ocm mcp`, calls them for your agents):
-  /ask      {"question"}            the router law's first readout: one certified block a teammate's note points at, or
+  /ask      {"question"}            the router law's first readout: the nearest teammate's note (ranked, not verified), or
                                     10 code blocks, doc sentences and teammates' notes (by meaning, by keyword, or both)
   /next     {"question"}            the router's next readout for the same question, until it says there are no more
   /recall   {"query", "k"}          the k units nearest in meaning (k up to 10)
@@ -23,7 +23,7 @@ from .router import router as RL
 from .router import lanes as L
 from .units import files as list_files
 
-NAMES = {0: "certified: the answer a teammate taught for this question", 1: "meaning", 2: "keyword matches",
+NAMES = {0: "a teammate's note, the nearest match by meaning (ranked, not verified: use it only if it answers the question)", 1: "meaning", 2: "keyword matches",
          3: "meaning and keyword matches", 4: "meaning, wider"}
 
 

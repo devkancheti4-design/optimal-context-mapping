@@ -56,6 +56,104 @@ trail, so repeated deep dives were not cheaper.
 A stream of 120 research questions over 1M to 9M tokens of text: the same accuracy, 3 to 5x fewer requests; on repeated
 questions 1.7 to 1.8x fewer tokens and 4.5 to 9.1x fewer requests.
 
+A note on wording: the readout that serves one teammate's note alone was labelled "certified" during these runs.
+It is the vector law's nearest match, not a verified answer, and is now labelled so ("a teammate's note, the nearest
+match by meaning"). The ranking itself did not change.
+
+## 6. A team proof of the kit as shipped (the prediction failed)
+The kit exactly as shipped (the zip, unchanged) on a real app it had never seen: the Full Stack FastAPI Template (233
+files). Two teams of five fresh Claude agents (team lead, backend, frontend, DevOps, new joiner) answered 5 questions
+each: 25 verified questions, 7 of them repeating a fact a teammate asked earlier. One team searched and read alone. The
+other followed `pilot/AGENT_INSTRUCTIONS.md` word for word: ask the workspace first, teach once at the end. The plan,
+the questions and the prediction were fixed with hashes before the run. A blind judge graded the answers, and requests
+were counted from the transcripts with `python -m ocm measure compare`.
+
+| | alone | team with the workspace |
+|---|---|---|
+| right (blind judge) | 24/25 | 24/25 |
+| model requests | 67 | **101 (1.51x more)** |
+| input billed, cache-weighted | 686,850 | 795,746 (1.16x more) |
+| search, read and list calls | 67 | 58 |
+| workspace calls | none | 25 ask, 3 next, 5 teach |
+
+Predicted by `python -m ocm calc` before the run: 2.77x fewer requests (2.41 to 3.21). Measured: 0.66x. **The team
+with the workspace made more requests, and the prediction failed.**
+
+Why, from the same logs:
+- **The ask round trip.** Every question began with a separate `ask` call: 25 asks and 3 nexts, each a model round
+  trip. The earlier tests handed agents the first readout with the question at no request, and the calculator's data
+  comes from those tests.
+- **Agents checked the code anyway.** They made 58 search, read and list calls with the workspace against 67 without,
+  only 13% fewer.
+- **Two top-ranked notes were wrong.** The workspace served a teammate's note as its whole readout 6 times: 4 right (all
+  on repeat questions) and 2
+  wrong. For q26 and q32 it served a teammate's note about a different fact; the agents noticed and searched instead.
+- **Notes cost requests too.** Writing notes and teaching added 6 file writes and 5 teach calls.
+- **The overhead showed before any note existed.** The first role, with nothing taught yet, already made 19 requests
+  against 16.
+- **Dockerfiles are not indexed.** One question (q26) could not be fully answered in either arm, because the kit skips
+  files without an extension, such as `Dockerfile`.
+
+What it means: as shipped, on a five-person team asking first-time lookups with 28% repeats, the kit does not save
+requests; it costs about half again as many, at the same accuracy. The fixes it points to:
+- deliver the first readout together with the question (a prompt hook, so it costs no request);
+- serve a note alone only when it answers the same fact;
+- index files without an extension.
+
+**Measured on the map itself, not the agents.** The same 25 questions were replayed with no agents against a fresh
+copy of the scanned workspace, with the team's real notes taught in the same order (`map_measure.py`).
+
+The scan: the repository's 449,756 tokens, of which the kit kept 146,763, stored as 3,898 fingerprints (499 KB). It
+used no model tokens and took 33 seconds.
+
+| per question | tokens of code handed to the model |
+|---|---|
+| without the map: what agents fetched by search, read and list (server log) | 1,245 |
+| the map's first readout | 359 |
+| a teammate's note served alone (the 4 right ones) | 135 |
+| on the 11 questions whose first readout held the answer | 366 (3.4x fewer) |
+| the map first, then search when both readouts miss (computed) | 1,414 (0.88x) |
+
+How often the map held the answer:
+- the first readout held the answering lines for 11 of 25 questions, and the first or second for 13;
+- 4 of the 7 repeats were answered by a teammate's note served alone;
+- 2 notes served alone were wrong.
+
+Where the map holds the answer it hands over 3.4x fewer tokens, or 9x fewer for a teammate's note. Here it held the
+answer too rarely to save on balance, so coverage is the lever. In the live run agents fetched both: 1,200 tokens of
+code per question with the map, against 1,245 without.
+
+Video, 76 seconds, every number read from the run's files: [`team_proof.mp4`](team_proof.mp4).
+
+Limits: one run per team, 25 questions, one codebase; Claude wrote and judged the questions. A network outage
+interrupted the team's last agent; it was resumed, and all its requests are counted.
+
+## 7. The same team proof with the workspace inside the model's loop
+The kit rebuilt so the model never calls the workspace (`ocm/loop.py`, run as Claude Code hooks):
+- **Before each request**, the workspace's recall goes in with it.
+- **The model** answers from those facts or searches, and ends its reply with a TEACH: line.
+- **After the reply**, that line is taught locally.
+
+There is no `ask` round trip and no carried transcript. The same 25 questions were run with a fresh agent per question
+and a blind judge on all 75 answers; the plan was fixed with a hash first.
+
+| | right | model requests | input billed, cache-weighted |
+|---|---|---|---|
+| a fresh agent per question, no workspace | 24/25 | 115 | 1,001,993 |
+| **a fresh agent per question, workspace in the loop** | **24/25** | **71 (1.62x fewer)** | **748,032 (1.34x less)** |
+| section 6: the workspace as a tool | 24/25 | 101 | 795,746 |
+| section 6: role sessions alone, each carrying 5 questions of transcript | 24/25 | 67 | 686,850 |
+
+- **In the loop beats the same setup without memory** by 1.62x in requests at equal accuracy.
+- **10 of 25 questions took a single request**, with no search at all.
+- **Repeats are where it pays most:** 14 requests against 33 (2.4x) on the 7 questions a teammate had asked before.
+- **It beats the tool placement** (71 requests against 101).
+- **It does not beat short sessions that carry their own transcript** (71 against 67). Five questions leave little
+  transcript to replace; the transcript saving needs long sessions, which is what the CMLM is for, and a long-session
+  test is the next one.
+- **The calculator's 2.77x prediction failed again.** The workspace still served a wrong note alone on 2 questions, and
+  both agents caught it.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |
@@ -65,6 +163,8 @@ questions 1.7 to 1.8x fewer tokens and 4.5 to 9.1x fewer requests.
 | 90% | 4.33x (3.91 to 4.78) | 1.69x (1.47 to 1.97) |
 
 95% bootstrap intervals over 395 measured question-runs (`python -m ocm calc --table` reproduces this table exactly).
+These pools come from tests that handed agents the first readout with the question. For the kit as shipped, where
+agents call `ask` themselves, the arithmetic did not hold: section 6 predicted 2.77x and measured 0.66x.
 At 16,800 questions a month (40 engineers x 20 a day x 21 days, an assumption), lookup work makes about 27,700 to
 36,000 fewer requests a month. Projections, not a live test at that size.
 
@@ -72,4 +172,6 @@ At 16,800 questions a month (40 engineers x 20 a day x 21 days, an assumption), 
 - One run per condition in most tests; questions written by Claude; judges Claude; open-source code, one client app
   and Wikipedia pages. Your codebase and your team are the real test: see `pilot/`.
 - Billed input falls less than requests; deep dives save little; notes are append-only.
+- As shipped, the separate `ask` call can cost more requests than it saves (section 6); the earlier gains came with
+  the first readout handed to agents with the question.
 - Agents sometimes broke instructions (piping tool output through grep); every case was counted and reported.

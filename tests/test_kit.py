@@ -19,7 +19,7 @@ def test_workspace_end_to_end():
     assert ws.handle("teach", {"notes": [{"question": "How many times do we retry a failed card charge?",
                                           "note": "3 retries (MAX_CHARGE_RETRIES in src/config.py)."}]}) == "taught 1 notes"
     again = ws.handle("ask", {"question": "what is the retry limit when a payment to a card fails?"})
-    assert "certified" in again and "3 retries" in again
+    assert "nearest match" in again and "3 retries" in again
     assert "ChargeDeclined" in ws.handle("search", {"pattern": "class ChargeDeclined"})
     assert json.loads(ws.handle("stats", {}))["notes taught"] == 1
 
@@ -29,3 +29,16 @@ def test_mcp_protocol():
     assert init["protocolVersion"] == "2025-06-18" and "tools" in init["capabilities"]
     names = [t["name"] for t in handle({"jsonrpc": "2.0", "id": 2, "method": "tools/list"})["tools"]]
     assert names == ["workspace_ask", "workspace_next", "workspace_recall", "workspace_teach"]
+
+
+def test_loop_teach_lines():
+    from ocm.loop import teach_lines
+    reply = """The token lasts 8 days.
+ANSWER: 8 days | SOURCE: backend/app/core/config.py
+TEACH: How long does a login token stay valid? | 8 days (ACCESS_TOKEN_EXPIRE_MINUTES = 60*24*8, backend/app/core/config.py:36)
+- TEACH: Where do emails go locally? | Mailcatcher at http://localhost:1080 (compose.override.yml)
+TEACH: no separator here
+"""
+    got = teach_lines(reply)
+    assert got == [("How long does a login token stay valid?", "8 days (ACCESS_TOKEN_EXPIRE_MINUTES = 60*24*8, backend/app/core/config.py:36)"),
+                   ("Where do emails go locally?", "Mailcatcher at http://localhost:1080 (compose.override.yml)")], got
