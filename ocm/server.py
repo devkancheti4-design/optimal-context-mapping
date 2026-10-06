@@ -8,7 +8,11 @@ POST JSON to these paths (the MCP plugin, `python -m ocm mcp`, calls them for yo
   /next     {"question"}            the router's next readout for the same question, until it says there are no more
   /recall   {"query", "k"}          the k units nearest in meaning (k up to 10)
   /teach    {"notes": [{"question", "note"}, ...]}
-                                    teach every note at once (batched): each question becomes a cue for its note
+                                    teach every note at once (batched). The CMLM trains locally, at no model tokens:
+                                    each question becomes a cue for its note, so a reworded question later lands on it
+                                    (vector generalisation), and each code unit the note cites (file:line) becomes an
+                                    example for the learned law, which orders the readouts once it beats the plain
+                                    vector order. OCM_TEACH=note+code+law also cues the cited code units
   /search   {"pattern"}  /read {"file", "start", "num"}  /list {"prefix"}
                                     plain regex search, file reading and listing over the workspace's folders
   /stats    {}                      units, notes taught, calls served
@@ -27,9 +31,18 @@ NAMES = {0: "a teammate's note, the nearest match by meaning (ranked, not verifi
          3: "meaning and keyword matches", 4: "meaning, wider"}
 
 
+TEACH_MODES = ("note", "note+law", "note+code+law")
+
+
 class Workspace:
-    def __init__(self, folder):
+    def __init__(self, folder, teach=None):
+        """teach: how the CMLM trains on a note (TEACH_MODES; default $OCM_TEACH or note+law): note only; plus each
+        cited code unit as an example for the learned law; plus the question as a cue on the cited code units. In the
+        replay of results section 8, note+law equalled note on every measure and trains the law; note+code+law made
+        the law switch on but cost 40% more tokens per readout and one answer."""
         self.folder = folder
+        self.teach = teach or os.environ.get("OCM_TEACH") or "note+law"
+        assert self.teach in TEACH_MODES, self.teach
         self.meta = json.load(open(os.path.join(folder, "workspace.json")))
         self.mem = Memory(os.path.join(folder, "memory"))
         RL.observe.THETA = self.meta.get("theta", 9.349)
@@ -37,6 +50,48 @@ class Workspace:
         self.lanes = L.Lanes(self.mem, np.arange(self.meta["units"]), os.path.join(folder, "keyword.db"), RL)
         self.files = {rel: path for _, rel, path in list_files(self.meta["roots"])}
         self.state, self.lock, self.log = {}, threading.Lock(), os.path.join(folder, "calls.jsonl")
+        self.spans = {}                                                            # path -> [(first, last, unit)]
+        m = self.mem
+        for j in range(min(self.meta["units"], len(m.texts))):
+            if m.src[j] >= 0:
+                t = m.texts[j]; body = t.split("\n", 1)[1] if t.startswith("# ") and "\n" in t else t
+                self.spans.setdefault(m.sources[m.src[j]]["path"], []).append((m.pos[j], m.pos[j] + body.count("\n"), j))
+
+    CITE = re.compile(r"([A-Za-z0-9_./-]+\.[A-Za-z0-9]+):(\d+)(?:\s*-\s*(\d+))?")
+
+    def cited_units(self, note, cap=4):
+        """The code units a note cites as path:line or path:line-line (a path may be given relative or by its tail)."""
+        out = []
+        for path, a, b in self.CITE.findall(note):
+            path = path.strip("./"); a = int(a); b = int(b or a)
+            hits = [p for p in self.spans if p == path or p.endswith("/" + path)]
+            if len(hits) != 1:
+                continue                                           # unknown or ambiguous: teach no cue rather than a wrong one
+            for first, last, j in self.spans[hits[0]]:
+                if first <= b and last >= a and j not in out:
+                    out.append(j)
+        return out[:cap]
+
+    def train(self, pairs):
+        """The CMLM's local training for (question, note) pairs: cues on cited code, examples for the learned law."""
+        m, cues, examples = self.mem, 0, 0
+        if self.teach == "note":
+            return 0, 0
+        for q, note in pairs:
+            units = self.cited_units(note)
+            if not units:
+                continue
+            c = " ".join(q.split()); b = m.measure([c])[0]
+            m._arrays()
+            order, strong, weak = m._rank(c, bits=b)                       # measured before its cues are stored
+            cand = order[:m.law.n]; ws = m._lane_words(c, cand, strong, weak)
+            for j in units:
+                m.law.observe(ws, cand.index(j) if j in cand else -1); examples += 1
+            if self.teach == "note+code+law":
+                for j in units:
+                    m.cue_texts.append(c); m.cue_fact.append(j); m.pending_c.append((c, j, b)); cues += 1
+        m._arrays()
+        return cues, examples
 
     def fmt(self, j, i):
         m = self.mem
@@ -57,6 +112,14 @@ class Workspace:
         slot, lane = RL.emit(self.lanes.byte(obs, st["tried"]), st["live"]); st["slot"] = slot
         if lane == 5:
             return "NO MORE READOUTS for this question: ask in other words with recall, or search the code."
+        m = self.mem
+        if m.law.active and lane in (1, 3, 4):                                # the learned law orders the top 8 by meaning
+            cand, strong, weak = m._rank(question)
+            law = m.law.order(cand[:m.law.n], m._lane_words(question, cand, strong, weak)) + cand[m.law.n:]
+            if lane == 3:
+                rows[3] = list(dict.fromkeys(law[:5] + [j for j in rows[3] if j not in set(cand[:5])]))
+            else:
+                rows[lane] = law[:len(rows[lane])]
         rows = [j for j in rows[lane] if j < len(self.mem.texts)]
         return f"(readout: {NAMES[lane]})\n\n" + "\n\n".join(self.fmt(j, i) for i, j in enumerate(rows, 1))
 
@@ -72,9 +135,12 @@ class Workspace:
         if path == "teach":
             pairs = [(str(n.get("question", "")), " ".join(str(n.get("note", "")).split())) for n in req.get("notes", [])]
             pairs = [(q, n) for q, n in pairs if q.strip() and n]
+            cues, examples = self.train(pairs) if pairs else (0, 0)
             r = m.teach(pairs) if pairs else {"pairs": 0}; m.save()
             self.lanes = L.Lanes(m, np.arange(self.meta["units"]), os.path.join(self.folder, "keyword.db"), RL)
-            return f"taught {r.get('pairs', 0)} notes"
+            st = m.law.state()
+            return (f"taught {r.get('pairs', 0)} notes; {cues} cues on cited code; learned law: {st['law']}, "
+                    f"{'active' if st['active'] else 'not yet active'} ({st['examples']} examples)")
         if path == "search":
             try:
                 rx = re.compile(str(req.get("pattern", "")), re.I)
@@ -103,8 +169,9 @@ class Workspace:
             p = str(req.get("prefix", "")).strip().lstrip("./"); fs = [f for f in self.files if f.startswith(p)]
             return f"{len(fs)} files" + (", first 300:" if len(fs) > 300 else ":") + "\n" + "\n".join(fs[:300])
         if path == "stats":
-            return json.dumps({"units": len(m.texts), "units at build": self.meta["units"], "notes taught": len(m.cue_texts),
-                               "files": len(self.files)})
+            return json.dumps({"units": len(m.texts), "units at build": self.meta["units"],
+                               "notes taught": len(m.texts) - self.meta["units"], "cues": len(m.cue_texts),
+                               "files": len(self.files), "learned law": m.law.state()})
         return f"unknown path: /{path}"
 
 

@@ -154,6 +154,28 @@ and a blind judge on all 75 answers; the plan was fixed with a hash first.
 - **The calculator's 2.77x prediction failed again.** The workspace still served a wrong note alone on 2 questions, and
   both agents caught it.
 
+## 8. How the CMLM should train in the loop (offline replay)
+The design says the CMLM trains locally after each reply: vectors generalise and laws learn. We replayed the 25
+questions in team order through the kit's own server, teaching after each role the real TEACH lines the in-the-loop
+agents wrote, in three modes. Each question's first readout was measured before anything about it was taught. The plan
+was fixed with a hash first.
+
+| how the CMLM trains | answer in the first readout | every needed file | wrong note served alone | tokens per readout | repeats answered |
+|---|---|---|---|---|---|
+| note only (the kit until now) | 15/25 | 12/25 | 2 | 366 | 6/7 (296 tokens) |
+| **note + the learned law trains (now the default)** | 15/25 | 12/25 | 2 | 366 | 6/7 (296 tokens) |
+| note + cues on the cited code + the learned law | 14/25 | 11/25 | 0 | 511 | 5/7 (589 tokens) |
+
+- **The law trains in both law modes** (73 examples each).
+- **With note + law, it stayed off.** It never beat the plain vector order (4 right first each), so its gate kept it
+  off, and that mode measures the same as note only.
+- **With the cited code cued, it switched on** (7 right first against 4). But the note and the cited code then tie,
+  so the cheap readout of one teammate's note stops firing: 40% more tokens per readout and one answer fewer, though
+  no wrong note was ever served alone.
+- **Choosing the default.** The rule fixed in advance (most answers shown) tied note only with note + law on every
+  measure. Note + law was chosen because it costs nothing now and lets the law switch on by itself if it ever beats
+  plain order on a team's own work.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |

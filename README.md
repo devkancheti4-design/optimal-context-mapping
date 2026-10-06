@@ -129,6 +129,15 @@ Nothing here is trained:
 - **The router law** picks which readout to send from eight free checks: the nearest teammate's note alone, the 10
   nearest by meaning, by keyword, or both.
 
+**Teaching trains the CMLM on your machine, at no model cost.**
+- **Vector generalisation:** each taught question becomes a cue for its note, so the same question asked later in
+  other words lands on it.
+- **The learned law:** each code line the note cites (`file:line`) becomes a training example. The law switches on
+  only when it beats the plain vector order on your team's own questions.
+- **Cueing the code too:** `OCM_TEACH=note+code+law` also attaches the question to the cited code. In our replay that
+  made the law switch on, but cost 40% more tokens per readout (`results/RESULTS.md`, section 8). The default is
+  `note+law`.
+
 It is ranking math. A "teammate's note" readout is the nearest match, not a verified answer, so the model is told to use
 it only if it answers the question. In our tests the agents rejected the 2 near matches that were about a different
 fact.
@@ -145,6 +154,8 @@ leave your network.
 - **Deep dives** that chain across many files save little today: a note covers one answer, not a whole trail.
 - **Billed input falls less than requests**, because readouts add reading.
 - **Not everything is indexed yet:** files without an extension, such as `Dockerfile`.
+- **The learned law rarely switches on for code.** In our replay it stayed off unless the cited code was cued, and
+  then it cost tokens.
 - **Notes are append-only**, and they are not carried over a rebuild.
 - **The tests are narrow:** open-source code and one client app, with Claude agents and judges. Your codebase is the
   real test.

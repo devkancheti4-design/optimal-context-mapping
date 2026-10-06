@@ -1,6 +1,6 @@
 """Smoke tests: build a workspace over the fixture repo, ask, teach in one batch, ask again in other words, and speak
 MCP. Needs the embedding model (downloaded once). Run: python -m pytest -q tests"""
-import json, os, tempfile
+import json, os, shutil, tempfile
 
 from ocm.build import build
 from ocm.mcp import handle
@@ -16,12 +16,18 @@ def test_workspace_end_to_end():
     assert all(".env" not in p for p in ws.files) and not any("should-never" in t for t in ws.mem.texts)
     first = ws.handle("ask", {"question": "How many times do we retry a failed card charge?"})
     assert "MAX_CHARGE_RETRIES = 3" in first
-    assert ws.handle("teach", {"notes": [{"question": "How many times do we retry a failed card charge?",
-                                          "note": "3 retries (MAX_CHARGE_RETRIES in src/config.py)."}]}) == "taught 1 notes"
+    shutil.copytree(out, out + "_code")
+    note = {"question": "How many times do we retry a failed card charge?", "note": "3 retries (MAX_CHARGE_RETRIES in src/config.py:4)."}
+    taught = ws.handle("teach", {"notes": [note]})
+    assert taught.startswith("taught 1 notes; 0 cues on cited code") and "(1 examples)" in taught, taught
     again = ws.handle("ask", {"question": "what is the retry limit when a payment to a card fails?"})
     assert "nearest match" in again and "3 retries" in again
     assert "ChargeDeclined" in ws.handle("search", {"pattern": "class ChargeDeclined"})
-    assert json.loads(ws.handle("stats", {}))["notes taught"] == 1
+    st = json.loads(ws.handle("stats", {}))
+    assert st["notes taught"] == 1 and st["cues"] == 1 and st["learned law"]["examples"] == 1
+    full = Workspace(out + "_code", teach="note+code+law")                  # the question also cues the cited code
+    assert full.handle("teach", {"notes": [note]}).startswith("taught 1 notes; 1 cues on cited code")
+    assert json.loads(full.handle("stats", {}))["cues"] == 2
 
 
 def test_mcp_protocol():
