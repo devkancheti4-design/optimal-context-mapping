@@ -176,6 +176,28 @@ was fixed with a hash first.
   measure. Note + law was chosen because it costs nothing now and lets the law switch on by itself if it ever beats
   plain order on a team's own work.
 
+## 9. A long session: Claude's own transcript against the CMLM giving the context
+One agent answered all 25 questions in one session, as people use Claude Code, carrying its transcript, with and
+without the CMLM's facts arriving with each question (the prompt hook's output; the stop hook taught each answer). A
+blind judge graded all answers; the plan was fixed with a hash first.
+
+Every Claude request carries a fixed 41,579-token prompt (system prompt and tools) that the CMLM cannot change, so each
+bill below is split into that fixed part and the context part:
+
+| arm (25 questions) | right | requests | billed input, cache-weighted | of which context | context tokens read |
+|---|---|---|---|---|---|
+| long session, alone | 24/25 | 74 | 643,156 | 287,656 | 2,205,996 |
+| **long session, CMLM in the loop** | **24/25** | **55 (1.35x fewer)** | **529,939 (1.21x less)** | 253,439 | 1,803,836 |
+| a fresh call per question with the CMLM, no transcript | 24/25 | 71 | 748,031 | 184,406 | 351,159 (6.3x less) |
+
+- **In a normal long Claude Code session, the CMLM saves** 1.35x requests and 1.21x billed input at equal accuracy;
+  searches and reads fell from 55 to 33.
+- **With no transcript at all, the CMLM's own design reads 6.3x less context.** Inside Claude Code, though, every
+  fresh call pays the fixed prompt's start again, which made its whole bill the highest; in a custom loop with a
+  small prompt, context would dominate instead.
+- **The transcript grew 2,267 tokens per question,** re-read by every request, so its cost grows with the square of
+  the session's length. Longer sessions should favour the CMLM more; that is arithmetic, not yet measured.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |
