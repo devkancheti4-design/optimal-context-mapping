@@ -48,3 +48,12 @@ TEACH: no separator here
     got = teach_lines(reply)
     assert got == [("How long does a login token stay valid?", "8 days (ACCESS_TOKEN_EXPIRE_MINUTES = 60*24*8, backend/app/core/config.py:36)"),
                    ("Where do emails go locally?", "Mailcatcher at http://localhost:1080 (compose.override.yml)")], got
+
+
+def test_loop_compact_readout():
+    from ocm.loop import compact_readout
+    many = "(readout: meaning)\n\n" + "\n\n".join(f"{i}. [corpus/a.py:{i}]\nline {i}" for i in range(1, 11))
+    small = compact_readout(many)
+    assert "3. [corpus/a.py:3]" in small and "4. [corpus/a.py:4]" not in small, small
+    note = "(readout: a teammate's note, the nearest match by meaning)\n\n1. [a note a teammate taught]\n8 days."
+    assert compact_readout(note) == note

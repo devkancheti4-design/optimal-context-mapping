@@ -213,8 +213,34 @@ blind judges on all 200 answers.
 - **The long session's own transcript already answered most repeats:** 15 of 26 with no search, against 18 for the
   CMLM.
 
-The CMLM saves when it replaces the transcript, not when it adds to it. Use it with short sessions, clear between tasks,
-or a custom loop. A compact injection and clear-between-tasks are the next things to test.
+The CMLM saves when it replaces the transcript, not when it adds to it. Section 11 tests exactly that.
+
+## 11. Clear between tasks: the CMLM carries the knowledge instead of the transcript
+The same 100 questions, pre-registered, blind judges on all 300 new answers. The arms:
+- **CMLM, clear between tasks:** 10 tasks of 10 questions, each in a fresh session, run one after another. The kit's
+  prompt hook adds facts to each question, and each reply's TEACH line trains one workspace. Only the CMLM carries
+  knowledge from one task to the next.
+- **Alone, clear between tasks:** the same 10 fresh sessions with no CMLM.
+- **Compact facts in one long session:** a teammate's note alone, or else only the top 3 items (`OCM_COMPACT=1`).
+
+| 100 questions | right | requests | billed input, cache-weighted | searches and reads |
+|---|---|---|---|---|
+| **CMLM, clear between tasks (10 sessions)** | 98/100 | **273** | **2,067,417** | **179** |
+| alone, clear between tasks (10 sessions) | 98/100 | 341 | 2,475,877 | 269 |
+| alone, one long session (section 10) | 98/100 | 208 | 2,698,551 | 116 |
+| CMLM compact facts, one long session | 98/100 | 203 | 2,826,701 | 107 |
+| CMLM full facts, one long session (section 10) | 98/100 | 202 | 3,373,411 | 111 |
+
+- **Clearing with the CMLM was the cheapest way through the 100 questions:**
+  - **1.31x less** billed input than one long session with no CMLM.
+  - **1.20x less** billed input and **1.25x fewer requests** than the same fresh sessions without it.
+- **Accuracy was equal.** Every arm got 98/100 and missed the same two questions, whose files the kit does not index.
+- **What carried over:** the CMLM sessions answered 16 questions with no search, including 12 of the 26 repeats. The
+  fresh sessions without it answered 1, and no repeat.
+- **Compact facts cut the pile-up** (1.19x less than full facts). One long session still cost 1.05x more than no CMLM,
+  because the transcript grows anyway.
+- **A correction for fairness:** the no-CMLM sessions were launched at the same moment and could not share Claude's
+  prompt cache. That made the raw difference 1.35x. The figures above give every session the same warm first request.
 
 ## What it predicts for a team (`python -m ocm calc`)
 
@@ -236,4 +262,6 @@ At 16,800 questions a month (40 engineers x 20 a day x 21 days, an assumption), 
 - Billed input falls less than requests; deep dives save little; notes are append-only.
 - As shipped, the separate `ask` call can cost more requests than it saves (section 6); the earlier gains came with
   the first readout handed to agents with the question.
+- Clearing between tasks is where the CMLM saved in a session-keeping client (section 11). Added on top of one long
+  transcript it costs more (section 10).
 - Agents sometimes broke instructions (piping tool output through grep); every case was counted and reported.

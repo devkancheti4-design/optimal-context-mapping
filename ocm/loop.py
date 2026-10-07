@@ -29,9 +29,29 @@ def _call(path, url=None, **kw):
     return urllib.request.urlopen(req, timeout=120).read().decode()
 
 
-def prefetch(question, url=None):
-    """The context that goes in with a request: the workspace's first readout for it, and the teach rule."""
-    return f"{HEADER}\n\n{_call('ask', url, question=question)}\n\n{RULE}"
+COMPACT = os.environ.get("OCM_COMPACT") == "1"
+SHORT_HEADER = "Team workspace, nearest matches (ranked, not verified; use them only if they answer it):"
+SHORT_RULE = "End with: TEACH: <the question> | <the answer, with files and lines>"
+
+
+def compact_readout(readout, k=3):
+    """A small injection: a teammate's note alone stays as it is; otherwise only the top k items. In a session that
+    keeps its transcript every injected token is re-read by every later request, so less is kept."""
+    import re
+    if readout.startswith("(readout: a teammate's note") or readout.startswith("NO MORE"):
+        return readout
+    head, _, body = readout.partition("\n\n")
+    items = re.split(r"(?m)^(?=\d+\. \[)", body)
+    return head + "\n\n" + "".join(x for x in items[:k + 1] if x).rstrip()
+
+
+def prefetch(question, url=None, compact=None):
+    """The context that goes in with a request: the workspace's first readout for it, and the teach rule.
+    compact (default $OCM_COMPACT=1): only a teammate's note alone, or the top 3 items, with a short header."""
+    out = _call('ask', url, question=question)
+    if COMPACT if compact is None else compact:
+        return f"{SHORT_HEADER}\n{compact_readout(out)}\n{SHORT_RULE}"
+    return f"{HEADER}\n\n{out}\n\n{RULE}"
 
 
 def teach_lines(text):
