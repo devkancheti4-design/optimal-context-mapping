@@ -198,6 +198,24 @@ bill below is split into that fixed part and the context part:
 - **The transcript grew 2,267 tokens per question,** re-read by every request, so its cost grows with the square of
   the session's length. Longer sessions should favour the CMLM more; that is arithmetic, not yet measured.
 
+## 10. A 100-question session: the CMLM's facts pile up in the transcript
+The same test as section 9 with 100 verified questions (26 of them repeats): one session each, pre-registered, two
+blind judges on all 200 answers.
+
+| 100 questions, one session | right | requests | billed input, cache-weighted | input per request at the end |
+|---|---|---|---|---|
+| alone | 98/100 | 208 | 2,698,551 | 185,655 |
+| CMLM facts with each question | 98/100 | 202 | **3,373,411 (1.25x more)** | 255,194 |
+
+- **The prediction failed.** At 25 questions the CMLM saved 1.21x; at 100 it cost 1.25x more.
+- **Why: in a session that keeps its transcript, the facts the hook injects stay in it.** The 47,817 tokens of facts
+  were re-read about 5 million times by later requests, about 470k of the 675k difference.
+- **The long session's own transcript already answered most repeats:** 15 of 26 with no search, against 18 for the
+  CMLM.
+
+The CMLM saves when it replaces the transcript, not when it adds to it. Use it with short sessions, clear between tasks,
+or a custom loop. A compact injection and clear-between-tasks are the next things to test.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |

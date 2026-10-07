@@ -17,6 +17,7 @@ Live tests with fresh Claude agents and blind judges, each plan fixed with a has
 | test | accuracy | model requests |
 |---|---|---|
 | **A long Claude Code session** (25 questions, one session carrying its transcript), with the CMLM in the loop | same (24/25 both) | **1.35x fewer**; billed input 1.21x lower; searches and reads 55 to 33 |
+| **A 100-question Claude Code session**, with the CMLM in the loop | same (98/100 both) | about the same (202 against 208), but billed input **1.25x higher**: the injected facts pile up in the transcript |
 | **The kit as shipped, in the loop**: a five-role team on a real app (Full Stack FastAPI Template), one fresh agent per question | same (24/25 both) | **1.62x fewer** than the same agents without it; 2.4x fewer on questions a teammate asked before |
 | A seven-role project team on a real codebase plus web research (research harness) | same (41/41) | 1.66x fewer with batched teaching |
 | Single-fact questions over 7 real codebases (7M tokens) | same (28/28) | 6.1x fewer, billed input 2.8x lower |
@@ -152,6 +153,9 @@ leave your network.
 
 - **Repetition drives savings.** One-off questions save less, and short sessions that keep their own context gain
   little.
+- **Do not keep one session going forever.** In Claude Code the facts the hook adds stay in the transcript and are re-read
+  on every later request. At 100 questions in one session that cost 1.25x more than no CMLM (section 10). Clear the
+  session between tasks: the CMLM keeps what was taught.
 - **Deep dives** that chain across many files save little today: a note covers one answer, not a whole trail.
 - **Billed input falls less than requests**, because readouts add reading.
 - **Not everything is indexed yet:** files without an extension, such as `Dockerfile`.
