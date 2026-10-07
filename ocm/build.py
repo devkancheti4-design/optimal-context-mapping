@@ -3,8 +3,9 @@
     python -m ocm build <folder> [<folder> ...] --out <workspace folder>
 
 Creates <workspace>/memory (the fingerprints: 1,024 bits per unit, from a small embedding model that runs on this
-machine), <workspace>/keyword.db (a keyword index for the router's keyword lane), and <workspace>/workspace.json (which
-folders, how many units, the router's rare-word threshold). Rebuild after large code changes; teaching later only adds."""
+machine), <workspace>/keyword.db (a keyword index for the router's keyword lane), <workspace>/spans.json (the first and
+last line of every unit, so a taught question's vector can be put on the unit holding a given line) and
+<workspace>/workspace.json (which folders, how many units, the router's rare-word threshold). Rebuild after large code changes; teaching later only adds."""
 import argparse, json, os, shutil, sqlite3, time
 
 from .cmlm_vector import Memory
@@ -27,17 +28,17 @@ def build(roots, out, model=None, device=None, log=print):
             continue
         us = units(rel, text)
         m.sources.append({"id": len(m.sources), "path": rel, "sha256": "", "units": len(us)})
-        U.extend((t, len(m.sources) - 1, line) for t, line in us)
+        U.extend((t, len(m.sources) - 1, a, b) for t, a, b in us)
     if not U:
         raise SystemExit("no code or documentation found in those folders")
     step = max(1, len(U) // 20000)
-    m.freeze_mean([t for t, _, _ in U[::step][:20000]])
+    m.freeze_mean([u[0] for u in U[::step][:20000]])
     log(f"{len(m.sources):,} files, {len(U):,} units; fingerprinting (first run downloads the embedding model)")
-    t0, seen = time.time(), set()
+    t0, seen, spans = time.time(), set(), []
     for s in range(0, len(U), 2048):
         chunk = [u for u in U[s:s + 2048] if u[0] not in seen]; seen.update(u[0] for u in chunk)
-        for (t, sid, line), b in zip(chunk, m.measure([u[0] for u in chunk])):
-            m._add_fact(t, sid, line, 0, True, b)
+        for (t, sid, a, last), b in zip(chunk, m.measure([u[0] for u in chunk])):
+            m._add_fact(t, sid, a, 0, True, b); spans.append([a, last])
         if len(m.pending_f) >= 200_000:
             m.save()
         log(f"  {min(s + 2048, len(U)):,} / {len(U):,} units, {time.time() - t0:.0f}s")
@@ -45,6 +46,7 @@ def build(roots, out, model=None, device=None, log=print):
     db = os.path.join(out, "keyword.db")
     con = sqlite3.connect(db); con.execute("create virtual table s using fts5(t)")
     con.executemany("insert into s(rowid, t) values (?, ?)", ((j + 1, t) for j, t in enumerate(m.texts))); con.commit(); con.close()
+    json.dump(spans, open(os.path.join(out, "spans.json"), "w"))
     json.dump({"roots": roots, "files": len(m.sources), "units": len(m.texts), "theta": THETA_DEFAULT,
                "built": time.strftime("%Y-%m-%dT%H:%M:%S")}, open(os.path.join(out, "workspace.json"), "w"), indent=1)
     shutil.copytree(os.path.join(out, "memory"), os.path.join(out, "memory_at_build"))

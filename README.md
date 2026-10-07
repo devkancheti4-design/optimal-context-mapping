@@ -5,9 +5,10 @@ twice.**
 
 When engineers use AI agents (Claude Code, Cursor and others) on the same codebases, each agent searches and re-reads
 the code on its own, every time, and each step is a paid model request. Optimal context mapping scans your
-repositories once into a workspace of meaning fingerprints. Before each request, it hands the model the few code
-blocks, doc lines or teammates' notes nearest to the question. After the reply, it learns what the model found. The next
-person's agent, asking the same thing in other words, starts from that.
+repositories once into a workspace of vectors (1,024-bit meaning fingerprints) ranked by small laws. Before each
+request, it hands the model the few code blocks and doc lines its laws rank for the question. After the reply, it learns
+where the answer was: the question's vector is put on that code. The next person's agent, asking the same thing in other
+words, is drawn to it.
 
 ## What it achieved in our tests
 
@@ -17,7 +18,8 @@ Live tests with fresh Claude agents and blind judges, each plan fixed with a has
 | test | accuracy | model requests |
 |---|---|---|
 | **A long Claude Code session** (25 questions, one session carrying its transcript), with the CMLM in the loop | same (24/25 both) | **1.35x fewer**; billed input 1.21x lower; searches and reads 55 to 33 |
-| **100 questions, clearing the session between tasks**, with the CMLM carrying the knowledge | same (98/100) | **1.25x fewer** than the same fresh sessions without it; billed input **1.20x lower**, and **1.31x lower** than one long session |
+| **100 questions, clearing the session between tasks, this kit** (vectors only) | same (100/100 both) | **1.25x fewer** than the same fresh sessions without it; billed input **1.19x lower**; searches and reads 1.58x fewer; the saving held from the first half to the second (1.26x, 1.24x) |
+| 100 questions, clearing between tasks, the kit before vectors-only teaching | same (98/100) | 1.25x fewer; billed input 1.20x lower, 1.31x lower than one long session; but the saving fell from 1.40x to 1.13x as notes piled up |
 | A 100-question Claude Code session, with the CMLM in the loop and never cleared | same (98/100 both) | about the same (202 against 208), but billed input **1.25x higher**: the injected facts pile up in the transcript |
 | **The kit as shipped, in the loop**: a five-role team on a real app (Full Stack FastAPI Template), one fresh agent per question | same (24/25 both) | **1.62x fewer** than the same agents without it; 2.4x fewer on questions a teammate asked before |
 | A seven-role project team on a real codebase plus web research (research harness) | same (41/41) | 1.66x fewer with batched teaching |
@@ -53,6 +55,8 @@ python -m ocm build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-wo
   sentences, and each becomes a 1,024-bit fingerprint, computed on your machine.
 - **What is skipped:** `.env` files, keys, certificates, credential files, lockfiles, dependency and build folders, and
   anything over 512 KB.
+- **Also indexed:** build files with no extension (`Dockerfile`, `Makefile` and the like), `.conf`, `.mjml`, `.vscode`.
+  Doc sentences keep their line numbers.
 - **Device:** a GPU is used automatically when present (CUDA, or Apple silicon); `--device cpu` forces the CPU.
 
 ### 3. Serve it to the team
@@ -77,11 +81,12 @@ Run one server per team; everyone's agents share it. Every call is logged to `<w
 }}
 ```
 
-- **Before each request**, the prompt hook adds the workspace's nearest matches for the question: a teammate's note when
-  one is close, or else the nearest code and docs.
+- **Before each request**, the prompt hook adds the code its laws rank for the question: the code a taught question's
+  vector points to (and then the router's next readout), or the nearest code and docs by meaning and keyword.
 - **The model** answers from them when they answer the question, searches when they do not, and ends its reply with
-  `TEACH: <question> | <answer, with files and lines>`.
-- **After the reply**, the stop hook teaches those lines to the workspace on your machine, at no model cost.
+  `TEACH: <question> | <path>:<line>`, the line its answer is on.
+- **After the reply**, the stop hook teaches those lines on your machine, at no model cost: each question's vector
+  becomes a cue on the code holding that line. No answer text is stored.
 - **Between tasks**, run `/clear`. The next task starts from the workspace, not from the old transcript.
 
 **Cursor and other MCP clients: as tools.** Add this to `.mcp.json` (Cursor: `.cursor/mcp.json`), and add
@@ -121,35 +126,32 @@ What we measured with this kit on a MacBook (Apple silicon; its GPU was picked a
 - **Scope it.** Build one workspace over the repositories a team actually works in; one workspace over everything beat
   one per codebase in our test.
 - **Recall falls as size grows.** First-time questions find their answer less often in the first readout. Repeated
-  questions, matched to a teammate's note, hold up.
-- **Rebuild after large code changes.** A rebuild starts fresh, and notes taught to the old workspace are not carried
+  questions, drawn by a taught question's vector, hold up.
+- **Rebuild after large code changes.** A rebuild starts fresh, and vectors taught to the old workspace are not carried
   over yet.
 
 ## How it works
 
-Nothing here is trained:
-- **The vector law** ranks every unit by bits shared with the question: first with notes teammates taught, then with
-  the unit's own text.
-- **The router law** picks which readout to send from eight free checks: the nearest teammate's note alone, the 10
-  nearest by meaning, by keyword, or both.
+The workspace is a CMLM: vectors and laws, not a store of text.
+- **The vector law** ranks every unit by bits shared with the question: through the vectors of questions taught on
+  it, and through its own text.
+- **The router law** picks which readout to send from eight free checks: the code a taught question's vector points
+  to, the 10 nearest by meaning, by keyword, or both. When the first readout is the taught one, the hook also sends
+  the router's next readout (its ADVANCE), so a near miss costs no search.
+- **The learned law** reorders the nearest by meaning once it beats the vector order on your team's own questions.
 
-**Teaching trains the CMLM on your machine, at no model cost.**
-- **Vector generalisation:** each taught question becomes a cue for its note, so the same question asked later in
-  other words lands on it.
-- **The learned law:** each code line the note cites (`file:line`) becomes a training example. The law switches on
-  only when it beats the plain vector order on your team's own questions.
-- **Cueing the code too:** `OCM_TEACH=note+code+law` also attaches the question to the cited code. In our replay that
-  made the law switch on, but cost 40% more tokens per readout (`results/RESULTS.md`, section 8). The default is
-  `note+law`.
+**Teaching trains the CMLM on your machine, at no model cost.** A TEACH line names a question and the line its answer
+is on. The question's vector becomes a cue on the unit holding that line, so a later question near it in meaning is
+drawn to that code (vector generalisation), and it is an example for the learned law. Nothing the model wrote is
+stored, and what the model gets back is always the code itself, with its path and line.
 
-It is ranking math. A "teammate's note" readout is the nearest match, not a verified answer, so the model is told to use
-it only if it answers the question. In our tests the agents rejected the 2 near matches that were about a different
-fact.
+It is ranking math. The readout is ranked, not verified, so the model is told to use it only if it answers the
+question.
 
 ## Privacy
 
-Everything runs on your machines. Only the embedding model is downloaded, once; your code, questions and notes never
-leave your network.
+Everything runs on your machines. Only the embedding model is downloaded, once; your code and questions never leave
+your network.
 
 ## Limits, stated plainly
 
@@ -160,14 +162,15 @@ leave your network.
   - At 100 questions in one session, that cost 1.25x more than no CMLM (section 10).
   - The same 100 questions in fresh 10-question sessions cost 1.31x less than one long session, at the same accuracy
     (section 11). The CMLM keeps what was taught.
-  - If you must keep one long session, `OCM_COMPACT=1` sends only a teammate's note or the top 3 items. That cut the
-    pile-up 1.19x, but it still cost 1.05x more than no CMLM.
-- **Deep dives** that chain across many files save little today: a note covers one answer, not a whole trail.
+  - If you must keep one long session, `OCM_COMPACT=1` cuts each readout to its top 3 items. That cut the pile-up
+    1.19x, but it still cost 1.05x more than no CMLM.
+- **Repeats still cost a read today.** The TEACH rule asks for the exact line, and agents read the file to confirm it
+  even when the readout held the answer. Only 6 of 100 questions were answered with no search (section 12).
+- **Deep dives** that chain across many files save little today: a taught question points at one line, not a whole
+  trail.
 - **Billed input falls less than requests**, because readouts add reading.
-- **Not everything is indexed yet:** files without an extension, such as `Dockerfile`.
-- **The learned law rarely switches on for code.** In our replay it stayed off unless the cited code was cued, and
-  then it cost tokens.
-- **Notes are append-only**, and they are not carried over a rebuild.
+- **The learned law rarely switches on for code** in our tests.
+- **Taught vectors are append-only**, and they are not carried over a rebuild.
 - **The tests are narrow:** open-source code and one client app, with Claude agents and judges. Your codebase is the
   real test.
 

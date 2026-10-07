@@ -7,7 +7,7 @@ forward to the team's workspace server, so every person's agent shares one memor
   workspace_ask      the first readout for a question (call before searching)
   workspace_next     the next readout for the same question
   workspace_recall   the k nearest units for a query in other words
-  workspace_teach    at the end of a session, every finding at once (one call, many notes)"""
+  workspace_teach    at the end of a session, every question answered and the line its answer is on, at once"""
 import json, os, sys, urllib.request
 
 VERSION = "0.1.0"
@@ -16,21 +16,22 @@ Q = {"type": "object", "properties": {"question": {"type": "string", "descriptio
      "required": ["question"]}
 TOOLS = [
     {"name": "workspace_ask", "inputSchema": Q,
-     "description": "Ask the team's shared workspace FIRST, before searching the code. Returns the most relevant code blocks, "
-                    "doc sentences and notes teammates taught, or the single nearest teammate's note when one is close (ranked by meaning, not verified) "
-                    "before. If it answers the question, answer from it without searching."},
+     "description": "Ask the team's shared workspace FIRST, before searching the code. Returns the code its laws rank for the "
+                    "question: the code a taught question's vector points to, or the nearest code blocks and doc sentences (ranked, "
+                    "not verified). If it answers the question, answer from it without searching."},
     {"name": "workspace_next", "inputSchema": Q,
      "description": "The workspace's next readout for the same question (a different lane), when the first did not answer it."},
     {"name": "workspace_recall",
      "inputSchema": {"type": "object", "properties": {"query": {"type": "string"}, "k": {"type": "integer", "minimum": 1, "maximum": 10}},
                      "required": ["query"]},
-     "description": "Ask the workspace in other words: the k code blocks, sentences or notes nearest in meaning."},
+     "description": "Ask the workspace in other words: the k code blocks or doc sentences nearest in meaning."},
     {"name": "workspace_teach",
-     "inputSchema": {"type": "object", "properties": {"notes": {"type": "array", "items": {"type": "object", "properties": {
-         "question": {"type": "string"}, "note": {"type": "string"}}, "required": ["question", "note"]}}}, "required": ["notes"]},
-     "description": "Call ONCE at the end of your work: teach every finding at once so teammates reuse it instead of repeating the "
-                    "research. For each question you answered: the question, and a one-to-three-sentence note of the answer and "
-                    "where it is (files and lines)."},
+     "inputSchema": {"type": "object", "properties": {"pairs": {"type": "array", "items": {"type": "object", "properties": {
+         "question": {"type": "string"}, "at": {"type": "string", "description": "path:line, the one line the answer is on"}},
+         "required": ["question", "at"]}}}, "required": ["pairs"]},
+     "description": "Call ONCE at the end of your work: for each question you answered, the question and the one line its answer "
+                    "is on (path:line). Each question's vector is put on that code, so a teammate's question near it in meaning "
+                    "is drawn there instead of repeating the research."},
 ]
 PATH = {"workspace_ask": "ask", "workspace_next": "next", "workspace_recall": "recall", "workspace_teach": "teach"}
 

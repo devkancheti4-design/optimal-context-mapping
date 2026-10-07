@@ -242,6 +242,40 @@ The same 100 questions, pre-registered, blind judges on all 300 new answers. The
 - **A correction for fairness:** the no-CMLM sessions were launched at the same moment and could not share Claude's
   prompt cache. That made the raw difference 1.35x. The figures above give every session the same warm first request.
 
+## 12. The kit rebuilt to feed the laws as their contract says: vectors only, live
+Offline replays (cmlm-bench10 RESULTS_SCALE, RESULTS_MULTI, RESULTS_GENERALISE and RESULTS_CONTRACT, each pre-registered)
+found the saving fell as teaching grew, and traced it to the kit around the laws, not the laws:
+- The kit stored the model's TEACH text as new units and put the cue on that text. Storing answers as text with no
+  location was a recorded bug in the test that proved the laws.
+- It asked for "files and lines", which spread cues over several blocks or taught nothing.
+- It sent only the router law's first readout, dropping the law's ADVANCE.
+- It skipped Dockerfile, .conf, .mjml, .vscode and every doc line.
+
+The rebuild:
+- A TEACH line `<question> | <path>:<line>` puts the question's vector as a cue on the unit holding that line
+  (Memory.teach_at). No text is stored.
+- The hook sends the router law's next readout after the taught lane.
+- The index covers those files, and doc sentences keep their lines.
+- The laws are unchanged.
+
+Then live: 100 questions, 10 fresh sessions per arm run one after another, both arms on the rebuilt index,
+pre-registered, two blind judges.
+
+| 100 questions, clear between tasks | right | requests | billed input, cache-weighted | searches and reads |
+|---|---|---|---|---|
+| **CMLM, rebuilt kit** | 100/100 | **268** | **2,063,323** | **180** |
+| alone | 100/100 | 335 | 2,455,955 | 285 |
+
+- **The saving.** 1.25x fewer requests, 1.19x lower billed input and 1.58x fewer searches and reads, at equal
+  accuracy.
+- **It held across the run**, 1.26x in tasks 1-5 and 1.24x in tasks 6-10. Before the rebuild it fell from 1.40x to
+  1.13x. The prediction that it would grow failed narrowly.
+- **First-time questions saved more as teaching grew:** 1.19x, then 1.31x.
+- **Repeats saved less in the second half (1.52x, then 1.14x).** That missed the target of 0.6 of alone's requests.
+  The cause is the TEACH rule: asked for the exact line, agents read the file to confirm it, even when the readout
+  held the answer. Only 6 questions were answered with no search, against 16 before. The readout item's own
+  [path:line] label places the vector as well; that is the next change to test.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |
@@ -262,6 +296,6 @@ At 16,800 questions a month (40 engineers x 20 a day x 21 days, an assumption), 
 - Billed input falls less than requests; deep dives save little; notes are append-only.
 - As shipped, the separate `ask` call can cost more requests than it saves (section 6); the earlier gains came with
   the first readout handed to agents with the question.
-- Clearing between tasks is where the CMLM saved in a session-keeping client (section 11). Added on top of one long
-  transcript it costs more (section 10).
+- Clearing between tasks is where the CMLM saved in a session-keeping client (sections 11 and 12). Added on top of one
+  long transcript it costs more (section 10).
 - Agents sometimes broke instructions (piping tool output through grep); every case was counted and reported.

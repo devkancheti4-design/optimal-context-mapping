@@ -225,6 +225,26 @@ class Memory:
         self._arrays()
         return {"pairs": len(pairs), "examples": ex, "law": describe(self.law.law), "law_active": self.law.active}
 
+    def teach_at(self, pairs):
+        """Pairs of (cue, unit): a question a person asked, and the stored unit (by index) that holds its answer. The
+        question's vector becomes a cue on that unit; nothing new is stored as a fact. Each is first an example for the
+        learned law, measured before the cue is stored. Questions already taught as cues are skipped."""
+        pairs = [(" ".join(str(c).split()), int(j)) for c, j in pairs if str(c).strip() and 0 <= int(j) < len(self.texts)]
+        pairs = [(c, j) for c, j in dict.fromkeys(pairs) if c not in self.cue_set]
+        if not pairs:
+            return {"cues": 0, "examples": 0}
+        B = dict(zip([c for c, _ in pairs], self.measure([c for c, _ in pairs])))
+        for c, j in pairs:
+            if c in self.cue_set:
+                continue
+            self._arrays()
+            order, strong, weak = self._rank(c, bits=B[c])
+            cand = order[:self.law.n]
+            self.law.observe(self._lane_words(c, cand, strong, weak), cand.index(j) if j in cand else -1)
+            self.cue_texts.append(c); self.cue_fact.append(j); self.cue_set.add(c); self.pending_c.append((c, j, B[c]))
+        self._arrays()
+        return {"cues": len(pairs), "examples": len(pairs), "law": describe(self.law.law), "law_active": self.law.active}
+
     def freeze_mean(self, texts):
         """Centre the bits: the mean embedding of these texts, frozen for good. Only on an empty memory, since the
         bits already stored were measured without it and a stored bit never changes."""
