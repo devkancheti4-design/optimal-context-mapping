@@ -1,9 +1,9 @@
-"""python -m ocm <build | serve | hook | mcp | measure | calc> ...  (see README.md)"""
+"""python -m ocm <build | serve | hook | mcp | init | hybrid | measure | calc> ...  (see README.md)"""
 import sys
 
 
 def main():
-    cmds = {"build": "build", "serve": "server", "hook": "loop", "mcp": "mcp", "measure": "measure", "calc": "calc"}
+    cmds = {"build": "build", "serve": "server", "hook": "loop", "mcp": "mcp", "init": "init", "hybrid": "hybrid", "measure": "measure", "calc": "calc"}
     if len(sys.argv) < 2 or sys.argv[1] not in cmds:
         print(__doc__); sys.exit(2)
     import importlib

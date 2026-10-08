@@ -81,6 +81,19 @@ Run one server per team; everyone's agents share it. Every call is logged to `<w
 
 ### 4. Put it in your agents' loop
 
+**One command per agent.** `ocm init` writes the right config into a repository. It merges into existing files, keeps
+your other settings, and is safe to run again:
+
+```bash
+python -m ocm init claude ~/code/our-api --url http://ws.internal:7700    # Claude Code: two hooks + a CLAUDE.md note
+python -m ocm init kiro   ~/code/our-api --url http://ws.internal:7700    # Kiro: .kiro/settings/mcp.json + .kiro/steering/ocm.md
+python -m ocm init codex  ~/code/our-api --url http://ws.internal:7700    # OpenAI Codex: .codex/config.toml + AGENTS.md
+python -m ocm init gemini ~/code/our-api --url http://ws.internal:7700    # Gemini CLI: .gemini/settings.json + GEMINI.md
+python -m ocm init all    ~/code/our-api --url http://ws.internal:7700    # all four
+```
+
+What each writes, by hand, follows.
+
 **Claude Code (recommended): two hooks, nothing for the model to call.** Add this to the project's
 `.claude/settings.json`, and point `OCM_URL` at the team's server if it is not local:
 
@@ -110,8 +123,42 @@ Run one server per team; everyone's agents share it. Every call is logged to `<w
 This costs a round trip per question, and in our team proof it did not save requests on its own (section 6). Use the
 hooks where you can.
 
+**Kiro, OpenAI Codex, Gemini CLI: as MCP tools.** `ocm init kiro|codex|gemini` registers the same four tools in each
+tool's own MCP config, and puts the instructions where that agent reads them (`.kiro/steering/`, `AGENTS.md`,
+`GEMINI.md`).
+
 **Any other agent loop:** call `ocm.loop.prefetch(question)` before the model call, put the result in the prompt, and
 call `ocm.loop.teach_from_reply(reply)` after it.
+
+### The hybrid: the kit decides, the model reads or teaches
+
+`ocm hybrid` runs a question through the hybrid. The kit's laws make every decision, at no model cost, and a model is
+called only for one of two jobs:
+
+- **Read:** the question is near one the kit was taught. The model reads the code the kit chose, once and with no tools,
+  and answers. If that code does not hold the answer, it says so and the question goes on to be taught.
+- **Teach:** the question is new. The model explores (search, read, list on the team's workspace) just enough to find
+  the one line the answer is on. The kit learns that line, so the next question like it costs one read.
+
+```bash
+export OCM_URL=http://ws.internal:7700
+python -m ocm hybrid "What stops a deploy with placeholder secrets?" --provider claude   # ANTHROPIC_API_KEY
+python -m ocm hybrid "..." --provider openai                                             # OPENAI_API_KEY (pip install openai)
+python -m ocm hybrid "..." --provider gemini                                             # GEMINI_API_KEY, or a Vertex project
+```
+
+| Provider | Reads with | Teaches with | Keys |
+|---|---|---|---|
+| `claude` (Anthropic SDK) | Claude Haiku 5.5 | Claude Sonnet 5.5 | `ANTHROPIC_API_KEY`, or `OCM_VERTEX_PROJECT` for Claude on Vertex AI |
+| `openai` (OpenAI SDK) | `--reader`, default `gpt-5.6-terra` | `--teacher`, same default | `OPENAI_API_KEY` |
+| `gemini` (REST) | gemini-2.5-flash | gemini-2.5-flash | `GEMINI_API_KEY`, or `OCM_VERTEX_PROJECT` |
+
+In code: `from ocm.hybrid import run, provider, Workspace`, then
+`run(question, provider("claude"), Workspace("http://ws.internal:7700"))`. It returns the path taken (`read` or
+`teach`), the answer, the line taught, and the number of model requests. Measured so far (gemini-2.5-flash): one read
+was right on 90/90 taught questions, and on 30/30 with Claude Haiku 5.5. The Gemini adapter has been run live end to
+end. The Claude and OpenAI adapters are covered by the offline tests, but have not yet been run against their live
+APIs.
 
 ### 5. Measure what it saves you
 
