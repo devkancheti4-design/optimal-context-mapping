@@ -71,3 +71,34 @@ def test_loop_readout_advances_after_the_taught_lane():
     calls.clear()
     plain = readout(lambda path, **kw: calls.append(path) or "(readout: meaning)\n\n1. [b.py:9]\nY = 4", "q")
     assert calls == ["ask"] and "Y = 4" in plain
+
+
+def test_life_carries_taught_vectors_across_a_rebuild():
+    """The Life remembers what was taught, exactly; a rebuild over moved code carries it to the new line, and an entry
+    whose line is gone abstains."""
+    root = tempfile.mkdtemp(); repo = os.path.join(root, "repo")
+    shutil.copytree(os.path.join(HERE, "fixture_repo"), repo)
+    old = os.path.join(root, "ws_old")
+    build([repo], old, log=lambda *a: None)
+    ws = Workspace(old)
+    ws.handle("teach", {"pairs": [{"question": "How many times do we retry a failed card charge?", "at": "src/config.py:4"},
+                                  {"question": "What currency do charges default to?", "at": "src/config.py:9"}]})
+    st = json.loads(ws.handle("stats", {}))
+    assert st["life"]["entries"] == 2 and st["question vectors taught"] == 2
+    entry = json.loads(ws.life.recall("How many times do we retry a failed card charge?"))
+    assert entry == {"at": "repo/src/config.py:4", "code": "MAX_CHARGE_RETRIES = 3"}, entry
+    # the code moves: two lines inserted above the retry limit, and the currency line deleted
+    p = os.path.join(repo, "src", "config.py"); lines = open(p).read().split("\n")
+    lines = [l for l in lines if not l.startswith("DEFAULT_CURRENCY")]
+    lines[1:1] = ["# Payments settings, reviewed every quarter.", ""]
+    open(p, "w").write("\n".join(lines))
+    new = os.path.join(root, "ws_new")
+    build([repo], new, log=lambda *a: None, carry=old)
+    nw = Workspace(new)
+    moved = json.loads(nw.life.recall("How many times do we retry a failed card charge?"))
+    assert moved["at"] == "repo/src/config.py:6", moved                            # found by its exact line
+    assert len(nw.life.history("How many times do we retry a failed card charge?")) == 2   # old and new both kept
+    assert json.loads(nw.handle("stats", {}))["question vectors taught"] == 1         # the gone line abstained
+    again = nw.handle("ask", {"question": "what is the retry limit when a payment to a card fails?"})
+    assert again.startswith("(readout: the code a taught question") and "MAX_CHARGE_RETRIES = 3" in again, again
+    assert Workspace(new).life.sha() == nw.life.sha()                                  # byte-exact identity on disk

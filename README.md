@@ -59,6 +59,16 @@ python -m ocm build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-wo
   Doc sentences keep their line numbers.
 - **Device:** a GPU is used automatically when present (CUDA, or Apple silicon); `--device cpu` forces the CPU.
 
+**Rebuilding after code changes?** Carry what the team taught into the new workspace:
+
+```bash
+python -m ocm build ~/code/our-api ~/code/our-web --out ~/ocm-workspace-new --carry ~/ocm-workspace
+```
+
+The workspace keeps an exact memory of what was taught (`taught.life.json`, a Life from living-fused). On a carry,
+each taught question is found in the new code by its exact line and its vector is taught again; an entry whose line
+is gone abstains instead of guessing.
+
 ### 3. Serve it to the team
 
 ```bash
@@ -127,8 +137,7 @@ What we measured with this kit on a MacBook (Apple silicon; its GPU was picked a
   one per codebase in our test.
 - **Recall falls as size grows.** First-time questions find their answer less often in the first readout. Repeated
   questions, drawn by a taught question's vector, hold up.
-- **Rebuild after large code changes.** A rebuild starts fresh, and vectors taught to the old workspace are not carried
-  over yet.
+- **Rebuild after large code changes,** with `--carry` to bring what was taught along.
 
 ## How it works
 
@@ -170,7 +179,8 @@ your network.
   trail.
 - **Billed input falls less than requests**, because readouts add reading.
 - **The learned law rarely switches on for code** in our tests.
-- **Taught vectors are append-only**, and they are not carried over a rebuild.
+- **Taught vectors are append-only.** A rebuild carries them only with `--carry`, and only where the exact line still
+  exists. In our live test a carry over 400 commits kept 40 of 47 entries, but it did not save requests (section 13).
 - **The tests are narrow:** open-source code and one client app, with Claude agents and judges. Your codebase is the
   real test.
 

@@ -276,6 +276,30 @@ pre-registered, two blind judges.
   held the answer. Only 6 questions were answered with no search, against 16 before. The readout item's own
   [path:line] label places the vector as well; that is the next change to test.
 
+## 13. The Life: an exact memory of what was taught, carried across a real code move
+The kit now keeps a Life (living-fused's life/life.py, MIT, vendored as ocm/life.py) beside the vectors.
+- **Teaching.** /teach records each taught question with its exact line.
+- **Carrying.** `ocm build --carry OLD` finds each entry in the new code by that line, writes it as a revision (newest
+  wins, history kept, byte-exact sha) and teaches its vector again. An entry whose line is gone abstains.
+
+The test is the FastAPI template's own history, 36ddc1a to 13652b5 (400 commits).
+- **Offline.** 38 taught entries, 19 of them moved, were carried 38 of 38 to the right code. Later readouts matched the
+  no-move bound (36/50).
+- **Live.** 5 sessions taught questions 1-50 on the old code. The carry kept 40 of 47 entries, 21 of them moved; 7
+  abstained. Then two chains of 5 sessions answered questions 51-100 on the new code. Pre-registered, blind judge:
+
+| 50 questions at the new code | right | requests | billed input, cache-weighted |
+|---|---|---|---|
+| rebuild, nothing carried | 49/50 | 137 | 1,053,024 |
+| carried by the Life | 50/50 | 142 | 1,093,696 |
+| no code move (section 12's run) | | 136 | 1,038,587 |
+| no CMLM | | 169 | 1,247,912 |
+
+- **The carry works.** It is exact and never guesses.
+- **Live it did not save requests.** The difference is inside the spread between sessions. Not one carried repeat was
+  answered without a search, because the exact-line TEACH rule makes agents read to confirm.
+- **Accuracy.** It got the one repeat the rebuild missed.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |

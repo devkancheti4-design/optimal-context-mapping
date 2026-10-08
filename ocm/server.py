@@ -16,17 +16,24 @@ POST JSON to these paths (the hooks in ocm.loop and the MCP plugin call them):
   /recall   {"query", "k"}          the k units nearest in meaning (k up to 10)
   /teach    {"pairs": [{"question", "at"}, ...]}
                                     "at" names the line the answer is on, as path:line (the first path:line in it is
-                                    used); the question's vector becomes a cue on the unit holding that line
+                                    used); the question's vector becomes a cue on the unit holding that line, and the
+                                    Life (living-fused, ocm/life.py) records question -> {path:line, the exact line}
   /search   {"pattern"}  /read {"file", "start", "num"}  /list {"prefix"}
                                     plain regex search, file reading and listing over the workspace's folders
   /stats    {}                      units, question vectors taught, the learned law, calls served
-Every call is appended to <workspace>/calls.jsonl (time, path, sizes), so a pilot can count what the workspace did."""
+Every call is appended to <workspace>/calls.jsonl (time, path, sizes), so a pilot can count what the workspace did.
+
+The Life is the CMLM's exact memory of what was taught (<workspace>/taught.life.json): exact keys, newest value wins,
+history kept, a byte-exact sha. A rebuild carries it over (`ocm build ... --carry <old workspace>`): each taught entry
+is found in the new code by its exact line, written to the Life as a revision, and its vector taught again; an entry
+whose line is gone abstains (kept in the Life, not taught), never guessed."""
 import argparse, glob, hashlib, json, os, re, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import numpy as np
 
 from .cmlm_vector import Memory
+from .life import Life
 from .router import router as RL
 from .router import lanes as L
 from .units import files as list_files
@@ -45,6 +52,8 @@ class Workspace:
         self.lanes = L.Lanes(self.mem, np.arange(self.meta["units"]), os.path.join(folder, "keyword.db"), RL)
         self.files = {rel: path for _, rel, path in list_files(self.meta["roots"])}
         self.state, self.lock, self.log = {}, threading.Lock(), os.path.join(folder, "calls.jsonl")
+        self.life_file = os.path.join(folder, "taught.life.json")
+        self.life = Life(self.life_file)
         self.spans = {}                                                            # path -> [(first line, last line, unit)]
         m, sp = self.mem, os.path.join(folder, "spans.json")
         lines = json.load(open(sp)) if os.path.exists(sp) else None
@@ -60,9 +69,9 @@ class Workspace:
 
     CITE = re.compile(r"([A-Za-z0-9_./-]*[A-Za-z0-9_-]):(\d+)")
 
-    def unit_at(self, ref):
-        """The unit holding the line named by the first path:line in ref (a path may be given relative or by its
-        tail), or None when the workspace holds no such line."""
+    def place(self, ref):
+        """(unit, path, line) for the first path:line in ref that the workspace holds (a path may be given relative or
+        by its tail), or None."""
         for path, line in self.CITE.findall(str(ref)):
             path = path.strip("./"); line = int(line)
             hits = [p for p in self.spans if p == path or p.endswith("/" + path)]
@@ -70,8 +79,54 @@ class Workspace:
                 continue                                                           # unknown or ambiguous: try the next
             held = [j for first, last, j in self.spans[hits[0]] if first <= line <= last]
             if held:
-                return held[0]
+                return held[0], hits[0], line
         return None
+
+    def unit_at(self, ref):
+        """The unit holding the line named by the first path:line in ref, or None."""
+        p = self.place(ref)
+        return p[0] if p else None
+
+    def line_text(self, path, line):
+        lines = open(self.files[path], encoding="utf-8", errors="replace").read().split("\n") if path in self.files else []
+        return lines[line - 1] if 0 < line <= len(lines) else None
+
+    def carry(self, old_folder):
+        """Carry what an earlier workspace was taught into this one: every entry of its Life is found here by its exact
+        line (same path first, nearest the old line; else the one file holding that exact line), written to this Life
+        as a revision (newest wins, history kept), and its vector taught on the unit holding it. An entry whose line
+        is not found abstains: kept in the Life, not taught."""
+        old = Life(os.path.join(old_folder, "taught.life.json"))
+        self.life.store = json.loads(old.dumps())                                  # the history comes along
+        texts = {}
+        def lines_of(path):
+            if path not in texts:
+                texts[path] = open(self.files[path], encoding="utf-8", errors="replace").read().split("\n")
+            return texts[path]
+        pairs, moved, abstained = [], 0, []
+        for key in sorted(self.life.store):
+            v = json.loads(self.life.recall(key)); path, line = v["at"].rsplit(":", 1); line = int(line)
+            code = (v.get("code") or "").rstrip(); found = None
+            if code.strip() and path in self.files:
+                hits = [i + 1 for i, l in enumerate(lines_of(path)) if l.rstrip() == code]
+                if hits:
+                    found = (path, min(hits, key=lambda i: abs(i - line)))
+            if found is None and code.strip():
+                hits = [(p, i + 1) for p in self.files for i, l in enumerate(lines_of(p)) if l.rstrip() == code]
+                if len(hits) == 1:
+                    found = hits[0]
+            j = self.unit_at(f"{found[0]}:{found[1]}") if found else None
+            if j is None:
+                abstained.append(key)
+                continue
+            newv = json.dumps({"at": f"{found[0]}:{found[1]}", "code": v.get("code")}, sort_keys=True)
+            if newv != self.life.recall(key):
+                self.life.learn(key, newv); moved += 1
+            pairs.append((key, j))
+        r = self.mem.teach_at(pairs) if pairs else {"cues": 0}; self.mem.save(); self.life.save()
+        self.lanes = L.Lanes(self.mem, np.arange(self.meta["units"]), os.path.join(self.folder, "keyword.db"), RL)
+        return {"entries": len(self.life.store), "carried": len(pairs), "moved": moved, "abstained": len(abstained),
+                "vectors taught": r["cues"], "life sha": self.life.sha()}
 
     def fmt(self, j, i):
         m = self.mem
@@ -116,12 +171,15 @@ class Workspace:
             items = req.get("pairs") or [{"question": n.get("question", ""), "at": n.get("note", "")} for n in req.get("notes", [])]
             placed, missed = [], 0
             for it in items:
-                q, j = str(it.get("question", "")), self.unit_at(it.get("at", ""))
-                if q.strip() and j is not None:
-                    placed.append((q, j))
+                q, pl = str(it.get("question", "")), self.place(it.get("at", ""))
+                if q.strip() and pl is not None:
+                    placed.append((q, pl[0]))
+                    self.life.learn(" ".join(q.split()), json.dumps({"at": f"{pl[1]}:{pl[2]}", "code": self.line_text(pl[1], pl[2])}, sort_keys=True))
                 else:
                     missed += 1
             r = m.teach_at(placed) if placed else {"cues": 0}; m.save()
+            if placed:
+                self.life.save()
             self.lanes = L.Lanes(m, np.arange(self.meta["units"]), os.path.join(self.folder, "keyword.db"), RL)
             st = m.law.state()
             return (f"taught {r['cues']} question vectors onto code; {missed} not placed (no path:line the workspace holds); "
@@ -155,7 +213,8 @@ class Workspace:
             return f"{len(fs)} files" + (", first 300:" if len(fs) > 300 else ":") + "\n" + "\n".join(fs[:300])
         if path == "stats":
             return json.dumps({"units": len(m.texts), "question vectors taught": len(m.cue_texts),
-                               "files": len(self.files), "learned law": m.law.state()})
+                               "files": len(self.files), "learned law": m.law.state(),
+                               "life": {"entries": len(self.life.store), "sha": self.life.sha()}})
         return f"unknown path: /{path}"
 
 
