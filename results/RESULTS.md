@@ -300,6 +300,23 @@ The test is the FastAPI template's own history, 36ddc1a to 13652b5 (400 commits)
   answered without a search, because the exact-line TEACH rule makes agents read to confirm.
 - **Accuracy.** It got the one repeat the rebuild missed.
 
+## 14. A large codebase, live: the saving grows with the codebase, and the map is absorbed exactly
+The same kit (section 13), live on transformers 5.8.1: about 10.8M tokens, 2,347 files, 183,830 units.
+- 30 verified facts, then their second wordings, in 6 fresh sessions of 10 per arm, run together.
+- Pre-registered, with two blind judges.
+
+| transformers, 60 questions | right | requests | billed input, cache-weighted | searches and reads |
+|---|---|---|---|---|
+| **CMLM** | 60/60 | **132** | **1,056,232** | **64** |
+| alone | 60/60 | 226 | 1,705,546 | 172 |
+
+- **1.71x fewer requests:** 1.68x on first wordings and 1.74x on repeats. Billed input is 1.61x lower, and searches and
+  reads 2.7x fewer.
+- **The same kit on the 148k-token FastAPI template gave 1.25x.** The saving grows with the codebase.
+- **The map was absorbed exactly.** Every one of the 30 reworded questions opened the taught lane on the unit holding
+  its fact's line, checked against the truth: 30 right, 0 junk, 0 missed.
+- **What is left on repeats is one read per question,** to confirm the exact line for the TEACH rule.
+
 ## What it predicts for a team (`python -m ocm calc`)
 
 | repeat share | lookups only | with 30% deep dives |

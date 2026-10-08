@@ -18,6 +18,7 @@ Live tests with fresh Claude agents and blind judges, each plan fixed with a has
 | test | accuracy | model requests |
 |---|---|---|
 | **A long Claude Code session** (25 questions, one session carrying its transcript), with the CMLM in the loop | same (24/25 both) | **1.35x fewer**; billed input 1.21x lower; searches and reads 55 to 33 |
+| **A large codebase, live: transformers, 10.8M tokens** (60 questions, fresh sessions) | same (60/60 both) | **1.71x fewer**; billed input **1.61x lower**; searches and reads 2.7x fewer; every reworded question landed on its taught code (30/30, no junk) |
 | **100 questions, clearing the session between tasks, this kit** (vectors only) | same (100/100 both) | **1.25x fewer** than the same fresh sessions without it; billed input **1.19x lower**; searches and reads 1.58x fewer; the saving held from the first half to the second (1.26x, 1.24x) |
 | 100 questions, clearing between tasks, the kit before vectors-only teaching | same (98/100) | 1.25x fewer; billed input 1.20x lower, 1.31x lower than one long session; but the saving fell from 1.40x to 1.13x as notes piled up |
 | A 100-question Claude Code session, with the CMLM in the loop and never cleared | same (98/100 both) | about the same (202 against 208), but billed input **1.25x higher**: the injected facts pile up in the transcript |
@@ -32,7 +33,7 @@ Where it did not help:
 - **Against agents that keep a short 5-question session**, in the loop came out about even (71 against 67 requests,
   section 7).
 
-The saving grows with repetition. In Claude Code, clear the session between tasks and let the CMLM carry what was learned.
+The saving grows with repetition and with the size of the codebase. In Claude Code, clear the session between tasks and let the CMLM carry what was learned.
 
 ## How to use it
 
@@ -128,10 +129,10 @@ What we measured with this kit on a MacBook (Apple silicon; its GPU was picked a
 
 | | measured |
 |---|---|
-| Scanning | 3,898 units in 13 s (about 300 units a second); a 10.8M-token codebase is 183,875 units, about 10 minutes at that rate |
+| Scanning | 3,898 units in 13 s; transformers (10.8M tokens, 2,347 files) is 183,830 units and took 28 minutes |
 | Storage | 128 bytes of fingerprint per unit: 183,875 units take 23.5 MB |
 | Readout per request | 0.07 s over 183,875 units (the bit comparison itself takes 2.5 ms) |
-| Results at size | 9.2x fewer requests on repeated questions over 10.8M tokens; 6.1x over 7 codebases at once (7M tokens) |
+| Results at size | live, this kit: 1.71x fewer requests over 10.8M tokens against 1.25x over 148k; earlier research harness: 9.2x on repeats over 10.8M, 6.1x over 7 codebases (7M tokens) |
 
 - **Scope it.** Build one workspace over the repositories a team actually works in; one workspace over everything beat
   one per codebase in our test.
