@@ -102,3 +102,26 @@ def test_life_carries_taught_vectors_across_a_rebuild():
     again = nw.handle("ask", {"question": "what is the retry limit when a payment to a card fails?"})
     assert again.startswith("(readout: the code a taught question") and "MAX_CHARGE_RETRIES = 3" in again, again
     assert Workspace(new).life.sha() == nw.life.sha()                                  # byte-exact identity on disk
+
+
+def test_carry_survives_reformatting_and_prunes_lines_gone_for_good():
+    """A reformat (re-indented, spaced out) keeps a lesson: its line is found with whitespace ignored. A lesson whose
+    line is gone counts its misses, and prune_after removes it once it has missed that many carries in a row."""
+    root = tempfile.mkdtemp(); repo = os.path.join(root, "repo")
+    shutil.copytree(os.path.join(HERE, "fixture_repo"), repo)
+    ws0 = os.path.join(root, "ws0"); build([repo], ws0, log=lambda *a: None)
+    Workspace(ws0).handle("teach", {"pairs": [{"question": "How many times do we retry a failed card charge?", "at": "src/config.py:4"},
+                                              {"question": "What currency do charges default to?", "at": "src/config.py:9"}]})
+    p = os.path.join(repo, "src", "config.py")
+    lines = [l for l in open(p).read().split("\n") if not l.startswith("DEFAULT_CURRENCY")]
+    lines = ["    MAX_CHARGE_RETRIES  =  3" if l == "MAX_CHARGE_RETRIES = 3" else l for l in lines]
+    open(p, "w").write("\n".join(lines))
+    ws1 = os.path.join(root, "ws1"); build([repo], ws1, log=lambda *a: None, carry=ws0)
+    e = json.loads(Workspace(ws1).life.recall("How many times do we retry a failed card charge?"))
+    assert e == {"at": "repo/src/config.py:4", "code": "    MAX_CHARGE_RETRIES  =  3"}, e     # found despite the reformat
+    assert json.load(open(os.path.join(ws1, "carry_misses.json"))) == {"What currency do charges default to?": 1}
+    ws2 = os.path.join(root, "ws2"); build([repo], ws2, log=lambda *a: None, carry=ws1, prune_after=2)
+    w2 = Workspace(ws2)
+    assert w2.life.recall("What currency do charges default to?") is None                         # pruned: 2 misses in a row
+    assert w2.life.recall("How many times do we retry a failed card charge?") is not None
+    assert json.load(open(os.path.join(ws2, "carry_misses.json"))) == {}

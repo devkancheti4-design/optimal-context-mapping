@@ -91,42 +91,61 @@ class Workspace:
         lines = open(self.files[path], encoding="utf-8", errors="replace").read().split("\n") if path in self.files else []
         return lines[line - 1] if 0 < line <= len(lines) else None
 
-    def carry(self, old_folder):
-        """Carry what an earlier workspace was taught into this one: every entry of its Life is found here by its exact
-        line (same path first, nearest the old line; else the one file holding that exact line), written to this Life
-        as a revision (newest wins, history kept), and its vector taught on the unit holding it. An entry whose line
-        is not found abstains: kept in the Life, not taught."""
+    MISSES = "carry_misses.json"
+
+    def carry(self, old_folder, prune_after=None):
+        """Carry what an earlier workspace was taught into this one. Every entry of its Life is found here by its line:
+        the exact line first (same path, nearest the old line; else the one file holding it), then the same line with
+        whitespace ignored, so a re-indent or reformat keeps the lesson. A found entry is written to this Life as a
+        revision (newest wins, history kept) with the line as it reads now, and its vector is taught on the unit
+        holding it. An entry whose line is not found abstains: kept in the Life, not taught, and its count of carries
+        in a row without a place goes up (<workspace>/carry_misses.json). With prune_after=N, an entry that has now
+        missed N carries in a row is removed from the Life."""
         old = Life(os.path.join(old_folder, "taught.life.json"))
         self.life.store = json.loads(old.dumps())                                  # the history comes along
+        mf = os.path.join(old_folder, self.MISSES)
+        misses = json.load(open(mf)) if os.path.exists(mf) else {}
         texts = {}
         def lines_of(path):
             if path not in texts:
                 texts[path] = open(self.files[path], encoding="utf-8", errors="replace").read().split("\n")
             return texts[path]
-        pairs, moved, abstained = [], 0, []
+
+        def find(path, line, same):
+            if path in self.files:
+                hits = [i + 1 for i, l in enumerate(lines_of(path)) if same(l)]
+                if hits:
+                    return path, min(hits, key=lambda i: abs(i - line))
+            hits = [(p, i + 1) for p in self.files for i, l in enumerate(lines_of(p)) if same(l)]
+            return hits[0] if len(hits) == 1 else None
+
+        norm = lambda s: " ".join(s.split())
+        pairs, moved, reformatted, abstained, pruned, kept_misses = [], 0, 0, [], 0, {}
         for key in sorted(self.life.store):
             v = json.loads(self.life.recall(key)); path, line = v["at"].rsplit(":", 1); line = int(line)
-            code = (v.get("code") or "").rstrip(); found = None
-            if code.strip() and path in self.files:
-                hits = [i + 1 for i, l in enumerate(lines_of(path)) if l.rstrip() == code]
-                if hits:
-                    found = (path, min(hits, key=lambda i: abs(i - line)))
-            if found is None and code.strip():
-                hits = [(p, i + 1) for p in self.files for i, l in enumerate(lines_of(p)) if l.rstrip() == code]
-                if len(hits) == 1:
-                    found = hits[0]
+            code = (v.get("code") or "").rstrip(); found = None; fuzzy = False
+            if code.strip():
+                found = find(path, line, lambda l: l.rstrip() == code)
+                if found is None:
+                    found = find(path, line, lambda l: norm(l) == norm(code)); fuzzy = found is not None
             j = self.unit_at(f"{found[0]}:{found[1]}") if found else None
             if j is None:
-                abstained.append(key)
+                n = misses.get(key, 0) + 1
+                if prune_after and n >= prune_after:
+                    self.life.forget(key); pruned += 1
+                else:
+                    abstained.append(key); kept_misses[key] = n
                 continue
-            newv = json.dumps({"at": f"{found[0]}:{found[1]}", "code": v.get("code")}, sort_keys=True)
+            reformatted += fuzzy
+            newv = json.dumps({"at": f"{found[0]}:{found[1]}", "code": lines_of(found[0])[found[1] - 1]}, sort_keys=True)
             if newv != self.life.recall(key):
                 self.life.learn(key, newv); moved += 1
             pairs.append((key, j))
+        json.dump(kept_misses, open(os.path.join(self.folder, self.MISSES), "w"), indent=1)
         r = self.mem.teach_at(pairs) if pairs else {"cues": 0}; self.mem.save(); self.life.save()
         self.lanes = L.Lanes(self.mem, np.arange(self.meta["units"]), os.path.join(self.folder, "keyword.db"), RL)
-        return {"entries": len(self.life.store), "carried": len(pairs), "moved": moved, "abstained": len(abstained),
-                "vectors taught": r["cues"], "life sha": self.life.sha()}
+        return {"entries": len(self.life.store), "carried": len(pairs), "moved": moved, "reformatted": reformatted,
+                "abstained": len(abstained), "pruned": pruned, "vectors taught": r["cues"], "life sha": self.life.sha()}
 
     def fmt(self, j, i):
         m = self.mem

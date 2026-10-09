@@ -14,7 +14,7 @@ from .units import files, units
 THETA_DEFAULT = 9.349                     # the router law's 44% rule on code questions (measured on transformers)
 
 
-def build(roots, out, model=None, device=None, log=print, carry=None):
+def build(roots, out, model=None, device=None, log=print, carry=None, prune_after=None):
     if os.path.exists(os.path.join(out, "memory", "manifest.json")):
         raise SystemExit(f"{out} already holds a workspace; remove it or choose another --out")
     os.makedirs(out, exist_ok=True)
@@ -53,13 +53,19 @@ def build(roots, out, model=None, device=None, log=print, carry=None):
     log(f"workspace ready: {out} ({len(m.texts):,} units from {len(m.sources):,} files)")
     if carry:
         from .server import Workspace
-        r = Workspace(out).carry(carry)
-        log(f"carried from {carry}: {r['carried']} of {r['entries']} taught entries ({r['moved']} moved), "
-            f"{r['abstained']} abstained (their line is gone); Life sha {r['life sha']}")
+        r = Workspace(out).carry(carry, prune_after)
+        log(f"carried from {carry}: {r['carried']} of {r['entries']} taught entries ({r['moved']} moved, "
+            f"{r['reformatted']} found after reformatting), {r['abstained']} abstained (their line is gone), "
+            f"{r['pruned']} pruned; Life sha {r['life sha']}")
 
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="ocm build"); ap.add_argument("folders", nargs="+"); ap.add_argument("--out", required=True)
     ap.add_argument("--model"); ap.add_argument("--device")
     ap.add_argument("--carry", help="an earlier workspace whose taught knowledge (its Life) is carried into this one")
-    a = ap.parse_args(argv); build(a.folders, a.out, a.model, a.device, carry=a.carry)
+    ap.add_argument("--prune-after", type=int, metavar="N",
+                    help="with --carry: remove a taught entry whose line has not been found in N carries in a row")
+    a = ap.parse_args(argv)
+    if a.prune_after is not None and (a.prune_after < 1 or not a.carry):
+        ap.error("--prune-after needs --carry and a whole number of at least 1")
+    build(a.folders, a.out, a.model, a.device, carry=a.carry, prune_after=a.prune_after)
