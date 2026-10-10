@@ -1,5 +1,7 @@
 # Optimal Context Mapping
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23289068.svg)](https://doi.org/10.5281/zenodo.23289068)
+
 **A shared memory over your team's code that sits inside your AI agents' loop, so the same research is not paid for
 twice.**
 
@@ -247,7 +249,11 @@ Apache License 2.0 (see `LICENSE` and `NOTICE`).
 
 ## Cite
 
-If you use this work, please cite it as `CITATION.cff` describes. The DOI is added once the Zenodo record is
-published.
+If you use this work, please cite it:
+
+> Kancheti, D. (2026). *Optimal Context Mapping (Model D): a shared, learning retrieval layer for AI coding agents*
+> (Version 0.2.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23289068
+
+`CITATION.cff` has the same citation, and the DOI for all versions is 10.5281/zenodo.23289067.
 
 Copyright 2026 Devieswar Kancheti.

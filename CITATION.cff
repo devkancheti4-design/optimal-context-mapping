@@ -8,6 +8,14 @@ authors:
 version: 0.2.1
 date-released: 2026-10-11
 license: Apache-2.0
+doi: 10.5281/zenodo.23289068
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23289067
+    description: All versions
+  - type: doi
+    value: 10.5281/zenodo.23289068
+    description: Version 0.2.1
 repository-code: "https://github.com/devkancheti4-design/optimal-context-mapping"
 abstract: >-
   Optimal Context Mapping scans a team's repositories once into a workspace of meaning fingerprints. It ranks the code
