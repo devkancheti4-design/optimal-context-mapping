@@ -1,0 +1,36 @@
+Optimal Context Mapping: evaluation licence
+Copyright (c) 2026 Devieswar Kancheti. All rights reserved.
+
+1. Grant. Devieswar Kancheti (the "Owner") grants the organisation that received this package from the Owner a
+   limited, non-exclusive, non-transferable, revocable licence to install and run it on its own machines, for 60 days
+   from receipt, only to evaluate it on its own code repositories.
+
+2. Restrictions. You may not:
+   (a) decompile, disassemble, reverse engineer or otherwise try to obtain the source code, algorithms or internal logic
+       of the compiled modules, except to the extent applicable law expressly permits it despite this restriction;
+   (b) copy, modify, distribute, sublicense, rent, publish or share it, in whole or in part, outside your organisation;
+   (c) use it in production, or for any purpose other than the evaluation above;
+   (d) use it, or anything learned from it, to build or improve a competing product or service;
+   (e) remove or change this notice.
+
+3. Confidentiality. The package, its documentation, and any information about how it works are the Owner's
+   confidential information. Keep them confidential and use them only for the evaluation.
+
+4. Your code and results. The package runs on your machines and sends nothing to the Owner. Your code, data and
+   workspaces stay yours. Your evaluation results are yours; you may share them with the Owner.
+
+5. Ownership. Nothing in this licence transfers any right except the limited licence in section 1. All right, title and
+   interest in the software, its documentation and the method it implements, including all intellectual property
+   rights, remain with the Owner.
+
+6. No warranty. The package is provided "as is", without warranty of any kind, express or implied, including
+   merchantability, fitness for a particular purpose and non-infringement.
+
+7. Limitation of liability. To the maximum extent permitted by law, the Owner is not liable for any damages arising from
+   the package or its use.
+
+8. Term. This licence ends after 60 days, or earlier on written notice from the Owner. When it ends, delete every copy.
+   A longer evaluation, a pilot or a commercial licence needs a separate written agreement with the Owner.
+
+9. Third-party components. The open-source components the package depends on are listed in THIRD_PARTY_NOTICES and
+   remain under their own licences.

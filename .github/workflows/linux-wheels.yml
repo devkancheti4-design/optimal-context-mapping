@@ -1,0 +1,56 @@
+name: linux-wheels
+on:
+  push:
+    branches: [linux-wheels]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: quay.io/pypa/manylinux_2_28_x86_64
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare the build copy (no docstrings, neutral names)
+        run: |
+          /opt/python/cp312-cp312/bin/python packaging/prep.py > prep_review.txt
+          cp packaging/build_files/* packaging/build/
+      - name: Build wheels for Python 3.10-3.14
+        run: |
+          for v in cp310-cp310 cp311-cp311 cp312-cp312 cp313-cp313 cp314-cp314; do
+            /opt/python/$v/bin/pip wheel packaging/build --no-deps -w raw
+          done
+          for w in raw/*.whl; do auditwheel repair "$w" -w wheelhouse; done
+          ls -la wheelhouse
+      - name: Leak audit
+        run: /opt/python/cp312-cp312/bin/python packaging/audit.py wheelhouse/*.whl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-wheels
+          path: wheelhouse/*.whl
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: linux-wheels
+          path: wheelhouse
+      - name: Install the compiled wheel (CPU torch)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          tag=cp$(python -c "import sys; print(f'{sys.version_info[0]}{sys.version_info[1]}')")
+          pip install wheelhouse/*-$tag-*.whl pytest
+      - name: Run the kit's tests against the wheel, not the source
+        run: |
+          mv ocm ocm_source_not_used
+          sed -i -e 's/(readout: the code a taught question/(readout: learned match/' -e 's/\["learned law"\]/["learned ranking"]/' tests/test_kit.py
+          python -c "import ocm, os; assert 'site-packages' in os.path.dirname(ocm.__file__), ocm.__file__"
+          python -m pytest -q tests/test_kit.py

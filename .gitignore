@@ -6,3 +6,4 @@ ocm-workspace/
 *-workspace/
 .pytest_cache/
 .DS_Store
+packaging/build/
