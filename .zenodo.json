@@ -1,0 +1,12 @@
+{
+  "title": "Optimal Context Mapping (Model D): a shared, learning retrieval layer for AI coding agents",
+  "upload_type": "software",
+  "description": "Optimal Context Mapping scans a team's repositories once into a workspace of meaning fingerprints. It ranks the code and docs an AI agent should read first for a question, and it learns from every answered question, so the same research is not paid for twice. It ships as a Python package with hooks for Claude Code and MCP tools for other agents. Version 0.2.1. Reproducible benchmarks against Graphify: https://github.com/devkancheti4-design/model-d-graphify",
+  "creators": [{"name": "Kancheti, Devieswar"}],
+  "license": "Apache-2.0",
+  "version": "0.2.1",
+  "keywords": ["retrieval", "code search", "AI agents", "context", "memory", "MCP"],
+  "related_identifiers": [
+    {"identifier": "https://github.com/devkancheti4-design/model-d-graphify", "relation": "isSupplementedBy", "scheme": "url"}
+  ]
+}

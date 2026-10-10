@@ -227,9 +227,27 @@ your network.
   trail.
 - **Billed input falls less than requests**, because readouts add reading.
 - **The learned law rarely switches on for code** in our tests.
-- **Taught vectors are append-only.** A rebuild carries them only with `--carry`, and only where the exact line still
-  exists. In our live test a carry over 400 commits kept 40 of 47 entries, but it did not save requests (section 13).
+- **Taught vectors are append-only.** A rebuild carries them only with `--carry`: to the same line, or to the same line
+  reformatted (whitespace ignored), and `--prune-after N` drops a lesson whose line has been gone for N rebuilds in a
+  row. In our live test a carry over 400 commits kept 40 of 47 entries, but it did not save requests (section 13).
 - **The tests are narrow:** open-source code and one client app, with Claude agents and judges. Your codebase is the
   real test.
 
-Copyright (c) 2026 Devieswar Kancheti. Shared privately for evaluation; see `LICENSE`.
+## Public benchmarks
+
+Model D's retrieval is compared with Graphify on LOCOMO and on finding the answer file in a full-stack repository. The
+study is reproducible, and the Claude Code plugin is in the same repository:
+https://github.com/devkancheti4-design/model-d-graphify
+
+## Licence
+
+Apache License 2.0 (see `LICENSE` and `NOTICE`).
+- `ocm/life.py` is also available under the MIT licence (`ocm/LIFE_LICENSE`).
+- Third-party components are listed in `THIRD_PARTY_NOTICES`.
+
+## Cite
+
+If you use this work, please cite it as `CITATION.cff` describes. The DOI is added once the Zenodo record is
+published.
+
+Copyright 2026 Devieswar Kancheti.

@@ -13,8 +13,8 @@ import argparse, json, os
 from ocm.loop import _call, readout, TAUGHT
 
 MAX_CALLS = 15
-READ = ("You read code for an engineering team. Answer the question from the code below only, in one or two sentences. "
-        "If the code below does not contain the answer, reply exactly NEED_SEARCH.")
+READ = ("You read code for an engineering team. Answer the question from the code below only, completely, in one to three sentences. "
+        "If the code below does not contain everything the question asks for, reply exactly NEED_SEARCH.")
 TEACH = ("You are an engineer on this codebase. Find the answer to the question in the code: search (a case-insensitive "
          "regular expression over every line), read_file (lines of one file) and list_files reach it. The code the team's "
          "workspace ranked for the question comes with it; if it holds the answer, submit from it without searching. When "

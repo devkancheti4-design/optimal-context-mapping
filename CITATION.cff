@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Optimal Context Mapping (Model D): a shared, learning retrieval layer for AI coding agents"
+type: software
+authors:
+  - family-names: Kancheti
+    given-names: Devieswar
+version: 0.2.1
+date-released: 2026-10-11
+license: Apache-2.0
+repository-code: "https://github.com/devkancheti4-design/optimal-context-mapping"
+abstract: >-
+  Optimal Context Mapping scans a team's repositories once into a workspace of meaning fingerprints. It ranks the code
+  and docs an AI agent should read first for a question, and it learns from every answered question, so the same
+  research is not paid for twice. It ships as a Python package with hooks for Claude Code and MCP tools for other
+  agents.
+keywords:
+  - retrieval
+  - code search
+  - AI agents
+  - context
+  - memory
+  - MCP
