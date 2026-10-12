@@ -1,0 +1,36 @@
+{
+ "R1 swe-contextbench": {
+  "alone": {
+   "resolved": 12,
+   "of": 28,
+   "$ per task": 0.0601,
+   "requests per task": 6.89,
+   "cache read tokens per task": 41508
+  },
+  "cold": {
+   "resolved": 11,
+   "of": 28,
+   "$ per task": 0.0627,
+   "requests per task": 5.93,
+   "cache read tokens per task": 37248
+  }
+ },
+ "R2 swe-qa": {
+  "questions": 91,
+  "alone $ per question": 0.04465,
+  "model d $ per question": 0.02345,
+  "cost ratio": 1.904,
+  "alone score": 75.92,
+  "model d score": 73.27,
+  "difference": -2.65,
+  "difference 95% CI": [
+   -4.07,
+   -1.26
+  ],
+  "model d answers from the reader": 1,
+  "answer chars alone / model d": [
+   2188,
+   1909
+  ]
+ }
+}

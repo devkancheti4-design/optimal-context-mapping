@@ -1,0 +1,257 @@
+{
+ "django__django-15347": {
+  "named": [
+   "django/contrib/messages/storage/__init__.py",
+   "django/contrib/messages/storage/base.py",
+   "django/contrib/messages/storage/cookie.py",
+   "django/contrib/messages/storage/session.py",
+   "django/core/checks/__init__.py",
+   "django/forms/widgets.py",
+   "django/template/defaulttags.py"
+  ],
+  "gold": [
+   "django/contrib/messages/storage/cookie.py"
+  ],
+  "hit": true
+ },
+ "django__django-15388": {
+  "named": [
+   "django/core/handlers/wsgi.py",
+   "django/core/management/__init__.py",
+   "django/core/management/commands/loaddata.py",
+   "django/core/management/commands/runserver.py",
+   "django/core/management/commands/testserver.py",
+   "django/core/servers/basehttp.py",
+   "django/db/migrations/writer.py",
+   "django/template/autoreload.py",
+   "django/utils/autoreload.py"
+  ],
+  "gold": [
+   "django/template/autoreload.py"
+  ],
+  "hit": true
+ },
+ "django__django-15400": {
+  "named": [
+   "django/contrib/gis/geos/mutable_list.py",
+   "django/utils/functional.py"
+  ],
+  "gold": [
+   "django/utils/functional.py"
+  ],
+  "hit": true
+ },
+ "django__django-15498": {
+  "named": [
+   "django/db/backends/oracle/operations.py",
+   "django/template/base.py",
+   "django/utils/cache.py",
+   "django/utils/translation/trans_real.py",
+   "django/views/static.py"
+  ],
+  "gold": [
+   "django/views/static.py"
+  ],
+  "hit": true
+ },
+ "django__django-15695": {
+  "named": [
+   "django/db/migrations/autodetector.py",
+   "django/db/migrations/migration.py",
+   "django/db/migrations/operations/models.py",
+   "django/db/migrations/state.py"
+  ],
+  "gold": [
+   "django/db/migrations/operations/models.py"
+  ],
+  "hit": true
+ },
+ "django__django-15738": {
+  "named": [
+   "django/contrib/auth/migrations/0001_initial.py",
+   "django/core/management/commands/makemigrations.py",
+   "django/db/backends/base/schema.py",
+   "django/db/migrations/autodetector.py",
+   "django/db/migrations/executor.py",
+   "django/db/migrations/operations/models.py",
+   "django/db/models/fields/related.py"
+  ],
+  "gold": [
+   "django/db/migrations/autodetector.py"
+  ],
+  "hit": true
+ },
+ "django__django-15781": {
+  "named": [
+   "django/contrib/gis/management/commands/ogrinspect.py",
+   "django/core/management/__init__.py",
+   "django/core/management/base.py",
+   "django/core/management/commands/check.py",
+   "django/core/management/commands/dbshell.py",
+   "django/core/management/commands/diffsettings.py",
+   "django/core/management/utils.py"
+  ],
+  "gold": [
+   "django/core/management/base.py"
+  ],
+  "hit": true
+ },
+ "django__django-15790": {
+  "named": [
+   "django/core/checks/templates.py",
+   "django/core/checks/translation.py",
+   "django/template/backends/django.py",
+   "django/template/defaulttags.py",
+   "django/template/library.py"
+  ],
+  "gold": [
+   "django/core/checks/templates.py"
+  ],
+  "hit": true
+ },
+ "django__django-15814": {
+  "named": [
+   "django/core/management/__init__.py",
+   "django/db/models/manager.py",
+   "django/db/models/query.py",
+   "django/db/models/query_utils.py"
+  ],
+  "gold": [
+   "django/db/models/sql/query.py"
+  ],
+  "hit": false
+ },
+ "django__django-15819": {
+  "named": [
+   "django/core/management/commands/inspectdb.py",
+   "django/db/models/fields/related.py",
+   "django/db/models/fields/related_descriptors.py",
+   "django/db/models/fields/reverse_related.py",
+   "django/db/models/sql/query.py"
+  ],
+  "gold": [
+   "django/core/management/commands/inspectdb.py"
+  ],
+  "hit": true
+ },
+ "django__django-15851": {
+  "named": [
+   "django/core/management/__init__.py",
+   "django/core/management/base.py",
+   "django/core/management/commands/dbshell.py",
+   "django/core/management/utils.py",
+   "django/db/backends/base/client.py",
+   "django/db/backends/postgresql/client.py"
+  ],
+  "gold": [
+   "django/db/backends/postgresql/client.py"
+  ],
+  "hit": true
+ },
+ "django__django-15902": {
+  "named": [
+   "django/forms/boundfield.py",
+   "django/forms/formsets.py",
+   "django/forms/renderers.py",
+   "django/forms/utils.py",
+   "django/test/testcases.py"
+  ],
+  "gold": [
+   "django/forms/formsets.py"
+  ],
+  "hit": true
+ },
+ "django__django-15996": {
+  "named": [
+   "django/core/validators.py",
+   "django/db/migrations/serializer.py",
+   "django/template/defaultfilters.py",
+   "django/template/loader.py",
+   "django/test/testcases.py"
+  ],
+  "gold": [
+   "django/db/migrations/serializer.py"
+  ],
+  "hit": true
+ },
+ "django__django-16046": {
+  "named": [
+   "django/contrib/admin/checks.py",
+   "django/contrib/admin/filters.py",
+   "django/contrib/gis/gdal/feature.py",
+   "django/contrib/gis/gdal/geometries.py",
+   "django/db/models/sql/query.py",
+   "django/http/response.py",
+   "django/template/base.py",
+   "django/utils/log.py",
+   "django/views/generic/dates.py"
+  ],
+  "gold": [
+   "django/utils/numberformat.py"
+  ],
+  "hit": false
+ },
+ "django__django-16139": {
+  "named": [
+   "django/contrib/admin/helpers.py",
+   "django/contrib/admin/options.py",
+   "django/contrib/admin/templatetags/admin_list.py",
+   "django/contrib/auth/admin.py",
+   "django/contrib/auth/forms.py",
+   "django/db/models/fields/__init__.py"
+  ],
+  "gold": [
+   "django/contrib/auth/forms.py"
+  ],
+  "hit": true
+ },
+ "django__django-16229": {
+  "named": [
+   "django/contrib/admin/options.py",
+   "django/contrib/auth/migrations/0001_initial.py",
+   "django/contrib/auth/models.py",
+   "django/contrib/contenttypes/forms.py",
+   "django/db/models/fields/related.py",
+   "django/forms/fields.py",
+   "django/forms/formsets.py",
+   "django/forms/models.py"
+  ],
+  "gold": [
+   "django/forms/boundfield.py"
+  ],
+  "hit": false
+ },
+ "django__django-16255": {
+  "named": [
+   "django/contrib/sitemaps/__init__.py",
+   "django/contrib/sitemaps/views.py",
+   "django/utils/decorators.py"
+  ],
+  "gold": [
+   "django/contrib/sitemaps/__init__.py"
+  ],
+  "hit": true
+ },
+ "django__django-16379": {
+  "named": [
+   "django/core/cache/backends/filebased.py",
+   "django/core/cache/backends/memcached.py"
+  ],
+  "gold": [
+   "django/core/cache/backends/filebased.py"
+  ],
+  "hit": true
+ },
+ "django__django-16400": {
+  "named": [
+   "django/contrib/contenttypes/management/__init__.py",
+   "django/contrib/sites/management.py",
+   "django/db/migrations/operations/special.py",
+   "django/db/utils.py"
+  ],
+  "gold": [
+   "django/contrib/auth/management/__init__.py"
+  ],
+  "hit": false
+ }
+}

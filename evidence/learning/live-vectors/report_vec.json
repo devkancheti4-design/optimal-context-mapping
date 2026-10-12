@@ -1,0 +1,99 @@
+{
+ "cmlm": {
+  "sessions": 10,
+  "requests": 268,
+  "cache-weighted": 2063323,
+  "fixed, cache-weighted": 1259858,
+  "context, cache-weighted": 803465,
+  "context tokens read": 4523257,
+  "search/read/list calls": 180,
+  "right": 100,
+  "per task requests": [
+   27,
+   27,
+   23,
+   25,
+   30,
+   22,
+   29,
+   30,
+   27,
+   28
+  ]
+ },
+ "alone": {
+  "sessions": 10,
+  "requests": 335,
+  "cache-weighted": 2455955,
+  "fixed, cache-weighted": 1538437,
+  "context, cache-weighted": 917518,
+  "context tokens read": 5666718,
+  "search/read/list calls": 285,
+  "right": 100,
+  "per task requests": [
+   32,
+   32,
+   36,
+   30,
+   36,
+   28,
+   32,
+   39,
+   35,
+   35
+  ]
+ },
+ "TEACH lines placed": 98,
+ "TEACH lines not placed": 2,
+ "first, tasks 1-5": {
+  "questions": 35,
+  "cmlm requests": 89,
+  "cmlm calls": 63,
+  "cmlm cw": 619667,
+  "alone requests": 106,
+  "alone calls": 86,
+  "alone cw": 709620,
+  "alone/cmlm requests": 1.19,
+  "alone/cmlm cw": 1.15
+ },
+ "first, tasks 6-10": {
+  "questions": 39,
+  "cmlm requests": 89,
+  "cmlm calls": 61,
+  "cmlm cw": 644928,
+  "alone requests": 117,
+  "alone calls": 106,
+  "alone cw": 810691,
+  "alone/cmlm requests": 1.31,
+  "alone/cmlm cw": 1.26
+ },
+ "asked before, tasks 1-5": {
+  "questions": 15,
+  "cmlm requests": 33,
+  "cmlm calls": 20,
+  "cmlm cw": 244368,
+  "alone requests": 50,
+  "alone calls": 43,
+  "alone cw": 339365,
+  "alone/cmlm requests": 1.52,
+  "alone/cmlm cw": 1.39
+ },
+ "asked before, tasks 6-10": {
+  "questions": 11,
+  "cmlm requests": 37,
+  "cmlm calls": 36,
+  "cmlm cw": 269434,
+  "alone requests": 42,
+  "alone calls": 50,
+  "alone cw": 313184,
+  "alone/cmlm requests": 1.14,
+  "alone/cmlm cw": 1.16
+ },
+ "L1": true,
+ "L2": true,
+ "request saving tasks 1-5": 1.26,
+ "request saving tasks 6-10": 1.24,
+ "L3": false,
+ "L4": true,
+ "L5": false
+}

@@ -1,0 +1,53 @@
+{
+ "phi": 0.5728,
+ "Delta": 1230,
+ "models": {
+  "haiku": {
+   "sessions": 114,
+   "models seen": [
+    "claude-haiku-5-5"
+   ],
+   "alone profile": {
+    "g": 3142.78,
+    "P": 51135.86,
+    "r": 4.99,
+    "A": 301202.91
+   },
+   "UF token saving (U3)": 2.023,
+   "U3 band (+-25%)": [
+    1.618,
+    2.529
+   ],
+   "turn law saving (U4)": 1.845,
+   "predicted KIT requests per issue": 2.705,
+   "U4 band (+-20%)": [
+    1.538,
+    2.214
+   ]
+  },
+  "opus": {
+   "sessions": 114,
+   "models seen": [
+    "claude-opus-5-5"
+   ],
+   "alone profile": {
+    "g": 576.56,
+    "P": 47723.75,
+    "r": 2.81,
+    "A": 135626.43
+   },
+   "UF token saving (U3)": 1.556,
+   "U3 band (+-25%)": [
+    1.245,
+    1.945
+   ],
+   "turn law saving (U4)": 1.584,
+   "predicted KIT requests per issue": 1.772,
+   "U4 band (+-20%)": [
+    1.32,
+    1.901
+   ]
+  }
+ },
+ "written": "2026-10-08T18:12:26"
+}

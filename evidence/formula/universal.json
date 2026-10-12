@@ -1,0 +1,211 @@
+{
+ "phi per laws case": {
+  "C1 Sonnet 5.5, real bugs": 0.697,
+  "C2 Gemini 2.5 Flash, real bugs": 0.487,
+  "C3 Gemini 2.5 Flash, codebase questions": 0.599,
+  "C4 Opus 5.5, codebase questions": 0.566,
+  "C5 Sonnet 5.5, codebase questions": 0.515
+ },
+ "Delta per question (tokens)": {
+  "C1 Sonnet 5.5, real bugs": 1230,
+  "C2 Gemini 2.5 Flash, real bugs": 1942,
+  "C3 Gemini 2.5 Flash, codebase questions": 1847,
+  "C4 Opus 5.5, codebase questions": 1176,
+  "C5 Sonnet 5.5, codebase questions": 1176,
+  "C6 Gemini 2.5 Flash, hybrid end to end, run 1": 1660,
+  "C7 Gemini 2.5 Flash, hybrid end to end, run 2": 1661,
+  "C8 Gemini 2.5 Flash, hybrid end to end, run 3": 1647
+ },
+ "cases": {
+  "C1 Sonnet 5.5, real bugs": {
+   "phi (LOO)": 0.542,
+   "r_alone": 3.52,
+   "r_K pred / meas": [
+    2.15,
+    1.76
+   ],
+   "P_alone": 45887,
+   "P_K pred / meas": [
+    47117,
+    47117
+   ],
+   "g": 1492,
+   "K pred / meas (tokens per session)": [
+    103310,
+    85971
+   ],
+   "S_pred": 1.625,
+   "S_meas": 1.953,
+   "error": -0.168,
+   "B1": 2.361,
+   "B2": 2.183
+  },
+  "C2 Gemini 2.5 Flash, real bugs": {
+   "phi (LOO)": 0.594,
+   "r_alone": 7.25,
+   "r_K pred / meas": [
+    3.54,
+    4.21
+   ],
+   "P_alone": 768,
+   "P_K pred / meas": [
+    2710,
+    2710
+   ],
+   "g": 1188,
+   "K pred / meas (tokens per session)": [
+    14911,
+    23240
+   ],
+   "S_pred": 2.577,
+   "S_meas": 1.654,
+   "error": 0.559,
+   "B1": 2.436,
+   "B2": 2.466
+  },
+  "C3 Gemini 2.5 Flash, codebase questions": {
+   "phi (LOO)": 0.566,
+   "r_alone": 52.72,
+   "r_K pred / meas": [
+    28.53,
+    27.11
+   ],
+   "P_alone": 429,
+   "P_K pred / meas": [
+    10588,
+    1683
+   ],
+   "g": 920,
+   "K pred / meas (tokens per session)": [
+    663406,
+    315379
+   ],
+   "S_pred": 2.04,
+   "S_meas": 4.29,
+   "error": -0.525,
+   "B1": 1.777,
+   "B2": 2.305
+  },
+  "C4 Opus 5.5, codebase questions": {
+   "phi (LOO)": 0.575,
+   "r_alone": 37.67,
+   "r_K pred / meas": [
+    21.77,
+    22.0
+   ],
+   "P_alone": 43548,
+   "P_K pred / meas": [
+    50018,
+    43684
+   ],
+   "g": 862,
+   "K pred / meas (tokens per session)": [
+    1283778,
+    1275630
+   ],
+   "S_pred": 1.776,
+   "S_meas": 1.787,
+   "error": -0.006,
+   "B1": 2.403,
+   "B2": 2.35
+  },
+  "C5 Sonnet 5.5, codebase questions": {
+   "phi (LOO)": 0.587,
+   "r_alone": 37.5,
+   "r_K pred / meas": [
+    21.35,
+    23.33
+   ],
+   "P_alone": 43575,
+   "P_K pred / meas": [
+    50045,
+    43711
+   ],
+   "g": 1045,
+   "K pred / meas (tokens per session)": [
+    1295380,
+    1385234
+   ],
+   "S_pred": 1.833,
+   "S_meas": 1.714,
+   "error": 0.069,
+   "B1": 2.421,
+   "B2": 2.423
+  },
+  "C6 Gemini 2.5 Flash, hybrid end to end, run 1": {
+   "phi (LOO, laws cases without C3)": 0.566,
+   "nu (body share)": 0.517,
+   "alone turns per question": 5.18,
+   "P_1": 427,
+   "g": 973,
+   "K1 pred / meas body tokens": [
+    8359,
+    11794
+   ],
+   "E (LOO)": 1255,
+   "Model D tokens per question pred / meas": [
+    4925,
+    6719
+   ],
+   "A tokens per question": 138045,
+   "S_pred": 28.028,
+   "S_meas": 20.544,
+   "error": 0.364,
+   "B1": 29.173,
+   "B2": null
+  },
+  "C7 Gemini 2.5 Flash, hybrid end to end, run 2": {
+   "phi (LOO, laws cases without C3)": 0.566,
+   "nu (body share)": 0.5,
+   "alone turns per question": 5.42,
+   "P_1": 434,
+   "g": 895,
+   "K1 pred / meas body tokens": [
+    8609,
+    5942
+   ],
+   "E (LOO)": 1277,
+   "Model D tokens per question pred / meas": [
+    4943,
+    3596
+   ],
+   "A tokens per question": 145523,
+   "S_pred": 29.441,
+   "S_meas": 40.467,
+   "error": -0.272,
+   "B1": 19.212,
+   "B2": null
+  },
+  "C8 Gemini 2.5 Flash, hybrid end to end, run 3": {
+   "phi (LOO, laws cases without C3)": 0.566,
+   "nu (body share)": 0.517,
+   "alone turns per question": 5.22,
+   "P_1": 426,
+   "g": 897,
+   "K1 pred / meas body tokens": [
+    8186,
+    12028
+   ],
+   "E (LOO)": 1272,
+   "Model D tokens per question pred / meas": [
+    4865,
+    6844
+   ],
+   "A tokens per question": 122366,
+   "S_pred": 25.151,
+   "S_meas": 17.879,
+   "error": 0.407,
+   "B1": 30.505,
+   "B2": null
+  }
+ },
+ "mean |log error|": {
+  "UF": 0.3017,
+  "B1": 0.4662,
+  "B2 (laws cases only)": 0.3504,
+  "UF on laws cases only": 0.2888
+ },
+ "U1": false,
+ "U2": true,
+ "protocol sha256": "8062082ea63b08b3974593711088e16433e3bb33e4c97a9a9d2ee907b3097427"
+}

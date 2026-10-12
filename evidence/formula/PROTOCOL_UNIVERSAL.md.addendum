@@ -1,0 +1,20 @@
+# Addendum to PROTOCOL_UNIVERSAL.md (written after the leave-one-out results, before any Haiku or Opus session ran)
+
+## Leave-one-out results (universal/universal.json)
+- **U1 failed:** UF was within ±25% on 3 of 8 cases (C1 −17%, C4 −1%, C5 +7%), and off on C2 (+56%), C3 (−53%) and
+  the hybrid runs (+36%, −27%, +41%).
+- **U2 held:** UF's mean |log error| was 0.30, against 0.47 for B1 and, on the laws cases, 0.29 against 0.35 for B2.
+
+## Why it failed
+- **φ varies between cases,** from 0.49 to 0.70. In lean-prompt harnesses the token saving goes as the square of the
+  turn saving, which amplifies that variation.
+- **Per-turn growth with the kit is not the same as alone,** contrary to the assumption: the ratio runs from 0.76 to 1.36.
+- **The hybrid runs differ from one another by about ±40%.**
+
+## U4 (added now, before the prospective runs): the turn law
+    S_turns = r_a / (q + (1 − φ)·(r_a − q)),   φ = mean over C1–C5 = 0.573
+- **Leave-one-out check:** it was within ±19% on all 5 laws cases.
+- **Prediction U4:** for Claude Haiku 5.5 and Claude Opus 5.5 on the 114 real bugs, the measured turn saving (ALONE /
+  KIT, API-equivalent requests) is within ±20% of S_turns. S_turns is computed from each model's ALONE run, and its hash
+  is written before the KIT run.
+- **U3 stands as written:** the token saving is within ±25% of UF.

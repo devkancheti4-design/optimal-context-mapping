@@ -1,0 +1,18 @@
+# Addendum to PROTOCOL_VALUE4: a blind judge (post hoc, written after C2 failed)
+
+- **Why:** C2 failed under the pre-registered rule: MODEL D 261 against ALONE 294 by evidence file. Every miss is on
+  the read path (36/70 by file; the teach path is 225/230 against ALONE's 230/230). For a read, the rule checks the
+  first file in the readout, not what the reader answered. A sample of the read answers shows several that state the
+  gold answer from a file further down the readout.
+- **What:** claude-sonnet-5-5 grades every answer of both arms (600 answers) against the question's gold answer.
+  - Arm labels are hidden and the order is shuffled (seed 20261011).
+  - Verdict RIGHT if it states the gold answer's key facts with no contradiction, PARTIAL if it states some of them
+    and contradicts none, WRONG otherwise.
+- **Status:** exploratory, reported beside C2. It does not replace it, and C2 stays failed.
+
+## DJ1 (before the judge's numbers were used): parser bug, first pass discarded
+- The judge writes a sentence of reasoning before its verdict. judge4.py took a verdict only when the reply started
+  with it, so most replies parsed as WRONG.
+- That pass (600 rows) is discarded as v4_judge_bad_parser.jsonl.
+- The prompt now asks for a final line "VERDICT: RIGHT|PARTIAL|WRONG", and the parser reads the last such line. The
+  replies are stored. Every answer is judged again.

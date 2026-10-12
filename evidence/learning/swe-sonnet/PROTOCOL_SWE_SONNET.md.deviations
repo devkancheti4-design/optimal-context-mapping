@@ -1,0 +1,12 @@
+# Deviations from PROTOCOL_SWE_SONNET.md (written before any agent ran)
+
+DS1. The task text reaches each subagent through its first command (cat <folder>/task.md), not inside the first message:
+the orchestrator does not paste 235 issue texts. This adds one request to every session, in ALONE, KIT and the eyes
+alike, which pulls every factor toward 1.0. The report gives requests and dollars both as measured and with that first
+read removed. The predictions are scored on the measured numbers.
+
+DS2 (after the 2-agent pilot on django__django-10914, before the rest). After submit.sh, each subagent makes one more
+request to hand back its reply (SubagentHandback). In the API harness, submit ends the session. Like DS1, this adds one
+request to every session in every arm. The adjusted figures remove both the task read and the hand-back. The measured
+figures keep them, and the predictions are scored on the measured figures. The pilot's two sessions ran exactly as
+pre-registered and are kept as the first issue's results.

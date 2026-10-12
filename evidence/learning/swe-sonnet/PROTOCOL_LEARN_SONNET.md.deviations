@@ -1,0 +1,16 @@
+# Deviations from PROTOCOL_LEARN_SONNET.md
+
+DL1 (after the run, before the report was read). 13 of 180 sessions did not attempt the task (Z 5, L 6, X 2). Each ran
+only `cat task.md` and then replied that it had not run the task. The workflow subagents saw the orchestrator's
+conversation context, and these 13 declined. None ran a tool script or submit.sh. They are invalid trials, not answers:
+they are dropped from both calls and right. An issue's arm mean is taken over its remaining replicates. An issue with no
+remaining replicate in an arm is dropped from that paired comparison. The replies are kept in
+swe_sonnet/learn_replies.json.
+
+DL2 (finding of the code-review audit, after the run). Every lesson in PROTOCOL_SWE_SONNET.md, here, and in
+PROTOCOL_SWE.md (the Gemini run) was taught at the gold line number of that issue's own base commit. The workspace is
+built from the 4a72da7 snapshot, so most lessons landed on unrelated code in the right file:
+- 10 were not placed at all;
+- only 29 of 114 landed on the code unit that holds the fix in the snapshot.
+The L arm therefore tests a kit whose lessons were mostly misplaced. A corrected test is pre-registered separately as
+PROTOCOL_LEARN_FIX.md.

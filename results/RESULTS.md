@@ -3,8 +3,9 @@
 Every test below was run live with fresh Claude agents (the same model and the same instructions in both arms, except
 the tools section), graded by blind judges who did not know which arm wrote an answer, and fixed in writing (with a
 SHA-256 hash of the plan) before it ran. Costs come from the agents' own transcripts (model requests, input billed) and
-the tool servers' logs. Deviations were recorded as they happened. The full evidence (protocols with their hashes,
-questions, every answer, every verdict, call logs) is available on request.
+the tool servers' logs. Deviations were recorded as they happened. The evidence for sections 12-14 and for every number
+on the Model D site (protocols with their hashes, questions, every answer, every verdict, the scripts) is in
+`evidence/`; `python evidence/verify.py` recomputes it. The evidence for sections 1-11 is available on request.
 
 ## 1. A project team on a real codebase plus web research
 Seven role agents (project manager, team lead, senior developer, backend developer, frontend developer, junior

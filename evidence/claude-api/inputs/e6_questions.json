@@ -1,0 +1,125 @@
+{
+ "candidates": 165,
+ "questions": [
+  {
+   "setting": "EMAIL_PORT",
+   "default": "25"
+  },
+  {
+   "setting": "CACHE_MIDDLEWARE_KEY_PREFIX",
+   "default": "''"
+  },
+  {
+   "setting": "SECURE_CONTENT_TYPE_NOSNIFF",
+   "default": "True"
+  },
+  {
+   "setting": "DATA_UPLOAD_MAX_NUMBER_FILES",
+   "default": "100"
+  },
+  {
+   "setting": "TEST_CHARSET",
+   "default": "None"
+  },
+  {
+   "setting": "EMAIL_HOST",
+   "default": "'localhost'"
+  },
+  {
+   "setting": "CSRF_HEADER_NAME",
+   "default": "'HTTP_X_CSRFTOKEN'"
+  },
+  {
+   "setting": "DATAFILE_TMP_MAXSIZE",
+   "default": "'500M'"
+  },
+  {
+   "setting": "EMAIL_SSL_CERTFILE",
+   "default": "None"
+  },
+  {
+   "setting": "DATAFILE_SIZE",
+   "default": "'50M'"
+  },
+  {
+   "setting": "MEDIA_URL",
+   "default": "''"
+  },
+  {
+   "setting": "CONN_HEALTH_CHECKS",
+   "default": "False"
+  },
+  {
+   "setting": "PASSWORD_RESET_TIMEOUT",
+   "default": "259200"
+  },
+  {
+   "setting": "SECURE_REFERRER_POLICY",
+   "default": "'same-origin'"
+  },
+  {
+   "setting": "CACHES-OPTIONS",
+   "default": "None"
+  },
+  {
+   "setting": "MANAGERS",
+   "default": "[]"
+  },
+  {
+   "setting": "LANGUAGE_COOKIE_AGE",
+   "default": "None"
+  },
+  {
+   "setting": "DATAFILE_EXTSIZE",
+   "default": "'25M'"
+  },
+  {
+   "setting": "DATA_UPLOAD_MAX_NUMBER_FIELDS",
+   "default": "1000"
+  },
+  {
+   "setting": "EMAIL_HOST_USER",
+   "default": "''"
+  },
+  {
+   "setting": "SECURE_HSTS_PRELOAD",
+   "default": "False"
+  },
+  {
+   "setting": "CSRF_COOKIE_HTTPONLY",
+   "default": "False"
+  },
+  {
+   "setting": "TEST_TBLSPACE",
+   "default": "None"
+  },
+  {
+   "setting": "CSRF_TRUSTED_ORIGINS",
+   "default": "[]"
+  },
+  {
+   "setting": "STATICFILES_STORAGE",
+   "default": "'django.contrib.staticfiles.storage.StaticFilesStorage'"
+  },
+  {
+   "setting": "MEDIA_ROOT",
+   "default": "''"
+  },
+  {
+   "setting": "TEMPLATES-DIRS",
+   "default": "[]"
+  },
+  {
+   "setting": "SECURE_REDIRECT_EXEMPT",
+   "default": "[]"
+  },
+  {
+   "setting": "USE_X_FORWARDED_PORT",
+   "default": "False"
+  },
+  {
+   "setting": "CSRF_COOKIE_DOMAIN",
+   "default": "None"
+  }
+ ]
+}

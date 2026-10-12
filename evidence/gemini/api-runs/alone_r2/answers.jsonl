@@ -1,0 +1,60 @@
+{"qid": "c01", "answer": "ANSWER: np.float32 | SOURCE: corpus/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py; corpus/feature_extraction_sequence_utils.py; corpus/utils/generic.py; corpus/audio_utils.py", "teach": null, "taught": null, "calls": 8, "seconds": 634.67}
+{"qid": "c02", "answer": "ANSWER: All available frame indices from 0 to total_frames - 1. | SOURCE: corpus/models/glm4v/video_processing_glm4v.py", "teach": null, "taught": null, "calls": 2, "seconds": 140.51}
+{"qid": "c03", "answer": "ANSWER: The predicted masks are binarized by comparing them to a `mask_threshold` (defaulting to 0). Values greater than the threshold become True, otherwise False. | SOURCE: corpus/models/sam/image_processing_pil_sam.py", "teach": null, "taught": null, "calls": 10, "seconds": 145.0}
+{"qid": "c04", "answer": "ANSWER: ValueError | SOURCE: corpus/monkey_patching.py", "teach": null, "taught": null, "calls": 2, "seconds": 47.77}
+{"qid": "c05", "answer": "ANSWER: kaiming_normal_ with mode='fan_out' and nonlinearity='relu' | SOURCE: corpus/models/regnet/modeling_regnet.py", "teach": null, "taught": null, "calls": 10, "seconds": 202.59}
+{"qid": "c06", "answer": "ANSWER: ValueError | SOURCE: corpus/models/speecht5/processing_speecht5.py", "teach": null, "taught": null, "calls": 2, "seconds": 51.93}
+{"qid": "c07", "answer": "ANSWER: The new point labels are concatenated along the innermost dimension (the point level) of the existing labels. | SOURCE: corpus/models/sam2_video/processing_sam2_video.py", "teach": null, "taught": null, "calls": 6, "seconds": 115.46}
+{"qid": "c08", "answer": "ANSWER: The last frame of the log-mel features is removed. | SOURCE: corpus/models/granite_speech/feature_extraction_granite_speech.py", "teach": null, "taught": null, "calls": 2, "seconds": 187.86}
+{"qid": "c09", "answer": "ANSWER: 0.01 | SOURCE: corpus/models/jetmoe/configuration_jetmoe.py", "teach": null, "taught": null, "calls": 2, "seconds": 113.73}
+{"qid": "c10", "answer": "ANSWER: It becomes a tuple: (image_size, image_size). | SOURCE: corpus/models/internvl/configuration_internvl.py", "teach": null, "taught": null, "calls": 2, "seconds": 70.03}
+{"qid": "c11", "answer": "ANSWER: The dtype of `hidden_states`. | SOURCE: corpus/integrations/sonicmoe.py:163", "teach": null, "taught": null, "calls": 11, "seconds": 184.32}
+{"qid": "c12", "answer": "ANSWER: The first element (index 0) of the list is used. | SOURCE: corpus/integrations/quark.py:35", "teach": null, "taught": null, "calls": 3, "seconds": 44.5}
+{"qid": "c13", "answer": "ANSWER: ViltEmbeddings, ViltSelfAttention | SOURCE: corpus/models/vilt/modeling_vilt.py:504", "teach": null, "taught": null, "calls": 2, "seconds": 49.67}
+{"qid": "c14", "answer": "ANSWER: The sin and cos terms are concatenated along the last dimension (dim=-1) to form pos_embed. | SOURCE: corpus/models/parakeet/modeling_parakeet.py:97", "teach": null, "taught": null, "calls": 3, "seconds": 55.38}
+{"qid": "c15", "answer": "ANSWER: mla_kv_a_proj | SOURCE: corpus/models/deepseek_v2/configuration_deepseek_v2.py:57", "teach": null, "taught": null, "calls": 2, "seconds": 172.84}
+{"qid": "c16", "answer": "ANSWER: 1e-7 | SOURCE: corpus/models/deberta/configuration_deberta.py:72", "teach": null, "taught": null, "calls": 2, "seconds": 39.52}
+{"qid": "c17", "answer": "ANSWER: The DeepseekVLProcessor does not have a postprocess method defined. Calling it would result in an AttributeError. | SOURCE: corpus/models/deepseek_vl/processing_deepseek_vl.py", "teach": null, "taught": null, "calls": 7, "seconds": 128.8}
+{"qid": "c18", "answer": "ANSWER: 1024 | SOURCE: corpus/models/timesfm2_5/modular_timesfm2_5.py:66", "teach": null, "taught": null, "calls": 2, "seconds": 102.49}
+{"qid": "c19", "answer": "ANSWER: The replacement quantized linear layers are created on the \"meta\" device. | SOURCE: corpus/integrations/vptq.py:49", "teach": null, "taught": null, "calls": 3, "seconds": 162.11}
+{"qid": "c20", "answer": "ANSWER: d_model | SOURCE: corpus/models/marian/configuration_marian.py:50", "teach": null, "taught": null, "calls": 2, "seconds": 72.19}
+{"qid": "c21", "answer": "ANSWER: hidden_size // num_attention_heads which is 3328 // 26 = 128 | SOURCE: corpus/models/jais2/modular_jais2.py, corpus/models/llama/configuration_llama.py", "teach": null, "taught": null, "calls": 6, "seconds": 77.59}
+{"qid": "c22", "answer": "ANSWER: rt_detr_resnet | SOURCE: corpus/models/rt_detr_v2/configuration_rt_detr_v2.py", "teach": null, "taught": null, "calls": 2, "seconds": 57.08}
+{"qid": "c23", "answer": "ANSWER: 1 | SOURCE: corpus/models/mpnet/modeling_mpnet.py", "teach": null, "taught": null, "calls": 2, "seconds": 42.47}
+{"qid": "c24", "answer": "ANSWER: 12544 | SOURCE: corpus/models/eomt/configuration_eomt.py", "teach": null, "taught": null, "calls": 2, "seconds": 85.81}
+{"qid": "c25", "answer": "ANSWER: If merge_index is greater than the minimum of intermediate_hidden_state_indices. | SOURCE: corpus/models/seggpt/configuration_seggpt.py", "teach": null, "taught": null, "calls": 2, "seconds": 93.24}
+{"qid": "c26", "answer": "ANSWER: It is computed as `self.mamba_expand * self.hidden_size`. | SOURCE: corpus/models/bamba/configuration_bamba.py", "teach": null, "taught": null, "calls": 2, "seconds": 129.08}
+{"qid": "c27", "answer": "ANSWER: max_length | SOURCE: corpus/models/musicflamingo/processing_musicflamingo.py", "teach": null, "taught": null, "calls": 2, "seconds": 43.4}
+{"qid": "c28", "answer": "ANSWER: GatedRepoError, RepositoryNotFoundError, RevisionNotFoundError | SOURCE: corpus/utils/hub.py", "teach": null, "taught": null, "calls": 1, "seconds": 25.51}
+{"qid": "c29", "answer": "ANSWER: use_auxiliary_loss | SOURCE: corpus/models/mask2former/modeling_mask2former.py", "teach": null, "taught": null, "calls": 3, "seconds": 108.09}
+{"qid": "c30", "answer": "ANSWER: False | SOURCE: corpus/modeling_gguf_pytorch_utils.py", "teach": null, "taught": null, "calls": 1, "seconds": 27.51}
+{"qid": "c01b", "answer": "ANSWER: numpy.float32 | SOURCE: corpus/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py", "teach": null, "taught": null, "calls": 2, "seconds": 34.62}
+{"qid": "c02b", "answer": "ANSWER: All frames from 0 to total_frames - 1. | SOURCE: corpus/models/glm4v/video_processing_glm4v.py", "teach": null, "taught": null, "calls": 3, "seconds": 119.11}
+{"qid": "c03b", "answer": "ANSWER: It thresholds them by checking if each mask value is greater than `mask_threshold`, which defaults to 0. | SOURCE: corpus/models/sam/image_processing_pil_sam.py", "teach": null, "taught": null, "calls": 3, "seconds": 46.53}
+{"qid": "c04b", "answer": "ANSWER: ValueError | SOURCE: corpus/monkey_patching.py", "teach": null, "taught": null, "calls": 2, "seconds": 48.24}
+{"qid": "c05b", "answer": "ANSWER: fan_out | SOURCE: corpus/models/regnet/modeling_regnet.py", "teach": null, "taught": null, "calls": 3, "seconds": 35.52}
+{"qid": "c06b", "answer": "ANSWER: ValueError: You need to specify either an `audio`, `audio_target`, `text`, or `text_target` input to process. | SOURCE: corpus/models/speecht5/processing_speecht5.py", "teach": null, "taught": null, "calls": 2, "seconds": 57.94}
+{"qid": "c07b", "answer": "ANSWER: Along the last axis (the point level axis). | SOURCE: corpus/models/sam2_video/processing_sam2_video.py", "teach": null, "taught": null, "calls": 9, "seconds": 368.04}
+{"qid": "c08b", "answer": "ANSWER: The last frame is removed. | SOURCE: corpus/models/granite_speech/feature_extraction_granite_speech.py", "teach": null, "taught": null, "calls": 2, "seconds": 62.11}
+{"qid": "c09b", "answer": "ANSWER: 0.01 | SOURCE: corpus/models/jetmoe/configuration_jetmoe.py", "teach": null, "taught": null, "calls": 2, "seconds": 49.44}
+{"qid": "c10b", "answer": "ANSWER: It turns into a tuple with the given integer repeated twice, e.g., if `image_size=X` is given, it becomes `(X, X)`. | SOURCE: corpus/models/internvl/configuration_internvl.py", "teach": null, "taught": null, "calls": 2, "seconds": 74.82}
+{"qid": "c11b", "answer": "ANSWER: The dtype of hidden_states. | SOURCE: corpus/integrations/sonicmoe.py:163", "teach": null, "taught": null, "calls": 2, "seconds": 55.54}
+{"qid": "c12b", "answer": "ANSWER: It takes the first item of that list (value[0]). | SOURCE: corpus/integrations/quark.py:35", "teach": null, "taught": null, "calls": 4, "seconds": 86.51}
+{"qid": "c13b", "answer": "ANSWER: ViltEmbeddings and ViltEncoderLayer. | SOURCE: corpus/models/vilt/modeling_vilt.py:1193", "teach": null, "taught": null, "calls": 6, "seconds": 87.13}
+{"qid": "c14b", "answer": "ANSWER: The sine and cosine components are merged by stacking them along the last dimension using `torch.stack([sin, cos], dim=-1)`. | SOURCE: corpus/models/parakeet/modeling_parakeet.py:95", "teach": null, "taught": null, "calls": 5, "seconds": 56.34}
+{"qid": "c15b", "answer": "ANSWER: The parallelism style is 'mla_kv_a_proj'. | SOURCE: corpus/models/deepseek_v2/configuration_deepseek_v2.py:57", "teach": null, "taught": null, "calls": 3, "seconds": 47.82}
+{"qid": "c16b", "answer": "ANSWER: The default epsilon for layer normalization in the DeBERTa config is 1e-7. | SOURCE: corpus/models/deberta/configuration_deberta.py:72", "teach": null, "taught": null, "calls": 3, "seconds": 57.28}
+{"qid": "c17b", "answer": "ANSWER: Calling the post-processing method raises an AttributeError with the message \"Not needed for DeepseekVL\". | SOURCE: corpus/models/deepseek_vl/image_processing_deepseek_vl.py:184-185", "teach": null, "taught": null, "calls": 4, "seconds": 134.69}
+{"qid": "c18b", "answer": "ANSWER: The default length of the quantile output is 1024. | SOURCE: corpus/models/timesfm2_5/configuration_timesfm2_5.py:83", "teach": null, "taught": null, "calls": 3, "seconds": 64.09}
+{"qid": "c19b", "answer": "ANSWER: The new linear layers are instantiated on the \"meta\" device. | SOURCE: corpus/integrations/vptq.py:49", "teach": null, "taught": null, "calls": 3, "seconds": 45.71}
+{"qid": "c20b", "answer": "ANSWER: The hidden size points to the `d_model` attribute. | SOURCE: corpus/models/marian/configuration_marian.py:50", "teach": null, "taught": null, "calls": 3, "seconds": 64.11}
+{"qid": "c21b", "answer": "ANSWER: 128 | SOURCE: corpus/models/jais2/modular_jais2.py, corpus/modeling_rope_utils.py", "teach": null, "taught": null, "calls": 4, "seconds": 71.47}
+{"qid": "c22b", "answer": "ANSWER: A configuration for a timm ResNet50 backbone. | SOURCE: corpus/models/rt_detr/configuration_rt_detr.py", "teach": null, "taught": null, "calls": 4, "seconds": 139.24}
+{"qid": "c23b", "answer": "ANSWER: 1 | SOURCE: corpus/models/mpnet/modeling_mpnet.py", "teach": null, "taught": null, "calls": 3, "seconds": 116.96}
+{"qid": "c24b", "answer": "ANSWER: 12544 | SOURCE: corpus/models/eomt/configuration_eomt.py", "teach": null, "taught": null, "calls": 2, "seconds": 82.34}
+{"qid": "c25b", "answer": "ANSWER: Not found. The SegGPT config does not explicitly reject the merge index. | SOURCE: corpus/models/seggpt/configuration_seggpt.py, corpus/models/seggpt/modeling_seggpt.py", "teach": null, "taught": null, "calls": 4, "seconds": 133.1}
+{"qid": "c26b", "answer": "ANSWER: It is a fixed value of 14336 in the configuration. | SOURCE: corpus/models/bamba/configuration_bamba.py", "teach": null, "taught": null, "calls": 3, "seconds": 68.72}
+{"qid": "c27b", "answer": "ANSWER: \"max_length\" | SOURCE: corpus/models/musicflamingo/processing_musicflamingo.py", "teach": null, "taught": null, "calls": 2, "seconds": 160.17}
+{"qid": "c28b", "answer": "ANSWER: GatedRepoError, RepositoryNotFoundError, RevisionNotFoundError | SOURCE: corpus/utils/hub.py", "teach": null, "taught": null, "calls": 3, "seconds": 99.06}
+{"qid": "c29b", "answer": "ANSWER: use_auxiliary_loss | SOURCE: corpus/models/mask2former/modeling_mask2former.py", "teach": null, "taught": null, "calls": 9, "seconds": 267.08}
+{"qid": "c30b", "answer": "ANSWER: False | SOURCE: corpus/modeling_gguf_pytorch_utils.py", "teach": null, "taught": null, "calls": 3, "seconds": 40.47}

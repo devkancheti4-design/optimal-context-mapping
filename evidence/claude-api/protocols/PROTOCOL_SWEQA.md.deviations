@@ -1,0 +1,5 @@
+DQ1 (2026-10-09, before any request): run_qa.py waits for a repository's index to finish building before serving it
+(the indexes build while earlier repositories run). Nothing measured changes.
+DQ2 (2026-10-09, after sqlfluff and sphinx): the index builds for repositories the $35 cannot reach (at ~$4.5 a
+repository: flask, scikit-learn, matplotlib, sympy) were stopped to free the GPU for SWE-ContextBench. Order and
+stopping rule unchanged; if the budget reaches further, those indexes are built then.

@@ -1,0 +1,1342 @@
+{
+ "protocol sha256": "75ddd09bb9ca676fc66b346ea17a11eda855d431a1edec35acbce0cdf06b1a70",
+ "entries taught at A": 38,
+ "moved": 19,
+ "carried": {
+  "LIFE": {
+   "right": 38
+  },
+  "CARRY-AS-IS": {
+   "right": 24,
+   "not placed": 8,
+   "wrong": 6
+  }
+ },
+ "carried, moved entries only": {
+  "LIFE": {
+   "right": 19
+  },
+  "CARRY-AS-IS": {
+   "not placed": 8,
+   "wrong": 6,
+   "right": 5
+  }
+ },
+ "life": {
+  "sha after phase 1": "8030e0412974d40d",
+  "sha before save": "e53eaf44c91a5152",
+  "sha after reload": "e53eaf44c91a5152",
+  "keys": 38,
+  "revised keys": 19,
+  "every revised key keeps A and B": true
+ },
+ "cross-phase repeats": [
+  "r27",
+  "r28",
+  "r37",
+  "r43",
+  "r51",
+  "r56",
+  "r57",
+  "r74",
+  "r77"
+ ],
+ "REBUILD": {
+  "phase 2": "33/50",
+  "cross-phase repeats": "3/9"
+ },
+ "CARRY-AS-IS": {
+  "phase 2": "35/50",
+  "cross-phase repeats": "6/9"
+ },
+ "LIFE": {
+  "phase 2": "36/50",
+  "cross-phase repeats": "7/9"
+ },
+ "NO-MOVE": {
+  "phase 2": "36/50",
+  "cross-phase repeats": "7/9"
+ },
+ "F1": false,
+ "F2": true,
+ "F3": true,
+ "F4": true,
+ "entries": [
+  {
+   "qid": "q01",
+   "moved": false,
+   "truth unit": 2138,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q02",
+   "moved": false,
+   "truth unit": 1998,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q03",
+   "moved": false,
+   "truth unit": 1800,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q04",
+   "moved": false,
+   "truth unit": 1779,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q07",
+   "moved": true,
+   "truth unit": 2230,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "q08",
+   "moved": true,
+   "truth unit": 2218,
+   "LIFE": "right",
+   "CARRY-AS-IS": "wrong"
+  },
+  {
+   "qid": "q09",
+   "moved": false,
+   "truth unit": 1974,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q10",
+   "moved": true,
+   "truth unit": 2230,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "q11",
+   "moved": true,
+   "truth unit": 2197,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q12",
+   "moved": false,
+   "truth unit": 1998,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q13",
+   "moved": false,
+   "truth unit": 2144,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q15",
+   "moved": true,
+   "truth unit": 2579,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q16",
+   "moved": false,
+   "truth unit": 2138,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q18",
+   "moved": true,
+   "truth unit": 2218,
+   "LIFE": "right",
+   "CARRY-AS-IS": "wrong"
+  },
+  {
+   "qid": "q19",
+   "moved": false,
+   "truth unit": 2545,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q22",
+   "moved": true,
+   "truth unit": 192,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "q23",
+   "moved": false,
+   "truth unit": 1780,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q24",
+   "moved": true,
+   "truth unit": 189,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "q25",
+   "moved": false,
+   "truth unit": 1974,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q26",
+   "moved": true,
+   "truth unit": 1859,
+   "LIFE": "right",
+   "CARRY-AS-IS": "wrong"
+  },
+  {
+   "qid": "q27",
+   "moved": false,
+   "truth unit": 2546,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q28",
+   "moved": true,
+   "truth unit": 172,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "q29",
+   "moved": false,
+   "truth unit": 368,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q30",
+   "moved": true,
+   "truth unit": 2579,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "q32",
+   "moved": true,
+   "truth unit": 2226,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "q33",
+   "moved": true,
+   "truth unit": null,
+   "LIFE": "right",
+   "CARRY-AS-IS": "wrong"
+  },
+  {
+   "qid": "q34",
+   "moved": false,
+   "truth unit": 1909,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r04",
+   "moved": false,
+   "truth unit": 1999,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r05",
+   "moved": false,
+   "truth unit": 1784,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r06",
+   "moved": true,
+   "truth unit": 1747,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r07",
+   "moved": false,
+   "truth unit": 1808,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r08",
+   "moved": false,
+   "truth unit": 2261,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r09",
+   "moved": true,
+   "truth unit": 2221,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  },
+  {
+   "qid": "r10",
+   "moved": true,
+   "truth unit": 3510,
+   "LIFE": "right",
+   "CARRY-AS-IS": "wrong"
+  },
+  {
+   "qid": "r11",
+   "moved": true,
+   "truth unit": 172,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "r12",
+   "moved": true,
+   "truth unit": 2013,
+   "LIFE": "right",
+   "CARRY-AS-IS": "not placed"
+  },
+  {
+   "qid": "r13",
+   "moved": true,
+   "truth unit": 2012,
+   "LIFE": "right",
+   "CARRY-AS-IS": "wrong"
+  },
+  {
+   "qid": "r17",
+   "moved": false,
+   "truth unit": 2131,
+   "LIFE": "right",
+   "CARRY-AS-IS": "right"
+  }
+ ],
+ "rows": {
+  "REBUILD": [
+   {
+    "qid": "r19",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r20",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r21",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r22",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r23",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r24",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r25",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r26",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r27",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r28",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r29",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r33",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r34",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r35",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r36",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r37",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r38",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r39",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r40",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r41",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r42",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r43",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r44",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r45",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r49",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r50",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r51",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r52",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r53",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r54",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r55",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r56",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r57",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r58",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r59",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r60",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r61",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r65",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r66",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r67",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r68",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r69",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r70",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r71",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r72",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r73",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r74",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r75",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r76",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r77",
+    "holds": true,
+    "cross-phase repeat": true
+   }
+  ],
+  "CARRY-AS-IS": [
+   {
+    "qid": "r19",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r20",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r21",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r22",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r23",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r24",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r25",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r26",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r27",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r28",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r29",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r33",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r34",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r35",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r36",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r37",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r38",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r39",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r40",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r41",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r42",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r43",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r44",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r45",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r49",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r50",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r51",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r52",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r53",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r54",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r55",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r56",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r57",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r58",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r59",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r60",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r61",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r65",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r66",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r67",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r68",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r69",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r70",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r71",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r72",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r73",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r74",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r75",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r76",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r77",
+    "holds": true,
+    "cross-phase repeat": true
+   }
+  ],
+  "LIFE": [
+   {
+    "qid": "r19",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r20",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r21",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r22",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r23",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r24",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r25",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r26",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r27",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r28",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r29",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r33",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r34",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r35",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r36",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r37",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r38",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r39",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r40",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r41",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r42",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r43",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r44",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r45",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r49",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r50",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r51",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r52",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r53",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r54",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r55",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r56",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r57",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r58",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r59",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r60",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r61",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r65",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r66",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r67",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r68",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r69",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r70",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r71",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r72",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r73",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r74",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r75",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r76",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r77",
+    "holds": true,
+    "cross-phase repeat": true
+   }
+  ],
+  "NO-MOVE": [
+   {
+    "qid": "r19",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r20",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r21",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r22",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r23",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r24",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r25",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r26",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r27",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r28",
+    "holds": false,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r29",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r33",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r34",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r35",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r36",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r37",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r38",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r39",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r40",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r41",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r42",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r43",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r44",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r45",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r49",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r50",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r51",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r52",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r53",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r54",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r55",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r56",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r57",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r58",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r59",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r60",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r61",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r65",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r66",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r67",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r68",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r69",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r70",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r71",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r72",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r73",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r74",
+    "holds": true,
+    "cross-phase repeat": true
+   },
+   {
+    "qid": "r75",
+    "holds": false,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r76",
+    "holds": true,
+    "cross-phase repeat": false
+   },
+   {
+    "qid": "r77",
+    "holds": true,
+    "cross-phase repeat": true
+   }
+  ]
+ }
+}

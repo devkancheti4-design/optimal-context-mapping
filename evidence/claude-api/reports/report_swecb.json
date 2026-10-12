@@ -1,0 +1,176 @@
+{
+ "tasks finished in all three arms": 28,
+ "alone": {
+  "resolved": 12,
+  "of": 28,
+  "$ per task": 0.1158,
+  "$ per resolved": 0.2702,
+  "requests per task": 6.61
+ },
+ "cold": {
+  "resolved": 13,
+  "of": 28,
+  "$ per task": 0.1493,
+  "$ per resolved": 0.3216,
+  "requests per task": 6.29,
+  "readout named a gold file": 23,
+  "readout led with a learned match": 0
+ },
+ "exp": {
+  "resolved": 11,
+  "of": 28,
+  "$ per task": 0.1327,
+  "$ per resolved": 0.3378,
+  "requests per task": 6.21,
+  "readout named a gold file": 24,
+  "readout led with a learned match": 11
+ },
+ "per task": {
+  "django__django-1891": {
+   "alone": true,
+   "cold": true,
+   "exp": false
+  },
+  "django__django-20098": {
+   "alone": true,
+   "cold": true,
+   "exp": false
+  },
+  "django__django-21204": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-25916": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-27910": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-27995": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-28147": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-28862": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-28916": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-29123": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-29124": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-29838": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-30153": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-30254": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-30651": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-30931": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-31051": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-31181": {
+   "alone": false,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-31504": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-31864": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-32012": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-33461": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-33871": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-34176": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-34481": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-34525": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  },
+  "django__django-34570": {
+   "alone": true,
+   "cold": true,
+   "exp": true
+  },
+  "django__django-35356": {
+   "alone": false,
+   "cold": false,
+   "exp": false
+  }
+ },
+ "predictions": {
+  "C1 exp >= alone": false,
+  "C2 exp >= cold": false,
+  "C3 exp $/resolved < alone": false,
+  "C4 exp names gold more than cold": true
+ }
+}

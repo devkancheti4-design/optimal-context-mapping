@@ -1,0 +1,506 @@
+{
+ "django__django-11776": {
+  "keep": false,
+  "version": "1.8",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-18166": {
+  "keep": false,
+  "version": "1.9",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-21501": {
+  "keep": false,
+  "version": "1.9",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-26486": {
+  "keep": false,
+  "version": "1.10",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-27858": {
+  "keep": false,
+  "version": "2.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-28211": {
+  "keep": false,
+  "version": "2.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-28862": {
+  "keep": true,
+  "version": "2.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 381
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 381
+  }
+ },
+ "django__django-28916": {
+  "keep": true,
+  "version": "2.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 381
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 381
+  }
+ },
+ "django__django-29123": {
+  "keep": true,
+  "version": "2.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 381
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 381
+  }
+ },
+ "django__django-29124": {
+  "keep": true,
+  "version": "2.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 381
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 381
+  }
+ },
+ "django__django-29838": {
+  "keep": true,
+  "version": "2.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 14
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 16
+  }
+ },
+ "django__django-20098": {
+  "keep": true,
+  "version": "2.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 5
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 5
+  }
+ },
+ "django__django-30153": {
+  "keep": true,
+  "version": "3.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 19
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 19
+  }
+ },
+ "django__django-30254": {
+  "keep": true,
+  "version": "3.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 23
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 23
+  }
+ },
+ "django__django-27910": {
+  "keep": true,
+  "version": "3.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 133
+  }
+ },
+ "django__django-28147": {
+  "keep": true,
+  "version": "3.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 82
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 82
+  }
+ },
+ "django__django-27995": {
+  "keep": true,
+  "version": "3.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 29
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 30
+  }
+ },
+ "django__django-30651": {
+  "keep": true,
+  "version": "3.1",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 423
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 423
+  }
+ },
+ "django__django-30931": {
+  "keep": true,
+  "version": "3.1",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 45
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 45
+  }
+ },
+ "django__django-31181": {
+  "keep": true,
+  "version": "3.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 492
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 492
+  }
+ },
+ "django__django-31051": {
+  "keep": true,
+  "version": "3.1",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 49
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 49
+  }
+ },
+ "django__django-31504": {
+  "keep": true,
+  "version": "3.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 161
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 161
+  }
+ },
+ "django__django-31864": {
+  "keep": true,
+  "version": "3.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 397
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 397
+  }
+ },
+ "django__django-1891": {
+  "keep": true,
+  "version": "3.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 191
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 191
+  }
+ },
+ "django__django-32012": {
+  "keep": true,
+  "version": "3.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 9
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 9
+  }
+ },
+ "django__django-32450": {
+  "keep": false,
+  "version": "4.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-25916": {
+  "keep": true,
+  "version": "4.1",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 91
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 91
+  }
+ },
+ "django__django-32260": {
+  "keep": false,
+  "version": "4.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 0
+  }
+ },
+ "django__django-33461": {
+  "keep": true,
+  "version": "4.1",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 134
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 134
+  }
+ },
+ "django__django-21204": {
+  "keep": true,
+  "version": "4.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 377
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 377
+  }
+ },
+ "django__django-33871": {
+  "keep": true,
+  "version": "4.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 29
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 29
+  }
+ },
+ "django__django-34176": {
+  "keep": true,
+  "version": "4.2",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 332
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 332
+  }
+ },
+ "django__django-34481": {
+  "keep": true,
+  "version": "5.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 131
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 131
+  }
+ },
+ "django__django-34525": {
+  "keep": true,
+  "version": "5.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 331
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 331
+  }
+ },
+ "django__django-34570": {
+  "keep": true,
+  "version": "5.0",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 15
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 15
+  }
+ },
+ "django__django-35356": {
+  "keep": true,
+  "version": "5.1",
+  "without fix": {
+   "applied": true,
+   "resolved": false,
+   "seen": 19
+  },
+  "with fix": {
+   "applied": true,
+   "resolved": true,
+   "seen": 19
+  }
+ }
+}

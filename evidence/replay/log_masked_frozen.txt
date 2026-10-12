@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 11315.21it/s]
+masked frozen 0 4 s
+masked frozen 500 17 s
+masked frozen 1000 28 s
+masked frozen 1500 39 s
+masked frozen 2000 49 s
+masked frozen 2500 59 s
+masked frozen 3000 70 s
+masked frozen 3500 81 s
+masked frozen 4000 92 s
+masked frozen 4500 102 s
+masked frozen 5000 113 s
+masked frozen done 119 s

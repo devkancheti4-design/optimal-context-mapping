@@ -1,0 +1,1256 @@
+[
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE.md",
+  "from": "PROTOCOL_VALUE.md",
+  "sha256": "115b892c7128cf18e2ddd360a83f20b350187d4891ea7724acab51234c2f4794",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE.md.deviations",
+  "from": "PROTOCOL_VALUE.md.deviations",
+  "sha256": "dc72e576d93ff36b7a57040ed24f6de1550e5d99ef62ef713513b31327fbc0c2",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE2.md",
+  "from": "PROTOCOL_VALUE2.md",
+  "sha256": "9b5d4bc14f455ae09fe2764afe4f5772b74a0784d4bfb88c8491a5e66dfba8a4",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE3.md",
+  "from": "PROTOCOL_VALUE3.md",
+  "sha256": "ceceac09dd4eaf85929a430c3e09945f232453d90520bc00e7f128b62a082b18",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE4.md",
+  "from": "PROTOCOL_VALUE4.md",
+  "sha256": "3a9dd5299e7201fc8397eb97e380c7c4544ae5aa45afa12b6ced3ecdc9d9447b",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE4.md.addendum",
+  "from": "PROTOCOL_VALUE4.md.addendum",
+  "sha256": "2551c770ae68ccb16b4fd065d90b353f513e7739570226ff40df206a4162fe96",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE5.md",
+  "from": "PROTOCOL_VALUE5.md",
+  "sha256": "57bc593dffae29ce38534eb8f68b47955249f3c9211ab428714c6ed227b6447f",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE6.md",
+  "from": "PROTOCOL_VALUE6.md",
+  "sha256": "96ce83fba55d5a9422adfb4eb499499858c15abe6f73b3e116e7b5320b2ebc7a",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE6b.md",
+  "from": "PROTOCOL_VALUE6b.md",
+  "sha256": "461872fa1a6681b1cc3673a5b5d65c6178174cfce6e34060e352bc5d2607d4f6",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE7.md",
+  "from": "PROTOCOL_VALUE7.md",
+  "sha256": "2e261a66c1b5ddb4a075ebaafbfad012ec5c7781c05cb1106e40f3a9eeec92bf",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_VALUE8.md",
+  "from": "PROTOCOL_VALUE8.md",
+  "sha256": "dd6ca84dbd2587e72e44bcec8a90e1a93551ba0a8221ca0bba91366535ac7854",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_SWEQA.md",
+  "from": "PROTOCOL_SWEQA.md",
+  "sha256": "dff22446627561123392058c184625f84edf8c2265414723fb74a040c6bc1975",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_SWEQA.md.deviations",
+  "from": "PROTOCOL_SWEQA.md.deviations",
+  "sha256": "5cc5e5883df0a01e24cac80fe850db8cbea6c7067c969068f698c25c17d88bc7",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_SWECB.md",
+  "from": "PROTOCOL_SWECB.md",
+  "sha256": "bf97b67b2209047a4eb695ed2d9d4218836e8458035347ef6e6c7f8e16140ee4",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_SWECB.md.deviations",
+  "from": "PROTOCOL_SWECB.md.deviations",
+  "sha256": "939b085d224197d6a4b12ea80c22ccd45eef88121fd8338b39aeff146529c083",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/protocols/PROTOCOL_RETEST.md",
+  "from": "PROTOCOL_RETEST.md",
+  "sha256": "d79506b568a76636cded0b19443bb528ba6fe516c945b459d200d222a239a2ec",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/rows/cb_alone.jsonl",
+  "from": "value/cb_alone.jsonl",
+  "sha256": "7e24d6e40ebdf6dc3873148a2f15aea1b88acdc74817928c951f79d0b914d9ea",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/cb_cold.jsonl",
+  "from": "value/cb_cold.jsonl",
+  "sha256": "3cf3fc33225c22e974414a1cea02ca3561743f11277cf979bea2ee6dd3260171",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/cb_exp.jsonl",
+  "from": "value/cb_exp.jsonl",
+  "sha256": "e7ca0ed53b953815f5fc70cccdeb2e9f16e19dc2ef3a18625c9cf73c489c3178",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/cb_scored_alone.jsonl",
+  "from": "value/cb_scored_alone.jsonl",
+  "sha256": "9414873c4bcdb5e42e39caaf85454972e91a4972009021ad49fb53d23fd08a1c",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/cb_scored_cold.jsonl",
+  "from": "value/cb_scored_cold.jsonl",
+  "sha256": "cbfdd65b2b68b5f5367e1e5f0fe8061c7282bbd80e668c11026492ca41cf8b25",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/cb_scored_exp.jsonl",
+  "from": "value/cb_scored_exp.jsonl",
+  "sha256": "b21eeb59b44bba25f31290134dde2323bb13a8a35ff6c732f8038c3914b57159",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e1_alone.jsonl",
+  "from": "value/e1_alone.jsonl",
+  "sha256": "a3b4d05ca521fd093a0caa5239bb7bf9df47277c0ea26c9844c470a7dc951977",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e1_md.jsonl",
+  "from": "value/e1_md.jsonl",
+  "sha256": "b03d514a568ed33d81559064011245a641bd7048a99f197e72381feb312ade6e",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e2_alone.jsonl",
+  "from": "value/e2_alone.jsonl",
+  "sha256": "73950ff4d58d401c675dfdeb6daca5e1f292ff32b5c9da8b1f03ad4db855653c",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e2_md.jsonl",
+  "from": "value/e2_md.jsonl",
+  "sha256": "bf49e8f7e0ce3cba24cc605b1e6658bab84398c2c7a3c5d08386983d4eb980d7",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e3_md.jsonl",
+  "from": "value/e3_md.jsonl",
+  "sha256": "91e065fa834a9735a71c0579e8278470e9c8e8d202dfbd338bbbbb02c9213969",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e4_alone.jsonl",
+  "from": "value/e4_alone.jsonl",
+  "sha256": "1d9babe39114b4ba37e870b5a03643397a36533ac47c1d747b169f1f616f1074",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e4_md.jsonl",
+  "from": "value/e4_md.jsonl",
+  "sha256": "d305d99aa4e26f087c36cc342ad21bf3781aec51b2ec90175d3d367d90ff110e",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e5_alone.jsonl",
+  "from": "value/e5_alone.jsonl",
+  "sha256": "a38d4a6fac890221a23921ed28a3e5aed4a1b4457f716d554c77b337d1ef60e3",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e5_md.jsonl",
+  "from": "value/e5_md.jsonl",
+  "sha256": "8903189542cc342f5cc9271b23dd75b5e6899fe1a01d8081ee3fe7d30a692ee4",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e6_alone.jsonl",
+  "from": "value/e6_alone.jsonl",
+  "sha256": "eabb2b23fe511c3930553912492d5535de744dded6b3f985afed7b7d3d4127fa",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/e6_md.jsonl",
+  "from": "value/e6_md.jsonl",
+  "sha256": "9346edaf438ec3f285e52e8ae5598daa64ec05964adb5fdd5f526290ef42d5b2",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f1_r2_alone.jsonl",
+  "from": "value/f1_r2_alone.jsonl",
+  "sha256": "58e8df574f109174ffa61fe6d3d132780c26a8820312b1f2aad43b828e92eeb4",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f1_r2_md.jsonl",
+  "from": "value/f1_r2_md.jsonl",
+  "sha256": "fdef9e32bc10c5a03c669d646e9a3a9e736804cbfefb681d28c63311dbe17263",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f1_r3_alone.jsonl",
+  "from": "value/f1_r3_alone.jsonl",
+  "sha256": "d59851dbb04a556ebb002fb6e9965012f7913de0ae12f0917c3c9ceb6dc133b7",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f1_r3_md.jsonl",
+  "from": "value/f1_r3_md.jsonl",
+  "sha256": "dbffcfb9f0cbe844e70f4e961368be14d422c244d908480c2252347a5d8866cd",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f2_alone.jsonl",
+  "from": "value/f2_alone.jsonl",
+  "sha256": "3971939e9bc41490ea11cc48fd0a99fe14c77f4dea66a4c6c4da58a4d3e58a12",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f2_md.jsonl",
+  "from": "value/f2_md.jsonl",
+  "sha256": "667efc9afad6960ea719160e60b056ddf5929b9fc1e4c18a60c331625b676b99",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f3_alone.jsonl",
+  "from": "value/f3_alone.jsonl",
+  "sha256": "1a933456bf88d71589607223da7641ec537f211a43275f2de26893b9ebc29802",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f3_md.jsonl",
+  "from": "value/f3_md.jsonl",
+  "sha256": "9a55dce8f1687378f08fff0ad61b2288988e9d7734947060e30c2dc48a4408a9",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f4_alone.jsonl",
+  "from": "value/f4_alone.jsonl",
+  "sha256": "9d5a6a6f4a860754135a28bc0d84f3f730901d807adc677b91e1ecaa27db1b4a",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/f4_md.jsonl",
+  "from": "value/f4_md.jsonl",
+  "sha256": "f284b8874c31b6f6d0212688d4639616350aaefe97cc5e5f7ffaf830db52fa42",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/g1_alone.jsonl",
+  "from": "value/g1_alone.jsonl",
+  "sha256": "bb3ac84e924c704705ffacf7d5877850f6e5f4659312166b4029a4423a5e8905",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/g1_md.jsonl",
+  "from": "value/g1_md.jsonl",
+  "sha256": "bcbca18e273d9372f48a38626316c7abcce1840463d19e78dc360804d8eb63a3",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/g2.jsonl",
+  "from": "value/g2.jsonl",
+  "sha256": "e04e0ebb238d272b5ee5f151a13bc731dee501f98f1e1daf3a80f62f29e8f45e",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/g3_alone.jsonl",
+  "from": "value/g3_alone.jsonl",
+  "sha256": "9f2ee02dc620a2573226df0d6187461be7e40dfc24304608bc9f2acc690303d0",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/g3_md.jsonl",
+  "from": "value/g3_md.jsonl",
+  "sha256": "b0f8a59f5d7a35bad959a7eb3dec9453e3aca5d839b8092b23cc8d92af56d931",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/ledger.jsonl",
+  "from": "value/ledger.jsonl",
+  "sha256": "d5d911e8a2b2edc6470a0498745511d2f8d7506642f9146e2a706768a82c8a36",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/qa_alone.jsonl",
+  "from": "value/qa_alone.jsonl",
+  "sha256": "5123e5a595eb4c51784fddfbbe62f2685bac2c7fc6524b2bc61dddb4b61c1ab7",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/qa_judge.jsonl",
+  "from": "value/qa_judge.jsonl",
+  "sha256": "5654e45b2090cf4531e035aabeac350b6219740e4c8f1d10fdef8ef77ef3350d",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/qa_md.jsonl",
+  "from": "value/qa_md.jsonl",
+  "sha256": "11c74c7ba35253cae2b7b69351235a64db43485f57e0129f64d66120b0214458",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_cb_alone.jsonl",
+  "from": "value/rt_cb_alone.jsonl",
+  "sha256": "1c5fae30f9805b5a6ef2d44e330778340548c2b3a9c20a831bfadc85c04082e5",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_cb_cold.jsonl",
+  "from": "value/rt_cb_cold.jsonl",
+  "sha256": "96dc4493ebcb3db5cac7d0490d1dbb84d1f55bb96f75fb625535e6d4ab590dd5",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_cb_scored_alone.jsonl",
+  "from": "value/rt_cb_scored_alone.jsonl",
+  "sha256": "668f893afaa5ab457ae93ce6857de114e73f72db1e7bb9f5a06427b741097c50",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_cb_scored_cold.jsonl",
+  "from": "value/rt_cb_scored_cold.jsonl",
+  "sha256": "b22c88928cbd3b714e26092b3760119c6b8642badd64ad8018411e45497f4d4e",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_qa_alone.jsonl",
+  "from": "value/rt_qa_alone.jsonl",
+  "sha256": "e7ac69aedea0693d66da1e13a40f9dc1fa3d7556a3b6de680dbd2e36cf77faad",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_qa_judge.jsonl",
+  "from": "value/rt_qa_judge.jsonl",
+  "sha256": "43f0befee35efaa8fa819389d22c3dfbc545e8f4e3b1be4b0e0566a0afb3820a",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/rt_qa_md.jsonl",
+  "from": "value/rt_qa_md.jsonl",
+  "sha256": "9ee0227930275b76a81cf21035ca8eea94d03c30b6e15c88432675d4cdf36406",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_judge.jsonl",
+  "from": "value/v4_judge.jsonl",
+  "sha256": "529db649d633998df3333d4637784d55b74010315eb799ce64bdb5974a3151ff",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_judge_bad_parser.jsonl",
+  "from": "value/v4_judge_bad_parser.jsonl",
+  "sha256": "3ef715431e9bccf10a81eac850963aeb86e397ca7137dd582026be47ad472cfc",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_r1_alone.jsonl",
+  "from": "value/v4_r1_alone.jsonl",
+  "sha256": "afa07f089936b938c4e2b8ca6bf115579e608552ba69d94a800e55ec4ffa8faa",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_r1_md.jsonl",
+  "from": "value/v4_r1_md.jsonl",
+  "sha256": "6dc741b4c065905db0880569133cd6f3502d98a7c359f4ed2cf884079a6bafc8",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_r2_alone.jsonl",
+  "from": "value/v4_r2_alone.jsonl",
+  "sha256": "b1e0df0b2768e2e302a8fcfd529ea3a6658218c7070519059a087b5f2a30dd5c",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_r2_md.jsonl",
+  "from": "value/v4_r2_md.jsonl",
+  "sha256": "9a50af3fbf48b8381b62f59eb541d8d40adfc5f958e00fc559584903cbb48306",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_r3_alone.jsonl",
+  "from": "value/v4_r3_alone.jsonl",
+  "sha256": "5322eabefc725e40ec8a8f122f2008c50710107430df7e29567b5cee1fe1a33c",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v4_r3_md.jsonl",
+  "from": "value/v4_r3_md.jsonl",
+  "sha256": "7bde0667b9e7a4e8c6496b7824824cbe60590cbf70fcd6aba50549e2fe8df3a5",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v7_N.jsonl",
+  "from": "value/v7_N.jsonl",
+  "sha256": "5ec06ba2f097612e78186e607c0701dff500f34add08bd33cc413b5554d73e91",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v7_NS.jsonl",
+  "from": "value/v7_NS.jsonl",
+  "sha256": "e480bd33d7d34634466922a5a2a73b6870d3200547165960c773cea283679e15",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v7_S.jsonl",
+  "from": "value/v7_S.jsonl",
+  "sha256": "5d14573a4cc57308a160afb398b29bbd91010811aac7f8baf215fa06c3d1adc8",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v7_judge.jsonl",
+  "from": "value/v7_judge.jsonl",
+  "sha256": "cf12bbab32e728533a9db7f59b7886e0e4c587b1ca6fd48de24487647c19731b",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v8_KH.jsonl",
+  "from": "value/v8_KH.jsonl",
+  "sha256": "2869650ed89f030637873c2e95a5d53b5a0e9828ee4a68c2d8645e4265508edf",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v8_KS.jsonl",
+  "from": "value/v8_KS.jsonl",
+  "sha256": "b838dc6cbee7fcb6b861085bd89a27e4bfc05a150f7acaac3c19b17f3a2ead95",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v8_scored_KH.jsonl",
+  "from": "value/v8_scored_KH.jsonl",
+  "sha256": "43a8625120a76791b2ea0b2d64216e505c7abe8e894249a7ca53e37423b5a961",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/v8_scored_KS.jsonl",
+  "from": "value/v8_scored_KS.jsonl",
+  "sha256": "db0c200dd89e07f7fc8aadc7e621e37b2b1c442865e9a3442b17f3480fc9edbb",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/w_alone.jsonl",
+  "from": "value/w_alone.jsonl",
+  "sha256": "a4db00a458facb0120ec1f39e4ff3004469cecffc130fefeded33c3381c018cf",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/w_md.jsonl",
+  "from": "value/w_md.jsonl",
+  "sha256": "e4d67f2300473edb617b91a0844e55d459a320c5636d9b541d888e984c0d81c0",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/w_scored_alone.jsonl",
+  "from": "value/w_scored_alone.jsonl",
+  "sha256": "926d1496b4d04ea62140046c9d93a9758e6a96a089cd5aca2661f81c2ae557e4",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/w_scored_modeld.jsonl",
+  "from": "value/w_scored_modeld.jsonl",
+  "sha256": "bb71638e0da2a69498a512090e384eb5ac13c972b31216fe315bb407f060469d",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/warm_r1_md.jsonl",
+  "from": "value/warm_r1_md.jsonl",
+  "sha256": "d9ee85e326a56c543205080846e5902fab4bba5a964df6fca006c13c2be3a57e",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/warm_r2_md.jsonl",
+  "from": "value/warm_r2_md.jsonl",
+  "sha256": "8abc70d5ec05c1982fd085cdb3652509f92a3b38de9d2e48fbdc29e6be2255fa",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/warm_strict_r1_md.jsonl",
+  "from": "value/warm_strict_r1_md.jsonl",
+  "sha256": "d1c518a4c1791393483c44eeb0606caaa897f82e99581ea84e1d4dd19374e227",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/rows/warm_strict_r2_md.jsonl",
+  "from": "value/warm_strict_r2_md.jsonl",
+  "sha256": "fbadd4bd971ed9721bd4eef29c79b93bc8fb4188f1d348995632bc4bf2177ae9",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/reports/report_retest.json",
+  "from": "value/report_retest.json",
+  "sha256": "85cfd9e34ea673d4f3e33808d650cf3fecda830f7038a437c4db84f02464da94",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/reports/report_swecb.json",
+  "from": "value/report_swecb.json",
+  "sha256": "fc488d4be124d069379d33f77fa2ae0a780d9c7afcb7b62b513cb4b1c71a875c",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/reports/report_sweqa.json",
+  "from": "value/report_sweqa.json",
+  "sha256": "40e5730541493149690858ec3b04ee5d6d0af78f19b995c0b70594acb5fbdfab",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/reports/report_value.json",
+  "from": "value/report_value.json",
+  "sha256": "ccf0cfc0cd53e83df98623a6bc09cbd07838fd055628a9995fa21c2476d39599",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/reports/RESULTS_SWEQA_SWECB.md",
+  "from": "RESULTS_SWEQA_SWECB.md",
+  "sha256": "bbb6a482cd3d8885e6d5561d8fd7d144600d1bc59d809357e3fb6accd989c53d",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/e3_pairs.json",
+  "from": "value/e3_pairs.json",
+  "sha256": "f3fabb5b12b7cc2a1df166fd4713f98340407585c1ad83cff418f01cf75b5771",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/e5_issues.json",
+  "from": "value/e5_issues.json",
+  "sha256": "1ccca505ffd458b1e6ebffd5bfcf6c8d939436f8d1c49acd09a82e8b0f5e394c",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/e6_questions.json",
+  "from": "value/e6_questions.json",
+  "sha256": "26ab19a2888e9f8553e511c5558c5f79e33ebd0615dcfca023a9c5a9dca504c4",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/f3_questions.json",
+  "from": "value/f3_questions.json",
+  "sha256": "8fbf7b69f32ae7c8e94019de34dd24037a6a81a0fcf12ce7c4c5913e073d2cc7",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/f4_issues.json",
+  "from": "value/f4_issues.json",
+  "sha256": "4fff9297d00669f906dc442b615a805741481a566ef3716ec72ca9f4657e0927",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/g1_questions.json",
+  "from": "value/g1_questions.json",
+  "sha256": "467bcd27aa1bebb6271259ffe6c6585f23e32df98b7b6b79dd8d1c1761fae291",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/w_issues.json",
+  "from": "value/w_issues.json",
+  "sha256": "048fffe0c91420e079bc6c6885c891b64934e9fa658999eb52a0ffe2090b6806",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/paraphrases.json",
+  "from": "value/paraphrases.json",
+  "sha256": "e9a0b6fd93d86c16d92feb7241c1af29826c9def5a2c4fe915ffddf9d73e9900",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/v8_readouts.json",
+  "from": "value/v8_readouts.json",
+  "sha256": "ae0cb592a092cc01ced13df9de8265aa3d5ab77505649e41dad5e60626c1cc96",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/w_eval.json",
+  "from": "value/w_eval.json",
+  "sha256": "21299459f2b0f73be34def0d8bbde316275a6ac075bb159467465f38367e457b",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/warm_teach.json",
+  "from": "value/warm_teach.json",
+  "sha256": "24ade8452c84dbdb0af6a5f1239d387044cbbfefbfe97661565eaebfab1b4955",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/m3_params.json",
+  "from": "value/m3_params.json",
+  "sha256": "58d1462e9e98d095a5692588f1ba60554115612e5e908e169aae8539560ececa",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/rt_cb_budget.json",
+  "from": "value/rt_cb_budget.json",
+  "sha256": "fc706448959bfce17313e89459f8761df9b77bff2da98ac57f28779f75c6a624",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/rt_qa_budget.json",
+  "from": "value/rt_qa_budget.json",
+  "sha256": "9e031bf50234f9707424d2a73b013247bdcbb43a628d28e8bcf1f3f1421af537",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/swecb_budget.json",
+  "from": "value/swecb_budget.json",
+  "sha256": "4b4cc1a60ba68d3e0e4802ba7ab4812f8c3f56ef4488493f9c552097c73cf236",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/sweqa_budget.json",
+  "from": "value/sweqa_budget.json",
+  "sha256": "d6ba7fe1f241a96ab97f958f8f00e0c8eefbb7ff9061b1950eb4ad8aa9bf5048",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/questions_100.json",
+  "from": "questions_100.json",
+  "sha256": "6daf8d0b702945e60c1512bc327dabe84e13f61685f28a6081bf85453bee78af",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/prompts_backend.json",
+  "from": "prompts_backend.json",
+  "sha256": "3227e151902b40e0df39e70680b8625f3c67daba9290dbbeb836a06b4a238860",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/prompts_devops.json",
+  "from": "prompts_devops.json",
+  "sha256": "b8aa66043c1bef53acf36b9f17b1cb4514f18c5475954628ef3c5553ff89ee69",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/prompts_frontend.json",
+  "from": "prompts_frontend.json",
+  "sha256": "2f7f3f9b379fae47db223916d56c184ce04e2eb36179d0a04201b9d121dfdbcb",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/prompts_joiner.json",
+  "from": "prompts_joiner.json",
+  "sha256": "7beaebb7f934901893a98dda6a5830edcff749b754cfb715fdb54b0919a04518",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/prompts_lead.json",
+  "from": "prompts_lead.json",
+  "sha256": "6f30b167f180e37e554a08f5fac89ac9ee4b80492a93b899a927d198b6b5a115",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/issues.json",
+  "from": "swe/issues.json",
+  "sha256": "87cb2e2559448b46fad938447696f362372061efb696908b20ec57f911effb28",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/cb_prep.py",
+  "from": "swecb/cb_prep.py",
+  "sha256": "9ebb7c76a89cdb0df8605b48d59c61f1b9e29421a7b0882eac2dcf4c5d3ca226",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/inputs/cb_eval.json",
+  "from": "swecb/cb_eval.json",
+  "sha256": "21d0344ed9711a3b7cf8400bdeceb7907827ce7a647152816b6b0e37b4543b39",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/experience_django.json",
+  "from": "swecb/experience_django.json",
+  "sha256": "8441b602a26d0b2c845b5634bc08228fbcbbd411fc17dbff1939dbae043b67e7",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/inputs/related_django.json",
+  "from": "swecb/related_django.json",
+  "sha256": "f92c837fd2eb91f6ce3eee807688cc6de4eb55160be08c68888a34b4f14ca40e",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/scripts/harness.py",
+  "from": "value/harness.py",
+  "sha256": "77f852668b0018aaa35bbf930036b5fa8c4163260ead034a2fa5ee15df999a10",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run.py",
+  "from": "value/run.py",
+  "sha256": "d9f7e409523435bb2c23fdc4de04851e62fff1a365c27d952035c74479ead085",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run2.py",
+  "from": "value/run2.py",
+  "sha256": "a68ec341eef29913f20ebb5dd169f0e9d97b97f688b28e0a9e484c09d4fac626",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run3.py",
+  "from": "value/run3.py",
+  "sha256": "de815d24ed05e0c65f35b811139f9deea5051dfcb6420871261aa32398fca3fa",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run4.py",
+  "from": "value/run4.py",
+  "sha256": "0842321d2f374f6f644fd58c020528aa84699c7c8ecd038f4c8471a07bad4282",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run5.py",
+  "from": "value/run5.py",
+  "sha256": "1723d9b1fb9c92c0449786dc986a0d45de2333c203d050fb22566b284ed55701",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run6.py",
+  "from": "value/run6.py",
+  "sha256": "b1b7821a63cda8f44b9dca3978e8cf40d724174c261cc45dd0f2ffc360491364",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run6b.py",
+  "from": "value/run6b.py",
+  "sha256": "c21b132faa9576d834f4c5d145b6cd599d64b63f61808335b8d8fb9020b316f8",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run7.py",
+  "from": "value/run7.py",
+  "sha256": "b220b6e5cd6d714515270c270b00015d024eb4be9b67debc072ddf3c1de83607",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run8.py",
+  "from": "value/run8.py",
+  "sha256": "5fb1126d61841f1142bab8ce62b7231384ca54ba68cd89bef25165b2672ee378",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run_cb.py",
+  "from": "value/run_cb.py",
+  "sha256": "cba71b573a006c3bd3dbc8a78a3917a976f32107a9337b696b75e2e626209139",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run_qa.py",
+  "from": "value/run_qa.py",
+  "sha256": "27f1f362001115bfbbd86a53432441bc1982835efa54401832364fd4eb1d6b76",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/run_rt.py",
+  "from": "value/run_rt.py",
+  "sha256": "a9dca13957ad1fd66b4be6cf39206e31013ce69dfdf461ea376954a5cddd0a05",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/report.py",
+  "from": "value/report.py",
+  "sha256": "437ea3987486632995b9f0c4e37a4d72cd9b012933036b0481a17c89444010c0",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/scripts/judge4.py",
+  "from": "value/judge4.py",
+  "sha256": "ef0a289dacd0d169d4eaf5d25e5fba9f1701f5b1ebed651af7ae264876b00827",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/rt_judge.py",
+  "from": "value/rt_judge.py",
+  "sha256": "77dab7cc0a5b3c0284fb8f47283b3a1811f2628f29793f6330accd994735192a",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/scripts/stats_bench.py",
+  "from": "value/stats_bench.py",
+  "sha256": "e8f7c9a1956adb6d8238fc3e48a96f73903e0e59e39cd8d378d9b0d445a1feef",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/scripts/mask.py",
+  "from": "value/mask.py",
+  "sha256": "797cf2b91f973c1e82dbadf844ba5cdaf29a1a6bffa25dc0a898223543bf902c",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/prep_w.py",
+  "from": "value/prep_w.py",
+  "sha256": "41dc77c067213b3a33c940d48bd85e460512dcfb6ed853b800c14bd06ac63a7a",
+  "pre-registered": true
+ },
+ {
+  "file": "claude-api/scripts/prep_e5.sh",
+  "from": "value/prep_e5.sh",
+  "sha256": "65289d8705a7a61b4b1927c860409c540f83a65b9bf9cf9e1d55b00fc944f0bd",
+  "pre-registered": false
+ },
+ {
+  "file": "claude-api/scripts/prep_f4.sh",
+  "from": "value/prep_f4.sh",
+  "sha256": "92c2567054a295fb8782b498477e0ddb34ffc562010215878a855e1c0ade8068",
+  "pre-registered": true
+ },
+ {
+  "file": "gemini/PROTOCOL_MODEL_D.md",
+  "from": "PROTOCOL_MODEL_D.md",
+  "sha256": "3cd211c744724a7b0df929575af060b7f6abe810885b7fd5f7a9959d18480ffb",
+  "pre-registered": true
+ },
+ {
+  "file": "gemini/PROTOCOL_MODEL_D_AMEND.md",
+  "from": "PROTOCOL_MODEL_D_AMEND.md",
+  "sha256": "f52f3f9345f7ab4c20dcf1aa17ba40dedad0f1dc3a9d8029679173329574b416",
+  "pre-registered": true
+ },
+ {
+  "file": "gemini/PROTOCOL_MODEL_D_E2E.md",
+  "from": "PROTOCOL_MODEL_D_E2E.md",
+  "sha256": "a23a381121b550574648590e6a16e3fd04650d4073a935a3adde8a5a4ebeaa2d",
+  "pre-registered": true
+ },
+ {
+  "file": "gemini/PROTOCOL_API.md",
+  "from": "PROTOCOL_API.md",
+  "sha256": "876ad0195e85266d69ff22f196ae6d2229fe7312d538bb3bcf5d075971dd11f3",
+  "pre-registered": true
+ },
+ {
+  "file": "gemini/PROTOCOL_API.md.deviations",
+  "from": "PROTOCOL_API.md.deviations",
+  "sha256": "ed66560927633153b922062f1e715a7ac02ceb9cf8f45427bb563d8f80745c11",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/model_d_e2e.py",
+  "from": "modeld/model_d_e2e.py",
+  "sha256": "f8c658935805ef67a8ac2ce5782ff2335be268ee05054e890bcd513f190c50af",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/report_e2e.py",
+  "from": "modeld/report_e2e.py",
+  "sha256": "532d8284804b44200c699240544397606ea11c6299e3dfb2030f2ab257549bdf",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/report_e2e.json",
+  "from": "modeld/report_e2e.json",
+  "sha256": "6a4abd2dad28e26ccb2701e46f4055b1d89668bdaab798873d117731ac74bbe4",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/brain_eyes.py",
+  "from": "modeld/brain_eyes.py",
+  "sha256": "3a0f4492ee4e59a84d85fa1c03db44945a7d80d5cfa1a6d394e458f9931c97bd",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/eyes.json",
+  "from": "modeld/eyes.json",
+  "sha256": "80089924a6f67b7ec739009c80f0245667589f60469aa05cbc4eab8a4ebf198a",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/api_bench.py",
+  "from": "api/api_bench.py",
+  "sha256": "1978c48de10afe7d8dfaed46345d71635c6a8c043376becdac11fe19aaba6fd3",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/report_api.py",
+  "from": "api/report_api.py",
+  "sha256": "34752b1772e952c0c42393d3dcb0f75f25947b022c0d9c0676d616926317c379",
+  "pre-registered": false
+ },
+ {
+  "file": "gemini/report_api.json",
+  "from": "api/report_api.json",
+  "sha256": "bef1a37d30c3ddea4343d58152cc69aff002f56aa240326d2befefdc77934e58",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/PROTOCOL_REPLAY.md",
+  "from": "PROTOCOL_REPLAY.md",
+  "sha256": "7ace11fee1fd7cd5b1aa175b80240d8f86842544331a4f319bd641c3ef7410e6",
+  "pre-registered": true
+ },
+ {
+  "file": "replay/RESULTS_REPLAY.md",
+  "from": "replay/RESULTS_REPLAY.md",
+  "sha256": "b60bcaa23979f5d99847e389d457b585f9380768ff45d55e219e3065fac1c85d",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/log_masked_frozen.txt",
+  "from": "replay/log_masked_frozen.txt",
+  "sha256": "6d14e1ada539a088ac50b326f7c4050543a941654e0c27a3d32db09b52780b13",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/log_masked_learning.txt",
+  "from": "replay/log_masked_learning.txt",
+  "sha256": "fe2a05735f27365faefc68a50b1d2a6cf072c544ddf1a435284ca38611d34ab2",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/log_raw_frozen.txt",
+  "from": "replay/log_raw_frozen.txt",
+  "sha256": "3c7780a704bacc0b082b2aec893a4b43d589b58d5584228c012042d649cb1b3e",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/log_raw_learning.txt",
+  "from": "replay/log_raw_learning.txt",
+  "sha256": "73739022d2e02d728e989296561bd914ae76735394d9e88fc48741191164fc16",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/replay.py",
+  "from": "replay/replay.py",
+  "sha256": "b7f8a530b8f5e11a55c7bb5c7771db44eafedb7e96ef91d48603ee06b9f52d6f",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/report_replay.json",
+  "from": "replay/report_replay.json",
+  "sha256": "e8f4ec42513b1b849e59811416502699b88d6c92088ce460c5dc311d98eb0ba3",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/report_replay.py",
+  "from": "replay/report_replay.py",
+  "sha256": "3bedcb184f33a77aa9aebdb37392302bc6eb10aeba35fa81bcfe37d554c21351",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/rows_masked_frozen.jsonl",
+  "from": "replay/rows_masked_frozen.jsonl",
+  "sha256": "490536215f4ab34243d1c37b34e526efd082bd4f68885de7487c338311b0e57b",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/rows_masked_learning.jsonl",
+  "from": "replay/rows_masked_learning.jsonl",
+  "sha256": "499c20a36045964975288435749cb01390a687715429da9370630a7e19fc2c5c",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/rows_raw_frozen.jsonl",
+  "from": "replay/rows_raw_frozen.jsonl",
+  "sha256": "f645fd356b0f9ceead6c8a921ed420deb7ea13a4d8fc18a5b33de33c8f02fef7",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/rows_raw_learning.jsonl",
+  "from": "replay/rows_raw_learning.jsonl",
+  "sha256": "0f875bc1239b34c26e63ef7d2c943313e305a2c785dc0421d909bec3b8b1becb",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/stream.json",
+  "from": "replay/stream.json",
+  "sha256": "56b3e661238b6cf5ce86ad1a99ea792666be84977f3f8f366d24cd13993a21eb",
+  "pre-registered": false
+ },
+ {
+  "file": "replay/tickets.json",
+  "from": "replay/tickets.json",
+  "sha256": "98423f56b1aba559381318ac7c7338798946269d7c3a838005262193428b866c",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/PROTOCOL_FORMULA.md",
+  "from": "PROTOCOL_FORMULA.md",
+  "sha256": "01f95239f22a01f1f95b1faa75b2a9848b5bd6421ebff5d813f1d6dcbd2dc059",
+  "pre-registered": true
+ },
+ {
+  "file": "formula/PROTOCOL_UNIVERSAL.md",
+  "from": "PROTOCOL_UNIVERSAL.md",
+  "sha256": "8062082ea63b08b3974593711088e16433e3bb33e4c97a9a9d2ee907b3097427",
+  "pre-registered": true
+ },
+ {
+  "file": "formula/PROTOCOL_UNIVERSAL.md.addendum",
+  "from": "PROTOCOL_UNIVERSAL.md.addendum",
+  "sha256": "e844b7b4a4ad3ddb27a70265e5a910c80803616cb0029edabe0506cb4398b9d3",
+  "pre-registered": true
+ },
+ {
+  "file": "formula/PROTOCOL_UNIVERSAL.md.deviations",
+  "from": "PROTOCOL_UNIVERSAL.md.deviations",
+  "sha256": "45d5d15464a29347e72ce264f9a473d8d1e4306906a6d4b61fe738de3df2d025",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/formula.json",
+  "from": "formula/formula.json",
+  "sha256": "6357b801e29b57ef55b68108f74cd651fb2fac1442e504589ec228fb5b354de8",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/formula.py",
+  "from": "formula/formula.py",
+  "sha256": "a834c780ee68554146b2b2ddc825474a6d1bf0827bd3c46dea288fe4cd05b840",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/build.py",
+  "from": "universal/build.py",
+  "sha256": "7552672ce5d72d6c3e99e5504f1981a241a014453fc9f41a4858bfc865b8cc37",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/cases.json",
+  "from": "universal/cases.json",
+  "sha256": "f4a7683a5ad5b5ae0096d107e87bffcdf13a88676cc06ab7126646adf97adbc7",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/predict_u3.py",
+  "from": "universal/predict_u3.py",
+  "sha256": "22fcb6e9052124552a3a2f224720ad5b741af60465186ff09a8e8a703d31eddf",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/predictions_u3.json",
+  "from": "universal/predictions_u3.json",
+  "sha256": "a527b1083a863cbb3a25385b07196590902f45bf655974911a8835f70d65fd4c",
+  "pre-registered": true
+ },
+ {
+  "file": "formula/universal.json",
+  "from": "universal/universal.json",
+  "sha256": "1ba2c99d6d5bcebf46bca7acbf311f62f6eaaaff94dc08fcbc7c3d81e50cacb5",
+  "pre-registered": false
+ },
+ {
+  "file": "formula/universal.py",
+  "from": "universal/universal.py",
+  "sha256": "aece1f1fdcac85e441a4eb89bc13d8d1347e901220281c3447320069fde5d01a",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/life/PROTOCOL_LIFE.md",
+  "from": "PROTOCOL_LIFE.md",
+  "sha256": "75ddd09bb9ca676fc66b346ea17a11eda855d431a1edec35acbce0cdf06b1a70",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/life/PROTOCOL_LIFE_LIVE.md",
+  "from": "PROTOCOL_LIFE_LIVE.md",
+  "sha256": "2f258910fea785ea87e0da5cc963d93c04a65978ca1031d256f5998b42a35294",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/life/RESULTS_LIFE.md",
+  "from": "RESULTS_LIFE.md",
+  "sha256": "86bcd220413a6e481a97647c107c5b9439e0e572a78fc7294f8afda83139ca5d",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/life/RESULTS_LIFE_LIVE.md",
+  "from": "RESULTS_LIFE_LIVE.md",
+  "sha256": "718ef7d54d58755648fa535b2edaba76e1cf024fcbc63ec1f47a2df4e3323d1d",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/life/report_life.json",
+  "from": "report_life.json",
+  "sha256": "0dccb7cdc191781248940b7c1ee170d480fa16aa98bd779de41dc688006439fa",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/life/report_life_live.json",
+  "from": "report_life_live.json",
+  "sha256": "8923f61013415869b3f8d141311d25c4525cdcb0d344804c7a4389682b140333",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/life/life_replay.py",
+  "from": "life_replay.py",
+  "sha256": "ac580c9441f042a86f787b46ff4d42e86bd18d66055b1c0399aa54d36f99e625",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/life/life_live_report.py",
+  "from": "life_live_report.py",
+  "sha256": "bf0601ebb89ec20a02663953db606a2323683d7756b334cb0c24e61b05bc2ce9",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/live-vectors/PROTOCOL_LIVE_VEC.md",
+  "from": "PROTOCOL_LIVE_VEC.md",
+  "sha256": "b5c1cf5d191f11cba529f6d0d07b48497ec23c09b9e871e3aa5cabf5ec993fab",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/live-vectors/RESULTS_LIVE_VEC.md",
+  "from": "RESULTS_LIVE_VEC.md",
+  "sha256": "908ecd77331f86ec5d0a100d06ea682ac47de2ef1de540090afc3d03f6a27175",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/live-vectors/report_vec.json",
+  "from": "report_vec.json",
+  "sha256": "5ad7ae5b58705f1690cd052733d59bc0790df9d8b9e023b712425a0e2d6adfe6",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/live-vectors/vec_report.py",
+  "from": "vec_report.py",
+  "sha256": "05e8819ee4ec795400ca3743063802fae3d8d310cc538563261a643680b5fef3",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/large-codebase/PROTOCOL_LARGE.md",
+  "from": "PROTOCOL_LARGE.md",
+  "sha256": "09844b5bfef7f0868a155218e2602a4ac51a8a69c352fec4ecf8714a3a293b67",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/large-codebase/RESULTS_LARGE.md",
+  "from": "large/RESULTS_LARGE.md",
+  "sha256": "484f23d199fee1f503e56c4045f63fa005aa8cdf2dcb32a1fced7fcc20e31adc",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/large-codebase/report.py",
+  "from": "large/report.py",
+  "sha256": "500736e4215483c8c983494de308b850f4a5ae4aadded4c6103271683d2e62d7",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/large-codebase/report_large.json",
+  "from": "large/report_large.json",
+  "sha256": "e136d41b5ee520c3f41de3802fa2cf320327c09f4d2a5e5289a53bd18f7200e9",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/PROTOCOL_SWE_SONNET.md",
+  "from": "PROTOCOL_SWE_SONNET.md",
+  "sha256": "a2e9d04c87107e879e9b2bc9a5a80a3d72dbeb37208f5b138d8b8c28362533c8",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/swe-sonnet/PROTOCOL_SWE_SONNET.md.deviations",
+  "from": "PROTOCOL_SWE_SONNET.md.deviations",
+  "sha256": "1c01cccd37f2bc8dede006225192700185c98d18a57da0dbc18696a14069f3bd",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/PROTOCOL_LEARN_SONNET.md",
+  "from": "PROTOCOL_LEARN_SONNET.md",
+  "sha256": "8a6de4d19a6bece90fad84d5f9be381becef52c95f99e8229943c5bebfb6c77b",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/swe-sonnet/PROTOCOL_LEARN_SONNET.md.deviations",
+  "from": "PROTOCOL_LEARN_SONNET.md.deviations",
+  "sha256": "e98ef073beb8ddfe2c26fe65616e047b1e21a183c4e2d42432705d2b49249d02",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/PROTOCOL_LEARN_FIX.md",
+  "from": "PROTOCOL_LEARN_FIX.md",
+  "sha256": "20e0e985bf98cd674fc4305824fe1bf8831efee9bae8473fad198380fed815e0",
+  "pre-registered": true
+ },
+ {
+  "file": "learning/swe-sonnet/RESULTS_LEARN.md",
+  "from": "swe_sonnet/RESULTS_LEARN.md",
+  "sha256": "631b25c703aae1de84d33a1ba229f094444fd7b7dee768dd4c049368c0b48ddf",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/RESULTS_SWE_SONNET.md",
+  "from": "swe_sonnet/RESULTS_SWE_SONNET.md",
+  "sha256": "aabda56b57cb8b532a98f9911e195680d56cbd8bddf8aa07684c0dae109d731b",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/report.py",
+  "from": "swe_sonnet/report.py",
+  "sha256": "d887d90f4840fa61fd3ab73bfdf06f7bf64b77f5a00ab8ebe29c4692f3d54332",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/report_learn.py",
+  "from": "swe_sonnet/report_learn.py",
+  "sha256": "ce66e8ba267455406f2c0a8c635211843fa803828d41d80e4a67dc95306a3e9d",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/report_learnfix.py",
+  "from": "swe_sonnet/report_learnfix.py",
+  "sha256": "7d6dd8d692e890f10bb7e4113880cb6b2f572d568857a28f8c7b822078cbc0e5",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/report_learn.json",
+  "from": "swe_sonnet/report_learn.json",
+  "sha256": "3303be217dd9c165ef998d518d484c650b9f25db962dd285680170b614bb909f",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/report_learnfix.json",
+  "from": "swe_sonnet/report_learnfix.json",
+  "sha256": "11481ba13adda74aa8af2525bcfacf366048edeae58f4148f6fa8e0ea6918a6e",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/report_swe_sonnet.json",
+  "from": "swe_sonnet/report_swe_sonnet.json",
+  "sha256": "3f070a83add3a9a4b18e4284ba28405615d3eb0d5f0420807c4b7a917f89b45c",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/readouts.py",
+  "from": "swe_sonnet/readouts.py",
+  "sha256": "82d53fc3391fcb5243fd9a37b18cdf69feff00e7f70a580bcb9577d0407d01a0",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/readouts_fixed.py",
+  "from": "swe_sonnet/readouts_fixed.py",
+  "sha256": "29d25b77c087a763fb8157ba418a15159223469e13392fa07038cb197d416a57",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/readouts_snapline.py",
+  "from": "swe_sonnet/readouts_snapline.py",
+  "sha256": "8544ef338e58171424022b98b5c5ec5fa67603f966383fb4f812bf1ee3eb8a85",
+  "pre-registered": false
+ },
+ {
+  "file": "learning/swe-sonnet/audit_learning.py",
+  "from": "swe_sonnet/audit_learning.py",
+  "sha256": "f2e378e26b8adaa1511b56064707abf945634f3218b38d18731fbac4ba377936",
+  "pre-registered": false
+ }
+]

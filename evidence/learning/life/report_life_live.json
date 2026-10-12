@@ -1,0 +1,84 @@
+{
+ "cross-phase repeats": [
+  "r27",
+  "r28",
+  "r37",
+  "r43",
+  "r51",
+  "r56",
+  "r57",
+  "r74",
+  "r77"
+ ],
+ "rebuild": {
+  "sessions": 5,
+  "requests": 137,
+  "cache-weighted": 1053024,
+  "per session": [
+   25,
+   30,
+   29,
+   25,
+   28
+  ],
+  "search/read/list": 104,
+  "cross-phase repeats: requests": 28,
+  "cross-phase repeats: calls": 32,
+  "cross-phase repeats answered with no search": 0,
+  "right": 49
+ },
+ "life": {
+  "sessions": 5,
+  "requests": 142,
+  "cache-weighted": 1093696,
+  "per session": [
+   27,
+   27,
+   32,
+   24,
+   32
+  ],
+  "search/read/list": 99,
+  "cross-phase repeats: requests": 30,
+  "cross-phase repeats: calls": 30,
+  "cross-phase repeats answered with no search": 0,
+  "right": 50
+ },
+ "vec-cmlm (no move)": {
+  "sessions": 5,
+  "requests": 136,
+  "cache-weighted": 1038587,
+  "per session": [
+   22,
+   29,
+   30,
+   27,
+   28
+  ],
+  "search/read/list": 97,
+  "cross-phase repeats: requests": 31,
+  "cross-phase repeats: calls": 29,
+  "cross-phase repeats answered with no search": 0,
+  "right": null
+ },
+ "vec-alone": {
+  "sessions": 5,
+  "requests": 169,
+  "cache-weighted": 1247912,
+  "per session": [
+   28,
+   32,
+   39,
+   35,
+   35
+  ],
+  "search/read/list": 156,
+  "cross-phase repeats: requests": 35,
+  "cross-phase repeats: calls": 40,
+  "cross-phase repeats answered with no search": 0,
+  "right": null
+ },
+ "LL1": false,
+ "LL2": false,
+ "LL3": true
+}

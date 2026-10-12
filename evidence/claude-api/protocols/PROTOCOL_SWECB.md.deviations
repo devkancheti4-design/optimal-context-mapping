@@ -1,0 +1,5 @@
+DCB1 (2026-10-09, before any request): SWE-ContextBench names Django tests the pytest way
+("tests/a/b.py::Class::test"); Django's runner prints "test (a.b.Class)". The first validation pass therefore kept
+no task. cb_prep.resolved now maps the names (cb_prep.django_name), and validation was rerun from the start.
+DCB2 (2026-10-09, before any request): run_cb.py waits for a task's kits to be logged as built (swecb/build.log)
+before running it, so the run overlaps the builds. Nothing measured changes.

@@ -1,0 +1,108 @@
+{
+ "repositories finished": [
+  "astropy",
+  "django",
+  "pylint",
+  "requests",
+  "sphinx",
+  "sqlfluff",
+  "xarray"
+ ],
+ "questions": 336,
+ "graded pairs": 335,
+ "unparsed or missing grades": 1,
+ "errors": 0,
+ "alone $ per question": 0.05223,
+ "model d $ per question": 0.02355,
+ "cost ratio alone/model d": 2.218,
+ "cost ratio 95% CI": [
+  1.9493,
+  2.5459
+ ],
+ "alone requests per question": 4.02,
+ "model d requests per question": 2.87,
+ "alone score /100": 65.33,
+ "model d score /100": 61.04,
+ "score difference (model d - alone)": -4.28,
+ "score difference 95% CI": [
+  -5.2597,
+  -3.3373
+ ],
+ "per dimension /20": {
+  "correctness": {
+   "alone": 13.45,
+   "model d": 12.87
+  },
+  "completeness": {
+   "alone": 9.89,
+   "model d": 8.52
+  },
+  "relevance": {
+   "alone": 15.35,
+   "model d": 14.84
+  },
+  "clarity": {
+   "alone": 15.21,
+   "model d": 14.78
+  },
+  "reasoning": {
+   "alone": 11.42,
+   "model d": 10.04
+  }
+ },
+ "cost ratio questions 1-24": 2.056,
+ "cost ratio questions 25-48": 2.41,
+ "model d answers from the reader": "11 of 336",
+ "model d reader answers' score": 49.18,
+ "per repository": {
+  "astropy": {
+   "alone $": 3.083,
+   "model d $": 1.655,
+   "alone score": 64.9,
+   "model d score": 61.6
+  },
+  "django": {
+   "alone $": 1.953,
+   "model d $": 1.054,
+   "alone score": 67.4,
+   "model d score": 58.9
+  },
+  "pylint": {
+   "alone $": 4.605,
+   "model d $": 1.473,
+   "alone score": 56.4,
+   "model d score": 52.3
+  },
+  "requests": {
+   "alone $": 1.009,
+   "model d $": 0.645,
+   "alone score": 72.1,
+   "model d score": 68.3
+  },
+  "sphinx": {
+   "alone $": 2.804,
+   "model d $": 1.153,
+   "alone score": 63.5,
+   "model d score": 60.3
+  },
+  "sqlfluff": {
+   "alone $": 2.836,
+   "model d $": 1.084,
+   "alone score": 64.0,
+   "model d score": 60.4
+  },
+  "xarray": {
+   "alone $": 1.262,
+   "model d $": 0.849,
+   "alone score": 69,
+   "model d score": 65.4
+  }
+ },
+ "judge $": 4.257,
+ "predictions": {
+  "Q1 ratio >= 1.3": true,
+  "Q2 score no more than 3 below": false,
+  "Q3 saving grows": true,
+  "Q4 reader under 20%": true
+ }
+}

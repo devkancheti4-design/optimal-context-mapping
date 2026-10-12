@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10019.04it/s]
+raw frozen 0 3 s
+raw frozen 500 17 s
+raw frozen 1000 29 s
+raw frozen 1500 41 s
+raw frozen 2000 52 s
+raw frozen 2500 63 s
+raw frozen 3000 75 s
+raw frozen 3500 87 s
+raw frozen 4000 99 s
+raw frozen 4500 110 s
+raw frozen 5000 121 s
+raw frozen done 128 s

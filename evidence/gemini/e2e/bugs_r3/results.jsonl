@@ -1,0 +1,40 @@
+{"arm": "neo4d", "run": 3, "program": "bitcount", "requests": 3, "fixed": true, "submitted": true, "seconds": 31.9, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "breadth_first_search", "requests": 4, "fixed": true, "submitted": true, "seconds": 137.9, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "bucketsort", "requests": 5, "fixed": true, "submitted": true, "seconds": 54.5, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "depth_first_search", "requests": 4, "fixed": true, "submitted": true, "seconds": 64.9, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "detect_cycle", "requests": 4, "fixed": true, "submitted": true, "seconds": 33.4, "neo4d": "refused", "path": "body"}
+{"program": "find_first_in_sorted", "path": "kit", "requests": 0, "fixed": true, "seconds": 0.1, "neo4d": "ambiguous"}
+{"arm": "neo4d", "run": 3, "program": "find_in_sorted", "requests": 4, "fixed": true, "submitted": true, "seconds": 20.5, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "flatten", "requests": 6, "fixed": true, "submitted": true, "seconds": 256.6, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "gcd", "requests": 4, "fixed": true, "submitted": true, "seconds": 80.5, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "get_factors", "requests": 4, "fixed": true, "submitted": true, "seconds": 102.7, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "hanoi", "requests": 4, "fixed": true, "submitted": true, "seconds": 86.8, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "is_valid_parenthesization", "requests": 5, "fixed": true, "submitted": true, "seconds": 82.5, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "kheapsort", "requests": 4, "fixed": true, "submitted": true, "seconds": 47.0, "neo4d": "refused", "path": "body"}
+{"program": "knapsack", "path": "kit", "requests": 0, "fixed": true, "seconds": 0.1, "neo4d": "repaired"}
+{"arm": "neo4d", "run": 3, "program": "kth", "requests": 5, "fixed": true, "submitted": true, "seconds": 87.7, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "lcs_length", "requests": 5, "fixed": true, "submitted": true, "seconds": 136.9, "neo4d": "refused", "path": "body"}
+{"program": "levenshtein", "path": "kit", "requests": 0, "fixed": true, "seconds": 0.6, "neo4d": "ambiguous"}
+{"arm": "neo4d", "run": 3, "program": "lis", "requests": 6, "fixed": true, "submitted": true, "seconds": 117.0, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "longest_common_subsequence", "requests": 4, "fixed": true, "submitted": true, "seconds": 35.4, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "max_sublist_sum", "requests": 4, "fixed": true, "submitted": true, "seconds": 58.1, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "mergesort", "requests": 4, "fixed": true, "submitted": true, "seconds": 40.0, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "minimum_spanning_tree", "requests": 3, "fixed": true, "submitted": true, "seconds": 127.5, "neo4d": "refused", "path": "body"}
+{"program": "next_palindrome", "path": "kit", "requests": 0, "fixed": true, "seconds": 0.1, "neo4d": "repaired"}
+{"program": "next_permutation", "path": "kit", "requests": 0, "fixed": true, "seconds": 0.1, "neo4d": "ambiguous"}
+{"arm": "neo4d", "run": 3, "program": "pascal", "requests": 4, "fixed": true, "submitted": true, "seconds": 38.5, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "possible_change", "requests": 4, "fixed": true, "submitted": true, "seconds": 54.9, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "powerset", "requests": 6, "fixed": true, "submitted": true, "seconds": 82.3, "neo4d": "refused", "path": "body"}
+{"program": "quicksort", "path": "kit", "requests": 0, "fixed": true, "seconds": 0.1, "neo4d": "ambiguous"}
+{"arm": "neo4d", "run": 3, "program": "reverse_linked_list", "requests": 5, "fixed": true, "submitted": true, "seconds": 112.2, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "rpn_eval", "requests": 5, "fixed": true, "submitted": true, "seconds": 51.1, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "shortest_path_length", "requests": 6, "fixed": true, "submitted": true, "seconds": 234.2, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "shortest_path_lengths", "requests": 5, "fixed": true, "submitted": true, "seconds": 78.8, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "shortest_paths", "requests": 4, "fixed": true, "submitted": true, "seconds": 75.8, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "shunting_yard", "requests": 4, "fixed": true, "submitted": true, "seconds": 48.9, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "sieve", "requests": 3, "fixed": true, "submitted": true, "seconds": 62.0, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "sqrt", "requests": 4, "fixed": true, "submitted": true, "seconds": 54.5, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "subsequences", "requests": 4, "fixed": true, "submitted": true, "seconds": 66.8, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "to_base", "requests": 4, "fixed": true, "submitted": true, "seconds": 37.0, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "topological_ordering", "requests": 3, "fixed": false, "submitted": true, "seconds": 29.4, "neo4d": "refused", "path": "body"}
+{"arm": "neo4d", "run": 3, "program": "wrap", "requests": 4, "fixed": true, "submitted": true, "seconds": 58.8, "neo4d": "refused", "path": "body"}

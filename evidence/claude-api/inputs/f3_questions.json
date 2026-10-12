@@ -1,0 +1,254 @@
+{
+ "candidates": 165,
+ "eligible": 96,
+ "questions": [
+  {
+   "setting": "SESSION_COOKIE_PATH",
+   "default": "'/'",
+   "readers": [
+    "django/contrib/sessions/middleware.py"
+   ]
+  },
+  {
+   "setting": "EMAIL_HOST_PASSWORD",
+   "default": "''",
+   "readers": [
+    "django/core/mail/backends/smtp.py"
+   ]
+  },
+  {
+   "setting": "SECURE_SSL_HOST",
+   "default": "None",
+   "readers": [
+    "django/middleware/security.py"
+   ]
+  },
+  {
+   "setting": "DATABASE_ROUTERS",
+   "default": "[]",
+   "readers": [
+    "django/core/checks/model_checks.py",
+    "django/core/management/commands/makemigrations.py",
+    "django/db/models/fields/related.py",
+    "django/db/utils.py"
+   ]
+  },
+  {
+   "setting": "LANGUAGE_COOKIE_DOMAIN",
+   "default": "None",
+   "readers": [
+    "django/views/i18n.py"
+   ]
+  },
+  {
+   "setting": "CSRF_COOKIE_SECURE",
+   "default": "False",
+   "readers": [
+    "django/core/checks/security/csrf.py",
+    "django/middleware/csrf.py"
+   ]
+  },
+  {
+   "setting": "DISALLOWED_USER_AGENTS",
+   "default": "[]",
+   "readers": [
+    "django/middleware/common.py"
+   ]
+  },
+  {
+   "setting": "STATICFILES_DIRS",
+   "default": "[]",
+   "readers": [
+    "django/contrib/staticfiles/finders.py"
+   ]
+  },
+  {
+   "setting": "SESSION_COOKIE_HTTPONLY",
+   "default": "True",
+   "readers": [
+    "django/contrib/messages/storage/cookie.py",
+    "django/contrib/sessions/middleware.py",
+    "django/core/checks/security/sessions.py"
+   ]
+  },
+  {
+   "setting": "USE_I18N",
+   "default": "True",
+   "readers": [
+    "django/conf/urls/i18n.py",
+    "django/utils/cache.py",
+    "django/utils/translation/__init__.py",
+    "django/utils/translation/reloader.py",
+    "django/utils/translation/trans_null.py"
+   ]
+  },
+  {
+   "setting": "STATIC_ROOT",
+   "default": "None",
+   "readers": [
+    "django/contrib/staticfiles/finders.py",
+    "django/contrib/staticfiles/management/commands/collectstatic.py",
+    "django/contrib/staticfiles/storage.py",
+    "django/contrib/staticfiles/utils.py",
+    "django/core/management/commands/makemessages.py",
+    "django/test/testcases.py"
+   ]
+  },
+  {
+   "setting": "EMAIL_USE_SSL",
+   "default": "False",
+   "readers": [
+    "django/core/mail/backends/smtp.py"
+   ]
+  },
+  {
+   "setting": "CSRF_FAILURE_VIEW",
+   "default": "'django.views.csrf.csrf_failure'",
+   "readers": [
+    "django/core/checks/security/csrf.py",
+    "django/middleware/csrf.py"
+   ]
+  },
+  {
+   "setting": "SESSION_ENGINE",
+   "default": "'django.contrib.sessions.backends.db'",
+   "readers": [
+    "django/contrib/sessions/management/commands/clearsessions.py",
+    "django/contrib/sessions/middleware.py",
+    "django/test/client.py"
+   ]
+  },
+  {
+   "setting": "FILE_UPLOAD_DIRECTORY_PERMISSIONS",
+   "default": "None",
+   "readers": [
+    "django/core/files/storage/filesystem.py",
+    "django/core/files/storage/memory.py"
+   ]
+  },
+  {
+   "setting": "SESSION_COOKIE_AGE",
+   "default": "1209600",
+   "readers": [
+    "django/contrib/sessions/backends/base.py"
+   ]
+  },
+  {
+   "setting": "LANGUAGE_COOKIE_HTTPONLY",
+   "default": "False",
+   "readers": [
+    "django/views/i18n.py"
+   ]
+  },
+  {
+   "setting": "IGNORABLE_404_URLS",
+   "default": "[]",
+   "readers": [
+    "django/middleware/common.py"
+   ]
+  },
+  {
+   "setting": "SESSION_COOKIE_SAMESITE",
+   "default": "'Lax'",
+   "readers": [
+    "django/contrib/messages/storage/cookie.py",
+    "django/contrib/sessions/middleware.py"
+   ]
+  },
+  {
+   "setting": "LOGGING_CONFIG",
+   "default": "'logging.config.dictConfig'",
+   "readers": [
+    "django/__init__.py"
+   ]
+  },
+  {
+   "setting": "LOGIN_URL",
+   "default": "'/accounts/login/'",
+   "readers": [
+    "django/contrib/auth/decorators.py",
+    "django/contrib/auth/mixins.py",
+    "django/contrib/auth/views.py"
+   ]
+  },
+  {
+   "setting": "SECURE_SSL_REDIRECT",
+   "default": "False",
+   "readers": [
+    "django/core/checks/security/base.py",
+    "django/middleware/security.py"
+   ]
+  },
+  {
+   "setting": "CACHE_MIDDLEWARE_ALIAS",
+   "default": "'default'",
+   "readers": [
+    "django/middleware/cache.py",
+    "django/utils/cache.py"
+   ]
+  },
+  {
+   "setting": "TIME_ZONE",
+   "default": "'America/Chicago'",
+   "readers": [
+    "django/db/backends/base/base.py",
+    "django/utils/timezone.py"
+   ]
+  },
+  {
+   "setting": "SESSION_COOKIE_DOMAIN",
+   "default": "None",
+   "readers": [
+    "django/contrib/messages/storage/cookie.py",
+    "django/contrib/sessions/middleware.py",
+    "django/middleware/csrf.py",
+    "django/test/client.py"
+   ]
+  },
+  {
+   "setting": "MIGRATION_MODULES",
+   "default": "{}",
+   "readers": [
+    "django/db/backends/base/creation.py",
+    "django/db/migrations/loader.py"
+   ]
+  },
+  {
+   "setting": "STATIC_URL",
+   "default": "None",
+   "readers": [
+    "django/contrib/gis/forms/widgets.py",
+    "django/contrib/staticfiles/handlers.py",
+    "django/contrib/staticfiles/storage.py",
+    "django/contrib/staticfiles/urls.py",
+    "django/contrib/staticfiles/utils.py",
+    "django/template/context_processors.py",
+    "django/templatetags/static.py",
+    "django/test/testcases.py"
+   ]
+  },
+  {
+   "setting": "SECURE_HSTS_SECONDS",
+   "default": "0",
+   "readers": [
+    "django/core/checks/security/base.py",
+    "django/middleware/security.py"
+   ]
+  },
+  {
+   "setting": "SECURE_CROSS_ORIGIN_OPENER_POLICY",
+   "default": "'same-origin'",
+   "readers": [
+    "django/core/checks/security/base.py",
+    "django/middleware/security.py"
+   ]
+  },
+  {
+   "setting": "SESSION_EXPIRE_AT_BROWSER_CLOSE",
+   "default": "False",
+   "readers": [
+    "django/contrib/sessions/backends/base.py"
+   ]
+  }
+ ]
+}

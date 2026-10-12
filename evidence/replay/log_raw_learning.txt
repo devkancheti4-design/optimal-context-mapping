@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10445.08it/s]
+raw learning 0 4 s
+raw learning 500 60 s
+raw learning 1000 134 s
+raw learning 1500 215 s
+raw learning 2000 312 s
+raw learning 2500 422 s
+raw learning 3000 556 s
+raw learning 3500 709 s
+raw learning 4000 880 s
+raw learning 4500 1063 s
+raw learning 5000 1268 s
+raw learning done 1413 s

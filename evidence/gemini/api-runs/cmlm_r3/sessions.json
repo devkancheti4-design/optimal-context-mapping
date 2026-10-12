@@ -1,0 +1,38 @@
+[
+ {
+  "requests": 24,
+  "nudges": 10,
+  "answered": 10,
+  "task": 1
+ },
+ {
+  "requests": 27,
+  "nudges": 12,
+  "answered": 10,
+  "task": 2
+ },
+ {
+  "requests": 23,
+  "nudges": 11,
+  "answered": 10,
+  "task": 3
+ },
+ {
+  "requests": 46,
+  "nudges": 20,
+  "answered": 10,
+  "task": 4
+ },
+ {
+  "requests": 20,
+  "nudges": 10,
+  "answered": 10,
+  "task": 5
+ },
+ {
+  "requests": 21,
+  "nudges": 11,
+  "answered": 10,
+  "task": 6
+ }
+]

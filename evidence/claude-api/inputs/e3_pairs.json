@@ -1,0 +1,287 @@
+[
+ {
+  "A": "django__django-16527",
+  "B": "django__django-10914",
+  "cos": 0.6938
+ },
+ {
+  "A": "django__django-12125",
+  "B": "django__django-10924",
+  "cos": 0.7415
+ },
+ {
+  "A": "django__django-15320",
+  "B": "django__django-11001",
+  "cos": 0.7466
+ },
+ {
+  "A": "django__django-13265",
+  "B": "django__django-11019",
+  "cos": 0.6902
+ },
+ {
+  "A": "django__django-15252",
+  "B": "django__django-11039",
+  "cos": 0.7328
+ },
+ {
+  "A": "django__django-13933",
+  "B": "django__django-11049",
+  "cos": 0.6703
+ },
+ {
+  "A": "django__django-16873",
+  "B": "django__django-11099",
+  "cos": 0.6708
+ },
+ {
+  "A": "django__django-12184",
+  "B": "django__django-11133",
+  "cos": 0.7146
+ },
+ {
+  "A": "django__django-15738",
+  "B": "django__django-11179",
+  "cos": 0.6982
+ },
+ {
+  "A": "django__django-14997",
+  "B": "django__django-11283",
+  "cos": 0.7573
+ },
+ {
+  "A": "django__django-14238",
+  "B": "django__django-11422",
+  "cos": 0.7135
+ },
+ {
+  "A": "django__django-15789",
+  "B": "django__django-11564",
+  "cos": 0.703
+ },
+ {
+  "A": "django__django-11620",
+  "B": "django__django-11583",
+  "cos": 0.7054
+ },
+ {
+  "A": "django__django-14999",
+  "B": "django__django-11630",
+  "cos": 0.7558
+ },
+ {
+  "A": "django__django-13315",
+  "B": "django__django-11742",
+  "cos": 0.6814
+ },
+ {
+  "A": "django__django-12589",
+  "B": "django__django-11797",
+  "cos": 0.7673
+ },
+ {
+  "A": "django__django-11964",
+  "B": "django__django-11815",
+  "cos": 0.7592
+ },
+ {
+  "A": "django__django-13321",
+  "B": "django__django-11848",
+  "cos": 0.6391
+ },
+ {
+  "A": "django__django-13757",
+  "B": "django__django-11905",
+  "cos": 0.8095
+ },
+ {
+  "A": "django__django-16595",
+  "B": "django__django-11910",
+  "cos": 0.757
+ },
+ {
+  "A": "django__django-16816",
+  "B": "django__django-11999",
+  "cos": 0.6984
+ },
+ {
+  "A": "django__django-13448",
+  "B": "django__django-12113",
+  "cos": 0.8055
+ },
+ {
+  "A": "django__django-12470",
+  "B": "django__django-12284",
+  "cos": 0.7173
+ },
+ {
+  "A": "django__django-13925",
+  "B": "django__django-12286",
+  "cos": 0.6613
+ },
+ {
+  "A": "django__django-14855",
+  "B": "django__django-12308",
+  "cos": 0.7342
+ },
+ {
+  "A": "django__django-13964",
+  "B": "django__django-12453",
+  "cos": 0.7534
+ },
+ {
+  "A": "django__django-14672",
+  "B": "django__django-12497",
+  "cos": 0.7238
+ },
+ {
+  "A": "django__django-15202",
+  "B": "django__django-12700",
+  "cos": 0.7124
+ },
+ {
+  "A": "django__django-12856",
+  "B": "django__django-12708",
+  "cos": 0.7808
+ },
+ {
+  "A": "django__django-13158",
+  "B": "django__django-12747",
+  "cos": 0.6907
+ },
+ {
+  "A": "django__django-16910",
+  "B": "django__django-12908",
+  "cos": 0.6983
+ },
+ {
+  "A": "django__django-15814",
+  "B": "django__django-12915",
+  "cos": 0.6712
+ },
+ {
+  "A": "django__django-15695",
+  "B": "django__django-12983",
+  "cos": 0.6363
+ },
+ {
+  "A": "django__django-17087",
+  "B": "django__django-13028",
+  "cos": 0.7252
+ },
+ {
+  "A": "django__django-13401",
+  "B": "django__django-13033",
+  "cos": 0.6898
+ },
+ {
+  "A": "django__django-16229",
+  "B": "django__django-13220",
+  "cos": 0.6613
+ },
+ {
+  "A": "django__django-14752",
+  "B": "django__django-13230",
+  "cos": 0.6319
+ },
+ {
+  "A": "django__django-14915",
+  "B": "django__django-13447",
+  "cos": 0.6644
+ },
+ {
+  "A": "django__django-16139",
+  "B": "django__django-13551",
+  "cos": 0.655
+ },
+ {
+  "A": "django__django-14580",
+  "B": "django__django-13590",
+  "cos": 0.6923
+ },
+ {
+  "A": "django__django-13660",
+  "B": "django__django-13658",
+  "cos": 0.7194
+ },
+ {
+  "A": "django__django-14730",
+  "B": "django__django-13710",
+  "cos": 0.664
+ },
+ {
+  "A": "django__django-15400",
+  "B": "django__django-13768",
+  "cos": 0.6468
+ },
+ {
+  "A": "django__django-15213",
+  "B": "django__django-14016",
+  "cos": 0.707
+ },
+ {
+  "A": "django__django-16255",
+  "B": "django__django-14017",
+  "cos": 0.6679
+ },
+ {
+  "A": "django__django-14787",
+  "B": "django__django-14155",
+  "cos": 0.7502
+ },
+ {
+  "A": "django__django-15388",
+  "B": "django__django-14382",
+  "cos": 0.7385
+ },
+ {
+  "A": "django__django-15061",
+  "B": "django__django-14411",
+  "cos": 0.7192
+ },
+ {
+  "A": "django__django-16041",
+  "B": "django__django-14534",
+  "cos": 0.6572
+ },
+ {
+  "A": "django__django-16046",
+  "B": "django__django-14608",
+  "cos": 0.5949
+ },
+ {
+  "A": "django__django-16408",
+  "B": "django__django-14667",
+  "cos": 0.6682
+ },
+ {
+  "A": "django__django-15498",
+  "B": "django__django-15347",
+  "cos": 0.6916
+ },
+ {
+  "A": "django__django-16400",
+  "B": "django__django-15781",
+  "cos": 0.6299
+ },
+ {
+  "A": "django__django-15819",
+  "B": "django__django-15790",
+  "cos": 0.6427
+ },
+ {
+  "A": "django__django-17051",
+  "B": "django__django-15851",
+  "cos": 0.6191
+ },
+ {
+  "A": "django__django-16820",
+  "B": "django__django-15902",
+  "cos": 0.6402
+ },
+ {
+  "A": "django__django-16379",
+  "B": "django__django-15996",
+  "cos": 0.5449
+ }
+]

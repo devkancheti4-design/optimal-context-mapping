@@ -1,0 +1,848 @@
+{
+ "protocol sha256": "7ace11fee1fd7cd5b1aa175b80240d8f86842544331a4f319bd641c3ef7410e6",
+ "questions": 5333,
+ "calibration (requests, API-eq $)": {
+  "c_A": [
+   3.517543859649123,
+   0.0468003701754386
+  ],
+  "c_K_hit": [
+   1.4158415841584158,
+   0.023898381188118812
+  ],
+  "c_K_miss": [
+   4.461538461538462,
+   0.07005080769230769
+  ],
+  "c_E": [
+   1.1428571428571428,
+   0.0010784364285714285
+  ],
+  "p_NS": 0.42857142857142855,
+  "n": {
+   "alone": 114,
+   "kit hit": 101,
+   "kit miss": 13,
+   "eyes": 7
+  }
+ },
+ "raw": {
+  "overall": {
+   "questions": 5333,
+   "dates": "2013-01-02..2023-07-06",
+   "history repeat (gold file seen before)": 0.956,
+   "FROZEN file hit": 0.839,
+   "LEARNING file hit": 0.845,
+   "lane opened": 0.629,
+   "lane right when opened": 0.428,
+   "learning advantage (hit points)": 0.006,
+   "projected requests per question": {
+    "ALONE": 3.518,
+    "LAWS": 1.908,
+    "LAWS+LEARNING": 1.889,
+    "MODEL D": 1.939,
+    "MODEL D (realistic)": 2.227
+   },
+   "projected saving vs ALONE (requests)": {
+    "LAWS": 1.84,
+    "LAWS+LEARNING": 1.86,
+    "MODEL D": 1.81,
+    "MODEL D (realistic)": 1.58
+   },
+   "projected $ per question": {
+    "ALONE": 0.0468,
+    "LAWS": 0.0313,
+    "LAWS+LEARNING": 0.0311,
+    "MODEL D": 0.0207,
+    "MODEL D (realistic)": 0.0253
+   },
+   "projected saving vs ALONE ($)": {
+    "LAWS": 1.49,
+    "LAWS+LEARNING": 1.51,
+    "MODEL D": 2.26,
+    "MODEL D (realistic)": 1.85
+   }
+  },
+  "deciles": [
+   {
+    "questions": 533,
+    "dates": "2013-01-02..2013-10-08",
+    "history repeat (gold file seen before)": 0.765,
+    "FROZEN file hit": 0.773,
+    "LEARNING file hit": 0.78,
+    "lane opened": 0.424,
+    "lane right when opened": 0.35,
+    "learning advantage (hit points)": 0.007,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.107,
+     "LAWS+LEARNING": 2.084,
+     "MODEL D": 2.069,
+     "MODEL D (realistic)": 2.359
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.67,
+     "LAWS+LEARNING": 1.69,
+     "MODEL D": 1.7,
+     "MODEL D (realistic)": 1.49
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0344,
+     "LAWS+LEARNING": 0.034,
+     "MODEL D": 0.0263,
+     "MODEL D (realistic)": 0.0309
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.36,
+     "LAWS+LEARNING": 1.38,
+     "MODEL D": 1.78,
+     "MODEL D (realistic)": 1.51
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2013-07-18..2014-07-16",
+    "history repeat (gold file seen before)": 0.938,
+    "FROZEN file hit": 0.764,
+    "LEARNING file hit": 0.767,
+    "lane opened": 0.583,
+    "lane right when opened": 0.363,
+    "learning advantage (hit points)": 0.003,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.136,
+     "LAWS+LEARNING": 2.124,
+     "MODEL D": 2.071,
+     "MODEL D (realistic)": 2.491
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.65,
+     "LAWS+LEARNING": 1.66,
+     "MODEL D": 1.7,
+     "MODEL D (realistic)": 1.41
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0348,
+     "LAWS+LEARNING": 0.0346,
+     "MODEL D": 0.0235,
+     "MODEL D (realistic)": 0.0302
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.34,
+     "LAWS+LEARNING": 1.35,
+     "MODEL D": 1.99,
+     "MODEL D (realistic)": 1.55
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2014-07-14..2015-03-15",
+    "history repeat (gold file seen before)": 0.962,
+    "FROZEN file hit": 0.805,
+    "LEARNING file hit": 0.824,
+    "lane opened": 0.567,
+    "lane right when opened": 0.358,
+    "learning advantage (hit points)": 0.019,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.01,
+     "LAWS+LEARNING": 1.953,
+     "MODEL D": 1.982,
+     "MODEL D (realistic)": 2.314
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.75,
+     "LAWS+LEARNING": 1.8,
+     "MODEL D": 1.77,
+     "MODEL D (realistic)": 1.52
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0329,
+     "LAWS+LEARNING": 0.032,
+     "MODEL D": 0.0225,
+     "MODEL D (realistic)": 0.0278
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.42,
+     "LAWS+LEARNING": 1.46,
+     "MODEL D": 2.08,
+     "MODEL D (realistic)": 1.68
+    }
+   },
+   {
+    "questions": 534,
+    "dates": "2015-03-03..2015-12-30",
+    "history repeat (gold file seen before)": 0.959,
+    "FROZEN file hit": 0.826,
+    "LEARNING file hit": 0.833,
+    "lane opened": 0.616,
+    "lane right when opened": 0.389,
+    "learning advantage (hit points)": 0.007,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.946,
+     "LAWS+LEARNING": 1.923,
+     "MODEL D": 1.96,
+     "MODEL D (realistic)": 2.288
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.81,
+     "LAWS+LEARNING": 1.83,
+     "MODEL D": 1.79,
+     "MODEL D (realistic)": 1.54
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0319,
+     "LAWS+LEARNING": 0.0316,
+     "MODEL D": 0.0213,
+     "MODEL D (realistic)": 0.0265
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.47,
+     "LAWS+LEARNING": 1.48,
+     "MODEL D": 2.2,
+     "MODEL D (realistic)": 1.76
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2015-10-10..2016-10-05",
+    "history repeat (gold file seen before)": 0.985,
+    "FROZEN file hit": 0.846,
+    "LEARNING file hit": 0.833,
+    "lane opened": 0.649,
+    "lane right when opened": 0.39,
+    "learning advantage (hit points)": -0.013,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.884,
+     "LAWS+LEARNING": 1.924,
+     "MODEL D": 1.968,
+     "MODEL D (realistic)": 2.308
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.87,
+     "LAWS+LEARNING": 1.83,
+     "MODEL D": 1.79,
+     "MODEL D (realistic)": 1.52
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.031,
+     "LAWS+LEARNING": 0.0316,
+     "MODEL D": 0.0208,
+     "MODEL D (realistic)": 0.0263
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.51,
+     "LAWS+LEARNING": 1.48,
+     "MODEL D": 2.25,
+     "MODEL D (realistic)": 1.78
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2016-10-05..2017-10-11",
+    "history repeat (gold file seen before)": 0.991,
+    "FROZEN file hit": 0.867,
+    "LEARNING file hit": 0.872,
+    "lane opened": 0.69,
+    "lane right when opened": 0.402,
+    "learning advantage (hit points)": 0.005,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.822,
+     "LAWS+LEARNING": 1.804,
+     "MODEL D": 1.868,
+     "MODEL D (realistic)": 2.2
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.93,
+     "LAWS+LEARNING": 1.95,
+     "MODEL D": 1.88,
+     "MODEL D (realistic)": 1.6
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.03,
+     "LAWS+LEARNING": 0.0298,
+     "MODEL D": 0.0186,
+     "MODEL D (realistic)": 0.0239
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.56,
+     "LAWS+LEARNING": 1.57,
+     "MODEL D": 2.52,
+     "MODEL D (realistic)": 1.96
+    }
+   },
+   {
+    "questions": 534,
+    "dates": "2017-10-24..2019-02-20",
+    "history repeat (gold file seen before)": 0.989,
+    "FROZEN file hit": 0.876,
+    "LEARNING file hit": 0.869,
+    "lane opened": 0.68,
+    "lane right when opened": 0.402,
+    "learning advantage (hit points)": -0.007,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.792,
+     "LAWS+LEARNING": 1.815,
+     "MODEL D": 1.892,
+     "MODEL D (realistic)": 2.205
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.96,
+     "LAWS+LEARNING": 1.94,
+     "MODEL D": 1.86,
+     "MODEL D (realistic)": 1.6
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0296,
+     "LAWS+LEARNING": 0.0299,
+     "MODEL D": 0.0191,
+     "MODEL D (realistic)": 0.0241
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.58,
+     "LAWS+LEARNING": 1.56,
+     "MODEL D": 2.45,
+     "MODEL D (realistic)": 1.94
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2019-02-20..2020-06-12",
+    "history repeat (gold file seen before)": 0.992,
+    "FROZEN file hit": 0.871,
+    "LEARNING file hit": 0.863,
+    "lane opened": 0.689,
+    "lane right when opened": 0.49,
+    "learning advantage (hit points)": -0.008,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.81,
+     "LAWS+LEARNING": 1.833,
+     "MODEL D": 1.916,
+     "MODEL D (realistic)": 2.142
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.94,
+     "LAWS+LEARNING": 1.92,
+     "MODEL D": 1.84,
+     "MODEL D (realistic)": 1.64
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0299,
+     "LAWS+LEARNING": 0.0302,
+     "MODEL D": 0.0193,
+     "MODEL D (realistic)": 0.0229
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.57,
+     "LAWS+LEARNING": 1.55,
+     "MODEL D": 2.42,
+     "MODEL D (realistic)": 2.04
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2020-06-15..2021-10-12",
+    "history repeat (gold file seen before)": 0.994,
+    "FROZEN file hit": 0.874,
+    "LEARNING file hit": 0.902,
+    "lane opened": 0.694,
+    "lane right when opened": 0.549,
+    "learning advantage (hit points)": 0.028,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.799,
+     "LAWS+LEARNING": 1.713,
+     "MODEL D": 1.84,
+     "MODEL D (realistic)": 1.967
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.96,
+     "LAWS+LEARNING": 2.05,
+     "MODEL D": 1.91,
+     "MODEL D (realistic)": 1.79
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0297,
+     "LAWS+LEARNING": 0.0284,
+     "MODEL D": 0.0181,
+     "MODEL D (realistic)": 0.02
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.58,
+     "LAWS+LEARNING": 1.65,
+     "MODEL D": 2.59,
+     "MODEL D (realistic)": 2.33
+    }
+   },
+   {
+    "questions": 534,
+    "dates": "2021-10-14..2023-07-06",
+    "history repeat (gold file seen before)": 0.989,
+    "FROZEN file hit": 0.884,
+    "LEARNING file hit": 0.903,
+    "lane opened": 0.697,
+    "lane right when opened": 0.522,
+    "learning advantage (hit points)": 0.019,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 1.769,
+     "LAWS+LEARNING": 1.712,
+     "MODEL D": 1.828,
+     "MODEL D (realistic)": 1.994
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.99,
+     "LAWS+LEARNING": 2.05,
+     "MODEL D": 1.92,
+     "MODEL D (realistic)": 1.76
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0293,
+     "LAWS+LEARNING": 0.0284,
+     "MODEL D": 0.0179,
+     "MODEL D (realistic)": 0.0205
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.6,
+     "LAWS+LEARNING": 1.65,
+     "MODEL D": 2.62,
+     "MODEL D (realistic)": 2.29
+    }
+   }
+  ],
+  "without repeat tickets": {
+   "questions": 5252,
+   "lane first decile": 0.415,
+   "lane last decile": 0.695,
+   "learning hit": 0.845,
+   "frozen hit": 0.84
+  }
+ },
+ "masked": {
+  "overall": {
+   "questions": 5333,
+   "dates": "2013-01-02..2023-07-06",
+   "history repeat (gold file seen before)": 0.956,
+   "FROZEN file hit": 0.492,
+   "LEARNING file hit": 0.518,
+   "lane opened": 0.659,
+   "lane right when opened": 0.195,
+   "learning advantage (hit points)": 0.026,
+   "projected requests per question": {
+    "ALONE": 3.518,
+    "LAWS": 2.962,
+    "LAWS+LEARNING": 2.884,
+    "MODEL D": 2.541,
+    "MODEL D (realistic)": 3.455
+   },
+   "projected saving vs ALONE (requests)": {
+    "LAWS": 1.19,
+    "LAWS+LEARNING": 1.22,
+    "MODEL D": 1.38,
+    "MODEL D (realistic)": 1.02
+   },
+   "projected $ per question": {
+    "ALONE": 0.0468,
+    "LAWS": 0.0473,
+    "LAWS+LEARNING": 0.0461,
+    "MODEL D": 0.0293,
+    "MODEL D (realistic)": 0.0438
+   },
+   "projected saving vs ALONE ($)": {
+    "LAWS": 0.99,
+    "LAWS+LEARNING": 1.01,
+    "MODEL D": 1.6,
+    "MODEL D (realistic)": 1.07
+   }
+  },
+  "deciles": [
+   {
+    "questions": 533,
+    "dates": "2013-01-02..2013-10-08",
+    "history repeat (gold file seen before)": 0.765,
+    "FROZEN file hit": 0.452,
+    "LEARNING file hit": 0.467,
+    "lane opened": 0.555,
+    "lane right when opened": 0.142,
+    "learning advantage (hit points)": 0.015,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 3.084,
+     "LAWS+LEARNING": 3.039,
+     "MODEL D": 2.643,
+     "MODEL D (realistic)": 3.562
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.14,
+     "LAWS+LEARNING": 1.16,
+     "MODEL D": 1.33,
+     "MODEL D (realistic)": 0.99
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0492,
+     "LAWS+LEARNING": 0.0485,
+     "MODEL D": 0.0327,
+     "MODEL D (realistic)": 0.0472
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.95,
+     "LAWS+LEARNING": 0.97,
+     "MODEL D": 1.43,
+     "MODEL D (realistic)": 0.99
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2013-07-18..2014-07-16",
+    "history repeat (gold file seen before)": 0.938,
+    "FROZEN file hit": 0.512,
+    "LEARNING file hit": 0.52,
+    "lane opened": 0.638,
+    "lane right when opened": 0.176,
+    "learning advantage (hit points)": 0.008,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.902,
+     "LAWS+LEARNING": 2.879,
+     "MODEL D": 2.527,
+     "MODEL D (realistic)": 3.448
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.21,
+     "LAWS+LEARNING": 1.22,
+     "MODEL D": 1.39,
+     "MODEL D (realistic)": 1.02
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0464,
+     "LAWS+LEARNING": 0.0461,
+     "MODEL D": 0.0295,
+     "MODEL D (realistic)": 0.0441
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.01,
+     "LAWS+LEARNING": 1.02,
+     "MODEL D": 1.59,
+     "MODEL D (realistic)": 1.06
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2014-07-14..2015-03-15",
+    "history repeat (gold file seen before)": 0.962,
+    "FROZEN file hit": 0.454,
+    "LEARNING file hit": 0.478,
+    "lane opened": 0.7,
+    "lane right when opened": 0.164,
+    "learning advantage (hit points)": 0.024,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 3.079,
+     "LAWS+LEARNING": 3.004,
+     "MODEL D": 2.614,
+     "MODEL D (realistic)": 3.642
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.14,
+     "LAWS+LEARNING": 1.17,
+     "MODEL D": 1.35,
+     "MODEL D (realistic)": 0.97
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0491,
+     "LAWS+LEARNING": 0.048,
+     "MODEL D": 0.0297,
+     "MODEL D (realistic)": 0.046
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.95,
+     "LAWS+LEARNING": 0.98,
+     "MODEL D": 1.57,
+     "MODEL D (realistic)": 1.02
+    }
+   },
+   {
+    "questions": 534,
+    "dates": "2015-03-03..2015-12-30",
+    "history repeat (gold file seen before)": 0.959,
+    "FROZEN file hit": 0.491,
+    "LEARNING file hit": 0.493,
+    "lane opened": 0.654,
+    "lane right when opened": 0.178,
+    "learning advantage (hit points)": 0.002,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.967,
+     "LAWS+LEARNING": 2.962,
+     "MODEL D": 2.59,
+     "MODEL D (realistic)": 3.544
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.19,
+     "LAWS+LEARNING": 1.19,
+     "MODEL D": 1.36,
+     "MODEL D (realistic)": 0.99
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0474,
+     "LAWS+LEARNING": 0.0473,
+     "MODEL D": 0.0302,
+     "MODEL D (realistic)": 0.0453
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.99,
+     "LAWS+LEARNING": 0.99,
+     "MODEL D": 1.55,
+     "MODEL D (realistic)": 1.03
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2015-10-10..2016-10-05",
+    "history repeat (gold file seen before)": 0.985,
+    "FROZEN file hit": 0.465,
+    "LEARNING file hit": 0.488,
+    "lane opened": 0.664,
+    "lane right when opened": 0.161,
+    "learning advantage (hit points)": 0.023,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 3.044,
+     "LAWS+LEARNING": 2.976,
+     "MODEL D": 2.597,
+     "MODEL D (realistic)": 3.583
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.16,
+     "LAWS+LEARNING": 1.18,
+     "MODEL D": 1.35,
+     "MODEL D (realistic)": 0.98
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0486,
+     "LAWS+LEARNING": 0.0475,
+     "MODEL D": 0.0301,
+     "MODEL D (realistic)": 0.0457
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.96,
+     "LAWS+LEARNING": 0.98,
+     "MODEL D": 1.56,
+     "MODEL D (realistic)": 1.02
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2016-10-05..2017-10-11",
+    "history repeat (gold file seen before)": 0.991,
+    "FROZEN file hit": 0.493,
+    "LEARNING file hit": 0.516,
+    "lane opened": 0.644,
+    "lane right when opened": 0.178,
+    "learning advantage (hit points)": 0.023,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.959,
+     "LAWS+LEARNING": 2.89,
+     "MODEL D": 2.563,
+     "MODEL D (realistic)": 3.464
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.19,
+     "LAWS+LEARNING": 1.22,
+     "MODEL D": 1.37,
+     "MODEL D (realistic)": 1.02
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0473,
+     "LAWS+LEARNING": 0.0462,
+     "MODEL D": 0.0299,
+     "MODEL D (realistic)": 0.0442
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.99,
+     "LAWS+LEARNING": 1.01,
+     "MODEL D": 1.56,
+     "MODEL D (realistic)": 1.06
+    }
+   },
+   {
+    "questions": 534,
+    "dates": "2017-10-24..2019-02-20",
+    "history repeat (gold file seen before)": 0.989,
+    "FROZEN file hit": 0.498,
+    "LEARNING file hit": 0.521,
+    "lane opened": 0.661,
+    "lane right when opened": 0.176,
+    "learning advantage (hit points)": 0.023,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.944,
+     "LAWS+LEARNING": 2.876,
+     "MODEL D": 2.539,
+     "MODEL D (realistic)": 3.467
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.19,
+     "LAWS+LEARNING": 1.22,
+     "MODEL D": 1.39,
+     "MODEL D (realistic)": 1.01
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0471,
+     "LAWS+LEARNING": 0.046,
+     "MODEL D": 0.0293,
+     "MODEL D (realistic)": 0.044
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.99,
+     "LAWS+LEARNING": 1.02,
+     "MODEL D": 1.6,
+     "MODEL D (realistic)": 1.06
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2019-02-20..2020-06-12",
+    "history repeat (gold file seen before)": 0.992,
+    "FROZEN file hit": 0.493,
+    "LEARNING file hit": 0.557,
+    "lane opened": 0.681,
+    "lane right when opened": 0.234,
+    "learning advantage (hit points)": 0.064,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.959,
+     "LAWS+LEARNING": 2.764,
+     "MODEL D": 2.443,
+     "MODEL D (realistic)": 3.317
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.19,
+     "LAWS+LEARNING": 1.27,
+     "MODEL D": 1.44,
+     "MODEL D (realistic)": 1.06
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0473,
+     "LAWS+LEARNING": 0.0443,
+     "MODEL D": 0.0275,
+     "MODEL D (realistic)": 0.0413
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 0.99,
+     "LAWS+LEARNING": 1.06,
+     "MODEL D": 1.7,
+     "MODEL D (realistic)": 1.13
+    }
+   },
+   {
+    "questions": 533,
+    "dates": "2020-06-15..2021-10-12",
+    "history repeat (gold file seen before)": 0.994,
+    "FROZEN file hit": 0.518,
+    "LEARNING file hit": 0.555,
+    "lane opened": 0.696,
+    "lane right when opened": 0.259,
+    "learning advantage (hit points)": 0.037,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.884,
+     "LAWS+LEARNING": 2.77,
+     "MODEL D": 2.467,
+     "MODEL D (realistic)": 3.311
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.22,
+     "LAWS+LEARNING": 1.27,
+     "MODEL D": 1.43,
+     "MODEL D (realistic)": 1.06
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0462,
+     "LAWS+LEARNING": 0.0444,
+     "MODEL D": 0.0276,
+     "MODEL D (realistic)": 0.0409
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.01,
+     "LAWS+LEARNING": 1.05,
+     "MODEL D": 1.7,
+     "MODEL D (realistic)": 1.15
+    }
+   },
+   {
+    "questions": 534,
+    "dates": "2021-10-14..2023-07-06",
+    "history repeat (gold file seen before)": 0.989,
+    "FROZEN file hit": 0.547,
+    "LEARNING file hit": 0.584,
+    "lane opened": 0.702,
+    "lane right when opened": 0.269,
+    "learning advantage (hit points)": 0.037,
+    "projected requests per question": {
+     "ALONE": 3.518,
+     "LAWS": 2.796,
+     "LAWS+LEARNING": 2.682,
+     "MODEL D": 2.424,
+     "MODEL D (realistic)": 3.217
+    },
+    "projected saving vs ALONE (requests)": {
+     "LAWS": 1.26,
+     "LAWS+LEARNING": 1.31,
+     "MODEL D": 1.45,
+     "MODEL D (realistic)": 1.09
+    },
+    "projected $ per question": {
+     "ALONE": 0.0468,
+     "LAWS": 0.0448,
+     "LAWS+LEARNING": 0.0431,
+     "MODEL D": 0.0268,
+     "MODEL D (realistic)": 0.0393
+    },
+    "projected saving vs ALONE ($)": {
+     "LAWS": 1.04,
+     "LAWS+LEARNING": 1.09,
+     "MODEL D": 1.75,
+     "MODEL D (realistic)": 1.19
+    }
+   }
+  ],
+  "without repeat tickets": {
+   "questions": 5252,
+   "lane first decile": 0.547,
+   "lane last decile": 0.701,
+   "learning hit": 0.515,
+   "frozen hit": 0.493
+  }
+ },
+ "R1": true,
+ "R2": true,
+ "R3": false,
+ "R4": false,
+ "R5": true
+}

@@ -1,0 +1,1488 @@
+{
+ "protocol sha256": "115b892c7128cf18e2ddd360a83f20b350187d4891ea7724acab51234c2f4794",
+ "E1": {
+  "alone": {
+   "n": 114,
+   "right": 109,
+   "requests": 4.044,
+   "tokens": 12884,
+   "usd per issue": 0.03225,
+   "usd total": 3.6764,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 114,
+   "right": 107,
+   "requests": 2.544,
+   "tokens": 9704,
+   "usd per issue": 0.02402,
+   "usd total": 2.7383,
+   "read path": 2
+  },
+  "requests": {
+   "factor": 1.59,
+   "ci95": [
+    1.458,
+    1.732
+   ],
+   "alone mean": 4.04386,
+   "modeld mean": 2.54386
+  },
+  "tokens": {
+   "factor": 1.328,
+   "ci95": [
+    1.09,
+    1.604
+   ],
+   "alone mean": 12884.29825,
+   "modeld mean": 9704.35965
+  },
+  "usd": {
+   "factor": 1.343,
+   "ci95": [
+    1.119,
+    1.595
+   ],
+   "alone mean": 0.03225,
+   "modeld mean": 0.02402
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "V1": true,
+ "V2": true,
+ "M1 E1": {
+  "r_A": 4.044,
+  "r_D measured": 2.544,
+  "r_D predicted": 2.309,
+  "error": -0.092,
+  "holds": true
+ },
+ "M2 E1": {
+  "g": 1158,
+  "P_A": 1367,
+  "P_D": 2637,
+  "r_A": 4.044,
+  "r_D": 2.544,
+  "S_pred": 1.409,
+  "S_T measured": 1.328,
+  "error": 0.061,
+  "holds": true
+ },
+ "E2": {
+  "alone": {
+   "n": 114,
+   "right": 106,
+   "requests": 5.5,
+   "tokens": 29046,
+   "usd per issue": 0.06918,
+   "usd total": 7.8863,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 114,
+   "right": 106,
+   "requests": 1.886,
+   "tokens": 7166,
+   "usd per issue": 0.01285,
+   "usd total": 1.4654,
+   "read path": 84
+  },
+  "requests": {
+   "factor": 2.916,
+   "ci95": [
+    2.496,
+    3.443
+   ],
+   "alone mean": 5.5,
+   "modeld mean": 1.88596
+  },
+  "tokens": {
+   "factor": 4.054,
+   "ci95": [
+    2.889,
+    5.821
+   ],
+   "alone mean": 29045.86842,
+   "modeld mean": 7165.55263
+  },
+  "usd": {
+   "factor": 5.382,
+   "ci95": [
+    3.602,
+    9.067
+   ],
+   "alone mean": 0.06918,
+   "modeld mean": 0.01285
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  },
+  "read share": 0.737,
+  "read precision": 0.964
+ },
+ "V3": true,
+ "V4": {
+  "alone": {
+   "n": 300,
+   "right": 294,
+   "requests": 3.113,
+   "tokens": 11928,
+   "usd per issue": 0.02759,
+   "usd total": 8.276,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 300,
+   "right": 261,
+   "requests": 1.993,
+   "tokens": 4381,
+   "usd per issue": 0.0099,
+   "usd total": 2.9712,
+   "read path": 70
+  },
+  "requests": {
+   "factor": 1.562,
+   "ci95": [
+    1.48,
+    1.653
+   ],
+   "alone mean": 3.11333,
+   "modeld mean": 1.99333
+  },
+  "usd": {
+   "factor": 2.785,
+   "ci95": [
+    2.536,
+    3.07
+   ],
+   "alone mean": 0.02759,
+   "modeld mean": 0.0099
+  },
+  "tokens": {
+   "factor": 2.722,
+   "ci95": [
+    2.493,
+    2.977
+   ],
+   "alone mean": 11928.02,
+   "modeld mean": 4381.33333
+  },
+  "repeats": {
+   "n": 78,
+   "usd": {
+    "factor": 3.489,
+    "ci95": [
+     2.798,
+     4.537
+    ],
+    "alone mean": 0.02942,
+    "modeld mean": 0.00843
+   },
+   "requests": {
+    "factor": 1.823,
+    "ci95": [
+     1.612,
+     2.083
+    ],
+    "alone mean": 3.29487,
+    "modeld mean": 1.80769
+   },
+   "read share": 0.41,
+   "right alone": 75,
+   "right modeld": 73
+  },
+  "first half usd factor": 2.662,
+  "second half usd factor": 3.165,
+  "new-question reads": 38,
+  "runs complete": 3
+ },
+ "V5": {
+  "n": 19,
+  "resolved alone": 16,
+  "resolved modeld": 15,
+  "requests": {
+   "factor": 0.992,
+   "ci95": [
+    0.747,
+    1.315
+   ],
+   "alone mean": 6.21053,
+   "modeld mean": 6.26316
+  },
+  "usd": {
+   "factor": 1.315,
+   "ci95": [
+    0.512,
+    2.486
+   ],
+   "alone mean": 0.16587,
+   "modeld mean": 0.12618
+  },
+  "tokens": {
+   "factor": 1.346,
+   "ci95": [
+    0.469,
+    2.666
+   ],
+   "alone mean": 73711.78947,
+   "modeld mean": 54755.21053
+  },
+  "usd per resolved alone": 0.197,
+  "usd per resolved modeld": 0.1598
+ },
+ "M3 E2": {
+  "params": {
+   "A": 0.03224908771929825,
+   "E": 0.00040229999999999997,
+   "K": 0.024439892857142858,
+   "reads used for E": 10
+  },
+  "nu": 0.263,
+  "S predicted": 4.796,
+  "S measured": 5.382,
+  "error": -0.109,
+  "holds": true
+ },
+ "E3": {
+  "B issues": 57,
+  "modeld right": 1.0,
+  "alone right (E1, same issues)": 1.0,
+  "read path fired": 0,
+  "false reads": 0,
+  "modeld usd per issue": 0.01819
+ },
+ "V6": {
+  "n": 114,
+  "vs cold usd": {
+   "factor": 1.042,
+   "ci95": [
+    0.951,
+    1.152
+   ],
+   "alone mean": 0.02412,
+   "modeld mean": 0.02315
+  },
+  "vs alone usd": {
+   "factor": 1.407,
+   "ci95": [
+    1.218,
+    1.635
+   ],
+   "alone mean": 0.03257,
+   "modeld mean": 0.02315
+  },
+  "vs alone requests": {
+   "factor": 1.575,
+   "ci95": [
+    1.451,
+    1.719
+   ],
+   "alone mean": 4.02632,
+   "modeld mean": 2.55702
+  },
+  "right per run": {
+   "alone": 108.3,
+   "cold": 107.0,
+   "warm": 97.0
+  },
+  "reads per run": [
+   18,
+   18
+  ],
+  "reads right": [
+   14,
+   36
+  ]
+ },
+ "V7": {
+  "S": {
+   "name": "strict Haiku reader",
+   "n": 100,
+   "right": 0.82,
+   "right or partial": 0.99,
+   "usd per question": 0.01201,
+   "reads": 12,
+   "reads right": 4,
+   "saving vs alone": 2.3
+  },
+  "N": {
+   "name": "Sonnet reader",
+   "n": 100,
+   "right": 0.77,
+   "right or partial": 0.97,
+   "usd per question": 0.01141,
+   "reads": 24,
+   "reads right": 10,
+   "saving vs alone": 2.42
+  },
+  "NS": {
+   "name": "Sonnet strict reader",
+   "n": 100,
+   "right": 0.84,
+   "right or partial": 0.98,
+   "usd per question": 0.01179,
+   "reads": 18,
+   "reads right": 8,
+   "saving vs alone": 2.34
+  }
+ },
+ "E4": {
+  "alone": {
+   "n": 114,
+   "right": 106,
+   "requests": 3.693,
+   "tokens": 11375,
+   "usd per issue": 0.0284,
+   "usd total": 3.2371,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 114,
+   "right": 94,
+   "requests": 3.096,
+   "tokens": 12697,
+   "usd per issue": 0.02947,
+   "usd total": 3.3597,
+   "read path": 12
+  },
+  "requests": {
+   "factor": 1.193,
+   "ci95": [
+    1.094,
+    1.307
+   ],
+   "alone mean": 3.69298,
+   "modeld mean": 3.09649
+  },
+  "tokens": {
+   "factor": 0.896,
+   "ci95": [
+    0.69,
+    1.151
+   ],
+   "alone mean": 11374.64912,
+   "modeld mean": 12696.80702
+  },
+  "usd": {
+   "factor": 0.964,
+   "ci95": [
+    0.751,
+    1.221
+   ],
+   "alone mean": 0.0284,
+   "modeld mean": 0.02947
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "V8": false,
+ "M1 E4": {
+  "r_A": 3.693,
+  "r_D measured": 3.096,
+  "r_D predicted": 2.158,
+  "error": -0.303,
+  "holds": false
+ },
+ "M2 E4": {
+  "g": 1212,
+  "P_A": 1138,
+  "P_D": 2302,
+  "r_A": 3.693,
+  "r_D": 3.096,
+  "S_pred": 0.925,
+  "S_T measured": 0.896,
+  "error": 0.032,
+  "holds": true
+ },
+ "E5": {
+  "alone": {
+   "n": 117,
+   "right": 86,
+   "requests": 5.453,
+   "tokens": 35551,
+   "usd per issue": 0.08311,
+   "usd total": 9.7237,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 117,
+   "right": 83,
+   "requests": 3.769,
+   "tokens": 23758,
+   "usd per issue": 0.05535,
+   "usd total": 6.4763,
+   "read path": 4
+  },
+  "requests": {
+   "factor": 1.447,
+   "ci95": [
+    1.318,
+    1.59
+   ],
+   "alone mean": 5.45299,
+   "modeld mean": 3.76923
+  },
+  "tokens": {
+   "factor": 1.496,
+   "ci95": [
+    1.189,
+    1.885
+   ],
+   "alone mean": 35551.41026,
+   "modeld mean": 23758.4188
+  },
+  "usd": {
+   "factor": 1.501,
+   "ci95": [
+    1.208,
+    1.869
+   ],
+   "alone mean": 0.08311,
+   "modeld mean": 0.05535
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "V9": true,
+ "M1 E5": {
+  "r_A": 5.453,
+  "r_D measured": 3.769,
+  "r_D predicted": 2.915,
+  "error": -0.227,
+  "holds": false
+ },
+ "M2 E5": {
+  "g": 1592,
+  "P_A": 1499,
+  "P_D": 2811,
+  "r_A": 5.453,
+  "r_D": 3.769,
+  "S_pred": 1.455,
+  "S_T measured": 1.496,
+  "error": -0.028,
+  "holds": true
+ },
+ "E5 sympy": {
+  "alone": {
+   "n": 77,
+   "right": 59,
+   "requests": 6.416,
+   "tokens": 46866,
+   "usd per issue": 0.10895,
+   "usd total": 8.3894,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 77,
+   "right": 59,
+   "requests": 4.169,
+   "tokens": 27698,
+   "usd per issue": 0.06446,
+   "usd total": 4.9634,
+   "read path": 3
+  },
+  "requests": {
+   "factor": 1.539,
+   "ci95": [
+    1.379,
+    1.73
+   ],
+   "alone mean": 6.41558,
+   "modeld mean": 4.16883
+  },
+  "tokens": {
+   "factor": 1.692,
+   "ci95": [
+    1.319,
+    2.195
+   ],
+   "alone mean": 46866.42857,
+   "modeld mean": 27697.62338
+  },
+  "usd": {
+   "factor": 1.69,
+   "ci95": [
+    1.341,
+    2.151
+   ],
+   "alone mean": 0.10895,
+   "modeld mean": 0.06446
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "E5 scikit-learn": {
+  "alone": {
+   "n": 23,
+   "right": 11,
+   "requests": 3.739,
+   "tokens": 14596,
+   "usd per issue": 0.03568,
+   "usd total": 0.8207,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 23,
+   "right": 10,
+   "requests": 3.391,
+   "tokens": 20425,
+   "usd per issue": 0.0475,
+   "usd total": 1.0925,
+   "read path": 1
+  },
+  "requests": {
+   "factor": 1.103,
+   "ci95": [
+    0.875,
+    1.344
+   ],
+   "alone mean": 3.73913,
+   "modeld mean": 3.3913
+  },
+  "tokens": {
+   "factor": 0.715,
+   "ci95": [
+    0.392,
+    1.178
+   ],
+   "alone mean": 14595.86957,
+   "modeld mean": 20425.17391
+  },
+  "usd": {
+   "factor": 0.751,
+   "ci95": [
+    0.419,
+    1.26
+   ],
+   "alone mean": 0.03568,
+   "modeld mean": 0.0475
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "E5 pytest": {
+  "alone": {
+   "n": 17,
+   "right": 16,
+   "requests": 3.412,
+   "tokens": 12653,
+   "usd per issue": 0.03021,
+   "usd total": 0.5136,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 17,
+   "right": 14,
+   "requests": 2.471,
+   "tokens": 10426,
+   "usd per issue": 0.02473,
+   "usd total": 0.4204,
+   "read path": 0
+  },
+  "requests": {
+   "factor": 1.381,
+   "ci95": [
+    1.209,
+    1.571
+   ],
+   "alone mean": 3.41176,
+   "modeld mean": 2.47059
+  },
+  "tokens": {
+   "factor": 1.214,
+   "ci95": [
+    0.923,
+    1.696
+   ],
+   "alone mean": 12652.64706,
+   "modeld mean": 10425.82353
+  },
+  "usd": {
+   "factor": 1.222,
+   "ci95": [
+    0.959,
+    1.642
+   ],
+   "alone mean": 0.03021,
+   "modeld mean": 0.02473
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "E6 pass 1": {
+  "alone": {
+   "n": 30,
+   "right": 29,
+   "requests": 2.433,
+   "tokens": 18407,
+   "usd per issue": 0.0386,
+   "usd total": 1.1581,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 28,
+   "requests": 1.5,
+   "tokens": 8682,
+   "usd per issue": 0.01689,
+   "usd total": 0.5067,
+   "read path": 14
+  },
+  "requests": {
+   "factor": 1.622,
+   "ci95": [
+    1.34,
+    1.974
+   ],
+   "alone mean": 2.43333,
+   "modeld mean": 1.5
+  },
+  "tokens": {
+   "factor": 2.12,
+   "ci95": [
+    1.552,
+    3.086
+   ],
+   "alone mean": 18406.93333,
+   "modeld mean": 8681.93333
+  },
+  "usd": {
+   "factor": 2.286,
+   "ci95": [
+    1.624,
+    3.582
+   ],
+   "alone mean": 0.0386,
+   "modeld mean": 0.01689
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "E6 pass 2": {
+  "alone": {
+   "n": 30,
+   "right": 28,
+   "requests": 2.5,
+   "tokens": 19351,
+   "usd per issue": 0.04054,
+   "usd total": 1.2161,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 27,
+   "requests": 1.167,
+   "tokens": 3288,
+   "usd per issue": 0.00415,
+   "usd total": 0.1246,
+   "read path": 26
+  },
+  "requests": {
+   "factor": 2.143,
+   "ci95": [
+    1.769,
+    2.576
+   ],
+   "alone mean": 2.5,
+   "modeld mean": 1.16667
+  },
+  "tokens": {
+   "factor": 5.885,
+   "ci95": [
+    3.694,
+    10.685
+   ],
+   "alone mean": 19351.16667,
+   "modeld mean": 3288.3
+  },
+  "usd": {
+   "factor": 9.758,
+   "ci95": [
+    4.886,
+    48.956
+   ],
+   "alone mean": 0.04054,
+   "modeld mean": 0.00415
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "V10": true,
+ "V11": true,
+ "V12": true,
+ "F1 run 2": {
+  "alone": {
+   "n": 114,
+   "right": 108,
+   "requests": 4.07,
+   "tokens": 13173,
+   "usd per issue": 0.03288,
+   "usd total": 3.748,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 114,
+   "right": 107,
+   "requests": 2.491,
+   "tokens": 9471,
+   "usd per issue": 0.02357,
+   "usd total": 2.6865,
+   "read path": 2
+  },
+  "requests": {
+   "factor": 1.634,
+   "ci95": [
+    1.503,
+    1.78
+   ],
+   "alone mean": 4.07018,
+   "modeld mean": 2.49123
+  },
+  "tokens": {
+   "factor": 1.391,
+   "ci95": [
+    1.148,
+    1.698
+   ],
+   "alone mean": 13173.13158,
+   "modeld mean": 9470.57895
+  },
+  "usd": {
+   "factor": 1.395,
+   "ci95": [
+    1.178,
+    1.664
+   ],
+   "alone mean": 0.03288,
+   "modeld mean": 0.02357
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "P1 run 2": true,
+ "M1 F1 run 2": {
+  "r_A": 4.07,
+  "r_D measured": 2.491,
+  "r_D predicted": 2.32,
+  "error": -0.069,
+  "holds": true
+ },
+ "M2 F1 run 2": {
+  "g": 1131,
+  "P_A": 1372,
+  "P_D": 2630,
+  "r_A": 4.07,
+  "r_D": 2.491,
+  "S_pred": 1.462,
+  "S_T measured": 1.391,
+  "error": 0.051,
+  "holds": true
+ },
+ "F1 run 3": {
+  "alone": {
+   "n": 114,
+   "right": 108,
+   "requests": 3.965,
+   "tokens": 13093,
+   "usd per issue": 0.03259,
+   "usd total": 3.7152,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 114,
+   "right": 107,
+   "requests": 2.596,
+   "tokens": 10051,
+   "usd per issue": 0.02478,
+   "usd total": 2.8246,
+   "read path": 2
+  },
+  "requests": {
+   "factor": 1.527,
+   "ci95": [
+    1.397,
+    1.671
+   ],
+   "alone mean": 3.96491,
+   "modeld mean": 2.59649
+  },
+  "tokens": {
+   "factor": 1.303,
+   "ci95": [
+    1.058,
+    1.595
+   ],
+   "alone mean": 13093.26316,
+   "modeld mean": 10051.46491
+  },
+  "usd": {
+   "factor": 1.315,
+   "ci95": [
+    1.095,
+    1.579
+   ],
+   "alone mean": 0.03259,
+   "modeld mean": 0.02478
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "P1 run 3": true,
+ "M1 F1 run 3": {
+  "r_A": 3.965,
+  "r_D measured": 2.596,
+  "r_D predicted": 2.275,
+  "error": -0.124,
+  "holds": true
+ },
+ "M2 F1 run 3": {
+  "g": 1194,
+  "P_A": 1373,
+  "P_D": 2643,
+  "r_A": 3.965,
+  "r_D": 2.596,
+  "S_pred": 1.334,
+  "S_T measured": 1.303,
+  "error": 0.024,
+  "holds": true
+ },
+ "F1 pooled": {
+  "alone": {
+   "n": 342,
+   "right": 325,
+   "requests": 4.026,
+   "tokens": 13050,
+   "usd per issue": 0.03257,
+   "usd total": 11.1396,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 342,
+   "right": 321,
+   "requests": 2.544,
+   "tokens": 9742,
+   "usd per issue": 0.02412,
+   "usd total": 8.2495,
+   "read path": 6
+  },
+  "requests": {
+   "factor": 1.583,
+   "ci95": [
+    1.506,
+    1.663
+   ],
+   "alone mean": 4.02632,
+   "modeld mean": 2.54386
+  },
+  "usd": {
+   "factor": 1.35,
+   "ci95": [
+    1.218,
+    1.495
+   ],
+   "alone mean": 0.03257,
+   "modeld mean": 0.02412
+  },
+  "tokens": {
+   "factor": 1.34,
+   "ci95": [
+    1.193,
+    1.5
+   ],
+   "alone mean": 13050.23099,
+   "modeld mean": 9742.1345
+  }
+ },
+ "P2": true,
+ "P3": true,
+ "F2": {
+  "alone": {
+   "n": 113,
+   "right": 103,
+   "requests": 3.664,
+   "tokens": 10719,
+   "usd per issue": 0.02718,
+   "usd total": 3.0711,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 113,
+   "right": 97,
+   "requests": 2.761,
+   "tokens": 9289,
+   "usd per issue": 0.02169,
+   "usd total": 2.4513,
+   "read path": 13
+  },
+  "requests": {
+   "factor": 1.327,
+   "ci95": [
+    1.216,
+    1.451
+   ],
+   "alone mean": 3.66372,
+   "modeld mean": 2.76106
+  },
+  "tokens": {
+   "factor": 1.154,
+   "ci95": [
+    0.93,
+    1.416
+   ],
+   "alone mean": 10718.54867,
+   "modeld mean": 9289.02655
+  },
+  "usd": {
+   "factor": 1.253,
+   "ci95": [
+    1.035,
+    1.509
+   ],
+   "alone mean": 0.02718,
+   "modeld mean": 0.02169
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 1
+  }
+ },
+ "P4 (V8 failure replicates)": true,
+ "F3 pass 1": {
+  "alone": {
+   "n": 30,
+   "right": 30,
+   "requests": 2.333,
+   "tokens": 16167,
+   "usd per issue": 0.03488,
+   "usd total": 1.0465,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 30,
+   "requests": 1.433,
+   "tokens": 8150,
+   "usd per issue": 0.01603,
+   "usd total": 0.4809,
+   "read path": 14
+  },
+  "requests": {
+   "factor": 1.628,
+   "ci95": [
+    1.327,
+    2.0
+   ],
+   "alone mean": 2.33333,
+   "modeld mean": 1.43333
+  },
+  "tokens": {
+   "factor": 1.984,
+   "ci95": [
+    1.469,
+    2.865
+   ],
+   "alone mean": 16167.16667,
+   "modeld mean": 8150.3
+  },
+  "usd": {
+   "factor": 2.176,
+   "ci95": [
+    1.548,
+    3.429
+   ],
+   "alone mean": 0.03488,
+   "modeld mean": 0.01603
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "F3 pass 2": {
+  "alone": {
+   "n": 30,
+   "right": 29,
+   "requests": 2.733,
+   "tokens": 19349,
+   "usd per issue": 0.04194,
+   "usd total": 1.2581,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 30,
+   "requests": 1.1,
+   "tokens": 3327,
+   "usd per issue": 0.00444,
+   "usd total": 0.1333,
+   "read path": 26
+  },
+  "requests": {
+   "factor": 2.485,
+   "ci95": [
+    2.194,
+    2.774
+   ],
+   "alone mean": 2.73333,
+   "modeld mean": 1.1
+  },
+  "tokens": {
+   "factor": 5.816,
+   "ci95": [
+    3.793,
+    10.019
+   ],
+   "alone mean": 19348.93333,
+   "modeld mean": 3327.06667
+  },
+  "usd": {
+   "factor": 9.436,
+   "ci95": [
+    4.787,
+    42.22
+   ],
+   "alone mean": 0.04194,
+   "modeld mean": 0.00444
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "P5": true,
+ "P6": true,
+ "P7": true,
+ "F4": {
+  "alone": {
+   "n": 48,
+   "right": 42,
+   "requests": 4.771,
+   "tokens": 22344,
+   "usd per issue": 0.05404,
+   "usd total": 2.5937,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 48,
+   "right": 42,
+   "requests": 3.479,
+   "tokens": 17074,
+   "usd per issue": 0.04063,
+   "usd total": 1.9502,
+   "read path": 0
+  },
+  "requests": {
+   "factor": 1.371,
+   "ci95": [
+    1.225,
+    1.556
+   ],
+   "alone mean": 4.77083,
+   "modeld mean": 3.47917
+  },
+  "tokens": {
+   "factor": 1.309,
+   "ci95": [
+    1.101,
+    1.595
+   ],
+   "alone mean": 22344.29167,
+   "modeld mean": 17073.79167
+  },
+  "usd": {
+   "factor": 1.33,
+   "ci95": [
+    1.131,
+    1.605
+   ],
+   "alone mean": 0.05404,
+   "modeld mean": 0.04063
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "P8": true,
+ "M1 F4": {
+  "r_A": 4.771,
+  "r_D measured": 3.479,
+  "r_D predicted": 2.622,
+  "error": -0.246,
+  "holds": false
+ },
+ "M2 F4": {
+  "g": 1328,
+  "P_A": 1558,
+  "P_D": 2892,
+  "r_A": 4.771,
+  "r_D": 3.479,
+  "S_pred": 1.228,
+  "S_T measured": 1.309,
+  "error": -0.062,
+  "holds": true
+ },
+ "G1 pass 1": {
+  "alone": {
+   "n": 30,
+   "right": 29,
+   "requests": 4.767,
+   "tokens": 63293,
+   "usd per issue": 0.13953,
+   "usd total": 4.1859,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 28,
+   "requests": 4.1,
+   "tokens": 48990,
+   "usd per issue": 0.10861,
+   "usd total": 3.2584,
+   "read path": 1
+  },
+  "requests": {
+   "factor": 1.163,
+   "ci95": [
+    1.031,
+    1.32
+   ],
+   "alone mean": 4.76667,
+   "modeld mean": 4.1
+  },
+  "tokens": {
+   "factor": 1.292,
+   "ci95": [
+    1.013,
+    1.768
+   ],
+   "alone mean": 63292.93333,
+   "modeld mean": 48989.6
+  },
+  "usd": {
+   "factor": 1.285,
+   "ci95": [
+    1.002,
+    1.785
+   ],
+   "alone mean": 0.13953,
+   "modeld mean": 0.10861
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "G1 pass 2": {
+  "alone": {
+   "n": 30,
+   "right": 30,
+   "requests": 5.133,
+   "tokens": 74861,
+   "usd per issue": 0.16004,
+   "usd total": 4.8012,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 28,
+   "requests": 2.433,
+   "tokens": 14885,
+   "usd per issue": 0.02946,
+   "usd total": 0.8838,
+   "read path": 8
+  },
+  "requests": {
+   "factor": 2.11,
+   "ci95": [
+    1.836,
+    2.429
+   ],
+   "alone mean": 5.13333,
+   "modeld mean": 2.43333
+  },
+  "tokens": {
+   "factor": 5.029,
+   "ci95": [
+    3.657,
+    6.613
+   ],
+   "alone mean": 74860.9,
+   "modeld mean": 14885.2
+  },
+  "usd": {
+   "factor": 5.432,
+   "ci95": [
+    3.959,
+    7.151
+   ],
+   "alone mean": 0.16004,
+   "modeld mean": 0.02946
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "G1a": false,
+ "G1b": true,
+ "G1c": true,
+ "G2": {
+  "sessions": [
+   {
+    "session": 0,
+    "alone usd": 0.2585,
+    "modeld usd": 0.2198,
+    "alone requests": 42,
+    "modeld requests": 25,
+    "alone right": 15,
+    "modeld right": 15
+   },
+   {
+    "session": 1,
+    "alone usd": 0.4957,
+    "modeld usd": 0.3682,
+    "alone requests": 56,
+    "modeld requests": 36,
+    "alone right": 14,
+    "modeld right": 14
+   },
+   {
+    "session": 2,
+    "alone usd": 0.3729,
+    "modeld usd": 0.3623,
+    "alone requests": 53,
+    "modeld requests": 39,
+    "alone right": 15,
+    "modeld right": 15
+   }
+  ],
+  "cost factor reports 1-7": 1.182,
+  "cost factor reports 9-15": 1.203,
+  "session token factor": 1.342,
+  "request factor": 1.51,
+  "cost factor": 1.186,
+  "mean usd by report index": {
+   "alone": [
+    0.02027,
+    0.03466,
+    0.02325,
+    0.01624,
+    0.01904,
+    0.02151,
+    0.02074,
+    0.01576,
+    0.03738,
+    0.03104,
+    0.02523,
+    0.02129,
+    0.0258,
+    0.03562,
+    0.02787
+   ],
+   "modeld": [
+    0.01459,
+    0.02762,
+    0.02818,
+    0.01496,
+    0.01524,
+    0.01567,
+    0.01549,
+    0.01523,
+    0.03331,
+    0.02482,
+    0.02597,
+    0.01746,
+    0.02825,
+    0.01798,
+    0.02201
+   ]
+  }
+ },
+ "G2a": true,
+ "G2b": true,
+ "G2c": false,
+ "G3": {
+  "alone": {
+   "n": 30,
+   "right": 20,
+   "requests": 7.033,
+   "tokens": 118948,
+   "usd per issue": 0.40204,
+   "usd total": 12.0611,
+   "read path": 0
+  },
+  "modeld": {
+   "n": 30,
+   "right": 20,
+   "requests": 5.133,
+   "tokens": 92536,
+   "usd per issue": 0.34322,
+   "usd total": 10.2966,
+   "read path": 0
+  },
+  "requests": {
+   "factor": 1.37,
+   "ci95": [
+    1.206,
+    1.568
+   ],
+   "alone mean": 7.03333,
+   "modeld mean": 5.13333
+  },
+  "tokens": {
+   "factor": 1.285,
+   "ci95": [
+    0.997,
+    1.668
+   ],
+   "alone mean": 118948.23333,
+   "modeld mean": 92536.5
+  },
+  "usd": {
+   "factor": 1.171,
+   "ci95": [
+    0.947,
+    1.465
+   ],
+   "alone mean": 0.40204,
+   "modeld mean": 0.34322
+  },
+  "errors": {
+   "alone": 0,
+   "modeld": 0
+  }
+ },
+ "G3a": true,
+ "G3b": false,
+ "G3c": true,
+ "C1": true,
+ "C2": false,
+ "C3": true,
+ "C4": false,
+ "C5": true,
+ "M1 V4": {
+  "r_A": 3.113,
+  "r_D measured": 1.993,
+  "r_D predicted": 1.909,
+  "error": -0.042,
+  "holds": true
+ },
+ "M2 V4": {
+  "g": 2152,
+  "P_A": 872,
+  "P_D": 1628,
+  "r_A": 3.113,
+  "r_D": 1.993,
+  "S_pred": 1.822,
+  "S_T measured": 2.722,
+  "error": -0.331,
+  "holds": false
+ },
+ "W1": true,
+ "W2": false,
+ "W3": false,
+ "W4": true,
+ "K1": false,
+ "K2": false,
+ "K3": false,
+ "K4": true,
+ "V6b": {
+  "n": 114,
+  "vs cold usd": {
+   "factor": 0.958,
+   "ci95": [
+    0.845,
+    1.095
+   ],
+   "alone mean": 0.02412,
+   "modeld mean": 0.02519
+  },
+  "vs alone usd": {
+   "factor": 1.293,
+   "ci95": [
+    1.081,
+    1.535
+   ],
+   "alone mean": 0.03257,
+   "modeld mean": 0.02519
+  },
+  "vs alone requests": {
+   "factor": 1.462,
+   "ci95": [
+    1.351,
+    1.582
+   ],
+   "alone mean": 4.02632,
+   "modeld mean": 2.75439
+  },
+  "right per run": {
+   "alone": 108.3,
+   "cold": 107.0,
+   "warm": 104.0
+  },
+  "reads per run": [
+   7,
+   10
+  ],
+  "reads right": [
+   8,
+   17
+  ]
+ },
+ "K5": true,
+ "K6": false,
+ "K7": false,
+ "V4 judge": {
+  "alone": {
+   "n": 300,
+   "right": 0.857,
+   "right or partial": 0.99,
+   "wrong": 3
+  },
+  "modeld": {
+   "n": 300,
+   "right": 0.74,
+   "right or partial": 0.97,
+   "wrong": 9
+  },
+  "modeld teach": {
+   "n": 230,
+   "right": 0.87,
+   "right or partial": 0.991,
+   "wrong": 2
+  },
+  "modeld read": {
+   "n": 70,
+   "right": 0.314,
+   "right or partial": 0.9,
+   "wrong": 7
+  }
+ },
+ "Q1": true,
+ "Q2": true,
+ "Q3": false,
+ "program spend usd": 141.7646
+}

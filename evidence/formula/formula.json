@@ -1,0 +1,147 @@
+{
+ "D1 Sonnet 5.5, 114 real issues": {
+  "sessions": [
+   114,
+   114
+  ],
+  "calls per session alone/kit": [
+   2.89,
+   0.89
+  ],
+  "phi": 0.694,
+  "requests per session alone/kit": [
+   3.52,
+   1.76
+  ],
+  "P alone/kit": [
+   45887,
+   47117
+  ],
+  "g": 1492,
+  "S_pred": 1.998,
+  "S_pred (per-session r, exploratory)": 1.984,
+  "S_T measured": 1.953,
+  "S_r measured": 1.995,
+  "tokens per session alone/kit": [
+   167860,
+   85971
+  ]
+ },
+ "D2 Gemini 2.5 Flash, 114 real issues": {
+  "sessions": [
+   114,
+   114
+  ],
+  "calls per session alone/kit": [
+   6.25,
+   3.21
+  ],
+  "phi": 0.487,
+  "requests per session alone/kit": [
+   7.25,
+   4.21
+  ],
+  "P alone/kit": [
+   768,
+   2710
+  ],
+  "g": 1188,
+  "S_pred": 1.673,
+  "S_pred (per-session r, exploratory)": 1.693,
+  "S_T measured": 1.654,
+  "S_r measured": 1.723,
+  "tokens per session alone/kit": [
+   38430,
+   23240
+  ]
+ },
+ "D3 Gemini 2.5 Flash, 60-question stream": {
+  "sessions": [
+   18,
+   18
+  ],
+  "calls per session alone/kit": [
+   35.89,
+   3.0
+  ],
+  "phi": 0.916,
+  "requests per session alone/kit": [
+   52.72,
+   27.11
+  ],
+  "P alone/kit": [
+   429,
+   1683
+  ],
+  "g": 920,
+  "S_pred": 3.44,
+  "S_pred (per-session r, exploratory)": 3.339,
+  "S_T measured": 4.29,
+  "S_r measured": 1.945,
+  "tokens per session alone/kit": [
+   1353115,
+   315379
+  ]
+ },
+ "D4 Opus 5.5, 60-question stream": {
+  "sessions": [
+   6,
+   6
+  ],
+  "calls per session alone/kit": [
+   28.67,
+   10.67
+  ],
+  "phi": 0.628,
+  "requests per session alone/kit": [
+   37.67,
+   22.0
+  ],
+  "P alone/kit": [
+   43548,
+   43684
+  ],
+  "g": 862,
+  "S_pred": 1.927,
+  "S_pred (per-session r, exploratory)": 1.924,
+  "S_T measured": 1.787,
+  "S_r measured": 1.712,
+  "tokens per session alone/kit": [
+   2279500,
+   1275630
+  ]
+ },
+ "D5 Sonnet 5.5, 60-question stream": {
+  "sessions": [
+   6,
+   6
+  ],
+  "calls per session alone/kit": [
+   30.67,
+   12.33
+  ],
+  "phi": 0.598,
+  "requests per session alone/kit": [
+   37.5,
+   23.33
+  ],
+  "P alone/kit": [
+   43575,
+   43711
+  ],
+  "g": 1045,
+  "S_pred": 1.818,
+  "S_pred (per-session r, exploratory)": 1.818,
+  "S_T measured": 1.714,
+  "S_r measured": 1.607,
+  "tokens per session alone/kit": [
+   2373831,
+   1385234
+  ]
+ },
+ "G1": false,
+ "G2": true,
+ "G3": false,
+ "G4": false,
+ "protocol sha256": "01f95239f22a01f1f95b1faa75b2a9848b5bd6421ebff5d813f1d6dcbd2dc059"
+}

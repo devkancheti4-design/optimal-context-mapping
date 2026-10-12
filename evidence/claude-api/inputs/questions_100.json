@@ -1,0 +1,3218 @@
+[
+ {
+  "qid": "q01",
+  "role": "lead",
+  "question": "Are there any API endpoints that only get mounted in certain environments? Which setting controls that?",
+  "answer": "Yes. The private router (prefix /private, e.g. POST /api/v1/private/users/, which creates a user without any auth) is only included in api_router when settings.ENVIRONMENT == \"local\"; in staging and production it is not mounted.",
+  "evidence": [
+   {
+    "file": "backend/app/api/main.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/api/main.py",
+    "line": 14
+   },
+   {
+    "file": "backend/app/api/routes/private.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/api/routes/private.py",
+    "line": 23
+   }
+  ],
+  "fact": "f01",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q02",
+  "role": "lead",
+  "question": "How do our endpoints get their OpenAPI operation IDs? The generated frontend client is named after them, so I want to know the convention.",
+  "answer": "The FastAPI app is created with generate_unique_id_function=custom_generate_unique_id, which returns f\"{route.tags[0]}-{route.name}\": the route's first tag, a hyphen, then the endpoint function name (e.g. items-read_items).",
+  "evidence": [
+   {
+    "file": "backend/app/main.py",
+    "line": 10
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 11
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 20
+   }
+  ],
+  "fact": "f02",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q03",
+  "role": "lead",
+  "question": "What do I have to do with labels on a pull request so the label check stops failing?",
+  "answer": "The check-labels job (agilepathway/label-checker) requires exactly one of these labels: breaking, security, feature, bug, refactor, upgrade, docs, lang-all, internal.",
+  "evidence": [
+   {
+    "file": ".github/workflows/labeler.yml",
+    "line": 30
+   },
+   {
+    "file": ".github/workflows/labeler.yml",
+    "line": 32
+   }
+  ],
+  "fact": "f03",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q04",
+  "role": "lead",
+  "question": "What kicks off a production deployment, and on which machine does it run?",
+  "answer": "Publishing a GitHub release (release event, type published) triggers deploy-production.yml, which runs on a self-hosted runner labelled production and does docker compose -f compose.yml build and up -d; the job is skipped when the repository owner is fastapi.",
+  "evidence": [
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 4
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 6
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 11
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 14
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 31
+   }
+  ],
+  "fact": "f04",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q05",
+  "role": "lead",
+  "question": "What's the minimum backend test coverage we hold ourselves to in CI?",
+  "answer": "90%. The Test Backend workflow ends with uv run coverage report --fail-under=90, and Smokeshow posts the coverage status with SMOKESHOW_GITHUB_COVERAGE_THRESHOLD set to 90.",
+  "evidence": [
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 40
+   },
+   {
+    "file": ".github/workflows/smokeshow.yml",
+    "line": 30
+   }
+  ],
+  "fact": "f05",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q06",
+  "role": "lead",
+  "question": "When we cut a release, how does the date end up on the version heading in release-notes.md?",
+  "answer": "The add-release-date prek/pre-commit hook runs scripts/add_latest_release_date.py whenever release-notes.md changes; it finds the first \"## X.Y.Z\" header and, if it has no date, rewrites it as \"## X.Y.Z (YYYY-MM-DD)\" with today's date.",
+  "evidence": [
+   {
+    "file": ".pre-commit-config.yaml",
+    "line": 64
+   },
+   {
+    "file": ".pre-commit-config.yaml",
+    "line": 67
+   },
+   {
+    "file": ".pre-commit-config.yaml",
+    "line": 68
+   },
+   {
+    "file": "scripts/add_latest_release_date.py",
+    "line": 8
+   },
+   {
+    "file": "scripts/add_latest_release_date.py",
+    "line": 28
+   }
+  ],
+  "fact": "f06",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q07",
+  "role": "lead",
+  "question": "What stops someone deploying with the placeholder 'changethis' secrets still in place?",
+  "answer": "A Settings model validator checks SECRET_KEY, POSTGRES_PASSWORD and FIRST_SUPERUSER_PASSWORD: if any equals \"changethis\" it only issues a warning when ENVIRONMENT is \"local\", but raises a ValueError (so the app won't start) in any other environment.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 98
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 103
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 106
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 110
+   }
+  ],
+  "fact": "f07",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q08",
+  "role": "backend",
+  "question": "How long does a JWT from the login endpoint stay valid?",
+  "answer": "8 days: ACCESS_TOKEN_EXPIRE_MINUTES defaults to 60 * 24 * 8 = 11520 minutes, and /login/access-token uses it as the token's expiry.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 36
+   },
+   {
+    "file": "backend/app/api/routes/login.py",
+    "line": 37
+   }
+  ],
+  "fact": "f08",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q09",
+  "role": "backend",
+  "question": "On container start, how many times does the database readiness check retry, and how far apart are the attempts?",
+  "answer": "backend_pre_start.py retries a SELECT 1 with tenacity up to max_tries = 60 * 5 = 300 attempts with a fixed 1-second wait, so about 5 minutes before it gives up.",
+  "evidence": [
+   {
+    "file": "backend/app/backend_pre_start.py",
+    "line": 12
+   },
+   {
+    "file": "backend/app/backend_pre_start.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/backend_pre_start.py",
+    "line": 17
+   },
+   {
+    "file": "backend/app/backend_pre_start.py",
+    "line": 18
+   }
+  ],
+  "fact": "f09",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q10",
+  "role": "backend",
+  "question": "If I boot the API with ENVIRONMENT=staging but forget to change SECRET_KEY from the template value, what happens?",
+  "answer": "It fails to start: Settings raises a ValueError because SECRET_KEY is \"changethis\" outside the local environment (in local it is only a warning); POSTGRES_PASSWORD and FIRST_SUPERUSER_PASSWORD get the same check.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 98
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 103
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 106
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 110
+   }
+  ],
+  "fact": "f07",
+  "repeat_of": "f07",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q11",
+  "role": "backend",
+  "question": "Is a superuser allowed to delete their own account through the users endpoints?",
+  "answer": "No. DELETE /users/me returns 403 \"Super users are not allowed to delete themselves\" for a superuser, and DELETE /users/{user_id} returns the same 403 when the target is the caller.",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 137
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 139
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 224
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 226
+   }
+  ],
+  "fact": "f10",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q12",
+  "role": "backend",
+  "question": "If I add a new endpoint function to a router whose tags are [\"orders\"], what operationId will it get in openapi.json?",
+  "answer": "\"orders-\" followed by the function name: custom_generate_unique_id in app/main.py builds the ID as the route's first tag, a hyphen, then the route name (f\"{route.tags[0]}-{route.name}\").",
+  "evidence": [
+   {
+    "file": "backend/app/main.py",
+    "line": 10
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 11
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 20
+   }
+  ],
+  "fact": "f02",
+  "repeat_of": "f02",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q13",
+  "role": "backend",
+  "question": "What does GET /items/ return for a normal user compared with a superuser, and how is it sorted?",
+  "answer": "A superuser gets all items; a normal user only items whose owner_id is their own id. Both are sorted by created_at descending (newest first), paged with skip=0 and limit=100 by default, and returned with a total count.",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 15
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 21
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 25
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 37
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 38
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 45
+   }
+  ],
+  "fact": "f11",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q14",
+  "role": "backend",
+  "question": "My tests all pass locally but the backend CI job went red on coverage. What number do I need to hit?",
+  "answer": "At least 90%: the workflow runs coverage report --fail-under=90, and Smokeshow's coverage threshold is also 90.",
+  "evidence": [
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 40
+   },
+   {
+    "file": ".github/workflows/smokeshow.yml",
+    "line": 30
+   }
+  ],
+  "fact": "f05",
+  "repeat_of": "f05",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q15",
+  "role": "frontend",
+  "question": "Where does the app keep the logged-in user's token, and what happens when an API call comes back 401 or 403?",
+  "answer": "In localStorage under \"access_token\" (set on login, read by OpenAPI.TOKEN for every request). The QueryClient's query and mutation caches call handleApiError, which on an ApiError with status 401 or 403 removes access_token and sends the browser to /login.",
+  "evidence": [
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 18
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 22
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 24
+   },
+   {
+    "file": "frontend/src/hooks/useAuth.ts",
+    "line": 45
+   }
+  ],
+  "fact": "f12",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q16",
+  "role": "frontend",
+  "question": "The e2e helpers import PrivateService to create users. Why would that service sometimes be missing from src/client?",
+  "answer": "Because the backend only mounts the private router (POST /api/v1/private/users/) when ENVIRONMENT is \"local\", so the client only contains PrivateService when it is generated from a local-environment backend.",
+  "evidence": [
+   {
+    "file": "frontend/tests/utils/privateApi.ts",
+    "line": 1
+   },
+   {
+    "file": "frontend/tests/utils/privateApi.ts",
+    "line": 2
+   },
+   {
+    "file": "backend/app/api/main.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/api/main.py",
+    "line": 14
+   }
+  ],
+  "fact": "f01",
+  "repeat_of": "f01",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q17",
+  "role": "frontend",
+  "question": "After a backend API change, what's the command to regenerate the TypeScript client, and what does it do under the hood?",
+  "answer": "Run bash ./scripts/generate-client.sh from the repo root: it dumps app.main.app.openapi() to openapi.json with uv, moves it into frontend/, runs bun run --filter frontend generate-client (the openapi-ts generator), then bun run lint.",
+  "evidence": [
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 7
+   },
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 9
+   },
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 10
+   },
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 11
+   },
+   {
+    "file": "frontend/package.json",
+    "line": 11
+   }
+  ],
+  "fact": "f13",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q18",
+  "role": "frontend",
+  "question": "How long can someone stay signed in to the dashboard before their saved token expires and they get sent back to login?",
+  "answer": "8 days: the backend issues access tokens that expire after ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 8 (11520 minutes).",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 36
+   },
+   {
+    "file": "backend/app/api/routes/login.py",
+    "line": 37
+   }
+  ],
+  "fact": "f08",
+  "repeat_of": "f08",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q19",
+  "role": "frontend",
+  "question": "Does our Playwright config behave differently on CI than on my machine?",
+  "answer": "Yes. With CI set it forbids test.only, retries failing tests 2 times (0 locally), uses 1 worker, uses the 'blob' reporter instead of 'html', and does not reuse an already running dev server.",
+  "evidence": [
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 17
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 19
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 21
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 23
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 89
+   }
+  ],
+  "fact": "f14",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q20",
+  "role": "frontend",
+  "question": "How is the admin page kept away from regular users in the UI?",
+  "answer": "The /_layout/admin route's beforeLoad calls UsersService.readUserMe() and redirects to \"/\" if the user is not is_superuser, and AppSidebar only adds the Admin (/admin) link for superusers.",
+  "evidence": [
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 21
+   },
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 22
+   },
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 25
+   },
+   {
+    "file": "frontend/src/components/Sidebar/AppSidebar.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/components/Sidebar/AppSidebar.tsx",
+    "line": 24
+   }
+  ],
+  "fact": "f15",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q21",
+  "role": "frontend",
+  "question": "On the Items page, will an admin see everybody's items or just their own, and in what order do they come back?",
+  "answer": "An admin (superuser) sees all items while a regular user sees only their own; the backend returns them newest first (created_at descending), and the page requests skip 0, limit 100.",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 21
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 25
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 37
+   },
+   {
+    "file": "frontend/src/routes/_layout/items.tsx",
+    "line": 14
+   }
+  ],
+  "fact": "f11",
+  "repeat_of": "f11",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q22",
+  "role": "devops",
+  "question": "Which hostnames does Traefik route to the backend, the frontend and Adminer in a deployment?",
+  "answer": "api.${DOMAIN} goes to the backend (port 8000), dashboard.${DOMAIN} to the frontend (nginx, port 80) and adminer.${DOMAIN} to Adminer (port 8080); each has an HTTP router redirected to HTTPS and an HTTPS router using the \"le\" cert resolver.",
+  "evidence": [
+   {
+    "file": "compose.yml",
+    "line": 126
+   },
+   {
+    "file": "compose.yml",
+    "line": 128
+   },
+   {
+    "file": "compose.yml",
+    "line": 156
+   },
+   {
+    "file": "compose.yml",
+    "line": 158
+   },
+   {
+    "file": "compose.yml",
+    "line": 36
+   },
+   {
+    "file": "compose.yml",
+    "line": 43
+   }
+  ],
+  "fact": "f16",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q23",
+  "role": "devops",
+  "question": "I'm registering the GitHub runner on the production box. What label does it need, and what event will hand it a deploy job?",
+  "answer": "It must be a self-hosted runner labelled production; deploy-production.yml runs when a release is published (and is skipped in repositories owned by fastapi).",
+  "evidence": [
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 4
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 6
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 11
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 14
+   }
+  ],
+  "fact": "f04",
+  "repeat_of": "f04",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q24",
+  "role": "devops",
+  "question": "What healthcheck is configured for the backend container?",
+  "answer": "curl -f http://localhost:8000/api/v1/utils/health-check/ every 10s, with a 5s timeout and 5 retries; that endpoint simply returns true.",
+  "evidence": [
+   {
+    "file": "compose.yml",
+    "line": 113
+   },
+   {
+    "file": "compose.yml",
+    "line": 114
+   },
+   {
+    "file": "compose.yml",
+    "line": 115
+   },
+   {
+    "file": "compose.yml",
+    "line": 116
+   },
+   {
+    "file": "backend/app/api/routes/utils.py",
+    "line": 29
+   },
+   {
+    "file": "backend/app/api/routes/utils.py",
+    "line": 31
+   }
+  ],
+  "fact": "f17",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q25",
+  "role": "devops",
+  "question": "If Postgres is slow to come up, how long will the prestart step keep waiting before it fails?",
+  "answer": "About 5 minutes: prestart.sh first runs app/backend_pre_start.py, which retries the database connection up to 300 times with a 1-second wait between attempts.",
+  "evidence": [
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 7
+   },
+   {
+    "file": "backend/app/backend_pre_start.py",
+    "line": 12
+   },
+   {
+    "file": "backend/app/backend_pre_start.py",
+    "line": 13
+   }
+  ],
+  "fact": "f09",
+  "repeat_of": "f09",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q26",
+  "role": "devops",
+  "question": "What does the backend image run by default, and with how many workers?",
+  "answer": "CMD [\"fastapi\", \"run\", \"--workers\", \"4\", \"app/main.py\"] from /app/backend/ on a python:3.10 base image; compose.override.yml replaces it locally with fastapi run --reload app/main.py.",
+  "evidence": [
+   {
+    "file": "backend/Dockerfile",
+    "line": 1
+   },
+   {
+    "file": "backend/Dockerfile",
+    "line": 43
+   },
+   {
+    "file": "backend/Dockerfile",
+    "line": 45
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 66
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 69
+   }
+  ],
+  "fact": "f18",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q27",
+  "role": "devops",
+  "question": "Our e2e workflow merges the per-shard reports at the end. Which reporter and how many retries does Playwright use when CI is set?",
+  "answer": "The 'blob' reporter (html when not on CI) and 2 retries (0 locally); on CI it also runs with 1 worker and forbids test.only.",
+  "evidence": [
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 17
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 19
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 21
+   },
+   {
+    "file": "frontend/playwright.config.ts",
+    "line": 23
+   }
+  ],
+  "fact": "f14",
+  "repeat_of": "f14",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q28",
+  "role": "devops",
+  "question": "How does the public Traefik get its TLS certificates, and where are they persisted?",
+  "answer": "compose.traefik.yml defines a Let's Encrypt resolver named \"le\" that uses the TLS challenge with the ACME email from ${EMAIL}, storing certificates in /certificates/acme.json on the traefik-public-certificates volume.",
+  "evidence": [
+   {
+    "file": "compose.traefik.yml",
+    "line": 42
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 53
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 55
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 57
+   }
+  ],
+  "fact": "f19",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q29",
+  "role": "joiner",
+  "question": "What's the one command to bring the whole stack up locally, and where do the frontend and backend end up?",
+  "answer": "Run docker compose watch; the frontend is then at http://localhost:5173 and the backend API at http://localhost:8000 (Swagger UI at http://localhost:8000/docs).",
+  "evidence": [
+   {
+    "file": "development.md",
+    "line": 8
+   },
+   {
+    "file": "development.md",
+    "line": 13
+   },
+   {
+    "file": "development.md",
+    "line": 15
+   },
+   {
+    "file": "development.md",
+    "line": 17
+   }
+  ],
+  "fact": "f20",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q30",
+  "role": "joiner",
+  "question": "I keep getting thrown back to the login screen. Where does the browser keep my session, and what triggers the kick-out?",
+  "answer": "The JWT lives in localStorage as \"access_token\"; whenever an API request fails with 401 or 403, the global handleApiError in main.tsx deletes it and redirects to /login.",
+  "evidence": [
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 18
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 22
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 24
+   }
+  ],
+  "fact": "f12",
+  "repeat_of": "f12",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q31",
+  "role": "joiner",
+  "question": "When I trigger an email locally, like a password recovery, where do I go to see it?",
+  "answer": "Open Mailcatcher at http://localhost:1080; in local Compose the backend's SMTP is pointed at host mailcatcher on port 1025 with TLS off, so no real email is sent.",
+  "evidence": [
+   {
+    "file": "compose.override.yml",
+    "line": 85
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 86
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 87
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 93
+   },
+   {
+    "file": "development.md",
+    "line": 47
+   }
+  ],
+  "fact": "f21",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q32",
+  "role": "joiner",
+  "question": "How long is a password-reset link valid, and which page does it open?",
+  "answer": "48 hours (EMAIL_RESET_TOKEN_EXPIRE_HOURS = 48); the email links to {FRONTEND_HOST}/reset-password?token=<token>, and FRONTEND_HOST defaults to http://localhost:5173.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 86
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 37
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 71
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 104
+   }
+  ],
+  "fact": "f22",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q33",
+  "role": "joiner",
+  "question": "After we deploy, what address do I open for the web dashboard and which one for the API?",
+  "answer": "The dashboard is at dashboard.<your DOMAIN> and the API at api.<your DOMAIN> (Adminer at adminer.<DOMAIN>); Traefik routes requests by those hostnames.",
+  "evidence": [
+   {
+    "file": "compose.yml",
+    "line": 128
+   },
+   {
+    "file": "compose.yml",
+    "line": 158
+   },
+   {
+    "file": "deployment.md",
+    "line": 328
+   },
+   {
+    "file": "deployment.md",
+    "line": 332
+   }
+  ],
+  "fact": "f16",
+  "repeat_of": "f16",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "q34",
+  "role": "joiner",
+  "question": "The stack is already running. What command runs the backend test suite inside it?",
+  "answer": "docker compose exec backend bash scripts/tests-start.sh; it first waits for the database with app/tests_pre_start.py and then runs scripts/test.sh.",
+  "evidence": [
+   {
+    "file": "backend/README.md",
+    "line": 109
+   },
+   {
+    "file": "backend/scripts/tests-start.sh",
+    "line": 5
+   },
+   {
+    "file": "backend/scripts/tests-start.sh",
+    "line": 7
+   }
+  ],
+  "fact": "f23",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "q35",
+  "role": "joiner",
+  "question": "Why is there no Admin item in my sidebar, and what happens if I go to /admin directly?",
+  "answer": "The Admin link is only added for superusers, and the /admin route's beforeLoad checks the current user and redirects anyone who isn't a superuser to the dashboard (\"/\").",
+  "evidence": [
+   {
+    "file": "frontend/src/components/Sidebar/AppSidebar.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/components/Sidebar/AppSidebar.tsx",
+    "line": 24
+   },
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 22
+   },
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/routes/_layout/admin.tsx",
+    "line": 25
+   }
+  ],
+  "fact": "f15",
+  "repeat_of": "f15",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r01",
+  "role": "lead",
+  "question": "Which password hashing algorithm are we on, and what happens to accounts that still have old bcrypt hashes?",
+  "answer": "New hashes are Argon2: pwdlib's PasswordHash is configured with Argon2Hasher first and BcryptHasher second. On a successful login authenticate() uses verify_and_update, and if it returns an updated hash (as it does for a bcrypt hash) it saves the new Argon2 hash on the user.",
+  "evidence": [
+   {
+    "file": "backend/app/core/security.py",
+    "line": 11
+   },
+   {
+    "file": "backend/app/core/security.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/core/security.py",
+    "line": 14
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 52
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 55
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 56
+   }
+  ],
+  "fact": "f24",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r02",
+  "role": "lead",
+  "question": "Could an attacker work out which emails are registered by timing how long the login endpoint takes?",
+  "answer": "That is mitigated: when no user has the email, authenticate() still runs verify_password against a fixed Argon2 DUMMY_HASH so the response time is similar, then returns None, and the login route answers 400 \"Incorrect email or password\" either way.",
+  "evidence": [
+   {
+    "file": "backend/app/crud.py",
+    "line": 42
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 50
+   },
+   {
+    "file": "backend/app/api/routes/login.py",
+    "line": 34
+   }
+  ],
+  "fact": "f25",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r03",
+  "role": "lead",
+  "question": "Does the forgot-password endpoint reveal whether an email address has an account?",
+  "answer": "No. POST /password-recovery/{email} only generates and sends the reset email if a user with that email exists, but it always returns the same message: \"If that email is registered, we sent a password recovery link\".",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/login.py",
+    "line": 53
+   },
+   {
+    "file": "backend/app/api/routes/login.py",
+    "line": 62
+   },
+   {
+    "file": "backend/app/api/routes/login.py",
+    "line": 73
+   }
+  ],
+  "fact": "f26",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r04",
+  "role": "lead",
+  "question": "Will errors from developers running the backend locally end up in our Sentry project?",
+  "answer": "No. sentry_sdk.init (with enable_tracing=True) is only called when SENTRY_DSN is set and ENVIRONMENT is not \"local\".",
+  "evidence": [
+   {
+    "file": "backend/app/main.py",
+    "line": 14
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 15
+   }
+  ],
+  "fact": "f27",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r05",
+  "role": "lead",
+  "question": "What triggers a staging deployment, and where does it run?",
+  "answer": "Every push to master runs deploy-staging.yml on a self-hosted runner labelled staging, with ENVIRONMENT=staging; it runs docker compose -f compose.yml --project-name <STACK_NAME_STAGING secret> build and then up -d. The job is skipped when the repository owner is fastapi.",
+  "evidence": [
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 4
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 6
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 11
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 13
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 14
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 16
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 31
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 32
+   }
+  ],
+  "fact": "f28",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r06",
+  "role": "lead",
+  "question": "How often does Dependabot open update PRs, and is anything excluded?",
+  "answer": "GitHub Actions updates are checked daily; uv (Python), bun, Docker (the /backend and /frontend images) and Docker Compose are checked weekly. All use the \u2b06 commit prefix and the labels dependencies and internal, and the bun entry ignores @hey-api/openapi-ts.",
+  "evidence": [
+   {
+    "file": ".github/dependabot.yml",
+    "line": 4
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 7
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 9
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 10
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 12
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 15
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 20
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 28
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 30
+   },
+   {
+    "file": ".github/dependabot.yml",
+    "line": 40
+   }
+  ],
+  "fact": "f29",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r07",
+  "role": "lead",
+  "question": "How is the Playwright end-to-end suite split up in CI, and when does it not run at all?",
+  "answer": "test-playwright runs as a 4-shard matrix (shardIndex 1-4, shardTotal 4, fail-fast false) with a 60-minute timeout. It only runs when dorny/paths-filter sees changes in backend/**, frontend/**, .env, compose*.yml or the playwright.yml workflow itself; otherwise it is skipped, and the alls-green job allows that skip.",
+  "evidence": [
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 27
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 32
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 33
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 35
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 41
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 42
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 46
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 47
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 48
+   },
+   {
+    "file": ".github/workflows/playwright.yml",
+    "line": 121
+   }
+  ],
+  "fact": "f30",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r08",
+  "role": "lead",
+  "question": "What static analysis does the backend lint script enforce?",
+  "answer": "backend/scripts/lint.sh runs mypy app (configured with strict = true in backend/pyproject.toml), ty check app, ruff check app and ruff format app --check; ruff's selected rules include T201, so print statements are flagged.",
+  "evidence": [
+   {
+    "file": "backend/scripts/lint.sh",
+    "line": 6
+   },
+   {
+    "file": "backend/scripts/lint.sh",
+    "line": 7
+   },
+   {
+    "file": "backend/scripts/lint.sh",
+    "line": 8
+   },
+   {
+    "file": "backend/scripts/lint.sh",
+    "line": 9
+   },
+   {
+    "file": "backend/pyproject.toml",
+    "line": 39
+   },
+   {
+    "file": "backend/pyproject.toml",
+    "line": 56
+   }
+  ],
+  "fact": "f31",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r09",
+  "role": "lead",
+  "question": "Which origins does the API accept cross-origin requests from?",
+  "answer": "The origins in BACKEND_CORS_ORIGINS (a comma-separated string or a list, trailing slashes stripped) plus FRONTEND_HOST, combined in the all_cors_origins property; main.py adds CORSMiddleware with those origins, allow_credentials=True and all methods and headers.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 19
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 20
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 46
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 47
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 48
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 24
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 27
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 28
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 29
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 30
+   }
+  ],
+  "fact": "f32",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r10",
+  "role": "lead",
+  "question": "For our security review: is the session token kept in an httpOnly cookie, or somewhere JavaScript can read it? When does it get wiped?",
+  "answer": "It sits in localStorage under \"access_token\", so JavaScript can read it (OpenAPI.TOKEN reads it for every request). It is removed on logout, and the global handleApiError removes it and redirects to /login whenever a query or mutation fails with an ApiError of status 401 or 403.",
+  "evidence": [
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 18
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 22
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 24
+   },
+   {
+    "file": "frontend/src/hooks/useAuth.ts",
+    "line": 45
+   },
+   {
+    "file": "frontend/src/hooks/useAuth.ts",
+    "line": 57
+   }
+  ],
+  "fact": "f12",
+  "repeat_of": "f12",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r11",
+  "role": "lead",
+  "question": "Where do our production HTTPS certificates come from, and do we lose them if the Traefik container gets recreated?",
+  "answer": "They come from Let's Encrypt through Traefik's \"le\" resolver using the TLS challenge, with the ACME email from $EMAIL. They are stored in /certificates/acme.json on the named volume traefik-public-certificates, so they survive the container being recreated.",
+  "evidence": [
+   {
+    "file": "compose.traefik.yml",
+    "line": 42
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 53
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 55
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 57
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 71
+   }
+  ],
+  "fact": "f19",
+  "repeat_of": "f19",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r12",
+  "role": "lead",
+  "question": "When we delete a user account, what happens to the items that user owns?",
+  "answer": "They are deleted too. The admin DELETE /users/{user_id} first runs delete(Item).where(owner_id == user_id) and then deletes the user, and the models declare User.items with cascade_delete=True and the item.owner_id foreign key with ondelete=\"CASCADE\".",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 228
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 230
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 56
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 94
+   }
+  ],
+  "fact": "f33",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r13",
+  "role": "lead",
+  "question": "Do we use auto-increment integers or UUIDs for record IDs?",
+  "answer": "UUIDs: User.id and Item.id are uuid.UUID primary keys with default_factory=uuid.uuid4. The original integer ids were replaced by Alembic revision d98dd8ec85a3 (\"Edit replace id integers in all models to use UUID instead\").",
+  "evidence": [
+   {
+    "file": "backend/app/models.py",
+    "line": 50
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 88
+   },
+   {
+    "file": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py",
+    "line": 1
+   },
+   {
+    "file": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py",
+    "line": 15
+   }
+  ],
+  "fact": "f34",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r17",
+  "role": "backend",
+  "question": "When a request has an expired or tampered bearer token, what does get_current_user respond with?",
+  "answer": "403 with detail \"Could not validate credentials\" (it catches InvalidTokenError and ValidationError while decoding). If the token is valid but the user no longer exists it raises 404 \"User not found\", and for an inactive user 400 \"Inactive user\".",
+  "evidence": [
+   {
+    "file": "backend/app/api/deps.py",
+    "line": 36
+   },
+   {
+    "file": "backend/app/api/deps.py",
+    "line": 37
+   },
+   {
+    "file": "backend/app/api/deps.py",
+    "line": 38
+   },
+   {
+    "file": "backend/app/api/deps.py",
+    "line": 39
+   },
+   {
+    "file": "backend/app/api/deps.py",
+    "line": 43
+   },
+   {
+    "file": "backend/app/api/deps.py",
+    "line": 45
+   }
+  ],
+  "fact": "f36",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r18",
+  "role": "backend",
+  "question": "Some old rows still have bcrypt password hashes. What happens to hashed_password after one of those users logs in successfully?",
+  "answer": "It is rewritten as an Argon2 hash: verify_password calls pwdlib's verify_and_update (Argon2 is the first hasher and bcrypt is still accepted), and authenticate() stores the returned updated hash and commits.",
+  "evidence": [
+   {
+    "file": "backend/app/core/security.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/core/security.py",
+    "line": 14
+   },
+   {
+    "file": "backend/app/core/security.py",
+    "line": 32
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 52
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 55
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 56
+   },
+   {
+    "file": "backend/app/crud.py",
+    "line": 58
+   }
+  ],
+  "fact": "f24",
+  "repeat_of": "f24",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r19",
+  "role": "backend",
+  "question": "If SECRET_KEY isn't provided in the environment, what does Settings fall back to?",
+  "answer": "secrets.token_urlsafe(32), generated when the settings load, so every process start gets a new random key and tokens signed before a restart stop validating.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 1
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 34
+   }
+  ],
+  "fact": "f37",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r20",
+  "role": "backend",
+  "question": "What decides whether the backend can send emails at all?",
+  "answer": "The computed property emails_enabled, which is true only when both SMTP_HOST and EMAILS_FROM_EMAIL are set; send_email asserts it and fails with \"no provided configuration for email variables\" otherwise.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 90
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 91
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 39
+   }
+  ],
+  "fact": "f38",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r21",
+  "role": "backend",
+  "question": "What are the SMTP defaults, and if someone sets both SMTP_TLS and SMTP_SSL to true, which one is used?",
+  "answer": "SMTP_PORT defaults to 587, SMTP_TLS to True and SMTP_SSL to False. send_email checks SMTP_TLS first and only sets ssl in the elif branch, so TLS wins when both are true.",
+  "evidence": [
+   {
+    "file": "backend/app/core/config.py",
+    "line": 71
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 72
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 73
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 46
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 47
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 48
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 49
+   }
+  ],
+  "fact": "f39",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r22",
+  "role": "backend",
+  "question": "What length limits do our request models put on passwords?",
+  "answer": "Minimum 8 and maximum 128 characters: UserCreate, UserRegister and UserUpdate (password), UpdatePassword (current_password and new_password) and NewPassword (new_password) all use Field(min_length=8, max_length=128).",
+  "evidence": [
+   {
+    "file": "backend/app/models.py",
+    "line": 23
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 28
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 35
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 44
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 45
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 129
+   }
+  ],
+  "fact": "f40",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r23",
+  "role": "backend",
+  "question": "What errors can PATCH /users/me/password return?",
+  "answer": "400 \"Incorrect password\" when current_password does not verify, and 400 \"New password cannot be the same as the current one\" when the two are equal; on success it returns the message \"Password updated successfully\".",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 103
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 112
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 115
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 121
+   }
+  ],
+  "fact": "f41",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r24",
+  "role": "backend",
+  "question": "What does PATCH /users/me do if the new email already belongs to another account?",
+  "answer": "It returns 409 \"User with this email already exists\"; keeping your own current email is fine because it only errors when the existing user's id differs. The admin PATCH /users/{user_id} applies the same 409 check.",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 89
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 90
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 91
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 93
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 205
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 207
+   }
+  ],
+  "fact": "f42",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r25",
+  "role": "backend",
+  "question": "If a regular user calls GET, PUT or DELETE on /items/{id} for someone else's item, what comes back?",
+  "answer": "403 \"Not enough permissions\"; a missing item gives 404 \"Item not found\", checked first. Superusers skip the ownership check.",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 55
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 56
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 57
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 89
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 90
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 109
+   },
+   {
+    "file": "backend/app/api/routes/items.py",
+    "line": 110
+   }
+  ],
+  "fact": "f43",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r26",
+  "role": "backend",
+  "question": "Is there a public registration endpoint, and what does it do with an email that's already taken?",
+  "answer": "Yes: POST /api/v1/users/signup takes a UserRegister body (email, password, optional full_name) and needs no auth; if the email already exists it returns 400 \"The user with this email already exists in the system\".",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 29
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 146
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 147
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 155
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 26
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 27
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 28
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 29
+   }
+  ],
+  "fact": "f44",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r27",
+  "role": "backend",
+  "question": "I renamed an endpoint function in items.py. What do I run so the frontend's TypeScript client picks up the change?",
+  "answer": "From the repo root run bash ./scripts/generate-client.sh: it exports app.main.app.openapi() to openapi.json with uv, moves it into frontend/, runs bun run --filter frontend generate-client and then bun run lint. The prek hook generate-frontend-sdk runs the same script whenever files under backend/ change.",
+  "evidence": [
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 7
+   },
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 9
+   },
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 10
+   },
+   {
+    "file": "scripts/generate-client.sh",
+    "line": 11
+   },
+   {
+    "file": ".pre-commit-config.yaml",
+    "line": 57
+   },
+   {
+    "file": ".pre-commit-config.yaml",
+    "line": 59
+   },
+   {
+    "file": ".pre-commit-config.yaml",
+    "line": 62
+   }
+  ],
+  "fact": "f13",
+  "repeat_of": "f13",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r28",
+  "role": "backend",
+  "question": "I'm testing the password-recovery endpoint against the local stack. Where does the email end up, and what SMTP settings route it there?",
+  "answer": "It is caught by Mailcatcher, viewable at http://localhost:1080; compose.override.yml sets the backend's SMTP_HOST to mailcatcher, SMTP_PORT to 1025, SMTP_TLS to false and EMAILS_FROM_EMAIL to noreply@example.com.",
+  "evidence": [
+   {
+    "file": "compose.override.yml",
+    "line": 85
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 86
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 87
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 88
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 90
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 93
+   }
+  ],
+  "fact": "f21",
+  "repeat_of": "f21",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r29",
+  "role": "backend",
+  "question": "How do the backend tests clean up the database?",
+  "answer": "tests/conftest.py has a session-scoped, autouse db fixture that calls init_db (so the first superuser exists), yields the session, and at the end of the test session deletes all Item rows, then all User rows, and commits.",
+  "evidence": [
+   {
+    "file": "backend/tests/conftest.py",
+    "line": 15
+   },
+   {
+    "file": "backend/tests/conftest.py",
+    "line": 18
+   },
+   {
+    "file": "backend/tests/conftest.py",
+    "line": 19
+   },
+   {
+    "file": "backend/tests/conftest.py",
+    "line": 20
+   },
+   {
+    "file": "backend/tests/conftest.py",
+    "line": 22
+   },
+   {
+    "file": "backend/tests/conftest.py",
+    "line": 24
+   }
+  ],
+  "fact": "f45",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r33",
+  "role": "frontend",
+  "question": "How does openapi-ts decide the class and method names in src/client, e.g. ItemsService.readItems?",
+  "answer": "openapi-ts.config.ts uses the @hey-api/sdk plugin with asClass: true and classNameBuilder \"{{name}}Service\", plus a methodNameBuilder that strips the service name from the start of the operation name and lower-cases the first letter. It reads ./openapi.json and writes ./src/client with the legacy/axios client.",
+  "evidence": [
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 4
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 5
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 8
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 10
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 12
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 14
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 15
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 21
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 22
+   },
+   {
+    "file": "frontend/openapi-ts.config.ts",
+    "line": 25
+   }
+  ],
+  "fact": "f48",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r34",
+  "role": "frontend",
+  "question": "How does the router decide whether someone can see the pages under /_layout? Does it check that the token is valid?",
+  "answer": "The /_layout route's beforeLoad calls isLoggedIn() and throws a redirect to /login when it is false. isLoggedIn only checks that localStorage has an access_token entry (not null); it does not decode or validate the token.",
+  "evidence": [
+   {
+    "file": "frontend/src/routes/_layout.tsx",
+    "line": 14
+   },
+   {
+    "file": "frontend/src/routes/_layout.tsx",
+    "line": 15
+   },
+   {
+    "file": "frontend/src/routes/_layout.tsx",
+    "line": 16
+   },
+   {
+    "file": "frontend/src/routes/_layout.tsx",
+    "line": 17
+   },
+   {
+    "file": "frontend/src/hooks/useAuth.ts",
+    "line": 14
+   },
+   {
+    "file": "frontend/src/hooks/useAuth.ts",
+    "line": 15
+   }
+  ],
+  "fact": "f49",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r35",
+  "role": "frontend",
+  "question": "What happens when someone who's already logged in opens /login or /signup?",
+  "answer": "Both routes have a beforeLoad that throws redirect({ to: \"/\" }) when isLoggedIn() is true, so the user is sent to the dashboard.",
+  "evidence": [
+   {
+    "file": "frontend/src/routes/login.tsx",
+    "line": 37
+   },
+   {
+    "file": "frontend/src/routes/login.tsx",
+    "line": 38
+   },
+   {
+    "file": "frontend/src/routes/login.tsx",
+    "line": 39
+   },
+   {
+    "file": "frontend/src/routes/login.tsx",
+    "line": 40
+   },
+   {
+    "file": "frontend/src/routes/signup.tsx",
+    "line": 44
+   },
+   {
+    "file": "frontend/src/routes/signup.tsx",
+    "line": 45
+   },
+   {
+    "file": "frontend/src/routes/signup.tsx",
+    "line": 46
+   },
+   {
+    "file": "frontend/src/routes/signup.tsx",
+    "line": 47
+   }
+  ],
+  "fact": "f50",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r36",
+  "role": "frontend",
+  "question": "What does the /reset-password route do if the URL has no token?",
+  "answer": "Its validateSearch schema turns a missing token into \"\" (z.string().catch(\"\")), and beforeLoad redirects to /login when the token is empty (and to / if the user is logged in). After a successful reset it shows \"Password updated successfully\" and navigates to /login.",
+  "evidence": [
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 29
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 51
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 53
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 54
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 56
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 57
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 88
+   },
+   {
+    "file": "frontend/src/routes/reset-password.tsx",
+    "line": 90
+   }
+  ],
+  "fact": "f51",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r37",
+  "role": "frontend",
+  "question": "The reset page reads the token from the query string. What exact URL does the backend put in the email, and how long will that token work?",
+  "answer": "{FRONTEND_HOST}/reset-password?token=<token>, with FRONTEND_HOST defaulting to http://localhost:5173; the token is a JWT that expires after EMAIL_RESET_TOKEN_EXPIRE_HOURS, i.e. 48 hours.",
+  "evidence": [
+   {
+    "file": "backend/app/utils.py",
+    "line": 71
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 104
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 37
+   },
+   {
+    "file": "backend/app/core/config.py",
+    "line": 86
+   }
+  ],
+  "fact": "f22",
+  "repeat_of": "f22",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r38",
+  "role": "frontend",
+  "question": "Which theme does a first-time visitor get, and where is a changed theme stored?",
+  "answer": "Dark: main.tsx renders ThemeProvider with defaultTheme=\"dark\" (the provider's own default would be \"system\"). setTheme saves the choice in localStorage under the storageKey \"vite-ui-theme\", and the provider reads it back on load.",
+  "evidence": [
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 45
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 33
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 34
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 38
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 96
+   }
+  ],
+  "fact": "f52",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r39",
+  "role": "frontend",
+  "question": "What rows-per-page options does the shared DataTable offer, and when do the pagination controls appear?",
+  "answer": "Pagination is client-side (getPaginationRowModel) with page-size choices 5, 10, 25 and 50, and the whole pagination bar only renders when table.getPageCount() > 1.",
+  "evidence": [
+   {
+    "file": "frontend/src/components/Common/DataTable.tsx",
+    "line": 45
+   },
+   {
+    "file": "frontend/src/components/Common/DataTable.tsx",
+    "line": 93
+   },
+   {
+    "file": "frontend/src/components/Common/DataTable.tsx",
+    "line": 112
+   },
+   {
+    "file": "frontend/src/components/Common/DataTable.tsx",
+    "line": 125
+   }
+  ],
+  "fact": "f53",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r40",
+  "role": "frontend",
+  "question": "After creating an item, which React Query caches get refreshed? And after deleting one?",
+  "answer": "AddItem (like EditItem) invalidates only the [\"items\"] query in onSettled, while DeleteItem calls queryClient.invalidateQueries() with no key, so every cached query is invalidated.",
+  "evidence": [
+   {
+    "file": "frontend/src/components/Items/AddItem.tsx",
+    "line": 64
+   },
+   {
+    "file": "frontend/src/components/Items/AddItem.tsx",
+    "line": 65
+   },
+   {
+    "file": "frontend/src/components/Items/DeleteItem.tsx",
+    "line": 45
+   },
+   {
+    "file": "frontend/src/components/Items/DeleteItem.tsx",
+    "line": 46
+   }
+  ],
+  "fact": "f54",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r41",
+  "role": "frontend",
+  "question": "How does an API error become the text in the error toast?",
+  "answer": "handleError calls extractErrorMessage: for an AxiosError it uses err.message; otherwise it reads body.detail, using detail[0].msg when detail is a non-empty array (validation errors), else the detail string, falling back to \"Something went wrong.\". The toast is shown by showErrorToast with the title \"Something went wrong!\".",
+  "evidence": [
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 5
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 6
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 9
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 10
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 11
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 13
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 20
+   },
+   {
+    "file": "frontend/src/utils.ts",
+    "line": 21
+   },
+   {
+    "file": "frontend/src/hooks/useCustomToast.ts",
+    "line": 10
+   },
+   {
+    "file": "frontend/src/hooks/useCustomToast.ts",
+    "line": 11
+   }
+  ],
+  "fact": "f55",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r42",
+  "role": "frontend",
+  "question": "Do superusers get a different set of tabs on the User Settings page?",
+  "answer": "Effectively no: for superusers the code uses tabsConfig.slice(0, 3), but there are only three tabs (My profile, Password, Danger zone), so superusers still see the Danger zone tab like everyone else.",
+  "evidence": [
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 9
+   },
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 10
+   },
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 11
+   },
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 12
+   },
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 28
+   },
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 29
+   },
+   {
+    "file": "frontend/src/routes/_layout/settings.tsx",
+    "line": 30
+   }
+  ],
+  "fact": "f56",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r43",
+  "role": "frontend",
+  "question": "If an admin goes to the Danger zone tab and confirms Delete Account, what does the API say, and what happens in the app afterwards?",
+  "answer": "DELETE /users/me refuses with 403 \"Super users are not allowed to delete themselves\". Because that is a 403 ApiError, the global MutationCache handler handleApiError also removes access_token and sends the browser to /login, so the admin ends up logged out.",
+  "evidence": [
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 132
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 137
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 138
+   },
+   {
+    "file": "backend/app/api/routes/users.py",
+    "line": 139
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 22
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 24
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 31
+   },
+   {
+    "file": "frontend/src/main.tsx",
+    "line": 32
+   }
+  ],
+  "fact": "f10",
+  "repeat_of": "f10",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r44",
+  "role": "frontend",
+  "question": "Is the full-name length limit in the profile form the same as the API's?",
+  "answer": "No. The UserInformation form's zod schema limits full_name to 30 characters (z.string().max(30)), while the backend's UserUpdateMe allows up to 255 (max_length=255).",
+  "evidence": [
+   {
+    "file": "frontend/src/components/UserSettings/UserInformation.tsx",
+    "line": 25
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 38
+   },
+   {
+    "file": "backend/app/models.py",
+    "line": 39
+   }
+  ],
+  "fact": "f57",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r45",
+  "role": "frontend",
+  "question": "In the admin users table, why is there no actions menu on my own row?",
+  "answer": "UserActionsMenu returns null when user.id equals the current user's id, so you cannot edit or delete yourself there; your row gets a \"You\" badge instead, from the isCurrentUser flag in the Full Name column.",
+  "evidence": [
+   {
+    "file": "frontend/src/components/Admin/UserActionsMenu.tsx",
+    "line": 23
+   },
+   {
+    "file": "frontend/src/components/Admin/UserActionsMenu.tsx",
+    "line": 24
+   },
+   {
+    "file": "frontend/src/components/Admin/columns.tsx",
+    "line": 25
+   },
+   {
+    "file": "frontend/src/components/Admin/columns.tsx",
+    "line": 26
+   },
+   {
+    "file": "frontend/src/components/Admin/columns.tsx",
+    "line": 27
+   }
+  ],
+  "fact": "f58",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r49",
+  "role": "devops",
+  "question": "What does the prestart service actually run before the backend container starts?",
+  "answer": "bash scripts/prestart.sh, which runs python app/backend_pre_start.py (wait for the DB), alembic upgrade head, then python app/initial_data.py (create initial data). The backend service waits for prestart with condition service_completed_successfully, and for db to be healthy.",
+  "evidence": [
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 7
+   },
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 10
+   },
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 13
+   },
+   {
+    "file": "compose.yml",
+    "line": 57
+   },
+   {
+    "file": "compose.yml",
+    "line": 87
+   },
+   {
+    "file": "compose.yml",
+    "line": 89
+   },
+   {
+    "file": "compose.yml",
+    "line": 90
+   }
+  ],
+  "fact": "f60",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r50",
+  "role": "devops",
+  "question": "Which Postgres image do we run, how is its health checked, and where does the data live?",
+  "answer": "postgres:18, health-checked with pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} every 10s (5 retries, 30s start period, 10s timeout); the data is in PGDATA=/var/lib/postgresql/data/pgdata on the app-db-data volume.",
+  "evidence": [
+   {
+    "file": "compose.yml",
+    "line": 4
+   },
+   {
+    "file": "compose.yml",
+    "line": 7
+   },
+   {
+    "file": "compose.yml",
+    "line": 8
+   },
+   {
+    "file": "compose.yml",
+    "line": 9
+   },
+   {
+    "file": "compose.yml",
+    "line": 10
+   },
+   {
+    "file": "compose.yml",
+    "line": 11
+   },
+   {
+    "file": "compose.yml",
+    "line": 13
+   },
+   {
+    "file": "compose.yml",
+    "line": 17
+   }
+  ],
+  "fact": "f61",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r51",
+  "role": "devops",
+  "question": "We've added SENTRY_DSN to the deploy secrets. In which environments will the backend actually report to Sentry?",
+  "answer": "Only where ENVIRONMENT is not \"local\": main.py initialises Sentry (with tracing) only when SENTRY_DSN is set and ENVIRONMENT != \"local\", so deployed stacks report while local runs never do; deploy-staging.yml, for example, sets ENVIRONMENT=staging and passes SENTRY_DSN.",
+  "evidence": [
+   {
+    "file": "backend/app/main.py",
+    "line": 14
+   },
+   {
+    "file": "backend/app/main.py",
+    "line": 15
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 16
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 27
+   }
+  ],
+  "fact": "f27",
+  "repeat_of": "f27",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r52",
+  "role": "devops",
+  "question": "What API URL gets baked into the frontend image in each compose setup?",
+  "answer": "It comes from the VITE_API_URL build arg: compose.yml uses https://api.${DOMAIN} (with NODE_ENV=production), while compose.override.yml uses http://localhost:8000 for the frontend (NODE_ENV=development) and http://backend:8000 for the playwright image.",
+  "evidence": [
+   {
+    "file": "compose.yml",
+    "line": 149
+   },
+   {
+    "file": "compose.yml",
+    "line": 150
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 104
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 105
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 112
+   }
+  ],
+  "fact": "f62",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r53",
+  "role": "devops",
+  "question": "How does the frontend container's nginx handle deep links, and what does it return for /api, /docs or /redoc?",
+  "answer": "nginx.conf listens on 80 and uses try_files $uri /index.html =404, so unknown paths fall back to the SPA's index.html, and it includes /etc/nginx/extra-conf.d/*.conf; nginx-backend-not-found.conf returns 404 for /api, /docs and /redoc.",
+  "evidence": [
+   {
+    "file": "frontend/nginx.conf",
+    "line": 2
+   },
+   {
+    "file": "frontend/nginx.conf",
+    "line": 7
+   },
+   {
+    "file": "frontend/nginx.conf",
+    "line": 10
+   },
+   {
+    "file": "frontend/nginx-backend-not-found.conf",
+    "line": 1
+   },
+   {
+    "file": "frontend/nginx-backend-not-found.conf",
+    "line": 2
+   },
+   {
+    "file": "frontend/nginx-backend-not-found.conf",
+    "line": 4
+   },
+   {
+    "file": "frontend/nginx-backend-not-found.conf",
+    "line": 7
+   }
+  ],
+  "fact": "f63",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r54",
+  "role": "devops",
+  "question": "How is the Traefik dashboard on the public proxy exposed and protected?",
+  "answer": "At traefik.${DOMAIN} over HTTPS with the le resolver, routed to the api@internal service, behind the admin-auth basicauth middleware built from ${USERNAME}:${HASHED_PASSWORD}; the deployment docs generate HASHED_PASSWORD with openssl passwd -apr1.",
+  "evidence": [
+   {
+    "file": "compose.traefik.yml",
+    "line": 22
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 25
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 27
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 35
+   },
+   {
+    "file": "compose.traefik.yml",
+    "line": 37
+   },
+   {
+    "file": "deployment.md",
+    "line": 69
+   }
+  ],
+  "fact": "f64",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r55",
+  "role": "devops",
+  "question": "Which Docker network has to exist on the server before I deploy the stack, and how do I create it?",
+  "answer": "The external network traefik-public (declared external: true in compose.yml and shared with the public Traefik); create it once with docker network create traefik-public.",
+  "evidence": [
+   {
+    "file": "compose.yml",
+    "line": 172
+   },
+   {
+    "file": "compose.yml",
+    "line": 174
+   },
+   {
+    "file": "deployment.md",
+    "line": 40
+   },
+   {
+    "file": "deployment.md",
+    "line": 47
+   }
+  ],
+  "fact": "f65",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r56",
+  "role": "devops",
+  "question": "I'm setting up the staging server's runner. What label does it need, and what will send it work?",
+  "answer": "A self-hosted runner with the label staging; deploy-staging.yml targets it on every push to master (except in repositories owned by fastapi).",
+  "evidence": [
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 4
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 6
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 11
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 13
+   },
+   {
+    "file": ".github/workflows/deploy-staging.yml",
+    "line": 14
+   }
+  ],
+  "fact": "f28",
+  "repeat_of": "f28",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r57",
+  "role": "devops",
+  "question": "Is the unauthenticated user-creation endpoint reachable on our production deployment?",
+  "answer": "No: the private router (POST /api/v1/private/users/) is only included when settings.ENVIRONMENT == \"local\", and the production workflow sets ENVIRONMENT=production.",
+  "evidence": [
+   {
+    "file": "backend/app/api/main.py",
+    "line": 13
+   },
+   {
+    "file": "backend/app/api/main.py",
+    "line": 14
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 16
+   }
+  ],
+  "fact": "f01",
+  "repeat_of": "f01",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r58",
+  "role": "devops",
+  "question": "What does docker compose watch sync or rebuild for the backend service?",
+  "answer": "It syncs ./backend into /app/backend in the container (ignoring .venv) and rebuilds the image when backend/pyproject.toml changes; the override also runs fastapi run --reload app/main.py so synced code is reloaded.",
+  "evidence": [
+   {
+    "file": "compose.override.yml",
+    "line": 66
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 69
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 73
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 74
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 75
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 77
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 79
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 80
+   }
+  ],
+  "fact": "f66",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r59",
+  "role": "devops",
+  "question": "Which host ports does the local compose stack publish?",
+  "answer": "The Traefik proxy on 80 and 8090 (its dashboard, 8080 inside), db 5432, adminer 8080, backend 8000, frontend 5173 (to nginx's 80), mailcatcher 1080 and 1025, and playwright 9323.",
+  "evidence": [
+   {
+    "file": "compose.override.yml",
+    "line": 13
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 14
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 51
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 56
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 61
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 93
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 94
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 99
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 130
+   }
+  ],
+  "fact": "f67",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r60",
+  "role": "devops",
+  "question": "What does the Test Docker Compose workflow actually check?",
+  "answer": "It builds the images, starts backend, frontend and adminer with docker compose up -d --wait, curls http://localhost:8000/api/v1/utils/health-check and http://localhost:5173, and finally runs docker compose down -v --remove-orphans.",
+  "evidence": [
+   {
+    "file": ".github/workflows/test-docker-compose.yml",
+    "line": 19
+   },
+   {
+    "file": ".github/workflows/test-docker-compose.yml",
+    "line": 21
+   },
+   {
+    "file": ".github/workflows/test-docker-compose.yml",
+    "line": 23
+   },
+   {
+    "file": ".github/workflows/test-docker-compose.yml",
+    "line": 25
+   },
+   {
+    "file": ".github/workflows/test-docker-compose.yml",
+    "line": 26
+   }
+  ],
+  "fact": "f68",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r61",
+  "role": "devops",
+  "question": "In the Test Backend workflow, what runs in containers and what runs directly on the runner?",
+  "answer": "Only db and mailcatcher are started with docker compose up -d; scripts/prestart.sh and scripts/tests-start.sh \"Coverage for <sha>\" run on the runner with uv (Python 3.10) from backend/, and backend/htmlcov is uploaded as the coverage-html artifact.",
+  "evidence": [
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 21
+   },
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 25
+   },
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 27
+   },
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 28
+   },
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 30
+   },
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 36
+   },
+   {
+    "file": ".github/workflows/test-backend.yml",
+    "line": 37
+   }
+  ],
+  "fact": "f69",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r65",
+  "role": "joiner",
+  "question": "Can I run just the backend on my machine with hot reload while the rest of the stack stays in Docker?",
+  "answer": "Yes: run docker compose stop backend, then cd backend and fastapi dev app/main.py; it uses the same port 8000, so everything else keeps working. The frontend works the same way with docker compose stop frontend and bun run dev.",
+  "evidence": [
+   {
+    "file": "development.md",
+    "line": 53
+   },
+   {
+    "file": "development.md",
+    "line": 60
+   },
+   {
+    "file": "development.md",
+    "line": 66
+   },
+   {
+    "file": "development.md",
+    "line": 72
+   },
+   {
+    "file": "development.md",
+    "line": 78
+   },
+   {
+    "file": "development.md",
+    "line": 79
+   }
+  ],
+  "fact": "f72",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r66",
+  "role": "joiner",
+  "question": "Is there a UI that shows how the local proxy is routing requests?",
+  "answer": "Yes, the Traefik UI at http://localhost:8090; compose.override.yml maps host port 8090 to Traefik's 8080 and enables --api.insecure=true for local development.",
+  "evidence": [
+   {
+    "file": "development.md",
+    "line": 21
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 14
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 36
+   }
+  ],
+  "fact": "f73",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r67",
+  "role": "joiner",
+  "question": "How can I try the api. and dashboard. subdomains locally instead of port numbers?",
+  "answer": "Set DOMAIN=localhost.tiangolo.com in your local .env and run docker compose watch again; that domain and all its subdomains point to 127.0.0.1, so api.localhost.tiangolo.com reaches the backend and dashboard.localhost.tiangolo.com the frontend.",
+  "evidence": [
+   {
+    "file": "development.md",
+    "line": 93
+   },
+   {
+    "file": "development.md",
+    "line": 98
+   },
+   {
+    "file": "development.md",
+    "line": 100
+   },
+   {
+    "file": "development.md",
+    "line": 105
+   }
+  ],
+  "fact": "f74",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r68",
+  "role": "joiner",
+  "question": "How do I get the pre-commit checks to run automatically on my commits?",
+  "answer": "The project uses prek: from the backend folder run uv run prek install -f, which installs it at ../.git/hooks/pre-commit (-f replaces an existing hook). You can run all hooks by hand with uv run prek run --all-files.",
+  "evidence": [
+   {
+    "file": "development.md",
+    "line": 136
+   },
+   {
+    "file": "development.md",
+    "line": 148
+   },
+   {
+    "file": "development.md",
+    "line": 151
+   },
+   {
+    "file": "development.md",
+    "line": 152
+   },
+   {
+    "file": "development.md",
+    "line": 155
+   },
+   {
+    "file": "development.md",
+    "line": 172
+   }
+  ],
+  "fact": "f75",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r69",
+  "role": "joiner",
+  "question": "I added a field to a model. How do I create and apply the migration?",
+  "answer": "Inside the backend container (docker compose exec backend bash) run alembic revision --autogenerate -m \"<message>\", commit the generated files in the alembic directory, then run alembic upgrade head.",
+  "evidence": [
+   {
+    "file": "backend/README.md",
+    "line": 133
+   },
+   {
+    "file": "backend/README.md",
+    "line": 141
+   },
+   {
+    "file": "backend/README.md",
+    "line": 144
+   },
+   {
+    "file": "backend/README.md",
+    "line": 149
+   }
+  ],
+  "fact": "f76",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r70",
+  "role": "joiner",
+  "question": "After the backend tests run in the container, where's the coverage report, and can I open it from my host?",
+  "answer": "The tests generate htmlcov/index.html, and compose.override.yml mounts ./backend/htmlcov into /app/backend/htmlcov, so you can open backend/htmlcov/index.html on your machine.",
+  "evidence": [
+   {
+    "file": "backend/README.md",
+    "line": 122
+   },
+   {
+    "file": "compose.override.yml",
+    "line": 83
+   }
+  ],
+  "fact": "f77",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r71",
+  "role": "joiner",
+  "question": "Is there a ready-made VS Code debug configuration?",
+  "answer": "Yes, .vscode/launch.json has \"Debug FastAPI Project backend: Python Debugger\" (debugpy running uvicorn app.main:app --reload with cwd backend and envFile .env) and a Chrome launch config against http://localhost:5173 for the frontend.",
+  "evidence": [
+   {
+    "file": ".vscode/launch.json",
+    "line": 8
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 9
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 11
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 13
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 14
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 16
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 18
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 23
+   },
+   {
+    "file": ".vscode/launch.json",
+    "line": 24
+   }
+  ],
+  "fact": "f78",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r72",
+  "role": "joiner",
+  "question": "I want to reword the password-reset email. Which file do I edit?",
+  "answer": "Edit backend/app/email-templates/src/reset_password.mjml, export it to HTML with the MJML VS Code extension (\"MJML: Export to HTML\") and save it as build/reset_password.html, because the backend renders the HTML from email-templates/build.",
+  "evidence": [
+   {
+    "file": "backend/README.md",
+    "line": 168
+   },
+   {
+    "file": "backend/README.md",
+    "line": 172
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 27
+   },
+   {
+    "file": "backend/app/utils.py",
+    "line": 73
+   }
+  ],
+  "fact": "f79",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r73",
+  "role": "joiner",
+  "question": "If I generate a new project with Copier and accept the defaults, what's the admin login and project name?",
+  "answer": "The first superuser is admin@example.com with password changethis, the project name is \"FastAPI Project\" and the stack name \"fastapi-project\"; secret_key and postgres_password also default to changethis.",
+  "evidence": [
+   {
+    "file": "copier.yml",
+    "line": 4
+   },
+   {
+    "file": "copier.yml",
+    "line": 9
+   },
+   {
+    "file": "copier.yml",
+    "line": 17
+   },
+   {
+    "file": "copier.yml",
+    "line": 22
+   },
+   {
+    "file": "copier.yml",
+    "line": 27
+   },
+   {
+    "file": "copier.yml",
+    "line": 55
+   }
+  ],
+  "fact": "f80",
+  "repeat_of": null,
+  "counts_as_repeat": false
+ },
+ {
+  "qid": "r74",
+  "role": "joiner",
+  "question": "My first PR is failing the label check. What label should I ask a maintainer to add?",
+  "answer": "Exactly one of breaking, security, feature, bug, refactor, upgrade, docs, lang-all or internal; the check-labels job (agilepathway/label-checker) runs after the labeler, which may already add docs or internal depending on the files changed.",
+  "evidence": [
+   {
+    "file": ".github/workflows/labeler.yml",
+    "line": 23
+   },
+   {
+    "file": ".github/workflows/labeler.yml",
+    "line": 30
+   },
+   {
+    "file": ".github/workflows/labeler.yml",
+    "line": 32
+   },
+   {
+    "file": ".github/labeler.yml",
+    "line": 1
+   },
+   {
+    "file": ".github/labeler.yml",
+    "line": 14
+   }
+  ],
+  "fact": "f03",
+  "repeat_of": "f03",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r75",
+  "role": "joiner",
+  "question": "When I start the stack for the first time, what creates the tables and the admin account?",
+  "answer": "The prestart step's scripts/prestart.sh: after waiting for the DB it runs alembic upgrade head to create the tables, then app/initial_data.py, whose init_db creates FIRST_SUPERUSER with FIRST_SUPERUSER_PASSWORD as a superuser if no user with that email exists yet.",
+  "evidence": [
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 7
+   },
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 10
+   },
+   {
+    "file": "backend/scripts/prestart.sh",
+    "line": 13
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 24
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 25
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 27
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 28
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 29
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 30
+   },
+   {
+    "file": "backend/app/core/db.py",
+    "line": 31
+   }
+  ],
+  "fact": "f60",
+  "repeat_of": "f60",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r76",
+  "role": "joiner",
+  "question": "How do I switch the dashboard to light mode, and will it remember my choice?",
+  "answer": "Open the Appearance menu in the sidebar and pick Light (the other options are Dark and System). The choice is saved in localStorage under the key \"vite-ui-theme\" and read back on the next load.",
+  "evidence": [
+   {
+    "file": "frontend/src/components/Common/Appearance.tsx",
+    "line": 34
+   },
+   {
+    "file": "frontend/src/components/Common/Appearance.tsx",
+    "line": 36
+   },
+   {
+    "file": "frontend/src/components/Common/Appearance.tsx",
+    "line": 47
+   },
+   {
+    "file": "frontend/src/components/Common/Appearance.tsx",
+    "line": 50
+   },
+   {
+    "file": "frontend/src/components/Common/Appearance.tsx",
+    "line": 54
+   },
+   {
+    "file": "frontend/src/components/Common/Appearance.tsx",
+    "line": 59
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 34
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 38
+   },
+   {
+    "file": "frontend/src/components/theme-provider.tsx",
+    "line": 96
+   }
+  ],
+  "fact": "f52",
+  "repeat_of": "f52",
+  "counts_as_repeat": true
+ },
+ {
+  "qid": "r77",
+  "role": "joiner",
+  "question": "Once my change is merged to master, is it live in production?",
+  "answer": "No. Merging to master only deploys to staging; production is deployed when a GitHub release is published, which runs deploy-production.yml on the self-hosted runner labelled production.",
+  "evidence": [
+   {
+    "file": "deployment.md",
+    "line": 313
+   },
+   {
+    "file": "deployment.md",
+    "line": 314
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 4
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 6
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 13
+   },
+   {
+    "file": ".github/workflows/deploy-production.yml",
+    "line": 14
+   }
+  ],
+  "fact": "f04",
+  "repeat_of": "f04",
+  "counts_as_repeat": true
+ }
+]

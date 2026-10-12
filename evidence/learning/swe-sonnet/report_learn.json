@@ -1,0 +1,567 @@
+{
+ "protocol sha256": "8a6de4d19a6bece90fad84d5f9be381becef52c95f99e8229943c5bebfb6c77b",
+ "sessions": 180,
+ "answered": 167,
+ "transcripts found": 180,
+ "duplicate transcripts": 0,
+ "L1 tool calls, 28 issues": {
+  "issues": 28,
+  "Z mean calls per issue": 1.208,
+  "L mean calls per issue": 1.071,
+  "factor Z/L": 1.128,
+  "factor Z/L 95% CI": [
+   0.892,
+   1.537
+  ],
+  "saving Z-L per issue": 0.137
+ },
+ "requests, 28 issues (secondary)": {
+  "issues": 28,
+  "Z mean requests per issue": 4.054,
+  "L mean requests per issue": 3.929,
+  "factor Z/L": 1.032,
+  "factor Z/L 95% CI": [
+   0.966,
+   1.109
+  ],
+  "saving Z-L per issue": 0.125
+ },
+ "L2 right over 3 reps, 28 issues": {
+  "Z": 79,
+  "Z attempted": 79,
+  "L": 78,
+  "L attempted": 78,
+  "Z rate": 1.0,
+  "L rate": 1.0
+ },
+ "not attempted (DL1)": [
+  "L_r1/django__django-11583",
+  "L_r1/django__django-13757",
+  "L_r1/django__django-15061",
+  "L_r3/django__django-13321",
+  "L_r3/django__django-15738",
+  "L_r3/django__django-15996",
+  "X_r1/django__django-15814",
+  "X_r3/django__django-15819",
+  "Z_r1/django__django-13265",
+  "Z_r1/django__django-14580",
+  "Z_r1/django__django-15061",
+  "Z_r2/django__django-16816",
+  "Z_r3/django__django-12856"
+ ],
+ "L3 learning saving in tool calls (Z-L summed)": {
+  "first half": 1.333,
+  "second half": 2.5,
+  "issues": [
+   10,
+   18
+  ],
+  "by quarter": [
+   0.0,
+   1.333,
+   1.0,
+   1.5
+  ]
+ },
+ "L4 repeat-file issues among the 28": {
+  "issues": 20,
+  "Z mean calls per issue": 1.1,
+  "L mean calls per issue": 1.0,
+  "factor Z/L": 1.1,
+  "factor Z/L 95% CI": [
+   0.769,
+   1.69
+  ],
+  "saving Z-L per issue": 0.1
+ },
+ "new-file issues among the 28": {
+  "issues": 8,
+  "Z mean calls per issue": 1.479,
+  "L mean calls per issue": 1.25,
+  "factor Z/L": 1.183,
+  "factor Z/L 95% CI": [
+   NaN,
+   NaN
+  ],
+  "saving Z-L per issue": 0.229
+ },
+ "whole stream, learning saving in KIT tool calls": {
+  "note": "86 issues identical input (saving 0 by construction); 28 measured here",
+  "first half saving": 1.333,
+  "second half saving": 2.5
+ },
+ "X (every lesson placed), 3 issues": {
+  "django__django-15814": {
+   "Z": 4.0,
+   "L": 1.33,
+   "X": 0.5,
+   "L run": true
+  },
+  "django__django-15819": {
+   "Z": 0.0,
+   "L": 0.0,
+   "X": 0.0,
+   "L run": false
+  },
+  "django__django-16910": {
+   "Z": 1.0,
+   "L": 0.0,
+   "X": 3.0,
+   "L run": true
+  }
+ },
+ "per issue": {
+  "django__django-11583": {
+   "pos": 13,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    null,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 2
+  },
+  "django__django-11964": {
+   "pos": 22,
+   "repeat": false,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-12284": {
+   "pos": 27,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-12856": {
+   "pos": 37,
+   "repeat": false,
+   "Z calls": [
+    2,
+    2,
+    null
+   ],
+   "L calls": [
+    1,
+    1,
+    1
+   ],
+   "Z right": 2,
+   "L right": 3
+  },
+  "django__django-13028": {
+   "pos": 41,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-13033": {
+   "pos": 42,
+   "repeat": true,
+   "Z calls": [
+    0,
+    2,
+    0
+   ],
+   "L calls": [
+    2,
+    2,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-13265": {
+   "pos": 46,
+   "repeat": true,
+   "Z calls": [
+    null,
+    0,
+    2
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 2,
+   "L right": 3
+  },
+  "django__django-13321": {
+   "pos": 48,
+   "repeat": false,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    null
+   ],
+   "Z right": 3,
+   "L right": 2
+  },
+  "django__django-13401": {
+   "pos": 49,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-13757": {
+   "pos": 57,
+   "repeat": false,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    null,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 2
+  },
+  "django__django-13925": {
+   "pos": 59,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    1
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-13964": {
+   "pos": 61,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-14017": {
+   "pos": 63,
+   "repeat": true,
+   "Z calls": [
+    0,
+    1,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    2
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-14580": {
+   "pos": 69,
+   "repeat": true,
+   "Z calls": [
+    null,
+    2,
+    2
+   ],
+   "L calls": [
+    2,
+    0,
+    2
+   ],
+   "Z right": 2,
+   "L right": 3
+  },
+  "django__django-14915": {
+   "pos": 77,
+   "repeat": true,
+   "Z calls": [
+    1,
+    0,
+    1
+   ],
+   "L calls": [
+    0,
+    1,
+    1
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-15061": {
+   "pos": 80,
+   "repeat": true,
+   "Z calls": [
+    null,
+    0,
+    0
+   ],
+   "L calls": [
+    null,
+    0,
+    0
+   ],
+   "Z right": 2,
+   "L right": 2
+  },
+  "django__django-15388": {
+   "pos": 86,
+   "repeat": false,
+   "Z calls": [
+    0,
+    1,
+    1
+   ],
+   "L calls": [
+    1,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-15498": {
+   "pos": 88,
+   "repeat": false,
+   "Z calls": [
+    5,
+    5,
+    6
+   ],
+   "L calls": [
+    8,
+    3,
+    5
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-15738": {
+   "pos": 90,
+   "repeat": true,
+   "Z calls": [
+    0,
+    1,
+    0
+   ],
+   "L calls": [
+    3,
+    1,
+    null
+   ],
+   "Z right": 3,
+   "L right": 2
+  },
+  "django__django-15814": {
+   "pos": 94,
+   "repeat": true,
+   "Z calls": [
+    5,
+    4,
+    3
+   ],
+   "L calls": [
+    4,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-15996": {
+   "pos": 98,
+   "repeat": true,
+   "Z calls": [
+    0,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    null
+   ],
+   "Z right": 3,
+   "L right": 2
+  },
+  "django__django-16229": {
+   "pos": 102,
+   "repeat": true,
+   "Z calls": [
+    5,
+    7,
+    4
+   ],
+   "L calls": [
+    7,
+    7,
+    3
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-16400": {
+   "pos": 105,
+   "repeat": false,
+   "Z calls": [
+    2,
+    6,
+    2
+   ],
+   "L calls": [
+    5,
+    2,
+    3
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-16408": {
+   "pos": 106,
+   "repeat": true,
+   "Z calls": [
+    1,
+    2,
+    2
+   ],
+   "L calls": [
+    3,
+    3,
+    2
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-16816": {
+   "pos": 109,
+   "repeat": false,
+   "Z calls": [
+    0,
+    null,
+    1
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 2,
+   "L right": 3
+  },
+  "django__django-16820": {
+   "pos": 110,
+   "repeat": true,
+   "Z calls": [
+    3,
+    3,
+    3
+   ],
+   "L calls": [
+    2,
+    4,
+    2
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-16910": {
+   "pos": 112,
+   "repeat": true,
+   "Z calls": [
+    3,
+    0,
+    0
+   ],
+   "L calls": [
+    0,
+    0,
+    0
+   ],
+   "Z right": 3,
+   "L right": 3
+  },
+  "django__django-17087": {
+   "pos": 114,
+   "repeat": true,
+   "Z calls": [
+    2,
+    1,
+    2
+   ],
+   "L calls": [
+    2,
+    1,
+    2
+   ],
+   "Z right": 3,
+   "L right": 3
+  }
+ },
+ "L1": false,
+ "L2": true,
+ "L3": true,
+ "L4 (point above 1.0; interval reported)": true
+}

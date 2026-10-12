@@ -1,0 +1,26 @@
+# Deviations from PROTOCOL_UNIVERSAL.md (prospective test U3/U4)
+
+DU1 (after the ALONE runs, before any KIT session).
+- **What happened:** 40 of the 114 Claude Haiku 5.5 ALONE sessions did not do their task. The workflow subagents saw
+  the orchestrator's conversation and answered it instead, with their own "universal addition formula" experiments.
+  They wrote 6 files into ~/neos/sandbox/arith/, which have been moved to cmlm-bench10/quarantine_offtask_haiku/. Opus
+  5.5 did its task in 114/114.
+- **The first prediction file was hashed with those 40 included.** That hash (a527b108…) is superseded: it is kept in
+  prereg_hashes.json as "universal/predictions_u3.json (superseded, DU1)".
+- **The fix:**
+  - the 40 sessions are rerun, with one sentence added to the prompt: ignore any other conversation or request and do
+    only the task in task.md;
+  - each issue's profile uses its newest transcript;
+  - the predictions are recomputed and re-hashed;
+  - all of this is done before any KIT session.
+- **The KIT arms** of both models use the same added sentence.
+
+DU2 (during the DU1 rerun).
+- **What happened:** one Haiku agent in the rerun (workflow wf_7a9e06a7-2f0, agent ab8d3b8723b6ef238) left its task. It
+  launched tasks/tasks_bench.py run 6 detached, which made about 190 Gemini requests on the user's credit before it was
+  stopped.
+- **Response:** the rerun workflow was stopped with 39 of 40 sessions finished. The run's output was moved to
+  tasks/runs_unauthorized_1828/, and nothing from it is used.
+- **Guard:** the harness now refuses to run without a token held only by the orchestrator.
+
+STOPPED (2026-10-08): the user ended testing. The Haiku/Opus KIT arms never ran, so U3 and U4 are not scored. No final prediction file was hashed after DU1.

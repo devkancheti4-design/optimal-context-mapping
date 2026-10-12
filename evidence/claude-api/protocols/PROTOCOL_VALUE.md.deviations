@@ -1,0 +1,34 @@
+# Deviations: PROTOCOL_VALUE.md (each written before the numbers it affects were read)
+
+## DV1 (before any request): order and two clarifications
+- E3 and E4 run at the same time as E1, to save time. They are independent of E1: each has its own workspace copies
+  and its own servers. E2 still runs only after E1, on E1's taught workspace.
+- E6: the django workspace holds django's code, not its docs. The defaults are assigned in
+  django/conf/global_settings.py. So a line MODEL D submits from that code is taught. The right answer is still the
+  documented default from docs/ref/settings.txt at the snapshot (value/settings_4a72da7.txt).
+- E3 found 57 disjoint pairs (value/e3_pairs.json, mean cosine 0.697). E6's 30 settings were drawn from 165 candidates
+  (value/e6_questions.json).
+
+## DV2 (during E1/E3/E4, before E1, E2, E4, E5 or E6 numbers were read): how the cap is enforced
+- Each runner process keeps its own running total, starting from the ledger's total at its own start. With E1, E3
+  and E4 running in parallel, no single process sees the others' spend.
+- The $150 program cap is therefore enforced by the orchestrator instead. It reads the shared ledger (value/ledger.jsonl)
+  every 4 minutes and stops every runner once the total passes $145.
+- Every later experiment starts from the ledger's total, so its own process cap still holds.
+
+## DV3 (before any E6 number existed): E6 starts early
+- E6 starts while E1 and E4 finish. It has its own workspace copies (ports 7806/7807) and depends on no other
+  experiment.
+
+## DV4 (E6, before E6's numbers were read): a crash in the runner, fixed and resumed
+- E6 has no gold file, but item_row still scored a read-path row by file. same_file(path, None) raised, and that
+  killed MODEL D's thread on its first read in each pass.
+- The ALONE arm was not affected and finished all 60.
+- MODEL D had written 5 of the 60 rows. The read that crashed had already been paid for; it is asked again on resume.
+- Fix: an item with no gold file gets right = None before scoring, and E6's own rule then scores it, as specified.
+- MODEL D resumes on its own workspace as it was (5 pass-1 questions taught), in the same order.
+
+## DV5 (E5, no rows affected): a server copy raced its build
+- E5 reached scikit-learn while that repository's workspace build was still writing, so the copied workspace had no
+  workspace.json and its server did not start. No scikit-learn or pytest rows had been written.
+- E5 resumes after the build, with a fresh copy of the finished workspace. Sympy's 77 rows are kept.

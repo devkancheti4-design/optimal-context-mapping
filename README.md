@@ -14,8 +14,8 @@ words, is drawn to it.
 
 ## What it achieved in our tests
 
-Live tests with fresh Claude agents and blind judges, each plan fixed with a hash before it ran (evidence in
-`results/RESULTS.md`):
+Live tests with fresh Claude agents and blind judges, each plan fixed with a hash before it ran (results in
+`results/RESULTS.md`; the data, with a script that recomputes every number, in `evidence/`):
 
 | test | accuracy | model requests |
 |---|---|---|

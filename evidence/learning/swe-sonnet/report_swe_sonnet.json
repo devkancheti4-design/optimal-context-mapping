@@ -1,0 +1,378 @@
+{
+ "protocol sha256": "a2e9d04c87107e879e9b2bc9a5a80a3d72dbeb37208f5b138d8b8c28362533c8",
+ "issues compared": 114,
+ "missing sessions": [],
+ "models seen": {
+  "alone claude-sonnet-5-5": 114,
+  "kit claude-sonnet-5-5": 114,
+  "eyes claude-haiku-5-5": 7
+ },
+ "off-script tool calls": {
+  "alone": 0,
+  "kit": 1,
+  "eyes": 1
+ },
+ "all": {
+  "issues": 114,
+  "alone": {
+   "right": 111,
+   "requests per issue": 5.52,
+   "requests per issue, adjusted": 3.52,
+   "dollars per issue": 0.09757,
+   "dollars per issue, adjusted": 0.0468
+  },
+  "kit": {
+   "right": 112,
+   "requests per issue": 3.76,
+   "requests per issue, adjusted": 1.76,
+   "dollars per issue": 0.0802,
+   "dollars per issue, adjusted": 0.02916
+  },
+  "modeld": {
+   "right": 112,
+   "requests per issue": 3.75,
+   "requests per issue, adjusted": 1.76,
+   "dollars per issue": 0.07786,
+   "dollars per issue, adjusted": 0.02808
+  },
+  "request factor alone/kit": 1.47,
+  "request factor alone/kit 95% CI": [
+   1.384,
+   1.555
+  ],
+  "request (adjusted) factor alone/kit": 2.0,
+  "request (adjusted) factor alone/kit 95% CI": [
+   1.774,
+   2.264
+  ],
+  "dollar factor alone/kit": 1.22,
+  "dollar factor alone/kit 95% CI": [
+   1.166,
+   1.27
+  ],
+  "dollar (adjusted) factor alone/kit": 1.6,
+  "dollar (adjusted) factor alone/kit 95% CI": [
+   1.45,
+   1.782
+  ],
+  "request factor alone/modeld": 1.47,
+  "request factor alone/modeld 95% CI": [
+   1.379,
+   1.567
+  ],
+  "request (adjusted) factor alone/modeld": 2.0,
+  "request (adjusted) factor alone/modeld 95% CI": [
+   1.769,
+   2.276
+  ],
+  "dollar factor alone/modeld": 1.25,
+  "dollar factor alone/modeld 95% CI": [
+   1.191,
+   1.323
+  ],
+  "dollar (adjusted) factor alone/modeld": 1.67,
+  "dollar (adjusted) factor alone/modeld 95% CI": [
+   1.493,
+   1.867
+  ]
+ },
+ "first half": {
+  "issues": 57,
+  "alone": {
+   "right": 57,
+   "requests per issue": 5.32,
+   "requests per issue, adjusted": 3.32,
+   "dollars per issue": 0.09906,
+   "dollars per issue, adjusted": 0.04273
+  },
+  "kit": {
+   "right": 57,
+   "requests per issue": 3.47,
+   "requests per issue, adjusted": 1.47,
+   "dollars per issue": 0.08122,
+   "dollars per issue, adjusted": 0.02475
+  },
+  "modeld": {
+   "right": 57,
+   "requests per issue": 3.37,
+   "requests per issue, adjusted": 1.42,
+   "dollars per issue": 0.07743,
+   "dollars per issue, adjusted": 0.02308
+  },
+  "request factor alone/kit": 1.53,
+  "request factor alone/kit 95% CI": [
+   1.403,
+   1.672
+  ],
+  "request (adjusted) factor alone/kit": 2.25,
+  "request (adjusted) factor alone/kit 95% CI": [
+   1.863,
+   2.733
+  ],
+  "dollar factor alone/kit": 1.22,
+  "dollar factor alone/kit 95% CI": [
+   1.154,
+   1.295
+  ],
+  "dollar (adjusted) factor alone/kit": 1.73,
+  "dollar (adjusted) factor alone/kit 95% CI": [
+   1.464,
+   2.036
+  ],
+  "request factor alone/modeld": 1.58,
+  "request factor alone/modeld 95% CI": [
+   1.44,
+   1.731
+  ],
+  "request (adjusted) factor alone/modeld": 2.33,
+  "request (adjusted) factor alone/modeld 95% CI": [
+   1.921,
+   2.841
+  ],
+  "dollar factor alone/modeld": 1.28,
+  "dollar factor alone/modeld 95% CI": [
+   1.188,
+   1.392
+  ],
+  "dollar (adjusted) factor alone/modeld": 1.85,
+  "dollar (adjusted) factor alone/modeld 95% CI": [
+   1.544,
+   2.229
+  ]
+ },
+ "second half": {
+  "issues": 57,
+  "alone": {
+   "right": 54,
+   "requests per issue": 5.72,
+   "requests per issue, adjusted": 3.72,
+   "dollars per issue": 0.09608,
+   "dollars per issue, adjusted": 0.05087
+  },
+  "kit": {
+   "right": 55,
+   "requests per issue": 4.05,
+   "requests per issue, adjusted": 2.05,
+   "dollars per issue": 0.07918,
+   "dollars per issue, adjusted": 0.03357
+  },
+  "modeld": {
+   "right": 55,
+   "requests per issue": 4.14,
+   "requests per issue, adjusted": 2.11,
+   "dollars per issue": 0.07829,
+   "dollars per issue, adjusted": 0.03308
+  },
+  "request factor alone/kit": 1.41,
+  "request factor alone/kit 95% CI": [
+   1.305,
+   1.525
+  ],
+  "request (adjusted) factor alone/kit": 1.81,
+  "request (adjusted) factor alone/kit 95% CI": [
+   1.563,
+   2.125
+  ],
+  "dollar factor alone/kit": 1.21,
+  "dollar factor alone/kit 95% CI": [
+   1.139,
+   1.29
+  ],
+  "dollar (adjusted) factor alone/kit": 1.52,
+  "dollar (adjusted) factor alone/kit 95% CI": [
+   1.333,
+   1.722
+  ],
+  "request factor alone/modeld": 1.38,
+  "request factor alone/modeld 95% CI": [
+   1.269,
+   1.502
+  ],
+  "request (adjusted) factor alone/modeld": 1.77,
+  "request (adjusted) factor alone/modeld 95% CI": [
+   1.525,
+   2.08
+  ],
+  "dollar factor alone/modeld": 1.23,
+  "dollar factor alone/modeld 95% CI": [
+   1.147,
+   1.313
+  ],
+  "dollar (adjusted) factor alone/modeld": 1.54,
+  "dollar (adjusted) factor alone/modeld 95% CI": [
+   1.349,
+   1.755
+  ]
+ },
+ "repeat file": {
+  "issues": 42,
+  "alone": {
+   "right": 40,
+   "requests per issue": 5.79,
+   "requests per issue, adjusted": 3.79,
+   "dollars per issue": 0.09802,
+   "dollars per issue, adjusted": 0.05093
+  },
+  "kit": {
+   "right": 41,
+   "requests per issue": 4.12,
+   "requests per issue, adjusted": 2.12,
+   "dollars per issue": 0.08268,
+   "dollars per issue, adjusted": 0.03493
+  },
+  "modeld": {
+   "right": 41,
+   "requests per issue": 4.02,
+   "requests per issue, adjusted": 2.07,
+   "dollars per issue": 0.07616,
+   "dollars per issue, adjusted": 0.03196
+  },
+  "request factor alone/kit": 1.4,
+  "request factor alone/kit 95% CI": [
+   1.283,
+   1.542
+  ],
+  "request (adjusted) factor alone/kit": 1.79,
+  "request (adjusted) factor alone/kit 95% CI": [
+   1.509,
+   2.171
+  ],
+  "dollar factor alone/kit": 1.19,
+  "dollar factor alone/kit 95% CI": [
+   1.114,
+   1.26
+  ],
+  "dollar (adjusted) factor alone/kit": 1.46,
+  "dollar (adjusted) factor alone/kit 95% CI": [
+   1.267,
+   1.695
+  ],
+  "request factor alone/modeld": 1.44,
+  "request factor alone/modeld 95% CI": [
+   1.287,
+   1.616
+  ],
+  "request (adjusted) factor alone/modeld": 1.83,
+  "request (adjusted) factor alone/modeld 95% CI": [
+   1.519,
+   2.269
+  ],
+  "dollar factor alone/modeld": 1.29,
+  "dollar factor alone/modeld 95% CI": [
+   1.169,
+   1.445
+  ],
+  "dollar (adjusted) factor alone/modeld": 1.59,
+  "dollar (adjusted) factor alone/modeld 95% CI": [
+   1.348,
+   1.938
+  ]
+ },
+ "new file": {
+  "issues": 72,
+  "alone": {
+   "right": 71,
+   "requests per issue": 5.36,
+   "requests per issue, adjusted": 3.36,
+   "dollars per issue": 0.0973,
+   "dollars per issue, adjusted": 0.04439
+  },
+  "kit": {
+   "right": 71,
+   "requests per issue": 3.56,
+   "requests per issue, adjusted": 1.56,
+   "dollars per issue": 0.07875,
+   "dollars per issue, adjusted": 0.02579
+  },
+  "modeld": {
+   "right": 71,
+   "requests per issue": 3.6,
+   "requests per issue, adjusted": 1.58,
+   "dollars per issue": 0.07885,
+   "dollars per issue, adjusted": 0.02582
+  },
+  "request factor alone/kit": 1.51,
+  "request factor alone/kit 95% CI": [
+   1.398,
+   1.625
+  ],
+  "request (adjusted) factor alone/kit": 2.16,
+  "request (adjusted) factor alone/kit 95% CI": [
+   1.844,
+   2.542
+  ],
+  "dollar factor alone/kit": 1.24,
+  "dollar factor alone/kit 95% CI": [
+   1.168,
+   1.309
+  ],
+  "dollar (adjusted) factor alone/kit": 1.72,
+  "dollar (adjusted) factor alone/kit 95% CI": [
+   1.493,
+   1.972
+  ],
+  "request factor alone/modeld": 1.49,
+  "request factor alone/modeld 95% CI": [
+   1.384,
+   1.608
+  ],
+  "request (adjusted) factor alone/modeld": 2.12,
+  "request (adjusted) factor alone/modeld 95% CI": [
+   1.815,
+   2.51
+  ],
+  "dollar factor alone/modeld": 1.23,
+  "dollar factor alone/modeld 95% CI": [
+   1.167,
+   1.306
+  ],
+  "dollar (adjusted) factor alone/modeld": 1.72,
+  "dollar (adjusted) factor alone/modeld 95% CI": [
+   1.492,
+   1.97
+  ]
+ },
+ "model d eyes": {
+  "taught-lane issues": 7,
+  "answered by the eyes": 4,
+  "eyes right": 4,
+  "replies": {
+   "django__django-11583": "django/utils/autoreload.py",
+   "django__django-12284": "django/db/models/fields/__init__.py",
+   "django__django-13033": "django/db/models/sql/compiler.py",
+   "django__django-14580": "NEED_SEARCH",
+   "django__django-15738": "NEED_SEARCH",
+   "django__django-16400": "NEED_SEARCH",
+   "django__django-16910": "django/db/models/sql/query.py"
+  }
+ },
+ "S1": true,
+ "S2": true,
+ "S3": true,
+ "S4": false,
+ "S5": false,
+ "gemini 2.5 flash, same task (PROTOCOL_SWE.md)": {
+  "request factor alone/kit": 1.72,
+  "request factor alone/kit 95% CI": [
+   1.519,
+   1.954
+  ],
+  "request factor alone/modeld": 1.94,
+  "request factor alone/modeld 95% CI": [
+   1.645,
+   2.295
+  ],
+  "alone": {
+   "right": 84,
+   "requests per issue": 7.25
+  },
+  "kit": {
+   "right": 94,
+   "requests per issue": 4.21
+  },
+  "modeld": {
+   "right": 93,
+   "requests per issue": 3.75
+  }
+ }
+}
