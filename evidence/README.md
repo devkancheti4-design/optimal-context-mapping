@@ -36,6 +36,7 @@ python evidence/verify.py
 | SWE-QA: 1.90x cheaper at 73.3 vs 75.9 of 100; SWE-ContextBench: 11 vs 12 of 28 | `claude-api/` | `report_retest.json`, `report_sweqa.json`, `report_swecb.json`, `RESULTS_SWEQA_SWECB.md` |
 | 31 of 45 predictions held | `claude-api/` | every true/false key in `report_value.json` |
 | the turn law: -9% and -4%; the learning formula: -11% | `claude-api/` | report keys `M1 E1`, `M1 V4`, `M3 E2`; `formula/` |
+| teaching cost less than working alone (K < A) in 11 of 12 test sets, 1.17x to 1.85x | `claude-api/` | rows: mean cost of the teach path against the alone arm, per set |
 | ten years of Django, 5,333 fixes, offline: right file 83.9%; learned ground 42% -> 70% | `replay/` | `RESULTS_REPLAY.md`, `report_replay.json`, `rows_*.jsonl` |
 | Gemini 2.5 Flash, 3 runs: a learned question takes 1.0-1.1 requests (vs 5.1-5.4); bill 6-12x lower | `gemini/` | `PROTOCOL_MODEL_D_E2E.md`, `report_e2e.json`, `e2e/` |
 | saving grows with the codebase: 1.25x on 148k tokens, 1.71x on 10.8M; 30 of 30 reworded questions land on what was learned | `learning/` | `live-vectors/report_vec.json`, `large-codebase/report_large.json` |

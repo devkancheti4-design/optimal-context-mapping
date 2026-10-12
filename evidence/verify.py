@@ -60,7 +60,7 @@ line("plans and inputs in this folder that match their recorded hash", f"{match}
 line("recorded plans not included here (other studies)", f"{elsewhere}", "")
 
 # --- 2. The Claude API program -------------------------------------------------------------------------------------
-section("Claude API program (Claude Sonnet 5.5, Haiku 5.5 reader; list prices from the API's own usage fields)")
+section("Claude API program (Claude Sonnet 5.5 and Haiku 5.5; list prices from the API's own usage fields)")
 R = load("claude-api/reports/report_value.json")
 held = [v for v in R.values() if isinstance(v, bool)]
 line("predictions that held", f"{sum(held)} of {len(held)}", "report")
@@ -123,6 +123,14 @@ section("The math, with parameters fixed before the runs")
 for k, label in (("M1 E1", "turn law, 114 Django bugs"), ("M1 V4", "turn law, company repo")):
     m = R[k]
     line(f"{label}: requests predicted / measured", f"{m['r_D predicted']:.2f} / {m['r_D measured']:.2f} ({m['error'] * 100:+.0f}%)", f"report {k}")
+sets = ["e1", "f1_r2", "f1_r3", "e2", "e4", "f2", "e5", "f4", "e6", "f3", "g1", "g3"]
+ka = []
+for n in sets:
+    A = [r["usd"] for r in rows(f"{n}_alone.jsonl") if not r["error"]]
+    K = [r["usd"] for r in rows(f"{n}_md.jsonl") if not r["error"] and r["path"] == "teach"]
+    ka.append(mean(A) / mean(K))
+line("teaching cheaper than working alone (K < A), test sets", f"{sum(x > 1 for x in ka)} of {len(ka)}", "rows, 12 sets")
+line("teaching's saving over working alone, range where K < A", f"{min(x for x in ka if x > 1):.2f}x to {max(ka):.2f}x", "rows, 12 sets")
 m3 = R["M3 E2"]
 line("learning formula, reworded reports: saving predicted / measured", f"{m3['S predicted']:.2f}x / {m3['S measured']:.2f}x ({m3['error'] * 100:+.0f}%)", "report M3 E2")
 
