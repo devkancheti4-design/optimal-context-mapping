@@ -13,6 +13,9 @@ POST JSON to these paths (the hooks in ocm.loop and the MCP plugin call them):
   /ask      {"question"}            the router law's first readout: the code a taught question's vector points to, or
                                     10 code blocks and doc sentences (by meaning, by keyword, or both)
   /next     {"question"}            the router law's next readout for the same question (ADVANCE), until there are none
+            both take an optional "scope": "code" leaves documentation out (the DOCS files of ocm.units: .md, .mdx,
+            .rst, .txt, .adoc) and ranks code, config and build files only, for questions whose answer is in code,
+            such as a bug report; "all" (the default) ranks everything. OCM_SCOPE sets the default.
   /recall   {"query", "k"}          the k units nearest in meaning (k up to 10)
   /teach    {"pairs": [{"question", "at"}, ...]}
                                     "at" names the line the answer is on, as path:line (the first path:line in it is
@@ -36,7 +39,7 @@ from .cmlm_vector import Memory
 from .life import Life
 from .router import router as RL
 from .router import lanes as L
-from .units import files as list_files
+from .units import DOCS, files as list_files
 
 NAMES = {0: "the code a taught question's vector points to (ranked by meaning, not verified: use it only if it answers the question)",
          1: "meaning", 2: "keyword matches", 3: "meaning and keyword matches", 4: "meaning, wider"}
@@ -56,6 +59,10 @@ class Workspace:
         self.life = Life(self.life_file)
         self.spans = {}                                                            # path -> [(first line, last line, unit)]
         m, sp = self.mem, os.path.join(folder, "spans.json")
+        n = min(self.meta["units"], len(m.texts))
+        self.code = np.array([m.src[j] >= 0 and os.path.splitext(m.sources[m.src[j]]["path"])[1].lower() not in DOCS
+                              for j in range(n)], bool)
+        self.scope = os.environ.get("OCM_SCOPE", "all")
         lines = json.load(open(sp)) if os.path.exists(sp) else None
         for j in range(min(self.meta["units"], len(m.texts))):
             if m.src[j] < 0:
@@ -155,20 +162,24 @@ class Workspace:
         body = t.split("\n", 1)[1] if t.startswith("# ") and "\n" in t else t
         return f"{i}. [{path}" + (f":{m.pos[j]}" if m.pos[j] else "") + f"]\n{body}"
 
-    def routed(self, question, first):
-        key = hashlib.sha1(" ".join(question.split()).lower().encode()).hexdigest()
+    def routed(self, question, first, scope=None):
+        scope = (scope or self.scope or "all").lower()
+        allow = self.code if scope == "code" else None
+        key = hashlib.sha1((scope + "|" + " ".join(question.split()).lower()).encode()).hexdigest()
         st = self.state.get(key)
         if first or st is None or st["slot"] is None:
             st = self.state[key] = {"live": 63, "slot": None, "tried": False}
         else:
             st["live"] = RL.advance(st["live"], st["slot"]); st["tried"] = True
-        rows, obs = self.lanes.measure(question)
+        rows, obs = self.lanes.measure(question, allow=allow)
         slot, lane = RL.emit(self.lanes.byte(obs, st["tried"]), st["live"]); st["slot"] = slot
         if lane == 5:
             return "NO MORE READOUTS for this question: ask in other words with recall, or search the code."
         m = self.mem
         if m.law.active and lane in (1, 3, 4):                                # the learned law orders the top 8 by meaning
             cand, strong, weak = m._rank(question)
+            if allow is not None:
+                cand = [j for j in cand if j < len(allow) and allow[j]]
             law = m.law.order(cand[:m.law.n], m._lane_words(question, cand, strong, weak)) + cand[m.law.n:]
             if lane == 3:
                 rows[3] = list(dict.fromkeys(law[:5] + [j for j in rows[3] if j not in set(cand[:5])]))
@@ -180,9 +191,9 @@ class Workspace:
     def handle(self, path, req):
         m = self.mem
         if path == "ask":
-            return self.routed(str(req.get("question", "")), True)
+            return self.routed(str(req.get("question", "")), True, req.get("scope"))
         if path == "next":
-            return self.routed(str(req.get("question", "")), False)
+            return self.routed(str(req.get("question", "")), False, req.get("scope"))
         if path == "recall":
             r = m.recall(str(req.get("query", "")), k=max(1, min(10, int(req.get("k") or 5))), context=0)
             return "\n\n".join(self.fmt(m.by_text[x["fact"]], i) for i, x in enumerate(r["rows"], 1))
