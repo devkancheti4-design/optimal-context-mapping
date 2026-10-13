@@ -1252,5 +1252,113 @@
   "from": "swe_sonnet/audit_learning.py",
   "sha256": "f2e378e26b8adaa1511b56064707abf945634f3218b38d18731fbac4ba377936",
   "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/PROTOCOL_CODEONLY.md",
+  "from": "lite/PROTOCOL_CODEONLY.md",
+  "sha256": "aebf2ef692b9f3c6df83a991d0b4eeef9d5276c77d28f5192d1e054806e9c541",
+  "pre-registered": true
+ },
+ {
+  "file": "swe-bench-lite/RESULTS_CODEONLY.md",
+  "from": "lite/RESULTS_CODEONLY.md",
+  "sha256": "09462a35a3901b9113e11853d982a41a8965a47ec291000b6b3cc7ea9539eeab",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/run_modeld_scope.py",
+  "from": "lite/run_modeld_scope.py",
+  "sha256": "f8b41746f4d1b5973fe18ac5905dfcb89b98311b0001f1a016fe7c52b662fb34",
+  "pre-registered": true
+ },
+ {
+  "file": "swe-bench-lite/score_codeonly.py",
+  "from": "lite/score_codeonly.py",
+  "sha256": "9e5c16b6e9f5fd4a1fffe2922211d54868948a8ef14b35a2823378354d7fdd6b",
+  "pre-registered": true
+ },
+ {
+  "file": "swe-bench-lite/prep.sh",
+  "from": "lite/prep.sh",
+  "sha256": "adc79bfdccd2924925b62e087b6567bb8f9ae559547b061530695a4e26588dbb",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/run_modeld.py",
+  "from": "lite/run_modeld.py",
+  "sha256": "34fce83b65277359c64339494a98553ca9210e042a55190085d6dda32f61dbbe",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/run_graphify.py",
+  "from": "lite/run_graphify.py",
+  "sha256": "17a68748590169a6961ca5dba3f5fce927ff47a7c7e0a01663bfe619667ead40",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/score.py",
+  "from": "lite/score.py",
+  "sha256": "bf2d57048c63c2bb3fe9da22cc211943f094b93b7498aab5237cd8419e0a58b9",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/rebuild_md.sh",
+  "from": "lite/rebuild_md.sh",
+  "sha256": "c8def022ddc6bfbddc964141394c6e0cf917ba31986f59d7fea93e2e789a9e19",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/rebuild_gf.sh",
+  "from": "lite/rebuild_gf.sh",
+  "sha256": "92322b5d515cff62924d555013061aa8df67574b53c261b0b43f759462b682a8",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/swebench_lite_by_repo.json",
+  "from": "lite/swebench_lite_by_repo.json",
+  "sha256": "9485b76b8e20b9ce78c11ddebb3bbb299db7c4fdcf6a458d15e3b9ab4006dd99",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/codeonly.json",
+  "from": "lite/codeonly.json",
+  "sha256": "081f29528eb69f105f50c6f180b46ba9835b723b5189cc6d7d3ffc8f94b6f9e5",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/regress_all2.json",
+  "from": "lite/regress_all2.json",
+  "sha256": "5d4f6b0d781d4e4530c9ce0d34559dfb8f110d73077440c356c9bda18baebdfb",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/modeld_ranked.json",
+  "from": "lite/modeld_ranked.json",
+  "sha256": "6696400da35e78826257b141157b500df7e4cb979a4c3b214ae65d0355ed0d3b",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/graphify_ranked_087.json",
+  "from": "lite/graphify_ranked_087.json",
+  "sha256": "81c054cae493ae66acf6f6c68553657b24d49a0e793c0a88c07de3a3d6159967",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/report_codeonly.json",
+  "from": "lite/report_codeonly.json",
+  "sha256": "e140af41e8aa06a59459d54f97a97e64f46620a25c15f9d297a4aa5e851dc116",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/score_087.md",
+  "from": "lite/score_087.md",
+  "sha256": "983275d433076242f1353f940c221c44c372c70fe29d4ead47cb5de78c2e681a",
+  "pre-registered": false
+ },
+ {
+  "file": "swe-bench-lite/kept_issues.json",
+  "from": "lite/kept_issues.json",
+  "sha256": "8cb4eb48675c5166e34590d43a21fd21a1f2d025c467d13cac893c4fc367c51b",
+  "pre-registered": false
  }
 ]

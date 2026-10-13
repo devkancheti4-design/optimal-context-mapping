@@ -41,6 +41,7 @@ python evidence/verify.py
 | Gemini 2.5 Flash, 3 runs: a learned question takes 1.0-1.1 requests (vs 5.1-5.4); bill 6-12x lower | `gemini/` | `PROTOCOL_MODEL_D_E2E.md`, `report_e2e.json`, `e2e/` |
 | saving grows with the codebase: 1.25x on 148k tokens, 1.71x on 10.8M; 30 of 30 reworded questions land on what was learned | `learning/` | `live-vectors/report_vec.json`, `large-codebase/report_large.json` |
 | lessons survive a code move: 38 of 38 re-found across 400 commits | `learning/life/` | `RESULTS_LIFE.md`, `report_life.json` |
+| finding the fixed file, 285 SWE-bench Lite issues in 12 full repositories: code scope 176 / 183 top-5 vs Graphify 0.9.87 131 / 122; 5 of 5 predictions held | `swe-bench-lite/` | `PROTOCOL_CODEONLY.md`, `RESULTS_CODEONLY.md`, `codeonly.json`, `graphify_ranked_087.json` |
 
 ## What failed
 These are reported in the same files as the wins:
@@ -53,6 +54,9 @@ These are reported in the same files as the wins:
 - **The learning curve on Claude Sonnet failed** (S4 and S5 in `learning/swe-sonnet/`). The cause was the issue mix,
   confirmed by three audits.
 - **Carrying lessons through the code move saved nothing in the live run** (`RESULTS_LIFE_LIVE.md`).
+- **In full repositories, the full-scope readout lost to Graphify on issue titles:** 117 vs 131 top-5. Documentation
+  filled about half its top-5 places (`swe-bench-lite/score_087.md`). The code scope was added for this and tested
+  against a plan fixed in advance.
 
 ## Not included
 - **Agent transcripts and built indexes:** gigabytes; they can be rebuilt with the scripts.

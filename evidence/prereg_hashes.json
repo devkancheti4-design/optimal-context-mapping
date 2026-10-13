@@ -374,5 +374,17 @@
  "value/run_rt.py": {
   "sha256": "a9dca13957ad1fd66b4be6cf39206e31013ce69dfdf461ea376954a5cddd0a05",
   "fixed": "2026-10-10T03:53:48+0530"
+ },
+ "lite/PROTOCOL_CODEONLY.md": {
+  "sha256": "aebf2ef692b9f3c6df83a991d0b4eeef9d5276c77d28f5192d1e054806e9c541",
+  "fixed": "2026-10-13T10:50:02+0530"
+ },
+ "lite/run_modeld_scope.py": {
+  "sha256": "f8b41746f4d1b5973fe18ac5905dfcb89b98311b0001f1a016fe7c52b662fb34",
+  "fixed": "2026-10-13T10:50:02+0530"
+ },
+ "lite/score_codeonly.py": {
+  "sha256": "9e5c16b6e9f5fd4a1fffe2922211d54868948a8ef14b35a2823378354d7fdd6b",
+  "fixed": "2026-10-13T10:50:02+0530"
  }
 }

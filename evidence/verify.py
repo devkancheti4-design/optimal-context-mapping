@@ -167,3 +167,17 @@ section("Lessons carried through a real code move (400 commits of the FastAPI te
 lf = load("learning/life/report_life.json")
 line("lessons re-found after the move (19 of 38 had moved)", f"{lf['carried']['LIFE']['right']} of {lf['entries taught at A']}", "report_life")
 line("same, if lessons are carried as-is", f"{lf['carried']['CARRY-AS-IS']['right']} right, {lf['carried']['CARRY-AS-IS']['wrong']} wrong", "report_life")
+
+# --- 7. Finding the fixed file: SWE-bench Lite in full repositories, against Graphify -----------------------------
+section("Finding the fixed file: 285 SWE-bench Lite issues, 12 full repositories, offline (PROTOCOL_CODEONLY)")
+issues = {it["instance_id"]: it for v in load("swe-bench-lite/swebench_lite_by_repo.json").values() for it in v["issues"]}
+kept = load("swe-bench-lite/kept_issues.json")
+arms = (("Model D, code scope", "codeonly.json"), ("Model D, full scope", "regress_all2.json"), ("Graphify 0.9.87", "graphify_ranked_087.json"))
+for key, label in (("query_title", "issue title"), ("query_400", "title + 400 characters")):
+    for name, f in arms:
+        R = load(f"swe-bench-lite/{f}")
+        hits = [sum(any(g in issues[i]["gold_files"] for g in R[s][i][key]["files"][:k]) for s, i in kept) for k in (1, 3, 5)]
+        tok = mean(R[s][i][key]["chars"] / 4 for s, i in kept)
+        line(f"{label}, {name}: top-1 / 3 / 5", f"{' / '.join(map(str, hits))} · {tok:,.0f} tok", f"rows {f}")
+held = load("swe-bench-lite/report_codeonly.json")["predictions"]
+line("pre-registered predictions that held", f"{sum(held.values())} of {len(held)}", "report_codeonly")

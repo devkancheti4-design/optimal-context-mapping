@@ -81,6 +81,10 @@ python -m ocm serve ~/ocm-workspace --port 7700 --host 0.0.0.0   # your team, on
 
 Run one server per team; everyone's agents share it. Every call is logged to `<workspace>/calls.jsonl`.
 
+For a bug report, or any question whose answer is in code, ask with `"scope": "code"`. Documentation (`.md`, `.rst`,
+`.txt` and the like) then stays out of the ranking. In a full repository, release notes and reference pages can
+otherwise fill much of the readout. `OCM_SCOPE=code` makes it the server's default; the MCP tools take `scope` too.
+
 ### 4. Put it in your agents' loop
 
 **One command per agent.** `ocm init` writes the right config into a repository. It merges into existing files, keeps
@@ -237,9 +241,11 @@ your network.
 
 ## Public benchmarks
 
-Model D's retrieval is compared with Graphify on LOCOMO and on finding the answer file in a full-stack repository. The
-study is reproducible, and the Claude Code plugin is in the same repository:
-https://github.com/devkancheti4-design/model-d-graphify
+Model D's retrieval is compared with Graphify on LOCOMO and on finding the file a fix changed. On 285 SWE-bench Lite
+issues in 12 full repositories, with the code scope and the test plan fixed before it ran, Model D listed the fixed file
+in its first five 176 times (issue titles) and 183 times (title + 400 characters), against 131 and 122 for Graphify
+0.9.87, with about 2.4x fewer tokens (`evidence/swe-bench-lite/`). The study is reproducible, and the Claude Code
+plugin is in the same repository: https://github.com/devkancheti4-design/model-d-graphify
 
 ## Licence
 

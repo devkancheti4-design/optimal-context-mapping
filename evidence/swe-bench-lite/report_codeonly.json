@@ -1,0 +1,230 @@
+{
+ "issues": 285,
+ "issue title": {
+  "code": {
+   "top1/3/5": [
+    80,
+    154,
+    176
+   ],
+   "tokens": 634
+  },
+  "all": {
+   "top1/3/5": [
+    32,
+    80,
+    117
+   ],
+   "tokens": 524
+  },
+  "graphify": {
+   "top1/3/5": [
+    78,
+    115,
+    131
+   ],
+   "tokens": 1520
+  },
+  "mcnemar top-5 code vs graphify (code only, graphify only, p)": [
+   72,
+   27,
+   6.9006990857724845e-06
+  ],
+  "mcnemar top-5 code vs all (code only, all only, p)": [
+   59,
+   0,
+   3.469446951953614e-18
+  ],
+  "per repo top-5": {
+   "astropy/astropy": {
+    "n": 6,
+    "code": 5,
+    "graphify": 4,
+    "all": 4
+   },
+   "django/django": {
+    "n": 114,
+    "code": 79,
+    "graphify": 45,
+    "all": 47
+   },
+   "matplotlib/matplotlib": {
+    "n": 23,
+    "code": 11,
+    "graphify": 9,
+    "all": 7
+   },
+   "mwaskom/seaborn": {
+    "n": 4,
+    "code": 1,
+    "graphify": 4,
+    "all": 0
+   },
+   "pallets/flask": {
+    "n": 3,
+    "code": 2,
+    "graphify": 3,
+    "all": 2
+   },
+   "psf/requests": {
+    "n": 6,
+    "code": 3,
+    "graphify": 3,
+    "all": 2
+   },
+   "pydata/xarray": {
+    "n": 5,
+    "code": 3,
+    "graphify": 1,
+    "all": 1
+   },
+   "pylint-dev/pylint": {
+    "n": 6,
+    "code": 2,
+    "graphify": 1,
+    "all": 0
+   },
+   "pytest-dev/pytest": {
+    "n": 16,
+    "code": 10,
+    "graphify": 7,
+    "all": 5
+   },
+   "scikit-learn/scikit-learn": {
+    "n": 11,
+    "code": 9,
+    "graphify": 6,
+    "all": 5
+   },
+   "sphinx-doc/sphinx": {
+    "n": 16,
+    "code": 9,
+    "graphify": 7,
+    "all": 8
+   },
+   "sympy/sympy": {
+    "n": 75,
+    "code": 42,
+    "graphify": 41,
+    "all": 36
+   }
+  }
+ },
+ "title + 400 characters": {
+  "code": {
+   "top1/3/5": [
+    96,
+    161,
+    183
+   ],
+   "tokens": 700
+  },
+  "all": {
+   "top1/3/5": [
+    64,
+    129,
+    157
+   ],
+   "tokens": 620
+  },
+  "graphify": {
+   "top1/3/5": [
+    67,
+    99,
+    122
+   ],
+   "tokens": 1652
+  },
+  "mcnemar top-5 code vs graphify (code only, graphify only, p)": [
+   82,
+   21,
+   1.0696750216702926e-09
+  ],
+  "mcnemar top-5 code vs all (code only, all only, p)": [
+   27,
+   1,
+   2.1606683731079102e-07
+  ],
+  "per repo top-5": {
+   "astropy/astropy": {
+    "n": 6,
+    "code": 6,
+    "graphify": 3,
+    "all": 6
+   },
+   "django/django": {
+    "n": 114,
+    "code": 79,
+    "graphify": 53,
+    "all": 64
+   },
+   "matplotlib/matplotlib": {
+    "n": 23,
+    "code": 11,
+    "graphify": 4,
+    "all": 11
+   },
+   "mwaskom/seaborn": {
+    "n": 4,
+    "code": 1,
+    "graphify": 3,
+    "all": 0
+   },
+   "pallets/flask": {
+    "n": 3,
+    "code": 2,
+    "graphify": 1,
+    "all": 2
+   },
+   "psf/requests": {
+    "n": 6,
+    "code": 4,
+    "graphify": 4,
+    "all": 4
+   },
+   "pydata/xarray": {
+    "n": 5,
+    "code": 2,
+    "graphify": 3,
+    "all": 1
+   },
+   "pylint-dev/pylint": {
+    "n": 6,
+    "code": 3,
+    "graphify": 1,
+    "all": 3
+   },
+   "pytest-dev/pytest": {
+    "n": 16,
+    "code": 11,
+    "graphify": 6,
+    "all": 7
+   },
+   "scikit-learn/scikit-learn": {
+    "n": 11,
+    "code": 9,
+    "graphify": 7,
+    "all": 8
+   },
+   "sphinx-doc/sphinx": {
+    "n": 16,
+    "code": 8,
+    "graphify": 6,
+    "all": 7
+   },
+   "sympy/sympy": {
+    "n": 75,
+    "code": 47,
+    "graphify": 31,
+    "all": 44
+   }
+  }
+ },
+ "predictions": {
+  "C1 titles: code top-5 > graphify top-5": true,
+  "C2 title+400: code top-5 > graphify top-5": true,
+  "C3 titles: code top-1 >= graphify top-1": true,
+  "C4 both: code top-5 >= all top-5": true,
+  "C5 both: code tokens < graphify tokens": true
+ }
+}

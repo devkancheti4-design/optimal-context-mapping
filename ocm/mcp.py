@@ -10,9 +10,12 @@ forward to the team's workspace server, so every person's agent shares one memor
   workspace_teach    at the end of a session, every question answered and the line its answer is on, at once"""
 import json, os, sys, urllib.request
 
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 URL = os.environ.get("OCM_URL", "http://127.0.0.1:7700").rstrip("/")
-Q = {"type": "object", "properties": {"question": {"type": "string", "description": "the question, as you would ask a colleague"}},
+Q = {"type": "object", "properties": {"question": {"type": "string", "description": "the question, as you would ask a colleague"},
+                                     "scope": {"type": "string", "enum": ["all", "code"],
+                                               "description": "code: leave documentation out, for a bug report or a question "
+                                                              "whose answer is in code; all (default): code, config and docs"}},
      "required": ["question"]}
 TOOLS = [
     {"name": "workspace_ask", "inputSchema": Q,

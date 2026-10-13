@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "optimal-context-mapping"
-version = "0.2.1"
+version = "0.2.2"
 description = "A shared workspace memory a team's AI agents ask first and teach back: fewer model requests at the same accuracy."
 readme = "README.md"
 authors = [{ name = "Devieswar Kancheti" }]
