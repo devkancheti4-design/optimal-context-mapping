@@ -25,12 +25,13 @@ class Lanes:
             self.dfc[w] = self.con.execute("select count(*) from s where s match ?", (f'"{w}"',)).fetchone()[0]
         return self.dfc[w]
 
-    def keyword(self, text, k=10):
+    def keyword(self, text, k=10, allow=None):
         ws = sorted(set(words(text)))
         if not ws:
             return []
         rows = self.con.execute("select rowid from s where s match ? order by bm25(s) limit 3000", (" OR ".join(f'"{w}"' for w in ws),)).fetchall()
-        return [self.local[r[0] - 1] for r in rows if (r[0] - 1) in self.local][:k]
+        return [self.local[r[0] - 1] for r in rows if (r[0] - 1) in self.local
+                and (allow is None or (r[0] - 1 < len(allow) and allow[r[0] - 1]))][:k]
 
     def scores(self, text):
         m = self.m
@@ -42,17 +43,22 @@ class Lanes:
             np.maximum.at(cue, m.cue_fact_a, m._agree(qc, m.cshards, [p[-1] for p in m.pending_c]))
         return np.maximum(own, cue), weak, own, cue
 
-    def measure(self, text):
-        """(lanes as local rows, observation values)"""
+    def measure(self, text, allow=None):
+        """(lanes as local rows, observation values). allow: a boolean mask over the units; when given, the lanes and the
+        router's observations are computed over the allowed units only (a scope, such as code files)."""
         RL, m = self.RL, self.m
         strong, weak, own, cue = self.scores(text)
-        key = strong * 1025 + weak
+        pool = np.arange(len(strong)) if allow is None else np.flatnonzero(np.asarray(allow[:len(strong)], bool))
+        if not len(pool):                                                 # nothing in scope: the whole workspace
+            pool, allow = np.arange(len(strong)), None
+        sp = strong[pool]
+        key = sp * 1025 + weak[pool]
         n = len(key); kk = min(25, n)                                    # small workspaces: fewer than 26 units
         top = np.argpartition(-key, kk - 1)[:kk] if n > kk else np.arange(n)
         top = top[np.lexsort((top, -key[top]))]
-        mean20 = [int(j) for j in top[:20]]
+        mean20 = [int(pool[j]) for j in top[:20]]
         second = int(strong[mean20[1]]) if len(mean20) > 1 else 0
-        kw = self.keyword(text)
+        kw = self.keyword(text, allow=allow)
         allw = set(words(text))
         rare = {w for w in allw if self.df(w) > 0 and math.log(N9 / self.df(w)) >= RL.observe.THETA}
         def matched(j):
@@ -62,8 +68,8 @@ class Lanes:
         best = int(strong[mean20[0]])
         j1 = mean20[0]
         cert = int(strong[j1]) - second if cue[j1] >= own[j1] and cue[j1] >= 0 else -1
-        obs = {"cert_lead": cert, "top_lead": best - second, "n_near": int((strong >= best - RL.NEAR).sum()),
-               "best_minus_med": best - int(np.median(strong)),
+        obs = {"cert_lead": cert, "top_lead": best - second, "n_near": int((sp >= best - RL.NEAR).sum()),
+               "best_minus_med": best - int(np.median(sp)),
                "idf": max([math.log(N9 / self.df(w)) for w in allw if self.df(w) > 0] or [0.0]),
                "key_lead": RL.TAU if keyhit else 0, "shared": bool(set(mean20[:10]) & set(kw))}
         lanes = {0: mean20[:1], 1: mean20[:10], 2: kw, 3: list(dict.fromkeys(mean20[:5] + kw[:5])), 4: mean20}

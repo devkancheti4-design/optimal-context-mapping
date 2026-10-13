@@ -27,6 +27,9 @@ def test_workspace_end_to_end():
     assert again.startswith("(readout: the code a taught question") and "MAX_CHARGE_RETRIES = 3" in again, again
     assert "src/config.py:3" in again                                           # the code block itself, with its place
     assert "ChargeDeclined" in ws.handle("search", {"pattern": "class ChargeDeclined"})
+    scoped = ws.handle("ask", {"question": "Who owns refunds?", "scope": "code"})   # code scope: no documentation
+    assert "docs/README.md" not in scoped and "[" in scoped, scoped
+    assert "docs/README.md" in ws.handle("ask", {"question": "Who owns refunds?", "scope": "all"})
     st = json.loads(ws.handle("stats", {}))
     assert st["question vectors taught"] == 1 and st["learned law"]["examples"] == 1
     again2 = Workspace(out)                                                     # taught vectors persist on disk
