@@ -1,0 +1,16 @@
+# Model D for a team: one shared workspace server.
+#   1. put (or clone) the repositories to map under ./repos
+#   2. docker compose up -d
+#   3. each engineer: modeld install --team http://<this host>:7700
+services:
+  modeld:
+    build: .
+    image: model-d:0.3.0
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./repos:/repos:ro
+      - modeld-workspace:/workspace
+    restart: unless-stopped
+volumes:
+  modeld-workspace:

@@ -1,6 +1,10 @@
 """The MCP plugin: gives any MCP-capable agent (Claude Code, Cursor, Windsurf, others) the workspace as four tools.
 
-    python -m ocm mcp                    # talks to the workspace server at $OCM_URL (default http://127.0.0.1:7700)
+    modeld mcp      (or modeld-mcp, python -m ocm mcp)
+
+With $OCM_URL set it forwards to the team's workspace server. Without it, it serves a local workspace in this process:
+$MODELD_WORKSPACE, or the nearest modeld-out folder (see `modeld build`); with neither, the server at
+http://127.0.0.1:7700.
 
 Speaks the Model Context Protocol over stdio (JSON-RPC 2.0, one message per line) with no extra dependencies. The tools
 forward to the team's workspace server, so every person's agent shares one memory:
@@ -10,8 +14,9 @@ forward to the team's workspace server, so every person's agent shares one memor
   workspace_teach    at the end of a session, every question answered and the line its answer is on, at once"""
 import json, os, sys, urllib.request
 
-VERSION = "0.2.2"
+VERSION = "0.3.0"
 URL = os.environ.get("OCM_URL", "http://127.0.0.1:7700").rstrip("/")
+LOCAL = None                                                     # a Workspace served in this process (no OCM_URL)
 Q = {"type": "object", "properties": {"question": {"type": "string", "description": "the question, as you would ask a colleague"},
                                      "scope": {"type": "string", "enum": ["all", "code"],
                                                "description": "code: leave documentation out, for a bug report or a question "
@@ -40,6 +45,8 @@ PATH = {"workspace_ask": "ask", "workspace_next": "next", "workspace_recall": "r
 
 
 def post(path, body):
+    if LOCAL is not None:
+        return LOCAL.handle(path, body)
     req = urllib.request.Request(f"{URL}/{path}", data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
     return urllib.request.urlopen(req, timeout=300).read().decode()
 
@@ -48,7 +55,7 @@ def handle(msg):
     method, mid, params = msg.get("method"), msg.get("id"), msg.get("params") or {}
     if method == "initialize":
         return {"protocolVersion": params.get("protocolVersion", "2025-06-18"), "capabilities": {"tools": {}},
-                "serverInfo": {"name": "optimal-context-mapping", "version": VERSION}}
+                "serverInfo": {"name": "model-d", "version": VERSION}}
     if method == "ping":
         return {}
     if method == "tools/list":
@@ -60,13 +67,22 @@ def handle(msg):
         try:
             return {"content": [{"type": "text", "text": post(PATH[name], args)}], "isError": False}
         except Exception as e:                                           # noqa: BLE001 -- the agent sees the reason
-            return {"content": [{"type": "text", "text": f"workspace server not reachable at {URL}: {e}"}], "isError": True}
+            where = "the local workspace" if LOCAL is not None else f"the workspace server at {URL}"
+            return {"content": [{"type": "text", "text": f"{where} failed: {e}"}], "isError": True}
     if mid is not None:
         raise LookupError(method)
     return None
 
 
 def main(argv=None):
+    global LOCAL
+    if not os.environ.get("OCM_URL"):
+        from .cli import find_workspace
+        ws = find_workspace()
+        if ws:
+            os.environ.setdefault("OCM_OFFLINE", "1")
+            from .server import Workspace
+            LOCAL = Workspace(ws)
     for line in sys.stdin:
         line = line.strip()
         if not line:

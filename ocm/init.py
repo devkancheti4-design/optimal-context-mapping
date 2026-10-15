@@ -1,10 +1,13 @@
 """Wire the team's workspace into a repository for the coding agent its engineers use.
 
-    python -m ocm init claude [repo] [--url http://127.0.0.1:7700] [--python python]
-    python -m ocm init kiro   [repo] ...
-    python -m ocm init codex  [repo] ...      (OpenAI Codex)
-    python -m ocm init gemini [repo] ...      (Gemini CLI)
-    python -m ocm init all    [repo] ...
+    modeld init claude [repo] [--url http://127.0.0.1:7700] [--python python]
+    modeld init kiro   [repo] ...
+    modeld init codex  [repo] ...      (OpenAI Codex)
+    modeld init gemini [repo] ...      (Gemini CLI)
+    modeld init all    [repo] ...
+
+The hooks and MCP entries run the `modeld` command found on PATH (as `uv tool install model-d` or `pip install
+model-d` puts it there); --python PYTHON runs `PYTHON -m ocm` instead.
 
 What each writes (merged into existing files, never overwriting other settings; safe to run again):
   claude  .claude/settings.json   two hooks: the readout before each request, TEACH lines taught after the reply
@@ -15,7 +18,7 @@ What each writes (merged into existing files, never overwriting other settings; 
           AGENTS.md               the same instructions
   gemini  .gemini/settings.json   mcpServers.ocm
           GEMINI.md               the same instructions"""
-import argparse, json, os
+import argparse, json, os, shutil
 
 MCP_TOOLS = ["workspace_ask", "workspace_next", "workspace_recall", "workspace_teach"]
 BEGIN, END = "<!-- ocm:begin -->", "<!-- ocm:end -->"
@@ -57,8 +60,23 @@ def _block(path, text, front=None):
     open(path, "w").write(new)
 
 
+def runner(python=None):
+    """(command, leading args) that run Model D: `modeld` on PATH, else PYTHON -m ocm."""
+    if not python:
+        found = shutil.which("modeld")
+        if found:
+            return found, []
+    return python or "python", ["-m", "ocm"]
+
+
+def _shell(python, *args):
+    cmd, lead = runner(python)
+    return " ".join([cmd, *lead, *args])
+
+
 def _mcp_entry(url, python, extra=None):
-    e = {"command": python, "args": ["-m", "ocm", "mcp"], "env": {"OCM_URL": url}}
+    cmd, lead = runner(python)
+    e = {"command": cmd, "args": [*lead, "mcp"], "env": {"OCM_URL": url}}
     e.update(extra or {})
     return e
 
@@ -67,7 +85,7 @@ def claude(repo, url, python):
     def upd(d):
         d.setdefault("env", {})["OCM_URL"] = url
         hooks = d.setdefault("hooks", {})
-        for event, cmd in (("UserPromptSubmit", f"{python} -m ocm hook prompt"), ("Stop", f"{python} -m ocm hook stop")):
+        for event, cmd in (("UserPromptSubmit", _shell(python, "hook", "prompt")), ("Stop", _shell(python, "hook", "stop"))):
             groups = hooks.setdefault(event, [])
             if not any(h.get("command") == cmd for g in groups for h in g.get("hooks", [])):
                 groups.append({"hooks": [{"type": "command", "command": cmd}]})
@@ -88,7 +106,9 @@ def codex(repo, url, python):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     old = open(path).read() if os.path.exists(path) else ""
     if "[mcp_servers.ocm]" not in old:
-        add = (f'\n[mcp_servers.ocm]\ncommand = "{python}"\nargs = ["-m", "ocm", "mcp"]\n\n'
+        cmd, lead = runner(python)
+        args = ", ".join(json.dumps(x) for x in [*lead, "mcp"])
+        add = (f'\n[mcp_servers.ocm]\ncommand = {json.dumps(cmd)}\nargs = [{args}]\n\n'
                f'[mcp_servers.ocm.env]\nOCM_URL = "{url}"\n')
         open(path, "a").write(add if old else add.lstrip("\n"))
     _block(os.path.join(repo, "AGENTS.md"), INSTRUCTIONS)
@@ -106,17 +126,17 @@ TARGETS = {"claude": claude, "kiro": kiro, "codex": codex, "gemini": gemini}
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(prog="ocm init")
+    ap = argparse.ArgumentParser(prog="modeld init")
     ap.add_argument("target", choices=sorted(TARGETS) + ["all"])
     ap.add_argument("repo", nargs="?", default=".")
     ap.add_argument("--url", default=os.environ.get("OCM_URL", "http://127.0.0.1:7700"))
-    ap.add_argument("--python", default="python")
+    ap.add_argument("--python", default=None)
     a = ap.parse_args(argv)
     written = []
     for name in (sorted(TARGETS) if a.target == "all" else [a.target]):
         written += TARGETS[name](os.path.abspath(a.repo), a.url.rstrip("/"), a.python)
     print("wrote: " + ", ".join(written))
-    print(f"the workspace server must be reachable at {a.url} (python -m ocm serve <workspace> --port 7700)")
+    print(f"the workspace server must be reachable at {a.url} (modeld serve <workspace> --port 7700)")
 
 
 if __name__ == "__main__":

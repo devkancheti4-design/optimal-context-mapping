@@ -3,8 +3,8 @@
 Code files are cut into blocks (split at blank lines, at most 400 characters, each prefixed with its path, so copied
 code in two files stays two units); documentation is cut into sentences, each with the lines it spans, so a taught
 question can point at a doc line as it can at a code line. Build files with no extension (Dockerfile, Makefile and the
-like), server configs (.conf), email templates (.mjml) and editor launch settings (.vscode) are code. Skipped, always: version control, dependency
-and build folders, lockfiles, binaries, anything over 512 KB, and anything that looks like a secret (.env files, keys,
+like), server configs (.conf), email templates (.mjml) and editor launch settings (.vscode) are code. Skipped, always:
+Model D's and Graphify's own output folders (modeld-out, graphify-out), version control, dependency and build folders, lockfiles, binaries, anything over 512 KB, and anything that looks like a secret (.env files, keys,
 certificates, credential files). Nothing is read outside the folders you pass."""
 import os
 
@@ -17,6 +17,7 @@ CODE = {".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".java", ".kt", ".k
 NAMED = {"Dockerfile", "Containerfile", "Makefile", "GNUmakefile", "Procfile", "Jenkinsfile", "Vagrantfile", "Rakefile", "Gemfile"}
 DOT_DIRS = {".github", ".vscode", ".devcontainer", ".circleci", ".gitlab"}
 DOCS = {".md", ".mdx", ".rst", ".txt", ".adoc"}
+TOOL_OUT = ("modeld-out", "graphify-out")         # tools' own output folders (a workspace, a graph): never indexed
 SKIP_DIRS = {".git", ".hg", ".svn", "node_modules", "bower_components", "dist", "build", "out", ".next", ".nuxt", ".output",
              "venv", ".venv", "env", "__pycache__", ".mypy_cache", ".pytest_cache", "target", "vendor", ".idea",
              "coverage", ".cache", ".gradle", ".terraform", "Pods", "DerivedData"}
@@ -42,7 +43,8 @@ def files(roots):
     out = []
     for name, root in sorted(roots.items()):
         for d, dirs, fs in os.walk(root):
-            dirs[:] = sorted(x for x in dirs if x not in SKIP_DIRS and not x.startswith(".") or x in DOT_DIRS)
+            dirs[:] = sorted(x for x in dirs if (x not in SKIP_DIRS and not x.startswith(".") or x in DOT_DIRS)
+                             and not x.startswith(TOOL_OUT))
             for f in sorted(fs):
                 ext = os.path.splitext(f)[1].lower(); p = os.path.join(d, f)
                 if not (ext in CODE or ext in DOCS or named(f)) or f in LOCKS or looks_secret(f):

@@ -3,8 +3,8 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "optimal-context-mapping"
-version = "0.2.2"
+name = "model-d"
+version = "0.3.0"
 description = "A shared workspace memory a team's AI agents ask first and teach back: fewer model requests at the same accuracy."
 readme = "README.md"
 authors = [{ name = "Devieswar Kancheti" }]
@@ -12,8 +12,29 @@ requires-python = ">=3.10"
 dependencies = ["numpy>=2.0", "torch>=2.1", "transformers>=4.40"]
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES", "ocm/LIFE_LICENSE"]
+keywords = ["ai-agents", "coding-agents", "claude", "mcp", "code-search", "retrieval", "context", "tokens"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+claude = ["anthropic"]
+openai = ["openai"]
+
+[project.urls]
+Homepage = "https://optimal-context-mapping-site.vercel.app"
+Source = "https://github.com/devkancheti4-design/optimal-context-mapping"
+Evidence = "https://github.com/devkancheti4-design/optimal-context-mapping/tree/main/evidence"
+DOI = "https://doi.org/10.5281/zenodo.23289068"
 
 [project.scripts]
+modeld = "ocm.cli:main"
+modeld-mcp = "ocm.mcp:main"
 ocm = "ocm.__main__:main"
 
 [tool.setuptools.packages.find]

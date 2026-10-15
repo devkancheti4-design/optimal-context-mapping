@@ -1,6 +1,7 @@
-# Optimal Context Mapping
+# Model D (Optimal Context Mapping)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23289068.svg)](https://doi.org/10.5281/zenodo.23289068)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 **A shared memory over your team's code that sits inside your AI agents' loop, so the same research is not paid for
 twice.**
@@ -11,6 +12,18 @@ repositories once into a workspace of vectors (1,024-bit meaning fingerprints) r
 request, it hands the model the few code blocks and doc lines its laws rank for the question. After the reply, it learns
 where the answer was: the question's vector is put on that code. The next person's agent, asking the same thing in other
 words, is drawn to it.
+
+**Get started** (Python 3.10+, with uv or pipx):
+
+```bash
+uv tool install model-d     # or: pipx install model-d   (before the PyPI release: uv tool install git+https://github.com/devkancheti4-design/optimal-context-mapping)
+modeld install              # registers Model D with Claude Code, Codex, Gemini CLI and Kiro, if found
+modeld build .              # maps this repository into ./modeld-out, on this machine
+```
+
+Then type `/modeld .` in Claude Code, or ask from a terminal:
+`modeld ask "why does login fail after a password reset?" --scope code`.
+For a team server, Docker, and offline or air-gapped installs, see [DEPLOY.md](DEPLOY.md).
 
 ## What it achieved in our tests
 
@@ -42,16 +55,17 @@ The saving grows with repetition and with the size of the codebase. In Claude Co
 ### 1. Install (Python 3.10+)
 
 ```bash
-pip install -e .
+uv tool install model-d     # or pipx install model-d, or pip install model-d; from a clone: pip install -e .
 ```
 
-This installs numpy, torch and transformers. The embedding model (bge-base-en-v1.5) downloads once on the first build;
+This installs the `modeld` command (and `modeld-mcp`), with numpy, torch and transformers. `python -m ocm` runs
+the same commands. The embedding model (bge-base-en-v1.5) downloads once on the first build;
 after that you can set `OCM_OFFLINE=1`.
 
 ### 2. Scan your repositories into a workspace
 
 ```bash
-python -m ocm build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-workspace
+modeld build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-workspace
 ```
 
 - **What gets kept:** every code and doc file under the folders you pass. Code is cut into blocks and docs into
@@ -65,7 +79,7 @@ python -m ocm build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-wo
 **Rebuilding after code changes?** Carry what the team taught into the new workspace:
 
 ```bash
-python -m ocm build ~/code/our-api ~/code/our-web --out ~/ocm-workspace-new --carry ~/ocm-workspace
+modeld build ~/code/our-api ~/code/our-web --out ~/ocm-workspace-new --carry ~/ocm-workspace
 ```
 
 The workspace keeps an exact memory of what was taught (`taught.life.json`, a Life from living-fused). On a carry,
@@ -75,8 +89,8 @@ is gone abstains instead of guessing.
 ### 3. Serve it to the team
 
 ```bash
-python -m ocm serve ~/ocm-workspace --port 7700                  # just you
-python -m ocm serve ~/ocm-workspace --port 7700 --host 0.0.0.0   # your team, on your network
+modeld serve ~/ocm-workspace --port 7700                  # just you
+modeld serve ~/ocm-workspace --port 7700 --host 0.0.0.0   # your team, on your network
 ```
 
 Run one server per team; everyone's agents share it. Every call is logged to `<workspace>/calls.jsonl`.
@@ -91,11 +105,11 @@ otherwise fill much of the readout. `OCM_SCOPE=code` makes it the server's defau
 your other settings, and is safe to run again:
 
 ```bash
-python -m ocm init claude ~/code/our-api --url http://ws.internal:7700    # Claude Code: two hooks + a CLAUDE.md note
-python -m ocm init kiro   ~/code/our-api --url http://ws.internal:7700    # Kiro: .kiro/settings/mcp.json + .kiro/steering/ocm.md
-python -m ocm init codex  ~/code/our-api --url http://ws.internal:7700    # OpenAI Codex: .codex/config.toml + AGENTS.md
-python -m ocm init gemini ~/code/our-api --url http://ws.internal:7700    # Gemini CLI: .gemini/settings.json + GEMINI.md
-python -m ocm init all    ~/code/our-api --url http://ws.internal:7700    # all four
+modeld init claude ~/code/our-api --url http://ws.internal:7700    # Claude Code: two hooks + a CLAUDE.md note
+modeld init kiro   ~/code/our-api --url http://ws.internal:7700    # Kiro: .kiro/settings/mcp.json + .kiro/steering/ocm.md
+modeld init codex  ~/code/our-api --url http://ws.internal:7700    # OpenAI Codex: .codex/config.toml + AGENTS.md
+modeld init gemini ~/code/our-api --url http://ws.internal:7700    # Gemini CLI: .gemini/settings.json + GEMINI.md
+modeld init all    ~/code/our-api --url http://ws.internal:7700    # all four
 ```
 
 What each writes, by hand, follows.
@@ -106,8 +120,8 @@ What each writes, by hand, follows.
 ```json
 {"env": {"OCM_URL": "http://127.0.0.1:7700"},
  "hooks": {
-  "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "python -m ocm hook prompt"}]}],
-  "Stop": [{"hooks": [{"type": "command", "command": "python -m ocm hook stop"}]}]
+  "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "modeld hook prompt"}]}],
+  "Stop": [{"hooks": [{"type": "command", "command": "modeld hook stop"}]}]
 }}
 ```
 
@@ -123,7 +137,7 @@ What each writes, by hand, follows.
 `pilot/AGENT_INSTRUCTIONS.md` to the agent's rules:
 
 ```json
-{"mcpServers": {"ocm": {"command": "python", "args": ["-m", "ocm", "mcp"], "env": {"OCM_URL": "http://127.0.0.1:7700"}}}}
+{"mcpServers": {"ocm": {"command": "modeld", "args": ["mcp"], "env": {"OCM_URL": "http://127.0.0.1:7700"}}}}
 ```
 
 This costs a round trip per question, and in our team proof it did not save requests on its own (section 6). Use the
@@ -148,9 +162,9 @@ called only for one of two jobs:
 
 ```bash
 export OCM_URL=http://ws.internal:7700
-python -m ocm hybrid "What stops a deploy with placeholder secrets?" --provider claude   # ANTHROPIC_API_KEY
-python -m ocm hybrid "..." --provider openai                                             # OPENAI_API_KEY (pip install openai)
-python -m ocm hybrid "..." --provider gemini                                             # GEMINI_API_KEY, or a Vertex project
+modeld hybrid "What stops a deploy with placeholder secrets?" --provider claude   # ANTHROPIC_API_KEY
+modeld hybrid "..." --provider openai                                             # OPENAI_API_KEY (pip install openai)
+modeld hybrid "..." --provider gemini                                             # GEMINI_API_KEY, or a Vertex project
 ```
 
 | Provider | Reads with | Teaches with | Keys |
@@ -169,8 +183,8 @@ APIs.
 ### 5. Measure what it saves you
 
 ```bash
-python -m ocm calc --repeat 0.5 --deep 0.3 --questions-per-month 16800   # an estimate for your mix
-python -m ocm measure compare ~/before-transcripts ~/after-transcripts    # the real thing, from your agents' transcripts
+modeld calc --repeat 0.5 --deep 0.3 --questions-per-month 16800   # an estimate for your mix
+modeld measure compare ~/before-transcripts ~/after-transcripts    # the real thing, from your agents' transcripts
 ```
 
 `pilot/PILOT.md` is a two-to-four-week plan for a fair before-and-after; fix it before you start

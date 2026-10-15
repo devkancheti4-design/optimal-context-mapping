@@ -1,0 +1,55 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  wheel:
+    name: wheel, fresh install (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-bge-base-en-v1.5
+      - name: build the wheel and install it into a clean environment
+        run: |
+          pip install build pytest
+          python -m build
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install dist/*.whl
+      - run: modeld fetch-model
+      - name: tests, against the installed wheel
+        run: pytest -q tests
+      - name: the commands a new user runs
+        run: |
+          modeld --version
+          cp -r tests/fixture_repo /tmp/app
+          modeld build /tmp/app
+          cd /tmp/app
+          modeld ask "How many times do we retry a failed card charge?" --scope code | grep -q MAX_CHARGE_RETRIES
+          modeld teach "How many times do we retry a failed card charge?" src/config.py:4
+          modeld stats
+          mkdir -p /tmp/home/.claude && HOME=/tmp/home modeld install && test -f /tmp/home/.claude/skills/modeld/SKILL.md
+
+  docker:
+    name: team server image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t model-d:ci .
+      - name: map a repository on first start, then answer over HTTP
+        run: |
+          mkdir -p repos && cp -r tests/fixture_repo repos/app
+          docker run -d --name modeld -p 7700:7700 -v "$PWD/repos:/repos:ro" model-d:ci
+          for i in $(seq 1 120); do curl -sf -X POST localhost:7700/stats -d '{}' && break; sleep 5; done
+          curl -sf -X POST localhost:7700/ask -d '{"question": "How many times do we retry a failed card charge?", "scope": "code"}' | grep -q MAX_CHARGE_RETRIES
+          docker logs modeld | tail -5
