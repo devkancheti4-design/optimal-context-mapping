@@ -138,7 +138,7 @@ def fetch_model_cmd(argv):
     os.environ.pop("HF_HUB_OFFLINE", None); os.environ.pop("TRANSFORMERS_OFFLINE", None)
     from .cmlm_vector.embed import DEFAULT_MODEL
     from huggingface_hub import snapshot_download
-    path = snapshot_download(DEFAULT_MODEL)
+    path = snapshot_download(DEFAULT_MODEL, allow_patterns=["*.json", "*.txt", "model.safetensors"])   # weights + tokenizer only
     print(f"{DEFAULT_MODEL} is at {path}")
     if a.to:
         print(f"on the offline machine: export HF_HOME={os.path.abspath(a.to)} OCM_OFFLINE=1")

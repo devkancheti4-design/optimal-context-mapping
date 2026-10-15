@@ -1,7 +1,7 @@
 # Installing Model D: one developer, a team, an enterprise
 
 Model D runs on your own machines. It maps your code with a small embedding model that runs locally, and nothing
-leaves the machine. The one exception is the first download of that model (about 440 MB), and you can fetch it in
+leaves the machine. The one exception is the first download of that model (about 420 MB), and you can fetch it in
 advance (see Enterprise).
 
 ## One developer
