@@ -1,0 +1,20 @@
+27ccda8c54987e03b72bcbc423c024e23a0b13f76c13f5d8ee89ebeccafd41be  PROTOCOL_SWR_PILOT.md
+9561497bbfc962e8ca5f7c90948df9d94fa7625fed4b8ac45f3ecbaf0c0daa87  pilot_set.json
+14363df760238a4f4c7ed2add2db77eef124b29068a182b0c36ed5751b5e4d17  scripts/build_pr.py
+30bed1419218d57cce0757d445559825ec4bfd02c6e4c00afb9a94d15827d600  scripts/compare_ws.py
+eb1f88c8f775855c79e468c43dd28a088145e19e49063bea51f66a1c3e582de7  scripts/dates.py
+5a230e29ac7b5f60247d84a5e50e1eee0746fa7f43e8c22eb2b24c66bdec83f0  scripts/profile.py
+485fb8811ecf81f9c30e491016153513f5519030b384780898fbd12683e44882  scripts/sample.py
+recorded 2026-10-16T14:37:48+0530
+renamed scripts/profile.py -> scripts/profile_dataset.py (it shadowed the stdlib profile module); same content: 5a230e29ac7b5f60247d84a5e50e1eee0746fa7f43e8c22eb2b24c66bdec83f0; added scripts/prep_context.py e4b10c3b82ddf01e94107fe0cd53efd1bbdd3480f080f55db3d06bc81c9a49a4 before any readout, 2026-10-16T14:39:01+0530
+D2 recorded; protocol now 9669d6c008260e81, run_judge.sh c448058682593943, 2026-10-16T14:48:43+0530; 2 arm-A smoke-test reviews existed, none judged
+judge threads 4 -> 1 (Gemini free tier, 5 requests/min), 2026-10-16T15:20:15+0530
+D3 recorded; protocol 010843ca2de3664e, judge_claude.py 422a0d5bb0c9767a, 2026-10-16T15:23:51+0530
+prep_context.py: checkout retried up to 4 times after a transient failure at scikit-learn-27539 (68 contexts done, outputs unaffected); 21069ad331df457d, 2026-10-16T16:22:13+0530
+run_review.py: --ready-only lets arm B start on PRs whose context exists; the final analysis still uses all 100; 2026-10-16T16:40:37+0530
+6a960cb1310c04e37bcc402ac42514794faccc97337fe99dd9befa425fbb72ee  PROTOCOL_SWR_AGENTIC.md
+f743e384c4af0944d87b171037e549f78ae6fea2bf242984c80c47a8837155ba  scripts/run_agent_review.py
+agentic protocol recorded 2026-10-16T19:44:49+0530, before any C or D review
+d9db4820848d48c8d01ec1269cc1fa18028fe38abeb1e92865e989df90ab6793  PROTOCOL_SWR_LEARNING.md
+62d2a66d94e32922cbf6878a85f83c08f43fdd4fb4450bb01ae67f7b3bf82c8c  scripts/prep_stream.py
+learning protocol recorded 2026-10-16T19:56:14+0530, before any stream readout or review

@@ -1360,5 +1360,185 @@
   "from": "lite/kept_issues.json",
   "sha256": "8cb4eb48675c5166e34590d43a21fd21a1f2d025c467d13cac893c4fc367c51b",
   "pre-registered": false
+ },
+ {
+  "file": "team-year/PREREG_HASHES.txt",
+  "from": "~/neos/outreach/team-year/PREREG_HASHES.txt",
+  "sha256": "73c8f504146a4acc89c4baebe056d2c856bb78960df384e087caeb477e21c564",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/PROTOCOL_TEAM_YEAR.md",
+  "from": "~/neos/outreach/team-year/PROTOCOL_TEAM_YEAR.md",
+  "sha256": "505c64e4a158f9c742d2e60aea420f9f9d9d47b7414ee8cf94282a0847054565",
+  "pre-registered": true
+ },
+ {
+  "file": "team-year/PROTOCOL_TEAM_YEAR.md.deviations",
+  "from": "~/neos/outreach/team-year/PROTOCOL_TEAM_YEAR.md.deviations",
+  "sha256": "64334d85047bdba3a65b0793c92a42cfcb90800fee4c91f5903491525d739a11",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/PROTOCOL_TEAM_YEAR_GATE.md",
+  "from": "~/neos/outreach/team-year/PROTOCOL_TEAM_YEAR_GATE.md",
+  "sha256": "985a7d48ebf05b3ac1e3e8e0ae9fc7ceb5c14e00f6b07df5f93b1438cf7a4d91",
+  "pre-registered": true
+ },
+ {
+  "file": "team-year/RESULTS_TEAM_YEAR.md",
+  "from": "~/neos/outreach/team-year/RESULTS_TEAM_YEAR.md",
+  "sha256": "5eabc21188f62e131da78cc1514eb36ba0160406ec83cfbbcb3f6f08646c2153",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/keep.json",
+  "from": "~/neos/outreach/team-year/keep.json",
+  "sha256": "a4aed615475d531ecc6856ca2a85b54afbc952a6cf5a8d8365bd3ae16ec8ed8a",
+  "pre-registered": true
+ },
+ {
+  "file": "team-year/window_2022.json",
+  "from": "~/neos/outreach/team-year/window_2022.json",
+  "sha256": "c1f029890ff444965910dd33cb63b55fc0a7006a90be3dfa10989d49f0b375b4",
+  "pre-registered": true
+ },
+ {
+  "file": "team-year/rows/alone.jsonl",
+  "from": "~/neos/outreach/team-year/rows/alone.jsonl",
+  "sha256": "20bbfb1affc85139286b220fcbd9ea9b107de80c021edf2bda66eb075a071edc",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/rows/gate.jsonl",
+  "from": "~/neos/outreach/team-year/rows/gate.jsonl",
+  "sha256": "25bd3fbd89c4672e7bb559612e42386d9ebc95bab3d6360a2dd18a78a0e53176",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/rows/md.jsonl",
+  "from": "~/neos/outreach/team-year/rows/md.jsonl",
+  "sha256": "b37682c55bca4c58111e329fde618299860c72024b3dc20f3ed3d431925a4d68",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/scripts/analyse.py",
+  "from": "~/neos/outreach/team-year/scripts/analyse.py",
+  "sha256": "b54d1fee90a0c78ee0e3df0d71eae7b89bea874f557cd4bc499d38219e358460",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/scripts/pricing.py",
+  "from": "~/neos/outreach/team-year/scripts/pricing.py",
+  "sha256": "23210f569dde1760fef4fd2dd130286b22446708a59c6d59db90df41b5412ab9",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/scripts/serve.sh",
+  "from": "~/neos/outreach/team-year/scripts/serve.sh",
+  "sha256": "79a00c5ad76391a3710729fb0e7db32df4bb04f9a4bfc030aea15b2239c2870a",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/scripts/serve_gate.sh",
+  "from": "~/neos/outreach/team-year/scripts/serve_gate.sh",
+  "sha256": "62ab03da880fbcfad30206f8153b8418eeb4d2f6f7186261576c24b5d57cb0eb",
+  "pre-registered": false
+ },
+ {
+  "file": "team-year/scripts/team_year.py",
+  "from": "~/neos/outreach/team-year/scripts/team_year.py",
+  "sha256": "4408a4015034fdfc7f73be6a27eecf1781dcb15068df805fd12df476d22b694f",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/D0_judge_fix.diff",
+  "from": "~/neos/outreach/swr-pilot/D0_judge_fix.diff",
+  "sha256": "e91e5fd901a88eec08c0e4753b35cc8c2a745a0a027ff42fe9409719f5b8b7a4",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/PREREG_HASHES.txt",
+  "from": "~/neos/outreach/swr-pilot/PREREG_HASHES.txt",
+  "sha256": "8e7f5a248a5d58e92fc5fbdc1ee98982550c1e88b925c1a3db51c85cd871271f",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/PROTOCOL_SWR_AGENTIC.md",
+  "from": "~/neos/outreach/swr-pilot/PROTOCOL_SWR_AGENTIC.md",
+  "sha256": "6a960cb1310c04e37bcc402ac42514794faccc97337fe99dd9befa425fbb72ee",
+  "pre-registered": true
+ },
+ {
+  "file": "swr-pilot/PROTOCOL_SWR_LEARNING.md",
+  "from": "~/neos/outreach/swr-pilot/PROTOCOL_SWR_LEARNING.md",
+  "sha256": "d9db4820848d48c8d01ec1269cc1fa18028fe38abeb1e92865e989df90ab6793",
+  "pre-registered": true
+ },
+ {
+  "file": "swr-pilot/PROTOCOL_SWR_PILOT.md",
+  "from": "~/neos/outreach/swr-pilot/PROTOCOL_SWR_PILOT.md",
+  "sha256": "010843ca2de3664e483b5788a8196d0a331cc02c0735edfdd9308660f0ca7bd2",
+  "pre-registered": true
+ },
+ {
+  "file": "swr-pilot/README.md",
+  "from": "~/neos/outreach/swr-pilot/README.md",
+  "sha256": "bbe7a48b0a48ac04138b4aca8bdff5516ab0446e9ca1747f72eace669f68e7c8",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/pilot_set.json",
+  "from": "~/neos/outreach/swr-pilot/pilot_set.json",
+  "sha256": "9561497bbfc962e8ca5f7c90948df9d94fa7625fed4b8ac45f3ecbaf0c0daa87",
+  "pre-registered": true
+ },
+ {
+  "file": "swr-pilot/rows/judged_A.json",
+  "from": "~/neos/outreach/swr-pilot/rows/judged_A.json",
+  "sha256": "a90097570d99c07847440da4f4c46fbceedf43f0fffa502ce8b2bac7813daeb4",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/rows/reviews_A.jsonl",
+  "from": "~/neos/outreach/swr-pilot/rows/reviews_A.jsonl",
+  "sha256": "282695f8aa0cd9f43e107733638bcfc3e5e8a6c1f66a5a5a0df46cf3b3c79e16",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/rows/reviews_C.jsonl",
+  "from": "~/neos/outreach/swr-pilot/rows/reviews_C.jsonl",
+  "sha256": "d63a52b0a7877050336db58e77450d6451f8d2ba5c7655982d94626a13deeb31",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/scripts/judge_claude.py",
+  "from": "~/neos/outreach/swr-pilot/scripts/judge_claude.py",
+  "sha256": "422a0d5bb0c9767a6dd677fd7cd658fefe0bfe5373369ca8fcdee99ae3c87d92",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/scripts/run_agent_review.py",
+  "from": "~/neos/outreach/swr-pilot/scripts/run_agent_review.py",
+  "sha256": "f743e384c4af0944d87b171037e549f78ae6fea2bf242984c80c47a8837155ba",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/scripts/run_review.py",
+  "from": "~/neos/outreach/swr-pilot/scripts/run_review.py",
+  "sha256": "2760c900b3fa8219d1e6f06c8b4cf94bbc7ece6a325cd1942c00c5b74078a18c",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/scripts/sample.py",
+  "from": "~/neos/outreach/swr-pilot/scripts/sample.py",
+  "sha256": "485fb8811ecf81f9c30e491016153513f5519030b384780898fbd12683e44882",
+  "pre-registered": false
+ },
+ {
+  "file": "swr-pilot/scripts/score.py",
+  "from": "~/neos/outreach/swr-pilot/scripts/score.py",
+  "sha256": "49ac5f2ddbb3c1449f9ac93c709b021f5b40649b6cd98e1a6d8572803190e81d",
+  "pre-registered": false
  }
 ]

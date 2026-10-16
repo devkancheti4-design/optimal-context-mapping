@@ -69,6 +69,7 @@ def build_cmd(argv):
     ap = argparse.ArgumentParser(prog="modeld build")
     ap.add_argument("path", nargs="*", default=["."]); ap.add_argument("--out")
     ap.add_argument("--model"); ap.add_argument("--device"); ap.add_argument("--carry")
+    ap.add_argument("--cache", help="an embedding cache file ($MODELD_CACHE): a rebuild embeds only changed code")
     a = ap.parse_args(argv)
     roots = [os.path.abspath(p) for p in a.path]
     out = os.path.abspath(a.out or os.path.join(roots[0], OUT))
@@ -77,7 +78,7 @@ def build_cmd(argv):
     if carry and os.path.abspath(carry) == out:                # a rebuild in place carries what was taught
         import shutil, tempfile
         tmp = tempfile.mkdtemp(prefix="modeld-out.new-")
-        build(roots, tmp, a.model, a.device, carry=out)
+        build(roots, tmp, a.model, a.device, carry=out, cache=a.cache)
         for name in os.listdir(out):                           # replace the contents, not the folder: it may be a mount
             p = os.path.join(out, name)
             shutil.rmtree(p) if os.path.isdir(p) and not os.path.islink(p) else os.remove(p)
@@ -85,7 +86,7 @@ def build_cmd(argv):
             shutil.move(os.path.join(tmp, name), os.path.join(out, name))
         os.rmdir(tmp)
     else:
-        build(roots, out, a.model, a.device, carry=carry)
+        build(roots, out, a.model, a.device, carry=carry, cache=a.cache)
     open(os.path.join(out, ".gitignore"), "w").write("*\n")    # the workspace never lands in git by accident
     print(f"\nmapped into {out}\nnext: modeld ask \"your question\" --scope code")
 

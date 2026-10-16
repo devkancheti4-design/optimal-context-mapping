@@ -3,52 +3,50 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23289068.svg)](https://doi.org/10.5281/zenodo.23289068)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
-**A shared memory over your team's code that sits inside your AI agents' loop, so the same research is not paid for
-twice.**
+**AI on your codebase, with a bill that flattens as your team works.**
 
-When engineers use AI agents (Claude Code, Cursor and others) on the same codebases, each agent searches and re-reads
-the code on its own, every time, and each step is a paid model request. Optimal context mapping scans your
-repositories once into a workspace of vectors (1,024-bit meaning fingerprints) ranked by small laws. Before each
-request, it hands the model the few code blocks and doc lines its laws rank for the question. After the reply, it learns
-where the answer was: the question's vector is put on that code. The next person's agent, asking the same thing in other
-words, is drawn to it.
-
-**Get started** (Python 3.10+, with uv or pipx):
+Every AI coding agent on a team pays to search the same code again, and each search step is a paid model request.
+Model D is a deterministic kit fused with the Claude API you already use:
+- The kit maps your code once, on your machines, into 1,024-bit fingerprints ranked by small laws.
+- Before each request, it decides where to look, at zero tokens.
+- Claude reads what the kit already knows and explores only what is new.
+- Every exploration teaches the kit, so the next engineer's question costs less.
 
 ```bash
-uv tool install model-d     # or: pipx install model-d   (before the PyPI release: uv tool install git+https://github.com/devkancheti4-design/optimal-context-mapping)
-modeld install              # registers Model D with Claude Code, Codex, Gemini CLI and Kiro, if found
-modeld build .              # maps this repository into ./modeld-out, on this machine
+uv tool install git+https://github.com/devkancheti4-design/optimal-context-mapping   # PyPI: uv tool install model-d
+modeld install                                       # wires it into Claude Code, Codex, Gemini CLI and Kiro
+modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; rebuilds embed only what changed
 ```
 
-Then type `/modeld .` in Claude Code, or ask from a terminal:
-`modeld ask "why does login fail after a password reset?" --scope code`.
-For a team server, Docker, and offline or air-gapped installs, see [DEPLOY.md](DEPLOY.md).
+## Where it pays
 
-## What it achieved in our tests
-
-Live tests with fresh Claude agents and blind judges, each plan fixed with a hash before it ran (results in
-`results/RESULTS.md`; the data, with a script that recomputes every number, in `evidence/`):
-
-| test | accuracy | model requests |
+| work | vs the same agent alone | measured on |
 |---|---|---|
-| **A long Claude Code session** (25 questions, one session carrying its transcript), with the CMLM in the loop | same (24/25 both) | **1.35x fewer**; billed input 1.21x lower; searches and reads 55 to 33 |
-| **A large codebase, live: transformers, 10.8M tokens** (60 questions, fresh sessions) | same (60/60 both) | **1.71x fewer**; billed input **1.61x lower**; searches and reads 2.7x fewer; every reworded question landed on its taught code (30/30, no junk) |
-| **100 questions, clearing the session between tasks, this kit** (vectors only) | same (100/100 both) | **1.25x fewer** than the same fresh sessions without it; billed input **1.19x lower**; searches and reads 1.58x fewer; the saving held from the first half to the second (1.26x, 1.24x) |
-| 100 questions, clearing between tasks, the kit before vectors-only teaching | same (98/100) | 1.25x fewer; billed input 1.20x lower, 1.31x lower than one long session; but the saving fell from 1.40x to 1.13x as notes piled up |
-| A 100-question Claude Code session, with the CMLM in the loop and never cleared | same (98/100 both) | about the same (202 against 208), but billed input **1.25x higher**: the injected facts pile up in the transcript |
-| **The kit as shipped, in the loop**: a five-role team on a real app (Full Stack FastAPI Template), one fresh agent per question | same (24/25 both) | **1.62x fewer** than the same agents without it; 2.4x fewer on questions a teammate asked before |
-| A seven-role project team on a real codebase plus web research (research harness) | same (41/41) | 1.66x fewer with batched teaching |
-| Single-fact questions over 7 real codebases (7M tokens) | same (28/28) | 6.1x fewer, billed input 2.8x lower |
-| Repeated questions on a 10.8M-token codebase | same (30/30) | 9.2x fewer |
-| Multi-file deep dives | same (40/40) | 1.2x fewer (the weak spot) |
+| **A team's real year of fixes on one codebase** | **2.09x cheaper, the same work (252 vs 253 right); 1.88x → 2.57x as the year went on** | Django's 288 fixes from 2022, in order ([evidence/team-year](evidence/team-year)) |
+| A team asking about its own repository | 2.3–2.8x cheaper, same accuracy | a company app, 5 roles, 3 runs |
+| The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs |
+| Brand-new, scattered bugs | about 1.35x | 114 Django bugs, 3 runs |
+| Finding the fixed file, offline | top-5 176 vs Graphify's 131, of 285 | SWE-bench Lite, 12 full repositories |
+| Code review | small, about 1.3x at most: reviewers search about 3 times per PR | SWR-Bench pilot, partial ([evidence/swr-pilot](evidence/swr-pilot)) |
 
-Where it did not help:
-- **As a tool the agent calls**, it cost more requests than it saved (section 6).
-- **Against agents that keep a short 5-question session**, in the loop came out about even (71 against 67 requests,
-  section 7).
+Every plan was hashed before it ran, and `python evidence/verify.py` recomputes every number from the raw rows.
 
-The saving grows with repetition and with the size of the codebase. In Claude Code, clear the session between tasks and let the CMLM carry what was learned.
+## Pricing
+- **Open source, $0:** the whole kit under Apache-2.0, self-hosted, for one developer or a team server.
+- **Team, $49 per engineer per month:** we set up your team server, send a monthly savings report from your own
+  logs, and give priority fixes and a private support channel.
+- **Enterprise, by contract:** air-gapped installs, rollout across many repositories, and a guaranteed response time.
+
+Model D adds no model cost of its own. It cuts the API bill you already pay. For a team server, Docker and offline
+installs, see [DEPLOY.md](DEPLOY.md). To get the most out of it, see [GUIDE.md](GUIDE.md).
+
+## Why it works: work on a codebase isn't novel
+
+Ten years of Django, 5,333 real fixes, touched only 650 files. After the first thousand fixes, 96–99% landed in a
+file already fixed before. The files a team touches grow like the square root of its work (Heaps' law, fitted:
+D(n) = 12·n^0.48). So the search for where to look should be paid once. The learning law says how much that
+saves: S = A / ((1 − ν)·E + ν·K), where ν is the share of new work, E one learned read ($0.0004) and K a first
+exploration with the kit. On Django's 2022 it forecast each quarter's saving from the earlier ones within 14%.
 
 ## How to use it
 

@@ -120,3 +120,23 @@ def test_cli_builds_asks_with_scope_and_teaches(monkeypatch, capsys):
     cli.main([repo])                                                            # a rebuild in place keeps what was taught
     assert not any("modeld-out" in p for p in Workspace(out).files)              # its own output is never indexed
     assert json.loads(Workspace(out).handle("stats", {}))["question vectors taught"] == 1
+
+
+class FlakyWorkspace(LocalWorkspace):
+    """A workspace whose search fails once, as a server under load can."""
+    def __init__(self, ws):
+        super().__init__(ws); self.failed = False
+
+    def call(self, path, **kw):
+        if path == "search" and not self.failed:
+            self.failed = True
+            raise OSError("HTTP Error 500: Internal Server Error")
+        return super().call(path, **kw)
+
+
+def test_a_failing_tool_call_reaches_the_model_as_text_and_the_question_is_not_lost():
+    out = os.path.join(tempfile.mkdtemp(), "ws")
+    build([os.path.join(HERE, "fixture_repo")], out, log=lambda *a: None)
+    ws = FlakyWorkspace(Workspace(out))
+    assert ws.tool("search", {"pattern": "x"}).startswith("tool error (OSError)")
+    assert "class ChargeDeclined" in ws.tool("search", {"pattern": "class ChargeDeclined"})

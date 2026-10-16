@@ -42,9 +42,14 @@ class Workspace:
         return _call(path, self.url, **kw)
 
     def tool(self, name, args):
-        if name == "search": return self.call("search", pattern=args.get("pattern", ""))
-        if name == "read_file": return self.call("read", file=args.get("file", ""), start=args.get("start_line", 1), num=args.get("num_lines", 80))
-        if name == "list_files": return self.call("list", prefix=args.get("prefix", ""))
+        """A tool call for the teaching model. A call that fails returns its error as text, so the model can try another
+        way instead of the whole question being lost."""
+        try:
+            if name == "search": return self.call("search", pattern=args.get("pattern", ""))
+            if name == "read_file": return self.call("read", file=args.get("file", ""), start=args.get("start_line", 1), num=args.get("num_lines", 80))
+            if name == "list_files": return self.call("list", prefix=args.get("prefix", ""))
+        except Exception as e:                                              # an HTTP 500, a bad argument, a timeout
+            return f"tool error ({type(e).__name__}): {str(e)[:300]}. Try another search or read."
         return f"unknown tool {name}"
 
 
@@ -61,7 +66,10 @@ def run(question, provider, ws=None):
         extra = 0
     answer, at, n = provider.teach(TEACH, question, code, TOOLS, ws.tool, MAX_CALLS)
     if at:
-        ws.call("teach", pairs=[{"question": question, "at": at}])   # the kit learns it; next time it is one read
+        try:
+            ws.call("teach", pairs=[{"question": question, "at": at}])   # the kit learns it; next time it is one read
+        except Exception:                                            # a failed lesson must not lose the answer
+            pass
     return {"path": "teach", "answer": answer, "at": at, "requests": n + extra}
 
 

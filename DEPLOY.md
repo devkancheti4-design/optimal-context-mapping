@@ -58,10 +58,11 @@ modeld init all --url http://<server>:7700
 ```
 
 **After large code changes**, refresh the map. The rebuild keeps everything the team taught, and it re-finds each
-lesson's line even after the code moves. Then restart the server:
+lesson's line even after the code moves. With `--cache`, it embeds only the code that changed: a rebuild that took
+ten minutes takes seconds, with the same result bit for bit. Then restart the server:
 
 ```bash
-docker compose exec modeld modeld build /repos --out /workspace && docker compose restart
+docker compose exec modeld modeld build /repos --out /workspace --cache /workspace-cache/embed.sqlite && docker compose restart
 ```
 
 ## An enterprise, including machines with no internet
@@ -71,8 +72,8 @@ docker compose exec modeld modeld build /repos --out /workspace && docker compos
 
   ```bash
   docker compose build
-  docker save model-d:0.3.0 | gzip > model-d-0.3.0.tar.gz   # copy this file across, then:
-  docker load < model-d-0.3.0.tar.gz
+  docker save model-d:0.4.0 | gzip > model-d-0.4.0.tar.gz   # copy this file across, then:
+  docker load < model-d-0.4.0.tar.gz
   ```
 
 - **Without Docker,** build an offline bundle on a connected machine with the same OS, CPU type and Python version.
@@ -97,5 +98,5 @@ docker compose exec modeld modeld build /repos --out /workspace && docker compos
 
 ```bash
 uv tool upgrade model-d
-modeld build . --out modeld-out       # a rebuild carries what was taught
+modeld build . --out modeld-out --cache ~/.cache/modeld/embed.sqlite   # carries what was taught; embeds only changes
 ```

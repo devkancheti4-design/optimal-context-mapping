@@ -1,0 +1,13 @@
+diff --git a/swrbench/utils.py b/swrbench/utils.py
+index fde694b..160d51b 100644
+--- a/swrbench/utils.py
++++ b/swrbench/utils.py
+@@ -10,7 +10,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
+ from loguru import logger
+ 
+ OPENAI_API_BASE = os.environ['OPENAI_API_BASE'].strip().split(",")
+-OPENAI_API_KEY = os.getenv['OPENAI_API_KEY'].strip().split(",")
++OPENAI_API_KEY = os.environ['OPENAI_API_KEY'].strip().split(",")
+ 
+ def save_jsonl(filename, data):
+     with open(filename, 'w', encoding='utf-8') as f:

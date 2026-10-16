@@ -14,6 +14,24 @@ stem = lambda w: w[:-1] if len(w) > 3 and w.endswith("s") else w
 N9 = 277681                                                     # sentences in the 9M memory (the IDF base, as offline)
 
 
+import os as _os
+
+
+def _bits(name):
+    """An optional limit in bits from the environment (e.g. OCM_CERT_MIN_OVER_OWN=37); unset or empty: None."""
+    v = _os.environ.get(name, "").strip()
+    return int(v) if v else None
+
+
+CERT_MIN_LIFT = _bits("OCM_CERT_MIN_LIFT")   # bits; when set, the taught lane also needs its cue this far above the question's median
+                       # agreement (its chance level). None: the law as published (the lead alone decides).
+RELATION_LIMIT = _bits("OCM_RELATION_LIMIT")      # bits; when set, taught question vectors count for a question only if the best of them
+                           # beats the best code text's agreement by this much (candidate: 37 bits, one sd of chance
+                           # agreement); otherwise the code alone ranks it, as if nothing were taught. None: off.
+CERT_MIN_OVER_OWN = _bits("OCM_CERT_MIN_OVER_OWN")   # bits; when set, the taught lane also needs its cue this far above the best code text's
+                           # agreement (a candidate relation limit: one sd of chance agreement, 37 bits). None: off.
+
+
 class Lanes:
     def __init__(self, mem, global_rows, db, RL):
         self.m, self.RL = mem, RL
@@ -51,6 +69,9 @@ class Lanes:
         pool = np.arange(len(strong)) if allow is None else np.flatnonzero(np.asarray(allow[:len(strong)], bool))
         if not len(pool):                                                 # nothing in scope: the whole workspace
             pool, allow = np.arange(len(strong)), None
+        if RELATION_LIMIT is not None and len(pool) and int(cue[pool].max()) >= 0 \
+                and int(cue[pool].max()) - int(own[pool].max()) < RELATION_LIMIT:
+            strong, cue = own.copy(), np.full_like(cue, -1)               # nothing taught is related enough: the code decides
         sp = strong[pool]
         key = sp * 1025 + weak[pool]
         n = len(key); kk = min(25, n)                                    # small workspaces: fewer than 26 units
@@ -68,10 +89,17 @@ class Lanes:
         best = int(strong[mean20[0]])
         j1 = mean20[0]
         cert = int(strong[j1]) - second if cue[j1] >= own[j1] and cue[j1] >= 0 else -1
+        lift = int(cue[j1]) - int(np.median(sp)) if cue[j1] >= 0 else None      # the cue's agreement over chance
+        if cert >= 0 and CERT_MIN_LIFT is not None and lift < CERT_MIN_LIFT:
+            cert = -1                       # relation limit: the taught question is not related enough to this one
+        over_own = int(cue[j1]) - int(own[pool].max()) if cue[j1] >= 0 else None   # the cue's margin over any code text
+        if cert >= 0 and CERT_MIN_OVER_OWN is not None and over_own < CERT_MIN_OVER_OWN:
+            cert = -1                       # the taught question must explain this one better than any code does
         obs = {"cert_lead": cert, "top_lead": best - second, "n_near": int((sp >= best - RL.NEAR).sum()),
                "best_minus_med": best - int(np.median(sp)),
                "idf": max([math.log(N9 / self.df(w)) for w in allw if self.df(w) > 0] or [0.0]),
-               "key_lead": RL.TAU if keyhit else 0, "shared": bool(set(mean20[:10]) & set(kw))}
+               "key_lead": RL.TAU if keyhit else 0, "shared": bool(set(mean20[:10]) & set(kw)),
+               "cue_lift": lift, "over_own": over_own, "from_cue": bool(cue[j1] >= own[j1] and cue[j1] >= 0), "top": j1}
         lanes = {0: mean20[:1], 1: mean20[:10], 2: kw, 3: list(dict.fromkeys(mean20[:5] + kw[:5])), 4: mean20}
         return lanes, obs
 

@@ -1,0 +1,3054 @@
+[
+{
+"k": 4876,
+"hash": "30613d6a748fce18919ff8b0da166d9fda2ed9bc",
+"date": "2022-01-04",
+"raw": "Fixed adding nullable unique fields on SQLite.",
+"masked": "Fixed adding nullable unique fields on",
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+]
+},
+{
+"k": 4877,
+"hash": "0ed2919814c80e31626dffdb6b80d0c20d43452f",
+"date": "2022-01-03",
+"raw": "Avoided creation of MaxLengthValidator(None) when resolving Value.output_field for strings.",
+"masked": "Avoided creation of when resolving for",
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"k": 4878,
+"hash": "482ee63b6f320cd4a834cb46fc651877bd2f2e28",
+"date": "2022-01-04",
+"raw": "Optimized multiple AlterFooTogether operations.",
+"masked": "Optimized multiple",
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"k": 4879,
+"hash": "f5233dce309543c826224be9dfa9c9f4f855f73c",
+"date": "2022-01-04",
+"raw": "Corrected handling prefetched nested reverse relationships.",
+"masked": "Corrected handling prefetched nested reverse",
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 4880,
+"hash": "806efe912b846c1fde250c9321d8334b7517cd56",
+"date": "2022-01-01",
+"raw": "Added support for msg_prefix and count arguments to assertTemplateUsed()/assertTemplateNotUsed() used as context managers.",
+"masked": "Added support for and count arguments to used as context",
+"gold": [
+"django/test/testcases.py"
+]
+},
+{
+"k": 4881,
+"hash": "bc174e6ea0ce676c5a7f467bda9739e6ef6b6186",
+"date": "2022-01-04",
+"raw": "Fixed recursive capturing of callbacks by TestCase.captureOnCommitCallbacks().",
+"masked": "Fixed recursive capturing of callbacks by",
+"gold": [
+"django/test/testcases.py"
+]
+},
+{
+"k": 4884,
+"hash": "2a66c102d9c674fadab252a28d8def32a8b626ec",
+"date": "2022-01-07",
+"raw": "Fixed view name for CBVs on technical 404 debug page.",
+"masked": "Fixed view name for CBVs on technical 404 debug",
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"k": 4885,
+"hash": "f4b06a3cc1e54888ff86f36a1f9a3ddf21292314",
+"date": "2022-01-10",
+"raw": "Fixed ResolverMatch.__repr_() for class-based views.",
+"masked": "Fixed for class-based",
+"gold": [
+"django/urls/resolvers.py"
+]
+},
+{
+"k": 4888,
+"hash": "dc9deea8e85641695e489e43ed5d5638134c15c7",
+"date": "2022-01-01",
+"raw": "Changed default value of ModelAdmin.actions/inlines to empty tuples.",
+"masked": "Changed default value of to empty",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 4889,
+"hash": "18a15bbc9c7df19fe38f252bcd62d5a3811e3451",
+"date": "2022-01-12",
+"raw": "Avoided unnecessary resolve() calls in technical_404_response().",
+"masked": "Avoided unnecessary calls in",
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"k": 4890,
+"hash": "6815da6e9497a9a630d9f3637a51134d868bcd5b",
+"date": "2022-01-06",
+"raw": "Added view name to technical 500 debug page.",
+"masked": "Added view name to technical 500 debug",
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"k": 4892,
+"hash": "fdfa97fb166ef5065aa2b229f19cb4ce303084e5",
+"date": "2022-01-13",
+"raw": "Restored immutability of models.Field.__hash__().",
+"masked": "Restored immutability of",
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"k": 4893,
+"hash": "0a17666045de6739ae1c2ac695041823d5f827f7",
+"date": "2022-01-14",
+"raw": "Made simplify_regex() handle non-capturing groups.",
+"masked": "Made handle non-capturing",
+"gold": [
+"django/contrib/admindocs/utils.py",
+"django/contrib/admindocs/views.py"
+]
+},
+{
+"k": 4894,
+"hash": "f37face331f21cb8af70fc4ec101ec7b6be1f63e",
+"date": "2022-01-15",
+"raw": "Fixed invalid SQL generatered by Subquery.as_sql().",
+"masked": "Fixed invalid generatered by",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 4895,
+"hash": "30a01441347d5a2146af2944b29778fa0834d4be",
+"date": "2022-01-17",
+"raw": "Allowed using combined queryset in Subquery.",
+"masked": "Allowed using combined queryset in",
+"gold": [
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 4896,
+"hash": "dc8bb35e39388d41b1f38b6c5d0181224e075f16",
+"date": "2022-01-18",
+"raw": "Added CSS source map support to ManifestStaticFilesStorage.",
+"masked": "Added source map support to",
+"gold": [
+"django/contrib/staticfiles/storage.py"
+]
+},
+{
+"k": 4898,
+"hash": "3fadf141e66c8d0baaa66574fa3b63c4d3655482",
+"date": "2022-01-17",
+"raw": "Made MultiPartParser remove non-printable chars from file names.",
+"masked": "Made remove non-printable chars from file",
+"gold": [
+"django/http/multipartparser.py"
+]
+},
+{
+"k": 4899,
+"hash": "f605e85af9763a3940369bb79462f2cb466288f6",
+"date": "2022-01-20",
+"raw": "Dropped support for GDAL 2.1.",
+"masked": "Dropped support for",
+"gold": [
+"django/contrib/gis/gdal/field.py",
+"django/contrib/gis/gdal/libgdal.py",
+"django/contrib/gis/gdal/prototypes/ds.py",
+"django/contrib/gis/gdal/prototypes/srs.py"
+]
+},
+{
+"k": 4900,
+"hash": "eeff1787b0aa23016e4844c0f537d5093a95a356",
+"date": "2022-01-19",
+"raw": "Fixed makemigrations crash on models without Meta.order_with_respect_to but with _order field.",
+"masked": "Fixed makemigrations crash on models without but with",
+"gold": [
+"django/db/migrations/state.py"
+]
+},
+{
+"k": 4902,
+"hash": "efb4478e484ae61c5fc23563d4e9df1f8f49df49",
+"date": "2022-01-22",
+"raw": "Fixed encoding of messages with empty string as extra_tags.",
+"masked": "Fixed encoding of messages with empty string as",
+"gold": [
+"django/contrib/messages/storage/cookie.py"
+]
+},
+{
+"k": 4903,
+"hash": "c27932ec938217d4fbb0adad23c0d0708f83f690",
+"date": "2022-01-24",
+"raw": "Used VALUES clause for insert in bulk on SQLite.",
+"masked": "Used clause for insert in bulk on",
+"gold": [
+"django/db/backends/sqlite3/operations.py"
+]
+},
+{
+"k": 4904,
+"hash": "edbf930287cb72e9afab1f7208c24b1146b0c4ec",
+"date": "2022-01-09",
+"raw": "Added QuerySet.iterator() support for prefetching related objects.",
+"masked": "Added support for prefetching related",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 4905,
+"hash": "e972620ada4f9ed7bc57f28e133e85c85b0a7b20",
+"date": "2022-01-27",
+"raw": "Fixed migration crash when altering type of primary key with MTI and foreign key.",
+"masked": "Fixed migration crash when altering type of primary key with and foreign",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 4906,
+"hash": "0af9a5fc7d765aa05ea784e2c3237675f3bb4b49",
+"date": "2022-01-27",
+"raw": "Fixed QuerySet.bulk_update() with F() expressions.",
+"masked": "Fixed with",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 4908,
+"hash": "55022f75c1e76e92206e023a127532d97cedd5b7",
+"date": "2022-01-25",
+"raw": "Added empty __slots__ to SafeString and SafeData.",
+"masked": "Added empty to and",
+"gold": [
+"django/utils/safestring.py"
+]
+},
+{
+"k": 4909,
+"hash": "71e7c8e73712419626f1c2b6ec036e8559a2d667",
+"date": "2022-01-31",
+"raw": "Fixed QuerySet.aggregate() after annotate() crash on aggregates with default.",
+"masked": "Fixed after crash on aggregates with",
+"gold": [
+"django/db/models/aggregates.py"
+]
+},
+{
+"k": 4910,
+"hash": "97a72744681d0993b50dee952cf32cdf9650ad9f",
+"date": "2022-02-01",
+"raw": "Fixed makemigrations crash when renaming field of renamed model.",
+"masked": "Fixed makemigrations crash when renaming field of renamed",
+"gold": [
+"django/db/migrations/autodetector.py"
+]
+},
+{
+"k": 4912,
+"hash": "b7d1da5a62fe4141beff2bfea565f7ef0038c94c",
+"date": "2022-02-01",
+"raw": "Fixed QuerySet filtering againts negated Exists() with empty queryset.",
+"masked": "Fixed filtering againts negated with empty",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 4913,
+"hash": "84418ba3e3e42289fc31746523dfcb5e0cce5a28",
+"date": "2022-01-29",
+"raw": "Added __slots__ to Variable and FilterExpression.",
+"masked": "Added to Variable and",
+"gold": [
+"django/template/base.py"
+]
+},
+{
+"k": 4914,
+"hash": "832adb31f27cfc18ad7542c7eda5a1b6ed5f1669",
+"date": "2022-02-02",
+"raw": "Fixed detecting changes by autoreloader in .py files inside template directories.",
+"masked": "Fixed detecting changes by autoreloader in files inside template",
+"gold": [
+"django/template/autoreload.py"
+]
+},
+{
+"k": 4915,
+"hash": "d35ce682e31ea4a86c2079c60721fae171f03d7c",
+"date": "2022-02-09",
+"raw": "Made QuerySet.bulk_update() perform atomic writes against write database.",
+"masked": "Made perform atomic writes against write",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 4916,
+"hash": "2d472ad05c7fb2a5fe405be46af2062cdb5eaeee",
+"date": "2022-02-09",
+"raw": "Improved debug logging message about adapting handlers for middlewares.",
+"masked": "Improved debug logging message about adapting handlers for",
+"gold": [
+"django/core/handlers/base.py"
+]
+},
+{
+"k": 4917,
+"hash": "09e499a39eec9342cb594bfd27939cfd1046f797",
+"date": "2022-02-07",
+"raw": "Made order_with_respect_to respect database routers.",
+"masked": "Made respect database",
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"k": 4918,
+"hash": "4c76ffc2d6c77c850b4bef8d9acc197d11c47937",
+"date": "2022-01-22",
+"raw": "Added support for object-based Media CSS and JS paths.",
+"masked": "Added support for object-based Media and",
+"gold": [
+"django/forms/widgets.py"
+]
+},
+{
+"k": 4919,
+"hash": "f9ec777a826816e20e68021c0e73b5a76be650af",
+"date": "2022-02-05",
+"raw": "Added support for addition operations to SimpleLazyObject.",
+"masked": "Added support for addition operations to",
+"gold": [
+"django/utils/functional.py"
+]
+},
+{
+"k": 4920,
+"hash": "97d7990abde3fe4b525ae83958fd0b52d6a1d13f",
+"date": "2022-02-13",
+"raw": "Prevented LazyObject from mimicking nonexistent attributes.",
+"masked": "Prevented from mimicking nonexistent",
+"gold": [
+"django/conf/__init__.py",
+"django/utils/functional.py"
+]
+},
+{
+"k": 4921,
+"hash": "1e2e1be02bdf0fe4add0d0279dbca1d74ae28ad7",
+"date": "2022-02-16",
+"raw": "Prevented recreation of migration for ManyToManyField to lowercased swappable setting.",
+"masked": "Prevented recreation of migration for to lowercased swappable",
+"gold": [
+"django/db/models/fields/related.py"
+]
+},
+{
+"k": 4922,
+"hash": "3079133c73f3b8b0e929673b06b62dce1f54be71",
+"date": "2022-02-18",
+"raw": "Added fallbacks to subsequent language codes in Select2 translations.",
+"masked": "Added fallbacks to subsequent language codes in Select2",
+"gold": [
+"django/contrib/admin/widgets.py"
+]
+},
+{
+"k": 4924,
+"hash": "e559070a7a1aa70eaf97686da6e8116c3c7b08fd",
+"date": "2022-02-18",
+"raw": "Added RemovedAfterNextVersionWarning.",
+"masked": "Added",
+"gold": [
+"django/utils/deprecation.py"
+]
+},
+{
+"k": 4925,
+"hash": "659d2421c7adbbcd205604002d521d82d6b0b465",
+"date": "2022-02-18",
+"raw": "Prevented mark_safe() from evaluating lazy objects.",
+"masked": "Prevented from evaluating lazy",
+"gold": [
+"django/utils/safestring.py"
+]
+},
+{
+"k": 4926,
+"hash": "7ba6ebe9149ae38257d70100e8bfbfd0da189862",
+"date": "2022-01-14",
+"raw": "Unified behavior of reverse foreign key and many-to-many relations for unsaved instances.",
+"masked": "Unified behavior of reverse foreign key and many-to-many relations for unsaved",
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 4927,
+"hash": "7c318a8bdd66f8c5241864c9970dddb525d0ca4c",
+"date": "2022-01-01",
+"raw": "Added optimizemigration management command.",
+"masked": "Added optimizemigration management",
+"gold": [
+"django/core/management/commands/optimizemigration.py"
+]
+},
+{
+"k": 4928,
+"hash": "3de787a70b6c140a3b1289a8ce12b17ebcb8a200",
+"date": "2022-02-23",
+"raw": "Optimized CaseInsensitiveMapping instantiation for dicts.",
+"masked": "Optimized instantiation for",
+"gold": [
+"django/utils/datastructures.py"
+]
+},
+{
+"k": 4929,
+"hash": "7f4fc5cbd4c26e137a1abdd9bd603804ddc0e769",
+"date": "2022-02-23",
+"raw": "Fixed spaces in WITH SQL for indexes on PostgreSQL.",
+"masked": "Fixed spaces in for indexes on",
+"gold": [
+"django/contrib/postgres/indexes.py"
+]
+},
+{
+"k": 4930,
+"hash": "11cc227344de06ffd0ad7f07c4e4bdd18851adac",
+"date": "2022-01-10",
+"raw": "Added link to related item to related widget wrapper in admin.",
+"masked": "Added link to related item to related widget wrapper in",
+"gold": [
+"django/contrib/admin/widgets.py"
+]
+},
+{
+"k": 4931,
+"hash": "2b6a3baebe70e4d481dd256bdb774ac15e248540",
+"date": "2022-02-05",
+"raw": "Deprecated passing unsaved objects to related filters.",
+"masked": "Deprecated passing unsaved objects to related",
+"gold": [
+"django/db/models/fields/related_lookups.py"
+]
+},
+{
+"k": 4932,
+"hash": "c1d168be0fe7d848297253bdf2c5963dffda5af7",
+"date": "2022-02-26",
+"raw": "Fixed DatabaseFeatures.supports_index_column_ordering on MariaDB 10.8+.",
+"masked": "Fixed on",
+"gold": [
+"django/db/backends/mysql/features.py"
+]
+},
+{
+"k": 4933,
+"hash": "e0442a628eb480eac6a7888aed5a86f83499e299",
+"date": "2022-02-26",
+"raw": "Removed unnecessary code in ModelAdmin._changeform_view().",
+"masked": "Removed unnecessary code in",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 4934,
+"hash": "119f227aa62885f12cd7dd2558a62148d02adbb4",
+"date": "2022-02-27",
+"raw": "Allowed overriding empty_label for ForeignKey in ModelAdmin.radio_fields.",
+"masked": "Allowed overriding for in",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 4935,
+"hash": "445b075def2c037b971518963b70ce13df5e88a2",
+"date": "2022-03-01",
+"raw": "Fixed error when rendering invalid inlines with readonly fields in admin.",
+"masked": "Fixed error when rendering invalid inlines with readonly fields in",
+"gold": [
+"django/contrib/admin/templatetags/admin_modify.py"
+]
+},
+{
+"k": 4936,
+"hash": "d436554861b9b818994276d7bf110bf03aa565f5",
+"date": "2022-01-28",
+"raw": "Used built-in math functions in SQLite 3.35+.",
+"masked": "Used built-in math functions in SQLite",
+"gold": [
+"django/db/backends/sqlite3/_functions.py"
+]
+},
+{
+"k": 4938,
+"hash": "ae2da5ba652c1a11cd88dcb119744dcecaeb03ee",
+"date": "2022-03-04",
+"raw": "Made HttpResponse.set_cookie() support timedelta for the max_age argument.",
+"masked": "Made support timedelta for the",
+"gold": [
+"django/http/response.py"
+]
+},
+{
+"k": 4939,
+"hash": "58d357fc65ab0d3b16184db81059b9cef3b83c10",
+"date": "2022-03-08",
+"raw": "Fixed contenttype reverse data migration crash with a multiple databases setup.",
+"masked": "Fixed contenttype reverse data migration crash with a multiple databases",
+"gold": [
+"django/contrib/contenttypes/migrations/0002_remove_content_type_name.py"
+]
+},
+{
+"k": 4940,
+"hash": "93803a1b5f4a08eb064b4cc8b3834ff323be4065",
+"date": "2022-03-08",
+"raw": "Avoided setting default text/html content type on responses.",
+"masked": "Avoided setting default content type on",
+"gold": [
+"django/views/csrf.py",
+"django/views/debug.py",
+"django/views/defaults.py"
+]
+},
+{
+"k": 4941,
+"hash": "d90e34c61b27fba2527834806639eebbcfab9631",
+"date": "2022-03-04",
+"raw": "Allowed synchronization of user attributes in RemoteUserBackend.",
+"masked": "Allowed synchronization of user attributes in",
+"gold": [
+"django/contrib/auth/backends.py"
+]
+},
+{
+"k": 4942,
+"hash": "71017a68a6e86b501592e7daf68be3ef4c4c28f2",
+"date": "2022-03-11",
+"raw": "Fixed static serving views crash when If-Modified-Since is empty.",
+"masked": "Fixed static serving views crash when If-Modified-Since is",
+"gold": [
+"django/views/static.py"
+]
+},
+{
+"k": 4943,
+"hash": "8f7cda083154a2e97e07115a66ee28be27200348",
+"date": "2022-03-11",
+"raw": "Implemented CreateModel/AlterModelManagers reduction.",
+"masked": "Implemented",
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"k": 4944,
+"hash": "859a87d873ce7152af73ab851653b4e1c3ffea4c",
+"date": "2022-03-14",
+"raw": "Fixed get_for_models() crash for stale content types when model with the same name exists in another app.",
+"masked": "Fixed crash for stale content types when model with the same name exists in another",
+"gold": [
+"django/contrib/contenttypes/models.py"
+]
+},
+{
+"k": 4945,
+"hash": "a88fab1bca33c037bd1a12459c215d7bc1247735",
+"date": "2022-03-12",
+"raw": "Fixed JSONField has key lookups with numeric keys on MariaDB, MySQL, Oracle, and SQLite.",
+"masked": "Fixed JSONField has key lookups with numeric keys on Oracle, and",
+"gold": [
+"django/db/models/fields/json.py"
+]
+},
+{
+"k": 4946,
+"hash": "3b3f38b3b09b0f2373e51406ecb8c9c45d36aebc",
+"date": "2022-02-12",
+"raw": "Adapted the parallel test runner to use spawn.",
+"masked": "Adapted the parallel test runner to use",
+"gold": [
+"django/db/backends/sqlite3/creation.py",
+"django/test/runner.py",
+"django/utils/autoreload.py"
+]
+},
+{
+"k": 4947,
+"hash": "970f5bf5035d8c99b0ff883f984b60cf531dddbe",
+"date": "2022-03-16",
+"raw": "Confirmed support for GDAL 3.4.",
+"masked": "Confirmed support for",
+"gold": [
+"django/contrib/gis/gdal/libgdal.py"
+]
+},
+{
+"k": 4948,
+"hash": "5f9ad17201981b7160df23747239cf3512a60edd",
+"date": "2022-03-16",
+"raw": "Fixed crash when checking support for terminal colors on Wine.",
+"masked": "Fixed crash when checking support for terminal colors on",
+"gold": [
+"django/core/management/color.py"
+]
+},
+{
+"k": 4949,
+"hash": "4b8e4f506079419c7995107fad46416ee5add951",
+"date": "2022-03-18",
+"raw": "Fixed deserializing natural keys with foreing key dependencies in a multiple database setup.",
+"masked": "Fixed deserializing natural keys with foreing key dependencies in a multiple database",
+"gold": [
+"django/core/serializers/base.py"
+]
+},
+{
+"k": 4950,
+"hash": "561761c6606cd0e8bafb5e86c487871deb6e04e1",
+"date": "2022-03-18",
+"raw": "Fixed \"View on Site\" links in custom admin site.",
+"masked": "Fixed on links in custom admin",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 4951,
+"hash": "1cf60ce6017d904024ee132f7edae0b4b821a954",
+"date": "2022-03-07",
+"raw": "Added SECURE_PROXY_SSL_HEADER support for list of protocols in the header value.",
+"masked": "Added support for list of protocols in the header",
+"gold": [
+"django/http/request.py"
+]
+},
+{
+"k": 4952,
+"hash": "2bee0b4328319eaf6a0d1686677d629f2ecf6dec",
+"date": "2022-03-05",
+"raw": "Allowed overriding the order of apps and models in admin.",
+"masked": "Allowed overriding the order of apps and models in",
+"gold": [
+"django/contrib/admin/sites.py"
+]
+},
+{
+"k": 4954,
+"hash": "baf9604ed8fed3e6e7ddfaca2d83c377c81399ae",
+"date": "2022-03-28",
+"raw": "Added ResolveMatch.captured_kwargs and extra_kwargs.",
+"masked": "Added and",
+"gold": [
+"django/urls/resolvers.py"
+]
+},
+{
+"k": 4955,
+"hash": "fac662f4798f7e4e0ed9be6b4fb4a87a80810a68",
+"date": "2022-03-30",
+"raw": "Reverted \"Removed unnecessary reuse_with_filtered_relation argument from Query methods.\"",
+"masked": "Reverted unnecessary argument from Query",
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 4957,
+"hash": "13a9cde133ac82e33dd091ca9bb9c677804afbe1",
+"date": "2022-03-31",
+"raw": "Made createsuperuser detect uniqueness of USERNAME_FIELD when using Meta.constraints.",
+"masked": "Made createsuperuser detect uniqueness of when using",
+"gold": [
+"django/contrib/auth/management/commands/createsuperuser.py"
+]
+},
+{
+"k": 4958,
+"hash": "2d5215c675c2f128f7e9fc296cd5a0a5a527dff4",
+"date": "2022-03-29",
+"raw": "Fixed migration crash when altering RegexValidator to pre-compiled regular expression.",
+"masked": "Fixed migration crash when altering to pre-compiled regular",
+"gold": [
+"django/db/migrations/utils.py"
+]
+},
+{
+"k": 4960,
+"hash": "65effbdb101714ac98b3f143eaccadd8e4f08361",
+"date": "2022-04-01",
+"raw": "Made AlterField operation a noop when changing \"choices\".",
+"masked": "Made operation a noop when changing",
+"gold": [
+"django/db/backends/base/schema.py",
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"k": 4961,
+"hash": "9ffd4eae2ce7a7100c98f681e2b6ab818df384a4",
+"date": "2022-04-07",
+"raw": "Allowed View subclasses to define async method handlers.",
+"masked": "Allowed View subclasses to define async method",
+"gold": [
+"django/views/generic/base.py"
+]
+},
+{
+"k": 4962,
+"hash": "0b31e024873681e187b574fe1c4afe5e48aeeecf",
+"date": "2022-04-05",
+"raw": "Fixed MTI updates outside of primary key chain.",
+"masked": "Fixed updates outside of primary key",
+"gold": [
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/subqueries.py"
+]
+},
+{
+"k": 4963,
+"hash": "62739b6e2630e37faa68a86a59fad135cc788cd7",
+"date": "2022-04-09",
+"raw": "Ignored directories with empty names in autoreloader check for template changes.",
+"masked": "Ignored directories with empty names in autoreloader check for template",
+"gold": [
+"django/template/autoreload.py"
+]
+},
+{
+"k": 4964,
+"hash": "06ebaa9e287137d4496a2736b055f1c6aed95839",
+"date": "2022-04-08",
+"raw": "Cleared cache when unregistering a lookup.",
+"masked": "Cleared cache when unregistering a",
+"gold": [
+"django/db/models/query_utils.py"
+]
+},
+{
+"k": 4965,
+"hash": "0ad5316f22eabe8fa8b22dc92e61170cfacc3c78",
+"date": "2022-04-11",
+"raw": "Made QuerySet.exists() clear selected columns for not sliced distinct querysets.",
+"masked": "Made clear selected columns for not sliced distinct",
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 4966,
+"hash": "2eea361eff58dd98c409c5227064b901f41bd0d6",
+"date": "2022-03-24",
+"raw": "Used identity columns instead of serials on PostgreSQL.",
+"masked": "Used identity columns instead of serials on",
+"gold": [
+"django/db/backends/base/schema.py",
+"django/db/backends/postgresql/base.py",
+"django/db/backends/postgresql/introspection.py",
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 4967,
+"hash": "c72f6f36c13a21f6db3d4f85d2d3cec87bad45e6",
+"date": "2022-04-13",
+"raw": "Allowed admin select widgets to display new related objects.",
+"masked": "Allowed admin select widgets to display new related",
+"gold": [
+"django/contrib/admin/widgets.py"
+]
+},
+{
+"k": 4968,
+"hash": "a1e4e86f923dc8387b0a9c3025bdd5d096a6ebb8",
+"date": "2022-04-15",
+"raw": "Made PostgresIndex.create_sql() respect the \"using\" argument.",
+"masked": "Made respect the",
+"gold": [
+"django/contrib/postgres/indexes.py"
+]
+},
+{
+"k": 4969,
+"hash": "e12670016bbcebcc0d89c2ac4a0121951181fbae",
+"date": "2022-04-16",
+"raw": "Fixed inspectdb crash on functional unique constraints on Oracle.",
+"masked": "Fixed inspectdb crash on functional unique constraints on",
+"gold": [
+"django/core/management/commands/inspectdb.py"
+]
+},
+{
+"k": 4970,
+"hash": "5591a72571b8a07c5e3d87dcfe08310bb7611d15",
+"date": "2022-04-18",
+"raw": "Prevented extra redirect in LogoutView on invalid next page when LOGOUT_REDIRECT_URL is set.",
+"masked": "Prevented extra redirect in on invalid next page when is",
+"gold": [
+"django/contrib/auth/views.py"
+]
+},
+{
+"k": 4971,
+"hash": "bf7c51a5f4da5f00b46923545ea6657ba9556bf6",
+"date": "2022-04-12",
+"raw": "Enabled cached template loader in development.",
+"masked": "Enabled cached template loader in",
+"gold": [
+"django/template/engine.py"
+]
+},
+{
+"k": 4972,
+"hash": "420d13edeed8d2848b52f37144fe5edb7baff0cc",
+"date": "2022-04-20",
+"raw": "Added localdate to utils.timezone.__all__.",
+"masked": "Added localdate to",
+"gold": [
+"django/utils/timezone.py"
+]
+},
+{
+"k": 4973,
+"hash": "cd4da34fc1f1df08f593e461b2f670bfd61d0d2f",
+"date": "2022-04-19",
+"raw": "Made saving objects with unsaved GenericForeignKey raise ValueError.",
+"masked": "Made saving objects with unsaved raise",
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"k": 4974,
+"hash": "6f453cd2981525b33925faaadc7a6e51fa90df5c",
+"date": "2022-02-10",
+"raw": "Added \"(no-op)\" to sqlmigrate output for operations without SQL statement.",
+"masked": "Added to sqlmigrate output for operations without",
+"gold": [
+"django/db/migrations/migration.py"
+]
+},
+{
+"k": 4975,
+"hash": "4282fd468fd11a7db79307ba1c33a4960c299e4a",
+"date": "2022-04-25",
+"raw": "Removed unnecessary constant from GROUP BY clause for QuerySet.exists().",
+"masked": "Removed unnecessary constant from clause for",
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 4976,
+"hash": "37602e49484a88867f40e9498f86c49c2d1c5d7c",
+"date": "2022-04-22",
+"raw": "Fixed MultiWidget crash when compressed value is a tuple.",
+"masked": "Fixed crash when compressed value is a",
+"gold": [
+"django/forms/widgets.py"
+]
+},
+{
+"k": 4978,
+"hash": "aa28c392b9491f02330905cb73b7078b1cd18c60",
+"date": "2022-04-28",
+"raw": "Corrected Catalan date-format localization.",
+"masked": "Corrected Catalan date-format",
+"gold": [
+"django/conf/locale/ca/formats.py"
+]
+},
+{
+"k": 4979,
+"hash": "b34238addceb6b2d40181b625da3b7b7104abfcd",
+"date": "2022-04-29",
+"raw": "Fixed altering primary key on SQLite.",
+"masked": "Fixed altering primary key on",
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+]
+},
+{
+"k": 4980,
+"hash": "aca9bb2a12b8985d0cb736d380db97439010cd98",
+"date": "2022-04-28",
+"raw": "Made migrations propage collations to related fields.",
+"masked": "Made migrations propage collations to related",
+"gold": [
+"django/db/backends/base/schema.py",
+"django/db/backends/oracle/features.py",
+"django/db/backends/sqlite3/schema.py",
+"django/db/models/fields/related.py"
+]
+},
+{
+"k": 4981,
+"hash": "3b898ea61ec209ef3ef67e3a6bb55c69bae8c85d",
+"date": "2022-04-26",
+"raw": "Made _all_related_fields() return deterministically ordered fields.",
+"masked": "Made return deterministically ordered",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 4982,
+"hash": "37470bbd9089b1c64a5783438b42b31336937845",
+"date": "2022-05-04",
+"raw": "Dropped support for PostgreSQL 10 and PostGIS 2.4.",
+"masked": "Dropped support for 10 and",
+"gold": [
+"django/contrib/gis/db/backends/postgis/operations.py",
+"django/db/backends/postgresql/features.py"
+]
+},
+{
+"k": 4983,
+"hash": "8f04473af1da1ed4e8a07e89205da4e70d69b586",
+"date": "2022-05-02",
+"raw": "Checked deferred constraints before updating rows on PostgreSQL.",
+"masked": "Checked deferred constraints before updating rows on",
+"gold": [
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 4984,
+"hash": "ec5659382a5f5fc2daf0c87ccc89d0fb07534874",
+"date": "2022-05-05",
+"raw": "Added div.html form template.",
+"masked": "Added form",
+"gold": [
+"django/forms/forms.py",
+"django/forms/formsets.py",
+"django/forms/utils.py"
+]
+},
+{
+"k": 4985,
+"hash": "667105877e6723c6985399803a364848891513cc",
+"date": "2022-01-31",
+"raw": "Added support for Meta.constraints validation.",
+"masked": "Added support for",
+"gold": [
+"django/contrib/postgres/constraints.py",
+"django/db/models/base.py",
+"django/db/models/constraints.py",
+"django/db/models/expressions.py",
+"django/forms/models.py"
+]
+},
+{
+"k": 4986,
+"hash": "262fde94de5eb6544fc0f289575583436613c045",
+"date": "2022-05-08",
+"raw": "Allowed customizing error messages for invalid number of forms.",
+"masked": "Allowed customizing error messages for invalid number of",
+"gold": [
+"django/forms/formsets.py"
+]
+},
+{
+"k": 4987,
+"hash": "02dbf1667c6da61ea9346f7c9f174a158b896811",
+"date": "2022-05-11",
+"raw": "Deprecated django.contrib.auth.hashers.CryptPasswordHasher.",
+"masked": "Deprecated",
+"gold": [
+"django/contrib/auth/hashers.py"
+]
+},
+{
+"k": 4988,
+"hash": "2798c937deb6625a4e6a36e70d4d60ce5faac954",
+"date": "2022-05-04",
+"raw": "Fixed crash of ordering by related fields when Meta.ordering contains expressions.",
+"masked": "Fixed crash of ordering by related fields when contains",
+"gold": [
+"django/db/models/expressions.py",
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 4989,
+"hash": "68da6b389c403cb91650754be0e2287696807333",
+"date": "2022-05-12",
+"raw": "Deprecated passing nulls_first/nulls_last=False to OrderBy and Expression.asc()/desc().",
+"masked": "Deprecated passing to and",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 4990,
+"hash": "3a82b5f655446f0ca89e3b6a92b100aa458f348f",
+"date": "2022-05-12",
+"raw": "Added 'step_size\u2019 to numeric form fields.",
+"masked": "Added to numeric form",
+"gold": [
+"django/core/validators.py",
+"django/forms/fields.py"
+]
+},
+{
+"k": 4991,
+"hash": "d27e6b233f83c3429f21ff3c250a28ff302637ef",
+"date": "2022-05-16",
+"raw": "Made Redis client pass CACHES[\"OPTIONS\"] to a connection pool.",
+"masked": "Made Redis client pass to a connection",
+"gold": [
+"django/core/cache/backends/redis.py"
+]
+},
+{
+"k": 4992,
+"hash": "76af861356eda3b08bc5e15ad1973f980c7604a3",
+"date": "2022-05-13",
+"raw": "Allowed GEOSGeometry.normalize() to return a normalized clone.",
+"masked": "Allowed to return a normalized",
+"gold": [
+"django/contrib/gis/geos/geometry.py"
+]
+},
+{
+"k": 4993,
+"hash": "11310e9abbdd784aea4ba50451144fc9c239f71f",
+"date": "2022-05-16",
+"raw": "Made RenameIndex operation a noop when the old and new name match.",
+"masked": "Made operation a noop when the old and new name",
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"k": 4994,
+"hash": "2a5d2eefc751be012fdebd75d8177c42bf5a76fc",
+"date": "2022-05-05",
+"raw": "Document HttpResponseBase and allow import from django.http",
+"masked": "Document and allow import from",
+"gold": [
+"django/http/__init__.py"
+]
+},
+{
+"k": 4995,
+"hash": "7f3cfaa12b28d15c0ca78bb692bfd6e59d17bff1",
+"date": "2022-05-17",
+"raw": "Moved internal URLResolver view-strings mapping to admindocs.",
+"masked": "Moved internal URLResolver view-strings mapping to",
+"gold": [
+"django/contrib/admindocs/apps.py",
+"django/contrib/admindocs/utils.py",
+"django/contrib/admindocs/views.py",
+"django/urls/resolvers.py"
+]
+},
+{
+"k": 4996,
+"hash": "19297de2fe5a9c47e471c64249366f39fe12f16a",
+"date": "2022-05-18",
+"raw": "Dropped support for MariaDB 10.3.",
+"masked": "Dropped support for",
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/backends/mysql/operations.py"
+]
+},
+{
+"k": 4997,
+"hash": "9f5548952906c6ea97200c016734b4f519520a64",
+"date": "2022-05-17",
+"raw": "Fixed crash when using IsNull() lookup in filters.",
+"masked": "Fixed crash when using lookup in",
+"gold": [
+"django/db/models/lookups.py"
+]
+},
+{
+"k": 4998,
+"hash": "981c23c0ccbcaa155a80f894fd9e832beaab661d",
+"date": "2022-05-19",
+"raw": "Dropped support for PostgreSQL 11.",
+"masked": "Dropped support for",
+"gold": [
+"django/contrib/postgres/constraints.py",
+"django/contrib/postgres/indexes.py",
+"django/contrib/postgres/operations.py",
+"django/db/backends/postgresql/features.py"
+]
+},
+{
+"k": 4999,
+"hash": "41c4cb253c137edf5a96b7408ea55d57d6e0602a",
+"date": "2022-05-19",
+"raw": "Fixed test command crash when running in parallel.",
+"masked": "Fixed test command crash when running in",
+"gold": [
+"django/test/runner.py"
+]
+},
+{
+"k": 5000,
+"hash": "1a78ef2b85467a18ea6d7eaa4b27f67d11c87b9e",
+"date": "2022-05-20",
+"raw": "Allowed keyboard interrupt to abort queries in MySQL dbshell.",
+"masked": "Allowed keyboard interrupt to abort queries in",
+"gold": [
+"django/db/backends/mysql/client.py"
+]
+},
+{
+"k": 5001,
+"hash": "0dd29209091280ccf34e07c9468746c396b7778e",
+"date": "2022-05-19",
+"raw": "Fixed template crash when calling methods for built-in types without required arguments.",
+"masked": "Fixed template crash when calling methods for built-in types without required",
+"gold": [
+"django/template/base.py"
+]
+},
+{
+"k": 5002,
+"hash": "b949e40e8c32a393f480399e2d70b653108098b6",
+"date": "2022-05-24",
+"raw": "Fixed removing unique_together constraint if exists primary key/unique constraint on the same field.",
+"masked": "Fixed removing constraint if exists primary constraint on the same",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 5003,
+"hash": "8c0886b068ba4e224dd78104b93c9638b860b398",
+"date": "2022-05-02",
+"raw": "Fixed crash of Feed with decorated methods.",
+"masked": "Fixed crash of Feed with decorated",
+"gold": [
+"django/contrib/syndication/views.py"
+]
+},
+{
+"k": 5004,
+"hash": "292f372768836e2aebc713064c5139e8067eebcb",
+"date": "2022-05-28",
+"raw": "Fixed date template filter crash with lazy format.",
+"masked": "Fixed date template filter crash with lazy",
+"gold": [
+"django/utils/formats.py"
+]
+},
+{
+"k": 5005,
+"hash": "f1e0fc645bb0b2c15d1510c9a8501743297dec9d",
+"date": "2022-05-30",
+"raw": "Fixed crash with prematurely closed ASGI request body.",
+"masked": "Fixed crash with prematurely closed request",
+"gold": [
+"django/core/handlers/asgi.py"
+]
+},
+{
+"k": 5006,
+"hash": "1058fc7023d04d07c22a5e667b6a446705119b14",
+"date": "2022-05-27",
+"raw": "Avoided clearing cached reference when saving child after parent.",
+"masked": "Avoided clearing cached reference when saving child after",
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"k": 5007,
+"hash": "295249c901e13ec1703ada5c414cd97aba72f3e9",
+"date": "2022-05-12",
+"raw": "Made inspectdb inform about composite primary keys.",
+"masked": "Made inspectdb inform about composite primary",
+"gold": [
+"django/core/management/commands/inspectdb.py",
+"django/db/backends/base/features.py",
+"django/db/backends/base/introspection.py",
+"django/db/backends/mysql/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/backends/oracle/introspection.py",
+"django/db/backends/postgresql/features.py",
+"django/db/backends/sqlite3/features.py",
+"django/db/backends/sqlite3/introspection.py"
+]
+},
+{
+"k": 5008,
+"hash": "46efd03d2674084051f7ce04006e95520649a1ac",
+"date": "2022-05-24",
+"raw": "Preserved wrapper assignment for manager methods.",
+"masked": "Preserved wrapper assignment for manager",
+"gold": [
+"django/db/models/manager.py"
+]
+},
+{
+"k": 5009,
+"hash": "6f73eb9d90cfec684529aab48d517e3d6449ba8c",
+"date": "2022-05-28",
+"raw": "Added id to GeoJSON serializer.",
+"masked": "Added id to",
+"gold": [
+"django/contrib/gis/serializers/geojson.py"
+]
+},
+{
+"k": 5010,
+"hash": "798b6c23ee52c675dd0f0e233c50cddd7ff15657",
+"date": "2022-06-02",
+"raw": "Fixed migration optimization after altering field to ManyToManyField.",
+"masked": "Fixed migration optimization after altering field to",
+"gold": [
+"django/db/migrations/autodetector.py"
+]
+},
+{
+"k": 5011,
+"hash": "fbac2a4dd846b52c4f379eacb5bab654fe9540cc",
+"date": "2022-06-02",
+"raw": "Skipped extra resolution for successful requests not ending with /.",
+"masked": "Skipped extra resolution for successful requests not ending with",
+"gold": [
+"django/middleware/common.py"
+]
+},
+{
+"k": 5012,
+"hash": "286e7d076cfb7b4b0bdfc917de3020e6e89683f6",
+"date": "2022-06-02",
+"raw": "Deprecated BaseUserManager.make_random_password().",
+"masked": "Deprecated",
+"gold": [
+"django/contrib/auth/base_user.py"
+]
+},
+{
+"k": 5013,
+"hash": "c32858a8ce961d276215a040ae0ab1e4409b70f8",
+"date": "2022-03-17",
+"raw": "Improved locale format validation for the makemessages command.",
+"masked": "Improved locale format validation for the makemessages",
+"gold": [
+"django/core/management/commands/makemessages.py"
+]
+},
+{
+"k": 5014,
+"hash": "e96320c91724830034033a9cb8afd9cf8c11e2fd",
+"date": "2022-06-02",
+"raw": "Moved ASGI body-file cleanup into request class.",
+"masked": "Moved body-file cleanup into request",
+"gold": [
+"django/contrib/staticfiles/handlers.py",
+"django/core/handlers/asgi.py",
+"django/core/handlers/wsgi.py",
+"django/http/request.py",
+"django/test/client.py"
+]
+},
+{
+"k": 5015,
+"hash": "de1c8320cedee5d4f91b153a7fe82eb63876470f",
+"date": "2022-06-13",
+"raw": "Made Index with multiple fields respect DEFAULT_INDEX_TABLESPACE.",
+"masked": "Made Index with multiple fields respect",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 5016,
+"hash": "d287294885e116c49c87f0c663068511a8402c0f",
+"date": "2022-06-12",
+"raw": "Added QuerySet.first()/last() error message on unordered queryset with aggregation.",
+"masked": "Added error message on unordered queryset with",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 5017,
+"hash": "759ff4862a815d55c59bd8147bb180e08431e9c4",
+"date": "2022-06-16",
+"raw": "Confirmed support for GDAL 3.5.",
+"masked": "Confirmed support for",
+"gold": [
+"django/contrib/gis/gdal/libgdal.py"
+]
+},
+{
+"k": 5018,
+"hash": "e286ce17ff8bf72a248ce3177bbd5163c50a6ded",
+"date": "2022-06-14",
+"raw": "Added --update option to makemigrations command.",
+"masked": "Added --update option to makemigrations",
+"gold": [
+"django/core/management/commands/makemigrations.py"
+]
+},
+{
+"k": 5019,
+"hash": "3ef37a5245015f69a9b9f884ebc289a35d02c5f6",
+"date": "2022-06-17",
+"raw": "Fixed QuerySet.update() on querysets ordered by annotations.",
+"masked": "Fixed on querysets ordered by",
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/models/query.py"
+]
+},
+{
+"k": 5020,
+"hash": "8d160f154f0240a423e83ffe0690e472f837373c",
+"date": "2022-06-17",
+"raw": "Added TrigramStrictWordSimilarity() and TrigramStrictWordDistance() on PostgreSQL.",
+"masked": "Added and on",
+"gold": [
+"django/contrib/postgres/apps.py",
+"django/contrib/postgres/lookups.py",
+"django/contrib/postgres/search.py"
+]
+},
+{
+"k": 5021,
+"hash": "901a1691982cab76349d33e51b72c40120ec927a",
+"date": "2022-06-16",
+"raw": "Made parsing HTTP Accept-Language header case-insensitive.",
+"masked": "Made parsing Accept-Language header",
+"gold": [
+"django/utils/translation/trans_null.py",
+"django/utils/translation/trans_real.py"
+]
+},
+{
+"k": 5022,
+"hash": "d7f5bfd241666c0a76e90208da1e9ef81aec44db",
+"date": "2022-06-16",
+"raw": "Fixed pickling HttpResponse and subclasses.",
+"masked": "Fixed pickling and",
+"gold": [
+"django/http/response.py",
+"django/template/response.py"
+]
+},
+{
+"k": 5023,
+"hash": "2887b9f67cadc5295ef6a0574de2c2c8fdd66905",
+"date": "2022-06-20",
+"raw": "Allowed customizing formatter class of argument parsers.",
+"masked": "Allowed customizing formatter class of argument",
+"gold": [
+"django/core/management/base.py"
+]
+},
+{
+"k": 5024,
+"hash": "de74a74b4b889c986cabab837bb03e2113880afe",
+"date": "2022-06-21",
+"raw": "Fixed string-casting of GIS queries on PostgreSQL.",
+"masked": "Fixed string-casting of queries on",
+"gold": [
+"django/contrib/gis/db/backends/postgis/adapter.py"
+]
+},
+{
+"k": 5025,
+"hash": "d80a2585532ef15184afed6cf4ec1358198a894d",
+"date": "2022-06-20",
+"raw": "Used ModelAdmin's opts attribute instead of model._meta.",
+"masked": "Used opts attribute instead of",
+"gold": [
+"django/contrib/admin/options.py",
+"django/contrib/auth/admin.py"
+]
+},
+{
+"k": 5026,
+"hash": "c627226d05dd52aef59447dcfb29cec2c2b11b8a",
+"date": "2022-06-23",
+"raw": "Fixed #33799, Refs #31685 -- Added parameters for updating conflicts to QuerySeta.abulk_create().",
+"masked": "Fixed #33799, Refs #31685 -- Added parameters for updating conflicts to",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 5027,
+"hash": "083bfca6b6c00d0f45837a65c2db721eaf46bc07",
+"date": "2022-06-23",
+"raw": "Fixed system check for the same template tag module in installed apps and template tag libraries.",
+"masked": "Fixed system check for the same template tag module in installed apps and template tag",
+"gold": [
+"django/core/checks/templates.py"
+]
+},
+{
+"k": 5028,
+"hash": "44ffd8d06fabc07d8333f31439e8dd39ea87329b",
+"date": "2022-06-24",
+"raw": "Fixed ordered combined queryset crash when used in subquery on PostgreSQL and MySQL.",
+"masked": "Fixed ordered combined queryset crash when used in subquery on and",
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5029,
+"hash": "eb7b8f3699fbe5ad6aaafb264355741648fdd5e4",
+"date": "2022-06-27",
+"raw": "Made admin's many-to-many widgets do not display help text for selecting values when allow_multiple_selected is False.",
+"masked": "Made many-to-many widgets do not display help text for selecting values when is",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 5030,
+"hash": "72e41a0df6db23410135364223eeda83ac2a8b27",
+"date": "2022-06-23",
+"raw": "Allowed customizing encoder class in django.utils.html.json_script().",
+"masked": "Allowed customizing encoder class in",
+"gold": [
+"django/utils/html.py"
+]
+},
+{
+"k": 5031,
+"hash": "425718726b7d2edd7b8a043f8976e437262b5098",
+"date": "2022-07-04",
+"raw": "Fixed QuerySet.only() after select_related() crash on proxy models.",
+"masked": "Fixed after crash on proxy",
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 5032,
+"hash": "249ecc437f79c08b087d0daa0ec8b41f9b25a238",
+"date": "2022-07-05",
+"raw": "Fixed last_executed_query() on Oracle when parameter names overlap.",
+"masked": "Fixed on Oracle when parameter names",
+"gold": [
+"django/db/backends/oracle/operations.py"
+]
+},
+{
+"k": 5033,
+"hash": "18c5ba07cc81be993941ecc2ecc17923b401b66f",
+"date": "2022-07-04",
+"raw": "Fixed save() crash on model formsets when not created by modelformset_factory().",
+"masked": "Fixed crash on model formsets when not created by",
+"gold": [
+"django/forms/models.py"
+]
+},
+{
+"k": 5034,
+"hash": "3926e35aa8c947b4c87aea33546b2e45347eaaa3",
+"date": "2022-07-04",
+"raw": "Made inspectdb generate unique related_name when reverse accessor clashes.",
+"masked": "Made inspectdb generate unique when reverse accessor",
+"gold": [
+"django/core/management/commands/inspectdb.py"
+]
+},
+{
+"k": 5035,
+"hash": "608ab043f75f1f9c094de57d2fd678f522bb8243",
+"date": "2022-07-05",
+"raw": "Fixed RedisCache.set_many()/delete_many() crash with an empty list.",
+"masked": "Fixed crash with an empty",
+"gold": [
+"django/core/cache/backends/redis.py"
+]
+},
+{
+"k": 5036,
+"hash": "ccbf714ebeff51d1370789e5e487a978d0e2dbfb",
+"date": "2022-07-07",
+"raw": "Made BaseConstraint.deconstruct() and equality handle violation_error_message.",
+"masked": "Made and equality handle",
+"gold": [
+"django/contrib/postgres/constraints.py",
+"django/db/models/constraints.py"
+]
+},
+{
+"k": 5037,
+"hash": "eb3699ea775548a22e0407ad12bf8cbdeaf95ff5",
+"date": "2022-07-08",
+"raw": "Dropped support for MySQL 5.7.",
+"masked": "Dropped support for",
+"gold": [
+"django/contrib/gis/db/backends/mysql/features.py",
+"django/contrib/gis/db/backends/mysql/introspection.py",
+"django/contrib/gis/db/backends/mysql/operations.py",
+"django/contrib/gis/db/backends/mysql/schema.py",
+"django/db/backends/mysql/features.py",
+"django/db/backends/mysql/operations.py"
+]
+},
+{
+"k": 5038,
+"hash": "a6385b382e05a614a99e5a5913d8e631823159a2",
+"date": "2022-05-17",
+"raw": "Deprecated Meta.index_together in favor of Meta.indexes.",
+"masked": "Deprecated in favor of",
+"gold": [
+"django/db/migrations/operations/models.py",
+"django/db/models/options.py"
+]
+},
+{
+"k": 5039,
+"hash": "d4c5d2b52c897ccc07f04482d3f42f976a79223c",
+"date": "2022-07-13",
+"raw": "Marked {% blocktranslate asvar %} result as HTML safe.",
+"masked": "Marked {% blocktranslate asvar %} result as",
+"gold": [
+"django/templatetags/i18n.py"
+]
+},
+{
+"k": 5040,
+"hash": "f0fa2a3b49797f1e9830e2a0d2072119093b4452",
+"date": "2022-07-15",
+"raw": "Optimized StateApps.clone().",
+"masked": "Optimized",
+"gold": [
+"django/db/migrations/state.py"
+]
+},
+{
+"k": 5041,
+"hash": "3e3e8141662c70d74d3aaef9d4b053c9636ea0d7",
+"date": "2022-07-17",
+"raw": "Corrected the order of parameters in dbshell on PostgreSQL.",
+"masked": "Corrected the order of parameters in dbshell on",
+"gold": [
+"django/db/backends/postgresql/client.py"
+]
+},
+{
+"k": 5042,
+"hash": "24effbceb871e71d3bc320b91252f743714722df",
+"date": "2022-07-19",
+"raw": "Removed unnecessary system check calls from test worker initialization.",
+"masked": "Removed unnecessary system check calls from test worker",
+"gold": [
+"django/test/runner.py"
+]
+},
+{
+"k": 5044,
+"hash": "f2dd652245987465754c7242b60ccaba03a20f06",
+"date": "2022-07-23",
+"raw": "Fixed JavaScriptCatalog with more than 1 level of fallback translations.",
+"masked": "Fixed with more than 1 level of fallback",
+"gold": [
+"django/views/i18n.py"
+]
+},
+{
+"k": 5045,
+"hash": "2d23a07817b67825735a6900ebed505a004f7788",
+"date": "2022-07-25",
+"raw": "Added pathlib.Path support to GDALRaster constructor.",
+"masked": "Added support to GDALRaster",
+"gold": [
+"django/contrib/gis/gdal/raster/source.py"
+]
+},
+{
+"k": 5046,
+"hash": "1e5bbbb2a866faf56e00eb744ab940e40e87d497",
+"date": "2022-07-29",
+"raw": "Allowed GeoIP2 to use DB-IP Lite datasets.",
+"masked": "Allowed to use DB-IP Lite",
+"gold": [
+"django/contrib/gis/geoip2/base.py"
+]
+},
+{
+"k": 5047,
+"hash": "89e695a69b16b8c0e720169b3ca4852cfd0c485f",
+"date": "2022-08-02",
+"raw": "Fixed #33876, Refs #32229 -- Made management forms render with div.html template.",
+"masked": "Fixed #33876, Refs #32229 -- Made management forms render with",
+"gold": [
+"django/forms/formsets.py"
+]
+},
+{
+"k": 5048,
+"hash": "ab1955a05e369337c3eaad1a2d34de346932179d",
+"date": "2022-08-02",
+"raw": "Added support for database collations to ArrayField(Char/TextFields).",
+"masked": "Added support for database collations to",
+"gold": [
+"django/contrib/postgres/fields/array.py",
+"django/db/backends/base/schema.py",
+"django/db/backends/oracle/schema.py",
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 5049,
+"hash": "cb791a2540c289390b68a3ea9c6a79476890bab2",
+"date": "2022-08-03",
+"raw": "Deprecated django.contrib.postgres.fields.CIText/CICharField/CIEmailField/CITextField.",
+"masked": "Deprecated",
+"gold": [
+"django/contrib/postgres/fields/array.py",
+"django/contrib/postgres/fields/citext.py",
+"django/db/backends/postgresql/operations.py"
+]
+},
+{
+"k": 5050,
+"hash": "e7afb8a18061f664a5d20d409d423b77195e6060",
+"date": "2022-08-03",
+"raw": "Reallowed using GeoIP2() when GEOS is not installed.",
+"masked": "Reallowed using when is not",
+"gold": [
+"django/contrib/gis/geoip2/base.py"
+]
+},
+{
+"k": 5051,
+"hash": "0638b4e23dbabdcf7d7a6f2a2d5b95b980dece78",
+"date": "2022-08-03",
+"raw": "Fixed get_select2_language() crash with no language activated.",
+"masked": "Fixed crash with no language",
+"gold": [
+"django/contrib/admin/widgets.py"
+]
+},
+{
+"k": 5052,
+"hash": "d4db417c8e6935222d198925dd4c5ac1ca737909",
+"date": "2022-08-04",
+"raw": "Fixed test command crash when running in parallel using spawn.",
+"masked": "Fixed test command crash when running in parallel using",
+"gold": [
+"django/test/runner.py"
+]
+},
+{
+"k": 5053,
+"hash": "fd93db97c7228b16a4f92f97ef05b0d72418d952",
+"date": "2022-08-06",
+"raw": "Fixed Window() expression crash with ArrayAgg().",
+"masked": "Fixed expression crash with",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 5054,
+"hash": "c0beff21239e70cbdcc9597e5be09e505bb8f76c",
+"date": "2022-08-06",
+"raw": "Fixed migration crash when removing indexed field on SQLite 3.35.5+.",
+"masked": "Fixed migration crash when removing indexed field on SQLite",
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+]
+},
+{
+"k": 5055,
+"hash": "e03cdf76e78ea992763df4d3e16217d298929301",
+"date": "2022-08-04",
+"raw": "Allowed ModelForm meta to specify form fields.",
+"masked": "Allowed meta to specify form",
+"gold": [
+"django/forms/models.py"
+]
+},
+{
+"k": 5056,
+"hash": "63884829acd207404f2a5c3cc1d6b4cd0a822b70",
+"date": "2022-08-09",
+"raw": "Fixed Meta.constraints validation crash with F() expressions.",
+"masked": "Fixed validation crash with",
+"gold": [
+"django/db/models/constraints.py",
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 5057,
+"hash": "036bb2b74afb50a71e7a945e8dd83499b603ac3a",
+"date": "2022-08-07",
+"raw": "Fixed Case() crash with filters that match everything in When().",
+"masked": "Fixed crash with filters that match everything in",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 5058,
+"hash": "e0ae1363ec2aa71945be26f869cafd4181ccbc95",
+"date": "2022-08-09",
+"raw": "Fixed CheckConstraint() validation on range fields.",
+"masked": "Fixed validation on range",
+"gold": [
+"django/contrib/postgres/fields/ranges.py"
+]
+},
+{
+"k": 5059,
+"hash": "8403da3696730f8b9e7d2ad20c920fcd7c52b62c",
+"date": "2022-08-10",
+"raw": "Made PostGIS backend skip extension creation if installed.",
+"masked": "Made backend skip extension creation if",
+"gold": [
+"django/contrib/gis/db/backends/postgis/base.py"
+]
+},
+{
+"k": 5060,
+"hash": "4fcba800b84fc5fb53cdc70e4bea37ec958516fd",
+"date": "2022-08-12",
+"raw": "Deprecated BaseGeometryWidget.map_height/map_width attributes.",
+"masked": "Deprecated",
+"gold": [
+"django/contrib/gis/forms/widgets.py"
+]
+},
+{
+"k": 5061,
+"hash": "5c803bc0702511c8bc05e9db600367a465514f82",
+"date": "2022-08-12",
+"raw": "Fixed adding AutoFields on PostgreSQL.",
+"masked": "Fixed adding on",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 5062,
+"hash": "f3f9d03edf17ccfa17263c7efa0b1350d1ac9278",
+"date": "2022-08-14",
+"raw": "Skipped varchar_pattern_ops/text_pattern_ops index creation when db_collation is set.",
+"masked": "Skipped index creation when is",
+"gold": [
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 5063,
+"hash": "242499f2dc2bf24a9a5c855690a2e13d3303581a",
+"date": "2022-08-13",
+"raw": "Added prefetch_related() support for sliced queries.",
+"masked": "Added support for sliced",
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 5064,
+"hash": "e3cb8bcb7d2a2d392e726ee1f7e32a8d9038e14c",
+"date": "2022-08-17",
+"raw": "Fixed altering AutoFields to OneToOneField on PostgreSQL.",
+"masked": "Fixed altering to on",
+"gold": [
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 5065,
+"hash": "903ac2f36439ab33039be077f474c23a3b72bf78",
+"date": "2022-08-23",
+"raw": "Fixed fixture dirs duplicates with Path instances.",
+"masked": "Fixed fixture dirs duplicates with Path",
+"gold": [
+"django/core/management/commands/loaddata.py"
+]
+},
+{
+"k": 5066,
+"hash": "897f38fabea5e1b196f11250ff6dadfffa489840",
+"date": "2022-08-22",
+"raw": "Fixed crash when displaying ArrayField with choices in admin.",
+"masked": "Fixed crash when displaying with choices in",
+"gold": [
+"django/contrib/admin/utils.py"
+]
+},
+{
+"k": 5067,
+"hash": "16fffc829cbcb231b7276d7e1d0bb836a515873b",
+"date": "2022-08-11",
+"raw": "Added support for serialization of enum.Flag in migrations.",
+"masked": "Added support for serialization of in",
+"gold": [
+"django/db/migrations/serializer.py"
+]
+},
+{
+"k": 5068,
+"hash": "9942f3fb490f56bf28ee69f0a07f3eb62e7d3ab3",
+"date": "2022-08-24",
+"raw": "Fixed VariableDoesNotExist when rendering ClearableFileInput.",
+"masked": "Fixed when rendering",
+"gold": [
+"django/forms/widgets.py"
+]
+},
+{
+"k": 5069,
+"hash": "71902e0d9f93670c4f93ff9d66095b0e571be74b",
+"date": "2022-08-19",
+"raw": "Fixed migration crash for m2m with a through model in another app.",
+"masked": "Fixed migration crash for m2m with a through model in another",
+"gold": [
+"django/db/migrations/autodetector.py"
+]
+},
+{
+"k": 5070,
+"hash": "166a3b32632c141541d1c3f0eff18e1d8b389404",
+"date": "2022-08-24",
+"raw": "Reverted \"Fixed #33201 -- Made RenameModel operation a noop for models with db_table.\"",
+"masked": "Reverted #33201 -- Made operation a noop for models with",
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"k": 5071,
+"hash": "0701bb8e1f1771b36cdde45602ad377007e372b3",
+"date": "2022-08-17",
+"raw": "Avoided unnecessary queries when cascade updating.",
+"masked": "Avoided unnecessary queries when cascade",
+"gold": [
+"django/db/models/deletion.py"
+]
+},
+{
+"k": 5072,
+"hash": "806e9e2d0dcf8f58e376fb7e2a8b9771e2a9ce16",
+"date": "2022-08-24",
+"raw": "Reallowed creating reverse foreign key managers on unsaved instances.",
+"masked": "Reallowed creating reverse foreign key managers on unsaved",
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 5073,
+"hash": "b92ffebb0cdc469baaf1b8f0e72dddb069eb2fb4",
+"date": "2022-08-26",
+"raw": "Prevented models.DecimalField from accepting NaN, Inf, and -Inf values.",
+"masked": "Prevented from accepting Inf, and -Inf",
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"k": 5074,
+"hash": "4483a9b12f295908e68b82d6599f460de943444f",
+"date": "2022-08-29",
+"raw": "Fixed migrations crash on SQLite < 3.26.",
+"masked": "Fixed migrations crash on SQLite",
+"gold": [
+"django/db/backends/sqlite3/base.py"
+]
+},
+{
+"k": 5075,
+"hash": "b3db6c8dcb5145f7d45eff517bcd96460475c879",
+"date": "2022-08-18",
+"raw": "Tracked field deferrals by field instead of models.",
+"masked": "Tracked field deferrals by field instead of",
+"gold": [
+"django/db/models/query_utils.py",
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 5076,
+"hash": "974942a75039ba43e618f6a5ff95e08b5d5176fd",
+"date": "2022-09-01",
+"raw": "Fixed #33955, Fixed #33971 -- Reverted \"Fixed #32565 -- Moved internal URLResolver view-strings mapping to admindocs.\"",
+"masked": "Fixed #33955, Fixed #33971 -- Reverted #32565 -- Moved internal URLResolver view-strings mapping to",
+"gold": [
+"django/contrib/admindocs/apps.py",
+"django/contrib/admindocs/utils.py",
+"django/contrib/admindocs/views.py",
+"django/urls/resolvers.py"
+]
+},
+{
+"k": 5077,
+"hash": "cd1afd553f9c175ebccfc0f50e72b43b9604bd97",
+"date": "2022-06-23",
+"raw": "Allowed registering lookups per field instances.",
+"masked": "Allowed registering lookups per field",
+"gold": [
+"django/db/models/fields/related.py",
+"django/db/models/query_utils.py"
+]
+},
+{
+"k": 5078,
+"hash": "19e0587ee596debf77540d6a08ccb6507e60b6a7",
+"date": "2022-09-03",
+"raw": "Optimized serialization of related m2m fields without natural keys.",
+"masked": "Optimized serialization of related m2m fields without natural",
+"gold": [
+"django/core/serializers/python.py",
+"django/core/serializers/xml_serializer.py"
+]
+},
+{
+"k": 5079,
+"hash": "4a1150b41d1312feacd4316b2691227f5a509ae9",
+"date": "2022-06-07",
+"raw": "Allowed registering callbacks that can fail in transaction.on_commit().",
+"masked": "Allowed registering callbacks that can fail in",
+"gold": [
+"django/db/backends/base/base.py",
+"django/db/transaction.py",
+"django/test/testcases.py"
+]
+},
+{
+"k": 5080,
+"hash": "19e838daa8872ee29fbea0bc471c2a6443f26835",
+"date": "2022-09-07",
+"raw": "Fixed migrations crash when adding model with ExclusionConstraint.",
+"masked": "Fixed migrations crash when adding model with",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 5081,
+"hash": "42cd8c390d5f165fd7f6bbdffafd2aa4c2d9a32a",
+"date": "2022-08-24",
+"raw": "Hardened binary lookup in template commands.",
+"masked": "Hardened binary lookup in template",
+"gold": [
+"django/core/management/templates.py",
+"django/core/management/utils.py"
+]
+},
+{
+"k": 5082,
+"hash": "32536b1324e98768dd892980408a8c6b26c23fd9",
+"date": "2022-09-07",
+"raw": "Fixed queryset crash when aggregating over a group containing Exists.",
+"masked": "Fixed queryset crash when aggregating over a group containing",
+"gold": [
+"django/db/models/expressions.py",
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5083,
+"hash": "32797e7fbfb28c4cd2210aae37157267d237364f",
+"date": "2022-09-06",
+"raw": "Fixed __in lookup when rhs is a queryset with annotate() and alias().",
+"masked": "Fixed lookup when rhs is a queryset with and",
+"gold": [
+"django/db/models/fields/related_lookups.py",
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 5084,
+"hash": "f3cd252cfc46c0c7d66e765818dd3dadf60d4d0e",
+"date": "2022-09-09",
+"raw": "Fixed FormSet.empty_form crash when empty_permitted is passed to form_kwargs.",
+"masked": "Fixed crash when is passed to",
+"gold": [
+"django/forms/formsets.py"
+]
+},
+{
+"k": 5085,
+"hash": "e911e0996f1096cc23ef03b1ca70da7499dd8f2f",
+"date": "2022-09-10",
+"raw": "Fixed numberformat.format() crash on empty strings.",
+"masked": "Fixed crash on empty",
+"gold": [
+"django/utils/numberformat.py"
+]
+},
+{
+"k": 5087,
+"hash": "e14d08cd894e9d91cb5d9f44ba7532c1a223f458",
+"date": "2022-09-09",
+"raw": "Fixed CheckConstraint validation on NULL values.",
+"masked": "Fixed validation on",
+"gold": [
+"django/db/backends/base/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/models/query_utils.py"
+]
+},
+{
+"k": 5088,
+"hash": "6220c445c40a6a7f4d442de8bde2628346153963",
+"date": "2022-08-09",
+"raw": "Fixed pickling HttpRequest and subclasses.",
+"masked": "Fixed pickling and",
+"gold": [
+"django/core/handlers/wsgi.py",
+"django/http/request.py",
+"django/http/response.py"
+]
+},
+{
+"k": 5089,
+"hash": "10178197d57476f69688d4535e550a1ea3a5eac5",
+"date": "2022-08-30",
+"raw": "Added support for using KeyTextTransform from lookup.",
+"masked": "Added support for using from",
+"gold": [
+"django/db/models/fields/json.py"
+]
+},
+{
+"k": 5090,
+"hash": "ae509f8f0804dea0eea89e27329014616c9d4cc0",
+"date": "2022-09-16",
+"raw": "Fixed DecimalValidator validating 0 in positive exponent scientific notation.",
+"masked": "Fixed validating 0 in positive exponent scientific",
+"gold": [
+"django/core/validators.py"
+]
+},
+{
+"k": 5091,
+"hash": "f88fc72da4eb76f2d464edb4874ef6046f8a8658",
+"date": "2022-09-16",
+"raw": "Fixed QuerySet.values()/values_list() crash on ArrayAgg() and JSONBAgg().",
+"masked": "Fixed crash on and",
+"gold": [
+"django/contrib/postgres/aggregates/mixins.py"
+]
+},
+{
+"k": 5092,
+"hash": "ce6230aa976e8d963226a3956b45a8919215dbd8",
+"date": "2022-09-22",
+"raw": "Allowed filtering by transforms on relation fields.",
+"masked": "Allowed filtering by transforms on relation",
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 5093,
+"hash": "1674c70525bc370132a1db27617e468081920d11",
+"date": "2022-09-24",
+"raw": "Fixed crash when aggregating querysets with Q objects annotations.",
+"masked": "Fixed crash when aggregating querysets with Q objects",
+"gold": [
+"django/db/models/sql/where.py"
+]
+},
+{
+"k": 5094,
+"hash": "0f31d10c7cf94318395f51d2613297acf1970e69",
+"date": "2022-09-24",
+"raw": "Added inline argument to user_deleted_form().",
+"masked": "Added inline argument to",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 5095,
+"hash": "f3822d4ab005ac5db9000ed384519edfd5bbc041",
+"date": "2022-09-24",
+"raw": "Fixed WKBReader.read() crash on string input.",
+"masked": "Fixed crash on string",
+"gold": [
+"django/contrib/gis/geos/prototypes/io.py"
+]
+},
+{
+"k": 5096,
+"hash": "9f8c994851804863d556854f5231316eec478bd5",
+"date": "2022-09-24",
+"raw": "Fixed migrations crash when altering type of char/text fields referenced by foreign key on PostgreSQL.",
+"masked": "Fixed migrations crash when altering type of fields referenced by foreign key on",
+"gold": [
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 5097,
+"hash": "cd03e8e2d698e9ccefae2f7687a0400329e6cbe6",
+"date": "2022-09-26",
+"raw": "Replaced invalid chars in migration names with '_'.",
+"masked": "Replaced invalid chars in migration names with",
+"gold": [
+"django/db/migrations/migration.py"
+]
+},
+{
+"k": 5098,
+"hash": "cff1f888e997522666835f96833840f52a13d322",
+"date": "2022-09-27",
+"raw": "Resolved output_field for combined numeric expressions with MOD operator.",
+"masked": "Resolved for combined numeric expressions with",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 5099,
+"hash": "1a7b6909ac030d2c4dae2664b08ee0bce9c4c915",
+"date": "2022-09-27",
+"raw": "Made migrate --check don't emit signals and output when up to date.",
+"masked": "Made migrate --check emit signals and output when up to",
+"gold": [
+"django/core/management/commands/migrate.py"
+]
+},
+{
+"k": 5100,
+"hash": "80d38de52bb2721a7b44fce4057bcff571afc23a",
+"date": "2022-09-25",
+"raw": "Made makemigrations --check exit before making migrations.",
+"masked": "Made makemigrations --check exit before making",
+"gold": [
+"django/core/management/commands/makemigrations.py"
+]
+},
+{
+"k": 5101,
+"hash": "fa3afc5d86f1f040922cca2029d6a34301597a70",
+"date": "2022-09-28",
+"raw": "Updated the list of common passwords for CommonPasswordValidator.",
+"masked": "Updated the list of common passwords for",
+"gold": [
+"django/contrib/auth/password_validation.py"
+]
+},
+{
+"k": 5102,
+"hash": "4a910f3de35338df7d4fcd8b7729fd1e31edaad0",
+"date": "2022-09-28",
+"raw": "Made parallel tests using spawn set up Django.",
+"masked": "Made parallel tests using spawn set up",
+"gold": [
+"django/test/runner.py"
+]
+},
+{
+"k": 5103,
+"hash": "19e6efa50b603af325e7f62058364f278596758f",
+"date": "2022-09-29",
+"raw": "Changed sequence types when altering pre-Django 4.1 auto fields on PostgreSQL.",
+"masked": "Changed sequence types when altering pre-Django auto fields on",
+"gold": [
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 5104,
+"hash": "9b0c9821ed4dd9920cc7c5e7b657720d91a89bdc",
+"date": "2022-09-29",
+"raw": "Updated View.http_method_not_allowed() to support async.",
+"masked": "Updated to support",
+"gold": [
+"django/views/generic/base.py"
+]
+},
+{
+"k": 5105,
+"hash": "6cc0f22a73970dd7c0d29d4d8d2ff9e1cc862b30",
+"date": "2022-09-27",
+"raw": "Made QuerySet.update_or_create() save only fields passed in defaults or with custom pre_save().",
+"masked": "Made save only fields passed in defaults or with custom",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 5106,
+"hash": "5e0aa362d91d000984995ce374c2d7547d8d107f",
+"date": "2022-09-30",
+"raw": "Reverted \"Fixed #32980 -- Made models cache related managers.\"",
+"masked": "Reverted #32980 -- Made models cache related",
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/base.py",
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 5107,
+"hash": "3b4a5b9f97f113ca5151cff744019e39a1ed7475",
+"date": "2022-10-02",
+"raw": "Used \"raise from\" when raising TransactionManagementError.",
+"masked": "Used when raising",
+"gold": [
+"django/db/backends/base/base.py",
+"django/db/transaction.py"
+]
+},
+{
+"k": 5108,
+"hash": "649b28eab6765cd6b2b40c779a18ecafc99b43d7",
+"date": "2022-09-25",
+"raw": "Added subsecond support to Now() on SQLite and MySQL.",
+"masked": "Added subsecond support to on SQLite and",
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/models/functions/datetime.py"
+]
+},
+{
+"k": 5109,
+"hash": "4771a1694b3b54c7309602820881d3ec9cc2c809",
+"date": "2022-09-18",
+"raw": "Made QuerySet.order_by() apply transforms on related fields for models with Meta.ordering.",
+"masked": "Made apply transforms on related fields for models with",
+"gold": [
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 5110,
+"hash": "9fbb5b5e16b44dff97a3caa0e288803a80fabdd3",
+"date": "2022-10-04",
+"raw": "Corrected output of runserver command for \"0\" IP address.",
+"masked": "Corrected output of runserver command for",
+"gold": [
+"django/core/management/commands/runserver.py"
+]
+},
+{
+"k": 5111,
+"hash": "344d31c7e9ede4088e85c859f488d7a926918ec0",
+"date": "2022-10-03",
+"raw": "Improved error message for Range(Min/Max)ValueValidator.",
+"masked": "Improved error message for",
+"gold": [
+"django/contrib/postgres/validators.py"
+]
+},
+{
+"k": 5112,
+"hash": "c58a8acd413ccc992dd30afd98ed900897e1f719",
+"date": "2022-07-04",
+"raw": "Fixed ordering compound queries by nulls_first/nulls_last on MySQL.",
+"masked": "Fixed ordering compound queries by on",
+"gold": [
+"django/db/backends/base/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5113,
+"hash": "7a39a691e1e3fe13588c8885a222eaa6a4648d01",
+"date": "2022-09-24",
+"raw": "Made ModelAdmin.list_editable use transactions.",
+"masked": "Made use",
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"k": 5114,
+"hash": "84206607d6bfd61e7f7a88b51163ffd4153e3b5a",
+"date": "2022-10-10",
+"raw": "Fixed ContentTypeManager.get_for_models() crash when using in migrations.",
+"masked": "Fixed crash when using in",
+"gold": [
+"django/contrib/contenttypes/models.py"
+]
+},
+{
+"k": 5115,
+"hash": "94e7f471c4edef845a4fe5e3160132997b4cca81",
+"date": "2022-10-02",
+"raw": "Made LocaleMiddleware respect language from requests when i18n patterns are used.",
+"masked": "Made respect language from requests when i18n patterns are",
+"gold": [
+"django/middleware/locale.py",
+"django/utils/translation/trans_null.py",
+"django/utils/translation/trans_real.py"
+]
+},
+{
+"k": 5116,
+"hash": "d62563cbb194c420f242bfced52b37d6638e67c6",
+"date": "2022-10-18",
+"raw": "Fixed crash of ordering by nested selected expression.",
+"masked": "Fixed crash of ordering by nested selected",
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5117,
+"hash": "5c2c7277d4554db34c585477b269bb1acfcbbe56",
+"date": "2022-10-18",
+"raw": "Made management commands don't use black for non-Python files.",
+"masked": "Made management commands use black for non-Python",
+"gold": [
+"django/core/management/templates.py"
+]
+},
+{
+"k": 5118,
+"hash": "3283120cca5d5eba5c3619612d0de5ad49dcf054",
+"date": "2022-10-21",
+"raw": "Made test runner with --debug-sql format SQL queries.",
+"masked": "Made test runner with --debug-sql format",
+"gold": [
+"django/test/runner.py"
+]
+},
+{
+"k": 5119,
+"hash": "08c5a787262c1ae57f6517d4574b54a5fcaad124",
+"date": "2022-10-24",
+"raw": "Fixed loss of precision for Decimal values in floatformat filter.",
+"masked": "Fixed loss of precision for Decimal values in floatformat",
+"gold": [
+"django/template/defaultfilters.py"
+]
+},
+{
+"k": 5120,
+"hash": "64e5ef1f17cd18cb8ca24f4e7107dfd28c18b378",
+"date": "2022-09-14",
+"raw": "Fixed file_move_safe() crash when moving files with SELinux.",
+"masked": "Fixed crash when moving files with",
+"gold": [
+"django/core/files/move.py"
+]
+},
+{
+"k": 5121,
+"hash": "c0fc1b5302f5d9d82e2255fb5758321fbac34949",
+"date": "2022-10-16",
+"raw": "Fixed rendering ClearableFileInput when editing with invalid files.",
+"masked": "Fixed rendering when editing with invalid",
+"gold": [
+"django/forms/fields.py"
+]
+},
+{
+"k": 5122,
+"hash": "350455b666a289d336fca770578887ce51f1aebe",
+"date": "2022-10-26",
+"raw": "Cleansed sessionid cookie in error reports.",
+"masked": "Cleansed sessionid cookie in error",
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"k": 5123,
+"hash": "de2c2127b66e77a034c01c81753c5c08e651a5b4",
+"date": "2022-09-30",
+"raw": "Fixed link to password reset view in UserChangeForm.password's help text when using to_field.",
+"masked": "Fixed link to password reset view in help text when using",
+"gold": [
+"django/contrib/auth/forms.py"
+]
+},
+{
+"k": 5124,
+"hash": "c2cc80756b8949cdd87b88bbfdfee698ced441e0",
+"date": "2022-10-29",
+"raw": "Fixed sliced QuerySet.union() crash on a single non-empty queryset.",
+"masked": "Fixed sliced crash on a single non-empty",
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5125,
+"hash": "a320aab5129f4019b3c1d28b7a3b509582bc56f9",
+"date": "2022-09-26",
+"raw": "Added logical NOT support to F expressions.",
+"masked": "Added logical support to F",
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"k": 5126,
+"hash": "d5bcdf858d962d02de925603c17986980f03729a",
+"date": "2022-10-30",
+"raw": "Added async-compatible interface to Model methods.",
+"masked": "Added async-compatible interface to Model",
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"k": 5127,
+"hash": "3dc9f3ac6960c83cd32058677eb0ddb5a5e5da43",
+"date": "2022-10-09",
+"raw": "Fixed __exact lookup when nested arrays contain only NULL values.",
+"masked": "Fixed lookup when nested arrays contain only",
+"gold": [
+"django/contrib/postgres/fields/array.py"
+]
+},
+{
+"k": 5128,
+"hash": "7b0e9ea53ca99de2f485ec582f3a79be34b531d4",
+"date": "2022-11-04",
+"raw": "Avoided table rebuild when adding inline m2m fields on SQLite.",
+"masked": "Avoided table rebuild when adding inline m2m fields on",
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+]
+},
+{
+"k": 5129,
+"hash": "e20c9eb60ab9d1c84b19672def918097c943edd8",
+"date": "2022-10-04",
+"raw": "Propagated alters_data attribute to callables overridden in subclasses.",
+"masked": "Propagated attribute to callables overridden in",
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/base.py",
+"django/db/models/fields/files.py",
+"django/db/models/fields/related_descriptors.py",
+"django/db/models/query.py",
+"django/db/models/utils.py",
+"django/forms/models.py"
+]
+},
+{
+"k": 5130,
+"hash": "5eab4d1924613a5506e517f157054b4852ae7dc2",
+"date": "2022-11-04",
+"raw": "Fixed Sitemap.get_latest_lastmod() crash with empty items.",
+"masked": "Fixed crash with empty",
+"gold": [
+"django/contrib/sitemaps/__init__.py"
+]
+},
+{
+"k": 5131,
+"hash": "123b1d3fcf79f091573c40be6da7113a6ef35b62",
+"date": "2022-11-07",
+"raw": "Made Model.refresh_from_db() clear cached generic relations.",
+"masked": "Made clear cached generic",
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"k": 5132,
+"hash": "041551d716b69ee7c81199eee86a2d10a72e15ab",
+"date": "2022-11-05",
+"raw": "Switched MySQL to group by selected primary keys.",
+"masked": "Switched to group by selected primary",
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5133,
+"hash": "7b94847e384b1a8c05a7d4c8778958c0290bdf9a",
+"date": "2022-11-04",
+"raw": "Fixed acreate(), aget_or_create(), and aupdate_or_create() methods for related managers.",
+"masked": "Fixed and methods for related",
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 5134,
+"hash": "8e6ea1d153a852b83eaa4807301b143df1647a44",
+"date": "2022-10-30",
+"raw": "Added support for pyformat style parameters on SQLite.",
+"masked": "Added support for pyformat style parameters on",
+"gold": [
+"django/db/backends/sqlite3/base.py",
+"django/db/backends/sqlite3/features.py"
+]
+},
+{
+"k": 5135,
+"hash": "c4eaa67e2b880db778c9fe6d9854fbdfcc16ecd2",
+"date": "2022-11-08",
+"raw": "Fixed reading request body with async request factory and client.",
+"masked": "Fixed reading request body with async request factory and",
+"gold": [
+"django/test/client.py"
+]
+},
+{
+"k": 5136,
+"hash": "321ecb40f4da842926e1bc07e11df4aabe53ca4b",
+"date": "2022-11-03",
+"raw": "Added async-compatible interface to related managers.",
+"masked": "Added async-compatible interface to related",
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/fields/related_descriptors.py"
+]
+},
+{
+"k": 5137,
+"hash": "59bea9efd2768102fc9d3aedda469502c218e9b7",
+"date": "2022-11-06",
+"raw": "Stripped unused annotations on aggregation.",
+"masked": "Stripped unused annotations on",
+"gold": [
+"django/db/models/expressions.py",
+"django/db/models/query_utils.py",
+"django/db/models/sql/query.py",
+"django/db/models/sql/where.py"
+]
+},
+{
+"k": 5138,
+"hash": "d6cbf39a1ba2053c6211a16ed42d5410e5c5cdd0",
+"date": "2022-11-10",
+"raw": "Allowed adding deferrable conditional exclusion constraints on PostgreSQL.",
+"masked": "Allowed adding deferrable conditional exclusion constraints on",
+"gold": [
+"django/contrib/postgres/constraints.py"
+]
+},
+{
+"k": 5139,
+"hash": "67da22f08e05018ea968fcacbac9ac37ea925d85",
+"date": "2022-10-09",
+"raw": "Added headers argument to RequestFactory and Client classes.",
+"masked": "Added headers argument to and Client",
+"gold": [
+"django/http/__init__.py",
+"django/http/request.py",
+"django/middleware/csrf.py",
+"django/test/client.py"
+]
+},
+{
+"k": 5140,
+"hash": "70499b25c708557fb9ee2264686cd172f4b2354e",
+"date": "2022-11-15",
+"raw": "Fixed combinator order by alias when using select_related().",
+"masked": "Fixed combinator order by alias when using",
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5141,
+"hash": "81b1c167bf919ddbd5aa0289f9f3761fc62addf3",
+"date": "2022-11-11",
+"raw": "Fixed altering ManyToManyField when changing to self-referential.",
+"masked": "Fixed altering when changing to",
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+]
+},
+{
+"k": 5142,
+"hash": "fbde929b19754f19cba1d14e86f4c59f4b0a633c",
+"date": "2022-10-26",
+"raw": "Added QuerySet.values()/values_list() support for ArrayField's __overlap lookup.",
+"masked": "Added support for",
+"gold": [
+"django/contrib/postgres/lookups.py"
+]
+},
+{
+"k": 5143,
+"hash": "51faf4bd172cd4cb219a9793facbfa00246c9f3c",
+"date": "2022-11-17",
+"raw": "Reverted \"Fixed #32901 -- Optimized BaseForm.__getitem__().\"",
+"masked": "Reverted #32901 -- Optimized",
+"gold": [
+"django/forms/forms.py"
+]
+},
+{
+"k": 5144,
+"hash": "04b15022e8d1f49af69d8a1e6cd678f31f1280ff",
+"date": "2022-11-17",
+"raw": "Fixed queryset crash when excluding reverse GenericRelation.",
+"masked": "Fixed queryset crash when excluding reverse",
+"gold": [
+"django/contrib/contenttypes/fields.py"
+]
+},
+{
+"k": 5145,
+"hash": "25904db9154c5be3ecda9585d96f536841af9126",
+"date": "2022-10-26",
+"raw": "Prevented callable default hidden widget value from being overridden.",
+"masked": "Prevented callable default hidden widget value from being",
+"gold": [
+"django/forms/boundfield.py"
+]
+},
+{
+"k": 5146,
+"hash": "798e38c2b9c46ab72e2ee8c33dc822f01b194b1e",
+"date": "2022-10-20",
+"raw": "Logged transaction management queries.",
+"masked": "Logged transaction management",
+"gold": [
+"django/db/backends/base/base.py",
+"django/db/backends/oracle/base.py",
+"django/db/backends/utils.py"
+]
+},
+{
+"k": 5147,
+"hash": "7d5329852f19c6ae78c6f6f3d3e41835377bf295",
+"date": "2022-11-22",
+"raw": "Fixed QuerySet.bulk_create() crash on \"pk\" in unique_fields.",
+"masked": "Fixed crash on in",
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"k": 5148,
+"hash": "4035bab56f2862a25cd7bfba41a84e58672cb1cc",
+"date": "2022-11-22",
+"raw": "Fixed QuerySet.bulk_create() on fields with db_column in unique_fields/update_fields.",
+"masked": "Fixed on fields with in",
+"gold": [
+"django/db/models/query.py",
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5149,
+"hash": "1297c0d0d76a708017fe196b61a0ab324df76954",
+"date": "2022-11-22",
+"raw": "Delayed annotating aggregations.",
+"masked": "Delayed annotating",
+"gold": [
+"django/db/models/query.py",
+"django/db/models/sql/query.py"
+]
+},
+{
+"k": 5150,
+"hash": "855f5a36e7c8e7a8ce3f62d6ef8c9ae3e073ae3d",
+"date": "2022-11-18",
+"raw": "Prevented possibility of database lock when using LiveServerTestCase with in-memory SQLite database.",
+"masked": "Prevented possibility of database lock when using with in-memory SQLite",
+"gold": [
+"django/db/backends/sqlite3/features.py",
+"django/test/testcases.py"
+]
+},
+{
+"k": 5151,
+"hash": "17472c3304050fbbf7a65976ab7b392184d081d1",
+"date": "2022-11-24",
+"raw": "Skipped saving sessions on 5xx responses.",
+"masked": "Skipped saving sessions on 5xx",
+"gold": [
+"django/contrib/sessions/middleware.py"
+]
+},
+{
+"k": 5152,
+"hash": "80c66e40f7beecbd5ee501f757a2e61236597349",
+"date": "2022-11-21",
+"raw": "Added exception notes to the technical 500 debug page.",
+"masked": "Added exception notes to the technical 500 debug",
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"k": 5153,
+"hash": "64b3c413da011f55469165256261f406a277e822",
+"date": "2022-10-18",
+"raw": "Fixed logging SQL queries with duplicate parameters on Oracle.",
+"masked": "Fixed logging queries with duplicate parameters on",
+"gold": [
+"django/db/backends/oracle/operations.py"
+]
+},
+{
+"k": 5154,
+"hash": "9d726c7902979d4ad53945ed8f1037266a88010d",
+"date": "2022-11-27",
+"raw": "Made UserCreationForm save many-to-many fields.",
+"masked": "Made save many-to-many",
+"gold": [
+"django/contrib/auth/forms.py"
+]
+},
+{
+"k": 5155,
+"hash": "85b52d22fd2841c34e95b3a80d6f2b668ce2f160",
+"date": "2022-11-03",
+"raw": "Added fine-grained error locations to the technical 500 debug page.",
+"masked": "Added fine-grained error locations to the technical 500 debug",
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"k": 5156,
+"hash": "cbce427c17b66faec7ced0639346dc6905a498f9",
+"date": "2022-11-30",
+"raw": "Added django.utils.http.content_disposition_header().",
+"masked": "Added",
+"gold": [
+"django/http/response.py",
+"django/utils/http.py"
+]
+},
+{
+"k": 5157,
+"hash": "e44d348c99f0a449180399045ac54b3909121a03",
+"date": "2022-12-07",
+"raw": "Added ES module support to ManifestStaticFilesStorage.",
+"masked": "Added module support to",
+"gold": [
+"django/contrib/staticfiles/storage.py"
+]
+},
+{
+"k": 5158,
+"hash": "95a101a690402076321331d56e67d896e8f6dfbc",
+"date": "2022-12-08",
+"raw": "Bumped minimum supported SQLite to 3.21.0.",
+"masked": "Bumped minimum supported SQLite to",
+"gold": [
+"django/db/backends/sqlite3/base.py",
+"django/db/backends/sqlite3/features.py"
+]
+},
+{
+"k": 5159,
+"hash": "b8738aea14446b267a47087b52b38a98b440a6aa",
+"date": "2022-11-30",
+"raw": "Deprecated passing positional arguments to Signer/TimestampSigner.",
+"masked": "Deprecated passing positional arguments to",
+"gold": [
+"django/core/signing.py"
+]
+},
+{
+"k": 5160,
+"hash": "c5ed884eabf3b2b67581c55bf6c87e721f69157f",
+"date": "2022-12-10",
+"raw": "Fixed Meta.constraints validation crash with ArrayField and __len lookup.",
+"masked": "Fixed validation crash with and",
+"gold": [
+"django/contrib/postgres/fields/array.py"
+]
+},
+{
+"k": 5161,
+"hash": "32268456d6494483f9a737dc7c32bbbf1eceab8c",
+"date": "2022-12-13",
+"raw": "Prevented FileBasedCache.has_key() crash caused by a race condition.",
+"masked": "Prevented crash caused by a race",
+"gold": [
+"django/core/cache/backends/filebased.py"
+]
+},
+{
+"k": 5162,
+"hash": "a1bcdc94da6d597c51b4eca0411a97a6460b482e",
+"date": "2022-12-16",
+"raw": "Made RedisCacheClient.incr() use write connection.",
+"masked": "Made use write",
+"gold": [
+"django/core/cache/backends/redis.py"
+]
+},
+{
+"k": 5163,
+"hash": "ab7a85ac297464df82d8363455609979ca3603db",
+"date": "2022-11-20",
+"raw": "Implemented Heal The Breach (HTB) in GzipMiddleware.",
+"masked": "Implemented Heal The Breach in",
+"gold": [
+"django/middleware/gzip.py",
+"django/utils/text.py"
+]
+},
+{
+"k": 5164,
+"hash": "289e9a75afb52918a3efbdaf5e72f45a54089083",
+"date": "2022-10-21",
+"raw": "Allowed Sitemap to customize languages for each item.",
+"masked": "Allowed Sitemap to customize languages for each",
+"gold": [
+"django/contrib/sitemaps/__init__.py"
+]
+},
+{
+"k": 5165,
+"hash": "ae0899be0d787fbfc5f5ab2b18c5a8219d822d2b",
+"date": "2022-12-22",
+"raw": "Preserved Char/TextField.db_collation when altering column type.",
+"masked": "Preserved when altering column",
+"gold": [
+"django/contrib/gis/db/backends/postgis/schema.py",
+"django/db/backends/base/schema.py",
+"django/db/backends/mysql/schema.py",
+"django/db/backends/oracle/schema.py",
+"django/db/backends/postgresql/schema.py"
+]
+},
+{
+"k": 5166,
+"hash": "0bd2c0c9015b53c41394a1c0989afbfd94dc2830",
+"date": "2022-12-13",
+"raw": "Added async support to StreamingHttpResponse.",
+"masked": "Added async support to",
+"gold": [
+"django/core/handlers/asgi.py",
+"django/http/response.py",
+"django/middleware/gzip.py",
+"django/utils/asyncio.py"
+]
+},
+{
+"k": 5167,
+"hash": "5aaad5f39c67591ba3d60c57ffa03fac12965f26",
+"date": "2022-12-23",
+"raw": "Made permissions creation respect the \"using\" parameter.",
+"masked": "Made permissions creation respect the",
+"gold": [
+"django/contrib/auth/management/__init__.py"
+]
+},
+{
+"k": 5168,
+"hash": "bbeeb45161da251bb7297b60d6155e7b4efdbc9f",
+"date": "2022-12-26",
+"raw": "Fixed QuerySet.select_related() with multiple FilteredRelations to the OneToOneField.",
+"masked": "Fixed with multiple to the",
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5169,
+"hash": "68ef274bc505cd44f305c03cbf84cf08826200a8",
+"date": "2022-12-25",
+"raw": "Fixed migration crash when removing check constraints on MySQL < 8.0.16.",
+"masked": "Fixed migration crash when removing check constraints on",
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"k": 5170,
+"hash": "78f163a4fb3937aca2e71786fbdd51a0ef39629e",
+"date": "2022-10-16",
+"raw": "Added support for comments on columns and tables.",
+"masked": "Added support for comments on columns and",
+"gold": [
+"django/core/management/commands/inspectdb.py",
+"django/db/backends/base/features.py",
+"django/db/backends/base/schema.py",
+"django/db/backends/mysql/features.py",
+"django/db/backends/mysql/introspection.py",
+"django/db/backends/mysql/schema.py",
+"django/db/backends/oracle/features.py",
+"django/db/backends/oracle/introspection.py",
+"django/db/backends/postgresql/features.py",
+"django/db/backends/postgresql/introspection.py",
+"django/db/migrations/autodetector.py",
+"django/db/migrations/operations/__init__.py",
+"django/db/migrations/operations/models.py",
+"django/db/models/base.py",
+"django/db/models/fields/__init__.py",
+"django/db/models/fields/related.py",
+"django/db/models/options.py"
+]
+},
+{
+"k": 5171,
+"hash": "7eee1dca420ee7c4451d24cd32fa08aed0dcbb36",
+"date": "2022-11-10",
+"raw": "Added support for unlimited CharField on PostgreSQL.",
+"masked": "Added support for unlimited on",
+"gold": [
+"django/core/management/commands/inspectdb.py",
+"django/db/backends/base/features.py",
+"django/db/backends/postgresql/base.py",
+"django/db/backends/postgresql/features.py",
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"k": 5172,
+"hash": "298d02a77a69321af8c0023df3250663e9d1362d",
+"date": "2022-09-24",
+"raw": "Added case-insensitive unique username validation in UserCreationForm.",
+"masked": "Added case-insensitive unique username validation in",
+"gold": [
+"django/contrib/auth/forms.py"
+]
+},
+{
+"k": 5173,
+"hash": "ecbb5db65dce7193a941b117cdd33839e5536b2e",
+"date": "2022-12-29",
+"raw": "Confirmed support for GDAL 3.6.",
+"masked": "Confirmed support for",
+"gold": [
+"django/contrib/gis/gdal/libgdal.py"
+]
+},
+{
+"k": 5174,
+"hash": "afa2e28205fe708334ad463b6d3b0e9960b945a6",
+"date": "2022-12-29",
+"raw": "Added ManifestFilesMixin.manifest_hash attribute.",
+"masked": "Added",
+"gold": [
+"django/contrib/staticfiles/storage.py"
+]
+},
+{
+"k": 5175,
+"hash": "2a14b8df39b573124ea42dec0ce96147c8e767d4",
+"date": "2022-12-31",
+"raw": "Added IsEmpty GIS database function and __isempty lookup on PostGIS.",
+"masked": "Added database function and lookup on",
+"gold": [
+"django/contrib/gis/db/backends/base/operations.py",
+"django/contrib/gis/db/backends/mysql/operations.py",
+"django/contrib/gis/db/backends/oracle/operations.py",
+"django/contrib/gis/db/backends/spatialite/operations.py",
+"django/contrib/gis/db/models/functions.py"
+]
+},
+{
+"k": 5176,
+"hash": "0b78ac3fc7bd9f0c57518d0c1a153582318edd59",
+"date": "2022-12-05",
+"raw": "Made the session role configurable on PostgreSQL.",
+"masked": "Made the session role configurable on",
+"gold": [
+"django/db/backends/postgresql/base.py"
+]
+},
+{
+"k": 5179,
+"hash": "b47f2f5b907732d80b164f1f361ae39da94a3fa6",
+"date": "2022-07-22",
+"raw": "Optimized LimitedStream wrapper.",
+"masked": "Optimized",
+"gold": [
+"django/core/handlers/wsgi.py",
+"django/core/servers/basehttp.py"
+]
+},
+{
+"k": 5182,
+"hash": "72efd840a8cb6ee35a3732d8bb434e7361970b3c",
+"date": "2022-11-11",
+"raw": "Added in-memory file storage.",
+"masked": "Added in-memory file",
+"gold": [
+"django/core/files/storage/__init__.py",
+"django/core/files/storage/memory.py"
+]
+},
+{
+"k": 5192,
+"hash": "d3c93cdc597e0efc2815111c04dd5a427432ed37",
+"date": "2022-12-29",
+"raw": "Fixed QuerySet.select_related() with multi-level FilteredRelation.",
+"masked": "Fixed with multi-level",
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"k": 5233,
+"hash": "a52bdea5a27ba44b13eda93642231c65c581e083",
+"date": "2022-09-13",
+"raw": "Used app_config.verbose_name in ContentType.__str__().",
+"masked": "Used in",
+"gold": [
+"django/contrib/contenttypes/models.py"
+]
+},
+{
+"k": 5246,
+"hash": "cad376f844c7bdeeee7607a7c0ea8ae52061309b",
+"date": "2022-11-02",
+"raw": "Added form field rendering.",
+"masked": "Added form field",
+"gold": [
+"django/forms/boundfield.py",
+"django/forms/fields.py",
+"django/forms/renderers.py",
+"django/forms/utils.py"
+]
+},
+{
+"k": 5253,
+"hash": "1d1ddffc27cd55c011298cd09bfa4de3fa73cf7a",
+"date": "2022-12-21",
+"raw": "Allowed handling ASGI http.disconnect in long-lived requests.",
+"masked": "Allowed handling in long-lived",
+"gold": [
+"django/core/handlers/asgi.py"
+]
+}
+]
