@@ -14,12 +14,21 @@ stem = lambda w: w[:-1] if len(w) > 3 and w.endswith("s") else w
 N9 = 277681                                                     # sentences in the 9M memory (the IDF base, as offline)
 
 
-CERT_MIN_LIFT = None   # bits; when set, the taught lane also needs its cue this far above the question's median
+import os as _os
+
+
+def _bits(name):
+    """An optional limit in bits from the environment (e.g. OCM_CERT_MIN_OVER_OWN=37); unset or empty: None."""
+    v = _os.environ.get(name, "").strip()
+    return int(v) if v else None
+
+
+CERT_MIN_LIFT = _bits("OCM_CERT_MIN_LIFT")   # bits; when set, the taught lane also needs its cue this far above the question's median
                        # agreement (its chance level). None: the law as published (the lead alone decides).
-RELATION_LIMIT = None      # bits; when set, taught question vectors count for a question only if the best of them
+RELATION_LIMIT = _bits("OCM_RELATION_LIMIT")      # bits; when set, taught question vectors count for a question only if the best of them
                            # beats the best code text's agreement by this much (candidate: 37 bits, one sd of chance
                            # agreement); otherwise the code alone ranks it, as if nothing were taught. None: off.
-CERT_MIN_OVER_OWN = None   # bits; when set, the taught lane also needs its cue this far above the best code text's
+CERT_MIN_OVER_OWN = _bits("OCM_CERT_MIN_OVER_OWN")   # bits; when set, the taught lane also needs its cue this far above the best code text's
                            # agreement (a candidate relation limit: one sd of chance agreement, 37 bits). None: off.
 
 
