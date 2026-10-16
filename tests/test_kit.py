@@ -128,3 +128,25 @@ def test_carry_survives_reformatting_and_prunes_lines_gone_for_good():
     assert w2.life.recall("What currency do charges default to?") is None                         # pruned: 2 misses in a row
     assert w2.life.recall("How many times do we retry a failed card charge?") is not None
     assert json.load(open(os.path.join(ws2, "carry_misses.json"))) == {}
+
+
+def test_a_cached_rebuild_is_bit_identical_and_reuses_every_embedding():
+    import numpy as np, shutil
+    from ocm.cmlm_vector.memory import Memory
+    tmp = tempfile.mkdtemp(); repo = os.path.join(tmp, "app")
+    shutil.copytree(os.path.join(HERE, "fixture_repo"), repo)
+    cache = os.path.join(tmp, "embed.sqlite")
+    build([repo], os.path.join(tmp, "cold"), log=lambda *_: None)
+    build([repo], os.path.join(tmp, "warm1"), log=lambda *_: None, cache=cache)              # fills the cache
+    with open(os.path.join(repo, "src", "config.py"), "a") as f:                             # the code changes a little
+        f.write("\nNEW_SETTING = 7  # added after the first build\n")
+    build([repo], os.path.join(tmp, "cold2"), log=lambda *_: None)
+    out = []
+    build([repo], os.path.join(tmp, "warm2"), log=out.append, cache=cache)
+    def bits(ws):
+        m = Memory(os.path.join(tmp, ws, "memory"))
+        return list(m.texts), np.concatenate([np.asarray(s) for s in m.fshards])
+    for cold, warm in (("cold", "warm1"), ("cold2", "warm2")):
+        (ta, fa), (tb, fb) = bits(cold), bits(warm)
+        assert ta == tb and np.array_equal(fa, fb)                                           # bit for bit
+    assert "reused from the cache" in out[-1]

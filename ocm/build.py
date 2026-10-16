@@ -14,12 +14,16 @@ from .units import files, units
 THETA_DEFAULT = 9.349                     # the router law's 44% rule on code questions (measured on transformers)
 
 
-def build(roots, out, model=None, device=None, log=print, carry=None, prune_after=None):
+def build(roots, out, model=None, device=None, log=print, carry=None, prune_after=None, cache=None):
     if os.path.exists(os.path.join(out, "memory", "manifest.json")):
         raise SystemExit(f"{out} already holds a workspace; remove it or choose another --out")
     os.makedirs(out, exist_ok=True)
     roots = {os.path.basename(os.path.abspath(r).rstrip("/")) or "root": os.path.abspath(r) for r in roots}
     m = Memory.create(os.path.join(out, "memory"), bits=1024, seed=0, model=model, device=device)
+    cache = cache or os.environ.get("MODELD_CACHE")
+    if cache:                                  # rebuilds embed only the units whose text changed
+        from .embed_cache import CachedEmbedder
+        m._embedder = CachedEmbedder(m.embedder, os.path.expanduser(cache), m.man.get("model", ""))
     F = files(roots); U = []
     for name, rel, path in F:
         try:
@@ -50,7 +54,8 @@ def build(roots, out, model=None, device=None, log=print, carry=None, prune_afte
     json.dump({"roots": roots, "files": len(m.sources), "units": len(m.texts), "theta": THETA_DEFAULT,
                "built": time.strftime("%Y-%m-%dT%H:%M:%S")}, open(os.path.join(out, "workspace.json"), "w"), indent=1)
     shutil.copytree(os.path.join(out, "memory"), os.path.join(out, "memory_at_build"))
-    log(f"workspace ready: {out} ({len(m.texts):,} units from {len(m.sources):,} files)")
+    reuse = f"; {m._embedder.reused:,} embeddings reused from the cache" if cache else ""
+    log(f"workspace ready: {out} ({len(m.texts):,} units from {len(m.sources):,} files{reuse})")
     if carry:
         from .server import Workspace
         r = Workspace(out).carry(carry, prune_after)
@@ -62,10 +67,11 @@ def build(roots, out, model=None, device=None, log=print, carry=None, prune_afte
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="ocm build"); ap.add_argument("folders", nargs="+"); ap.add_argument("--out", required=True)
     ap.add_argument("--model"); ap.add_argument("--device")
+    ap.add_argument("--cache", help="an embedding cache file ($MODELD_CACHE): a rebuild embeds only changed code")
     ap.add_argument("--carry", help="an earlier workspace whose taught knowledge (its Life) is carried into this one")
     ap.add_argument("--prune-after", type=int, metavar="N",
                     help="with --carry: remove a taught entry whose line has not been found in N carries in a row")
     a = ap.parse_args(argv)
     if a.prune_after is not None and (a.prune_after < 1 or not a.carry):
         ap.error("--prune-after needs --carry and a whole number of at least 1")
-    build(a.folders, a.out, a.model, a.device, carry=a.carry, prune_after=a.prune_after)
+    build(a.folders, a.out, a.model, a.device, carry=a.carry, prune_after=a.prune_after, cache=a.cache)
