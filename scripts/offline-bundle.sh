@@ -2,7 +2,7 @@
 # Build an offline install bundle of Model D for machines with no internet access.
 # Run it on a connected machine with the same operating system, CPU type and Python version as the target.
 #   scripts/offline-bundle.sh [out-folder]          (default: modeld-offline)
-#   MODELD_SPEC=dist/model_d-0.3.0-py3-none-any.whl scripts/offline-bundle.sh   (bundle a local build)
+#   MODELD_SPEC=dist/model_d-0.4.0-py3-none-any.whl scripts/offline-bundle.sh   (bundle a local build)
 set -euo pipefail
 OUT="${1:-modeld-offline}"
 SPEC="${MODELD_SPEC:-model-d}"

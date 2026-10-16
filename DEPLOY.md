@@ -72,8 +72,8 @@ docker compose exec modeld modeld build /repos --out /workspace --cache /workspa
 
   ```bash
   docker compose build
-  docker save model-d:0.3.0 | gzip > model-d-0.3.0.tar.gz   # copy this file across, then:
-  docker load < model-d-0.3.0.tar.gz
+  docker save model-d:0.4.0 | gzip > model-d-0.4.0.tar.gz   # copy this file across, then:
+  docker load < model-d-0.4.0.tar.gz
   ```
 
 - **Without Docker,** build an offline bundle on a connected machine with the same OS, CPU type and Python version.

@@ -1,0 +1,7 @@
+505c64e4a158f9c742d2e60aea420f9f9d9d47b7414ee8cf94282a0847054565  PROTOCOL_TEAM_YEAR.md
+0e07692b277c61da7adbeb265076989ced8a8f2273d3a43e85b423bb056ed268  scripts/team_year.py
+c1f029890ff444965910dd33cb63b55fc0a7006a90be3dfa10989d49f0b375b4  window_2022.json
+a4aed615475d531ecc6856ca2a85b54afbc952a6cf5a8d8365bd3ae16ec8ed8a  keep.json
+recorded 2026-10-16T20:20:55+0530, before any model call
+985a7d48ebf05b3ac1e3e8e0ae9fc7ceb5c14e00f6b07df5f93b1438cf7a4d91  PROTOCOL_TEAM_YEAR_GATE.md
+gate protocol recorded 2026-10-16T20:39:47+0530, before any gated call

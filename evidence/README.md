@@ -24,6 +24,7 @@ python evidence/verify.py
 
 | claim | where | what to look at |
 |---|---|---|
+| **a team's year: Django's 288 real 2022 fixes, in order, the product against the agent alone: 2.09x cheaper ($12.32 vs $25.72), right 252 vs 253 (cited); the saving rose from 1.88x to 2.57x as novelty fell 0.89 -> 0.78; the law forecast each quarter within 14%** | `team-year/` | `RESULTS_TEAM_YEAR.md`, `PROTOCOL_TEAM_YEAR.md` (+ `.deviations`, `_GATE.md`), `rows/md.jsonl`, `rows/alone.jsonl`, `rows/gate.jsonl` |
 | company repo, 5-role team, 3 runs: 2.34-2.79x cheaper; repeats 3.49x; saving grew 2.66x -> 3.17x | `claude-api/` | `PROTOCOL_VALUE4.md`, `PROTOCOL_VALUE7.md`; rows `v4_r*`, `v7_*`, `v4_judge.jsonl`; report keys `V4`, `V7`, `V4 judge` |
 | 228 questions in one stream: $11.56 -> $4.20, 215 vs 213 right | `claude-api/` | `PROTOCOL_VALUE.md`; rows `e1_*`, `e2_*` |
 | learning: 84 of 114 reworded reports answered by one read, 81 of them right, $0.0005 each | `claude-api/` | rows `e2_md.jsonl` (`path` = `read`) |
@@ -57,6 +58,9 @@ These are reported in the same files as the wins:
 - **In full repositories, the full-scope readout lost to Graphify on issue titles:** 117 vs 131 top-5. Documentation
   filled about half its top-5 places (`swe-bench-lite/score_087.md`). The code scope was added for this and tested
   against a plan fixed in advance.
+
+- **A team's year, T2 as pre-registered:** 227 vs 253 right. The rule scored a cheap read by the readout's first file. 25 reads that cite the changed file count as wrong under it (D4, `team-year/`).
+- **The relation gate (OCM_CERT_MIN_OVER_OWN=37) on a team's year:** read precision was not higher (87% vs 90%), so it stays off by default (G1).
 
 ## Not included
 - **Agent transcripts and built indexes:** gigabytes; they can be rebuilt with the scripts.
