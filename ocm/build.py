@@ -54,7 +54,7 @@ def build(roots, out, model=None, device=None, log=print, carry=None, prune_afte
     json.dump({"roots": roots, "files": len(m.sources), "units": len(m.texts), "theta": THETA_DEFAULT,
                "built": time.strftime("%Y-%m-%dT%H:%M:%S")}, open(os.path.join(out, "workspace.json"), "w"), indent=1)
     shutil.copytree(os.path.join(out, "memory"), os.path.join(out, "memory_at_build"))
-    reuse = f"; {m._embedder.reused:,} embeddings reused from the cache" if cache else ""
+    reuse = f"; {m._embedder.embedded:,} newly embedded, the rest from the cache" if cache else ""
     log(f"workspace ready: {out} ({len(m.texts):,} units from {len(m.sources):,} files{reuse})")
     if carry:
         from .server import Workspace

@@ -149,4 +149,4 @@ def test_a_cached_rebuild_is_bit_identical_and_reuses_every_embedding():
     for cold, warm in (("cold", "warm1"), ("cold2", "warm2")):
         (ta, fa), (tb, fb) = bits(cold), bits(warm)
         assert ta == tb and np.array_equal(fa, fb)                                           # bit for bit
-    assert "reused from the cache" in out[-1]
+    assert "newly embedded, the rest from the cache" in out[-1]
