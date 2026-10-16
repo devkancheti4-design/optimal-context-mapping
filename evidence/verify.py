@@ -181,3 +181,23 @@ for key, label in (("query_title", "issue title"), ("query_400", "title + 400 ch
         line(f"{label}, {name}: top-1 / 3 / 5", f"{' / '.join(map(str, hits))} · {tok:,.0f} tok", f"rows {f}")
 held = load("swe-bench-lite/report_codeonly.json")["predictions"]
 line("pre-registered predictions that held", f"{sum(held.values())} of {len(held)}", "report_codeonly")
+
+# --- 8. A team's year: Django's 2022 fixes through the product, against the agent alone ----------------------------
+if os.path.isdir(f"{E}/team-year"):
+    section("A team's year: Django's 2022 fixes, in order, the product against the agent alone (PROTOCOL_TEAM_YEAR)")
+    for line_ in open(f"{E}/team-year/PREREG_HASHES.txt"):
+        parts = line_.split()
+        if len(parts) == 2 and len(parts[0]) == 64 and parts[1].split("/")[-1] in ("PROTOCOL_TEAM_YEAR.md", "PROTOCOL_TEAM_YEAR_GATE.md", "window_2022.json", "keep.json"):
+            f = f"{E}/team-year/{parts[1].split('/')[-1]}"
+            ok = hashlib.sha256(open(f, "rb").read()).hexdigest() == parts[0]
+            line(f"pre-registered {parts[1].split('/')[-1]}", "hash matches" if ok else "HASH MISMATCH", "PREREG_HASHES.txt")
+    ty = lambda name: {json.loads(l)["k"]: json.loads(l) for l in open(f"{E}/team-year/rows/{name}")}
+    al = ty("alone.jsonl")
+    for arm in ("md", "gate"):
+        md = ty(f"{arm}.jsonl"); ks = sorted(md.keys() & al.keys())
+        cited = lambda r: r["right"] if r["path"] != "read" else any(g in r["answer"] or "django/" + g in r["answer"] for g in r["gold"])
+        a_usd, d_usd = sum(al[k]["usd"] for k in ks), sum(md[k]["usd"] for k in ks)
+        name = "Model D" if arm == "md" else "Model D, gated"
+        line(f"{name}: paired fixes, cost alone -> {name}", f"{len(ks)} · ${a_usd:.2f} -> ${d_usd:.2f} ({a_usd / d_usd:.2f}x)", f"rows {arm}.jsonl")
+        line(f"{name}: right (pre-registered / cited, D4) vs alone", f"{sum(md[k]['right'] for k in ks)} / {sum(cited(md[k]) for k in ks)} vs {sum(al[k]['right'] for k in ks)}", f"rows {arm}.jsonl")
+        line(f"{name}: novelty (share on the teach path)", f"{sum(md[k]['path'] == 'teach' for k in ks) / len(ks):.2f}", f"rows {arm}.jsonl")
