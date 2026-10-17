@@ -1,0 +1,13 @@
+[
+{
+"id": "9ed5db8ed2",
+"date": "2020-05-09",
+"queries": {
+"q": "Where is the code behind this change: fix raise_for_status docstring (#5293)",
+"raw": "fix raise_for_status docstring (#5293)"
+},
+"gold": [
+"requests/models.py"
+]
+}
+]

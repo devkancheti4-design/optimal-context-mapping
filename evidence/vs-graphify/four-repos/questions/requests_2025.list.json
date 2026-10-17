@@ -1,0 +1,13 @@
+[
+{
+"id": "3f07f990ac",
+"date": "2024-10-04",
+"queries": {
+"q": "Where is the code behind this change: Fix typo in documentation for verify",
+"raw": "Fix typo in documentation for verify"
+},
+"gold": [
+"src/requests/adapters.py"
+]
+}
+]

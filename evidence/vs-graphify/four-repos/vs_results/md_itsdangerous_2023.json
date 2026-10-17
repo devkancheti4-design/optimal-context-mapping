@@ -1,0 +1,1 @@
+{"876ce6ff93": {"q": {"files": [".github/workflows/tests.yaml", "setup.cfg", ".pre-commit-config.yaml", "tox.ini"], "chars": 1896, "taught": false}, "raw": {"files": ["setup.cfg", ".github/workflows/tests.yaml", "tox.ini", ".pre-commit-config.yaml", ".readthedocs.yaml"], "chars": 1783, "taught": false}}}

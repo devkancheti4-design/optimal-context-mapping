@@ -1,0 +1,50 @@
+[
+{
+"id": "db575eeedc",
+"date": "2021-07-26",
+"queries": {
+"q": "Where is the code behind this change: Fix inconsistent exception type in response.json() method (#5856)",
+"raw": "Fix inconsistent exception type in response.json() method (#5856)"
+},
+"gold": [
+"requests/__init__.py",
+"requests/compat.py",
+"requests/exceptions.py",
+"requests/models.py"
+]
+},
+{
+"id": "d8829f9f24",
+"date": "2021-08-02",
+"queries": {
+"q": "Where is the code behind this change: Fix extract_zipped_paths infinite loop when provided invalid unc path (#5851)",
+"raw": "Fix extract_zipped_paths infinite loop when provided invalid unc path (#5851)"
+},
+"gold": [
+"requests/utils.py"
+]
+},
+{
+"id": "fc106ab586",
+"date": "2021-09-15",
+"queries": {
+"q": "Where is the code behind this change: fix minor typos (#5934)",
+"raw": "fix minor typos (#5934)"
+},
+"gold": [
+"requests/utils.py"
+]
+},
+{
+"id": "4246792b81",
+"date": "2021-12-28",
+"queries": {
+"q": "Where is the code behind this change: Fix erroneous use of 'schema' instead of 'scheme'",
+"raw": "Fix erroneous use of 'schema' instead of 'scheme'"
+},
+"gold": [
+"requests/exceptions.py",
+"requests/models.py"
+]
+}
+]

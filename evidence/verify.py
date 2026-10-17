@@ -285,6 +285,10 @@ if os.path.isdir(f"{E}/vs-graphify"):
                 tot[a] = [t + sum(v) for t, v in zip(tot[a], x)]
         line(f"SWE-bench Lite ({sum(len(qs) for qs, _ in lite)}), {label}: top-1 / 3 / 5",
              "  ".join(f"{ {'md_cover': 'taught', 'md_cold': 'cold', 'gf': 'Graphify'}[a]} {'/'.join(map(str, tot[a]))}" for a, _ in arms), "rows lite_*.json")
+    rb = load("vs-graphify/best/report_best.json")
+    for title, q in (("Django 2022 (288 fixes)", "q"), ("SWE-bench Lite (285 issues, 12 repos)", "title"), ("Four Python repos (requests, itsdangerous, httpx, click; 172 fixes)", "q")):
+        t = rb[title][q]["top1/3/5"]; best = rb[title][q]["graphify at its best"]
+        line(f"read at its best ({title.split(' (')[0]}): Graphify / Model D cold, top-1 / 5", f"{t[best][0]}/{t[best][2]} vs {t['md_cold'][0]}/{t['md_cold'][2]}", "best/report_best.json")
     tc = load("vs-graphify/results/token_claim.json")
     line("Graphify's token formula on its own Karpathy example (0.9.92)", f"{tc['karpathy, its reported corpus words']['reduction_ratio']}x (claimed 71.5x)", "token_claim.json")
     line("the same formula on Django 2022: Graphify / Model D cold", f"{tc['django 2022, the 288 real questions']['reduction_ratio']:,}x / {tc['django 2022, formula on Part A readouts: md_cold']['reduction_ratio']:,}x", "token_claim.json")

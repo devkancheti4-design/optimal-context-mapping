@@ -1,0 +1,134 @@
+{
+"repo": "httpx",
+"snapshot": "3bf18637c1289575f3cc00467fbde1a34bbdf332",
+"since": "2021-01-01",
+"until": "2022-01-01",
+"questions": [
+{
+"id": "9542a17831",
+"date": "2021-02-06",
+"queries": {
+"q": "Where is the code behind this change: Fix doc capitalization (#1460)",
+"raw": "Fix doc capitalization (#1460)"
+},
+"gold": [
+"httpx/_status_codes.py"
+]
+},
+{
+"id": "24a55d73c3",
+"date": "2021-03-10",
+"queries": {
+"q": "Where is the code behind this change: Fix CertTypes (#1503)",
+"raw": "Fix CertTypes (#1503)"
+},
+"gold": [
+"httpx/_types.py"
+]
+},
+{
+"id": "6cb1672459",
+"date": "2021-03-24",
+"queries": {
+"q": "Where is the code behind this change: Fix some cases of merging with base_url (#1532)",
+"raw": "Fix some cases of merging with base_url (#1532)"
+},
+"gold": [
+"httpx/_client.py",
+"httpx/_models.py"
+]
+},
+{
+"id": "c75ddc26c7",
+"date": "2021-03-25",
+"queries": {
+"q": "Where is the code behind this change: Fix Content-Length for unicode file contents with multipart (#1537)",
+"raw": "Fix Content-Length for unicode file contents with multipart (#1537)"
+},
+"gold": [
+"httpx/_multipart.py"
+]
+},
+{
+"id": "47d712c01c",
+"date": "2021-06-16",
+"queries": {
+"q": "Where is the code behind this change: Fix typo (#1688)",
+"raw": "Fix typo (#1688)"
+},
+"gold": [
+"httpx/_models.py"
+]
+},
+{
+"id": "b169013115",
+"date": "2021-07-14",
+"queries": {
+"q": "Where is the code behind this change: Fix typo in wsgi.py (#1749)",
+"raw": "Fix typo in wsgi.py (#1749)"
+},
+"gold": [
+"httpx/_transports/wsgi.py"
+]
+},
+{
+"id": "317653585c",
+"date": "2021-08-26",
+"queries": {
+"q": "Where is the code behind this change: Fix typo in RemoteProtocolError description (#1817)",
+"raw": "Fix typo in RemoteProtocolError description (#1817)"
+},
+"gold": [
+"httpx/_exceptions.py"
+]
+},
+{
+"id": "10b60d47c7",
+"date": "2021-08-31",
+"queries": {
+"q": "Where is the code behind this change: Fix iter_bytes with empty content (#1827)",
+"raw": "Fix iter_bytes with empty content (#1827)"
+},
+"gold": [
+"httpx/_models.py"
+]
+},
+{
+"id": "4882e98049",
+"date": "2021-11-16",
+"queries": {
+"q": "Where is the code behind this change: Fix response.url annotation (#1940)",
+"raw": "Fix response.url annotation (#1940)"
+},
+"gold": [
+"httpx/_models.py"
+]
+},
+{
+"id": "efc841a9e8",
+"date": "2021-11-23",
+"queries": {
+"q": "Where is the code behind this change: Fix typo on _merge_url (#1949)",
+"raw": "Fix typo on _merge_url (#1949)"
+},
+"gold": [
+"httpx/_client.py"
+]
+},
+{
+"id": "82ba15b521",
+"date": "2021-12-14",
+"queries": {
+"q": "Where is the code behind this change: Fix typos (#1968)",
+"raw": "Fix typos (#1968)"
+},
+"gold": [
+"httpx/_client.py",
+"httpx/_content.py",
+"httpx/_models.py",
+"httpx/_types.py",
+"httpx/_utils.py"
+]
+}
+]
+}

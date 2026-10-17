@@ -1,0 +1,19 @@
+{
+ "repo": "itsdangerous",
+ "py files": 15,
+ "import edges scored": 123,
+ "by verdict": {
+  "right (internal)": 84,
+  "right (external)": 39
+ },
+ "wrong share": 0.0,
+ "internal import statements (truth)": 73,
+ "found by graphify": 73,
+ "recall": 1.0,
+ "calls: name on the line (confidence, ok) ": {
+  "EXTRACTED True": 91
+ },
+ "examples": {
+  "missed (not found)": []
+ }
+}

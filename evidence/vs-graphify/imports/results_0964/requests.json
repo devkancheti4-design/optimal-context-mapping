@@ -1,0 +1,19 @@
+{
+ "repo": "requests",
+ "py files": 37,
+ "import edges scored": 412,
+ "by verdict": {
+  "right (internal)": 240,
+  "right (external)": 172
+ },
+ "wrong share": 0.0,
+ "internal import statements (truth)": 117,
+ "found by graphify": 117,
+ "recall": 1.0,
+ "calls: name on the line (confidence, ok) ": {
+  "EXTRACTED True": 399
+ },
+ "examples": {
+  "missed (not found)": []
+ }
+}

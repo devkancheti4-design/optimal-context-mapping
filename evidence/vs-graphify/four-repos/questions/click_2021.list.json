@@ -1,0 +1,183 @@
+[
+{
+"id": "4aff02676c",
+"date": "2021-04-06",
+"queries": {
+"q": "Where is the code behind this change: fix backspace in prompt with readline enabled",
+"raw": "fix backspace in prompt with readline enabled"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "043511294a",
+"date": "2021-04-09",
+"queries": {
+"q": "Where is the code behind this change: Fixed inconsistency in forwarding params",
+"raw": "Fixed inconsistency in forwarding params"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "0d01686fe6",
+"date": "2021-03-06",
+"queries": {
+"q": "Where is the code behind this change: fix output when using echo_stdin",
+"raw": "fix output when using echo_stdin"
+},
+"gold": [
+"src/click/testing.py"
+]
+},
+{
+"id": "d48b59be39",
+"date": "2021-04-14",
+"queries": {
+"q": "Where is the code behind this change: fix make_default_short_help max_length, refactor",
+"raw": "fix make_default_short_help max_length, refactor"
+},
+"gold": [
+"src/click/utils.py"
+]
+},
+{
+"id": "5295f04026",
+"date": "2021-05-12",
+"queries": {
+"q": "Where is the code behind this change: fix typing that wasn't available in Python 3.6.0",
+"raw": "fix typing that wasn't available in Python 3.6.0"
+},
+"gold": [
+"src/click/core.py",
+"src/click/parser.py",
+"src/click/types.py"
+]
+},
+{
+"id": "8b48450d5d",
+"date": "2021-06-06",
+"queries": {
+"q": "Where is the code behind this change: Fix typo in docstring (change \"appnd\" to \"append\") (#1950)",
+"raw": "Fix typo in docstring (change \"appnd\" to \"append\") (#1950)"
+},
+"gold": [
+"src/click/parser.py"
+]
+},
+{
+"id": "ec94dd54c9",
+"date": "2021-06-06",
+"queries": {
+"q": "Where is the code behind this change: Fix typo in docstring (change \"appnd\" to \"append\") (#1950)",
+"raw": "Fix typo in docstring (change \"appnd\" to \"append\") (#1950)"
+},
+"gold": [
+"src/click/parser.py"
+]
+},
+{
+"id": "c159967b47",
+"date": "2021-06-11",
+"queries": {
+"q": "Where is the code behind this change: Fix help text when using env vars with defaults",
+"raw": "Fix help text when using env vars with defaults"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "ee56925bc4",
+"date": "2021-05-24",
+"queries": {
+"q": "Where is the code behind this change: Fix is_bool_flag being set to True even if is_flag is False",
+"raw": "Fix is_bool_flag being set to True even if is_flag is False"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "18070584fc",
+"date": "2021-07-04",
+"queries": {
+"q": "Where is the code behind this change: fix type for show_default, can be str",
+"raw": "fix type for show_default, can be str"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "2703f8f373",
+"date": "2021-09-11",
+"queries": {
+"q": "Where is the code behind this change: Fix type annotation for `type` arg",
+"raw": "Fix type annotation for `type` arg"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "05b795c917",
+"date": "2021-09-06",
+"queries": {
+"q": "Where is the code behind this change: Fix copy-paste errors in `click.style()`",
+"raw": "Fix copy-paste errors in `click.style()`"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "2814073e04",
+"date": "2021-12-26",
+"queries": {
+"q": "Where is the code behind this change: fix new mypy findings",
+"raw": "fix new mypy findings"
+},
+"gold": [
+"src/click/core.py",
+"src/click/termui.py",
+"src/click/testing.py"
+]
+},
+{
+"id": "9bf84f86bb",
+"date": "2021-10-11",
+"queries": {
+"q": "Where is the code behind this change: fix typos",
+"raw": "fix typos"
+},
+"gold": [
+"src/click/core.py",
+"src/click/termui.py"
+]
+},
+{
+"id": "e5f36f3e7e",
+"date": "2021-10-25",
+"queries": {
+"q": "Where is the code behind this change: Fix typo in docs",
+"raw": "Fix typo in docs"
+},
+"gold": [
+"src/click/types.py"
+]
+},
+{
+"id": "03963b2e7d",
+"date": "2021-12-17",
+"queries": {
+"q": "Where is the code behind this change: Fix TypeVar for decorators that handle Commands",
+"raw": "Fix TypeVar for decorators that handle Commands"
+},
+"gold": [
+"src/click/decorators.py"
+]
+}
+]

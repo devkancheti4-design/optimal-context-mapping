@@ -1,0 +1,316 @@
+{
+"repo": "click",
+"snapshot": "cdab890e57a30a9f437b88ce9652f7bfce980c1f",
+"since": "2026-01-01",
+"until": "2027-01-01",
+"questions": [
+{
+"id": "546f2851f4",
+"date": "2026-02-21",
+"queries": {
+"q": "Where is the code behind this change: Fix callable ``flag_value`` being instantiated when used as a default",
+"raw": "Fix callable ``flag_value`` being instantiated when used as a default"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "d340b0c120",
+"date": "2026-04-01",
+"queries": {
+"q": "Where is the code behind this change: Fix speculative speculative empty string check",
+"raw": "Fix speculative speculative empty string check"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "2468b70997",
+"date": "2026-04-29",
+"queries": {
+"q": "Where is the code behind this change: Fix readline backspace/line-wrapping on linux (#2969)",
+"raw": "Fix readline backspace/line-wrapping on linux (#2969)"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "c5cced7b30",
+"date": "2026-04-30",
+"queries": {
+"q": "Where is the code behind this change: fix: `_termui_impl.open_url()` \u2014 'start' on Windows is a cmd built-in, not an executable (#3186)",
+"raw": "fix: `_termui_impl.open_url()` \u2014 'start' on Windows is a cmd built-in, not an executable (#3186)"
+},
+"gold": [
+"src/click/_termui_impl.py"
+]
+},
+{
+"id": "19fd4d6e18",
+"date": "2026-04-30",
+"queries": {
+"q": "Where is the code behind this change: Fix: Ensure fish completion handles multiline help strings correctly (#3126)",
+"raw": "Fix: Ensure fish completion handles multiline help strings correctly (#3126)"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "73e1550065",
+"date": "2026-05-04",
+"queries": {
+"q": "Where is the code behind this change: Fix sentinel typing and its uses in parser (#3396)",
+"raw": "Fix sentinel typing and its uses in parser (#3396)"
+},
+"gold": [
+"src/click/_utils.py",
+"src/click/core.py",
+"src/click/parser.py"
+]
+},
+{
+"id": "a09c1c655e",
+"date": "2026-03-11",
+"queries": {
+"q": "Where is the code behind this change: fix: show custom error message in prompt with hide_input=True",
+"raw": "fix: show custom error message in prompt with hide_input=True"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "0f71fe771c",
+"date": "2026-05-15",
+"queries": {
+"q": "Where is the code behind this change: Fix dual-option arbitration to respect explicit defaults",
+"raw": "Fix dual-option arbitration to respect explicit defaults"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "dbdae17087",
+"date": "2026-05-11",
+"queries": {
+"q": "Where is the code behind this change: Fix documentation",
+"raw": "Fix documentation"
+},
+"gold": [
+"src/click/_termui_impl.py"
+]
+},
+{
+"id": "0551bf5358",
+"date": "2026-05-16",
+"queries": {
+"q": "Where is the code behind this change: Fix `HelpFormatter.write_usage` producing spurious characters",
+"raw": "Fix `HelpFormatter.write_usage` producing spurious characters"
+},
+"gold": [
+"src/click/formatting.py"
+]
+},
+{
+"id": "d15f3c23a1",
+"date": "2026-05-18",
+"queries": {
+"q": "Where is the code behind this change: fix: Skip flaky pager test on macOS with free-threaded Python 3.14t",
+"raw": "fix: Skip flaky pager test on macOS with free-threaded Python 3.14t"
+},
+"gold": [
+"src/click/_compat.py"
+]
+},
+{
+"id": "c6bf75fa74",
+"date": "2026-05-19",
+"queries": {
+"q": "Where is the code behind this change: Fixes windows specific error regarding spaces in filepaths for open_url.",
+"raw": "Fixes windows specific error regarding spaces in filepaths for open_url."
+},
+"gold": [
+"src/click/_termui_impl.py"
+]
+},
+{
+"id": "7d05a59b9d",
+"date": "2026-05-19",
+"queries": {
+"q": "Where is the code behind this change: Fix get_parameter_source() during type conversion and eager callbacks",
+"raw": "Fix get_parameter_source() during type conversion and eager callbacks"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "9c41f46a40",
+"date": "2026-05-21",
+"queries": {
+"q": "Where is the code behind this change: Fix changelog and version admonitions",
+"raw": "Fix changelog and version admonitions"
+},
+"gold": [
+"src/click/core.py",
+"src/click/exceptions.py",
+"src/click/formatting.py",
+"src/click/shell_completion.py",
+"src/click/termui.py",
+"src/click/types.py"
+]
+},
+{
+"id": "c3535905c7",
+"date": "2026-05-23",
+"queries": {
+"q": "Where is the code behind this change: Fix broken fish completion and multiline help string",
+"raw": "Fix broken fish completion and multiline help string"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "b7e5fd4cc7",
+"date": "2026-05-23",
+"queries": {
+"q": "Where is the code behind this change: Fix broken fish completion and multiline help string",
+"raw": "Fix broken fish completion and multiline help string"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "82f377c547",
+"date": "2026-05-23",
+"queries": {
+"q": "Where is the code behind this change: Fix deprecated label formatting",
+"raw": "Fix deprecated label formatting"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "9a2d169fcf",
+"date": "2026-05-18",
+"queries": {
+"q": "Where is the code behind this change: fix generic typed dict `TypeError` on Python 3.10",
+"raw": "fix generic typed dict `TypeError` on Python 3.10"
+},
+"gold": [
+"src/click/types.py"
+]
+},
+{
+"id": "7eb57cff7c",
+"date": "2026-05-22",
+"queries": {
+"q": "Where is the code behind this change: Fix pager test race by raising before yield",
+"raw": "Fix pager test race by raising before yield"
+},
+"gold": [
+"src/click/_compat.py"
+]
+},
+{
+"id": "bff780ff9d",
+"date": "2026-05-22",
+"queries": {
+"q": "Where is the code behind this change: Fix layout, align full version",
+"raw": "Fix layout, align full version"
+},
+"gold": [
+"src/click/_termui_impl.py"
+]
+},
+{
+"id": "762c97eef7",
+"date": "2026-06-10",
+"queries": {
+"q": "Where is the code behind this change: Fix double-bracketing of choices in synopsis",
+"raw": "Fix double-bracketing of choices in synopsis"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "bec59289d8",
+"date": "2026-06-11",
+"queries": {
+"q": "Where is the code behind this change: Fix `package_name` resolution when top-level module differs from distribution name",
+"raw": "Fix `package_name` resolution when top-level module differs from distribution name"
+},
+"gold": [
+"src/click/decorators.py"
+]
+},
+{
+"id": "1ac08db953",
+"date": "2026-06-26",
+"queries": {
+"q": "Where is the code behind this change: Fix ruff E501 line-too-long in PowerShell template",
+"raw": "Fix ruff E501 line-too-long in PowerShell template"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "0f4738df88",
+"date": "2026-07-17",
+"queries": {
+"q": "Where is the code behind this change: Fix docs and changelog",
+"raw": "Fix docs and changelog"
+},
+"gold": [
+"src/click/_compat.py",
+"src/click/core.py",
+"src/click/shell_completion.py",
+"src/click/termui.py",
+"src/click/utils.py"
+]
+},
+{
+"id": "f58ca3e814",
+"date": "2026-08-28",
+"queries": {
+"q": "Where is the code behind this change: Fix `copy`, `deepcopy` and `pickle` of `Sentinel` members",
+"raw": "Fix `copy`, `deepcopy` and `pickle` of `Sentinel` members"
+},
+"gold": [
+"src/click/_utils.py"
+]
+},
+{
+"id": "fc518e4121",
+"date": "2026-08-31",
+"queries": {
+"q": "Where is the code behind this change: Fix race condition on `KeyboardInterrupt` arriving in `Command.main()`",
+"raw": "Fix race condition on `KeyboardInterrupt` arriving in `Command.main()`"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "f67c2bb6c2",
+"date": "2026-09-11",
+"queries": {
+"q": "Where is the code behind this change: Fix short help abbreviation",
+"raw": "Fix short help abbreviation"
+},
+"gold": [
+"src/click/utils.py"
+]
+}
+]
+}

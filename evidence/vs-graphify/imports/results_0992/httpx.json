@@ -1,0 +1,22 @@
+{
+ "repo": "httpx",
+ "py files": 60,
+ "import edges scored": 447,
+ "by verdict": {
+  "right (internal)": 253,
+  "right (external)": 194
+ },
+ "wrong share": 0.0,
+ "internal import statements (truth)": 124,
+ "found by graphify": 123,
+ "recall": 0.992,
+ "calls: name on the line (confidence, ok) ": {
+  "EXTRACTED True": 554,
+  "INFERRED True": 44
+ },
+ "examples": {
+  "missed (not found)": [
+   "httpx/_urls.py:8  from ._types import QueryParamTypes"
+  ]
+ }
+}

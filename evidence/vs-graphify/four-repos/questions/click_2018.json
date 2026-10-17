@@ -1,0 +1,257 @@
+{
+"repo": "click",
+"snapshot": "7404b066ec59cd21d6af0d7106c56988e0e2029c",
+"since": "2018-01-01",
+"until": "2019-01-01",
+"questions": [
+{
+"id": "2dbc14ea43",
+"date": "2018-03-27",
+"queries": {
+"q": "Where is the code behind this change: Fix missing comma in __all__ list (#935)",
+"raw": "Fix missing comma in __all__ list (#935)"
+},
+"gold": [
+"click/__init__.py"
+]
+},
+{
+"id": "570db30db8",
+"date": "2018-03-31",
+"queries": {
+"q": "Where is the code behind this change: Added workaround for jupyter.  Fixes #918",
+"raw": "Added workaround for jupyter.  Fixes #918"
+},
+"gold": [
+"click/_compat.py"
+]
+},
+{
+"id": "7eb990fab5",
+"date": "2018-03-31",
+"queries": {
+"q": "Where is the code behind this change: Make locale optional (Fixes #880)",
+"raw": "Make locale optional (Fixes #880)"
+},
+"gold": [
+"click/_unicodefun.py"
+]
+},
+{
+"id": "6ca05bec6b",
+"date": "2017-11-12",
+"queries": {
+"q": "Where is the code behind this change: Implement streaming pager. Fixes #409",
+"raw": "Implement streaming pager. Fixes #409"
+},
+"gold": [
+"click/_termui_impl.py",
+"click/termui.py"
+]
+},
+{
+"id": "7a32558c1a",
+"date": "2018-04-17",
+"queries": {
+"q": "Where is the code behind this change: Fix a typo",
+"raw": "Fix a typo"
+},
+"gold": [
+"click/types.py"
+]
+},
+{
+"id": "93e8b9831d",
+"date": "2018-05-08",
+"queries": {
+"q": "Where is the code behind this change: Fix typo",
+"raw": "Fix typo"
+},
+"gold": [
+"click/core.py"
+]
+},
+{
+"id": "535559adbd",
+"date": "2017-10-14",
+"queries": {
+"q": "Where is the code behind this change: Fix variable precedence",
+"raw": "Fix variable precedence"
+},
+"gold": [
+"click/core.py"
+]
+},
+{
+"id": "a17b544788",
+"date": "2018-05-14",
+"queries": {
+"q": "Where is the code behind this change: Fix issue #926 - copy option attrs so that custom classes can be re-used.",
+"raw": "Fix issue #926 - copy option attrs so that custom classes can be re-used."
+},
+"gold": [
+"click/decorators.py"
+]
+},
+{
+"id": "2bc3b2c12c",
+"date": "2018-05-14",
+"queries": {
+"q": "Where is the code behind this change: Fix #616: allow setting prog_name in CliRunner.invoke",
+"raw": "Fix #616: allow setting prog_name in CliRunner.invoke"
+},
+"gold": [
+"click/testing.py"
+]
+},
+{
+"id": "82f9c626ff",
+"date": "2018-05-15",
+"queries": {
+"q": "Where is the code behind this change: Fix test for delayed progress bar display",
+"raw": "Fix test for delayed progress bar display"
+},
+"gold": [
+"click/__init__.py",
+"click/_bashcomplete.py",
+"click/_compat.py",
+"click/_termui_impl.py",
+"click/_unicodefun.py",
+"click/_winconsole.py",
+"click/core.py",
+"click/decorators.py",
+"click/exceptions.py",
+"click/globals.py",
+"click/termui.py",
+"click/testing.py",
+"click/types.py",
+"click/utils.py",
+"setup.py"
+]
+},
+{
+"id": "e129f181db",
+"date": "2016-07-25",
+"queries": {
+"q": "Where is the code behind this change: Fix Google App Engine ImportError.",
+"raw": "Fix Google App Engine ImportError."
+},
+"gold": [
+"click/_compat.py"
+]
+},
+{
+"id": "a112bb200a",
+"date": "2018-05-15",
+"queries": {
+"q": "Where is the code behind this change: Fixes issue #447",
+"raw": "Fixes issue #447"
+},
+"gold": [
+"click/_termui_impl.py"
+]
+},
+{
+"id": "b61ec644fa",
+"date": "2017-10-09",
+"queries": {
+"q": "Where is the code behind this change: Fix bash completion when defaults are present and the way subcommands are handled. This makes the completion logic behave the same way the paser does. Fixes #925 Fixes #919",
+"raw": "Fix bash completion when defaults are present and the way subcommands are handled. This makes the completion logic behave the same way the paser does. Fixes #925 Fixes #919"
+},
+"gold": [
+"click/_bashcomplete.py",
+"click/core.py"
+]
+},
+{
+"id": "a94c0be3b5",
+"date": "2018-08-26",
+"queries": {
+"q": "Where is the code behind this change: Bugfix for Exit handling",
+"raw": "Bugfix for Exit handling"
+},
+"gold": [
+"click/core.py",
+"click/exceptions.py"
+]
+},
+{
+"id": "cabbfcf65a",
+"date": "2018-08-29",
+"queries": {
+"q": "Where is the code behind this change: fix typo",
+"raw": "fix typo"
+},
+"gold": [
+"click/testing.py"
+]
+},
+{
+"id": "b073abe1cb",
+"date": "2017-10-09",
+"queries": {
+"q": "Where is the code behind this change: Use Python sorting order for ZSH completions. Fixes #1047.",
+"raw": "Use Python sorting order for ZSH completions. Fixes #1047."
+},
+"gold": [
+"click/_bashcomplete.py"
+]
+},
+{
+"id": "da4a182760",
+"date": "2018-09-12",
+"queries": {
+"q": "Where is the code behind this change: bugfix: make `getchar` work on Windows.",
+"raw": "bugfix: make `getchar` work on Windows."
+},
+"gold": [
+"click/_termui_impl.py",
+"click/termui.py"
+]
+},
+{
+"id": "7b53e1541e",
+"date": "2018-09-18",
+"queries": {
+"q": "Where is the code behind this change: fix encoding issues with getchar correctly raises on ^C and ^D echo no longer raises encoding error",
+"raw": "fix encoding issues with getchar correctly raises on ^C and ^D echo no longer raises encoding error"
+},
+"gold": [
+"click/_termui_impl.py"
+]
+},
+{
+"id": "e0d510b51f",
+"date": "2018-10-19",
+"queries": {
+"q": "Where is the code behind this change: Fix get_current_context typo in docstring",
+"raw": "Fix get_current_context typo in docstring"
+},
+"gold": [
+"click/globals.py"
+]
+},
+{
+"id": "709a94f0a8",
+"date": "2018-10-23",
+"queries": {
+"q": "Where is the code behind this change: fix link in unicode_literals error message",
+"raw": "fix link in unicode_literals error message"
+},
+"gold": [
+"click/_unicodefun.py"
+]
+},
+{
+"id": "b3dd1b2459",
+"date": "2018-11-20",
+"queries": {
+"q": "Where is the code behind this change: fixed edit() not supporting bytes",
+"raw": "fixed edit() not supporting bytes"
+},
+"gold": [
+"click/_termui_impl.py"
+]
+}
+]
+}

@@ -1,0 +1,75 @@
+{
+"repo": "click",
+"snapshot": "4a21666a4e3705083ab41509381fe50fdc68a467",
+"since": "2022-01-01",
+"until": "2023-01-01",
+"questions": [
+{
+"id": "f30d0128c9",
+"date": "2022-01-16",
+"queries": {
+"q": "Where is the code behind this change: Fix typing in click.secho function",
+"raw": "Fix typing in click.secho function"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "bda6381ad0",
+"date": "2022-02-07",
+"queries": {
+"q": "Where is the code behind this change: Fix type for `file` argument",
+"raw": "Fix type for `file` argument"
+},
+"gold": [
+"src/click/utils.py"
+]
+},
+{
+"id": "e003331551",
+"date": "2022-01-05",
+"queries": {
+"q": "Where is the code behind this change: fix ParamType.to_info_dict() with no name",
+"raw": "fix ParamType.to_info_dict() with no name"
+},
+"gold": [
+"src/click/types.py"
+]
+},
+{
+"id": "e234cf958d",
+"date": "2022-03-29",
+"queries": {
+"q": "Where is the code behind this change: fix(types): decorator typing fails",
+"raw": "fix(types): decorator typing fails"
+},
+"gold": [
+"src/click/core.py",
+"src/click/decorators.py"
+]
+},
+{
+"id": "92cebe902a",
+"date": "2022-03-31",
+"queries": {
+"q": "Where is the code behind this change: fix readable path check error message",
+"raw": "fix readable path check error message"
+},
+"gold": [
+"src/click/types.py"
+]
+},
+{
+"id": "73d7de5f74",
+"date": "2022-09-14",
+"queries": {
+"q": "Where is the code behind this change: Fix versionchanged entry for click.Path (#2345)",
+"raw": "Fix versionchanged entry for click.Path (#2345)"
+},
+"gold": [
+"src/click/types.py"
+]
+}
+]
+}

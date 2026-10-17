@@ -1,0 +1,13 @@
+[
+{
+"id": "1e3a100029",
+"date": "2019-07-07",
+"queries": {
+"q": "Where is the code behind this change: Fix typo",
+"raw": "Fix typo"
+},
+"gold": [
+"src/itsdangerous/_compat.py"
+]
+}
+]

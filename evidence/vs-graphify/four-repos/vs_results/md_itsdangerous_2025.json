@@ -1,0 +1,1 @@
+{"c294b2fb47": {"q": {"files": ["pyproject.toml", ".readthedocs.yaml", "tox.ini", "src/itsdangerous/signer.py", ".github/ISSUE_TEMPLATE/config.yml"], "chars": 1652, "taught": false}, "raw": {"files": ["pyproject.toml", "tox.ini", ".readthedocs.yaml", "src/itsdangerous/signer.py", ".pre-commit-config.yaml"], "chars": 1454, "taught": false}}}

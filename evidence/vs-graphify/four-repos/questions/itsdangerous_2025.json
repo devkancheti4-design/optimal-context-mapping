@@ -1,0 +1,19 @@
+{
+"repo": "itsdangerous",
+"snapshot": "62fde54d4ff717fa1c4af688dbebf97845fed495",
+"since": "2025-01-01",
+"until": "2026-01-01",
+"questions": [
+{
+"id": "c294b2fb47",
+"date": "2025-05-28",
+"queries": {
+"q": "Where is the code behind this change: fix pyright findings",
+"raw": "fix pyright findings"
+},
+"gold": [
+"src/itsdangerous/timed.py"
+]
+}
+]
+}

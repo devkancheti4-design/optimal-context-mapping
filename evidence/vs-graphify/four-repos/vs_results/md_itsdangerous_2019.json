@@ -1,0 +1,1 @@
+{"1e3a100029": {"q": {"files": [".pre-commit-config.yaml", "docs/conf.py", "tox.ini", "setup.py", "src/itsdangerous/serializer.py"], "chars": 2819, "taught": false}, "raw": {"files": ["src/itsdangerous/_compat.py", ".pre-commit-config.yaml", "docs/conf.py", "tox.ini"], "chars": 890, "taught": false}}}

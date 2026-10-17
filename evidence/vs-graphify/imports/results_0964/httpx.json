@@ -1,0 +1,43 @@
+{
+ "repo": "httpx",
+ "py files": 60,
+ "import edges scored": 447,
+ "by verdict": {
+  "right (internal)": 221,
+  "right (external)": 194,
+  "wrong, missed internal": 32
+ },
+ "wrong share": 0.072,
+ "internal import statements (truth)": 124,
+ "found by graphify": 90,
+ "recall": 0.726,
+ "calls: name on the line (confidence, ok) ": {
+  "EXTRACTED True": 415
+ },
+ "examples": {
+  "wrong, missed internal": [
+   "httpx/_transports/default.py:36 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_async_client.py:8 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_auth.py:18 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_client.py:9 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_cookies.py:5 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_event_hooks.py:3 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_headers.py:5 -> httpx [] (truth: ['httpx/__init__.py'])",
+   "tests/client/test_properties.py:1 -> httpx [] (truth: ['httpx/__init__.py'])"
+  ],
+  "missed (not found)": [
+   "httpx/_transports/default.py:36  import httpx  # pragma: no cover",
+   "httpx/_urls.py:8  from ._types import QueryParamTypes",
+   "tests/client/test_async_client.py:8  import httpx",
+   "tests/client/test_auth.py:18  import httpx",
+   "tests/client/test_client.py:9  import httpx",
+   "tests/client/test_cookies.py:5  import httpx",
+   "tests/client/test_event_hooks.py:3  import httpx",
+   "tests/client/test_headers.py:5  import httpx",
+   "tests/client/test_properties.py:1  import httpx",
+   "tests/client/test_proxies.py:4  import httpx",
+   "tests/client/test_queryparams.py:1  import httpx",
+   "tests/client/test_redirects.py:5  import httpx"
+  ]
+ }
+}

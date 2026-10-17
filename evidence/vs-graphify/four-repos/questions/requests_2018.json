@@ -1,0 +1,52 @@
+{
+"repo": "requests",
+"snapshot": "efacb9e312506b9283f37c697c5388622131665a",
+"since": "2018-01-01",
+"until": "2019-01-01",
+"questions": [
+{
+"id": "2255c34a65",
+"date": "2017-12-12",
+"queries": {
+"q": "Where is the code behind this change: Fix DNS resolution by using hostname instead of netloc and strip username and password when comparing against proxy bypass items.",
+"raw": "Fix DNS resolution by using hostname instead of netloc and strip username and password when comparing against proxy bypass items."
+},
+"gold": [
+"requests/utils.py"
+]
+},
+{
+"id": "22120d423e",
+"date": "2018-02-08",
+"queries": {
+"q": "Where is the code behind this change: Fix typos",
+"raw": "Fix typos"
+},
+"gold": [
+"requests/utils.py"
+]
+},
+{
+"id": "b1a360c2f1",
+"date": "2018-07-09",
+"queries": {
+"q": "Where is the code behind this change: Fix an invalid escape sequence",
+"raw": "Fix an invalid escape sequence"
+},
+"gold": [
+"requests/status_codes.py"
+]
+},
+{
+"id": "8023a01dba",
+"date": "2018-07-05",
+"queries": {
+"q": "Where is the code behind this change: Fix assumed hostname when using a 'file' URI scheme adapter",
+"raw": "Fix assumed hostname when using a 'file' URI scheme adapter"
+},
+"gold": [
+"requests/utils.py"
+]
+}
+]
+}

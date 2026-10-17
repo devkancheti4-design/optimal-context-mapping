@@ -1,0 +1,381 @@
+{
+ "Django 2022 (288 fixes)": {
+  "n": 288,
+  "q": {
+   "top1/3/5": {
+    "md_cover": [
+     149,
+     185,
+     193
+    ],
+    "md_cold": [
+     111,
+     170,
+     197
+    ],
+    "md_cold_notests": [
+     129,
+     179,
+     197
+    ],
+    "gf_printed": [
+     89,
+     121,
+     137
+    ],
+    "gf_printed_nodocs": [
+     89,
+     121,
+     137
+    ],
+    "gf_seeds": [
+     89,
+     121,
+     137
+    ],
+    "gf_byfile": [
+     116,
+     160,
+     172
+    ]
+   },
+   "graphify at its best": "gf_byfile",
+   "mcnemar top-1 md_cold vs graphify best (md only, gf only, p)": [
+    50,
+    55,
+    0.6964676629916758
+   ],
+   "mcnemar top-5 md_cold vs graphify best": [
+    61,
+    36,
+    0.014389633007095661
+   ],
+   "mcnemar top-1 md_cold_notests vs graphify best (same test filter)": [
+    57,
+    44,
+    0.23230046428473858
+   ],
+   "mcnemar top-5 md_cold_notests vs graphify best (same test filter)": [
+    59,
+    34,
+    0.012400602797937595
+   ],
+   "mcnemar top-1 md_cover vs graphify best": [
+    72,
+    39,
+    0.002238345717908815
+   ]
+  },
+  "raw": {
+   "top1/3/5": {
+    "md_cover": [
+     155,
+     188,
+     198
+    ],
+    "md_cold": [
+     111,
+     187,
+     212
+    ],
+    "md_cold_notests": [
+     131,
+     198,
+     211
+    ],
+    "gf_printed": [
+     91,
+     126,
+     142
+    ],
+    "gf_printed_nodocs": [
+     91,
+     126,
+     142
+    ],
+    "gf_seeds": [
+     91,
+     126,
+     143
+    ],
+    "gf_byfile": [
+     118,
+     156,
+     168
+    ]
+   },
+   "graphify at its best": "gf_byfile",
+   "mcnemar top-1 md_cold vs graphify best (md only, gf only, p)": [
+    43,
+    50,
+    0.5340598617346067
+   ],
+   "mcnemar top-5 md_cold vs graphify best": [
+    73,
+    29,
+    1.5502681985416567e-05
+   ],
+   "mcnemar top-1 md_cold_notests vs graphify best (same test filter)": [
+    54,
+    41,
+    0.21805368187049984
+   ],
+   "mcnemar top-5 md_cold_notests vs graphify best (same test filter)": [
+    69,
+    26,
+    1.182808848491514e-05
+   ],
+   "mcnemar top-1 md_cover vs graphify best": [
+    79,
+    42,
+    0.000983028497126898
+   ]
+  }
+ },
+ "SWE-bench Lite (285 issues, 12 repos)": {
+  "n": 285,
+  "title": {
+   "top1/3/5": {
+    "md_cover": [
+     87,
+     152,
+     176
+    ],
+    "md_cold": [
+     80,
+     154,
+     176
+    ],
+    "md_cold_notests": [
+     107,
+     164,
+     181
+    ],
+    "gf_printed": [
+     78,
+     115,
+     131
+    ],
+    "gf_printed_nodocs": [
+     80,
+     115,
+     131
+    ],
+    "gf_seeds": [
+     80,
+     115,
+     134
+    ],
+    "gf_byfile": [
+     86,
+     132,
+     159
+    ]
+   },
+   "graphify at its best": "gf_byfile",
+   "mcnemar top-1 md_cold vs graphify best (md only, gf only, p)": [
+    40,
+    46,
+    0.5900356111485574
+   ],
+   "mcnemar top-5 md_cold vs graphify best": [
+    53,
+    36,
+    0.08932073673118934
+   ],
+   "mcnemar top-1 md_cold_notests vs graphify best (same test filter)": [
+    58,
+    37,
+    0.03960823767054589
+   ],
+   "mcnemar top-5 md_cold_notests vs graphify best (same test filter)": [
+    55,
+    33,
+    0.02462283158179103
+   ],
+   "mcnemar top-1 md_cover vs graphify best": [
+    44,
+    43,
+    1.0
+   ]
+  },
+  "q400": {
+   "top1/3/5": {
+    "md_cover": [
+     99,
+     159,
+     181
+    ],
+    "md_cold": [
+     96,
+     161,
+     183
+    ],
+    "md_cold_notests": [
+     127,
+     174,
+     187
+    ],
+    "gf_printed": [
+     67,
+     99,
+     122
+    ],
+    "gf_printed_nodocs": [
+     67,
+     99,
+     123
+    ],
+    "gf_seeds": [
+     67,
+     99,
+     123
+    ],
+    "gf_byfile": [
+     81,
+     131,
+     150
+    ]
+   },
+   "graphify at its best": "gf_byfile",
+   "mcnemar top-1 md_cold vs graphify best (md only, gf only, p)": [
+    50,
+    35,
+    0.12839640292640084
+   ],
+   "mcnemar top-5 md_cold vs graphify best": [
+    58,
+    25,
+    0.00037834276316077865
+   ],
+   "mcnemar top-1 md_cold_notests vs graphify best (same test filter)": [
+    72,
+    26,
+    3.6886460339466603e-06
+   ],
+   "mcnemar top-5 md_cold_notests vs graphify best (same test filter)": [
+    61,
+    24,
+    7.395947454563745e-05
+   ],
+   "mcnemar top-1 md_cover vs graphify best": [
+    52,
+    34,
+    0.06615259746138928
+   ]
+  }
+ },
+ "Four Python repos (requests, itsdangerous, httpx, click; 172 fixes)": {
+  "n": 172,
+  "q": {
+   "top1/3/5": {
+    "md_cold": [
+     65,
+     105,
+     124
+    ],
+    "md_cold_notests": [
+     73,
+     110,
+     125
+    ],
+    "gf_printed": [
+     52,
+     84,
+     107
+    ],
+    "gf_printed_nodocs": [
+     56,
+     92,
+     114
+    ],
+    "gf_seeds": [
+     56,
+     87,
+     111
+    ],
+    "gf_byfile": [
+     72,
+     105,
+     124
+    ]
+   },
+   "graphify at its best": "gf_byfile",
+   "mcnemar top-1 md_cold vs graphify best (md only, gf only, p)": [
+    27,
+    34,
+    0.4426260049464714
+   ],
+   "mcnemar top-5 md_cold vs graphify best": [
+    20,
+    20,
+    1.0
+   ],
+   "mcnemar top-1 md_cold_notests vs graphify best (same test filter)": [
+    31,
+    30,
+    1.0
+   ],
+   "mcnemar top-5 md_cold_notests vs graphify best (same test filter)": [
+    21,
+    20,
+    1.0
+   ]
+  },
+  "raw": {
+   "top1/3/5": {
+    "md_cold": [
+     79,
+     115,
+     125
+    ],
+    "md_cold_notests": [
+     87,
+     119,
+     126
+    ],
+    "gf_printed": [
+     58,
+     84,
+     103
+    ],
+    "gf_printed_nodocs": [
+     61,
+     90,
+     108
+    ],
+    "gf_seeds": [
+     62,
+     93,
+     107
+    ],
+    "gf_byfile": [
+     76,
+     105,
+     114
+    ]
+   },
+   "graphify at its best": "gf_byfile",
+   "mcnemar top-1 md_cold vs graphify best (md only, gf only, p)": [
+    33,
+    30,
+    0.8013064925040662
+   ],
+   "mcnemar top-5 md_cold vs graphify best": [
+    27,
+    16,
+    0.12628947438543037
+   ],
+   "mcnemar top-1 md_cold_notests vs graphify best (same test filter)": [
+    38,
+    27,
+    0.21453919400817845
+   ],
+   "mcnemar top-5 md_cold_notests vs graphify best (same test filter)": [
+    27,
+    15,
+    0.08842954698775429
+   ]
+  }
+ }
+}

@@ -1,0 +1,47 @@
+[
+{
+"id": "99cba6ac64",
+"date": "2024-01-10",
+"queries": {
+"q": "Where is the code behind this change: Fix RFC 2069 mode digest authentication (#3045)",
+"raw": "Fix RFC 2069 mode digest authentication (#3045)"
+},
+"gold": [
+"httpx/_auth.py"
+]
+},
+{
+"id": "6d852d319a",
+"date": "2024-02-26",
+"queries": {
+"q": "Where is the code behind this change: Fix client.send() timeout new Request instance (#3116)",
+"raw": "Fix client.send() timeout new Request instance (#3116)"
+},
+"gold": [
+"httpx/_client.py"
+]
+},
+{
+"id": "a33c87852b",
+"date": "2024-11-28",
+"queries": {
+"q": "Where is the code behind this change: Fix `extensions` type annotation. (#3380)",
+"raw": "Fix `extensions` type annotation. (#3380)"
+},
+"gold": [
+"httpx/_models.py",
+"httpx/_types.py"
+]
+},
+{
+"id": "89599a9541",
+"date": "2024-12-04",
+"queries": {
+"q": "Where is the code behind this change: Fix `verify=False`, `cert=...` case. (#3442)",
+"raw": "Fix `verify=False`, `cert=...` case. (#3442)"
+},
+"gold": [
+"httpx/_config.py"
+]
+}
+]

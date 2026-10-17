@@ -1,0 +1,146 @@
+[
+{
+"id": "b1e72b4770",
+"date": "2025-04-12",
+"queries": {
+"q": "Where is the code behind this change: Fix formatting.",
+"raw": "Fix formatting."
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "6fec395ea5",
+"date": "2025-02-13",
+"queries": {
+"q": "Where is the code behind this change: fix pyright findings",
+"raw": "fix pyright findings"
+},
+"gold": [
+"src/click/_winconsole.py"
+]
+},
+{
+"id": "4fd2fea0db",
+"date": "2025-05-20",
+"queries": {
+"q": "Where is the code behind this change: Fix condition for setting flag value when type is provided",
+"raw": "Fix condition for setting flag value when type is provided"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "ac6a2acfdb",
+"date": "2025-05-12",
+"queries": {
+"q": "Where is the code behind this change: Fix shell completion for nested groups",
+"raw": "Fix shell completion for nested groups"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "9caedb9206",
+"date": "2025-05-28",
+"queries": {
+"q": "Where is the code behind this change: Fix reconciliation of envvar with default, flag_value and type parameters for flag options",
+"raw": "Fix reconciliation of envvar with default, flag_value and type parameters for flag options"
+},
+"gold": [
+"src/click/core.py",
+"src/click/types.py"
+]
+},
+{
+"id": "3155dcac03",
+"date": "2025-07-03",
+"queries": {
+"q": "Where is the code behind this change: fix(typing): Using correct typing for `param_hint`",
+"raw": "fix(typing): Using correct typing for `param_hint`"
+},
+"gold": [
+"src/click/exceptions.py"
+]
+},
+{
+"id": "a1235aacb1",
+"date": "2025-07-21",
+"queries": {
+"q": "Where is the code behind this change: Fix Zsh completions with colons (#2846)",
+"raw": "Fix Zsh completions with colons (#2846)"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "812b8000f7",
+"date": "2025-07-28",
+"queries": {
+"q": "Where is the code behind this change: Fix rendering when `prompt_suffix` is empty",
+"raw": "Fix rendering when `prompt_suffix` is empty"
+},
+"gold": [
+"src/click/termui.py"
+]
+},
+{
+"id": "701b313160",
+"date": "2025-08-09",
+"queries": {
+"q": "Where is the code behind this change: Fix completions for quoted/escaped parameters in Fish (#3013)",
+"raw": "Fix completions for quoted/escaped parameters in Fish (#3013)"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "4f70b379b5",
+"date": "2025-08-23",
+"queries": {
+"q": "Where is the code behind this change: Fix typing",
+"raw": "Fix typing"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "1c20dc6e72",
+"date": "2025-09-22",
+"queries": {
+"q": "Where is the code behind this change: Fix default handling to defer UNSET normalization",
+"raw": "Fix default handling to defer UNSET normalization"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "34723d12b1",
+"date": "2025-05-25",
+"queries": {
+"q": "Where is the code behind this change: Fix _pipepager()/_tempfilepage() to work with multi-call binaries",
+"raw": "Fix _pipepager()/_tempfilepage() to work with multi-call binaries"
+},
+"gold": [
+"src/click/_termui_impl.py"
+]
+},
+{
+"id": "91de59c6c8",
+"date": "2025-10-07",
+"queries": {
+"q": "Where is the code behind this change: Fix #3084: Correct flag optional value behavior and add comprehensive tests",
+"raw": "Fix #3084: Correct flag optional value behavior and add comprehensive tests"
+},
+"gold": [
+"src/click/core.py"
+]
+}
+]

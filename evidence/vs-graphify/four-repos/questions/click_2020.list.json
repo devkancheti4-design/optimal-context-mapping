@@ -1,0 +1,69 @@
+[
+{
+"id": "fa0a7b841a",
+"date": "2020-01-30",
+"queries": {
+"q": "Where is the code behind this change: Fix error in new AppEngine environments",
+"raw": "Fix error in new AppEngine environments"
+},
+"gold": [
+"click/_compat.py"
+]
+},
+{
+"id": "8c5f779185",
+"date": "2020-01-30",
+"queries": {
+"q": "Where is the code behind this change: Fix error in new AppEngine environments",
+"raw": "Fix error in new AppEngine environments"
+},
+"gold": [
+"click/_compat.py"
+]
+},
+{
+"id": "99ef35e3b4",
+"date": "2019-05-06",
+"queries": {
+"q": "Where is the code behind this change: Fix for string cast of MissingParameter",
+"raw": "Fix for string cast of MissingParameter"
+},
+"gold": [
+"click/exceptions.py"
+]
+},
+{
+"id": "e4bb120808",
+"date": "2020-02-23",
+"queries": {
+"q": "Where is the code behind this change: fix newline wrapping in option help",
+"raw": "fix newline wrapping in option help"
+},
+"gold": [
+"click/core.py",
+"click/formatting.py"
+]
+},
+{
+"id": "f957fba83b",
+"date": "2018-10-07",
+"queries": {
+"q": "Where is the code behind this change: fix a memory leak and missing error check in _get_windows_argv",
+"raw": "fix a memory leak and missing error check in _get_windows_argv"
+},
+"gold": [
+"click/_winconsole.py"
+]
+},
+{
+"id": "f6710e5406",
+"date": "2020-02-10",
+"queries": {
+"q": "Where is the code behind this change: fix: always use parameter UTF-8 fallback",
+"raw": "fix: always use parameter UTF-8 fallback"
+},
+"gold": [
+"click/types.py"
+]
+}
+]

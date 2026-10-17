@@ -1,0 +1,1 @@
+{"3f07f990ac": {"q": {"files": [".github/workflows/codeql-analysis.yml", ".github/workflows/close-issues.yml", "docs/Makefile", "src/requests/adapters.py", "tests/test_lowlevel.py", "tests/test_requests.py"], "chars": 2518, "taught": false}, "raw": {"files": ["docs/conf.py", "src/requests/adapters.py", "docs/Makefile"], "chars": 1727, "taught": false}}}

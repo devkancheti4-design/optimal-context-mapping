@@ -10,6 +10,17 @@
 Graphify gives Claude a neighbourhood of its graph to explore, about 1,500 tokens per query. Model D gives it a pointer,
 about 400 tokens, and one item when the code is learned.
 
+## Read both ways (added 2026-10-18; see `best/RESULTS_BEST.md`)
+Part A reads Graphify in the order its answer prints, as pre-registered. That order comes from walking the graph, not
+from a relevance ranking. A post-hoc analysis (`best/`) also reads it at its best: its own node scores summed per
+file, as PR #4481 does, with docs dropped.
+- **Right file first, at its best:** Graphify ties cold Model D. Django 116 against 111, Lite titles 86 against 80,
+  and the four Python repositories (`four-repos/`) 72 against 65. None of these gaps is significant.
+- **Where Model D still leads:** the top 5 on the large repositories, taught Model D (149 against 116, p = 0.002),
+  and Lite with the same test filter for both.
+- **Graphify's answer today** still prints in walk order, at 1,500–1,650 tokens.
+- **Graphify's Python import edges** are right: 0.7% wrong in 0.9.92 (`imports/`).
+
 ## Part A: pointing, offline (complete)
 
 **Django 2022, the 288 real fixes**, asked as "Where is the code behind this change: <subject>":

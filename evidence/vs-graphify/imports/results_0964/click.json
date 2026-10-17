@@ -1,0 +1,46 @@
+{
+ "repo": "click",
+ "py files": 91,
+ "import edges scored": 598,
+ "by verdict": {
+  "right (internal)": 318,
+  "right (external)": 270,
+  "wrong, missed internal": 10
+ },
+ "wrong share": 0.017,
+ "internal import statements (truth)": 336,
+ "found by graphify": 326,
+ "recall": 0.97,
+ "calls: name on the line (confidence, ok) ": {
+  "EXTRACTED False": 1,
+  "EXTRACTED True": 591,
+  "INFERRED True": 9
+ },
+ "examples": {
+  "wrong, missed internal": [
+   "tests/test_deprecations.py:10 -> src_click_utils [] (truth: ['src/click/utils.py'])",
+   "tests/test_utils/test_echo.py:8 -> src_click_utils [] (truth: ['src/click/utils.py'])",
+   "tests/test_arguments.py:11 -> src_click_utils [] (truth: ['src/click/_utils.py'])",
+   "tests/test_basic.py:9 -> src_click_utils [] (truth: ['src/click/_utils.py'])",
+   "tests/test_defaults.py:7 -> src_click_utils [] (truth: ['src/click/_utils.py'])",
+   "tests/test_options.py:19 -> src_click_utils [] (truth: ['src/click/_utils.py'])",
+   "tests/test_termui.py:21 -> src_click_utils [] (truth: ['src/click/_utils.py'])",
+   "tests/test_testing.py:13 -> src_click_utils [] (truth: ['src/click/utils.py'])"
+  ],
+  "missed (not found)": [
+   "tests/test_arguments.py:11  from click._utils import UNSET",
+   "tests/test_basic.py:9  from click._utils import UNSET",
+   "tests/test_defaults.py:7  from click._utils import UNSET",
+   "tests/test_deprecations.py:10  import click.utils",
+   "tests/test_options.py:19  from click._utils import UNSET",
+   "tests/test_termui.py:21  from click._utils import UNSET",
+   "tests/test_testing.py:13  from click.utils import _get_binary_stream",
+   "tests/test_utils/test_echo.py:8  import click.utils",
+   "tests/test_utils/test_sentinel.py:9  from click._utils import Sentinel",
+   "tests/test_utils/test_sentinel.py:10  from click._utils import UNSET"
+  ],
+  "calls failing the name check": [
+   "src/click/termui.py:990 -> raw_terminal  |  return f()"
+  ]
+ }
+}

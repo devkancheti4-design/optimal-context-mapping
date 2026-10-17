@@ -1,0 +1,4 @@
+requests https://github.com/psf/requests 611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60
+itsdangerous https://github.com/pallets/itsdangerous 672971d66a2ef9f85151e53283113f33d642dabd
+httpx https://github.com/encode/httpx b5addb64f0161ff6bfe94c124ef76f6a1fba5254
+click https://github.com/pallets/click 2247b35ea1c47c727d7a06e51fa280e12a863ff6

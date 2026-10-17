@@ -1,0 +1,52 @@
+{
+"repo": "requests",
+"snapshot": "17e6e27a93131b7295165408e69b4cadb098b0d7",
+"since": "2022-01-01",
+"until": "2023-01-01",
+"questions": [
+{
+"id": "38f3f8ecb9",
+"date": "2022-01-04",
+"queries": {
+"q": "Where is the code behind this change: Fix auth parsing for proxies",
+"raw": "Fix auth parsing for proxies"
+},
+"gold": [
+"requests/utils.py"
+]
+},
+{
+"id": "79c4a017fe",
+"date": "2022-02-25",
+"queries": {
+"q": "Where is the code behind this change: Fix environment CA Bundle resolution",
+"raw": "Fix environment CA Bundle resolution"
+},
+"gold": [
+"requests/sessions.py"
+]
+},
+{
+"id": "2d5517682b",
+"date": "2022-03-28",
+"queries": {
+"q": "Where is the code behind this change: Fix inconsistent exception for JSONDecode error (#6097)",
+"raw": "Fix inconsistent exception for JSONDecode error (#6097)"
+},
+"gold": [
+"requests/models.py"
+]
+},
+{
+"id": "bda7f0171f",
+"date": "2022-06-29",
+"queries": {
+"q": "Where is the code behind this change: Fixed warnings message to suggest using secure protocol. (#6188)",
+"raw": "Fixed warnings message to suggest using secure protocol. (#6188)"
+},
+"gold": [
+"requests/models.py"
+]
+}
+]
+}

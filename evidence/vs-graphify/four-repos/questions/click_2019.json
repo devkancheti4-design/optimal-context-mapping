@@ -1,0 +1,43 @@
+{
+"repo": "click",
+"snapshot": "d053249a6899bceabf87c6222f51a53f2f700228",
+"since": "2019-01-01",
+"until": "2020-01-01",
+"questions": [
+{
+"id": "00f82cd1ef",
+"date": "2019-07-07",
+"queries": {
+"q": "Where is the code behind this change: Fix typos",
+"raw": "Fix typos"
+},
+"gold": [
+"click/_bashcomplete.py",
+"click/_compat.py",
+"click/_winconsole.py"
+]
+},
+{
+"id": "d19e10916c",
+"date": "2019-07-18",
+"queries": {
+"q": "Where is the code behind this change: Fix Simple Typo: serverly -> severely",
+"raw": "Fix Simple Typo: serverly -> severely"
+},
+"gold": [
+"click/_winconsole.py"
+]
+},
+{
+"id": "0be3b61b79",
+"date": "2019-09-12",
+"queries": {
+"q": "Where is the code behind this change: Fix OSError when running on MinGW64 with MSYS2",
+"raw": "Fix OSError when running on MinGW64 with MSYS2"
+},
+"gold": [
+"click/_compat.py"
+]
+}
+]
+}

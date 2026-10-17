@@ -1,0 +1,13 @@
+[
+{
+"id": "876ce6ff93",
+"date": "2023-01-19",
+"queries": {
+"q": "Where is the code behind this change: fix mypy/flake8 findings",
+"raw": "fix mypy/flake8 findings"
+},
+"gold": [
+"src/itsdangerous/serializer.py"
+]
+}
+]

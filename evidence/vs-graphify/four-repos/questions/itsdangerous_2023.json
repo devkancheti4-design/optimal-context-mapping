@@ -1,0 +1,19 @@
+{
+"repo": "itsdangerous",
+"snapshot": "931237a806f430dc9461f2b8159338ad100d846e",
+"since": "2023-01-01",
+"until": "2024-01-01",
+"questions": [
+{
+"id": "876ce6ff93",
+"date": "2023-01-19",
+"queries": {
+"q": "Where is the code behind this change: fix mypy/flake8 findings",
+"raw": "fix mypy/flake8 findings"
+},
+"gold": [
+"src/itsdangerous/serializer.py"
+]
+}
+]
+}

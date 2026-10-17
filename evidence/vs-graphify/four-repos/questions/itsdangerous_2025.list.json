@@ -1,0 +1,13 @@
+[
+{
+"id": "c294b2fb47",
+"date": "2025-05-28",
+"queries": {
+"q": "Where is the code behind this change: fix pyright findings",
+"raw": "fix pyright findings"
+},
+"gold": [
+"src/itsdangerous/timed.py"
+]
+}
+]

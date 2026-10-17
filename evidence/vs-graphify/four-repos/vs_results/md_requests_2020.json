@@ -1,0 +1,1 @@
+{"9ed5db8ed2": {"q": {"files": ["requests/models.py", "tests/test_requests.py", "docs/Makefile", "requests/adapters.py"], "chars": 2173, "taught": false}, "raw": {"files": ["tests/test_requests.py", "requests/models.py", "requests/status_codes.py"], "chars": 1676, "taught": false}}}

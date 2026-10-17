@@ -1,0 +1,41 @@
+{
+"repo": "httpx",
+"snapshot": "fe86c0c4b4c642f5638806a92229c634235521cd",
+"since": "2020-01-01",
+"until": "2021-01-01",
+"questions": [
+{
+"id": "387f04732b",
+"date": "2020-01-07",
+"queries": {
+"q": "Where is the code behind this change: Fixed redirect loop (#734)",
+"raw": "Fixed redirect loop (#734)"
+},
+"gold": [
+"httpx/client.py"
+]
+},
+{
+"id": "5a63540e8a",
+"date": "2020-01-17",
+"queries": {
+"q": "Where is the code behind this change: Fix for streaming a redirect response body with allow_redirects=False (#766)",
+"raw": "Fix for streaming a redirect response body with allow_redirects=False (#766)"
+},
+"gold": [
+"httpx/client.py"
+]
+},
+{
+"id": "b1e99a5cf9",
+"date": "2020-01-22",
+"queries": {
+"q": "Where is the code behind this change: Fix ProxyMode for code in dispatch/proxy_http (#788)",
+"raw": "Fix ProxyMode for code in dispatch/proxy_http (#788)"
+},
+"gold": [
+"httpx/config.py"
+]
+}
+]
+}

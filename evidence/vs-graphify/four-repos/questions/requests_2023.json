@@ -1,0 +1,41 @@
+{
+"repo": "requests",
+"snapshot": "ec553c275fe915ab8c179a530907b564892d2922",
+"since": "2023-01-01",
+"until": "2024-01-01",
+"questions": [
+{
+"id": "16a17a3ca7",
+"date": "2023-01-18",
+"queries": {
+"q": "Where is the code behind this change: fix: Remove '<4' from python_requires (#6333)",
+"raw": "fix: Remove '<4' from python_requires (#6333)"
+},
+"gold": [
+"setup.py"
+]
+},
+{
+"id": "6e5b15d542",
+"date": "2023-05-22",
+"queries": {
+"q": "Where is the code behind this change: Fix linting issues",
+"raw": "Fix linting issues"
+},
+"gold": [
+"requests/sessions.py"
+]
+},
+{
+"id": "22db55a889",
+"date": "2023-06-26",
+"queries": {
+"q": "Where is the code behind this change: Fix doc typo (#6467)",
+"raw": "Fix doc typo (#6467)"
+},
+"gold": [
+"requests/api.py"
+]
+}
+]
+}

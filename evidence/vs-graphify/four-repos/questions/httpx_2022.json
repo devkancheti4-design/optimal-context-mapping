@@ -1,0 +1,52 @@
+{
+"repo": "httpx",
+"snapshot": "83c81aa9b8ef0f7825df413a673e6d9300065f3a",
+"since": "2022-01-01",
+"until": "2023-01-01",
+"questions": [
+{
+"id": "b7dc0c3df6",
+"date": "2022-01-06",
+"queries": {
+"q": "Where is the code behind this change: Fix for stream uploads that subclass SyncByteStream/AsyncByteStream (#2016)",
+"raw": "Fix for stream uploads that subclass SyncByteStream/AsyncByteStream (#2016)"
+},
+"gold": [
+"httpx/_content.py"
+]
+},
+{
+"id": "321d4aa509",
+"date": "2022-01-21",
+"queries": {
+"q": "Where is the code behind this change: Fix Headers.update to correctly handle repeated headers (#2038)",
+"raw": "Fix Headers.update to correctly handle repeated headers (#2038)"
+},
+"gold": [
+"httpx/_models.py"
+]
+},
+{
+"id": "2814fd379c",
+"date": "2022-02-04",
+"queries": {
+"q": "Where is the code behind this change: Fix console markup escaping issue (#1866)",
+"raw": "Fix console markup escaping issue (#1866)"
+},
+"gold": [
+"httpx/_main.py"
+]
+},
+{
+"id": "c82885ac04",
+"date": "2022-03-15",
+"queries": {
+"q": "Where is the code behind this change: Fix cli docs --proxies #2124 (#2125)",
+"raw": "Fix cli docs --proxies #2124 (#2125)"
+},
+"gold": [
+"httpx/_main.py"
+]
+}
+]
+}

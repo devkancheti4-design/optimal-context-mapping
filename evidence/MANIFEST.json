@@ -1970,7 +1970,1039 @@
  {
   "file": "vs-graphify/RESULTS_VS_GRAPHIFY.md",
   "from": "RESULTS_VS_GRAPHIFY.md",
-  "sha256": "275091411f7eb073cd441e099f26988604fe73d9d0264cec268334463ae21b9e",
+  "sha256": "c2a44fa235594b364bb12c8a87b7e90a4bfddd98ba107a026e59110fb7d8a84b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/HASH.txt",
+  "from": "HASH.txt",
+  "sha256": "95605326325df0981a24f8827834ca943f4d97d5711a5accfb3aec686575147a",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/best/METHOD_BEST.md",
+  "from": "METHOD_BEST.md",
+  "sha256": "eda8a4f744f20ecb619d79fa01828e5467e5ff5fcc9f94629eaf0c636af42d8d",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/best/RESULTS_BEST.md",
+  "from": "RESULTS_BEST.md",
+  "sha256": "04f3c772deb865a4260852ee8af50ee270fbc3045fb49c4e62fbbd980f654edc",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/dj_gf_best.json",
+  "from": "dj_gf_best.json",
+  "sha256": "17fd429586d41db83dd80bca4ed6802c9600caa0b2afd5c353ff6c7db45e0740",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2018.json",
+  "from": "four_gf_best_click_2018.json",
+  "sha256": "65a8bc474395a9840392f1b8c2923b876c480a4ef1cb90a0b6c54f023db5c0f8",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2019.json",
+  "from": "four_gf_best_click_2019.json",
+  "sha256": "d73bef2f670cfbf800c7b36cab769c81597d0e91fb10f2f626b8663b8c4f133e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2020.json",
+  "from": "four_gf_best_click_2020.json",
+  "sha256": "00f3b7423254f4293c3c6d3fa3b53f3d257845b3b0134c0e23b0323609e4a13a",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2021.json",
+  "from": "four_gf_best_click_2021.json",
+  "sha256": "06ec54a9d4a2677e21c6fb4e995ca494120709f3ba255dc157969ebc6d66e467",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2022.json",
+  "from": "four_gf_best_click_2022.json",
+  "sha256": "9f14b1dfd4c4f6c41a5a1103bca84d91559a3699d2cbe2db2e137af7067d804f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2023.json",
+  "from": "four_gf_best_click_2023.json",
+  "sha256": "fc89d9f6fc7cfe77dc99cb262adbc3e56c25b707efe912540dacd609f765d979",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2024.json",
+  "from": "four_gf_best_click_2024.json",
+  "sha256": "1c3dedf88979961172c5a97187cdc7729174327c1dba5292adf0ff1677a4e3d1",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2025.json",
+  "from": "four_gf_best_click_2025.json",
+  "sha256": "89eebdad945c72fee88f50057e7e777265162bbbdbecb0e554c1268e457b2159",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_click_2026.json",
+  "from": "four_gf_best_click_2026.json",
+  "sha256": "be5f6c970dc06f2b72747fe448c72f2bb45d398e653ea2363ab3e8ffad31b565",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_httpx_2020.json",
+  "from": "four_gf_best_httpx_2020.json",
+  "sha256": "dd181c36ae29eca9aed265778354c6a68ca06eceac0876d12f9489384fe07d01",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_httpx_2021.json",
+  "from": "four_gf_best_httpx_2021.json",
+  "sha256": "c4fbf887f07a53347f90a661e39fdbb045fee11b8b92ee7d1cd6fe73ae66d95f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_httpx_2022.json",
+  "from": "four_gf_best_httpx_2022.json",
+  "sha256": "8a4a12fdf2989e2aee2f0ae5a768951c86bd2b3ebaa3ab27ae23a2f2074ac23a",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_httpx_2023.json",
+  "from": "four_gf_best_httpx_2023.json",
+  "sha256": "fcb2f7dbb7ccb95ac349467ef78b7fb7e8ced2ae4d78cfa36f77d36b932b53b8",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_httpx_2024.json",
+  "from": "four_gf_best_httpx_2024.json",
+  "sha256": "2854b5a3c8f797d9b4beefcf56f524f00824ace0d3c6d6abbee757d0b5835f05",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_httpx_2025.json",
+  "from": "four_gf_best_httpx_2025.json",
+  "sha256": "89c82554a0ccc3118b1b4775f432aae971505a302cee3c305039fafcb6738377",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_itsdangerous_2019.json",
+  "from": "four_gf_best_itsdangerous_2019.json",
+  "sha256": "0ba35beee983100c70b28fee8b0f533a7080eaba2c24be648446156f3fad3b0c",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_itsdangerous_2023.json",
+  "from": "four_gf_best_itsdangerous_2023.json",
+  "sha256": "2bbd6894fc60ad26fea22a5da8183d5b541a925daff724d2329d149c29fa550e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_itsdangerous_2025.json",
+  "from": "four_gf_best_itsdangerous_2025.json",
+  "sha256": "cfcfce9be075e77be19ff131b302b0d2d568c3bb90179170e9dd489a7e91ce80",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2018.json",
+  "from": "four_gf_best_requests_2018.json",
+  "sha256": "08318ae8c2e8c0d80a47486698d999fb2d9593168b250aa162581910f72edc52",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2019.json",
+  "from": "four_gf_best_requests_2019.json",
+  "sha256": "2ed0cad6c5a58857831a0d9747afba97dfc4e6fda5d911ac4d118c1fb15df441",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2020.json",
+  "from": "four_gf_best_requests_2020.json",
+  "sha256": "b92d58e984ce2026d3c462b7071e108cf3c9c76a02b6e39b4b756c4800f5b614",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2021.json",
+  "from": "four_gf_best_requests_2021.json",
+  "sha256": "c824280c470c5fa9bdb90d1750b56e70fa6f7da559c41e7f351c559ea54d99f7",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2022.json",
+  "from": "four_gf_best_requests_2022.json",
+  "sha256": "ee1019823942f238376d93977df79d3b0af71eb2b7a6c4b08102b38e3cfe53b2",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2023.json",
+  "from": "four_gf_best_requests_2023.json",
+  "sha256": "d84351d78456046deaaf4a59d51427b855800767e3f93f676568c1a4a75985da",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2024.json",
+  "from": "four_gf_best_requests_2024.json",
+  "sha256": "5a7c8c562c9f9a633f767c0972acb7d9409784800cc719ca2581857906e75b9e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2025.json",
+  "from": "four_gf_best_requests_2025.json",
+  "sha256": "00c5a1cf07aedaf7f82f08b5c8e55ef068683bcd2cdbcc593bd35e94e10526f4",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/four_gf_best_requests_2026.json",
+  "from": "four_gf_best_requests_2026.json",
+  "sha256": "7a95810d58f865228496c760c7cefe8f0dac6b41ac6e7eaff3eaff5a6bffa014",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/gf_best.py",
+  "from": "gf_best.py",
+  "sha256": "0e54dcdbff1e617fc96c84dcbc8f7f424ac576626ae10a123981036c315badfc",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_astropy.json",
+  "from": "lite_gf_best_astropy.json",
+  "sha256": "2489c31822c5a7edbce3140437d0364dc1d254ce0bbe410d192163500386e9d1",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_django.json",
+  "from": "lite_gf_best_django.json",
+  "sha256": "3aae8e8cff75d5d74ec96a76699d1dfab58303ed09a6ab26ca077dd5acbde330",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_flask.json",
+  "from": "lite_gf_best_flask.json",
+  "sha256": "eb34a6d49055e2f25446d5847df75ea6d937390acccba1942226f39113f1f186",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_matplotlib.json",
+  "from": "lite_gf_best_matplotlib.json",
+  "sha256": "e2981115bc6fb09b5d01e68c06ad31b9744ef446bce392ab3da278455225e679",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_pylint.json",
+  "from": "lite_gf_best_pylint.json",
+  "sha256": "6ded8b3eb9359b4752870ff6783e3364f4c1548053e8b77c4b95b57f67d491f0",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_pytest.json",
+  "from": "lite_gf_best_pytest.json",
+  "sha256": "f363caa244f5ba6f23de2bc04e0bad1543c3dfe2743cff499f651545a302399e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_requests.json",
+  "from": "lite_gf_best_requests.json",
+  "sha256": "489aa343b7b7521b33853bf3bdbe88713c58e20a9cba8fdc7b9e5e85852dac5a",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_scikit-learn.json",
+  "from": "lite_gf_best_scikit-learn.json",
+  "sha256": "5762c8436cea2db1a52db4582a828d1d5bc0c8938019231e132d93840f1f616b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_seaborn.json",
+  "from": "lite_gf_best_seaborn.json",
+  "sha256": "a74e0c8077756c0818cfc3716816713ab9ee0988d02a81c1e973f183edb89991",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_sphinx.json",
+  "from": "lite_gf_best_sphinx.json",
+  "sha256": "04a6c26275d244dec268fbbdbb0188eef5220a6122c5613c1755ea8952d8034b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_sympy.json",
+  "from": "lite_gf_best_sympy.json",
+  "sha256": "3fe6ccc9456e50a46667bf8d3044a07862ce5bdd8cdbb42a123d075ee10fe589",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/lite_gf_best_xarray.json",
+  "from": "lite_gf_best_xarray.json",
+  "sha256": "0913801750b5f7ac7158d700392ccb25d2a8abf5797eb4c9198981749ca703c4",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/report_best.json",
+  "from": "report_best.json",
+  "sha256": "dfc8eed27eb2bb6be045fb9695ee2221ee345bc7b3881b4e7bb8420cb6b50ea2",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/best/score_best.py",
+  "from": "score_best.py",
+  "sha256": "eb4d83fa90903bbf4af02104b9fdd71074d9d09d25fe2cf02e754b2649f9770c",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/HASHES_VS.txt",
+  "from": "HASHES_VS.txt",
+  "sha256": "c75470d510b190d96ea6c688c8dced336d35c56035fd801cd22cad96ca711f1b",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/METHOD_VS_MODELD.md",
+  "from": "METHOD_VS_MODELD.md",
+  "sha256": "ac4e73d9184c419992f81947151c8f1c214c247f3fc49d092d756dfa45bc2598",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/fixes.py",
+  "from": "fixes.py",
+  "sha256": "b56a41fa62d4c8b2b39f6c30962d83b4a529ce10964a17330735d56c15dd4a42",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2018.json",
+  "from": "click_2018.json",
+  "sha256": "b294c818866e775dc1b80758e4cca7808178422f205760e3ce6813bc03e2367e",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2018.list.json",
+  "from": "click_2018.list.json",
+  "sha256": "5bc6a3af28d389494db52af9f40a54cc4f54efb89f06a6ee45eeee606b1c7434",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2019.json",
+  "from": "click_2019.json",
+  "sha256": "0fac01267ba8218c82c760c184c8715052dbe6176fd003c91cee495e7894fc4d",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2019.list.json",
+  "from": "click_2019.list.json",
+  "sha256": "0565205fb25a98ee0924e977659c64eff52f71a9bb67ee2b78aafdbf68d3cbc1",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2020.json",
+  "from": "click_2020.json",
+  "sha256": "10d3dae5ae4c76fb0e9c71a589689c66e73466b540ce10a051b4ae9991a99c33",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2020.list.json",
+  "from": "click_2020.list.json",
+  "sha256": "7e8fd9cc09729ed73d202d44363573d0c0413ae4305c708baf9505162a306f15",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2021.json",
+  "from": "click_2021.json",
+  "sha256": "7e487b4846fd7f696bfdd449d1ba3f61b8d4acc9fe2c921297cb9d05a1ae65c1",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2021.list.json",
+  "from": "click_2021.list.json",
+  "sha256": "513905fe41b5f70eef14908ba3bdda0d1d50a6bc7b6d092430ca2ff3310eb54c",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2022.json",
+  "from": "click_2022.json",
+  "sha256": "245652385e17133c6d60cf572192fcb83b2a048dd275ffd21e83dafa202552ad",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2022.list.json",
+  "from": "click_2022.list.json",
+  "sha256": "a4eecce0625e7bdda2141aef77e27c9130bdab2f211ffb1da7055125d2f938fb",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2023.json",
+  "from": "click_2023.json",
+  "sha256": "0a0131fd6e73d9b5037c671038634f56b90469a94ef9d8146b0d61c93ad36414",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2023.list.json",
+  "from": "click_2023.list.json",
+  "sha256": "170a5e091dc700acabbf93610e6676fe950513c4cc332b58f21ebf2cf5286980",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2024.json",
+  "from": "click_2024.json",
+  "sha256": "1c5aacbb7b95dcf11a35025b8e3570b2da618a29a70ca21ab88a31065335502e",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2024.list.json",
+  "from": "click_2024.list.json",
+  "sha256": "1b5c79dc1a4216cb4ec29e8a9d4ef6dd450dee4a5fec95f10d320b66bae6d831",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2025.json",
+  "from": "click_2025.json",
+  "sha256": "895143f0bb7a45b38dc0a133ce91621c9e012d23d57bbf97b953fa9f64d7f170",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2025.list.json",
+  "from": "click_2025.list.json",
+  "sha256": "558d866444c3758dd0663203fb2db4abdd023fefd9f239b079bc1ea7bb08015e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2026.json",
+  "from": "click_2026.json",
+  "sha256": "c6b272b957b2b3686e8bb00cba73d5abbd8bc92e61005372f8c718506b301fd3",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/click_2026.list.json",
+  "from": "click_2026.list.json",
+  "sha256": "9c8dad698dad9eaecbdd0b39f6469ed3a3e906a1d59b75f94947060be0d403ec",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2020.json",
+  "from": "httpx_2020.json",
+  "sha256": "9d2535ac6c67502a1707751244ce65f5484c787637c8d4d3b3b2c2e13d44e33d",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2020.list.json",
+  "from": "httpx_2020.list.json",
+  "sha256": "8b9cf3073107ff8a90ecf3f5da1596db6308b877afd312a527fe7b0c66ce19ba",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2021.json",
+  "from": "httpx_2021.json",
+  "sha256": "2a3b09baf8d05d87de101d1f4f6003f4c7e821d64c69f3635e8167e7b7acca95",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2021.list.json",
+  "from": "httpx_2021.list.json",
+  "sha256": "cf72573cfad000197f1c552a43aa082b2fbec7f5d2cbe585ba0c0fe0f8c68432",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2022.json",
+  "from": "httpx_2022.json",
+  "sha256": "ad1c7f66f941483179daffff3e465862281a1399822d1bd0df0fb221de02ef5d",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2022.list.json",
+  "from": "httpx_2022.list.json",
+  "sha256": "586ade745f832acd6c50eddee430105e39290cb201f2d027ad3d7619236deae7",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2023.json",
+  "from": "httpx_2023.json",
+  "sha256": "2e7db99709f25f2240ef3bbf406dfbec161f4ad86977fb1ce7de98d57ee449f4",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2023.list.json",
+  "from": "httpx_2023.list.json",
+  "sha256": "9fd50e7306977d2348550bc4ba8ec7206fac861f06ff45784083ed8dc4a6f341",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2024.json",
+  "from": "httpx_2024.json",
+  "sha256": "30ea3d906372ebe961e1407d741e7b4ae40409432c3f3a87e868886ed1e9e0a5",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2024.list.json",
+  "from": "httpx_2024.list.json",
+  "sha256": "8766c051dd9d39583c80ee753bad2d717e1d799eb4d157a356cfcf1bcb325e39",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2025.json",
+  "from": "httpx_2025.json",
+  "sha256": "5fbba080a9cfd87902a0be6c7f7ddc07a78d7c4c54bc9e248168674a2d1a32a8",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/httpx_2025.list.json",
+  "from": "httpx_2025.list.json",
+  "sha256": "3f816c0adb67b20a89b33e84003df030246b9a2b4e42751019c3823d017c278b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/itsdangerous_2019.json",
+  "from": "itsdangerous_2019.json",
+  "sha256": "7a10e612951a6c287cc4ac53f80aa4009d1cb13cd89e59a40e6c41fdfafb7bde",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/itsdangerous_2019.list.json",
+  "from": "itsdangerous_2019.list.json",
+  "sha256": "aa4ff13747b96fd4a2d77e78b8d1f02cdbb3e1fefadde98c1ebe38ae8f256603",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/itsdangerous_2023.json",
+  "from": "itsdangerous_2023.json",
+  "sha256": "cd74356bb4badf555ad43ec368794efd91e070756d133bc77e0864125d2c8b67",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/itsdangerous_2023.list.json",
+  "from": "itsdangerous_2023.list.json",
+  "sha256": "d3fb041a7368ed9a0895ab076288dc9221f8cb30b79eaa93535dbf642a87feda",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/itsdangerous_2025.json",
+  "from": "itsdangerous_2025.json",
+  "sha256": "e93a13eff62bcc0882bcdee9184b245969ef73224566d5ed72a5a2ed72e622d7",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/itsdangerous_2025.list.json",
+  "from": "itsdangerous_2025.list.json",
+  "sha256": "e5d63aad6a7ca6362eb8b62c3f0d2c711a7c4a090864fa3ee01aca05eae3e33b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2018.json",
+  "from": "requests_2018.json",
+  "sha256": "8e8f2f3fa704e493f9636cd4fcae5023ccf89e957612b856be14dd2c3d90824b",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2018.list.json",
+  "from": "requests_2018.list.json",
+  "sha256": "0b9412b0e5e1d94da893adbd96d13e1bee042bc785f1c358cc2dec7aa208a98b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2019.json",
+  "from": "requests_2019.json",
+  "sha256": "540f3370a99206904e65538638698ceb970fed1b5cbb70e91ec5308a2aac9584",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2019.list.json",
+  "from": "requests_2019.list.json",
+  "sha256": "a34ee52e61b3746118e7d68409f0a6a2a7d78a73d2e2757aeef4d17345c1a0ab",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2020.json",
+  "from": "requests_2020.json",
+  "sha256": "81d5ea9b68974b5936d2a121384ea8a41d51a59bde1913532f8f5d1c92990cfd",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2020.list.json",
+  "from": "requests_2020.list.json",
+  "sha256": "e860757e79fec8c0f14a0a8ec0c68e25b445ea130850601cc962e059056fa076",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2021.json",
+  "from": "requests_2021.json",
+  "sha256": "057300c233b95ebf01428e5da4d0825185976c8f8958bad01335ef0834658116",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2021.list.json",
+  "from": "requests_2021.list.json",
+  "sha256": "90f603cdc86172231ce1af3ba9da531a740557cceae2aee9520d842605ccb25e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2022.json",
+  "from": "requests_2022.json",
+  "sha256": "dd5eaca2a3dcad9b70c9e558577bc72c2e3bad986e2c69330b374621508ab356",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2022.list.json",
+  "from": "requests_2022.list.json",
+  "sha256": "a6e11ee72efec4d0dccc3799add5526904869756ce2cbeafbb73f92643baf29f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2023.json",
+  "from": "requests_2023.json",
+  "sha256": "cee0863be2ddb939509030d4c336a86fe59d737925291b8aa2f8c80086bb5296",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2023.list.json",
+  "from": "requests_2023.list.json",
+  "sha256": "cd1e096e5fae66acd124d3ddf6a3e998d521030224471e0c03b71e5b6b333bcc",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2024.json",
+  "from": "requests_2024.json",
+  "sha256": "936033610417a1be963544de569e8233f950d93d60c0a7668298ec609f491f77",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2024.list.json",
+  "from": "requests_2024.list.json",
+  "sha256": "6affc4bec3376454537e102e5c41fb1a23d1a16702ba7e0dff2798fb6dedbfd1",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2025.json",
+  "from": "requests_2025.json",
+  "sha256": "aa32c9f309b54f30cd0e06bfbb382c928b9bc608ba0373742c16646a8a385d48",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2025.list.json",
+  "from": "requests_2025.list.json",
+  "sha256": "2eeb4e1e6c56aee3c54676c6f6a4ef98e5391dae438563a2184131455e811d01",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2026.json",
+  "from": "requests_2026.json",
+  "sha256": "e0cea1ef25989b605852ef534265d569dcc6a1045bf33a947839154c2e32aea1",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/four-repos/questions/requests_2026.list.json",
+  "from": "requests_2026.list.json",
+  "sha256": "be252db3ce414b24bfa75ec20c60ab568f900fab8bd29e78564c902602ce15db",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/run_vs.sh",
+  "from": "run_vs.sh",
+  "sha256": "f8b7fe9ebc48f876997e4392f807c7c75584e4187090f22d2b9853c12cbba223",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2018.json",
+  "from": "gf_click_2018.json",
+  "sha256": "d9a62529413c501aee6cadd1ec20f5fbcf9c4fbf2474f5dde2103976b3dd4e5b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2019.json",
+  "from": "gf_click_2019.json",
+  "sha256": "034a6f877111c7af7917b724c8bdde56c498fe2ce1b0bf6989442e04d084ab47",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2020.json",
+  "from": "gf_click_2020.json",
+  "sha256": "982baec389fe3ab9ef138d26e41ae19899dcd95f36676c490bb331989fc22787",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2021.json",
+  "from": "gf_click_2021.json",
+  "sha256": "f70a61c12fcba2a257b85ca58d886cce769989ad9452e33ec027655c0474a839",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2022.json",
+  "from": "gf_click_2022.json",
+  "sha256": "b5a5ade8a5913ecec0a9eded4a43d5646a5fb272c79ff0d8b073aeab4c11c6f8",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2023.json",
+  "from": "gf_click_2023.json",
+  "sha256": "197d757d0dff01c3a8540066b296b8e5ee2344919fd108af5dbc607516f9a50f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2024.json",
+  "from": "gf_click_2024.json",
+  "sha256": "66b7b5d8371935cac6702fc4504c8ab11ac2182588f0019afc61672b2c0f6a95",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2025.json",
+  "from": "gf_click_2025.json",
+  "sha256": "b74d15067e3f5028632a136792ef00da2c67f0fb1b5ea09b7f650179d5afdf8d",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_click_2026.json",
+  "from": "gf_click_2026.json",
+  "sha256": "86cf078a57680dcd6c687ee6f3c62800375866a9bdd2ba268b113b02c6da3cad",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_httpx_2020.json",
+  "from": "gf_httpx_2020.json",
+  "sha256": "d1ee654d03d911e7ae72d5cef57c15f3952ed0493836e3971a58121b9851405f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_httpx_2021.json",
+  "from": "gf_httpx_2021.json",
+  "sha256": "4da940266a384a907b2517291286736538a43f65bcf489202c541e7b0cc554ec",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_httpx_2022.json",
+  "from": "gf_httpx_2022.json",
+  "sha256": "9f1b25cae1207439b91c66d1d6fead0526faf9720385a3f884bf74d2aae2abb8",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_httpx_2023.json",
+  "from": "gf_httpx_2023.json",
+  "sha256": "81d733840e9e3b410dd6b74420eca5ce314e9faeae20037e78542d37d80e9c65",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_httpx_2024.json",
+  "from": "gf_httpx_2024.json",
+  "sha256": "8ffdeb4629347353d111eb599ed1c20822b17a4ea0c48065848869c8df7b5ca1",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_httpx_2025.json",
+  "from": "gf_httpx_2025.json",
+  "sha256": "772156c57cb4384b13f1424455ba1962143542eb9c0261eb0e1a76c989e7625b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_itsdangerous_2019.json",
+  "from": "gf_itsdangerous_2019.json",
+  "sha256": "fe40745b202acdd7a437e585990f7d202cac434b278523cc11b2b72f29ce6e4e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_itsdangerous_2023.json",
+  "from": "gf_itsdangerous_2023.json",
+  "sha256": "e75de0b97793a35896dd9ef5489b4d285177190341f1af61601b7eb04bf91b7b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_itsdangerous_2025.json",
+  "from": "gf_itsdangerous_2025.json",
+  "sha256": "780bb116d6d06c8c8ac7e38ec5db614e16d17dc8256753d1e1142b41cab3e5db",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2018.json",
+  "from": "gf_requests_2018.json",
+  "sha256": "5c6ad29f804168fbb4dea6e0138e080dc72778e143d489a59e885f6cc01adaab",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2019.json",
+  "from": "gf_requests_2019.json",
+  "sha256": "f95e420b987b9095bac53d52f7bc0f4a4f41e9750753092c485cf96a59b24206",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2020.json",
+  "from": "gf_requests_2020.json",
+  "sha256": "927283f6e418df41f898209bc31efb5b5f6d3be9476720753121ea861962fc55",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2021.json",
+  "from": "gf_requests_2021.json",
+  "sha256": "a4e74c27aa8aba8016d32918518ec58bd3df9fb729ad01f9f86ddde11d075f14",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2022.json",
+  "from": "gf_requests_2022.json",
+  "sha256": "2dcca46e00fcc5029ec2db9f2aed80ba90a42214f2a9db370616fe7daa591098",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2023.json",
+  "from": "gf_requests_2023.json",
+  "sha256": "5c479e6287fbe23ebff29d3c9cd8d28ccc943001dae338b9ed3e21cfd2ace3d2",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2024.json",
+  "from": "gf_requests_2024.json",
+  "sha256": "d55e80e2dc0e3c71dc002b2dd32a901029f919fa33a745ae76a9a14817afe56a",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2025.json",
+  "from": "gf_requests_2025.json",
+  "sha256": "53424b5615896561131bca00221ec20947f2dee8b0ccfcc381a6980124838f5f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/gf_requests_2026.json",
+  "from": "gf_requests_2026.json",
+  "sha256": "3f4c4e665fd26e662bf61080f98a11e7cf8a6a4db3ffb17fd6f52eaf81c990f4",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2018.json",
+  "from": "md_click_2018.json",
+  "sha256": "f90d2e68fb36d6423f0ecd67f777729795c4018a01cf4c520a25de555a342972",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2019.json",
+  "from": "md_click_2019.json",
+  "sha256": "1d73cdfc221269e4eb9de982ff94eb416e58fb512ef92114c4919c647db2dd9c",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2020.json",
+  "from": "md_click_2020.json",
+  "sha256": "8e3a6fd8d87e60ae9dd5c048061869dd17aca767849408fb748a55ca4a8e0951",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2021.json",
+  "from": "md_click_2021.json",
+  "sha256": "46e27396b76bc79a4f05c5a846e68328f50ebae28aba424535fd62d76c9a9310",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2022.json",
+  "from": "md_click_2022.json",
+  "sha256": "2cebf3073427d9cb40e3f580536320d1f42d2251ab9905f646abda8d6b24b562",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2023.json",
+  "from": "md_click_2023.json",
+  "sha256": "c2166559de5db9e316feeabec7ba5f91a18b8b8e98050d7c01244479ab41c664",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2024.json",
+  "from": "md_click_2024.json",
+  "sha256": "b5ba3539b82135c087a868aa3ff5cb559e58f49cbfd25d45a1cb363fb9f40309",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2025.json",
+  "from": "md_click_2025.json",
+  "sha256": "3cafa4e6222a255225ad1fa3be2b097e467705db5bb93174412b9b9434267c46",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_click_2026.json",
+  "from": "md_click_2026.json",
+  "sha256": "389df09dc23a5a71b95472ccfe0557c0ae8bd445e2e8b99e7fb286306edc0938",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_httpx_2020.json",
+  "from": "md_httpx_2020.json",
+  "sha256": "400dc686a92f4ad860cbc510bfa3f00d18672c4a91bcb422d897b9b7640aefac",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_httpx_2021.json",
+  "from": "md_httpx_2021.json",
+  "sha256": "5df8ae9c27b36172ca106426d31f1192f5b1f35b49c9291044bd44aed45b89a5",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_httpx_2022.json",
+  "from": "md_httpx_2022.json",
+  "sha256": "d9ec53143c151c8cb41990066b34c23e0d18cf7f72de7a550cee5ee2c2dd9de1",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_httpx_2023.json",
+  "from": "md_httpx_2023.json",
+  "sha256": "cb5675f24004395ae7a21d3fe48451162fe36a652ebe09311bf79528da8b4a83",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_httpx_2024.json",
+  "from": "md_httpx_2024.json",
+  "sha256": "5c87627d814b49dda7aec72dd43f687951780adbb8b699b2ade291e141ec592d",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_httpx_2025.json",
+  "from": "md_httpx_2025.json",
+  "sha256": "1dcf09d1f529bb20292f35d9ca13560c7efd1f7114d29d8ce9cc7d8adf63c90a",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_itsdangerous_2019.json",
+  "from": "md_itsdangerous_2019.json",
+  "sha256": "465c166372ec61aa075b9b16e47422ce4441d0fb28837bdd54f77af310a20e33",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_itsdangerous_2023.json",
+  "from": "md_itsdangerous_2023.json",
+  "sha256": "95cd368b8f55f435a6ef8fb4eb285d37214208ac1934ac84ef239ac801f05f8d",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_itsdangerous_2025.json",
+  "from": "md_itsdangerous_2025.json",
+  "sha256": "7974dc21179ce34a57830c23782ce53c39dd486743454d47dcac1f8c8a82158b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2018.json",
+  "from": "md_requests_2018.json",
+  "sha256": "5e0476eab96683c3e1d8c30acaa7b85c44de2980608adc042329d39e39848b98",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2019.json",
+  "from": "md_requests_2019.json",
+  "sha256": "db71de132c087d7b28511c2b8ba839321eaa6432d9e75a67b24013996d1bb7dd",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2020.json",
+  "from": "md_requests_2020.json",
+  "sha256": "57519f2c270866bd728062124c32935ada0892d34a09675133c04b3229b14ddd",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2021.json",
+  "from": "md_requests_2021.json",
+  "sha256": "a3a91c0ab6ffe48a7a2fcec6fe46e0fe0d52e70d0e0ecf9ab26ab52947c5a0fb",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2022.json",
+  "from": "md_requests_2022.json",
+  "sha256": "930aaeeceb7300316627ea02534e7ec07aac755b8be936ec71ad3f27dbbc61dd",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2023.json",
+  "from": "md_requests_2023.json",
+  "sha256": "954d552373c0e6977da06a3eb7095d36b66d6a7231379e90c0577eb91473943a",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2024.json",
+  "from": "md_requests_2024.json",
+  "sha256": "eaf4b57d1b13e5fad844b687360b3e3c452ca02e1b36640099bc6f63d0a5648f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2025.json",
+  "from": "md_requests_2025.json",
+  "sha256": "aad467cdabe77a85185468c0783cab2596e26923db38897c8b86faa350b2cc82",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/four-repos/vs_results/md_requests_2026.json",
+  "from": "md_requests_2026.json",
+  "sha256": "73fde11fa4bf60833f4cfe9280c36b6bb919b789ae972caf08b5187d55beda08",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/HASHES.txt",
+  "from": "HASHES.txt",
+  "sha256": "45bc8d8e5c101c8aea41fe21e8d459f3755b816d490b95114c5b3d11782c4332",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/imports/METHOD.md",
+  "from": "METHOD.md",
+  "sha256": "edb516f1bf35833efdcf34dcf55f9e556988d7ec2e64987147a47498e934a7d4",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/imports/METHOD.md.deviations",
+  "from": "METHOD.md.deviations",
+  "sha256": "c48dd78730ba75035f4e5459f03d0f49ae43097e8bc60041544bb9c6cbd32a39",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/imports/RESULTS.md",
+  "from": "RESULTS.md",
+  "sha256": "21ff1f92c99b480719a8866173efb01ea38251ccc15d5400ce60131e5817893b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/check_imports.py",
+  "from": "check_imports.py",
+  "sha256": "1e2e3a32980f128a407480eba4a3335aedfc67f7977e8bcfdf5b037265771b0d",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/repos.txt",
+  "from": "repos.txt",
+  "sha256": "2359b5ce83708eb310fb8aca7ba9d61b7986dd5f1254b88171636cbd3168a015",
+  "pre-registered": true
+ },
+ {
+  "file": "vs-graphify/imports/results_0964/click.json",
+  "from": "click.json",
+  "sha256": "73ea2cf8414bdab5a42c1d49106a3a659aeb446d9712799aa0458e750ba5db1b",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0964/httpx.json",
+  "from": "httpx.json",
+  "sha256": "90350958e1a1589b5b5e9116bad0273c054529f0ac5fb233af41fab3ba837c19",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0964/itsdangerous.json",
+  "from": "itsdangerous.json",
+  "sha256": "d11d8bb7b53af1540d614903a445fc83fedbe170b1d545776389de1eeb36e72f",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0964/requests.json",
+  "from": "requests.json",
+  "sha256": "c355bd33570970ab85e83011f791f7a576338032b8666b71e5dc3af023e87b3e",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0992/click.json",
+  "from": "click.json",
+  "sha256": "93c56b3a842c28cd80030f05c2201a8572e420982da141ea823b6a86c1cf7162",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0992/httpx.json",
+  "from": "httpx.json",
+  "sha256": "5a32150a2e9fa191f503fd42244616047aa48299e48a7f6b2fe84465d5c39a99",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0992/itsdangerous.json",
+  "from": "itsdangerous.json",
+  "sha256": "d4ca7329f6420df59fc839240271c8767f80bef9fb2820e129dbe1b66558591d",
+  "pre-registered": false
+ },
+ {
+  "file": "vs-graphify/imports/results_0992/requests.json",
+  "from": "requests.json",
+  "sha256": "e59b753e2677a0805fd7014b800a1b39061679f30ec0239b6239021c3964f847",
   "pre-registered": false
  },
  {

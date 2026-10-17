@@ -1,0 +1,55 @@
+{
+ "repo": "click",
+ "py files": 91,
+ "import edges scored": 598,
+ "by verdict": {
+  "right (internal)": 318,
+  "right (external)": 269,
+  "wrong, missed internal": 11
+ },
+ "wrong share": 0.018,
+ "internal import statements (truth)": 336,
+ "found by graphify": 326,
+ "recall": 0.97,
+ "calls: name on the line (confidence, ok) ": {
+  "EXTRACTED False": 14,
+  "EXTRACTED True": 645,
+  "INFERRED True": 423
+ },
+ "examples": {
+  "wrong, missed internal": [
+   "tests/test_deprecations.py:10 -> ambiguous_python_import_49b12d145e43 [] (truth: ['src/click/utils.py'])",
+   "tests/test_utils/test_echo.py:8 -> ambiguous_python_import_c8026d0c04d4 [] (truth: ['src/click/utils.py'])",
+   "tests/test_arguments.py:11 -> ambiguous_python_import_400a7d0e568e [] (truth: ['src/click/_utils.py'])",
+   "tests/test_basic.py:9 -> ambiguous_python_import_39d54eff1a88 [] (truth: ['src/click/_utils.py'])",
+   "tests/test_defaults.py:7 -> ambiguous_python_import_7dc1cbbb7fe3 [] (truth: ['src/click/_utils.py'])",
+   "tests/test_options.py:19 -> ambiguous_python_import_d639ae98fc67 [] (truth: ['src/click/_utils.py'])",
+   "tests/test_termui.py:21 -> ambiguous_python_import_06dffa8a4c9c [] (truth: ['src/click/_utils.py'])",
+   "tests/test_testing.py:13 -> ambiguous_python_import_ff9e288e1c53 [] (truth: ['src/click/utils.py'])"
+  ],
+  "missed (not found)": [
+   "tests/test_arguments.py:11  from click._utils import UNSET",
+   "tests/test_basic.py:9  from click._utils import UNSET",
+   "tests/test_defaults.py:7  from click._utils import UNSET",
+   "tests/test_deprecations.py:10  import click.utils",
+   "tests/test_options.py:19  from click._utils import UNSET",
+   "tests/test_termui.py:21  from click._utils import UNSET",
+   "tests/test_testing.py:13  from click.utils import _get_binary_stream",
+   "tests/test_utils/test_echo.py:8  import click.utils",
+   "tests/test_utils/test_sentinel.py:9  from click._utils import Sentinel",
+   "tests/test_utils/test_sentinel.py:10  from click._utils import UNSET"
+  ],
+  "calls failing the name check": [
+   "src/click/_compat.py:182 -> typing  |  return t.cast(t.BinaryIO, stream)",
+   "src/click/_compat.py:200 -> typing  |  return t.cast(t.BinaryIO, stream)",
+   "src/click/_compat.py:251 -> typing  |  binary_reader = t.cast(t.BinaryIO, text_stream)",
+   "src/click/_compat.py:452 -> typing  |  return t.cast(t.IO[t.Any], af), True",
+   "src/click/globals.py:36 -> typing  |  return t.cast(\"Context\", _local.stack[-1])",
+   "src/click/_termui_impl.py:919 -> typing  |  func = t.cast(t.Callable[[], str], msvcrt.getwche)",
+   "src/click/_termui_impl.py:596 -> typing  |  stdin = t.cast(t.TextIO, c.stdin)",
+   "src/click/_termui_impl.py:657 -> typing  |  yield t.cast(t.TextIO, f), color",
+   "src/click/termui.py:990 -> raw_terminal  |  return f()",
+   "src/click/testing.py:216 -> typing  |  rv = _find_binary_reader(t.cast(\"t.IO[t.Any]\", input))"
+  ]
+ }
+}

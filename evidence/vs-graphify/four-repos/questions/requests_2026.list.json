@@ -1,0 +1,102 @@
+[
+{
+"id": "f8bec2f7ca",
+"date": "2026-01-30",
+"queries": {
+"q": "Where is the code behind this change: Fix CI and build failures (#7190)",
+"raw": "Fix CI and build failures (#7190)"
+},
+"gold": [
+"setup.py",
+"src/requests/__init__.py",
+"src/requests/_internal_utils.py",
+"src/requests/adapters.py",
+"src/requests/auth.py",
+"src/requests/certs.py",
+"src/requests/exceptions.py",
+"src/requests/help.py",
+"src/requests/hooks.py",
+"src/requests/models.py",
+"src/requests/sessions.py",
+"src/requests/utils.py"
+]
+},
+{
+"id": "47914226c2",
+"date": "2026-02-12",
+"queries": {
+"q": "Where is the code behind this change: Fix empty netrc entry usage (#7205)",
+"raw": "Fix empty netrc entry usage (#7205)"
+},
+"gold": [
+"src/requests/utils.py"
+]
+},
+{
+"id": "bc7dd0fc4d",
+"date": "2026-03-30",
+"queries": {
+"q": "Where is the code behind this change: Fix cosmetic header validity parsing regex (#7308)",
+"raw": "Fix cosmetic header validity parsing regex (#7308)"
+},
+"gold": [
+"src/requests/_internal_utils.py"
+]
+},
+{
+"id": "f0198e6dfc",
+"date": "2026-03-30",
+"queries": {
+"q": "Where is the code behind this change: Fix malformed value parsing for Content-Type (#7309)",
+"raw": "Fix malformed value parsing for Content-Type (#7309)"
+},
+"gold": [
+"src/requests/utils.py"
+]
+},
+{
+"id": "27e0981962",
+"date": "2026-04-30",
+"queries": {
+"q": "Where is the code behind this change: Fix remaining typos (#7395)",
+"raw": "Fix remaining typos (#7395)"
+},
+"gold": [
+"src/requests/adapters.py"
+]
+},
+{
+"id": "6404f345e5",
+"date": "2026-05-12",
+"queries": {
+"q": "Where is the code behind this change: Fix `prepare_body` stream detection for `__getattr__`-based file wrappers (#7433)",
+"raw": "Fix `prepare_body` stream detection for `__getattr__`-based file wrappers (#7433)"
+},
+"gold": [
+"src/requests/models.py"
+]
+},
+{
+"id": "e511bc7277",
+"date": "2026-05-13",
+"queries": {
+"q": "Where is the code behind this change: Fix mutability issues with headers input types (#7431)",
+"raw": "Fix mutability issues with headers input types (#7431)"
+},
+"gold": [
+"src/requests/models.py",
+"src/requests/sessions.py"
+]
+},
+{
+"id": "6f205ff422",
+"date": "2026-06-08",
+"queries": {
+"q": "Where is the code behind this change: Fix `_encode_files` detection for `__getattr__`-based file wrappers (#7502)",
+"raw": "Fix `_encode_files` detection for `__getattr__`-based file wrappers (#7502)"
+},
+"gold": [
+"src/requests/models.py"
+]
+}
+]

@@ -1,0 +1,18 @@
+D1 (2026-10-18, after the first output, before any result was shared): three of the first "wrong" edges were errors in
+the ground truth, not in Graphify.
+- Absolute imports in test and example folders resolve against pytest-style roots, e.g. `from test_itsdangerous.x
+  import y` under `tests/`, or `from complex.cli import z` under `examples/complex/`.
+- Inside a package, `from types import TracebackType` is the standard library, not the sibling `types.py`.
+The fix: absolute imports resolve against the repository root, `src/`, and every ancestor folder of the importing file
+that is not itself inside a package (has no `__init__.py`). The importing file's own folder is used only when it is
+not a package. Each fix moves edges from "wrong" to "right", in Graphify's favour.
+Also added: lists of the imports Graphify missed, and examples of call edges failing the name check, for inspection.
+
+D1, continued (same inspection, before sharing): the graph is not a multigraph, so Graphify keeps one edge per file
+pair, and several statements importing the same module from one file share it. Recall therefore counts an internal
+import statement as found if any Graphify import edge from that file reaches one of its acceptable targets, on any
+line. The call name check also accepts a call into a module by attribute (`warnings.warn(` for a call edge to
+`warnings`).
+
+A1 (addition, 2026-10-18): the post asks whether Graphify "got better" since "last month". The same check runs on
+Graphify 0.9.64 (PyPI, 2026-09-18) with the same repositories and the same scorer (graphs in graphs_0964/).

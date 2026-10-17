@@ -1,0 +1,90 @@
+[
+{
+"id": "292a27d705",
+"date": "2023-03-20",
+"queries": {
+"q": "Where is the code behind this change: Fix typo",
+"raw": "Fix typo"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "eb1d760fb4",
+"date": "2023-05-07",
+"queries": {
+"q": "Where is the code behind this change: fix minor typo in `make_context` docs (#2381)",
+"raw": "fix minor typo in `make_context` docs (#2381)"
+},
+"gold": [
+"src/click/core.py"
+]
+},
+{
+"id": "e002dbc40c",
+"date": "2023-05-08",
+"queries": {
+"q": "Where is the code behind this change: Fix return value and type signature of `shell_completion.add_completion_class` function (#2421)",
+"raw": "Fix return value and type signature of `shell_completion.add_completion_class` function (#2421)"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "aa4a38e9aa",
+"date": "2023-06-30",
+"queries": {
+"q": "Where is the code behind this change: fix zsh completion loaded from fpath",
+"raw": "fix zsh completion loaded from fpath"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "449d38f517",
+"date": "2023-07-13",
+"queries": {
+"q": "Where is the code behind this change: Fix types, introduce type tests (#2562)",
+"raw": "Fix types, introduce type tests (#2562)"
+},
+"gold": [
+"src/click/decorators.py"
+]
+},
+{
+"id": "20280d4f76",
+"date": "2023-07-13",
+"queries": {
+"q": "Where is the code behind this change: fix `group` overload with `cls` arg",
+"raw": "fix `group` overload with `cls` arg"
+},
+"gold": [
+"src/click/decorators.py"
+]
+},
+{
+"id": "af2da1ef9b",
+"date": "2023-08-08",
+"queries": {
+"q": "Where is the code behind this change: Fix incorrect passing of flags to re.sub",
+"raw": "Fix incorrect passing of flags to re.sub"
+},
+"gold": [
+"src/click/shell_completion.py"
+]
+},
+{
+"id": "d69d2106d8",
+"date": "2023-08-17",
+"queries": {
+"q": "Where is the code behind this change: fix flake8 finding",
+"raw": "fix flake8 finding"
+},
+"gold": [
+"src/click/_compat.py"
+]
+}
+]

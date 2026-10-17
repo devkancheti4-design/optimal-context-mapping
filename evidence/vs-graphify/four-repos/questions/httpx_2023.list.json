@@ -1,0 +1,91 @@
+[
+{
+"id": "f0fd91925b",
+"date": "2023-02-09",
+"queries": {
+"q": "Where is the code behind this change: fix type annotation for MockTransport (#2581)",
+"raw": "fix type annotation for MockTransport (#2581)"
+},
+"gold": [
+"httpx/_transports/mock.py"
+]
+},
+{
+"id": "c1cc6b2462",
+"date": "2023-04-18",
+"queries": {
+"q": "Where is the code behind this change: Fixes #2666: None is the default value of file for httpx.NetRCAuth (#2667)",
+"raw": "Fixes #2666: None is the default value of file for httpx.NetRCAuth (#2667)"
+},
+"gold": [
+"httpx/_auth.py"
+]
+},
+{
+"id": "15d09a3bbc",
+"date": "2023-04-19",
+"queries": {
+"q": "Where is the code behind this change: fix: NO_PROXY should support IPv4, IPv6 and localhost (#2659)",
+"raw": "fix: NO_PROXY should support IPv4, IPv6 and localhost (#2659)"
+},
+"gold": [
+"httpx/_utils.py"
+]
+},
+{
+"id": "32e25497a3",
+"date": "2023-04-26",
+"queries": {
+"q": "Where is the code behind this change: Fix ruff error and script (#2680)",
+"raw": "Fix ruff error and script (#2680)"
+},
+"gold": [
+"httpx/_utils.py"
+]
+},
+{
+"id": "a682f6f1c7",
+"date": "2023-05-21",
+"queries": {
+"q": "Where is the code behind this change: Fix exception suppression in asgi transport (#2669)",
+"raw": "Fix exception suppression in asgi transport (#2669)"
+},
+"gold": [
+"httpx/_transports/asgi.py"
+]
+},
+{
+"id": "301b8fb03a",
+"date": "2023-06-08",
+"queries": {
+"q": "Where is the code behind this change: Fix URLPattern examples (#2740)",
+"raw": "Fix URLPattern examples (#2740)"
+},
+"gold": [
+"httpx/_utils.py"
+]
+},
+{
+"id": "1e11096473",
+"date": "2023-12-11",
+"queries": {
+"q": "Where is the code behind this change: Fixed `iter_text` adding an empty string (#2998)",
+"raw": "Fixed `iter_text` adding an empty string (#2998)"
+},
+"gold": [
+"httpx/_decoders.py",
+"httpx/_models.py"
+]
+},
+{
+"id": "3b9060ee11",
+"date": "2023-12-14",
+"queries": {
+"q": "Where is the code behind this change: Fix environment proxies (#2741)",
+"raw": "Fix environment proxies (#2741)"
+},
+"gold": [
+"httpx/_utils.py"
+]
+}
+]
