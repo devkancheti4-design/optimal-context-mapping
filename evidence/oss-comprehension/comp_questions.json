@@ -1,0 +1,1037 @@
+[
+ {
+  "k": 0,
+  "number": 1269,
+  "date": "2023-07-03",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1269",
+  "question": "Do you accept Pull Requests for reserved.ts?\n\nHello, I'm a web developer from Japan. Upon reading the content of [reserved.ts](https://github.com/bluesky-social/atproto/blob/4db7aeca574871ea3f8365635e742fc4c4bdfbf8/packages/identifier/src/reserved.ts#L994-L1026), I noticed a bias in the reserved IDs for Japan. It doesn't seem like they're simply chosen based on the number of Twitter followers in Japan or selected from news organizations, but also include influencers. On the other hand, I noticed that there're Twitter accounts with more followers than the listed accounts are not included. For instance, https://twitter.com/livedoornews, https://twitter.com/McDonaldsJapan, and https://twitter.com/Suzu_Mg among others. Are there any policies for the list? Also, do you accept pull requests to update the list?",
+  "gold": "We are not looking to expand this list in an organized way, and the contents are somewhat arbitrary. There was a wave of impersonation with prominent Japanese handles, which upset some users, and we reserved a batch of top Japanese twitter handles in response. We don't have plans to expand that list, or pre-reserve handles from other regions.\r\n\r\nOur general policy is that handles are first-come, first-served: a person or organization which had a username on a previous platform does not automatically get that handle on `*.bsky.social`. We encourage prominent individuals and institutions to use domain handles to prove their identity. For example, `mcdonalds.co.jp`. Adding additional handles to the reserved list runs somewhat counter to that policy, in that it marks some handles for special treatment, which isn't very fair to other folks.\r\n\r\nAll that being said, if there is an urgent situation or need, we could be flexible."
+ },
+ {
+  "k": 1,
+  "number": 1285,
+  "date": "2023-07-05",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1285",
+  "question": "Whats the best way to add custom reactions to each post in a custom app view?\n\nDoes bsky.app itself support it via xrpc/lexicons, or would it necessitate running a custom atproto server, and then add on support via a custom lexicon, and write a fallback for it for other clients? Love what you're building!",
+  "gold": "Good question! There are likely multiple ways this could be accomplished, and we don't yet have enough experience with feature extensions to existing Lexicons to recommend a best practice. Creating an entirely new application/modality would be relatively more straight-forward.\r\n\r\nOne way this could work:\r\n\r\n- create a new record type under a separate namespace, eg, `io.viksit.feed.reaction`. the schema would be similar to `app.bsky.feed.like`, but would include an emoji field (or string, or whatever you are thinking)\r\n- implement a small AppView which subscribes to the global BGS firehose, filters to only records of this type, and maintains a database of reactions by subject (AT-URI). could be a SQL database, or whatever you are familiar with\r\n- create a new app, or fork an existing app, to allow both creating these reaction records, and doing additional hydration queries to your AppView (proxied through the PDS) for display. Would probably want to have an API (Lexicon endpoint) that takes an array of AT-URIs, and returns, for each, a set of top reactions, and counts. possibly also a way to list the accounts which made each reaction, for an inspect view\r\n- over time, if your extension gets traction, other client apps could add support\r\n\r\nIn theory, you could also advocate to the existing app namespace authority (for `app.bsky.*`, that would be us, Bluesky) to add this feature. But I think you are asking how to do an independent extension, which is more interesting and unique to how atproto works!"
+ },
+ {
+  "k": 2,
+  "number": 1290,
+  "date": "2023-07-06",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1290",
+  "question": "CBOR: $type is missing?\n\nI'm using PeterO/CBOR to parse the CBOR for `com.atproto.sync.subscribeRepos` in C# (the CBOR implementation isn't DAG-CBOR, however if I understood correctly there should be interoperability between both). However, the CBOR payloads the Bluesky API returned didn't have `$type`, but rather a `t` property with the type info I'm looking for (see picture below). <img width=\"444\" alt=\"image\" src=\"https://github.com/bluesky-social/atproto/assets/29563098/e693cee2-aca3-4aee-86d5-93cfea9fd958\"> I'm not sure if I'm missing anything, or is this expected?",
+  "gold": "Check out the Event Stream specs, they talks about the use of `t` in DAG-CBOR objects returned in the frame header DAG-CBOR object: https://atproto.com/specs/event-stream#framing\r\n\r\nIn short, the `t` field indicates the `union` type variant of the payload, as a short ref (like `#commit`), not a fully-qualified type path like a `$type` field would have."
+ },
+ {
+  "k": 3,
+  "number": 1311,
+  "date": "2023-07-10",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1311",
+  "question": "How to get a displayable URL for an image\n\nI'm working on a library to display posts, and I'm not clear on how to create a URL for images. When I get the data for a post, images are returned in this form: ``` { \"alt\": \"montage of Homer Simpson working his way through advanced marketing, beginning marketing and a dictionary definition of marketing\", \"image\": { \"$type\": \"blob\", \"ref\": { \"$link\": \"bafkreid3oaa3a2xfki6e5nub45ltof6zumklpdcwxs7ruvtcsatfa7yyse\" }, \"mimeType\": \"image/jpeg\", \"size\": 322297 } } ``` When I open the image described above in a new tab, the URL is: `https://cdn.bsky.social/imgproxy/n9byCDsZwpr-KiGcrOyp3s-NKVgy_4kSm4hUhXUHaqI/rs:fit:2000:2000:1:0/plain/bafkreid3oaa3a2xfki6e5nub45ltof6zumklpdcwxs7ruvtcsatfa7yyse@jpeg` It's clear that the $link property is part of the URL, but how do I get the rest of it?",
+  "gold": "Got it.\r\n\r\nIf I take the `uri` property returned from `com.atproto.repo.getRecord` and pass it into `app.bsky.feed.getPostThread` the post data **does** include the `app.bsky.embed.images#view` $type, with the `thumb` and `fullsize` image URLs.\r\n\r\nSetting `depth` to zero in `app.bsky.feed.getPostThread` ensures it only returns the data for the specified post and not any replies.\r\n\r\nSo I'm good now.\r\n\r\nUPDATE: It isn't actually necessary to call `com.atproto.repo.getRecord` to get the uri for `app.bsky.feed.getPostThread`, it can be constructed from the author's `did` and the post URL's basename (or `rkey`), e.g.\r\n\r\n```\r\nconst uri = `at://${did}/app.bsky.feed.post/${rkey}`;\r\n```\r\n"
+ },
+ {
+  "k": 4,
+  "number": 1418,
+  "date": "2023-08-02",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1418",
+  "question": "Is a newline in `displayName` expected behavior?\n\nWe can add newline characters (`\\n`) in `displayName` by `putRecord()` API. Is this expected behavior? I'm sure that Bluesky and Atproto doesn't need to have exactly the same style as other services, but this is a little curious (and funny). screenshot\u2193 ![image](https://github.com/bluesky-social/atproto/assets/8146876/3daf08e7-513f-427f-b34d-e9cfe3695a96)",
+  "gold": "Heh the client ought to be sanitizing this. Thanks for the heads up."
+ },
+ {
+  "k": 5,
+  "number": 1424,
+  "date": "2023-08-02",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1424",
+  "question": "How to check follow/block/mute status?\n\nIs there a way to use the API to quickly get graph info on a specific account \u2014 i.e. whether you\u2019re following or blocking/muting them?",
+  "gold": "If you fetch their profile with `app.bsky.feed.getProfile`, it will include that info in the `viewer` state \ud83d\udc4d "
+ },
+ {
+  "k": 6,
+  "number": 1467,
+  "date": "2023-08-11",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1467",
+  "question": "How to get the original image after upload (not thumbnail)?\n\nI notice that when images are uploaded via API or web app, they always seem to be scaled to 1000px (or 2000px) by width or height, whichever is larger. The problem is, it looks pretty bad to upscale relatively small images, especially when you click them and they expand to fill the entire window. Is there any way to get the original width/height of an image, or is that lost after uploading? If it's lost you really should consider saving it somewhere, so the image could still be displayed at the original size.",
+  "gold": "Looking through the atproto docs, I found this endpoint: [com.atproto.sync.getBlob](https://atproto.com/lexicons/com-atproto-sync#comatprotosyncgetblob).\r\n\r\nIt seems to find the original uploaded blob, but how do I access the actual raw image data? The call returns an empty body, but the response headers show the correct mime type and size, so I know it's finding the correct file, I just can't figure out how to actually download it.\r\n\r\n**UPDATE**: I was looking at the return value the wrong way; I am getting the binary image blob in the response, and it does show the original size and mime type, so I'll mark this as the answer to my question. (Although I still think clicking images in Bluesky really should display them at the original size.)"
+ },
+ {
+  "k": 7,
+  "number": 1482,
+  "date": "2023-08-16",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1482",
+  "question": "Trying to use lexicons/app/bsky/feed/getRepostedBy but hitting the limit\n\nFor my feed, I have created a way to opt in and out of appearing, and it involves reposting a single post on an account. When the indexing logic of the feed sees those reposts, it knows who belongs on it. However, the issue I'm running into is that this API is capped at 100 and there is no way to get more, even to paginate through. Obviously there are other ways to register a person for my feed, but I quite like this one. Is there any way around this limit? https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getRepostedBy.json",
+  "gold": "You can paginate by providing the cursor in the response in the next request's params"
+ },
+ {
+  "k": 8,
+  "number": 1484,
+  "date": "2023-08-17",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1484",
+  "question": "Fetch replies to my account via the API\n\nI want to learn how to fetch replies to my account using a python/bash-curl script and then forward the JSON object to my ntfy.sh mobile app so to have basic notifications, can anyone point out where I should start to have the basic running ? I have glanced over here : https://github.com/MarshalX/atproto/tree/main/examples but I can't find an example where a reply to an account is showed Maybe this is the best approach to get this : https://github.com/MarshalX/atproto/blob/main/examples/advanced_usage/notifications_callback.py Along with this ressource ? https://atproto.com/lexicons/app-bsky-notification#appbskynotificationlistnotifications",
+  "gold": "Hi @rmdes, if you are looking for a Python-specific solution using MarshalX's library, you should probably ask over in the https://github.com/MarshalX/atproto repository directly.\r\n\r\nIn general, yes, the `app.bsky.notification.listNotifications` endpoint on the PDS is used to get all the various kinds of notifications for the account. It requires auth, and can be paginated."
+ },
+ {
+  "k": 9,
+  "number": 1489,
+  "date": "2023-08-17",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1489",
+  "question": "Image links not included when fetching quote posts\n\nI am trying to get images from posts in a timeline, and URLs to thumbnail and fullsize image are usually included in the embed section (feed_view.post.embed), but for quote posts the embed section instead contains the quoted post. If the quoted post has images in it, I get the URLs for those images, but for the \"outer\" post the images are only given in BlobRef-format, and I'm not sure how to convert that into a way of fetching the actual image.",
+  "gold": "Turns out it was an issue in the atproto python library!"
+ },
+ {
+  "k": 10,
+  "number": 1552,
+  "date": "2023-09-05",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1552",
+  "question": "How should event stream consumers handle out-of-order sequence numbers?\n\nhttps://atproto.com/specs/event-stream#sequence-numbers says: > Sequence numbers are always positive integers (non-zero), and increase monotonically, but otherwise have flexible semantics. They may contain arbitrary gaps. For example, they might be timestamps. I assume \"increase monotonically\" means that, for a given event stream connection, servers should emit messages with sequence numbers in monotonically increasing order, ie they shouldn't send frames with seq 1, then 3, then 2. If so, ok. I'm curious though, if that does happen, how should an event stream consumer handle it? Specifically, for `subscribeRepos`, if a BGS sees commits with out-of-order seqs like that, commit 3 probably includes MST nodes (if not prevs) that refer to blocks in missing commit 2, so it might not be able to fully construct and use the repo at commit 3. If/when that happens, is the BGS expected to continue using the repo at commit 1 until it later receives commit 2, at which point it has all of the commits it needs, so it then advances its copy of the repo to commit 3 and continue on? Or is it ok for the BGS to break and be unable to recover that repo and have it stuck at commit 1 indefinitely?",
+  "gold": "If you're emitting events, you should work _very_ hard to guarantee in-order and consistent sequence numbers for events.\r\n\r\nOur services will just ignore any out of order event.\r\n\r\nHowever, this is a good sign that something went wrong with the providing service. \r\n\r\nServices may:\r\n- investigate the bad event and determine if they missed some blocks, perhaps falling back to a `getRepo` or `getBlocks`\r\n- restart the stream from the last in-order cursor (and bail if it happens again)\r\n\r\nPersistent failures suggest a faulty service, and I would expect consumers to stop subscribing to them. Similar to publishing poorly signed commits \r\n\r\nIf the providing service is out of order because they reset their cursor (ie cursor 1,000,000 -> 1,000,001 -> 1 -> 2 ...), then:\r\n- the consumer, on reconnect, would provide their last valid cursor (1,000,001)\r\n- the provider should send a `FutureCursor` error frame - this tells the consumer that their saved cursor is no longer valid\r\n- the consumer should start at some earlier cursor (for instance 0) or with no cursor parameter "
+ },
+ {
+  "k": 11,
+  "number": 1562,
+  "date": "2023-09-07",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1562",
+  "question": "Delay between posting and API availability\n\nI'm working on a client, and one of the things I need to do is save a copy of the post data immediately after posting. I was doing this by calling `com.atproto.repo.createRecord`, then passing the returned uri to `app.bsky.feed.getPosts`. But in some cases (not always!), it seems like the post data is not available through the API that quickly, and `getPosts` doesn't return an error -- it's just a null array. If I wait a little while, then try the `getPosts` call again, it works as expected. Is there some kind of caching that would cause this delay? And is there any way to work around this?",
+  "gold": "Definitely! Makes sense.\n\nThe other thing you might try is `com.atproto.repo.getRecord`, which ideally the PDS can/should handle itself, instead of `app.bsky.feed.getPosts`, which is the AppView's domain."
+ },
+ {
+  "k": 12,
+  "number": 1587,
+  "date": "2023-09-12",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1587",
+  "question": "Hyperlink not possible via the API\n\nI can't get the link to display as a hyperlink via API. Posting a message works without any problem. I used the following documenation: [atproto.com/blog/create-...](https://atproto.com/blog/create-post) https://bsky.app/profile/dinowithlc.bsky.social/post/3k76e6mqnba2k",
+  "gold": "Looking at the parent posts in that thread, it seems like the `facets` list is empty. As described in the linked blog post, specifically in the \"Mentions and Links\" section, for hyperlinks you need to include facets with the correct type, the URL itself, and the starting and ending byte offsets (counting by UTF-8 bytes)."
+ },
+ {
+  "k": 13,
+  "number": 1650,
+  "date": "2023-09-21",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1650",
+  "question": "Will user search/discovery in clients ever trigger handle resolution?\n\nHi all! Looking at how people find and follow users in https://bsky.app/ 's search, I see a few requests to bsky.social (PDS) and search.bsky.social: * `bsky.social`: * `app.bsky.actor.searchActorsTypeahead` * `app.bsky.actor.getProfile` * `app.bsky.actor.getProfiles` * `search.bsky.social/search/profiles` ...but not `resolveHandle`. Do you all expect that clients will ever call that during discovery UX flows, eg when they press enter in the search box? Or that PDSes/AppViews will ever do it as a fallback in `getProfile[s]` when the input handle or actor isn't found? My use case is on-demand profiles. I'd like users to be able to discover profiles that are generated dynamically, on the fly, as opposed to only profiles that have already been indexed in the AppView. Specifically, when a PDS or AppView does HTTPS handle resolution on eg `user.com.brid.gy`, I plan to create a new `did:plc`, repo, and user profile commit synchronously, then return its DID. This will only work if clients call `resolveHandle` or PDSes/AppViews fall back to it in search, though. (I know there would be `subscribeRepos` propagation delay from my PDS => BGS => AppView. If we end up with that as the only difficulty, I'll count it as a win. \ud83d\ude01)",
+  "gold": "ah, I see. yeah, that is not how things work today: the search simply goes against an index of known repositories, we don't special-case it. Even with federation we have been thinking that accounts will either get pushed to BGS, or detected and spidered via graph interactions.\r\n\r\nI can see how doing a resolution when a specific handle or DID might make sense, but that is not how things are set up currently, and I haven't really thought that through."
+ },
+ {
+  "k": 14,
+  "number": 1655,
+  "date": "2023-09-22",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1655",
+  "question": "Is applyWrites allowed to split operations across multiple commits?\n\nA sub-optimal but very easy way for a PDS to support applyWrites would be to create a separate commit for each operation. Is this valid? This could potentially break atomicity assumptions made by the writer - but would that be a bad assumption on the writer's part, or a bad PDS implementation?",
+  "gold": "> I think there are hypothetical situations where having multiple ops together would be important.\r\n\r\nYeah, there definitely are \ud83d\udc4d One example is creating a post with an associated threadgate (https://github.com/bluesky-social/atproto/pull/1561).  Clients want to ensure that both of those records are created in a single write, so that there's no commit on which the repository reflects the post record without its threadgate.  Another concrete example is if we had upvotes and downvotes: switching an upvote to a downvote might consist of a write that deletes the upvote and creates the downvote.\r\n\r\nIn my view data integrity is difficult enough in the distributed setting that we should hold on tight to the facilities that we do have to help clients contend with correctness, and atomic repo writes are a super useful/fundamental tool.  While clients can't control whether the ops in their writes are processed atomically by upstream services, they might at least have some control over what states the repo can be observed in.\r\n\r\nThat thought process aside, need to think more about whether there's actually any compatibility issue that could crop-up \ud83e\udd14 It's possible that there isn't, but I'm not entirely sure."
+ },
+ {
+  "k": 15,
+  "number": 1661,
+  "date": "2023-09-23",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1661",
+  "question": "Handle resolution for *.bsky.social handles\n\nHi again! `*.bsky.social` handles, the default handles you get when you sign up, don't serve [handle resolution](https://atproto.com/specs/handle#handle-resolution) via either the DNS or HTTPS methods. OK. For those of us building tools that do handle resolution from scratch, do you have any guidance on how we should handle `*.bsky.social` handles? Should we special case them for now? Or maybe in general, if a handle fails resolution and it's a subdomain, see if its parent domain serves `com.atproto.server.describeServer` and returns the parent domain in `availableUserDomains`, and if so, call `com.atproto.identity.resolveHandle` there? Or...?",
+  "gold": "I don't think that's true, they appear to serve via the standard HTTPS mechanism. For example: https://abcdef.bsky.social/.well-known/atproto-did"
+ },
+ {
+  "k": 16,
+  "number": 1662,
+  "date": "2023-09-23",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1662",
+  "question": "RSS feeds?\n\nSorry if I'm posting this in the wrong category. But where do I find the RSS feeds for Bluesky profiles? Thanks for any information.",
+  "gold": "These shipped today with https://blueskyweb.xyz/blog/12-21-2023-butterfly ! eg https://bsky.app/profile/snarfed.org 's is https://bsky.app/profile/did:plc:fdme4gb7mu7zrie7peay7tst/rss"
+ },
+ {
+  "k": 17,
+  "number": 1686,
+  "date": "2023-09-27",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1686",
+  "question": "app.bsky.graph.listblock\n\nThe description \"A block of an entire list of actors\" of this one is a little ambiguous. Am I right to assume that this will let me block all actors from a (mute) list at once?",
+  "gold": "Yep, exactly.  Creating a `app.bsky.graph.block` record allows you to block a single actor, and `app.bsky.graph.listblock` allows you to block a list of actors.  The list-block is also dynamic: if an actor is added to the list after you create the `app.bsky.graph.listblock` record, you will start blocking them."
+ },
+ {
+  "k": 18,
+  "number": 1707,
+  "date": "2023-10-04",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1707",
+  "question": "How to follow via API or CLI?\n\nI'm interested in supporting users in following lists of other users. Say, for example, I have a blog post about science in social media, and I mention 50 Bluesky accounts to follow; I would love to be able to say \"here's a tool I made that I've provided these 50 handles, you just have to authorize Bluesky and then you can click once to follow all 50.\" Questions: 1) this isn't currently possible with the Bluesky API, right? I don't see anything about being able to Follow via the API. 2) is this something that is on the roadmap, or that there is support for doing? Or, is it something that the AT project has decided not to do? 3) this could obviously also be used to import users collected from other sources -- say, users who you already follow on other platforms. Is that discouraged? Or is it something where the attitude is, this is an agnostic tool, it's not our problem if users use their following lists from elsewhere to identify users here who they want to reconnect to?",
+  "gold": "You can follow by calling [`com.atproto.repo.createRecord`](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json) with a [`app.bsky.graph.follow`](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)."
+ },
+ {
+  "k": 19,
+  "number": 1710,
+  "date": "2023-10-05",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1710",
+  "question": "To what extent are public suffix handles disallowed?\n\nI'm a bit confused, since https://github.com/bluesky-social/atproto/issues/969 (\"Do not allow publicsuffix domains as handles\") is closed as completed, and https://bsky-debug.app/handle?handle=retr0-id.translate.goog says \"Invalid DNS name (publicsuffix or non-ICANN domain?)\". Fair enough, but domains like \".co.uk\" are also public-suffix domains, but they seem to be allowed. Where can I find the logic behind this? I can't seem to find the code that actually implements PSL checking - or specs/docs that describe it.",
+  "gold": "My understanding (@dholms chime in if i've missed something) is that we don't disallow public suffix handles. The (partial) resolution to the earlier domain cleverness was to use the `/.well-known/...` path instead of an `/xrpc/...` path. I can see how the closing of #969 was confusing on this point.\r\n\r\n`bsky-debug.app` seems to be using custom code, i'll look in to that.\r\n\r\nJust finally merged the #1299 you linked, could be a while until it gets deployed.\r\n\r\nTwo recent other handle things:\r\n\r\n- we accidentally allowed in some Handshake domain handles in main, because of a fallback DNS provider that happens to support them. we generally hold the line that handles should have boring old regular DNS TLDs\r\n- the `.alt` TLD was recently approved by the IETF as a special case. we'll disallow that for now (still need to update spec and code)"
+ },
+ {
+  "k": 20,
+  "number": 1734,
+  "date": "2023-10-11",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1734",
+  "question": "How to check if the user has reposted something\n\nThe client I'm building needs to do and undo reposts, but how do I get the `rkey` value for the `deleteRecord` call? I checked by undoing a repost in the Bluesky app and watching Network requests, and the `rkey` passed to `deleteRecord` is not the same as the `rkey` in that post's URL. So how do I find it? Conversely, how can I tell if the user has reposted a specific post?",
+  "gold": "The response of an `app.bsky.feed.getPostThread` request will include the URIs of the viewer's like and repost records, if present, in the \"viewer\" field. (thread -> post -> viewer -> repost, for example, being the full json path)"
+ },
+ {
+  "k": 21,
+  "number": 1777,
+  "date": "2023-10-12",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1777",
+  "question": "Images that upload successfully via `createBlob` will then fail to load, resulting in a 422 instead\n\n**Describe the bug** I primarily post small notes to my own website, then syndicate them to both Mastodon and Bluesky. Like Mastodon/Bluesky/Twitter, my small notes can have up to four attached images; when I syndicate these posts, I'll process the images based on the platform's limits. For Mastodon, that means I need to downsize them to have fewer than 33,177,600 pixels and compress them to be smaller than 16 MB. For Bluesky, I compress them until they're smaller than 976.56 KB. I don't know for _sure_ if it's related but, ever since I upgraded from an iPhone 14 Pro Max to an iPhone 15 Pro Max, most of my images that I upload are unable to load in Bluesky's client applications and instead return a 422 from the CDN. I'm unable to debug this reasonably on my own, because the actual API calls to `/xrpc/com.atproto.repo.uploadBlob` succeed and return a blob object that I'm then able to embed in my post. It's only when the Bluesky client applications attempt to show these photos via its CDN that things go wrong. At first, I thought it had to do with the image's orientation (images taken in landscape mode tended to fail to load, but images taken in portrait mode would). However, I've now seen at least one portrait image I uploaded now fail to load with the same issue. Here are a list of posts that display the problem: * https://bsky.app/profile/davidcel.is/post/3kbjinep2f22w * http",
+  "gold": "I think the issue here is that the image resizer has a default max resolution that it will process, which is 16.8 megapixels.  If you shrink the image down a bit, I think you'll be back in business!  Unfortunately I don't think we're in a great position to enforce this during `uploadBlob`, since it's not technically constrained to image uploads for the bluesky app.  I'll take a look into what we might be able to do, though, to give more proactive feedback about whether an image will be able to display in the app."
+ },
+ {
+  "k": 22,
+  "number": 1751,
+  "date": "2023-10-16",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1751",
+  "question": "How to add a label to a post?\n\nI'm posting a message with an image to bsky.app through the API. Is it possible to add a label like \"nudity\", \"violence\", \"bad joke\", to the post or to the image? If so, what labels are available, and what should the JSON for a labelled record look like? Browsing the lexicons got me to this (obviously wrong, just to show what I'm looking for): ```javascript { \"text\": \"a message here\", \"createdAt\": \"2023-10-15T16:32:34+09:00\", \"$type\": \"app.bsky.feed.post\", \"embed\": { \"$type\": \"app.bsky.embed.images\", \"images\": [ { \"alt\": \"alt text here\" , \"image\": \"uploaded image blob here\" } ] }, \"labels\": { \"$type\": \"com.atproto.label.defs#selfLabels????\", \"values????\" : [ { \"val????\" : \"possibly offending???\" } ] } } ```",
+  "gold": "The currently-implemented label values are documented here:\r\n\r\nhttps://github.com/bluesky-social/atproto/blob/main/packages/api/docs/labels.md\r\n\r\nWe don't yet have a collaborative development or governance process for extending this list with additional options, but expect to have a process in place eventually. On the one hand it would be good to keep the vocabulary flexible to diverse needs, on the other hand having some subject experts involved and rough consensus on popular values would be good for ecosystem consistency. Content moderation has a rich history to adapt and learn from.\r\n\r\nYou can find some pseudo-code examples of what the objects look like by searching this repo (note thee are in TypeScript syntax, not JSON directly). Eg:\r\n\r\nhttps://github.com/bluesky-social/atproto/blob/2af3f6c783d18dd49c9ae8610cc0738b202fb672/packages/bsky/tests/views/__snapshots__/posts.test.ts.snap#L51"
+ },
+ {
+  "k": 23,
+  "number": 1778,
+  "date": "2023-10-26",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1778",
+  "question": "Where are `at://` URIs with handles supported?\n\nHi all! https://atproto.com/specs/at-uri-scheme says that DIDs and handles are both allowed in `at://` URIs for specifying the repo, along with all the appropriate caveats that DIDs are more long-lived and stable. OK. However, `at://` URIs with handles aren't well supported in the `app.bsky` XRPC API. Eg `app.bsky.feed.getPostThread` currently 404s handle-based URIs, and `getLikes` returns 200 with an empty array for `likes`, while the same requests for the equivalent DID-based URIs return the expected results. Is that expected? If so, is there anywhere we can document it? I didn't see anything on https://atproto.com/specs/at-uri-scheme . Thanks in advance!",
+  "gold": "It is mentioned vaguely in the \"guidelines\" section: https://atproto.com/specs/at-uri-scheme#usage-and-implementation-guidelines\r\n\r\n> When referencing records, especially from other repositories, best practice is to use a DID in the authority part, not a handle. For application display, a handle can be used as a more human-readable alternative. In HTML, it is permissible to display the handle version of an AT-URI and link (href) to the DID version.\r\n\r\nand\r\n\r\n> In Lexicons (APIs, records, and other contexts), sometimes a specific variant of an AT URI is required, beyond the general purpose at-uri string format. For example, references to records from inside records usually require a DID in the authority section, and the URI must include the collection and rkey path segments. URIs not meeting these criteria will fail to validate.\r\n\r\nThere is definitely some ambiguity and tension around this topic. Some in the team would support fully dropping handles-in-URIs, some thing the flexibility is worthwhile. At a minimum it is helpful to use handles in URIs for examples, docs, and debugging, and it would be weird to have a separate URI just for those use cases.\r\n\r\nYour question specifically is about AT URIs when included as query params to XRPC endpoints though. IMHO we should probably accept both handle and DID URIs in that situation."
+ },
+ {
+  "k": 24,
+  "number": 1780,
+  "date": "2023-10-27",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1780",
+  "question": "What really is AT protocol ? General Guide for beginner.\n\nAs a beginner and open source enthusiast, I recently came across the Bluesky GitHub. Initially, I thought Bluesky was just another Twitter-like platform, but I later discovered that AT protocol on which the Bluesky is built on and how it aims to be the next generation of social networks. However, I'm still struggling to fully understand the AT protocol. Could someone explain what the AT protocol is and why there is a need for such a protocol? Additionally, how is Bluesky built on top of it? Unfortunately, I couldn't find any blogs or resources suitable for beginners to get started with. Thank you !",
+  "gold": "Have you taken a look at https://atproto.com ?"
+ },
+ {
+  "k": 25,
+  "number": 1840,
+  "date": "2023-11-09",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1840",
+  "question": "Image posts resulting in Blob Not Found\n\nI am writing an app to integrate into an existing CFML app. I have text posts working fine (https://bsky.app/profile/esatest.bsky.social) However, I'm not having any luck with an image post. My code gets all 200s on completion and I do get a $link back from uploadBlob but when I post that to createRecord, I get a post without an image. I'm posting the image as binary (I also tried base64) The response from uploadBlob is 200 with the following `{\"blob\":{\"$type\":\"blob\",\"ref\":{\"$link\":\"bafkreiep3jamgf7vbgpv27oh2l55t2oivtykbzv4ymmcvq5yrjlrukxxzu\"},\"mimeType\":\"image/jpg\",\"size\":311630}}` My createRecord post json is `{\"embed\":{\"images\":[{\"image\":{\"ref\":{\"$link\":\"bafkreigeo6ukmjkdnw2iujtuwonrohcnb35wngjzkprzh5ojowzosmkhoq\"},\"size\":311430,\"$type\":\"blob\",\"mimeType\":\"image/jpg\"},\"alt\":\"brief alt text description of the image\"}],\"$type\":\"app.bsky.embed.images\"},\"repo\":\"did:plc:vo37i5ooqwooxgkmbc3277kt\",\"record\":{\"text\":\"Image API Test posted at {ts '2023-11-09 15:47:45'}\",\"createdAt\":\"2023-11-09T15:47:45-07:00\",\"langs\":[\"en-US\"],\"type\":\"app.bsky.feed.post\"},\"collection\":\"app.bsky.feed.post\"}` Running the following as suggested in another post (with the cid as a variable ofc) `https://bsky.social/xrpc/com.atproto.sync.getBlob?did=did:plc:vo37i5ooqwooxgkmbc3277kt&cid=bafyreigs3qns7uvrrd5bufuzumcup2yz6w5slksc5owjhbze7ng25xwrqu ` at the end of each request returns \"message\":\"Blob not found\" I've been banging at this for a day and a half and am at a ",
+  "gold": "The getBlob endpoint won't return any uploaded blobs until they've been successfully \"anchored\" to at least one post record.\r\n\r\nIf we beautify your JSON, the issue becomes apparent - you haven't put the embed field inside the `record` object, and therefore it's being ignored silently. Since it never gets properly attached to the post, getBlob pretends it doesn't exist.\r\n\r\n```json\r\n{\r\n  \"embed\": {\r\n    \"images\": [\r\n      {\r\n        \"image\": {\r\n          \"ref\": {\r\n            \"$link\": \"bafkreigeo6ukmjkdnw2iujtuwonrohcnb35wngjzkprzh5ojowzosmkhoq\"\r\n          },\r\n          \"size\": 311430,\r\n          \"$type\": \"blob\",\r\n          \"mimeType\": \"image/jpg\"\r\n        },\r\n        \"alt\": \"brief alt text description of the image\"\r\n      }\r\n    ],\r\n    \"$type\": \"app.bsky.embed.images\"\r\n  },\r\n  \"repo\": \"did:plc:vo37i5ooqwooxgkmbc3277kt\",\r\n  \"record\": {\r\n    \"text\": \"Image API Test posted at {ts '2023-11-09 15:47:45'}\",\r\n    \"createdAt\": \"2023-11-09T15:47:45-07:00\",\r\n    \"langs\": [\r\n      \"en-US\"\r\n    ],\r\n    \"type\": \"app.bsky.feed.post\"\r\n  },\r\n  \"collection\": \"app.bsky.feed.post\"\r\n}\r\n```"
+ },
+ {
+  "k": 26,
+  "number": 1842,
+  "date": "2023-11-10",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1842",
+  "question": "Is there a possibility to request mentions like requesting the AuthorFeed\n\nHello, next to requesting the AuthorFeed, i'd also like to request all the posts containing a mention of \"my\" account. The only way i found so far is the notifications endpoint but this endpoint - also delivers likes, follows etc. and especially when it comes to likes it can be thousands which leads to a lot of unnecessary requests just to find all the latest mentions - does not deliver `embed` on top-level, just the `embed` within the `record` which contains way fewer data. In some cases there are workarounds to still get the most important data about the attachment in other cases - especially when it comes to embedded posts - it requires another request to fetch the data because only the \"ID\"s are provided. In case there is no dedicated endpoint it would already help to have a filter possibility for the notifications endpoint against the `reason` and in the very best case, additionally the top-level `embed` as part of the response. Best Martin",
+  "gold": "Great question!\r\n\r\nThis is not a functionality in the Bluesky API (`bsky.app` Lexicons) right now.\r\n\r\nFiltering the notifications based on `reason` has been requested by a couple folks and we'll probably add something there.\r\n\r\ncc: @pfrazee for thoughts/status on filtering notifications\r\n\r\nI think for your specific use-case the best option would be extending the post search API to allow a filter query on posts which mention a specific account. That would work for any account (which may have some moderation and harassment considerations to take in to account), and would likely handle complexities like handle/DID changes.\r\n\r\nThe whole team is pretty focused on large tasks related to federation and scaling, and I would guess a new functionality like this is unlikely to get shipped until that is complete, unfortunately. I think you would need to iterate through the full notification feed, and then re-fetch any relevant mention records separately, for now."
+ },
+ {
+  "k": 27,
+  "number": 1843,
+  "date": "2023-11-10",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1843",
+  "question": "getBlob returning broken image\n\nContinuing on from this https://github.com/bluesky-social/atproto/discussions/1840 I now have my code properly posting to the point where I am getting a getBlob response for all my posts. https://bsky.social/xrpc/com.atproto.sync.getBlob?did=did:plc:vo37i5ooqwooxgkmbc3277kt&cid=bafkreiagmyiuh3xc73zuxbsodrtu547j7zcdfufbgutpcolf7cez5dgpba but what I get back is a broken image. `<img style=\"display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;\" src=\"https://bsky.social/xrpc/com.atproto.sync.getBlob?did=did:plc:vo37i5ooqwooxgkmbc3277kt&amp;cid=bafkreiglzozwphua6jngmlupuyzoblu7d2a3iqz44s755ntaclmlnqzyje\"> ` I thought my CFML/JAVA code was doing something to the post data so I switched to curl but this produces the same result. `curl https://bsky.social/xrpc/com.atproto.repo.uploadBlob -F \"file=@E:\\test.jpg\" --header \"Authorization:Bearer [redacted]\" --header \"Content-Type:image/jpg\"` Seems like it should be working but yet...",
+  "gold": "I was unable to get curl to work so I went back to using CFML and got it to work. (yay!)\r\n\r\nit was all about how the image was being passed\r\n\r\nlocal.imageFile = \"E:\\test.jpg\">\r\nlocal.imageFile = filereadbinary(local.imageFile) //convert to binary \r\n\r\nand then in cfhttp use type=\"body\"\r\n\r\ncfhttpparam(type=\"body\" value=local.imageFile)\r\n"
+ },
+ {
+  "k": 28,
+  "number": 1883,
+  "date": "2023-11-22",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1883",
+  "question": "How to get UserHandle by CID/URI ?\n\nHi, via the firehose API I got a JSON Object which looks like the one below for example - how can I get the UserHandle of this Skeet via atproto? Any help greatly appreciated. `Record Object: { \"text\": \"Salut copain du nuldi \ud83d\ude06\", \"$type\": \"app.bsky.feed.post\", \"langs\": [ \"fr\" ], \"reply\": { \"root\": { \"cid\": \"bafyreibfd77vb2setujncomtz3j6xswrmiuxlykora6nogxbr4arhqu2ye\", \"uri\": \"at://did:plc:dbedpmb6db7fsbqcasqxlcum/app.bsky.feed.post/3keqzgxzats25\" }, \"parent\": { \"cid\": \"bafyreibfd77vb2setujncomtz3j6xswrmiuxlykora6nogxbr4arhqu2ye\", \"uri\": \"at://did:plc:dbedpmb6db7fsbqcasqxlcum/app.bsky.feed.post/3keqzgxzats25\" } }, \"createdAt\": \"2023-11-22T09:09:52.420Z\" } `",
+  "gold": "You can't find the identity which created this post from just the record, you need the other metadata from the `#commit` message on the event stream. Specifically, the `repo` field of the `com.atproto.sync.subscribeRepos#commit` message is the DID of the repo (DID of the account).\r\n\r\nStarting from a DID, you can resolve the identity metadata by resolving the DID document (either did:plc or did:web), extracting any handle for the account, and resolving the handle to confirm it is valid (points back to the correct DID). Usually a service would use a library to do this identity resolution, and also cache things locally for up to 24 hours to reduce the number of network requests."
+ },
+ {
+  "k": 29,
+  "number": 1894,
+  "date": "2023-11-28",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1894",
+  "question": "Host a PDS without a domain name on my PC for tinkering purposes\n\nIs it possible to host the PDS without a domain name on a PC? This is for the purpose of tinkering and testing with the sandbox, for which buying a domain name and renting a server seem a bit excessive to me. Is it really possible at all, or what in the AT protocol would prevent a PDS to be hosted on a domain-less server, or my development computer?",
+  "gold": "Seconding what David said: to have a fully interactive PDS instance in the network, it does need to be accessible at a regular DNS hostname, similar to email or web servers. You also need valid public DNS hostnames for individual user accounts. The short direct answer is that the Relay (aka BGS) needs to make a websocket connection to your PDS instance, via an HTTPS URL, to subscribe to repository updates from the PDS. The PDS is a server, not a client; you can't have the PDS \"push\" to the Relay.\r\n\r\nYou might be able to get away with a bunch of tinkering and experimentation locally. For example, our test suite runs things using local-only test domains. But various components may fail in unexpected ways, and this isn't something we \"support\".\r\n\r\nThere are a variety of options for getting a server on the web with a public DNS name, and they don't all cost money. For experimentation purposes it should be alright if the server is not online all the time. For example, you could use a tunneling or proxying system to expose a home server to the internet temporarily."
+ },
+ {
+  "k": 30,
+  "number": 1914,
+  "date": "2023-12-03",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1914",
+  "question": "Android push notifications\n\nHi, I am trying to get push notifications from Bluesky sent to my own Android app, but I get stuck and need some help. I send app.bsky.notification.registerPush with the following parameters: - serviceDid = \"did:web:api.bsky.app\" - token = <Firebase FCM token that I get from FirebaseMessaging.GetToken()> - platform = \"android\" - appId = \"com.gmail.mfnboer.skywalker\" I have tested with Google Firebase Console that I can send a push notification to the token. That works. However, from Bluesky I never get a push notification. Can you tell me what I am doing wrong? Cheers, Michel",
+  "gold": "Bluesky will not send push notifications to 3rd parties. You have to setup your own backend to do that. The registerPush API call will just sign your request and forward it to the Service you provide in the payload."
+ },
+ {
+  "k": 31,
+  "number": 1936,
+  "date": "2023-12-06",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1936",
+  "question": "Feed Generation\n\nWe\u2019re attempting to build a Feed Generator and are following instructions in https://github.com/bluesky-social/feed-generator/blob/7421e718fc8516570a16284f9dc49261eba6d4c8/README.md. It says to edit **setup.json**. Where may we find **setup.json**? Who may we contact with any other questions as we fumble forward with this?",
+  "gold": "Hi @JakeJakoubek,\r\n\r\nI'm not sure why, but you seem to have linked to a 7-month-old copy of the `feed-generator` README. The current version of the README ([link](https://github.com/bluesky-social/feed-generator/blob/main/README.md)) has no mention of `setup.json`."
+ },
+ {
+  "k": 32,
+  "number": 1990,
+  "date": "2023-12-26",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1990",
+  "question": "how to post image avoiding modification to keep it AS-IS (original)?\n\nI'm trying to post and share image AS-IS but no success yet. even I post small jpeg file, it is applied modification ( cannot keep original). my conditions are: - client to post image: https://github.com/bluesky-social/cookbook/tree/main/python-bsky-post - server: official bsky.social - client to view and download image: official web client ( bsky.app ) post with below image (512x512 24kB) becomes bigger (2000x2000 64kB) when downloading after posting. ![icon2_noexif](https://github.com/bluesky-social/atproto/assets/70509350/28aea9c5-a468-4d70-921a-adf767f7589d) I found some condition on posting image, such as https://github.com/bluesky-social/atproto/pull/442/ . but couldn't found how to post image to avoid modification (keep it original). cf. above test image created from current social-app icon.",
+  "gold": "Images do get posted as-is, but they don't get served back as-is by the default bsky.app client. You can request the originals via the `com.atproto.sync.getBlob` API"
+ },
+ {
+  "k": 33,
+  "number": 1991,
+  "date": "2023-12-26",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/1991",
+  "question": "Do logged-in only posts show in RSS feeds?\n\nHello, a few days ago I received a Bluesky newsletter that it has introduced a new feature that allows users to restrict their public posts to only logged-in users (see copied snippet below). If a user opts to having their public posts seen only by \"logged-in users\", would those posts also not be shown in the RSS feeds? > All posts on Bluesky were already public, but prior to today, our application and many others chose to only allow logged-in users to view them. To ease this transition, we've included an opt-out setting. If you want your profile to continue to be seen only by logged-in users, you can opt out by following these steps:",
+  "gold": "The current behavior is that no RSS feed is generated accounts which have opted out from the public web interface. The RSS feed only displays top-level posts for a single account, not reposts, replies, etc."
+ },
+ {
+  "k": 34,
+  "number": 2012,
+  "date": "2024-01-03",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2012",
+  "question": "How to get ALL follows for an actor?\n\nIt [looks](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getFollows.json) like you can only get 100 follows for a given actor. I really need to get ALL follows. I would imagine that you could do a series of requests with parameters like first_follows=101, last_follows=200, but that doesn't seem to be the case. Any way around this? Thanks, Lasse",
+  "gold": "It's a paginated API so you can enumerate all followers by using the `cursor` from the previous response as a param in the next request. Once the API returns an undefined cursor, pagination is finished \ud83d\udc4d "
+ },
+ {
+  "k": 35,
+  "number": 2014,
+  "date": "2024-01-04",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2014",
+  "question": "How does Relays know about new PDSes?\n\nI have a question on \"federation\" of Bluesky. How does Relays/AppViews know about new PDSes? Does new PDS register in the relay somehow? Is it a permissionless call (anyone can do it) or does it require some \"admin\" authorisation? Thank you",
+  "gold": "PDSes call [`com.atproto.sync.requestCrawl`](https://github.com/bluesky-social/atproto/blob/main/lexicons%2Fcom%2Fatproto%2Fsync%2FrequestCrawl.json) on a given relay to register with it. Right now that call is permissionless."
+ },
+ {
+  "k": 36,
+  "number": 2018,
+  "date": "2024-01-04",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2018",
+  "question": "How do I delete a custom feed using cURL with the API?\n\ncURL seems like the simplest thing I might be able to wrap my mind around, but I don't have a clue what to do. I have a couple of lingering feeds that I created with SkyFeed but no longer want. I tried deleting all my feeds in the SkyFeed UI, and this mostly worked, except for these final two zombie feeds. The SkyFeed developer doesn't seem to have any advice on deleting them via the SkyFeed UI. Instead the SkyFeed developer is suggesting this: \"you can delete feeds by calling the deleteRecord method on the ATProto API directly\" But I don't have a clue how to do this, or how to even identify the zombie feed until is published again, then at least it seems to have some sort of long string as an identifier. To be clear, UNpublishing these last two feeds does not delete all traces of them; they still linger in the SkyFeed UI just waiting to be republished. I want them to be gone permanently and have no custom feeds associated with my account. I'm not clear whether the zombie records for these two feeds that won't die reside on a Bluesky server, or the SkyFeed developer's server, or if this even matters as far as the API for deleting them is concerned. I've asked but they don't respond. I've created a new app password for any cURL script I might come up with, and I've seen an example of posting \"Hello World\" to my account using cURL ... ```bash POST_FEED_URL='https://bsky.social/xrpc/com.atproto.repo.createRecord' POST_RECOR",
+  "gold": "I'm more comfortable with the tool [HTTPie](https://httpie.io/) (the command `http`) than curl, so i'll give examples with that. You usually have to install this, eg using `apt get install httpie` or homebrew.\r\n\r\nFirst, I resolved your handle to DID:\r\n\r\n```shell\r\nhttp get https://bsky.social/xrpc/com.atproto.identity.resolveHandle handle==venteto.bsky.social\r\n\r\n[...]\r\n{\r\n    \"did\": \"did:plc:wecucphzbhaznb64qmvto5oj\"\r\n}\r\n```\r\n\r\nLet's list all the feed generator records (`app.bsky.feed.generator`):\r\n\r\n```shell\r\nhttp get https://bsky.social/xrpc/com.atproto.repo.listRecords repo==did:plc:wecucphzbhaznb64qmvto5oj collection==app.bsky.feed.generator\r\n\r\n[...]\r\n{\r\n    \"records\": []\r\n}\r\n```\r\n\r\nIt looks like there are no feed generators on this account. Maybe you mean a different account?\r\n\r\nTo view lists, as another example which does return records:\r\n\r\n```shell\r\nhttp get https://bsky.social/xrpc/com.atproto.repo.listRecords repo==did:plc:wecucphzbhaznb64qmvto5oj collection==app.bsky.graph.list\r\n```"
+ },
+ {
+  "k": 37,
+  "number": 2026,
+  "date": "2024-01-06",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2026",
+  "question": "atproto self-host in docker\n\n`atproto`: [atproto.com](https://atproto.com) A fully self-hosted AT Protocol environment. While typical self-hosting only covers PDS, this setup includes the appview, relay, moderation, feed generator, and more. ## Architecture ``` +-----------+ +-----------+ +-----------+ | PDS |--->| BGS |--->| bsky | | Data | | Relay | | appview | +-----------+ +-----+-----+ +-----+-----+ | | +-----v-----+ +-----v-----+ | Jetstream | | Ozone | | WS feed | | moderation| +-----+-----+ +-----------+ | +-----v-----+ | Feed | | custom | +-----------+ ``` ## Services | Service | Role | Description | |---------|------|-------------| | pds | User data storage, authentication, OAuth | Personal Data Server | | bgs | Firehose aggregation and relay | Big Graph Service (Relay) | | bsky | AppView -- timeline, search, notification API | Application View | | plc | DID-to-handle resolution (like DNS) | DID Registry | | ozone | Moderation, verification badges | Moderation Service | | jetstream | Lightweight WebSocket distribution from BGS | WebSocket Relay | | feed-generator | Custom feed generator | Feed Generator | | social-app | Web frontend (bskyweb) | Social App | | bsky.chat | DM service | Chat Server | ## Data Flow ### How a post appears on the timeline ``` User -> PDS (save post) -> BGS (firehose) -> bsky (index) -> Timeline ``` ### Custom feed flow ``` BGS -> Jetstream (WS) -> Feed Generator (filter & store) -> Client calls feed API ``` ### Federation with the official",
+  "gold": "There is an out-of-date docker-compose file and README in the indigo repo that might be helpful: https://github.com/bluesky-social/indigo/tree/main/cmd/fakermaker\r\n\r\nThings are not in a great state for this right now. We plan to iterate on all the docs and dev support around self-hosting at the same time we open up federation, which means we aren't prioritizing updating docs on this until then.\r\n\r\nIn particular, I think the pds service is probably pretty out of date compared to the sandbox PDS \"distribution\", and we need to get those synced back up, and that may involve breaking changes to the PDS config env vars. Also the version of the PDS that we (bluesky) runs is now behind a \"gateway service\", which is unnecessary complexity for most folks (but needs documentation). The relay (BGS) and PLC are pretty stable. The appview is in the middle of several large refactors, with big changes in feature branches which have not been merged yet."
+ },
+ {
+  "k": 38,
+  "number": 2099,
+  "date": "2024-01-26",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2099",
+  "question": "How do I refresh a token?\n\nUsing [this](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/server/createSession.json) piece of json specification, I wrote a POST request (supplying an identifier and a password), and succesfully got a token and a refresh token return. However, using [this](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/server/refreshSession.json) specication, I'm not sure how to write a request that **refreshes** my token. It seems that the `input` field is missing, so I don't know what to POST? I must be missing something, but what? Thanks a lot for any input.",
+  "gold": "The lack of `input` can definitely be a surprise! When you POST to `refreshSession`, you include the refresh token you got from `createSession` in the `Authorization: Bearer ...` header, instead of the access token like with other calls."
+ },
+ {
+  "k": 39,
+  "number": 2102,
+  "date": "2024-01-27",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2102",
+  "question": "Lexicon vs JSON Schema\n\nIf I remember right, Lexicon started out very close to JSON Schema, maybe even close enough that they were compatible? But it's since diverged more, to handle eg refs, records, tokens, etc. What's your take on where they are right now? Does current Lexicon feel like modified JSON Schema? Or more like its own thing, with only passing similarities? For someone implementing Lexicon schema validation in a language with mature JSON Schema libraries, would your gut instinct be to customize them to support Lexicon? Or implement Lexicon from scratch, and only maybe borrow bits of the libs where they're useful?",
+  "gold": "One of the more awkward parts of using JSON schema (well over a year ago) in atproto was that it was difficult to express _open_ unions of objects and strings.  Being able to express this is pretty common/important to us, since we want folks to be able to spec apps that can maintain forward- and backward-compatibility as much as possible, in such a low-coordination environment.  Being able to additionally discriminate those open unions in an explicit, namespaced way goes a step further in the same direction.  In a way we're sleeping on the value of these areas of lexicon while things are limited to schemas for a single app."
+ },
+ {
+  "k": 40,
+  "number": 2154,
+  "date": "2024-02-07",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2154",
+  "question": "Federating timelines and reply threads\n\nSince federation is becoming more relevant, I figured it was time to ask this. One problem with Mastodon is that posts and replies might be missing, due to posts not being federated from one instance to another. This can result in a reply thread not being identical from one instance to another. The same is true of user timelines - Mastodon still lacks backfilling as far as I'm aware, so if you browse a user's timeline, it might be missing posts. What is atproto's story with regard to these issues? I consider this a relatively major problem that could potentially frustrate a lot of people who would otherwise enjoy the service. It was one of the first \"well, this sucks\" moments I experienced on Mastodon that made me think about switching away.",
+  "gold": "ATProto generally doesn't suffer from this specific issue because it has a multi-tier architecture. User data servers (PDSes) are expected to be plentiful and widely federated, but their data is then aggregated into other tiers (relays and AppViews) that are more centralized and have much more complete views of the network. Clients generally read that aggregated data from those relays and AppViews, not from individual PDSes."
+ },
+ {
+  "k": 41,
+  "number": 2233,
+  "date": "2024-02-27",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2233",
+  "question": "How to unfollow myself?\n\nSo, I followed myself through the Bluesky API for fun. However, I don't have the original record URL returned by that request anymore. And when I do a call to `app.bsky.graph.getFollows`, the entry for my self-follow simply does not include this information, unlike the ones where I have followed someone else: ```json { \"did\": \"did:plc:w342borqxtyo2pul67ec2pwt\", \"handle\": \"deck.blue\", \"displayName\": \"deck.blue\", \"avatar\": \"https://cdn.bsky.app/img/avatar/plain/did:plc:w342borqxtyo2pul67ec2pwt/bafkreiec6yihxyfgua7myrxcfx75opofiu6l5wm4jzjrn3irlklynmagmy@jpeg\", \"viewer\": { \"muted\": false, \"blockedBy\": false, \"following\": \"at://did:plc:rre4nbfkekayht6hh5i5neqy/app.bsky.graph.follow/3kad6ednwad2f\" }, \"labels\": [], \"description\": \"3rd-party TweetDeck for Bluesky from \ud83c\udde7\ud83c\uddf7! Featuring columns, multi-account and scheduling!\\n\\nApp: deck.blue\\nContact: hello@deck.blue\\nDonate:\\nhttps://patreon.com/deckblue\\nhttps:// ko-fi.com/deck_blue\", \"indexedAt\": \"2024-01-26T00:00:20.209Z\" }, { \"did\": \"did:plc:rre4nbfkekayht6hh5i5neqy\", \"handle\": \"alexia.lol\", \"displayName\": \"Alexia\", \"avatar\": \"https://cdn.bsky.app/img/avatar/plain/did:plc:rre4nbfkekayht6hh5i5neqy/bafkreidlqnce4yg2x4xwjvlmeyhcfqndqeerirvk2pdp4vcjjw52o7lsim@jpeg\", \"viewer\": { \"muted\": false, \"blockedBy\": false }, \"labels\": [], \"description\": \"She/Her\", \"indexedAt\": \"2024-02-16T15:50:32.441Z\" }, ``` How can I unfollow myself then?",
+  "gold": "We should be able to find that information my going directly to the repository data on your pds.  It looks like your pds is lionsmane.us-east.host.bsky.network:\r\n```sh\r\ncurl -s https://plc.directory/did:plc:rre4nbfkekayht6hh5i5neqy | jq\r\n```\r\n\r\nNow we can ask for your follows from lionsmane, and look for the one where you are the subject:\r\n```sh\r\ncurl -s 'https://lionsmane.us-east.host.bsky.network/xrpc/com.atproto.repo.listRecords?repo=did:plc:rre4nbfkekayht6hh5i5neqy&collection=app.bsky.graph.follow' | jq | grep '\"subject\": \"did:plc:rre4nbfkekayht6hh5i5neqy\"' -C5\r\n```\r\n\r\nHope this helps!"
+ },
+ {
+  "k": 42,
+  "number": 2277,
+  "date": "2024-03-05",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2277",
+  "question": "Embedding atproto posts in websites?\n\nSocial media sites usually have some kind of snippet that allows embedding a post in websites, blogs, etc... Is there a way to do that with atproto posts yet?",
+  "gold": "Yeah! This is very much on our radar and something we want to do for app.bsky posts.\r\n\r\nWe need to ensure that what we build makes sense long-term: we will basically need to support whatever embed system indefinitely. We may also want to use a different domain/hostname for the embed content; this is a common pattern for other large embed systems, possibly to reduce domain-block breakage, or for privacy/security concerns, or just general rate-limits and performance. For example, an embedded post on a popular news website would have a very different traffic and access pattern than a post viewed on bsky.app. We probably should support the OEmbed standard for easily creating such embeds, for example in Wordpress. And lastly this would probably be a centralized system and there might be ways to mitigate or reduce that effect.\r\n\r\nNone of these are blockers, and we should be able to get this done before too long, just need to get around to it."
+ },
+ {
+  "k": 43,
+  "number": 2287,
+  "date": "2024-03-08",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2287",
+  "question": "Can't we use PostgreSQL for PDS any longer?\n\n[PR#1705](https://github.com/bluesky-social/atproto/pull/1705) had removed `PDS_DB_POSTGRES_*` environment variables from [packages/pds/src/config/env.ts](https://github.com/bluesky-social/atproto/pull/1705/files#diff-7cef43e80332e39496301090c631bb829c61afe6e0bf14438e4ef35ec1755457). Does that mean we can't use PostgreSQL for PDS any longer? Or are there any chance to use PostgreSQL?",
+  "gold": "Yeah, that's correct\u2014our PDS distribution only supports sqlite.  It is designed as a single-tenant architecture, so each repository is contained within its own sqlite database."
+ },
+ {
+  "k": 44,
+  "number": 2388,
+  "date": "2024-04-07",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2388",
+  "question": "Disappearing Posts in Bluesky\n\nHi, I am using the API (using homebrewed python code) to post to my Bluesky-social account (blog.tahoma.com). They will briefly show up in my account (as seen in my web browser client for bluesky social), and then auto delete after about 60 seconds. I have no clue as to why; any hints on where to start looking would be much appreciated. Thanks, Erik P.S. I should note that I receive status code 200 from the API post actions.",
+  "gold": "Hello @bnewbold! I think I now have a clearer understanding of the problem and the solution (or at least a workaround on my end).\r\n\r\nI wrote and implemented a record key conforming with the TID specs. While testing successive posts using the new key, I noticed I was having a similar problem to before, with a key observed difference this time.\r\n\r\nNote that again, all transactions to atproto were receiving Status 200 messages. \r\n\r\nMy API-using program is written to queue up several entries to post internally, does some checks and adjustments to the post text as needed, and then sequentially posts them using  '.../xrpc/com.atproto.repo.createRecord'.  \r\n\r\nWhile fiddling around trying to sort out the problem, I noticed that a succeeding post would essentially 'overwrite' or clobber the preceding one.  By that, I mean the prior post would vanish from my view on bsky.app; only the new one would be visible.  This would continue for n posts; the n<sup>th</sup> post would  cause post n-1 to vanish.  This would continue until the end of the sequence, either through the normal progression of the queue, or if I killed the program while running.  This is different than what I remember seeing before; then, all n seemed to vanish, or maybe a random one would remain. \r\n\r\nI thought maybe it might be that I wasn't refreshing the token enough; tinkering with that didn't change the behavior. Then I noticed that the createdAt field was very close together; posts were being created within milliseconds to microseconds of each other with the corresponding time stamps. For example:\r\n\r\n\"createdAt\": \"2024-05-04T00:12:43.922101Z\"\r\n\"createdAt\": \"2024-05-04T00:12:43.922170Z\r\n\r\na difference of 6.9 x 10 <sup>-5</sup>\r\n\r\nHowever, if I put a time delay into my action loop of one or more seconds, it completely alleviated the problem. All posts 1...n show up and remain!\r\n\r\nMy conjecture is, going back to the Read-After-Write bug you mentioned, the App View and PDS don't interact well if the time difference between posts is only milliseconds to microseconds apart. \r\n\r\nQuoting from the page you shared with me:\r\n\r\n\"The App View communicates the current state of its indices by setting the Atproto-Repo-Rev response header. This is set by the rev of the most recent commit that's been indexed from the requesting user's repository. If the PDS sees this header on a response, it will search for all records that it has locally that are more recent than the provided rev and determine if they affect the App View's response.\"\r\n\r\nMaybe the temporal resolution of this doesn't work at a scale of time less than 10<sup>-2</sup> or so.\r\n\r\nRegards.\r\n\r\nErik\r\n\r\nP.S.\r\n\r\nLooking at metadata for posts like the following is illustrative. \r\n \"indexedAt\": \"2024-05-05T21:32:16.332Z\",\r\n\r\n\r\n"
+ },
+ {
+  "k": 45,
+  "number": 2428,
+  "date": "2024-04-19",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2428",
+  "question": "Is there a way to determine if an account is currently logged in to the browser?\n\nI\u2019m not trying to get permission to post or anything, but I have an app I\u2019m working on that will let users select regions of the country they\u2019re interested in, then present a feed of national weather service alerts for that set of regions. I\u2019d like a widget to get the DID of the logged in user, if it exists, or present a log in screen to get the DID to save with those preferences. Does such a widget or API endpoint exist? I know OAuth is on the roadmap but a) I don\u2019t know if it\u2019s in yet or b) using Bluesky as an IDP is part of that roadmap. Any suggestions are welcome!",
+  "gold": "The more I think about it, the fact is because my app will never act on a user\u2019s behalf, it\u2019s not dangerous to use the rrsolveHandle atproto method and just have the user attest that they are who they say they are as it\u2019s just a record of their did"
+ },
+ {
+  "k": 46,
+  "number": 2459,
+  "date": "2024-04-30",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2459",
+  "question": "Why are embedded posts rate-limited?\n\nI actually don't know for sure that embedded posts are being rate limited, so this is kind of a question. But I recently implemented a system for users of my site to easily include embedded Bluesky posts in their comments, simply by pasting in a URL. The backend code finds URLs in comments, and if it's a Bluesky post URL it goes out and reads the page's HEAD section to get its oembed link, then does a GET to that link for the embed's HTML code. This all works fine, but sometimes the embeds simply don't display; all we see is the blockquote that's supposed to be rendered by embed.js. When it fails, there's no error in the console, and no indication of why it doesn't display -- but reloading the same post a little later DOES display the embed. Any idea what's going on here? It seems to me that embedded posts shouldn't be rate limited at all (if that's what's happening), because the un-rendered blockquotes look pretty bad, and serving single un-hydrated static posts shouldn't be much of a bandwidth issue. But I couldn't find any info on this in the Bluesky docs, hence this question.",
+  "gold": "To be clear, you aren't doing anything wrong, these are all limitations with our setup.\r\n\r\nI can confirm I hit HTTP 429 errors when browsing some comment sections on your site with only a handful of embeds. These show up in the network tab of dev tools.\r\n\r\nI just bumped the overall rate-limits. It could take a bit of time for those to roll out, but hopefully will resolve this issue for your use case. Please do report again if you are still seeing problems."
+ },
+ {
+  "k": 47,
+  "number": 2478,
+  "date": "2024-05-12",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2478",
+  "question": "Input/collection must be a valid nsid\n\nHi, using the `curl` example (Powershell): ``` curl -X POST https://bsky.social/xrpc/com.atproto.repo.createRecord -H 'Authorization: Bearer my_access_token' -H 'Content-Type: application/json' -d '{\"repo\": \"did:plc:my_did\", \"collection\": \"app.bsky\", \"record\": {\"text\": \"Hello world! I posted this via the API.\", \"createdAt\": \"2024-05-11T14:30:57Z\"}}' ``` I get: ``` {\"error\":\"InvalidRequest\",\"message\":\"Input/collection must be a valid nsid\"} ``` and can\u2019t figure out what\u2019s wrong :-/ What am I missing?",
+  "gold": "try `\"collection\": \"app.bsky.feed.post\"`"
+ },
+ {
+  "k": 48,
+  "number": 2511,
+  "date": "2024-05-23",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2511",
+  "question": "integration failed, official bluesky and official bluesky-social/ozone\n\nI'm trying to use https://github.com/bluesky-social/ozone to moderate posts in official bluesky(bsky.app). I exactly followed instruction of https://github.com/bluesky-social/ozone/blob/main/HOSTING.md, but it is not working as expected. In my trial, - my ozone service can receive report and succeed UI operation as below figure - but when I reload the post in browser (bsky.app), appearance of post is NOT changed. It may be because labels field is empty array as below json. - NOTE: the figure shows ozone received reports twice for the same post. in first reporting, UI assigns !hide. in second reporting, UI assigns more labels, because no appearance changed. how can get result as expected? how can debug and find out where is not working? ``` # snippet of xrpc/app.bsky.feed.getPostThread, collected by browser's developer tool. { \"thread\": { \"$type\": \"app.bsky.feed.defs#threadViewPost\", \"post\": { \"uri\": \"at://did:plc:...35jlijge46mr5zkrcsd/app.bsky.feed.post/3kt5nkik3nc2j\", \"cid\": \"bafyreianmw4w2iww5aoe3v7bljw27r6v4w4j3cevrhxjpqsvthubzi3cx4\", \"author\": { ...valid records }, \"record\": { \"$type\": \"app.bsky.feed.post\", \"createdAt\": \"2024-05-23T10:54:42.821Z\", \"langs\": [ \"en\" ], \"text\": \"testing label\" }, \"replyCount\": 0, \"repostCount\": 0, \"likeCount\": 0, \"indexedAt\": \"2024-05-23T10:54:42.821Z\", \"viewer\": {}, \"labels\": [] }, \"replies\": [] } } ``` ![ozone-labeing-ops](https://github.com/bluesky-social/atproto/asse",
+  "gold": "Can you try with a label that has no numeric digits, only Latin alphabetic characters (`a-z`)?\r\n\r\nThe protocol spec for the label field is relatively flexible, but we strongly recommend limiting the characters set for now, and it is possible the bsky client or appview is being very strict and filtering out `label-test31` somewhere in the stack.\r\n\r\nhttps://atproto.com/specs/label#recommended-string-syntax"
+ },
+ {
+  "k": 49,
+  "number": 2523,
+  "date": "2024-05-24",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2523",
+  "question": "How to convert `at:://` URI to `https://` URL?\n\nHi, After creating a record, we get a `uri` with `at://` protocol but I want the URL to the created post. How do we get it?",
+  "gold": "I'll give a pragmatic answer below, but first a protocol philosophy framing question: does it even make sense for there to be a \"canonical\" web (HTTPS) URL for record AT URIs? atproto URIs have the \"authority\" section scoped to an individual account (DID or handle), intentionally not scoped to a service (eg, web server), because the hosting location for the account could change over time. We don't want to over-centralize and have any one server or service be the \"official\" location for content in the network.\r\n\r\nOne way to relax this would be to say that individual accounts do have a canonical host at any time, such as the handle or PDS host, and we could resolve AT-URIs to one of those locations to be redirected. That is nicely principled, but requires extra work by the account, and application-aware routing or display logic.\r\n\r\nAnother mechanism would be to assign relatively canonical service hostnames for specific NSIDs (aka, record schemas or collections). We could say that https://bsky.app is the pseudo-canonical host service for the `app.bsky.*` lexicons. That kind of makes sense, but is also kind of centralizing.\r\n\r\nPragmatically, today, if you have a bluesky post record and want to view it on the web, you probably want to link to https://bsky.app: it is the pseudo-canonical host for that content.\r\n\r\nThe process is usually to look at the AT URI authority (DID), collection, and rkey segments:\r\n\r\n```\r\nat://<DID>/<COLLECTION>/<RKEY>\r\n```\r\n\r\nMatch on the collection: if it is `app.bsky.feed.post`, it is a post record. Create post URLs on bsky.app like:\r\n\r\n```\r\nhttps://bsky.app/profile/<DID>/post/<RKEY>\r\n```"
+ },
+ {
+  "k": 50,
+  "number": 2544,
+  "date": "2024-06-03",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2544",
+  "question": "How to confirm ownership of a Bluesky account?\n\nHey, I am a developer at Gravatar.com and we want to allow users to verify ownership of a Bluesky account. Most of our current integrations are based on OAuth ([which I know is not part of Bluesky yet](https://github.com/bluesky-social/proposals/blob/main/0004-oauth/README.md)). I have also seen some conversations about support `rel=me`, but looks like it's not available either. AFAIK the only way to do this would be to ask for username/password to the users and then use atprotocol to confirm those. For security/privacy concerns we don't want to do that. Is there any other way? Thanks in advance.",
+  "gold": "Hey, this sounds great! I love gravatar, thanks for working on it.\r\n\r\nIf OAuth is an established pattern for you, i'd probably recommend waiting for that. We don't commit to specific timelines publicly, but we have done a lot of work on it and it is finally coming together, will hopefully be rolling out in stages in the next few weeks.\r\n\r\nIf you don't want to wait, the \"app password\" system is designed as a stop-gap until OAuth is ready, and you could do that today. It isn't super ergonomic though.\r\n\r\nWe have also been meaning to support `rel=me` and similar account inter-linkage for a while now, and just haven't gotten around to it quite yet. I don't have a timeline for that, sorry. An independent developer could build something like that any time and could beat us to it."
+ },
+ {
+  "k": 51,
+  "number": 2568,
+  "date": "2024-06-09",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2568",
+  "question": "How to present the terms of use of the atproto service\n\nThird-party PDS users must comply with at least two types of terms of use. One is for the service, and the other is for PDS. The PDS terms of use can be shown in `describeServer` when registering an account, but Bluesky's appview does not implement this API. Isn't there an API to know the terms of use of the service? Or is it expected that the client or PDS who determines the endpoint of the service will know the terms of use of the service in an informal way and present it to the user? For example, if I use the PDS code provided by this git repository, do I need to link the terms of use of the service pointed to by `PDS_BSKY_APP_VIEW_URL` from the terms of use of my PDS?",
+  "gold": "That is a pretty interesting question!\r\n\r\nThe inclusion of `PDS_BSKY_APP_VIEW_URL` as a PDS configuration variable is a legacy/transition thing. In earlier days, we did not have a mechanism for clients to route requests through the PDS to specific service providers, so we hard-coded a set of endpoints to the Bluesky AppView. When we updated the PDS code to work better for self-hosters, we made this configurable so any compatible AppView could be specified. More recently we finished the client-driven proxying mechanism, but retained the default/previous behavior for `app.bsky.*` endpoints, so that other clients wouldn't break. In theory we should be able to fully deprecated the default-routing behavior, though we'd want to give clients more time to update to explicit routing (using the proxy header), and update our docs and examples first so it is clear how to transition. Maybe this will make sense as part of the OAuth transition coming soon?\r\n\r\nSpecific to your question, I don't think the PDS needs to announce the terms of any other services in the network. There is a direct service relationship between humans and a PDS host. We consider the relationship with the AppView to mostly be mediated by the client app (which is expected to set a default AppView provider).\r\n\r\nIt is technically possible to imagine flexible apps which allow swapping out AppView backends though, and such apps might want to display a ToS for the specific instance, so having some form of ToS  link available from the AppView would make sense.\r\n\r\nThanks for the report!"
+ },
+ {
+  "k": 52,
+  "number": 2572,
+  "date": "2024-06-11",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2572",
+  "question": "Getting 405 when trying to make a POST request to the com.atproto.server.createSession endpoint\n\nHey all, really love what you are building here. I was starting to explore the API a bit, and I wanted to get an auth token so I could start poking around and maybe find some way to contribute. I created an app password and tried to use the `com.atproto.server.createSession` xrpc method, but I keep getting a `Method Not Allowed` error. Here is my curl request for reference: ```bash curl -L 'https://public.api.bsky.app/xrpc/com.atproto.server.createSession' \\ -H 'Content-Type: application/json' \\ -H 'Accept: application/json' \\ -d '{\"identifier\": \"gvasquez.dev\", \"password\": \"$APP_PASSWORD\"}' ``` I can post the error if you want, but it's just HTML with a body of `Method Not Allowed`. Any idea what I might be doing wrong? I also tried directly specifying the request method to POST, but curl infers that because of the use of the `-d` flag.",
+  "gold": "You need to make that call against your account's PDS, ie either `bsky.social` or the specific PDS [in your DID doc's `serviceEndpoint` field](https://atproto.com/specs/did#did-documents), not against the AppView."
+ },
+ {
+  "k": 53,
+  "number": 2576,
+  "date": "2024-06-12",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2576",
+  "question": "via API, my bot is able to reply to a post having `viewer.replyDisabled` set to `true`\n\nHi here \ud83d\udc4b I'm owner of a bluesky bot who is searching some bluesky posts to reply to some post. I encounter an issue on some post because the bot was able to post a reply for a post having `viewer.replyDisabled` flag set to `true` this is described in details here : https://github.com/boly38/botEnSky/issues/41 I think I will fix that making the bot to simply ignore posts having this flag set and set to true. But I would like to know if that kind of behavior is expected (bs.agent.post response is a success) from the backend. I would expect \"Forbidden/unauthorized/bad request\" or something like this for a user that is trying to reply (even via API) to a post that prevent reply. Maybe it's simply the \"client\" responsability to deal with that flag IDK. Thanks for your answer Regards",
+  "gold": "That's the right behavior in the specification. This behavior occurs because PDS, the server that accepts posts, and appview, which is a server that judges the availability of replies, are separate.\r\n\r\nYou can see only one endpoint, but in fact, feed queries are forwarded behind the scenes.\r\n\r\nPDS is in principle ignorant of service logic. This has the advantage of being able to provide data for various services without updating the PDS each time. In return, at the timing of posting the data, the only possible verification is by the schema.\r\n\r\nAlso, if a new appview appears in the future, there is no guarantee that the value of `replyDisabled` is the same.\r\n\r\nI think it's essentially the client's role to choose which appview rule to refer to. However, there is currently only one public bsky appview, so if you do not explicitly select appview, it will be selected automatically."
+ },
+ {
+  "k": 54,
+  "number": 2602,
+  "date": "2024-06-25",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2602",
+  "question": "Assign a custom domain at signup that is not tied to the PDS\n\nI would like to offer users of my custom app the ability to have a custom domain handle during sign up. I don't want this handle to be tied to their PDS. For the time being, assume they are using the bsky.social pds. However, I want them to be able to have a handle at a different domain by default. Is this possible? Passing a non `bsky.social` handle to `com.atproto.server.createAccount` causes a `403` error. Is there some other API I am missing to instantiate a DID? How does `createAccount` instantiate the did and the associated dns record on the PDS?",
+  "gold": "The easiest way is to first create an account with a random handle and then change the handle immediately.\r\n\r\nIf you want to avoid it, you can use the custom handle from the beginning in the following steps. ( The intention is the same as the answer of @DavidBuchanan314)\r\n\r\n1. Create a pair of DID and handle (for example, in the case of did:plc, use [`CreatePlcOp`](https://web.plc.directory/api/redoc#operation/CreatePlcOp)). There is no need to fill `service` of the DID document with the appropriate value.\r\n3. Create a jwt. Please refer to [`createServiceJwt`](https://github.com/bluesky-social/atproto/blob/e956ac06be32cbfef06605cda6298b5fd621513a/packages/xrpc-server/src/auth.ts#L17) and #2100. The DID of PDS can be obtained in `describeServer`.\r\n4. Call `createAccount` using the prepared DID, handle and jwt.\r\n5. Update the DID document with the value obtained by `getRecommendedDidCredentials`. You can use `CreatePlcOp` or `submitPlcOperation`.\r\n6. Start using your account with `activateAccount`.\r\n\r\nI have never performed this procedure, so there may be an error.\r\n\r\n4 can only be executed by those who have control of the domain, so we can't expect the appearance of an API that automatically performs all of this procedure."
+ },
+ {
+  "k": 55,
+  "number": 2608,
+  "date": "2024-06-26",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2608",
+  "question": "atproto/packages/dev-env cannot work !!!\n\nwhen I try to run dev-env, I got following errors while it creating PDS with oath related instances... the commit hash of testing is: d56234b37d1939ba1f82dc3b8c1acfccf55a4aea ``` pnpm start > @atproto/dev-env@0.3.29 start atproto/packages/dev-env > ../dev-infra/with-test-redis-and-db.sh node dist/bin.js WARN[0000] atproto/packages/dev-infra/docker-compose.yaml: `version` is obsolete WARN[0000] atproto/packages/dev-infra/docker-compose.yaml: `version` is obsolete [+] Running 5/5 \u2714 Network dev-infra_default Created 0.1s \u2714 Volume \"dev-infra_atp_redis\" Created 0.0s \u2714 Volume \"dev-infra_atp_db\" Created 0.0s \u2714 Container dev-infra-redis_test-1 Healthy 1.5s \u2714 Container dev-infra-db_test-1 Healthy 2.0s \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557 \u2588\u2588\u2551\u2588\u2588\u2557\u2588\u2588\u2551 \u2588\u2588\u2551\u2588\u2588\u2551\u2588\u2588\u2551 \u255a\u2588\u2551\u2588\u2588\u2588\u2588\u2554\u255d \u255a\u255d\u255a\u2550\u2550\u2550\u255d protocol [ created by Bluesky ] atproto/node_modules/.pnpm/zod@3.23.8/node_modules/zod/lib/types.js:55 const error = new ZodError_1.ZodError(ctx.common.issues); ^ ZodError: [ { \"code\": \"custom\", \"message\": \"Issuer must be an HTTPS URL\", \"path\": [] } ] at get error [as error] (atproto/node_modules/.pnpm/zod@3.23.8/node_modules/zod/lib/types.js:55:31) at ZodEffects.parse (atproto/node_modules/.pnpm/zod@3.23.8/node_modules/zod/lib/types.js:160:22) at new OAuthVerifier (atproto/packages/oauth/oauth-provider/dist/oauth-verifier.js:32:72) at new OAuthProvider (atproto/packages/oauth/oauth-provider/dist/oauth-provider.js:74:9) at new PdsOAuthProvider (atproto/packages/pds/dist/oauth/provider.js:9:9",
+  "gold": "Hey, you can use the following command: `NODE_ENV=development pnpm start`.\r\nWe still need to get that patched, sorry about the inconvenience."
+ },
+ {
+  "k": 56,
+  "number": 2615,
+  "date": "2024-06-29",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2615",
+  "question": "Is it legal to use primitive values as unknown?\n\n[The lexicon validator](https://github.com/bluesky-social/atproto/blob/52a596320addd0111a8c347df3a9e85b4bae0417/packages/lexicon/src/validators/primitives.ts#L343) forces the value of `unknown` type to be object, but there is no such description in [the lexicon specification](https://atproto.com/specs/lexicon#unknown). From the specification, you can also refer to definitions with primitive types such as `string`, just like `ref`. Is this a `unknown` specification or a validator-specific constraint?",
+  "gold": "This is a great question! I think this is a bit under-specified and we aren't sure about the details.\r\n\r\nFor example:\r\n\r\n- can you distinguish between a null value and nullable value?\r\n- are there limits on the data encoded in an unknown? eg, if it is an array, can it have a billion elements? I think this is mostly a generic data question, but it becomes more obvious with unknown fields\r\n- can you have an array of `unknown`, with different types in each place?\r\n- if an object, does it need to have `$type` included? I think not. can it have a `$type` though? do implementations need to distinguish between a generic object in an `unknown` and something like a blob (`$type: blob`)?\r\n- what are the schema evolution rules? I think once something is `unknown` that probably can't change; but can something change from an object (or other type) to unknown? (I also think not)\r\n\r\nSorry to not have a more helpful answer. Pragmatically, right now I would try to stick to only using `object` in `unknown` fields, and we'll try to clarify this soon.\r\n\r\nUPDATE: here is a tracking issue in the specs repo: https://github.com/bluesky-social/atproto-website/issues/319"
+ },
+ {
+  "k": 57,
+  "number": 2626,
+  "date": "2024-07-03",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2626",
+  "question": "latest code of bluesky-social/ozone nor auto-build docker image cannot work.\n\nlatest ozone code uses tools.ozone.server.getConfig XRPC method in https://github.com/bluesky-social/ozone/blob/68c459aab1872765559c3b6ead42a5f938e84fd9/lib/client.ts#L172-L175 but those recent features are not available as below. It got error during sign-in flow to ozone, even latest ozone image ghcr.io/bluesky-social/ozone:sha-68c459aab1872765559c3b6ead42a5f938e84fd9 ``` Error: Method Not Implemented at ServiceClient.call (2460-82b8d242f915cbd5.js:1:301076) at async ClientManager._getServerConfig (6281-5595efd7e229122d.js:1:6972) at async ClientManager.signin (6281-5595efd7e229122d.js:1:5311) at async onSubmit (layout-51db4003679b916c.js:1:17461) ``` ``` # calling tool.ozone.team.listMembers also raises error curl -L -X POST \"https://ozone/xrpc/tools.ozone.team.listMembers\" -u \"admin:yourvalidpassword\" {\"error\":\"MethodNotImplemented\",\"message\":\"Method Not Implemented\"} # check package versions in latest docker images docker run -it --rm ghcr.io/bluesky-social/ozone:sha-68c459aab1872765559c3b6ead42a5f938e84fd9 npm list -a | grep @atproto/ +-- @atproto/ozone@0.1.11 | +-- @atproto/api@0.12.7 # commit hash recorded in latest ozone docker image docker inspect ghcr.io/bluesky-social/ozone:sha-68c459aab1872765559c3b6ead42a5f938e84fd9 | grep org.opencontainers.image.revision \"org.opencontainers.image.revision\": \"68c459aab1872765559c3b6ead42a5f938e84fd9\", # double check if recent APIs are included in lates",
+  "gold": "We generally release Ozone and PDS features in a coordinated way by pushing out tagged releases. The `main` git branch is for development and won't always be functional at every point in time, as seems to be the case right now. We are hoping to get out a tagged release in the next week, but it might slip until later in July."
+ },
+ {
+  "k": 58,
+  "number": 2641,
+  "date": "2024-07-15",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2641",
+  "question": "Which 'Adult Content' label should be applied if specifics are unclear?\n\nThis is related to https://github.com/snarfed/bridgy-fed/issues/1100#issuecomment-2227783580. While I don't work on any project directly, I'm curious what the current guidance is for interop with systems that don't have differentiated adult content labels to map to ATProto (and where a more specific label can't be determined because of resource constraints). I assume that some label should be applied, so the question is \"which?\" between 'Suggestive', 'Nudity' and 'Porn'. (Though, technically the 'sensitive' label on ActivityPub is used also for a lot of things that aren't covered by Bluesky's labels.)",
+  "gold": "I don't have a good answer for this today, and am not sure a good answer is possible. One system has granularity, the other doesn't. If one of the bsky labels was used as a \"default\", that would also change the de facto semantics of that label, which would not be good.\r\n\r\nWe are considering changes to the labels we use and apply, and can consider adding more generic labels to improve interop."
+ },
+ {
+  "k": 59,
+  "number": 2644,
+  "date": "2024-07-17",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2644",
+  "question": "What does implementing ATProto Repos entail? (as part of a PDS)\n\nI read the docs around the `Repository` data structure, and while it gives me a vague idea of how the ATProto Repository concept works, it didn't really give me a clear picture of how to implement them. This is probably a skill issue, so I come here to seek help. What really *is* an ATProto repo, and what does it contain? How do the different parts relate to each other? And how might one go about implementing them? Thanks in advance!",
+  "gold": "It can be tricky to implement repos! They can be a bit slippery to think about, and it is pretty easy to take some simplifying assumptions and then learn later that your implementation needed some additional feature or complexity.\r\n\r\nThe very strong analogy is to `git` repos. `git` is famously complex as well! And harder when you try to actually implement anything hard with it.\r\n\r\nI've laid out three different ways of answering your question and thinking about repos. In analogy to git these would roughly break down like:\r\n\r\n* software API: what commands does the `git` CLI support? those are analogous to the `com.atproto.sync.*` and `com.atproto.repo.*` lexicons. what functions and API does a git implementation expose internally, or as a library? eg `libgit2. these need to *enable* the public interface, but will usually be implementation-specific. there are likely common patterns and abstractions, but there isn't a formal checklist or anything.\r\n* repo data encoding: this would be like poking around in a `.git` directory, and figuring out how to format a raw git commit object, or the syntax of git directory objects. and some related encoding, like CAR files; git itself doesn't directly require \"diffs\" or \"patches\" in theory, but de-facto every git implementation is going to have some code to output a \"universal diff\" patch format which other tools can work with. it is very easy to get tangled up in details, acronyms, and unexpected quirky spec details or decisions here.\r\n* data structures: these are the fun cerebral abstractions and concepts. \"what makes git special\" / \"what makes atproto special\". you need to understand these to do an implementation and get the details right, but realistically you will probably spend more time on the above details and API design decisions than with the computer-science concepts.\r\n\r\n## Repos as a Software API: what functionality do you need to support?\r\n\r\nOne way to think about atproto repos is as a black-box data container. What software API methods are needed for interacting with this data container?\r\n\r\nThe basics:\r\n\r\n* import and export repos from CAR files. these are a binary storage format, basically with the data blocks concatenated together; details are in the IPLD CAR file specifications. this is helpful in testing, and required to service repo import/export endpoints\r\n* add, update, and delete records from a repo, as a batch, given existing binary records and paths. this is to service the record mutation endpoints.\r\n* ability to \"list\" the records in a repo, with start/end and limit flexibility, to service the list endpoint\r\n* store repo data somewhere, like a sqlite or postgresql database. there are a bunch of ways to do this; often implementations invent or reuse some generic interface for fetching/storing/etc block data, so they can support multiple storage backends. you should probably always implement an always-in-memory version\r\n* validate an MST tree. there isn't an endpoint for this, and in theory you could just be very careful with all of the import/export and mutation code, but in practice, for development and debugging, you should have a method which does deep re-verification of an MST tree\r\n\r\nNot directly related, but needed:\r\n\r\n* ability to translate between JSON atproto data (records) and CBOR atproto data (records). usually you want to do this in an app/lexicon-agnostic way\r\n* you need to have the functionality to create a new commit object and sign it with a cryptographic private key, so you need to implement the atproto crypto system (key encoding, signature validation, specific curves, high-S/low-S signatures, etc)\r\n* Lexicon validation, needed for a PDS implementation\r\n\r\nMore advanced:\r\n\r\n* remember some commit history about a repo, so you can generate a \"diff\" of what changed since some previous commit revision (`rev`). these are usually serialized as \"CAR slices\", and are used to output on the PDS event stream, or to service the \"get changes since\" API endpoint. needed to do a PDS\r\n* parse out blob references from arbitrary records, and maintain a mapping between records and blobs\r\n* keep track of the current commit for each account somewhere\r\n\r\nImplementation design decisions:\r\n\r\n* potentially the ability to do a series of small updates to an MST in memory, then \"commit\" the changes. this is like a working directory in git. in theory you could get away with only having a batch-update API which always returns a commit\r\n* ability to work with complete MSTs (you have all the records and intermediate nodes) vs partial MSTs\r\n* when loading an MST from data store, do you pull out all the blocks/nodes at the beginning? or one block at a time? or something more complex?\r\n* when you mutate an MST, do you only load and generate the \"new\" tree nodes? or re-generate the whole tree and diff which nodes are new and write those to storage? or re-write all nodes to storage?\r\n* need the ability to read from any repo, but usually can only mutate/update if you have the secret part of signing key on hand\r\n\r\nKeep in mind that there are repos in the network today with millions of records and gigabytes of data.\r\n\r\n\r\n## Repo data formats and encoding: nuts and bolts\r\n\r\nThere is a whole grab-bag of data formats, serializations, and other incidental design details to work through. These are individually mostly simple and boring, but there are a whole bunch of acronyms which may or may not be familiar or come across as idiosyncratic. A lot of these are described in the \"Data Model\" specs.\r\n\r\nI'm not really sure how to help here: there are just a bunch of little details to bulldoze through. A partial list:\r\n\r\n* CIDs: basically just content. If you think of something like SHA-1 hashes in git, they are implicitly: the SHA-1 algorithm; a specific output number of bytes (could have been truncated!); binary bytes are encoded in lower-case hex; might refer to final file bytes, or to another \"git object\" (like a commit or directory node); git has a convention of pre-pending the file size and hashing the file size bytes and then the actual file bytes together. that is a bunch of implicit knowledge you are just expected to know when working with git; you can't guess it just looking at a hash. CIDs are a more general format that tries to support evolution of these details by encoding metadata about the hash in the hash itself, so you can parse the CID and learn that it is SHA-256, represented using base32 vs hex vs base64, etc. atproto uses CIDs in a very restricted way: basically all CIDs are generated with the same hash today, the format flexibility is so we can evolve in the future\r\n* CBOR: CBOR is basically a binary encoding for JSON (though it has some features JSON doesn't, and it isn't always a perfect one-to-one). atproto uses a specific subset/variant of CBOR, and a specific subset/variant of JSON, such that we can deterministically convert records between JSON and CBOR. the terminology for the CBOR variant is \"DAG-CBOR\" and comes from IPLD, but it is really just some simple rules like \"don't use floats\" and \"always sort the keys in a dict\".\r\n* IPLD: this is a commonly confusing technology/abstraction. if you look it up you will get word soup about abstractions. basically it is just JSON/CBOR objects with links between objects. instead of those links being URLs (like they would be in most HTTP JSON APIs on the web), the references between objects are *hashes* (specifically CIDs). this turns a group of linked objects in to a merkel-tree or merkle-dag.\r\n\r\n## MST as an abstract data structure\r\n\r\nThis is the specific data structure used to turn a collection of records (with paths) in to a tree structure. It is similar to something like a Red-Black Tree: you get the general idea from the abstraction, but the overall concept is parameterized (what hash algorithm to use for hashing? what \"prefix length\" for counting tree depth?) which need to be specified (and are for atproto), and then a bunch of encoding and data format issues discussed in the section above.\r\n\r\nThis one is complex and i've already spent a bunch of time writing this doc, so going to cut things a bit short. I hope that the atproto \"Repository\" spec roughly documents the details. Realistically, it would be most helpful to have some diagrams and worked examples (specific records and paths resulting in specific hashes) to demonstrate all this, but it is a huge amount of work to generate that kind of documentation and we haven't gotten around to it yet."
+ },
+ {
+  "k": 60,
+  "number": 2645,
+  "date": "2024-07-17",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2645",
+  "question": "Self-hosted \"Profile not found\"\n\n`xrpc/app.bsky.actor.getProfile` in `pds` doesn't work, do you know why? ## log ```json pds-1 | { \"level\": 50, \"time\": 1721208261085, \"pid\": 6, \"hostname\": \"d99c15d24ec2\", \"name\": \"InvalidRequest\", \"status\": 400, \"message\": \"Profile not found\", \"msg\": \"error in xrpc method app.bsky.actor.getProfile\" } bsky-1 | { \"level\": 50, \"time\": 1721208261069, \"pid\": 7, \"hostname\": \"6a75d6082678\", \"name\": \"xrpc-server\", \"status\": 400, \"message\": \"Profile not found\", \"msg\": \"error in xrpc method app.bsky.actor.getProfile\" } ``` ## pds pds used two src. 1. ghcr.io/bluesky-social/pds:latest 2. bluesky-social/atproto/services/pds/Dockerfile ## test ```sh f=~/.config/atproto/token.json token=`cat $f|jq -r .accessJwt` did=`cat $f|jq -r .did` handle=`cat $f|jq -r .handle` host=`cat $f|jq -r \".didDoc.service.[].serviceEndpoint\"` get_profile=app.bsky.actor.getProfile get_timeline=app.bsky.feed.getTimeline # get profile (did/handle) $ curl -sL \"$host/xrpc/$get_profile?actor=$did\" -H \"Authorization: Bearer $token\" {\"error\":\"InvalidRequest\",\"message\":\"Profile not found\"} $ curl -sL \"$host/xrpc/$get_profile?actor=$handle\" -H \"Authorization: Bearer $token\" {\"error\":\"InvalidRequest\",\"message\":\"Profile not found\"} # get timeline $ curl -sL \"$host/xrpc/$get_timeline\" -H \"Authorization: Bearer $token\" {\"feed\":[]} ```",
+  "gold": "@syui regarding my self-hosting env, I succeeded to call PDS/xrpc/app.bsky.actor.getProfile as normal, like below.\r\n\r\nmy self-hosting env is based on the main branches of bluesky-social/* asof 2024-07-17 (today's commits).\r\nrefer https://github.com/itaru2622/bluesky-selfhost-env/blob/master/README.md to test with mine env.\r\nall docker images are also published at https://hub.docker.com/search?q=itaru2622%2Fbluesky- so you need not re-build any.\r\njust pulling docker images and starts them, with make command.\r\n\r\nyou can check all commit hashes via https://github.com/itaru2622/bluesky-REPO/tree/asof-2024-07-17\r\nlike https://github.com/itaru2622/bluesky-atproto/tree/asof-2024-07-17 for atproto (PDS and appview and others)\r\n\r\n```bash\r\ncurl -sL \"https://$host/xrpc/app.bsky.actor.getProfile?actor=$handle\" -H \"Authorization: Bearer $token\" | jq\r\n{\r\n  \"did\": \"$did\",\r\n  \"handle\": \"$handle\",\r\n  \"associated\": {\r\n    \"lists\": 0,\r\n    \"feedgens\": 0,\r\n    \"starterPacks\": 0,\r\n    \"labeler\": false\r\n  },\r\n  \"viewer\": {\r\n    \"muted\": false,\r\n    \"blockedBy\": false\r\n  },\r\n  \"labels\": [],\r\n  \"followersCount\": 0,\r\n  \"followsCount\": 0,\r\n  \"postsCount\": 0\r\n}\r\n```"
+ },
+ {
+  "k": 61,
+  "number": 2647,
+  "date": "2024-07-17",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2647",
+  "question": "avatar link PDS_BLOBSTORE_DISK_LOCATION\n\nI am currently self-hosting pds. In the past, the avatar link worked with the following env, but it no longer works after updating the pds. I can't find the image when I access the avatar URL. What do you think could be the reason? [google translate] ```sh PDS_DATA_DIRECTORY=/data PDS_BLOBSTORE_DISK_LOCATION=/data/img/static ``` ```yml pds: build: context: ./repos/atproto/ dockerfile: services/pds/Dockerfile volumes: - ./data/pds/:/data/ ``` ```sh $ curl -sL \"${pds}/xrpc/app.bsky.actor.getProfile?actor=$did\" -H \"Authorization: Bearer $token\" { \"did\": \"did:plc:2uesetahvr7t3gexbzqscxt5\", \"avatar\": \"https://${pds}/data/img/static/avatar/plain/did:plc:2uesetahvr7t3gexbzqscxt5/bafkreibj33gomcziy3rxx7hdnqlnpgjk4rwo3i564ooooooodsakrk6o7e@jpeg\" } $ ls ./data/pds/img/static/did:plc:2uesetahvr7t3gexbzqscxt5 bafkreibj33gomcziy3rxx7hdnqlnpgjk4rwo3i564ooooooodsakrk6o7e ``` ## html > Failed to load resource: the server responded with a status of 404 () ```html <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>Error</title> </head> <body> <pre>Cannot GET /data/img/static/avatar/plain/did:plc:2uesetahvr7t3gexbzqscxt5/bafkreigaqtungy26kssdy63w3dqizktstowcr73mke47cqvdfsjbtfhxwy@jpeg</pre> </body> </html> ```",
+  "gold": "That doesn't ring any bells... don't think that we have changed how blobs are stored or served recently, though I haven't been working directly on the PDS code base."
+ },
+ {
+  "k": 62,
+  "number": 2669,
+  "date": "2024-07-30",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2669",
+  "question": "How to use locally modified @atproto/api with social-app?\n\nI have made updates to @atproto/api (rich-text) in my fork, and I have used \"yarn link\" to link the @atproto/api package reference in social-app to point to my local package/copy. I am running the atproto dev server. My IDE picks up the updated api signature's, but running social-app indicates to me that it is not picking up the modified api at all. Is there another approach I should be using other than \"yarn link\"? When running social-app, it doesn't seem to be using the local dev server as well...",
+  "gold": "Very reasonable question! I don't work with the JS ecosystem as much, and don't have a reliable answer for you. We do have some docs for linking when doing Ozone development against a patched version of the api package:\r\n\r\nhttps://github.com/bluesky-social/ozone/blob/main/HACKING.md\r\n\r\nWe are planning to change how the api package works to make it more app-agnostic, and improve docs on building and working with independently-designed Lexicon schemas in the near future. Maybe that will help!\r\n\r\n"
+ },
+ {
+  "k": 63,
+  "number": 2705,
+  "date": "2024-08-12",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2705",
+  "question": "Migrating from `did:plc` to `did:web`\n\nHi folks! I've signed up for Bluesky a while back in the past, but am really interested in the idea of hosting my identity in a more decentralised manner (largely for geek-cred than anything else). This may or may not also involve running my own Bluesky PDS for personal use. While migrating to a new PDS is a challenging but supported task, is it also possible to migrate my current `did:plc` identity to a `did:web` identity either separately or at the same time (while keeping my handle the same in all cases)? My current understanding is this is likely impossible, given it's _the_ identifier for my account, and other relationships (such as followers) will suddenly lose track of me. But I'm unsure if those relationships actually track my handle rather than my `did` identifier, or if there is some sort of \"pointer\" mechanism built into the `did:plc` document specification that could facilitate any relationships between data that still uses my old `did:plc` identifier. If it's _definitely not_ possible, what are the consequences of moving my handle from a `did:plc` identity to a different `did:web` identifier? Is there any way I can limit the amount of \"breakage\" while moving between these two identities (particularly in the context of Bluesky itself)? I'm keen to hear what might be possible!",
+  "gold": ">  My current understanding is this is likely impossible\r\n\r\nYup, that's pretty much it. You can keep your *handle* and point it at your new DID, but all in-protocol references are based on the DID. You will lose your followers, for example (because they're \"following\" your DID, not your handle).\r\n\r\nYou could in theory re-import your old posts, but they'd lose any existing replies/likes/etc., and any threads would be broken.\r\n\r\nI might do a similar migration myself at some point, and if I do, here's what I'll do:\r\n\r\n1. Migrate the `did:plc` account to my own PDS.\r\n2. Create the new `did:web` account, also on my own PDS.\r\n3. Change the handle on the `did:plc` account to a \"legacy.\" subdomain or something, and move the original handle to the new account.\r\n4. Set up automated ~daily posting on the `did:plc` account to say \"hey I've moved to [did:web account], please follow me there instead\"\r\n\r\nIt's useful to keep the `did:plc` account around, both as an archive of old posts (preventing dead links), and as a way to direct people towards the `did:web` account. Notably, I don't plan on trying to import old posts - seems like more trouble than it's worth.\r\n\r\nThings like follow*s*, blocks, custom feeds, mutes, preferences could be migrated fairly seamlessly though - I wonder if anyone's made tooling for that."
+ },
+ {
+  "k": 64,
+  "number": 2722,
+  "date": "2024-08-17",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2722",
+  "question": "OAuth JWT and JWK limits\n\nOAuth looks good so far, but I have a couple of questions regarding practical limits on the number of JWTs and JWKs. In the context of generating OAuth requests, is state validated as globally unique, and is that forever or just at any given time? For example, an oauth_request with state=foo1 is sent and concludes successfully; later, if another request with state=foo1 is used, are previous states purged so that the later use of foo1 will succeed? For DPOP, are handle JWKs meant to be recycled? For example, if a user goes through the OAuth session creation process and a JWK is created for the user to create proofs, later, if the user creates a new session (like on a different device), is the same DPOP JWK meant to be reused but with a different nonce? I don't see anything that shows when DPOPs expire server-side. If DPOP JWKs are meant to be long-lived and span multiple sessions, is there a way to either set a hint (i.e. Smoke Signal will use this DPOP JWK for at most 28 days) or get a ttyl value from the server? On the other hand, if DPOPs are not long-lived and expire when the aggregate sessions for any access tokens associated with refresh tokens expire, can that be confirmed? Do DPoP nonces expire deterministically, and is there a way to request a nonce with a signed request if we know one is expired without implementing retry mechanics? The current limitation with DPoP nonces is that they force all requests to be serial because there's no guaran",
+  "gold": "Old keys should still be advertised in the jwks but no longer used to initiate new sessions. If a key is known to have been compromised, it must be removed from the jwks, effectively preventing it from being used to refresh sessions."
+ },
+ {
+  "k": 65,
+  "number": 2724,
+  "date": "2024-08-18",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2724",
+  "question": "Do refresh tokens expire?\n\nWhen a token is minted through either an `authorization_code` or `refresh_token` grant type, a token is returned as expected: ``` { \"access_token\": \"tok-4eaa868fb060a0d85e2eb9622b6ee59c\", \"token_type\": \"DPoP\", \"refresh_token\": \"ref-b4c7a3ba357ae8c002dd2dd8629e85e0fc43e5efc48331039f610c7280208e55\", \"scope\": \"profile offline_access\", \"expires_in\": 3599, \"sub\": \"did:plc:dld7f2usk5v2b2sngw7uapj5\" } ``` What isn't clear is whether there is an expiration value for refresh tokens. Can you update the spec to include the maximum value in seconds that a refresh token can be used? Also, can that document update include whether that expiration time is fixed or rolling, as in minting a new token returns a refresh token with the same expiration time or one that is also extended past the original refresh token's expiration time?",
+  "gold": "We are still finalizing what the expiration time windows should be:\r\n\r\n- whether this should be just \"guidance\" or hard limits in the spec\r\n- specific values we will have configured by default for the Bluesky-hosted PDS/entryway\r\n- whether these are \"rolling\" or \"fixed\" (as you mention)\r\n- how this can best be inspected/discovered by clients"
+ },
+ {
+  "k": 66,
+  "number": 2763,
+  "date": "2024-08-29",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2763",
+  "question": "Auth, How to force test an expired refreshToken?\n\nI have a refreshToken, and it shows an expiration value of \"exp\": 1732721703 which formats as Wed Nov 27 2024 10:35:03 GMT-0500 (Eastern Standard Time) which is roughly 90 days. How can I test if the refreshToken fails to authenticate, and I need to start a new session, (without waiting 90 days)? Can I just send bad data in the refreshToken, (i.e. edit the refreshToken string, change \"eyJhbGciO...\" to be \"XXXXXXXXXXXXXX...\") and the response from auth would be the same result (failure) as if the refreshToken was expired? Then my code can branch and POST to \"com.atproto.server.createSession\" instead...",
+  "gold": "You should be able to revoke a refresh token using `com.atproto.server.deleteSession` \ud83d\udc4d "
+ },
+ {
+  "k": 67,
+  "number": 2778,
+  "date": "2024-09-02",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2778",
+  "question": "Getting 405 even though my identifer is OK.\n\nI'm making a Bluesky client, my identifier is archiverxp.bsky.social, when I pass my password and my identifier to my JS nodejs program, I get a 405 Method Not Allowed. I tried following this https://github.com/bluesky-social/atproto/discussions/2572 but it didn't work.",
+  "gold": "Could be related to: https://github.com/bluesky-social/atproto/issues/2730 as when I changed the URL, it magically worked."
+ },
+ {
+  "k": 68,
+  "number": 2808,
+  "date": "2024-09-11",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2808",
+  "question": "Is Firehose unstable?\n\nI use Firehose( https://docs.bsky.app/docs/advanced-guides/firehose ) to run trend analysis bot: https://bsky.app/profile/lamrongol.bsky.social/lists/3kob6kalezl2a However, I noticed Firehose stops sometimes and in these days it happens frequently. Following my program log, which shows posts per minutes: postCountPerCertainTime=741 postCountPerCertainTime=849 postCountPerCertainTime=643 postCountPerCertainTime=704 **postCountPerCertainTime=6** I use Firehose by running javascript code `new WebSocket('wss://bsky.network/xrpc/com.atproto.sync.subscribeRepos')` on bun through `ProcessBuilder` of Java. minimal javascript code is: ```javascript const ws = new WebSocket('wss://bsky.network/xrpc/com.atproto.sync.subscribeRepos') ws.addEventListener('message', async (event) => { const messageBuf = await event.data const [header, body] = decodeMultiple(new Uint8Array(messageBuf)) if (header.op !== MSG_OP) return // main code } ```",
+  "gold": "I found this is just a problem of Java side(processing text is too slow). Sorry."
+ },
+ {
+  "k": 69,
+  "number": 2809,
+  "date": "2024-09-11",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2809",
+  "question": "Privacy: Any updates on the status of private accounts?\n\nI know people who refuse to use BlueSky because it doesn't have a way to privatize their account. I'm trying to keep my account open. I think it's a crucial feature for user security as well. I'm aware of the difficulty, but is there any update on whether the devs are thinking about this or are already working on it?",
+  "gold": "We are working to add support for shared, personal, and other non-public content in the protocol. We don't have any update or estimate on when or how that might work out in terms of \"private accounts\" as a specific feature in the Bluesky Social app (`app.bsky.*` lexicons)."
+ },
+ {
+  "k": 70,
+  "number": 2811,
+  "date": "2024-09-12",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2811",
+  "question": "Why does api.bsky.app have a fake DID?\n\n[In the PDS installer script](https://github.com/bluesky-social/pds/blob/main/installer.sh#L55), the DID of bsky appview is set to `did:web:api.bsky.app`. However, the DID document does not exist, and the following URL is 404. https://api.bsky.app/.well-known/did.json PDS seems to bypass DID resolution by embedding the DID and the URL in pairs. https://github.com/bluesky-social/atproto/blob/85c85350d13fb4468c12045e086ad91733b4bcb3/packages/pds/src/api/app/bsky/notification/registerPush.ts#L29-L35 Why is it like this? Please let me know if it has a real DID. As an aside, the reason for this question is that appview could not be explicitly specified with `atproto-proxy`. Even if a DID document exists, there is probably no service endpoint identifier for the bsky API in it, but I expect it can be replaced by [`bsky_notif`](https://github.com/bluesky-social/atproto/blob/85c85350d13fb4468c12045e086ad91733b4bcb3/packages/bsky/src/api/well-known.ts#L25).",
+  "gold": "Yup! This is basically just tech debt we need to get around to."
+ },
+ {
+  "k": 71,
+  "number": 2818,
+  "date": "2024-09-14",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2818",
+  "question": "Getting rate limit\n\nGetting rate limit error when testing API. So the limit is 100 per day? Is there way to bypass? ``` atproto_client.exceptions.RequestException: Response( success=False, status_code=429, content=XrpcError(error=\"RateLimitExceeded\", message=\"Rate Limit Exceeded\"), headers={ \"Date\": \"Sat, 14 Sep 2024 16:45:53 GMT\", \"Content-Type\": \"application/json; charset=utf-8\", \"Content-Length\": \"61\", \"Connection\": \"keep-alive\", \"X-Powered-By\": \"Express\", \"Access-Control-Allow-Origin\": \"*\", \"RateLimit-Limit\": \"100\", \"RateLimit-Remaining\": \"0\", \"RateLimit-Reset\": \"1726348078\", \"RateLimit-Policy\": \"100;w=86400\", \"ETag\": 'W/\"3d-egyFOcXCrKQFzoI7522/4+PpxIk\"', \"Vary\": \"Accept-Encoding\", }, ) ```",
+  "gold": "After some more searching it looks like this is because they want us to use JWT tokens instead of logging the agent in every time. I've figured out how to save and refresh my token - is there a simple way of getting the Atproto/BskyAgent to use the token instead of the `agent.login(...)` from the tutorials? I'd like to use the `agent.uploadBlob` and `agent.post` calls I've already written instead of re-writing those as `fetch`s. I've tried a few things but it seems to be ignoring any headers I try and set in the constructor or those I set by configuring a static fetch handler."
+ },
+ {
+  "k": 72,
+  "number": 2890,
+  "date": "2024-10-18",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2890",
+  "question": "Federation Status\n\n1. How is federation going? 2. Is there any stats on the usage of federated servers? 3. Is there any list with other federated servers?",
+  "gold": "https://blue.mackuba.eu/directory/pdses\r\nhttps://blue.mackuba.eu/stats/#weekly_origin_chart"
+ },
+ {
+  "k": 73,
+  "number": 2971,
+  "date": "2024-11-11",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/2971",
+  "question": "Getting \"rate limited\" trying to authenticate for the first time\n\nFollowing the instructions for creating a session via `curl` at https://docs.bsky.app/docs/get-started : ```shell % BLUESKY_HANDLE=\"krisalyssa.bsky.social\" BLUESKY_PASSWORD=\"****-****-****-****\" \\ curl -X POST https://bsky.social/xrpc/com.atproto.server.createSession \\ -H \"Content-Type: application/json\" \\ -d '{\"identifier\": \"'\"$BLUESKY_HANDLE\"'\", \"password\": \"'\"$BLUESKY_PASSWORD\"'\"}' ``` where `BLUESKY_PASSWORD` is an app password I created in my account, and I get `{\"error\":\"RateLimitExceeded\",\"message\":\"Rate Limit Exceeded\"}`. Since this is the first time I've tried this, I'm reasonably confident that I'm not actually exceeding a rate limit.",
+  "gold": "I'm sort of ashamed to admit this, but ultimately the problem was that I was setting the environment variables as a prefix to the `curl` command rather than explicitly exporting them prior.\r\n\r\nThis works:\r\n\r\n```shell\r\nexport BLUESKY_HANDLE=\"...\"\r\nexport BLUESKY_PASSWORD=\"...\"\r\nexport BLUESKY_PDS_HOST=\"https://bsky.social\"\r\ncurl --request POST --header \"Content-type: application/json\" --location --url \"https://bsky.social/xrpc/com.atproto.server.createSession\" --data-raw \"{\\\"identifier\\\":\\\"${BLUESKY_HANDLE}\\\",\\\"password\\\":\\\"${BLUESKY_PASSWORD}\\\"}\"                                                                                                                   \r\n```\r\n\r\nwhere `BLUESKY_HANDLE` is the full handle (e.g. `foo.bsky.social`) and `BLUESKY_PASSWORD` is an app password created in the account named by `BLUESKY_HANDLE`."
+ },
+ {
+  "k": 74,
+  "number": 3031,
+  "date": "2024-11-18",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3031",
+  "question": "Message from server: invalid feed generator service details in did document: did:plc:kbpvrgr.....\n\nI am using the feed-generator skeleton on github and I have the titled error when visiting my custom feed on Bluesky. The title, the desription etc work, just not the feed. /xrpc/app.bsky.feed.describeFeedGenerator describeFeedGenerator shows my did, and 2 feeds, the whats-alf and my custom feed. ``` { \"did\": \"did:plc:kbpvrgr.....\", \"feeds\": [ { \"uri\": \"at://did:plc:kbpvrgr...../app.bsky.feed.generator/whats-alf\" }, { \"uri\": \"at://did:plc:kbpvrgr...../app.bsky.feed.generator/anarcho-synd\" } ] } ``` When I visit my custom feed I can see json list of posts... /xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:plc:kbpvrgr...../app.bsky.feed.generator/anarcho-synd I am proxing on a server with Nginx, SSL in (CloudPanel) and I added websocket headers. DID is correct in .env (the full kbpvrgrXXXXXXXXXX ) I checked this with my domainshowingonbluesky-via-dns.org handle I have adapted the publishFeedGen.ts a bit just so I am not manually inputting when testing. ``` FEEDGEN_SUBSCRIPTION_ENDPOINT=\"wss://bsky.network\" FEEDGEN_HOSTNAME=\"hostingdomain.org\" FEEDGEN_HANDLE=\"domainshowingonbluesky-via-dns.org\" FEEDGEN_PUBLISHER_DID=\"did:plc:kbpvrgr.....\" FEEDGEN_SERVICE_DID=\"did:plc:kbpvrgr.....\" FEEDGEN_PASSWORD=\"XXXXXXXXXXXXXXXXXXXX\" FEEDGEN_SERVICE_URL=\"https://bsky.social\" FEEDGEN_RECORD_NAME=\"anarcho-synd\" ``` published, republished. Any advice as to where I can investigate next appreciated",
+  "gold": "For anyone having similar issues.\r\n\r\nI had to create a /.well-known/did.json \r\n\r\nEnsure FEEDGEN_SERVICE_DID is commented out so that app.bsky.feed.describeFeedGenerator shows the did:web:hostingdomain.org\r\n\r\ndid.json was in the format:\r\n\r\n```\r\n{\r\n  \"@context\": [\r\n    \"https://www.w3.org/ns/did/v1\"\r\n  ],\r\n  \"id\": \"did:web:hostingdomain.org\",\r\n  \"service\": [\r\n    {\r\n      \"id\": \"#bsky_fg\",\r\n      \"type\": \"BskyFeedGenerator\",\r\n      \"serviceEndpoint\": \"https://hostingdomain.org\"\r\n    }\r\n  ]\r\n}\r\n```\r\n\r\n"
+ },
+ {
+  "k": 75,
+  "number": 3038,
+  "date": "2024-11-19",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3038",
+  "question": "Updated post using putRecord. getRecord shows update as does getPosts however getPostThread not returning latest commit\n\nI updated a post using putRecord. The changes are being reflected in getRecord and getPosts but the changes are not being reflected in getPostThread. As a result of the change not being reflected in getPostThread, the updated post does not show on the BlueSky UI. Post URI for reference is at://did:plc:z5xilekje47hjt24peedz7fj/app.bsky.feed.post/3lbbmmbsgee2p",
+  "gold": "[The Bluesky service prohibits updating posts](https://github.com/bluesky-social/atproto/pull/1385), so appview intentionally ignores it. However, it may be reflected in a short window, and [Skeets uses it to provide a post editing function.](https://bsky.app/profile/skeetsapp.com/post/3klv2zcovbu26)\r\n\r\nputRecord does not fail because this is a specification unique to bsky post. PDS is expected to be lexicon agnostic, so putRecord succeeds, but appview, which is in charge of application logic, ignores it.\r\n\r\nThe old PDS included verification to update by [putRecord](https://github.com/bluesky-social/atproto/commit/6dfc899d995a0a7b0eb33ea1661e5c3660e38f90#diff-e35dfd17ddb08257c68e17800f771441e2e6298e8817dedaa1324442c42b0c1eL224) and [post recreating](https://github.com/bluesky-social/atproto/commit/6dfc899d995a0a7b0eb33ea1661e5c3660e38f90#diff-e35dfd17ddb08257c68e17800f771441e2e6298e8817dedaa1324442c42b0c1eL348), but this is a remnant of the time when PDS and appview were integrated and has now been removed.\r\n\r\n\r\n\r\n"
+ },
+ {
+  "k": 76,
+  "number": 3044,
+  "date": "2024-11-19",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3044",
+  "question": "TS SDK (atproto/sync): correct way to handle \"deleted blob\" type errors?\n\nI get errors like this one a lot: ``` Error: error in parsing and authenticating firehose event at Firehose.parseEvt (file:///deno-dir/npm/registry.npmjs.org/@atproto/sync/0.1.4/dist/firehose/index.js:119:31) at eventLoopTick (ext:core/01_core.js:214:9) at async Firehose.processEvt (file:///deno-dir/npm/registry.npmjs.org/@atproto/sync/0.1.4/dist/firehose/index.js:124:24) at async Firehose.start (file:///deno-dir/npm/registry.npmjs.org/@atproto/sync/0.1.4/dist/firehose/index.js:85:21) Caused by Error: block not found: bafyreihlwj5kicydksthycigmpheqliwmrungrztm3b63g323sblstfxmm, expected type: mst node at MemoryBlockstore.readObjAndBytes (file:///deno-dir/npm/registry.npmjs.org/@atproto/repo/0.5.3/dist/storage/readable-blockstore.js:40:19) at eventLoopTick (ext:core/01_core.js:214:9) at async MemoryBlockstore.readObj (file:///deno-dir/npm/registry.npmjs.org/@atproto/repo/0.5.3/dist/storage/readable-blockstore.js:45:21) at async MST.getEntries (file:///deno-dir/npm/registry.npmjs.org/@atproto/repo/0.5.3/dist/mst/mst.js:152:26) at async MST.findGtOrEqualLeafIndex (file:///deno-dir/npm/registry.npmjs.org/@atproto/repo/0.5.3/dist/mst/mst.js:517:25) at async MST.get (file:///deno-dir/npm/registry.npmjs.org/@atproto/repo/0.5.3/dist/mst/mst.js:311:23) at async verifyProofs (file:///deno-dir/npm/registry.npmjs.org/@atproto/repo/0.5.3/dist/sync/consumer.js:123:23) at async parseCommitAuthenticated (file:///deno-d",
+  "gold": "I filtered these out in my implementation using something like this:\r\n\r\n```\r\n\r\n  onError: (err) => {\r\n    if (\r\n      err instanceof FirehoseParseError &&\r\n      err.event.ops?.some((a) => a.action === \"delete\")\r\n    ) {\r\n      return;\r\n    }\r\n    console.error(err);\r\n  },\r\n```"
+ },
+ {
+  "k": 77,
+  "number": 3054,
+  "date": "2024-11-20",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3054",
+  "question": "How to Crawl or Backfill data for a Search or Recommendation system?\n\nHi, I was looking through the dev docs and it\u2019s not clear to me what is the intended way for devs to acquire a training set to build Search or Recommendation applications. What I see from the docs is you have the `backfill window` in the event stream but it explicitly says it\u2019s not intended to be used to replay the history especially from the start: https://atproto.com/specs/event-stream Then I see in the HTTP api there is a way to list all the repos [`com.atproto.sync.listRepos`](https://docs.bsky.app/docs/api/com-atproto-sync-list-repos) without auth but then you in order to [`com.atproto.repo.listRecords`](https://docs.bsky.app/docs/api/com-atproto-repo-list-records) in the repo it requires auth. Additionally this would be done as rate limited http calls instead of as a bulk operation like an event stream replay. What is the intended way for developers to acquire a training set for Search or Recommendation applications?",
+  "gold": "Documentation here: https://docs.bsky.app/docs/advanced-guides/backfill\r\n\r\nIt seems that enumerating it using the API via listerepos getrepo is the official solution. Seems inefficient with no  batch op tho would prefer to replay the stream."
+ },
+ {
+  "k": 78,
+  "number": 3075,
+  "date": "2024-11-22",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3075",
+  "question": "Working OAuth example?\n\nFor the last week I've tried to implement ATProto OAuth with Ruby, but it's proven to be very complicated. Although there are numerous existing OAuth libraries, none implement the more modern (?) feature set that AT Proto requires, such as DPoP. Finally haven given up on implementing it in Ruby, I decided to try Node instead as there's some official documentation and libraries available. Unfortunately, I've not succeeded to implement OAuth here either. Although there are quite a few code examples available, none seem complete. For example, there this: https://www.npmjs.com/package/@atproto/oauth-client-node Here's some of the issues with it I've found so far: - It uses `'https://my-app.com/callback'` as an example, but the Express route is `/atproto-oauth-callback` - There is no explanation on how to generate a working private key (I finally was able to do this after much trial and error) - It uses `new Agent(session)` yet `Agent` is not defined - When trying to import `Agent`, there's a message saying it's not a constructor - `stateStore` and `sessionStore` are not implemented (perhaps easy for experienced Node developers, but for someone with a different background like me this is yet another hurdle to overcome) - `requestLock` is not explained There's probably more issues, but I got stuck with the `Agent` not being authorized for some reason. AT Proto looks promising, but without complete code examples it's very difficult for developers to integrate",
+  "gold": "I recommend looking at this OAuth announcement blog post: https://docs.bsky.app/blog/oauth-atproto\r\n\r\nIt links out to several resources, including an \"OAuth Client Implementation Guide\", and working client code in Python (which uses very few dependencies)."
+ },
+ {
+  "k": 79,
+  "number": 3079,
+  "date": "2024-11-22",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3079",
+  "question": "Why doesn't max/min Graphemes have an associated Locale?\n\nGrapheme length is dependent on the locale context that the string is parse in. The lexicon `string` field has a constraint for `maxGraphemes` and `minGraphemes`. But without a locale associated with the context of the parsing operation, we don't have a way to consistently \"count\". For example: String: e\u0301 (U+0065 LATIN SMALL LETTER E + U+0301 COMBINING ACUTE ACCENT) Locale 1 (e.g., French): May treat this as 1 grapheme because it recognizes \u00e9 as a single user-perceived character. Locale 2 (Generic or Root): May treat this as 2 graphemes (one for e and one for the combining accent). This leads to inconsistent implementation of validation unless there is someway to require a locale on every message or have a default/standard locale. I noticed the reference validation for this is just counting 16bit UTF block , which does garantee that the amount of graphemes are *less* then the constraint but one service could consider one record valid - because the amount of graphemes is within the min/max, and a different one using a different locale would consider it invalid. https://github.com/bluesky-social/atproto/blob/011e73ec05b0db34f7c1d12382ec46e910e2d4dd/packages/lexicon/src/validators/primitives.ts#L236 See my bluesky post where I tested some limits with different large grapheme cluster emojis: https://bsky.app/profile/the.nathanklisch.com/post/3lbkd5cw43c2v Am I missing something?",
+  "gold": "The source line you link is just an early-exit optimisation, full grapheme counting happens later, using the Graphemer package https://www.npmjs.com/package/graphemer\r\n\r\nGraphemer claims \"it is an implementation on the [Default Grapheme Cluster Boundary](http://unicode.org/reports/tr29/#Default_Grapheme_Cluster_Table) of [UAX #29](http://www.unicode.org/reports/tr29/).\" You're right that locale-specific rule variations can be used, but the default seems well-defined. (and the atproto docs should probably say something about that)"
+ },
+ {
+  "k": 80,
+  "number": 3094,
+  "date": "2024-11-24",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3094",
+  "question": "After migration to non-archival relay, not ingesting records from some independent PDSes\n\nHi all! Congrats on keeping the ship afloat during last week's relay migration and firefighting (https://github.com/bluesky-social/atproto/discussions/3036, [more](https://bsky.app/profile/bnewbold.net/post/3lbirrqme2s2w)). Hope you all have recovered and gotten some sleep! Since then, some independent PDSes' records are getting ingested and visible in the main appview and bsky.app, but not all. Specifically Bridgy Fed's (atproto.brid.gy) records stopped getting ingested roughly four days ago, 11/20 21:28 UTC, atproto.brid.gy subscribeRepos seq 4317000 ish. Tracked on our side in https://github.com/snarfed/bridgy-fed/issues/1520#issuecomment-2492534380. I don't know if this is happening to other independent PDSes too, or just us. Example missing record: `at://did:plc:bg5udl25mvzg3rt7l5n2hzet/app.bsky.feed.post/3lbhz4myfsjg2`, atproto.brid.gy seq 4368917, emitted sometime around 11/21 17:41:08 UTC, not visible on https://bsky.app/profile/did:plc:bg5udl25mvzg3rt7l5n2hzet I've talked to a few people on the team about this on and off; filing here just to have a shared place to track. Lmk if I can help. #hugops!",
+  "gold": "I think we're properly kicked into gear now, and should be fully up to date within a few hours if all goes to plan.  The ingestion rate was essentially too slow and ended-up continuously moving forward but falling behind.  Will be monitoring it closely today \ud83d\udc4d "
+ },
+ {
+  "k": 81,
+  "number": 3116,
+  "date": "2024-11-27",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3116",
+  "question": "Custom Lexicons: Publishing records with a custom schema to a server you don't own\n\nHi Everyone I have gone through the [statusphere example](https://github.com/bluesky-social/statusphere-example-app?tab=readme-ov-file) and a lot of the basic concepts make sense to me. One thing I cannot quite understand is how publishing events with the `xyz.statusphere.status` schema from localhost can push those events to Bluesky's servers, and ultimately a relay. 1. Since Bluesky's servers have no concept of this status lexicon, how do they parse the event and store it in my repository? 2. Wouldn't allowing publishing behavior allow users to \"flood\" bluesky's PDS servers with junk events? What if I had a script to publish a record with a new lexicon every 1s? Wouldn't that lead to an explosion in collections in my repository hosted on Bluesky PDS?",
+  "gold": "1. You don't need the lexicon to parse a record, only to validate the schema. validation can be disabled.\r\n\r\n2. Rate limits and account bans exist"
+ },
+ {
+  "k": 82,
+  "number": 3159,
+  "date": "2024-12-02",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3159",
+  "question": "One host for each user and decentralization with custom lexicons\n\nHi, I'm learning the protocol and starting to build an app with it that will require some new lexicons, but will also use the existing app.bsky microblogging lexicons. I was wondering whether the users of my app will still be able to host their repos on Bluesky's PDSs, or they might need to migrate. But the question is a bit more general. Imagine a scenario where a user uses N apps on ATProto, each with a different set of lexicons. Let's say that they all offer their own PDS. Where should the repo of that user be stored? What if none of the apps wants to host all the data for that user? Apps might not want to host lexicons that they don't use since it can be costly. In those scenarios it seems more natural to allow for more flexibility by having different records of a user stored in different PDSs, stored by different people. But if I understand correctly, this isn't possible as isn't in future plans either. Otherwise, I guess that some good UX will be needed to explain to users what is happening with their data when they want to use a new application. For example, each PDS could explicitly publish which lexicons it supports, or what limits it has, so that then apps can explain to users what their options are with respect to hosting. Eventually, I imagine hosting services that charge with the use, specially for users that own a lot of data in many different lexicons. I'm curious about how others think about thi",
+  "gold": "In theory, PDS does not have lexicon-specific functions, so all data can be stored in any single PDS.\r\n\r\nIf the PDS provider does not want to provide storage for unknown lexicon, it is possible to impose restrictions, but there is currently no implementation for that. I think it's reasonable for PDS providers to charge as-you-go data volumes, but lexicon is not directly related to operating costs, so it may not be a common requirement."
+ },
+ {
+  "k": 83,
+  "number": 3215,
+  "date": "2024-12-09",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3215",
+  "question": "New millipds users are not able to federate with bsky appview\n\nAround the 17th of November, I set up an instance of [millipds](https://github.com/DavidBuchanan314/millipds) at https://pds.dev.retr0.id/ Everything worked great (mostly), and the account is visible at https://bsky.app/profile/david.dev.retr0.id Over the past few days, a few other people have set up millipds instances: - https://biden.lgbt (cc @OkashiOdayakana ) - https://bsky.app/profile/did:plc:beq5fpl2yml5lzlr2nlmmbzl - https://pds.dev.goranmoomin.dev (cc @goranmoomin ) - https://bsky.app/profile/did:plc:ilbuexsezfgfn6ospjcpkupt - https://pds.dev.lily.pet (cc @lilyvxv ) - https://bsky.app/profile/did:plc:h5f4kq235u7lvpe2gf5ptyom Unfortunately, they've not had so much luck. I can't debug very effectively from my vantage point, but the first two accounts in particular appear to be connecting to the relay correctly, just not the appview - none of their profiles or posts are visible in bsky.app. The issue may well be on millipds's end, but it's hard to debug further without knowing what's going on inside the appview - I'm hoping we might be able to get some insight there. Of course, I'm happy to answer questions about \"what millipds does\", along with my setup for `david.dev.retr0.id` - and I'm hoping the users I've tagged are available to answer questions about their own setups. I recently wrote up instructions for setting up a new account on millipds, which they may have been following: https://github.com/DavidBu",
+  "gold": "@DavidBuchanan314 I think we got to the bottom of this, and those profiles linked above appear to be indexed now.  My millipds setup is also being indexed again normally.  My hunch about \"what's different\" about millipds that triggered the behavior is that it may have to do with either a. not having a commit event for the repo init (just a commit block), or b. emitting some events prior to the first account/identity events for the repo.  Both should have been things that we were recovering from\u2014and I believe have been addressed\u2014but may be why the same thing wasn't happening on the mushroom servers."
+ },
+ {
+  "k": 84,
+  "number": 3218,
+  "date": "2024-12-10",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3218",
+  "question": "Why does describeRepo fail with RepoNotFound once the agent has logged in?\n\nOnce the agent has logged in, `AtpAgent.com.atproto.repo.describeRepo` fails to find any repo except that of the logged in identifier. I assume this isn't intentional, right? Am I missing something or skipping a step? I'm just running `await agent.com.atproto.repo.describeRepo({ repo: handle })`. Full example below. ```typescript import { AtpAgent } from '@atproto/api'; const p = (obj:any) => {console.log(obj);} const line = () => {console.log('\\n'+'='.repeat(60));} const identifier = process.env['BSKY_USERNAME']!; const password = process.env['BSKY_PASSWORD']!; const repoHandle = 'bsky.app'; p('confirm credentials:') p({ identifier, password:!!password }); line(); async function tryDescribeRepo(handle:string){ type repoResponse = {success:boolean,data?:any,headers:any,status?: any,error?: any}; const repo:repoResponse = await agent.com.atproto.repo.describeRepo({ repo: handle }).catch(e=>e); p({loggedInAs: agent.session?.handle ?? null,searchingForRepo:handle,success:!!repo.success,error:repo.error}); line(); } let agent:AtpAgent; p('new agent; succeeds'); agent = new AtpAgent({ service: 'https://bsky.social' }); await tryDescribeRepo(repoHandle); p('agent logged in; fails'); await agent.login({ identifier, password }); await tryDescribeRepo(repoHandle); p('still logged in, but own repo; succeeds'); await tryDescribeRepo(identifier); p('agent logged out; still fails'); await agent.logout(); await try",
+  "gold": "This might be related to [an issue I raised on the Python SDK](https://github.com/MarshalX/atproto/issues/379) - describeRepo also confused me. \r\n\r\nIt turns out you can only use it to describe repositories on the same PDS as the client, so you'd have to switch PDS first to use it. That's probably why it only worked on your client's own account, but it should work to describe the repo of any other account on the same PDS.\r\n\r\nIn the Python SDK, you can still use describeRepo on any account by [changing the base URL the client uses](https://github.com/MarshalX/atproto/issues/379#issuecomment-2324637964), and I assume there's a similar fix in the JS/TS API. \r\n\r\nI do think this is odd behaviour, though."
+ },
+ {
+  "k": 85,
+  "number": 3221,
+  "date": "2024-12-10",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3221",
+  "question": "How/where to use `com.atproto.sync.listRepos`?\n\nNote that I am very new to atproto/bsky ecosystem so please correct me when I say something that does not make sense! The [docs](https://docs.bsky.app/docs/api/com-atproto-sync-list-repos) mention that: > This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances According to the [API Hosts and Auth](https://docs.bsky.app/docs/advanced-guides/api-directory) section the relay is `https://bsky.network` and the PDS instances are in the form of `https://<NAME>.<REGION>.host.bsky.network`. So as far as I understand I\u00b4d have to make a GET request to `https://bsky.network/xrpc/com.atproto.sync.listRepos`, but this returns: ```json { \"error\": \"Not Found\" } ``` Using `https://bsky.social` as the base URL (listed as \"Entryway\" in the docs) instead of `bsky.network` does return a result as expected, but only when authenticated. But even going through all of these using the cursor it misses some repos. After some digging it seems to return the results of calling listRepos against the PDS of my account. Swapping in a PDS as base URL as in the form mentioned earlier (eg. `enoki.us-east.host.bsky.network`, a different one than my PDS, which I can access _without_ auth in contrast to `https://bsky.social` ) gives different repos, as expected if `https://bsky.social` only gives the ones from mine. It seems strange to me that `https://bsk",
+  "gold": "The failure of the Bluesky relay is due to the update of the relay. (ref. #3036) \\\r\nRelays with this API may appear in the future, but because it is an optional feature, not all relays have it.\r\n\r\nThe entryway passes all APIs except the authentication to the PDS, so although it is not intuitive, it is the correct behavior. Authentication is required to determine which PDS to forward the request to.\r\n\r\nThe comprehensive discovery of PDS is an unresolved issue, but an informal list of volunteers can be used as a tentative approach.\r\n\r\nhttps://github.com/mary-ext/atproto-scraping"
+ },
+ {
+  "k": 86,
+  "number": 3247,
+  "date": "2024-12-15",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3247",
+  "question": "Are user (actor) signing keys stored in cleartext on disk?\n\nHey folks. I've just started poking around the codebase, and while looking at how the PDS does actor key management I ran into this: https://github.com/bluesky-social/atproto/blob/13636ba963225407f63c20253b983a92dcfe1bfa/packages/pds/src/actor-store/index.ts#L57-L61 Which looks like private signing keys are just being read off the filesystem as-is. Am I missing something crucial here?",
+  "gold": "I believe you're correct, but bear in mind that the repo signing keys are replaceable (e.g. via did:plc rotation keys) if they're ever compromised (and there's talk of rotating them on a more regular basis). Kinda like how your TLS private keys *usually* just sit on disk accessible by your httpd."
+ },
+ {
+  "k": 87,
+  "number": 3299,
+  "date": "2024-12-29",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3299",
+  "question": "Add user to a list only if they're not already on it?\n\nReading over the [documentation for user lists](https://docs.bsky.app/docs/tutorials/user-lists), I've noticed that you can add a subject to a list multiple times. If you've added the subject to the list multiple times, they'll only appear in the UI as on the list once, but if you delete them from the list from the UI, they remain on the list unless you repeat the action for the number of times you've added them. I also notice that the delete request requires the record key, not simply the actor. Unless I'm missing something, this seems to imply that for both adding somebody to a list, and deleting them, I need to iterate over the entire existing list \u2014 in the case of adding, to make sure that I don't add somebody that's already on the list, and in the case of deleting, in order to get the rkey(s) of the subject for deletion. Is there no way to search the list for the subject without making several API calls to fetch the entire list first? As a list grows, to say, 500 subjects, adding somebody while avoiding duplication would require 6 API calls.",
+  "gold": "there's a trick to avoid this problem - generate the list item rkey as a deterministic function of the subject and the list rkey. you can use `putRecord` for adding users, and it'll do nothing if you add the same subject twice, because it'll have the same rkey.\r\n\r\n(however, this only works as long as nobody else's code is adding new entries)"
+ },
+ {
+  "k": 88,
+  "number": 3303,
+  "date": "2024-12-30",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3303",
+  "question": "Atproto oauth-client-node in Deno environment\n\nCurrently, I am unable to get a working example going in Deno because of the following error when calling the `authorize` method. I do understand that it is a deno issue which is not supporting this specific `node:crypto` API which I think PR [27325](https://github.com/denoland/deno/pull/27325) is attempting to fix over in denoland. ``` Uncaught (in promise) Error: Not implemented: jwk private key export not implemented ``` This has been brought up by another user found at this issue in the atproto repo here [2866](https://github.com/bluesky-social/atproto/issues/2866). My question is regarding whether there is a work-around or possibly some kind of configuration with the client I could try to in order to avoid this error while we wait for an official fix in deno? Is there something I could override in the `atproto-oauth-client-node` package or maybe just implement the oauth flow from scratch?",
+  "gold": "@technoY2K i think i got it to work: https://github.com/callmephilip/tinychat-at-proto/blob/main/nbs/oauth.ipynb\r\n\r\nthanks for pointing me in the right direction!"
+ },
+ {
+  "k": 89,
+  "number": 3341,
+  "date": "2025-01-09",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3341",
+  "question": "How to \"verify\" that an author created a specific post\n\nI'm building an application which will verify that a specific author actually published a post. To achieve this, given a post, I want to check that the author's public key was indeed used to publish. My understanding is that this requires a few things: * Get the public key from the DID * Get the relevant commit(s?) in a user's repo for a specific message. * Compare the commit signature and the author's public key Is this the correct approach? Would anyone be able to provide a bit more details for each of these steps? Thanks for your precious help!",
+  "gold": "In general, since the signature is attached to the root of the hash tree, it is necessary not only to verify the signature but also to ensure that it is linked to the desired record. You can use com.atproto.**sync**.getRecord to get the path from the record to the root.\r\n\r\nThat's what [public-transport](https://github.com/goeo-/public-transport/blob/f7cd8bb3a4633b5ac306b703291c568bf0609ecb/src/lib.rs#L233C14-L233C40) does. In addition, Bluesky's [`verifyProofs`](https://github.com/bluesky-social/atproto/blob/9dc7251fc7fc254a1296ef503ed487da7d896c80/packages/repo/src/sync/consumer.ts#L124) is also helpful."
+ },
+ {
+  "k": 90,
+  "number": 3347,
+  "date": "2025-01-09",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3347",
+  "question": "How are uploaded blobs not embedded in posts handled?\n\nWhat is the expected behavior of uploaded blobs (images, videos) that are not subsequently embedded in any posts? Are they automatically deleted after a certain period, or do they remain on the server indefinitely?",
+  "gold": "Yes, they should be automatically cleaned up after at least 1 hour.  More details on this here: https://atproto.com/specs/blob#blob-lifecycle"
+ },
+ {
+  "k": 91,
+  "number": 3350,
+  "date": "2025-01-10",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3350",
+  "question": "State and Session store are empty in OAuth client in deno.\n\nI've been trying to figure this out but running into a wall. The following is my StateStore implementation using Deno.Kv. During the `oauth.callback` function my store seem to be empty which in turn causes the following error: ``` Error: Cannot read properties of undefined (reading 'includes') ``` StateStore Implementation ``` export class StateStore implements NodeSavedStateStore { constructor(private kv) {} async get(key: string): Promise<NodeSavedState | undefined> { console.log(`Retrieving state for key: ${key}`); const entry = await this.kv.get([\"auth_state\", key]); return entry.value as NodeSavedState; } async set(key: string, val: NodeSavedState): Promise<void> { console.log(`Saving state for key: ${key}, value: ${JSON.stringify(val)}`); await this.kv.set([\"auth_state\", key], val); } async del(key: string): Promise<void> { console.log(`Deleting state for key: ${key}`); await this.kv.delete([\"auth_state\", key]); } } ``` And finally the empty store in the OAuth object ``` sessionGetter: SessionGetter { getter: [AsyncFunction (anonymous)], store: SessionStore { kv: Kv {} }, options: { isStale: [Function: isStale], onStoreError: [AsyncFunction: onStoreError], deleteOnError: [AsyncFunction: deleteOnError] }, pending: Map(0) {}, runtime: Runtime { implementation: { requestLock: undefined, createKey: [Function: createKey], getRandomValues: [Function: randomBytes], digest: [Function: digest] }, hasImplementationLock: ",
+  "gold": "@technoY2K i wrapped up stores with `toDpopKeyStore` as you can see [here](https://github.com/callmephilip/tinychat-at-proto/blob/main/tinychat/oauth.ts#L279-L312) this is copied from the original [node client](https://github.com/bluesky-social/atproto/blob/main/packages/oauth/oauth-client-node/src/node-oauth-client.ts#L87-L88). \r\n\r\nas far as i cant tell, this helps with proper serialisation of the keys"
+ },
+ {
+  "k": 92,
+  "number": 3360,
+  "date": "2025-01-12",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3360",
+  "question": "How do I find those who have blocked me?\n\nI saw this feature first at [Clearsky app](https://clearsky.app/), but I don't seem to find anything on the official [HTTP Reference](https://docs.bsky.app/docs/category/http-reference) of the Bluesky. Is there an API endpoint or a way to get back a list of those who have blocked me, in the same way as I can get a list of those whom I have blocked (endpoint for this [here](https://docs.bsky.app/docs/api/app-bsky-graph-get-blocks))?",
+  "gold": "There isn't any direct way"
+ },
+ {
+  "k": 93,
+  "number": 3366,
+  "date": "2025-01-14",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3366",
+  "question": "How to edit `did:plc` rotation keys\n\nI have migrated my Bluesky handle `rekmarks.com` to my own PDS. I am trying to replace one of its rotation keys. Here's what I observe: 1. I check the rotation keys returned by `com.atproto.identity.getRecommendedDidCredentials` 2. I sign and then submit a PLC operation via `com.atproto.identity.submitPlcOperation` to update the rotation keys 3. On the first attempt, I didn't include the server's rotation key and hit [this error](https://github.com/bluesky-social/atproto/blob/17057144d8c7228be9fad5d299b20e9cc21b2ec9/packages/pds/src/api/com/atproto/identity/submitPlcOperation.ts#L21-L25) 4. On the second attempt, I included the server's rotation key, and the operation ostensibly succeeded. However, `com.atproto.identity.getRecommendedDidCredentials` returns the same result as in step 1 above. Questions: 1. How can I check which rotation keys I have added to my account? 2. How can I remove a rotation key that I have added? 3. What is \"the server's rotation\" key, and why is `com.atproto.identity.getRecommendedDidCredentials` returning the same result?",
+  "gold": "Looks like you've been busy! https://plc.directory/did:plc:kafdwhssooa65puiidhv6sy4/log/audit is the right place to look, it shows three changes over the last couple hours. If I read it right, the first of those three (2025-01-13T00:51:15.024Z) replaced both rotation keys, and the third (2025-01-14T02:13:23.044Z) replaced the first.\r\n\r\nIf you're interested in this stuff, you may want to dig into the PLC directory itself, https://github.com/did-method-plc/did-method-plc, how to do operations against it directly, and how the PDS API calls map to those operations. (Personally I'm familiar with PLC operations, but not with the PDS's wrapper API calls.)"
+ },
+ {
+  "k": 94,
+  "number": 3375,
+  "date": "2025-01-16",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3375",
+  "question": "Generic Tools for browsing/managing test data on my account?\n\nI am working on an app where I login to my BlueSky account and create data conforming to my own lexicons on that account. I haven't built out any update/delete functionality yet, and until I do, I was wondering if there are generic data browser tools? Being able to login to my account, then see all the garbage JSON/whatever records I've posted to it, and ideally delete them, would be great. Is that kind of tool out there yet? Also, if anyone has a different iterative dev process for working out new lexicon structures that doesn't involve spamming data onto actual PDS accounts, would love to hear about that. Thanks!",
+  "gold": "https://pdsls.pages.dev/ ?"
+ },
+ {
+  "k": 95,
+  "number": 3394,
+  "date": "2025-01-18",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3394",
+  "question": "Engagement Feedback for Feed Algorithm\n\nWhat is the expected way to have Feeds update based on the specific user's engagement. So for example, they spend X amount of time looking at this post or watching this video so we should server them more things like that. I don't see any APIs built into the system for that kind of thing. Is BlueSky doing something like that already?",
+  "gold": "The [sendInteractions](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/sendInteractions.json) API is available. However, this API is not yet mature, and most clients and feed generators do not use it. Bluesky uses this for Discover feeds, but their clients do not use for other feeds.\r\n\r\nThere is no way to track the behavior of users outside the feed. Considering the effort of client implementation and user consensus, it is unlikely to be realized.\r\n"
+ },
+ {
+  "k": 96,
+  "number": 3430,
+  "date": "2025-01-22",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3430",
+  "question": "How to do non public direct message on atproto?\n\nIs there documentation on direct messaging or non public content in atproto? It's still written as future work in the doc but it looks like bluesky has released this feature.",
+  "gold": "Bluesky [said](https://docs.bsky.app/blog/2024-protocol-roadmap#product-features) the feature is off-protocol.\r\n\r\nThis is achieved by sending messages directly to [their endpoints](https://api.bsky.chat/.well-known/did.json) and getting messages addressed to you from there. For more information about the API, please refer to [lexicons](https://github.com/bluesky-social/atproto/tree/main/lexicons/chat/bsky) or [the reference](https://docs.bsky.app/docs/api/chat-bsky-convo-send-message).\r\n"
+ },
+ {
+  "k": 97,
+  "number": 3433,
+  "date": "2025-01-22",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3433",
+  "question": "`listRepos` on the relay `bsky.network` is missing about 10M repos\n\nThere's currently over 28M accounts in total, but the relay seems to return in `listRepos` only about 18M. Thanks to it using a sequentially increasing integer ID as a cursor, it's possible to craft a cursor value and query an arbitrary range of IDs. Querying `https://bsky.network/xrpc/com.atproto.sync.listRepos?cursor=20000000&limit=3` right now returns `{\"repos\":[]}`, meaning that there's less than 20M repos it knows about. As far as I can tell, PDS should send an `#account` event as soon as a new account is created, and that should result in the relay adding it to its database. So \"accounts that have not created a single record\" doesn't really explain it. What could be causing such a discrepancy?",
+  "gold": "I believe the current relay instance was started on around November 2024, per https://github.com/bluesky-social/atproto/discussions/3036\r\n\r\nSo maybe 18M is the number of accounts that have been active since then?"
+ },
+ {
+  "k": 98,
+  "number": 3512,
+  "date": "2025-02-10",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3512",
+  "question": "Top-level `ref` of `record` definitions in lexicons\n\nAccording to [the Lexicon specification](https://atproto.com/specs/lexicon#primary-type-definitions), only `object` types can be used in the `record` field of `record` type. This is in contrast to the ability to use `union` and `ref` for `schema` field of API. Why is it like this? Simple records, like [`like` ](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/like.json) and [`repost`](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/repost.json), often have exactly the same `record`, so it is useful to commonize the definition without increasing the nesting. Also, even if the collection is different for each service, you may want to have a compatible record. Are there any expected problems if the record allows a reference?",
+  "gold": "If this is allowed, it causes the same problem as [named `ref`](https://github.com/bluesky-social/atproto/discussions/4343). When you reference a `record`, it becomes unclear which NSID to declare with `$type`."
+ },
+ {
+  "k": 99,
+  "number": 3606,
+  "date": "2025-03-06",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3606",
+  "question": "Listing posts from my own feed?\n\nI am just starting with my first Bluesky project and I'm trying to lists posts from my own feed, (it could also be anyone else's), but I am confused at what the right URI type should be or whether I am even approaching this right? I was looking around for examples, but I am running into a wall, due to my inexperience with the API and what seems to be a lack of good examples. ```ts import { AtpAgent, AtpSessionEvent, AtpSessionData } from '@atproto/api' const identifier = 'myuser.bsky.social'; const password = 'xxxx-xxxx-xxxx'; const bSkyService = 'https://bsky.social'; // also tried https://public.api.bsky.app async function main () { const agent = new AtpAgent({ service: bSkyService, persistSession: (evt: AtpSessionEvent, sess?: AtpSessionData) => { // store the session-data for reuse }, }); await agent.login({ identifier, password, }); const feedUri = `at://${agent.assertDid}/app.bsky.feed.generator`; const response = await agent.getPosts({ uris: [feedUri] }); console.log('Response:', response); } main().catch(error => { console.log(error); process.exit(1); }) ``` Errors based on values for URIs I am using: - 'at://ajmas.bsky.social' : 'XRPCError: Internal Server Error' - `at://${agent.assertDid}/app.bsky.feed.generator`: 'XRPCError: Internal Server Error' - 'ajmas.bsky.social' : 'XRPCError: Error: uris/0 must be a valid at-uri' - `agent.assertDid`: 'RPCError: Error: uris/0 must be a valid at-uri' - 'at://bsky.social/ajmas.bsky.social' : 'XR",
+  "gold": "While I didn't get any answers around `getPosts()` (it would be good to see better documentation around this), it turns out that `getAuthorFeed()` functions for my needs. \r\n\r\nTo list only the posts the account has created (as opposed to replies to other posts):\r\n\r\n```typescript\r\n  const response = await agent.getAuthorFeed({\r\n    actor: 'myuser.bsky.social',\r\n    includePins: false,\r\n    filter: 'posts_no_replies'\r\n  });\r\n```\r\n\r\nYou can also use the following, if logged in and wanting to return your own feed:\r\n\r\n```typescript\r\n  const response = await agent.getAuthorFeed({\r\n    actor: agent.assertDid,\r\n    includePins: false,\r\n    filter: 'posts_no_replies'\r\n  });\r\n```\r\n\r\nThis is all based on the code in the question.\r\n\r\nAlso, another dev suggested the `getPosts()` can take a URL of the following form:\r\n\r\n```\r\n at://myuser.bsky.social/app.bsky.feed.generator/xxxx\r\n```\r\n\r\nThe question then becomes how to discover feeds?\r\n\r\n"
+ },
+ {
+  "k": 100,
+  "number": 3697,
+  "date": "2025-03-29",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3697",
+  "question": "Distinguishing JSON and \"ATPROTO-JSON\"?\n\nHi, Maybe I missed it in the specs, but what happens if an XRPC endpoint accepts or returns \"application/json\" content that is not the \"atproto flavored\" JSON? I'm implementing an SDK in Clojure and it is not clear to me if I should assume that content in \"application/json\" is always the \"atproto-flavored JSON\" and should be validated/decoded as such. Should the \"atproto-flavored JSON\" have its own MIME type?",
+  "gold": "This is a very reasonable question, and I sympathize with trying to represent this \"the right way\" in a strongly typed programming language.\r\n\r\nI think the short answer is that we haven't formalized this concept enough yet, and I would probably defer that discussion until we bring the protocol (including the data model) to a standards body (eg, the IETF)."
+ },
+ {
+  "k": 101,
+  "number": 3833,
+  "date": "2025-05-06",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3833",
+  "question": "Lexicon: do fields with string formats allow empty string values?\n\nHi all! Quick schema validation question: if a string field in a lexicon has a [string format](https://atproto.com/specs/lexicon#string-formats) specified, is the empty string ever a valid value for that field? ie if the field is provided with value `\"\"`, not omitted. And does it matter if the field is in `required` or `nullable`? ...and maybe more generally, are there times when we should maybe be more lenient and accept inputs even if they may technically be invalid, like this? Should we be more lenient with query params than record data? Any other relevant cases? (Ie, [Postel was right? Postel was wrong?](https://datatracker.ietf.org/doc/draft-thomson-postel-was-wrong/03/) \ud83d\ude06) @whyrusleeping and I debugged this a bit recently, he was using an SDK that evidently included all params in XPRC methods, and defaulted string params to the empty string, which Bridgy Fed complained about for params with string formats, eg `cid` in [getRecord](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/getRecord.json#L10). Minor, I know. Thanks in advance!",
+  "gold": "From a protocol standpoint, I think no: if a string format is specified, the empty string should not pass validation and the request / record should be rejected. We should fix our go code which is incorrectly sending around empty strings. There are some difficult corner-cases around JSON, but this is not one of them.\r\n\r\nWithout weighing in on Postel in general, I think the entire atproto ecosystem should try to stay as *consistent* as possible about lexicon validation. It is hard to be consistent with multiple implementations, so everybody should try to be consistent with the written specification; if there is a major problem between implementation and the written specs we should get them aligned however possible."
+ },
+ {
+  "k": 102,
+  "number": 3839,
+  "date": "2025-05-08",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3839",
+  "question": "OAuth verification of DID and auth server\n\nThe OAuth spec for atproto states that it is mandatory to verify that the DID returned in the \"sub\" parameter is the expected DID and that the token issuer is consistent with the user's PDS. I'm not clear on how to accomplish this. At the end of the auth flow I can fetch the DID document for the \"sub\" value and check if the handle in the document is the same as the handle given by the user. But, if the user used their email to log in, how can I verify the DID returned is the correct one? I can also get the user's PDS from the DID document and match it to the \"iss\" parameter to verify the token issuer. If an \"entryway\" system is used for authentication, such as \"bsky.social\", the PDS and the token issuer do not match however. The issuer will be \"https://bsky.social\", but the PDS is something like \"https://gomphus.us-west.host.bsky.network\". How do I perform the issuer verification when an \"entryway\" server is used?",
+  "gold": "What I do is:\r\n\r\n1. At the start of the auth flow, resolve the handle to a DID, and fetch the DID document. Check that the DID document contains the handle; also look up the user's PDS, and fetch its `.well-known/oauth-protected-resource` to find their auth server.\r\n2. If everything in step 1 succeeded then start the actual OAuth flow.\r\n3. When the flow finishes, check that the `sub` value matches the DID from step 1, and check that the `iss` value matches the auth server from step 1 (not the PDS, because as you point out, they can be different).\r\n\r\nThis only works if they logged in using a handle or DID, though.\r\n\r\n> But, if the user used their email to log in, how can I verify the DID returned is the correct one?\r\n\r\nI think you need to fetch the DID document, PDS and `oauth-protected-resource` at this point, and check that the auth server matches the one you actually used.\r\n\r\n> How do I perform the issuer verification when an \"entryway\" server is used?\r\n\r\nDon't compare it against the PDS URL; compare it against the auth server that you found from the PDS via `.well-known/oauth-protected-resource`.\r\n\r\nI _think_ that's right - and if it's not, I hope someone will tell me!\r\n\r\n"
+ },
+ {
+  "k": 103,
+  "number": 3857,
+  "date": "2025-05-14",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/3857",
+  "question": "Access JWT from Bluesky PDS missing \"aud\" and \"scope\" claims\n\nThe access tokens issued by my self-hosted copy of the official Bluesky PDS are missing the \"aud\" and \"scope\" claims which causes issues with my SDK (atproto.dart) which expects them to always be present. The official Bluesky app can use my PDS with no issues. I'm guessing this means these claims should be regarded as optional?",
+  "gold": "The access and refresh tokens from both password authentication and OAuth should be treated by clients as opaque data. They *might* be JWTs in some situations, but they are not specified to be so. I'd go so far as to say we might intentionally modify the structure of tokens in the future to prevent folks from depending on them (preventing the \"rusting shut\" interoperability problem)."
+ },
+ {
+  "k": 104,
+  "number": 4125,
+  "date": "2025-08-21",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4125",
+  "question": "Creating an account through the API\n\nI'm starting to develop a third party Bluesky client, and I'm stuck trying to create an account through the **com.atproto.server.createAccount** endpoint. Sending a request with an email, handle, and password results in an **InvalidPhoneVerification** error. I can see that the official web client presents a captcha to the user and sends the resulting verificationCode as part of the API request. I don't see any documentation around how a third party client is supposed to implement something like this though. Any suggestions about how to proceed here would be greatly appreciated. Thanks!",
+  "gold": "If you initiate OAuth sign-in with `bsky.social`, without specifying a `login_hint`, the user will have an option to create an account in the web interface, if they do not have one already. This should handle anything captcha-like.\r\n\r\n<img width=\"1354\" height=\"878\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e350f8d8-9766-4f18-8686-de81e2c7b43c\" />\r\n"
+ },
+ {
+  "k": 105,
+  "number": 4134,
+  "date": "2025-08-26",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4134",
+  "question": "Any examples of `refreshSession` when using DPoP?\n\nI'm having issues with composing a request for `com.atproto.server.refreshSession` when I am using DPoP proofs. Looked all over the docs, and they just seem to mention POSTing to `{serviceBaseUrl}/xrpc/com.atproto.server.refreshSession` with an empty body, using the refresh token as the `Authorization` header. I have tried every combination of user `Bearer` and `DPoP` as the token type, using `accessJwt` and `refreshJwt` as the token, generating a DPoP proof in a bunch of different ways, wether to include the `DPoP` header or not. I've been spinning my wheels on this one thing for way too long. (I am also using fresh oauth sessions every time, meaning fresh access, refresh and dpop nonces before making this refreshSession request). I have gotten the following two errors the most: ``` {\"status\":400,\"body\":\"{\\\"error\\\":\\\"InvalidToken\\\",\\\"message\\\":\\\"Token could not be verified\\\"}\"} {\"status\":401,\"body\":\"{\\\"error\\\":\\\"AuthMissing\\\",\\\"message\\\":\\\"Authentication Required\\\"}\"} ``` I'd love an example how to construct this request, thank you in advance!",
+  "gold": "The `com.atproto.server.refreshSession` XRPC endpoint is for the legacy password-based auth sessions. You generally don't ever use that endpoint in combination with OAuth sessions, instead you use the \"token endpoint\" (which is a server-specific / implementation-specific URL) declared by the auth server ."
+ },
+ {
+  "k": 106,
+  "number": 4197,
+  "date": "2025-09-11",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4197",
+  "question": "Full network backfill on non-archival relays\n\nI run a moderation service that connects to firehose to report and label, both real-time and after manual review. Recently I was afk for a while and the service was down for a few weeks. No worries I thought, I have the required backfill logic built in. When I started the service up again, I found out it was not backfilling to the last known cursor, captured around four weeks prior. I gather this is because the firehose _subscribeRepos_ API now no longer connects to an 'archival' relay. There is a Discord thread about this here https://discord.com/channels/1097580399187738645/1408145182578315405/1408152992984727663 I have also now read the information regarding the move to _sync:1.1_ in bsky public docs. For my current use case this is not a big deal. Moderation should be timely, I am constrained as a one-man band - I missed the boat on some weeks of activity. Longer term though, I was hoping to build out a stripped-down version of the full graph, for targeted review of account interconnections and disinfo/hate speech patterns via Neo4j. Backfill to T=0 was the way I thought that would work. Is the use of 'archival relay' to support this implementation now DOA? As noted in the Discord thread, I could not get much clarity on how to recreate the relatively simple firehose backfill in the sync:1.1 world. \"iterate all repos\" sounds simple, but is actually not in a live system with occasional downtimes. Losing the full Event Source is ",
+  "gold": "The relay backfill window has always been around 72 hours, not indefinite. When the relay was \"archival\", all that meant was that you could do getRepo on the relay to get a full CAR export, which meant the relay needed to store a mirror of all repos locally. It didn't mean you could re-play the entire firehose from the start of time.\r\n\r\nTo do a full graph backfill, it has always been necessary to enumerate all the relevant DIDs, resolve those DIDs to their current active PDS, and pull the CAR export from there. At scale this also means keeping track of broken or suspended accounts and retrying later.\r\n\r\nThere is a description of how to do live-cut-over backfill in the Sync 1.1 proposal you mention, but there isn't public code showing how to do that yet (that I know of)."
+ },
+ {
+  "k": 107,
+  "number": 4236,
+  "date": "2025-09-28",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4236",
+  "question": "How to upload an image file using uploadblob\n\nI want to upload an image file using uploadblob. I can't find how to create an atproto blob from a file. The documentation says I need a blobref, but how to create a blobref from a file?",
+  "gold": "I use flutter, this is what I did:\r\n\r\n```\r\nFuture<void> postAvatar(File file) async {\r\n  final session = await _session;\r\n  var bsky = await getBsky(session);\r\n  final image = file.readAsBytesSync();\r\n  final response = await bsky.atproto.repo.uploadBlob(bytes: image);\r\n  bsky.actor.profile.put(avatar: response.data.blob);\r\n}\r\n```\r\n"
+ },
+ {
+  "k": 108,
+  "number": 4345,
+  "date": "2025-11-14",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4345",
+  "question": "Problem with the session expiring (Session Expired)\n\nHello \ud83d\udc4b Recently, I was investigating the problem with refreshing the access token for one of our clients. Unfortunately, it turned out that this is kind of a systematic thing that happens to more clients from time to time. After going through the code, logs, and the documentation, we decided to write an email to you, looking for an explanation and/or help \ud83d\ude42 Now is the time to open a discussion about it (exactly as you recommended). The general logic: 1. The client tries to get the access token for Bluesky (connects for the first time). 2. We, on our side, try to make this access token up and running by refreshing it. 3. Most of the refreshes work, but sometimes, we get a 400 Bad Request as a response with: ```json { \"error\": \"invalid_grant\", \"error_description\": \"Session expired\" } ``` What exactly does this error mean to you? What do we do wrong in such requests? Is it an expected failure or a random error? Is it related to the refresh token that expired? Should we repeat such a request or assume it is not possible to refresh this access token anymore? I will be happy to share whatever is needed to process this problem. I am looking forward to hearing from you! Thanks in advance!",
+  "gold": "The error comes from here: https://github.com/bluesky-social/atproto/blob/3628cebfbb04ba49f326bbf411a2d15de2900302/packages/oauth/oauth-provider/src/oauth-provider.ts#L1036\r\n\r\nAll sessions have a finite maximum lifespan even if you refresh them. You can extend this duration by using a Confidential Client."
+ },
+ {
+  "k": 109,
+  "number": 4396,
+  "date": "2025-11-30",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4396",
+  "question": "How to get total number of followers\n\nI already know how to get the list of followers, but I haven't found any endpoints that show the number of followers and followings of an account. For example if an account has 20k followers, how am I supposed to count all of them?",
+  "gold": "You can get the list of followers by using the method that calls [`app.bsky.actor.getProfile`](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getProfile.json), then go to the `followerCount` property. That should give you the exact number of followers.\r\n\r\n(I'm not 100% sure which ATProto library you're using, so I'm just defaulting to using the lexicons to show the answer. Hopefully you'll be able to map out the equivalent API call in the library of your choice.)"
+ },
+ {
+  "k": 110,
+  "number": 4570,
+  "date": "2026-01-21",
+  "category": "How to do it?",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4570",
+  "question": "How is authentication supposed to work for bot accounts?\n\nI am interested in making an account that will be managed by a script, so no user interaction should be required for authentication. Of course the `createSession` endpoint is there, but since it may get deprecated in the future I was wondering if there's another more secure way to do this. I think oauth can't work because there is no support for a client credential flow, so the closest thing I can find is [Inter-Service Authentication with a JWT](https://atproto.com/specs/xrpc#inter-service-authentication-jwt). The way it is described it sounded to me like I would be able to create a new signing key for my account and use it in my script to create signed service tokens to authenticate requests to the PDS, but that doesn't seem to be working and I probably misunderstood its purpose? I tried calling the `com.atproto.server.getServiceAuth` endpoint with `did:web:pds-host` as the `aud`, which gave me a service token, but I can't actually use that to then make authenticated requests to the PDS (InvalidToken). So how does this actually work? How are we supposed to authenticate service accounts? And what is the service token actually used for if not for that?",
+  "gold": "The use of inter-service authentication varies by service, and in the case of Bluesky PDS, [only `uploadBlob` allows it](https://github.com/search?q=repo%3Abluesky-social%2Fatproto%20authorizationOrUserServiceAuth&type=code). This is used for the `uploadVideo`.\r\n\r\nThe possible options are either modifying your PDS or using the app password. It is [said](https://github.com/bluesky-social/atproto-website/blame/bd8fd788c6c1491ee6154fd6b1b2bde79a3a98eb/src/app/%5Blocale%5D/guides/oauth/en.mdx#L98) that app password will not be deprecated in the near future, so it would be a good choice.\r\n\r\nConsideration of a new mechanism for such use cases has been [hinted at](https://github.com/bluesky-social/atproto/discussions/2656#discussioncomment-11601259), but so far there is no public discussion about it."
+ },
+ {
+  "k": 111,
+  "number": 4599,
+  "date": "2026-02-02",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4599",
+  "question": "Can/should/how do I encode that a particular record came from a particular client?\n\nWanna hear a good joke? I, a guy with better things to do, am gonna come up with a lil' web-only BSky client that lets you (a) link your account with OAuth, (b) post text, and (c) that's it. And the joke is that backspace is disabled for that web page's text box. The Anisota client recently introduced their provocative implementation of an edit button, and I think \"you can't even edit the message in the middle of typing it\" is a funny riff on that. We have fun here. But. How do I put into a BSky post record that a particular post came from my joke client? I kind of want it to be a badge of honor: look how much faith this poster has in their stream of consciousness. But I don't know if a piece of client software, writing posts to a user's PDS, can actually indicate that the post came from that client software. I look at the schema for posts: https://github.com/bluesky-social/bsky-docs/blob/main/atproto-openapi-types/lexicons/app/bsky/feed/post.json and the property `labels` comes close. But in my joke badge-of-honor case, what would stop someone from stealing valor, using a client that *does* allow backspaces, but falsely claims to be from my backspaceless client just by dropping my client's name in the `labels` field? To move in a slightly more serious direction, once I have N different services OAuth'ed up with write access to my PDS, it would be nice if they could tell me which service wrote",
+  "gold": "There isn't currently a mechanism for this. Lexicon designers could add metadata fields to specific record schemas to let apps self-identify, but that would not be authenticated, and doesn't exist for the bsky post record today.\r\n\r\nWe have gotten feedback from app devs that they are interested in this, and there are some potential positive incentives around this (eg, app devs get some visibility/promotion). On the other hand, there are potential downsides for privacy and ecosystem lock-in. For example, Twitter used to show which client was used to post by default, and this resulted in accidental privacy leaks about the identity of users. If this metadata was strongly reliable, it could be a mechanism to lock-out alternative clients, or give preferential treatment to specific software in the ecosystem, which would go against the open protocol ethos.\r\n\r\nI think there is a good chance lexicon designers will add \"posted via\" metadata fields at some point, but I personally don't think this should be publicly authenticated or baked-in at the protocol layer.\r\n\r\nI am sympathetic to giving users visibility in to which software (or session) created which records in their public repo. There has also been interest in having a degree of permission granularity where an authorized app/session can delete or update records they created, but not previously existing records. This wouldn't be a huge lift, but would be protocol work (to ensure consistent functionality across PDS implementations). We are likely to touch on similar themes as part of adding permissioned data to the protocol. The IETF design process would also be a good opportunity to make protocol changes like this, if you are interested in getting involved with that (we are currently at the working group chartering stage)."
+ },
+ {
+  "k": 112,
+  "number": 4611,
+  "date": "2026-02-04",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4611",
+  "question": "Protocol clarifications from writing API docs\n\nRecently I've been going through my Ruby gems for ATProto and adding inline API docs everywhere, which included explaining what a given field in some classes can return and why, if it can or can't be null, and so on. In the process I had to check many of those things in the lexicon or atproto code, since I wasn't sure about a lot of them, and there were some questions I couldn't find an answer to, so I wrote them all down to drop them into one post here. Would be nice to get clarifications on these if possible, just to satisfy my perfectionism \ud83d\ude09 1. Are the `#tombstone` & `#handle` messages gone completely at this point? I.e. can I assume there's likely nothing out there sending them? 2. What about `rebase`, `tooBig` and `blobs` in `#commit`? 3. The `handle` in `#identity`: do I understand correctly that it should not be fully trusted, since it might not be actually valid? In what cases is it ok to use it then? Also, the field is not marked as required - when would it not be included? 4. It seems that `#info` `OutdatedCursor` and error `FutureCursor` are being sent from PDSes, but neither seem to be sent from relays - is this intentional? 5. In `com.atproto.label.defs#label`, label version field (`ver`) and signature (`sig`) aren't marked as required, is this intentional? 6. Same for `kind` in Jetstream messages, which is marked as `omitempty` (https://github.com/bluesky-social/jetstream/blob/main/pkg/models/models.go#L17). 7. In ",
+  "gold": "Great questions! I am working on folding in the Sync 1.1 changes to the written specs, which should address some of these.\r\n\r\n1. They are totally gone from the protocol. I would treat them the same as if you got an `#ogre` message on the firehose: maybe log, but otherwise ignore/drop.\r\n\r\n2. These are all deprecated, but unfortunately were marked as \"required\" in the Lexicon, so haven't been completely removed. Maybe we can do a breaking change to get rid of them at some point, but for now: when generating messages, `tooBig` and `rebase` should be included as \"false\" and `blobs` should be an empty array. Consumers should just ignore all of these (regardless of values).\r\n\r\n3. Correct, `handle` isn't to be trusted in the general case. If the consumer trusts the producer, it could decide to trust it. One use-case even if not trusting the producer would be checking the handle against a local cache and only re-validating if there is an actual difference. The new relay does not do handle verification, so it strips this value, but that might change in the future.\r\n\r\n4. I'd need to look in to that; could you open a separate issue against the indigo repo? Might be in the relay code, or rainbow code, or both.\r\n\r\n5. Yep, IIRC we don't hydrate full label objects in to API responses, because there would be a lot of data overhead on the wire. But they could be included in other contexts, and should be included in responses to queryLabels (for example). Maybe we could use more specific types in the future.\r\n\r\n6. Hrm, yeah seems like `kind` should always be there. Feel free to open an issue in that repo.\r\n\r\n7. I don't know the history, probably just copied over and should be removed. Separately, it would be nice if jetstream did resolve/validate handles; clients generally trust jetstream already and could use those values.\r\n\r\n8. I think that is ancient and incorrect. The rkey length had a short limit way back in the early days. Note that many records (including bsky posts) have a TID format for the rkey, and in that situation you are in theory supposed to validate that it is a TID, and could use a limited database column (or event uint64). But feedgens records use the `any` rkey format type, which is more permissive."
+ },
+ {
+  "k": 113,
+  "number": 4898,
+  "date": "2026-04-30",
+  "category": "Clarifications and \"Why?\"",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4898",
+  "question": "client app behavior clarifications\n\nHi, I have two questions about things I've been looking at in Skythread recently - I asked about this on Bluesky but I didn't get a definitive answer: 1) I've been making requests without `atproto-proxy` header so far, so I want to add some code to set it to point to `did:web:${appViewHost}#bsky_appview`. My question is, is it ok to just set it globally for all requests the API client is making, including to `com.atproto.*` endpoints like `createRecord`? Or should I take care to only set it on `app.bsky.*` requests and not on others? Or does it not matter? 2) I've been testing this on a test account on Tranquil, to be able to see the difference since the reference PDS works without the header too. But I've noticed that it fails on `createRecord` with a message \"record must have a $type field\". I haven't been setting a `$type` field inside the `record` object there before, and it worked on the reference PDS, which adds the `$type` automatically. The question is, should I treat it as app error, i.e. the client should be adding a `$type` and should not rely on the PDS doing that; or should I treat it as a PDS implementation error, i.e. the PDS is expected to add the `$type` if missing? Or is this undefined behavior really and ideally both sides should handle it in case the other side doesn't?",
+  "gold": "Hey, great questions.  I hope I can bring some clarity here:\r\n1. You should only set the proxy header on requests you wants to be proxied.\u00a0 So if you're trying to create a record, you would not want to set `atproto-proxy` on the request to `com.atproto.repo.createRecord`.\r\n2. This is technically a PDS implementation error, though it's not wrong to set the `$type` there in the client.\u00a0 The detailed PDS behaviors could be better specified for sure\u2014 this is something that should definitely be in an end-to-end PDS compatibility test suite."
+ },
+ {
+  "k": 114,
+  "number": 4922,
+  "date": "2026-05-10",
+  "category": "Dev Debugging",
+  "url": "https://github.com/bluesky-social/atproto/discussions/4922",
+  "question": "The right way to import \"FeedViewPost\" in Typescript project?\n\nCurrently in my Typescript project I am importing `FeedViewPost` as follows: ```ts import { FeedViewPost } from '@atproto/api/dist/client/types/app/bsky/feed/defs'; ``` Is there an alternative approach that doesn't require a deep import path? Maybe something like (open to alternatives): ```ts import { FeedDefs } from '@atproto/api'; const FeedViewPost = FeedDefs.FeedViewPost ``` Additionally the import style upsets Typescript with the following sort of warning: > Cannot find module '@atproto/api/dist/client/types/app/bsky/feed/defs' or its corresponding type declarations. Note, I explored a bit more, but this doesn't work either: ```ts import { AppBskyFeedDefs } from '@atproto/api'; const FeedViewPost = AppBskyFeedDefs.FeedViewPost; ```",
+  "gold": "Hi @ajmas ,\r\n\r\nthe deep import (`@atproto/api/dist/client/types/...`) isn't the intended path \u2014 that's why you get the \"missing declaration\" warnings. The generated types are exposed as namespaces on the package root, so import the namespace and access the type as a member:\r\n\r\n`import { AppBskyFeedDefs } from '@atproto/api'`\r\n\r\n`type Post = AppBskyFeedDefs.FeedViewPost`\r\n\r\nWhen you tried import `{ AppBskyFeedDefs } from '@atproto/api'` earlier, the namespace itself is correct! `FeedViewPost` just lives inside it (`AppBskyFeedDefs.FeedViewPost`); it isn't a separate top-level export! So `import { FeedViewPost } from '@atproto/api'` won't work. \r\n\r\n--> Runtime guards are generated the same way, e.g. `AppBskyFeedDefs.isPostView(x).`\r\n\r\nThis is the pattern the official tooling uses, too. E.g.: `bluesky-social/ozone` does `import { AppBskyFeedDefs } from '@atproto/api'`."
+ }
+]

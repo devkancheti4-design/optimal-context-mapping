@@ -1,0 +1,1 @@
+- D1 (after the 2-question smoke test, before the full run): the alone arm cost $0.17 per question in the smoke test, so $12 would stop it near question 70. Its cap is now $22, in 3 parallel shards (it never learns). The smoke rows (k 0, 1) are kept as the first rows of both arms. 2026-10-17T10:19:09+0530

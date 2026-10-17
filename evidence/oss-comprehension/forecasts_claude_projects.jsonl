@@ -1,0 +1,6 @@
+{"repo": "repos/atproto", "fixes": 82, "per_month": 6.8, "files_per_fix": 5.11, "distinct_files": 342, "r": 0.415, "nu_pred": 0.905, "saving_pred": 1.99, "saving_range": [1.9, 2.13]}
+{"repo": "repos/social-app", "fixes": 250, "per_month": 20.8, "files_per_fix": 2.01, "distinct_files": 330, "r": 0.508, "nu_pred": 0.883, "saving_pred": 2.04, "saving_range": [1.93, 2.23]}
+{"repo": "repos/windmill", "fixes": 1803, "per_month": 150.2, "files_per_fix": 4.52, "distinct_files": 3478, "r": 0.851, "nu_pred": 0.804, "saving_pred": 2.23, "saving_range": [2.02, 2.65]}
+{"repo": "repos/freelens", "fixes": 40, "per_month": 3.3, "files_per_fix": 3.67, "distinct_files": 135, "r": 0.2, "nu_pred": 0.954, "saving_pred": 1.89, "saving_range": [1.85, 1.95]}
+{"repo": "repos/humhub", "fixes": 198, "per_month": 16.5, "files_per_fix": 3.78, "distinct_files": 532, "r": 0.545, "nu_pred": 0.875, "saving_pred": 2.06, "saving_range": [1.94, 2.27]}
+{"repo": "repos/dyad", "fixes": 215, "per_month": 17.9, "files_per_fix": 2.27, "distinct_files": 293, "r": 0.609, "nu_pred": 0.86, "saving_pred": 2.09, "saving_range": [1.95, 2.34]}
