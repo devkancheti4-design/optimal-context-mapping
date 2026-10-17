@@ -12,8 +12,6 @@ modeld install                   # registers Model D with Claude Code, Codex, Ge
 modeld build .                   # maps this repository into ./modeld-out
 ```
 
-Before it is on PyPI, install from GitHub instead: `uv tool install git+https://github.com/devkancheti4-design/optimal-context-mapping`.
-
 Then, in Claude Code, `/modeld .` maps a repository, and the agent asks Model D before it searches. From a terminal:
 
 ```bash

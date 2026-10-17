@@ -13,7 +13,7 @@ Model D is a deterministic kit fused with the Claude API you already use:
 - Every exploration teaches the kit, so the next engineer's question costs less.
 
 ```bash
-uv tool install git+https://github.com/devkancheti4-design/optimal-context-mapping   # PyPI: uv tool install model-d
+uv tool install model-d                              # or: pipx install model-d  /  pip install model-d
 modeld install                                       # wires it into Claude Code, Codex, Gemini CLI and Kiro
 modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; rebuilds embed only what changed
 ```
