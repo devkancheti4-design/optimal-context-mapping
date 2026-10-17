@@ -23,6 +23,7 @@ modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; reb
 | work | vs the same agent alone | measured on |
 |---|---|---|
 | **A team's real year of fixes on one codebase** | **2.09x cheaper, the same work (252 vs 253 right); 1.88x → 2.57x as the year went on** | Django's 288 fixes from 2022, in order ([evidence/team-year](evidence/team-year)) |
+| Real questions about how a codebase works, from a project that pays for Claude | 2.36x cheaper, 93% of the quality (not a significant gap, p = 0.24) | bluesky atproto, 115 answered Discussions, blind judge ([evidence/oss-comprehension](evidence/oss-comprehension)) |
 | A team asking about its own repository | 2.3–2.8x cheaper, same accuracy | a company app, 5 roles, 3 runs |
 | The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs |
 | Brand-new, scattered bugs | about 1.35x | 114 Django bugs, 3 runs |
