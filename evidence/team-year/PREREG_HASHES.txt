@@ -5,3 +5,8 @@ a4aed615475d531ecc6856ca2a85b54afbc952a6cf5a8d8365bd3ae16ec8ed8a  keep.json
 recorded 2026-10-16T20:20:55+0530, before any model call
 985a7d48ebf05b3ac1e3e8e0ae9fc7ceb5c14e00f6b07df5f93b1438cf7a4d91  PROTOCOL_TEAM_YEAR_GATE.md
 gate protocol recorded 2026-10-16T20:39:47+0530, before any gated call
+019d8f8849442c9c5e8abf03db9af72be95d0c06330ae0a6844ead811065adb3  PROTOCOL_COVERAGE.md
+4c7837981e6f7b70a74c5049eeab4cabe87f154b2b4fd000b4dc585086c416ed  scripts/coverage_gen.py
+coverage protocol recorded 2026-10-17T11:24:34+0530, before any generation
+bfb09788abb78d236705c751e7dec7c8fa40cba0e60f549f6530bcb36f77c3ab  scripts/coverage_eval.py
+coverage_eval.py added before any evaluation, 2026-10-17T11:25:16+0530
