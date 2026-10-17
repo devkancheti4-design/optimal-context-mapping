@@ -13,9 +13,10 @@ Model D is a deterministic kit fused with the Claude API you already use:
 - Every exploration teaches the kit, so the next engineer's question costs less.
 
 ```bash
-uv tool install model-d                              # or: pipx install model-d  /  pip install model-d
+uv tool install "model-d[claude]"                    # or: pipx / pip install "model-d[claude]"; plain model-d skips the Claude SDK
 modeld install                                       # wires it into Claude Code, Codex, Gemini CLI and Kiro
 modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; rebuilds embed only what changed
+modeld cover                                         # optional: teaches it the whole codebase once (about $1 per 24k pieces)
 ```
 
 ## Where it pays
@@ -27,7 +28,7 @@ modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; reb
 | A team asking about its own repository | 2.3–2.8x cheaper, same accuracy | a company app, 5 roles, 3 runs |
 | The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs |
 | Brand-new, scattered bugs | about 1.35x | 114 Django bugs, 3 runs |
-| Finding the fixed file, offline | top-5 176 vs Graphify's 131, of 285 | SWE-bench Lite, 12 full repositories |
+| Finding the fixed file, offline, against Graphify 0.9.92 | right file first 149 vs 89 on Django's 288 real questions, at 390 vs 1,537 tokens; top-5 176 vs 131 on SWE-bench Lite | Graphify's own MCP server, defaults ([evidence/vs-graphify](evidence/vs-graphify)) |
 | Code review | small, about 1.3x at most: reviewers search about 3 times per PR | SWR-Bench pilot, partial ([evidence/swr-pilot](evidence/swr-pilot)) |
 
 Every plan was hashed before it ran, and `python evidence/verify.py` recomputes every number from the raw rows.
@@ -84,6 +85,26 @@ modeld build ~/code/our-api ~/code/our-web --out ~/ocm-workspace-new --carry ~/o
 The workspace keeps an exact memory of what was taught (`taught.life.json`, a Life from living-fused). On a carry,
 each taught question is found in the new code by its exact line and its vector is taught again; an entry whose line
 is gone abstains instead of guessing.
+
+**Teach it the whole codebase once (optional):**
+
+```bash
+uv tool install "model-d[claude]"     # cover calls Claude Haiku through the Anthropic SDK
+export ANTHROPIC_API_KEY=...          # or OCM_VERTEX_PROJECT for Claude on Vertex AI
+modeld cover --workspace ~/ocm-workspace
+```
+
+- **What it does:** Claude Haiku writes one question for every piece of non-test code, 25 pieces per request. Each
+  question is taught onto the code it was written from, as a pointer: nothing is stored as an answer. An asked question
+  is pointed at code, and the agent reads that code.
+- **What it costs:** it shows an estimate and asks before spending (`--yes` skips the prompt, `--cap` sets a limit).
+  For Django's 23,976 pieces it cost $0.97, and teaching took 10 minutes on a laptop.
+- **What it did:** on 288 real Django fix questions it had never seen, the right file came first 142 times against 111
+  cold (p = 0.0035), and the learned law switched itself on ([evidence/team-year/coverage](evidence/team-year/coverage)).
+  The top 5 did not improve (193 vs 197), and a learned pointer is right about half the time, so the agent still
+  checks the code it is pointed at.
+- **After a rebuild:** pointers carry like any taught question. Running `modeld cover` again writes questions only
+  for code that is new or changed.
 
 ### 3. Serve it to the team
 

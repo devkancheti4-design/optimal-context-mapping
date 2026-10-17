@@ -1,0 +1,162 @@
+[
+{
+"id": "pytest-dev__pytest-5103",
+"queries": {
+"title": "Unroll the iterable for all/any calls to get better reports",
+"q400": "Unroll the iterable for all/any calls to get better reports\nSometime I need to assert some predicate on all of an iterable, and for that the builtin functions `all`/`any` are great - but the failure messages aren't useful at all!\r\nFor example - the same test written in three ways:\r\n\r\n- A generator expression\r\n```sh                                                                                    "
+},
+"gold": [
+"src/_pytest/assertion/rewrite.py"
+]
+},
+{
+"id": "pytest-dev__pytest-5221",
+"queries": {
+"title": "Display fixture scope with `pytest --fixtures`",
+"q400": "Display fixture scope with `pytest --fixtures`\nIt would be useful to show fixture scopes with `pytest --fixtures`; currently the only way to learn the scope of a fixture is look at the docs (when that is documented) or at the source code.\n"
+},
+"gold": [
+"src/_pytest/python.py"
+]
+},
+{
+"id": "pytest-dev__pytest-5227",
+"queries": {
+"title": "Improve default logging format",
+"q400": "Improve default logging format\nCurrently it is:\r\n\r\n> DEFAULT_LOG_FORMAT = \"%(filename)-25s %(lineno)4d %(levelname)-8s %(message)s\"\r\n\r\nI think `name` (module name) would be very useful here, instead of just the base filename.\r\n\r\n(It might also be good to have the relative path there (maybe at the end), but it is usually still very long (but e.g. `$VIRTUAL_ENV` could be substituted therein))\r\n\r\nCur"
+},
+"gold": [
+"src/_pytest/logging.py"
+]
+},
+{
+"id": "pytest-dev__pytest-5413",
+"queries": {
+"title": "str() on the pytest.raises context variable doesn't behave same as normal exception catch",
+"q400": "str() on the pytest.raises context variable doesn't behave same as normal exception catch\nPytest 4.6.2, macOS 10.14.5\r\n\r\n```Python\r\ntry:\r\n    raise LookupError(\r\n        f\"A\\n\"\r\n        f\"B\\n\"\r\n        f\"C\"\r\n    )\r\nexcept LookupError as e:\r\n    print(str(e))\r\n```\r\nprints\r\n\r\n> A\r\n> B\r\n> C\r\n\r\nBut\r\n\r\n```Python\r\nwith pytest.raises(LookupError) as e:\r\n    raise LookupError(\r\n        f\"A\\n\"\r\n        f\"B"
+},
+"gold": [
+"src/_pytest/_code/code.py"
+]
+},
+{
+"id": "pytest-dev__pytest-5495",
+"queries": {
+"title": "Confusing assertion rewriting message with byte strings",
+"q400": "Confusing assertion rewriting message with byte strings\nThe comparison with assertion rewriting for byte strings is confusing: \r\n```\r\n    def test_b():\r\n>       assert b\"\" == b\"42\"\r\nE       AssertionError: assert b'' == b'42'\r\nE         Right contains more items, first extra item: 52\r\nE         Full diff:\r\nE         - b''\r\nE         + b'42'\r\nE         ?   ++\r\n```\r\n\r\n52 is the ASCII ordinal of \"4\" "
+},
+"gold": [
+"src/_pytest/assertion/util.py"
+]
+},
+{
+"id": "pytest-dev__pytest-5692",
+"queries": {
+"title": "Hostname and timestamp properties in generated JUnit XML reports",
+"q400": "Hostname and timestamp properties in generated JUnit XML reports\nPytest enables generating JUnit XML reports of the tests.\r\n\r\nHowever, there are some properties missing, specifically `hostname` and `timestamp` from the `testsuite` XML element. Is there an option to include them?\r\n\r\nExample of a pytest XML report:\r\n```xml\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<testsuite errors=\"0\" failures=\"2\" n"
+},
+"gold": [
+"src/_pytest/junitxml.py"
+]
+},
+{
+"id": "pytest-dev__pytest-6116",
+"queries": {
+"title": "pytest --collect-only needs a one char shortcut command",
+"q400": "pytest --collect-only needs a one char shortcut command\nI find myself needing to run `--collect-only` very often and that cli argument is a very long to type one. \r\n\r\nI do think that it would be great to allocate a character for it, not sure which one yet. Please use up/down thumbs to vote if you would find it useful or not and eventually proposing which char should be used. \r\n\r\nClearly this is a "
+},
+"gold": [
+"src/_pytest/main.py"
+]
+},
+{
+"id": "pytest-dev__pytest-7168",
+"queries": {
+"title": "INTERNALERROR when exception in __repr__",
+"q400": "INTERNALERROR when exception in __repr__\nMinimal code to reproduce the issue: \r\n```python\r\nclass SomeClass:\r\n    def __getattribute__(self, attr):\r\n        raise\r\n    def __repr__(self):\r\n        raise\r\ndef test():\r\n    SomeClass().attr\r\n```\r\nSession traceback:\r\n```\r\n============================= test session starts ==============================\r\nplatform darwin -- Python 3.8.1, pytest-5.4.1, py-"
+},
+"gold": [
+"src/_pytest/_io/saferepr.py"
+]
+},
+{
+"id": "pytest-dev__pytest-7220",
+"queries": {
+"title": "Wrong path to test file when directory changed in fixture",
+"q400": "Wrong path to test file when directory changed in fixture\nFiles are shown as relative to new directory when working directory is changed in a fixture. This makes it impossible to jump to the error as the editor is unaware of the directory change. The displayed directory should stay relative to the original directory.\r\n\r\ntest_path_error.py:\r\n```python\r\nimport os\r\nimport errno\r\nimport shutil\r\n\r\nimpo"
+},
+"gold": [
+"src/_pytest/nodes.py"
+]
+},
+{
+"id": "pytest-dev__pytest-7432",
+"queries": {
+"title": "skipping: --runxfail breaks pytest.mark.skip location reporting",
+"q400": "skipping: --runxfail breaks pytest.mark.skip location reporting\npytest versions: 5.4.x, current master\r\n\r\nWhen `@pytest.mark.skip`/`skipif` marks are used to skip a test, for example\r\n\r\n```py\r\nimport pytest\r\n@pytest.mark.skip\r\ndef test_skip_location() -> None:\r\n    assert 0\r\n```\r\n\r\nthe expected skip location reported should point to the item itself, and this is indeed what happens when running wit"
+},
+"gold": [
+"src/_pytest/skipping.py"
+]
+},
+{
+"id": "pytest-dev__pytest-7490",
+"queries": {
+"title": "Pytest 6: Dynamically adding xfail marker in test no longer ignores failure",
+"q400": "Pytest 6: Dynamically adding xfail marker in test no longer ignores failure\n<!--\r\nThanks for submitting an issue!\r\n\r\nHere's a quick checklist for what to provide:\r\n-->\r\n\r\n## Description\r\n\r\nWith pytest 5.x, we can dynamically add an xfail to a test `request` object using `request.node.add_marker(mark)` (see example below). In 5.x this treated the failing test like a a test marked statically with an"
+},
+"gold": [
+"src/_pytest/skipping.py"
+]
+},
+{
+"id": "pytest-dev__pytest-8365",
+"queries": {
+"title": "tmpdir creation fails when the username contains illegal characters for directory names",
+"q400": "tmpdir creation fails when the username contains illegal characters for directory names\n`tmpdir`, `tmpdir_factory` and `tmp_path_factory` rely on `getpass.getuser()` for determining the `basetemp` directory. I found that the user name returned by `getpass.getuser()` may return characters that are not allowed for directory names. This may lead to errors while creating the temporary directory.\r\n\r\nTh"
+},
+"gold": [
+"src/_pytest/tmpdir.py"
+]
+},
+{
+"id": "pytest-dev__pytest-8906",
+"queries": {
+"title": "Improve handling of skip for module level",
+"q400": "Improve handling of skip for module level\nThis is potentially about updating docs, updating error messages or introducing a new API.\r\n\r\nConsider the following scenario:\r\n\r\n`pos_only.py` is using Python 3,8 syntax:\r\n```python\r\ndef foo(a, /, b):\r\n    return a + b\r\n```\r\n\r\nIt should not be tested under Python 3.6 and 3.7.\r\nThis is a proper way to skip the test in Python older than 3.8:\r\n```python\r\nfro"
+},
+"gold": [
+"src/_pytest/python.py"
+]
+},
+{
+"id": "pytest-dev__pytest-9359",
+"queries": {
+"title": "Error message prints extra code line when using assert in python3.9",
+"q400": "Error message prints extra code line when using assert in python3.9\n<!--\r\nThanks for submitting an issue!\r\n\r\nQuick check-list while reporting bugs:\r\n-->\r\n\r\n- [x] a detailed description of the bug or problem you are having\r\n- [x] output of `pip list` from the virtual environment you are using\r\n- [x] pytest and operating system versions\r\n- [ ] minimal example if possible\r\n### Description\r\nI have a t"
+},
+"gold": [
+"src/_pytest/_code/source.py"
+]
+},
+{
+"id": "pytest-dev__pytest-11143",
+"queries": {
+"title": "Rewrite fails when first expression of file is a number and mistaken as docstring",
+"q400": "Rewrite fails when first expression of file is a number and mistaken as docstring \n<!--\r\nThanks for submitting an issue!\r\n\r\nQuick check-list while reporting bugs:\r\n-->\r\n\r\n- [x] a detailed description of the bug or problem you are having\r\n- [x] output of `pip list` from the virtual environment you are using\r\n- [x] pytest and operating system versions\r\n- [x] minimal example if possible\r\n```\r\nInstall"
+},
+"gold": [
+"src/_pytest/assertion/rewrite.py"
+]
+},
+{
+"id": "pytest-dev__pytest-11148",
+"queries": {
+"title": "Module imported twice under import-mode=importlib",
+"q400": "Module imported twice under import-mode=importlib\nIn pmxbot/pmxbot@7f189ad, I'm attempting to switch pmxbot off of pkg_resources style namespace packaging to PEP 420 namespace packages. To do so, I've needed to switch to `importlib` for the `import-mode` and re-organize the tests to avoid import errors on the tests.\r\n\r\nYet even after working around these issues, the tests are failing when the effe"
+},
+"gold": [
+"src/_pytest/pathlib.py"
+]
+}
+]

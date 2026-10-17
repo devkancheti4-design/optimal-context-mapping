@@ -1,0 +1,62 @@
+[
+{
+"id": "astropy__astropy-6938",
+"queries": {
+"title": "Possible bug in io.fits related to D exponents",
+"q400": "Possible bug in io.fits related to D exponents\nI came across the following code in ``fitsrec.py``:\r\n\r\n```python\r\n        # Replace exponent separator in floating point numbers\r\n        if 'D' in format:\r\n            output_field.replace(encode_ascii('E'), encode_ascii('D'))\r\n```\r\n\r\nI think this may be incorrect because as far as I can tell ``replace`` is not an in-place operation for ``chararray``"
+},
+"gold": [
+"astropy/io/fits/fitsrec.py"
+]
+},
+{
+"id": "astropy__astropy-7746",
+"queries": {
+"title": "Issue when passing empty lists/arrays to WCS transformations",
+"q400": "Issue when passing empty lists/arrays to WCS transformations\nThe following should not fail but instead should return empty lists/arrays:\r\n\r\n```\r\nIn [1]: from astropy.wcs import WCS\r\n\r\nIn [2]: wcs = WCS('2MASS_h.fits')\r\n\r\nIn [3]: wcs.wcs_pix2world([], [], 0)\r\n---------------------------------------------------------------------------\r\nInconsistentAxisTypesError                Traceback (most recent"
+},
+"gold": [
+"astropy/wcs/wcs.py"
+]
+},
+{
+"id": "astropy__astropy-12907",
+"queries": {
+"title": "Modeling's `separability_matrix` does not compute separability correctly for nested CompoundModels",
+"q400": "Modeling's `separability_matrix` does not compute separability correctly for nested CompoundModels\nConsider the following model:\r\n\r\n```python\r\nfrom astropy.modeling import models as m\r\nfrom astropy.modeling.separable import separability_matrix\r\n\r\ncm = m.Linear1D(10) & m.Linear1D(5)\r\n```\r\n\r\nIt's separability matrix as you might expect is a diagonal:\r\n\r\n```python\r\n>>> separability_matrix(cm)\r\narray("
+},
+"gold": [
+"astropy/modeling/separable.py"
+]
+},
+{
+"id": "astropy__astropy-14182",
+"queries": {
+"title": "Please support header rows in RestructuredText output",
+"q400": "Please support header rows in RestructuredText output\n### Description\r\n\r\nIt would be great if the following would work:\r\n\r\n```Python\r\n>>> from astropy.table import QTable\r\n>>> import astropy.units as u\r\n>>> import sys\r\n>>> tbl = QTable({'wave': [350,950]*u.nm, 'response': [0.7, 1.2]*u.count})\r\n>>> tbl.write(sys.stdout,  format=\"ascii.rst\")\r\n===== ========\r\n wave response\r\n===== ========\r\n350.0    "
+},
+"gold": [
+"astropy/io/ascii/rst.py"
+]
+},
+{
+"id": "astropy__astropy-14365",
+"queries": {
+"title": "ascii.qdp Table format assumes QDP commands are upper case",
+"q400": "ascii.qdp Table format assumes QDP commands are upper case\n### Description\n\nascii.qdp assumes that commands in a QDP file are upper case, for example, for errors they must be \"READ SERR 1 2\" whereas QDP itself is not case sensitive and case use \"read serr 1 2\". \r\n\r\nAs many QDP files are created by hand, the expectation that all commands be all-caps should be removed.\n\n### Expected behavior\n\nThe fo"
+},
+"gold": [
+"astropy/io/ascii/qdp.py"
+]
+},
+{
+"id": "astropy__astropy-14995",
+"queries": {
+"title": "In v5.3, NDDataRef mask propagation fails when one of the operand does not have a mask",
+"q400": "In v5.3, NDDataRef mask propagation fails when one of the operand does not have a mask\n### Description\n\nThis applies to v5.3. \r\n\r\nIt looks like when one of the operand does not have a mask, the mask propagation when doing arithmetic, in particular with `handle_mask=np.bitwise_or` fails.  This is not a problem in v5.2.\r\n\r\nI don't know enough about how all that works, but it seems from the error tha"
+},
+"gold": [
+"astropy/nddata/mixins/ndarithmetic.py"
+]
+}
+]

@@ -1,0 +1,306 @@
+{
+ "A django 2022 (288)": {
+  "q": {
+   "md_cold": {
+    "n": 288,
+    "top1/3/5": [
+     111,
+     170,
+     197
+    ],
+    "tokens": 735,
+    "taught-led": 0
+   },
+   "md_cover": {
+    "n": 288,
+    "top1/3/5": [
+     149,
+     185,
+     193
+    ],
+    "tokens": 390,
+    "taught-led": 156
+   },
+   "gf": {
+    "n": 288,
+    "top1/3/5": [
+     89,
+     121,
+     137
+    ],
+    "tokens": 1537,
+    "taught-led": 0
+   },
+   "mcnemar top-1 md_cover vs gf (md_cover only, gf only, p)": [
+    89,
+    29,
+    2.8230349944117135e-08
+   ],
+   "mcnemar top-5 md_cover vs gf (md_cover only, gf only, p)": [
+    88,
+    32,
+    3.181060317037078e-07
+   ],
+   "mcnemar top-1 md_cold vs gf (md_cold only, gf only, p)": [
+    62,
+    40,
+    0.037066767438560536
+   ],
+   "mcnemar top-5 md_cold vs gf (md_cold only, gf only, p)": [
+    90,
+    30,
+    3.772753306355308e-08
+   ],
+   "mcnemar top-1 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    68,
+    30,
+    0.00015615831700632916
+   ],
+   "mcnemar top-5 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    33,
+    37,
+    0.7202027723528613
+   ]
+  },
+  "raw": {
+   "md_cold": {
+    "n": 288,
+    "top1/3/5": [
+     111,
+     187,
+     212
+    ],
+    "tokens": 703,
+    "taught-led": 0
+   },
+   "md_cover": {
+    "n": 288,
+    "top1/3/5": [
+     155,
+     188,
+     198
+    ],
+    "tokens": 400,
+    "taught-led": 148
+   },
+   "gf": {
+    "n": 288,
+    "top1/3/5": [
+     91,
+     126,
+     142
+    ],
+    "tokens": 1494,
+    "taught-led": 0
+   },
+   "mcnemar top-1 md_cover vs gf (md_cover only, gf only, p)": [
+    92,
+    28,
+    3.767158136686958e-09
+   ],
+   "mcnemar top-5 md_cover vs gf (md_cover only, gf only, p)": [
+    88,
+    32,
+    3.181060317037078e-07
+   ],
+   "mcnemar top-1 md_cold vs gf (md_cold only, gf only, p)": [
+    59,
+    39,
+    0.054390558277088406
+   ],
+   "mcnemar top-5 md_cold vs gf (md_cold only, gf only, p)": [
+    96,
+    26,
+    1.261164445962075e-10
+   ],
+   "mcnemar top-1 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    72,
+    28,
+    1.2579150016678854e-05
+   ],
+   "mcnemar top-5 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    26,
+    40,
+    0.1088569644097161
+   ]
+  }
+ },
+ "A swe-bench lite (285 issues, 12 repos)": {
+  "title": {
+   "md_cold": {
+    "n": 285,
+    "top1/3/5": [
+     80,
+     154,
+     176
+    ],
+    "tokens": 634,
+    "taught-led": 0
+   },
+   "md_cover": {
+    "n": 285,
+    "top1/3/5": [
+     87,
+     152,
+     176
+    ],
+    "tokens": 598,
+    "taught-led": 22
+   },
+   "gf": {
+    "n": 285,
+    "top1/3/5": [
+     78,
+     115,
+     131
+    ],
+    "tokens": 1500,
+    "taught-led": 0
+   },
+   "mcnemar top-1 md_cover vs gf (md_cover only, gf only, p)": [
+    47,
+    38,
+    0.38566942011927957
+   ],
+   "mcnemar top-5 md_cover vs gf (md_cover only, gf only, p)": [
+    72,
+    27,
+    6.9006990857724845e-06
+   ],
+   "mcnemar top-1 md_cold vs gf (md_cold only, gf only, p)": [
+    44,
+    42,
+    0.9142116370824501
+   ],
+   "mcnemar top-5 md_cold vs gf (md_cold only, gf only, p)": [
+    72,
+    27,
+    6.9006990857724845e-06
+   ],
+   "mcnemar top-1 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    7,
+    0,
+    0.015625
+   ],
+   "mcnemar top-5 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    6,
+    6,
+    1.0
+   ]
+  },
+  "q400": {
+   "md_cold": {
+    "n": 285,
+    "top1/3/5": [
+     96,
+     161,
+     183
+    ],
+    "tokens": 700,
+    "taught-led": 0
+   },
+   "md_cover": {
+    "n": 285,
+    "top1/3/5": [
+     99,
+     159,
+     181
+    ],
+    "tokens": 663,
+    "taught-led": 20
+   },
+   "gf": {
+    "n": 285,
+    "top1/3/5": [
+     67,
+     99,
+     122
+    ],
+    "tokens": 1674,
+    "taught-led": 0
+   },
+   "mcnemar top-1 md_cover vs gf (md_cover only, gf only, p)": [
+    65,
+    33,
+    0.0016005802102081266
+   ],
+   "mcnemar top-5 md_cover vs gf (md_cover only, gf only, p)": [
+    80,
+    21,
+    2.726637769573417e-09
+   ],
+   "mcnemar top-1 md_cold vs gf (md_cold only, gf only, p)": [
+    64,
+    35,
+    0.004640654088434307
+   ],
+   "mcnemar top-5 md_cold vs gf (md_cold only, gf only, p)": [
+    82,
+    21,
+    1.0696750216702926e-09
+   ],
+   "mcnemar top-1 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    5,
+    2,
+    0.453125
+   ],
+   "mcnemar top-5 md_cover vs md_cold (md_cover only, md_cold only, p)": [
+    2,
+    4,
+    0.6875
+   ]
+  }
+ },
+ "B end to end, Django 2022 with Claude": {
+  "graphify": {
+   "usd": 8.376,
+   "requests": 478,
+   "right": 101,
+   "read path": 0
+  },
+  "md_final": {
+   "usd": 2.458,
+   "requests": 345,
+   "right": 99,
+   "read path": 20
+  },
+  "md_cold": {
+   "usd": 4.063,
+   "requests": 407,
+   "right": 101,
+   "read path": 9
+  },
+  "alone": {
+   "usd": 7.296,
+   "requests": 545,
+   "right": 98,
+   "read path": 0
+  },
+  "paired fixes": 110,
+  "mcnemar right md_final vs graphify (md only, graphify only, p)": [
+   4,
+   6,
+   0.75390625
+  ],
+  "mcnemar right graphify vs alone (graphify only, alone only, p)": [
+   4,
+   1,
+   0.375
+  ],
+  "by quarter, $ graphify / md_final": {
+   "Q1": 3.37,
+   "Q2": 3.47,
+   "Q3": 0.0,
+   "Q4": 0.0
+  }
+ },
+ "predictions": {
+  "G1 django: md_cover right first > graphify": true,
+  "G2 lite titles: md_cold top-5 > graphify": true,
+  "G3 lite titles: md_cover right first > md_cold": true,
+  "G4 readout tokens: md_cold and md_cover < graphify on every query set": true,
+  "G5 bill: graphify / md_final >= 1.5x": true,
+  "G6 work: md_final right >= graphify right - 3% of fixes": true,
+  "G7 coverage pays: md_final $ < md_cold $": true
+ }
+}

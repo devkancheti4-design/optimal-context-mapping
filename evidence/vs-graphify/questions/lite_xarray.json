@@ -1,0 +1,52 @@
+[
+{
+"id": "pydata__xarray-3364",
+"queries": {
+"title": "Ignore missing variables when concatenating datasets?",
+"q400": "Ignore missing variables when concatenating datasets?\nSeveral users (@raj-kesavan, @richardotis, now myself) have wondered about how to concatenate xray Datasets with different variables.\n\nWith the current `xray.concat`, you need to awkwardly create dummy variables filled with `NaN` in datasets that don't have them (or drop mismatched variables entirely). Neither of these are great options -- `con"
+},
+"gold": [
+"xarray/core/concat.py"
+]
+},
+{
+"id": "pydata__xarray-4094",
+"queries": {
+"title": "to_unstacked_dataset broken for single-dim variables",
+"q400": "to_unstacked_dataset broken for single-dim variables\n<!-- A short summary of the issue, if appropriate -->\r\n\r\n\r\n#### MCVE Code Sample\r\n\r\n```python\r\narr = xr.DataArray(\r\n     np.arange(3),\r\n     coords=[(\"x\", [0, 1, 2])],\r\n )\r\ndata = xr.Dataset({\"a\": arr, \"b\": arr})\r\nstacked = data.to_stacked_array('y', sample_dims=['x'])\r\nunstacked = stacked.to_unstacked_dataset('y')\r\n# MergeError: conflicting val"
+},
+"gold": [
+"xarray/core/dataarray.py"
+]
+},
+{
+"id": "pydata__xarray-4248",
+"queries": {
+"title": "Feature request: show units in dataset overview",
+"q400": "Feature request: show units in dataset overview\nHere's a hypothetical dataset:\r\n\r\n```\r\n<xarray.Dataset>\r\nDimensions:  (time: 3, x: 988, y: 822)\r\nCoordinates:\r\n  * x         (x) float64 ...\r\n  * y         (y) float64 ...\r\n  * time      (time) datetime64[ns] ...\r\nData variables:\r\n    rainfall  (time, y, x) float32 ...\r\n    max_temp  (time, y, x) float32 ...\r\n```\r\n\r\nIt would be really nice if the uni"
+},
+"gold": [
+"xarray/core/formatting.py"
+]
+},
+{
+"id": "pydata__xarray-4493",
+"queries": {
+"title": "DataSet.update causes chunked dask DataArray to evalute its values eagerly",
+"q400": "DataSet.update causes chunked dask DataArray to evalute its values eagerly \n**What happened**:\r\nUsed `DataSet.update` to update a chunked dask DataArray, but the DataArray is no longer chunked after the update.\r\n\r\n**What you expected to happen**:\r\nThe chunked DataArray should still be chunked after the update\r\n\r\n**Minimal Complete Verifiable Example**:\r\n\r\n```python\r\nfoo = xr.DataArray(np.random.ra"
+},
+"gold": [
+"xarray/core/variable.py"
+]
+},
+{
+"id": "pydata__xarray-5131",
+"queries": {
+"title": "Trailing whitespace in DatasetGroupBy text representation",
+"q400": "Trailing whitespace in DatasetGroupBy text representation\nWhen displaying a DatasetGroupBy in an interactive Python session, the first line of output contains a trailing whitespace. The first example in the documentation demonstrate this:\r\n\r\n```pycon\r\n>>> import xarray as xr, numpy as np\r\n>>> ds = xr.Dataset(\r\n...     {\"foo\": ((\"x\", \"y\"), np.random.rand(4, 3))},\r\n...     coords={\"x\": [10, 20, 30, "
+},
+"gold": [
+"xarray/core/groupby.py"
+]
+}
+]

@@ -1,0 +1,1142 @@
+[
+{
+"id": "django__django-10914",
+"queries": {
+"title": "Set default FILE_UPLOAD_PERMISSION to 0o644.",
+"q400": "Set default FILE_UPLOAD_PERMISSION to 0o644.\nDescription\n\t\nHello,\nAs far as I can see, the \u200bFile Uploads documentation page does not mention any permission issues.\nWhat I would like to see is a warning that in absence of explicitly configured FILE_UPLOAD_PERMISSIONS, the permissions for a file uploaded to FileSystemStorage might not be consistent depending on whether a MemoryUploadedFile or a Temp"
+},
+"gold": [
+"django/conf/global_settings.py"
+]
+},
+{
+"id": "django__django-10924",
+"queries": {
+"title": "Allow FilePathField path to accept a callable.",
+"q400": "Allow FilePathField path to accept a callable.\nDescription\n\t\nI have a special case where I want to create a model containing the path to some local files on the server/dev machine. Seeing as the place where these files are stored is different on different machines I have the following:\nimport os\nfrom django.conf import settings\nfrom django.db import models\nclass LocalFiles(models.Model):\n\tname = m"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-11001",
+"queries": {
+"title": "Incorrect removal of order_by clause created as multiline RawSQL",
+"q400": "Incorrect removal of order_by clause created as multiline RawSQL\nDescription\n\t\nHi.\nThe SQLCompiler is ripping off one of my \"order by\" clause, because he \"thinks\" the clause was already \"seen\" (in SQLCompiler.get_order_by()). I'm using expressions written as multiline RawSQLs, which are similar but not the same. \nThe bug is located in SQLCompiler.get_order_by(), somewhere around line computing par"
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"id": "django__django-11019",
+"queries": {
+"title": "Merging 3 or more media objects can throw unnecessary MediaOrderConflictWarnings",
+"q400": "Merging 3 or more media objects can throw unnecessary MediaOrderConflictWarnings\nDescription\n\t\nConsider the following form definition, where text-editor-extras.js depends on text-editor.js but all other JS files are independent:\nfrom django import forms\nclass ColorPicker(forms.Widget):\n\tclass Media:\n\t\tjs = ['color-picker.js']\nclass SimpleTextWidget(forms.Widget):\n\tclass Media:\n\t\tjs = ['text-editor"
+},
+"gold": [
+"django/forms/widgets.py"
+]
+},
+{
+"id": "django__django-11039",
+"queries": {
+"title": "sqlmigrate wraps it's outpout in BEGIN/COMMIT even if the database doesn't support transactional DDL",
+"q400": "sqlmigrate wraps it's outpout in BEGIN/COMMIT even if the database doesn't support transactional DDL\nDescription\n\t \n\t\t(last modified by Simon Charette)\n\t \nThe migration executor only adds the outer BEGIN/COMMIT \u200bif the migration is atomic and \u200bthe schema editor can rollback DDL but the current sqlmigrate logic only takes migration.atomic into consideration.\nThe issue can be addressed by\nChanging s"
+},
+"gold": [
+"django/core/management/commands/sqlmigrate.py"
+]
+},
+{
+"id": "django__django-11049",
+"queries": {
+"title": "Correct expected format in invalid DurationField error message",
+"q400": "Correct expected format in invalid DurationField error message\nDescription\n\t\nIf you enter a duration \"14:00\" into a duration field, it translates to \"00:14:00\" which is 14 minutes.\nThe current error message for invalid DurationField says that this should be the format of durations: \"[DD] [HH:[MM:]]ss[.uuuuuu]\". But according to the actual behaviour, it should be: \"[DD] [[HH:]MM:]ss[.uuuuuu]\", beca"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-11099",
+"queries": {
+"title": "UsernameValidator allows trailing newline in usernames",
+"q400": "UsernameValidator allows trailing newline in usernames\nDescription\n\t\nASCIIUsernameValidator and UnicodeUsernameValidator use the regex \nr'^[\\w.@+-]+$'\nThe intent is to only allow alphanumeric characters as well as ., @, +, and -. However, a little known quirk of Python regexes is that $ will also match a trailing newline. Therefore, the user name validators will accept usernames which end with a n"
+},
+"gold": [
+"django/contrib/auth/validators.py"
+]
+},
+{
+"id": "django__django-11133",
+"queries": {
+"title": "HttpResponse doesn't handle memoryview objects",
+"q400": "HttpResponse doesn't handle memoryview objects\nDescription\n\t\nI am trying to write a BinaryField retrieved from the database into a HttpResponse. When the database is Sqlite this works correctly, but Postgresql returns the contents of the field as a memoryview object and it seems like current Django doesn't like this combination:\nfrom django.http import HttpResponse\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \n# String conte"
+},
+"gold": [
+"django/http/response.py"
+]
+},
+{
+"id": "django__django-11179",
+"queries": {
+"title": "delete() on instances of models without any dependencies doesn't clear PKs.",
+"q400": "delete() on instances of models without any dependencies doesn't clear PKs.\nDescription\n\t\nDeleting any model with no dependencies not updates the PK on the model. It should be set to None after .delete() call.\nSee Django.db.models.deletion:276-281. Should update the model line 280.\n"
+},
+"gold": [
+"django/db/models/deletion.py"
+]
+},
+{
+"id": "django__django-11283",
+"queries": {
+"title": "Migration auth.0011_update_proxy_permissions fails for models recreated as a proxy.",
+"q400": "Migration auth.0011_update_proxy_permissions fails for models recreated as a proxy.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nI am trying to update my project to Django 2.2. When I launch python manage.py migrate, I get this error message when migration auth.0011_update_proxy_permissions is applying (full stacktrace is available \u200bhere):\ndjango.db.utils.IntegrityError: duplicate key v"
+},
+"gold": [
+"django/contrib/auth/migrations/0011_update_proxy_permissions.py"
+]
+},
+{
+"id": "django__django-11422",
+"queries": {
+"title": "Autoreloader with StatReloader doesn't track changes in manage.py.",
+"q400": "Autoreloader with StatReloader doesn't track changes in manage.py.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nThis is a bit convoluted, but here we go.\nEnvironment (OSX 10.11):\n$ python -V\nPython 3.6.2\n$ pip -V\npip 19.1.1\n$ pip install Django==2.2.1\nSteps to reproduce:\nRun a server python manage.py runserver\nEdit the manage.py file, e.g. add print(): \ndef main():\n\tprint('sth')\n\tos.env"
+},
+"gold": [
+"django/utils/autoreload.py"
+]
+},
+{
+"id": "django__django-11564",
+"queries": {
+"title": "Add support for SCRIPT_NAME in STATIC_URL and MEDIA_URL",
+"q400": "Add support for SCRIPT_NAME in STATIC_URL and MEDIA_URL\nDescription\n\t \n\t\t(last modified by Rostyslav Bryzgunov)\n\t \nBy default, {% static '...' %} tag just appends STATIC_URL in the path. When running on sub-path, using SCRIPT_NAME WSGI param, it results in incorrect static URL - it doesn't prepend SCRIPT_NAME prefix.\nThis problem can be solved with prepending SCRIPT_NAME to STATIC_URL in settings."
+},
+"gold": [
+"django/conf/__init__.py"
+]
+},
+{
+"id": "django__django-11583",
+"queries": {
+"title": "Auto-reloading with StatReloader very intermittently throws \"ValueError: embedded null byte\".",
+"q400": "Auto-reloading with StatReloader very intermittently throws \"ValueError: embedded null byte\".\nDescription\n\t\nRaising this mainly so that it's tracked, as I have no idea how to reproduce it, nor why it's happening. It ultimately looks like a problem with Pathlib, which wasn't used prior to 2.2.\nStacktrace:\nTraceback (most recent call last):\n File \"manage.py\" ...\n\texecute_from_command_line(sys.argv)\n"
+},
+"gold": [
+"django/utils/autoreload.py"
+]
+},
+{
+"id": "django__django-11620",
+"queries": {
+"title": "When DEBUG is True, raising Http404 in a path converter's to_python method does not result in a technical response",
+"q400": "When DEBUG is True, raising Http404 in a path converter's to_python method does not result in a technical response\nDescription\n\t\nThis is the response I get (plain text): \nA server error occurred. Please contact the administrator.\nI understand a ValueError should be raised which tells the URL resolver \"this path does not match, try next one\" but Http404 is what came to my mind intuitively and the e"
+},
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"id": "django__django-11630",
+"queries": {
+"title": "Django throws error when different apps with different models have the same name table name.",
+"q400": "Django throws error when different apps with different models have the same name table name.\nDescription\n\t\nError message:\ntable_name: (models.E028) db_table 'table_name' is used by multiple models: base.ModelName, app2.ModelName.\nWe have a Base app that points to a central database and that has its own tables. We then have multiple Apps that talk to their own databases. Some share the same table n"
+},
+"gold": [
+"django/core/checks/model_checks.py"
+]
+},
+{
+"id": "django__django-11742",
+"queries": {
+"title": "Add check to ensure max_length fits longest choice.",
+"q400": "Add check to ensure max_length fits longest choice.\nDescription\n\t\nThere is currently no check to ensure that Field.max_length is large enough to fit the longest value in Field.choices.\nThis would be very helpful as often this mistake is not noticed until an attempt is made to save a record with those values that are too long.\n"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-11797",
+"queries": {
+"title": "Filtering on query result overrides GROUP BY of internal query",
+"q400": "Filtering on query result overrides GROUP BY of internal query\nDescription\n\t\nfrom django.contrib.auth import models\na = models.User.objects.filter(email__isnull=True).values('email').annotate(m=Max('id')).values('m')\nprint(a.query) # good\n# SELECT MAX(\"auth_user\".\"id\") AS \"m\" FROM \"auth_user\" WHERE \"auth_user\".\"email\" IS NULL GROUP BY \"auth_user\".\"email\"\nprint(a[:1].query) # good\n# SELECT MAX(\"aut"
+},
+"gold": [
+"django/db/models/lookups.py"
+]
+},
+{
+"id": "django__django-11815",
+"queries": {
+"title": "Migrations uses value of enum object instead of its name.",
+"q400": "Migrations uses value of enum object instead of its name.\nDescription\n\t \n\t\t(last modified by oasl)\n\t \nWhen using Enum object as a default value for a CharField, the generated migration file uses the value of the Enum object instead of the its name. This causes a problem when using Django translation on the value of the Enum object. \nThe problem is that, when the Enum object value get translated to"
+},
+"gold": [
+"django/db/migrations/serializer.py"
+]
+},
+{
+"id": "django__django-11848",
+"queries": {
+"title": "django.utils.http.parse_http_date two digit year check is incorrect",
+"q400": "django.utils.http.parse_http_date two digit year check is incorrect\nDescription\n\t \n\t\t(last modified by Ad Timmering)\n\t \nRFC 850 does not mention this, but in RFC 7231 (and there's something similar in RFC 2822), there's the following quote:\nRecipients of a timestamp value in rfc850-date format, which uses a\ntwo-digit year, MUST interpret a timestamp that appears to be more\nthan 50 years in the fut"
+},
+"gold": [
+"django/utils/http.py"
+]
+},
+{
+"id": "django__django-11905",
+"queries": {
+"title": "Prevent using __isnull lookup with non-boolean value.",
+"q400": "Prevent using __isnull lookup with non-boolean value.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \n__isnull should not allow for non-boolean values. Using truthy/falsey doesn't promote INNER JOIN to an OUTER JOIN but works fine for a simple queries. Using non-boolean values is \u200bundocumented and untested. IMO we should raise an error for non-boolean values to avoid confusion and for cons"
+},
+"gold": [
+"django/db/models/lookups.py"
+]
+},
+{
+"id": "django__django-11910",
+"queries": {
+"title": "ForeignKey's to_field parameter gets the old field's name when renaming a PrimaryKey.",
+"q400": "ForeignKey's to_field parameter gets the old field's name when renaming a PrimaryKey.\nDescription\n\t\nHaving these two models \nclass ModelA(models.Model):\n\tfield_wrong = models.CharField('field1', max_length=50, primary_key=True) # I'm a Primary key.\nclass ModelB(models.Model):\n\tfield_fk = models.ForeignKey(ModelA, blank=True, null=True, on_delete=models.CASCADE) \n... migrations applyed ...\nthe Mode"
+},
+"gold": [
+"django/db/migrations/autodetector.py"
+]
+},
+{
+"id": "django__django-11964",
+"queries": {
+"title": "The value of a TextChoices/IntegerChoices field has a differing type",
+"q400": "The value of a TextChoices/IntegerChoices field has a differing type\nDescription\n\t\nIf we create an instance of a model having a CharField or IntegerField with the keyword choices pointing to IntegerChoices or TextChoices, the value returned by the getter of the field will be of the same type as the one created by enum.Enum (enum value).\nFor example, this model:\nfrom django.db import models\nfrom dj"
+},
+"gold": [
+"django/db/models/enums.py"
+]
+},
+{
+"id": "django__django-11999",
+"queries": {
+"title": "Cannot override get_FOO_display() in Django 2.2+.",
+"q400": "Cannot override get_FOO_display() in Django 2.2+.\nDescription\n\t\nI cannot override the get_FIELD_display function on models since version 2.2. It works in version 2.1.\nExample:\nclass FooBar(models.Model):\n\tfoo_bar = models.CharField(_(\"foo\"), choices=[(1, 'foo'), (2, 'bar')])\n\tdef __str__(self):\n\t\treturn self.get_foo_bar_display() # This returns 'foo' or 'bar' in 2.2, but 'something' in 2.1\n\tdef ge"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-12113",
+"queries": {
+"title": "admin_views.test_multidb fails with persistent test SQLite database.",
+"q400": "admin_views.test_multidb fails with persistent test SQLite database.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nI've tried using persistent SQLite databases for the tests (to make use of\n--keepdb), but at least some test fails with:\nsqlite3.OperationalError: database is locked\nThis is not an issue when only using TEST[\"NAME\"] with \"default\" (which is good enough in terms of performanc"
+},
+"gold": [
+"django/db/backends/sqlite3/creation.py"
+]
+},
+{
+"id": "django__django-12125",
+"queries": {
+"title": "makemigrations produces incorrect path for inner classes",
+"q400": "makemigrations produces incorrect path for inner classes\nDescription\n\t\nWhen you define a subclass from django.db.models.Field as an inner class of some other class, and use this field inside a django.db.models.Model class, then when you run manage.py makemigrations, a migrations file is created which refers to the inner class as if it were a top-level class of the module it is in.\nTo reproduce, cr"
+},
+"gold": [
+"django/db/migrations/serializer.py"
+]
+},
+{
+"id": "django__django-12184",
+"queries": {
+"title": "Optional URL params crash some view functions.",
+"q400": "Optional URL params crash some view functions.\nDescription\n\t\nMy use case, running fine with Django until 2.2:\nURLConf:\nurlpatterns += [\n\t...\n\tre_path(r'^module/(?P<format>(html|json|xml))?/?$', views.modules, name='modules'),\n]\nView:\ndef modules(request, format='html'):\n\t...\n\treturn render(...)\nWith Django 3.0, this is now producing an error:\nTraceback (most recent call last):\n File \"/l10n/venv/li"
+},
+"gold": [
+"django/urls/resolvers.py"
+]
+},
+{
+"id": "django__django-12284",
+"queries": {
+"title": "Model.get_FOO_display() does not work correctly with inherited choices.",
+"q400": "Model.get_FOO_display() does not work correctly with inherited choices.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nGiven a base model with choices A containing 3 tuples\nChild Model inherits the base model overrides the choices A and adds 2 more tuples\nget_foo_display does not work correctly for the new tuples added\nExample:\nclass A(models.Model):\n foo_choice = [(\"A\",\"output1\"),(\"B\",\"o"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-12286",
+"queries": {
+"title": "translation.E004 shouldn't be raised on sublanguages when a base language is available.",
+"q400": "translation.E004 shouldn't be raised on sublanguages when a base language is available.\nDescription\n\t\nAccording to Django documentation:\nIf a base language is available but the sublanguage specified is not, Django uses the base language. For example, if a user specifies de-at (Austrian German) but Django only has de available, Django uses de.\nHowever, when using Django 3.0.2, if my settings.py has"
+},
+"gold": [
+"django/core/checks/translation.py"
+]
+},
+{
+"id": "django__django-12308",
+"queries": {
+"title": "JSONField are not properly displayed in admin when they are readonly.",
+"q400": "JSONField are not properly displayed in admin when they are readonly.\nDescription\n\t\nJSONField values are displayed as dict when readonly in the admin.\nFor example, {\"foo\": \"bar\"} would be displayed as {'foo': 'bar'}, which is not valid JSON.\nI believe the fix would be to add a special case in django.contrib.admin.utils.display_for_field to call the prepare_value of the JSONField (not calling json."
+},
+"gold": [
+"django/contrib/admin/utils.py"
+]
+},
+{
+"id": "django__django-12453",
+"queries": {
+"title": "`TransactionTestCase.serialized_rollback` fails to restore objects due to ordering constraints",
+"q400": "`TransactionTestCase.serialized_rollback` fails to restore objects due to ordering constraints\nDescription\n\t\nI hit this problem in a fairly complex projet and haven't had the time to write a minimal reproduction case. I think it can be understood just by inspecting the code so I'm going to describe it while I have it in mind.\nSetting serialized_rollback = True on a TransactionTestCase triggers \u200bro"
+},
+"gold": [
+"django/db/backends/base/creation.py"
+]
+},
+{
+"id": "django__django-12470",
+"queries": {
+"title": "Inherited model doesn't correctly order by \"-pk\" when specified on Parent.Meta.ordering",
+"q400": "Inherited model doesn't correctly order by \"-pk\" when specified on Parent.Meta.ordering\nDescription\n\t\nGiven the following model definition:\nfrom django.db import models\nclass Parent(models.Model):\n\tclass Meta:\n\t\tordering = [\"-pk\"]\nclass Child(Parent):\n\tpass\nQuerying the Child class results in the following:\n>>> print(Child.objects.all().query)\nSELECT \"myapp_parent\".\"id\", \"myapp_child\".\"parent_ptr_"
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"id": "django__django-12497",
+"queries": {
+"title": "Wrong hint about recursive relationship.",
+"q400": "Wrong hint about recursive relationship.\nDescription\n\t \n\t\t(last modified by Matheus Cunha Motta)\n\t \nWhen there's more than 2 ForeignKeys in an intermediary model of a m2m field and no through_fields have been set, Django will show an error with the following hint:\nhint=(\n\t'If you want to create a recursive relationship, '\n\t'use ForeignKey(\"%s\", symmetrical=False, through=\"%s\").'\nBut 'symmetrical' "
+},
+"gold": [
+"django/db/models/fields/related.py"
+]
+},
+{
+"id": "django__django-12589",
+"queries": {
+"title": "Django 3.0: \"GROUP BY\" clauses error with tricky field annotation",
+"q400": "Django 3.0: \"GROUP BY\" clauses error with tricky field annotation\nDescription\n\t\nLet's pretend that we have next model structure with next model's relations:\nclass A(models.Model):\n\tbs = models.ManyToManyField('B',\n\t\t\t\t\t\t\t\trelated_name=\"a\",\n\t\t\t\t\t\t\t\tthrough=\"AB\")\nclass B(models.Model):\n\tpass\nclass AB(models.Model):\n\ta = models.ForeignKey(A, on_delete=models.CASCADE, related_name=\"ab_a\")\n\tb = models."
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-12700",
+"queries": {
+"title": "Settings are cleaned insufficiently.",
+"q400": "Settings are cleaned insufficiently.\nDescription\n\t\nPosting publicly after checking with the rest of the security team.\nI just ran into a case where django.views.debug.SafeExceptionReporterFilter.get_safe_settings() would return several un-cleansed values. Looking at cleanse_setting() I realized that we \u200bonly take care of `dict`s but don't take other types of iterables into account but \u200breturn them"
+},
+"gold": [
+"django/views/debug.py"
+]
+},
+{
+"id": "django__django-12708",
+"queries": {
+"title": "Migration crashes deleting an index_together if there is a unique_together on the same fields",
+"q400": "Migration crashes deleting an index_together if there is a unique_together on the same fields\nDescription\n\t\nHappens with Django 1.11.10\nSteps to reproduce:\n1) Create models with 2 fields, add 2 same fields to unique_together and to index_together\n2) Delete index_together -> Fail\nIt will fail at django/db/backends/base/schema.py, line 378, in _delete_composed_index(), ValueError: Found wrong number"
+},
+"gold": [
+"django/db/backends/base/schema.py"
+]
+},
+{
+"id": "django__django-12747",
+"queries": {
+"title": "QuerySet.Delete - inconsistent result when zero objects deleted",
+"q400": "QuerySet.Delete - inconsistent result when zero objects deleted\nDescription\n\t\nThe result format of the QuerySet.Delete method is a tuple: (X, Y) \nX - is the total amount of deleted objects (including foreign key deleted objects)\nY - is a dictionary specifying counters of deleted objects for each specific model (the key is the _meta.label of the model and the value is counter of deleted objects of "
+},
+"gold": [
+"django/db/models/deletion.py"
+]
+},
+{
+"id": "django__django-12856",
+"queries": {
+"title": "Add check for fields of UniqueConstraints.",
+"q400": "Add check for fields of UniqueConstraints.\nDescription\n\t \n\t\t(last modified by Marnanel Thurman)\n\t \nWhen a model gains a UniqueConstraint, makemigrations doesn't check that the fields named therein actually exist.\nThis is in contrast to the older unique_together syntax, which raises models.E012 if the fields don't exist.\nIn the attached demonstration, you'll need to uncomment \"with_unique_together\""
+},
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"id": "django__django-12908",
+"queries": {
+"title": "Union queryset should raise on distinct().",
+"q400": "Union queryset should raise on distinct().\nDescription\n\t \n\t\t(last modified by Sielc Technologies)\n\t \nAfter using\n.annotate() on 2 different querysets\nand then .union()\n.distinct() will not affect the queryset\n\tdef setUp(self) -> None:\n\t\tuser = self.get_or_create_admin_user()\n\t\tSample.h.create(user, name=\"Sam1\")\n\t\tSample.h.create(user, name=\"Sam2 acid\")\n\t\tSample.h.create(user, name=\"Sam3\")\n\t\tSample"
+},
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"id": "django__django-12915",
+"queries": {
+"title": "Add get_response_async for ASGIStaticFilesHandler",
+"q400": "Add get_response_async for ASGIStaticFilesHandler\nDescription\n\t\nIt looks like the StaticFilesHandlerMixin is missing the the async response function.\nWithout this, when trying to use the ASGIStaticFilesHandler, this is the traceback:\nException inside application: 'NoneType' object is not callable\nTraceback (most recent call last):\n File \".../lib/python3.7/site-packages/daphne/cli.py\", line 30, in "
+},
+"gold": [
+"django/contrib/staticfiles/handlers.py"
+]
+},
+{
+"id": "django__django-12983",
+"queries": {
+"title": "Make django.utils.text.slugify() strip dashes and underscores",
+"q400": "Make django.utils.text.slugify() strip dashes and underscores\nDescription\n\t \n\t\t(last modified by Elinaldo do Nascimento Monteiro)\n\t \nBug generation slug\nExample:\nfrom django.utils import text\ntext.slugify(\"___This is a test ---\")\noutput: ___this-is-a-test-\nImprovement after correction\nfrom django.utils import text\ntext.slugify(\"___This is a test ---\")\noutput: this-is-a-test\n\u200bPR\n"
+},
+"gold": [
+"django/utils/text.py"
+]
+},
+{
+"id": "django__django-13028",
+"queries": {
+"title": "Queryset raises NotSupportedError when RHS has filterable=False attribute.",
+"q400": "Queryset raises NotSupportedError when RHS has filterable=False attribute.\nDescription\n\t \n\t\t(last modified by Nicolas Baccelli)\n\t \nI'm migrating my app to django 3.0.7 and I hit a strange behavior using a model class with a field labeled filterable\nclass ProductMetaDataType(models.Model):\n\tlabel = models.CharField(max_length=255, unique=True, blank=False, null=False)\n\tfilterable = models.BooleanFi"
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-13033",
+"queries": {
+"title": "Self referencing foreign key doesn't correctly order by a relation \"_id\" field.",
+"q400": "Self referencing foreign key doesn't correctly order by a relation \"_id\" field.\nDescription\n\t\nInitially discovered on 2.2.10 but verified still happens on 3.0.6. Given the following models:\nclass OneModel(models.Model):\n\tclass Meta:\n\t\tordering = (\"-id\",)\n\tid = models.BigAutoField(primary_key=True)\n\troot = models.ForeignKey(\"OneModel\", on_delete=models.CASCADE, null=True)\n\toneval = models.BigIntege"
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"id": "django__django-13158",
+"queries": {
+"title": "QuerySet.none() on combined queries returns all results.",
+"q400": "QuerySet.none() on combined queries returns all results.\nDescription\n\t\nI came across this issue on Stack Overflow. I'm not 100% sure it's a bug, but it does seem strange. With this code (excuse the bizarre example filtering):\nclass Publication(models.Model):\n\tpass\nclass Article(models.Model):\n\tpublications = models.ManyToManyField(to=Publication, blank=True, null=True)\nclass ArticleForm(forms.Mode"
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-13220",
+"queries": {
+"title": "Allow ValidationErrors to equal each other when created identically",
+"q400": "Allow ValidationErrors to equal each other when created identically\nDescription\n\t \n\t\t(last modified by kamni)\n\t \nCurrently ValidationErrors (django.core.exceptions.ValidationError) that have identical messages don't equal each other, which is counter-intuitive, and can make certain kinds of testing more complicated. Please add an __eq__ method that allows two ValidationErrors to be compared. \nIdea"
+},
+"gold": [
+"django/core/exceptions.py"
+]
+},
+{
+"id": "django__django-13230",
+"queries": {
+"title": "Add support for item_comments to syndication framework",
+"q400": "Add support for item_comments to syndication framework\nDescription\n\t\nAdd comments argument to feed.add_item() in syndication.views so that item_comments can be defined directly without having to take the detour via item_extra_kwargs .\nAdditionally, comments is already explicitly mentioned in the feedparser, but not implemented in the view.\n"
+},
+"gold": [
+"django/contrib/syndication/views.py"
+]
+},
+{
+"id": "django__django-13265",
+"queries": {
+"title": "AlterOrderWithRespectTo() with ForeignKey crash when _order is included in Index().",
+"q400": "AlterOrderWithRespectTo() with ForeignKey crash when _order is included in Index().\nDescription\n\t\n\tclass Meta:\n\t\tdb_table = 'look_image'\n\t\torder_with_respect_to = 'look'\n\t\tindexes = [\n\t\t\tmodels.Index(fields=['look', '_order']),\n\t\t\tmodels.Index(fields=['created_at']),\n\t\t\tmodels.Index(fields=['updated_at']),\n\t\t]\nmigrations.CreateModel(\n\t\t\tname='LookImage',\n\t\t\tfields=[\n\t\t\t\t('id', models.AutoField(aut"
+},
+"gold": [
+"django/db/migrations/autodetector.py"
+]
+},
+{
+"id": "django__django-13315",
+"queries": {
+"title": "limit_choices_to on a ForeignKey can render duplicate options in formfield",
+"q400": "limit_choices_to on a ForeignKey can render duplicate options in formfield\nDescription\n\t\nIf you pass a Q object as limit_choices_to on a ForeignKey field involving a join, you may end up with duplicate options in your form.\nSee regressiontest in patch for a clear view on the problem.\n"
+},
+"gold": [
+"django/forms/models.py"
+]
+},
+{
+"id": "django__django-13321",
+"queries": {
+"title": "Decoding an invalid session data crashes.",
+"q400": "Decoding an invalid session data crashes.\nDescription\n\t \n\t\t(last modified by Matt Hegarty)\n\t \nHi\nI recently upgraded my staging server to 3.1. I think that there was an old session which was still active.\nOn browsing to any URL, I get the crash below. It looks similar to \u200bthis issue.\nI cannot login at all with Chrome - each attempt to access the site results in a crash. Login with Firefox works fi"
+},
+"gold": [
+"django/contrib/sessions/backends/base.py"
+]
+},
+{
+"id": "django__django-13401",
+"queries": {
+"title": "Abstract model field should not be equal across models",
+"q400": "Abstract model field should not be equal across models\nDescription\n\t\nConsider the following models:\nclass A(models.Model):\n\tclass Meta:\n\t\tabstract = True\n\tmyfield = IntegerField()\nclass B(A):\n\tpass\nclass C(A):\n\tpass\nIf I pull the fields of B and C into a shared set, one will be de-duplicated away, because they compare as equal. I found this surprising, though in practice using a list was sufficien"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-13447",
+"queries": {
+"title": "Added model class to app_list context",
+"q400": "Added model class to app_list context\nDescription\n\t \n\t\t(last modified by Raffaele Salmaso)\n\t \nI need to manipulate the app_list in my custom admin view, and the easiest way to get the result is to have access to the model class (currently the dictionary is a serialized model).\nIn addition I would make the _build_app_dict method public, as it is used by the two views index and app_index.\n"
+},
+"gold": [
+"django/contrib/admin/sites.py"
+]
+},
+{
+"id": "django__django-13448",
+"queries": {
+"title": "Test runner setup_databases crashes with \"TEST\": {\"MIGRATE\": False}.",
+"q400": "Test runner setup_databases crashes with \"TEST\": {\"MIGRATE\": False}.\nDescription\n\t\nI'm trying to upgrade a project from Django 3.0 to Django 3.1 and wanted to try out the new \"TEST\": {\"MIGRATE\": False} database setting.\nSadly I'm running into an issue immediately when running ./manage.py test.\nRemoving the \"TEST\": {\"MIGRATE\": False} line allows the tests to run. So this is not blocking the upgrade"
+},
+"gold": [
+"django/db/backends/base/creation.py"
+]
+},
+{
+"id": "django__django-13551",
+"queries": {
+"title": "Changing user's email could invalidate password reset tokens",
+"q400": "Changing user's email could invalidate password reset tokens\nDescription\n\t\nSequence:\nHave account with email address foo@\u2026\nPassword reset request for that email (unused)\nfoo@\u2026 account changes their email address\nPassword reset email is used\nThe password reset email's token should be rejected at that point, but in fact it is allowed.\nThe fix is to add the user's email address into \u200bPasswordResetTok"
+},
+"gold": [
+"django/contrib/auth/tokens.py"
+]
+},
+{
+"id": "django__django-13590",
+"queries": {
+"title": "Upgrading 2.2>3.0 causes named tuples used as arguments to __range to error.",
+"q400": "Upgrading 2.2>3.0 causes named tuples used as arguments to __range to error.\nDescription\n\t\nI noticed this while upgrading a project from 2.2 to 3.0.\nThis project passes named 2-tuples as arguments to range queryset filters. This works fine on 2.2. On 3.0 it causes the following error: TypeError: __new__() missing 1 required positional argument: 'far'.\nThis happens because django.db.models.sql.quer"
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-13658",
+"queries": {
+"title": "ManagementUtility instantiates CommandParser without passing already-computed prog argument",
+"q400": "ManagementUtility instantiates CommandParser without passing already-computed prog argument\nDescription\n\t\nManagementUtility \u200bgoes to the trouble to parse the program name from the argv it's passed rather than from sys.argv: \n\tdef __init__(self, argv=None):\n\t\tself.argv = argv or sys.argv[:]\n\t\tself.prog_name = os.path.basename(self.argv[0])\n\t\tif self.prog_name == '__main__.py':\n\t\t\tself.prog_name = '"
+},
+"gold": [
+"django/core/management/__init__.py"
+]
+},
+{
+"id": "django__django-13660",
+"queries": {
+"title": "shell command crashes when passing (with -c) the python code with functions.",
+"q400": "shell command crashes when passing (with -c) the python code with functions.\nDescription\n\t\nThe examples below use Python 3.7 and Django 2.2.16, but I checked that the code is the same on master and works the same in Python 3.8.\nHere's how \u200bpython -c works:\n$ python -c <<EOF \" \nimport django\ndef f():\n\t\tprint(django.__version__)\nf()\"\nEOF\n2.2.16\nHere's how \u200bpython -m django shell -c works (paths shor"
+},
+"gold": [
+"django/core/management/commands/shell.py"
+]
+},
+{
+"id": "django__django-13710",
+"queries": {
+"title": "Use Admin Inline verbose_name as default for Inline verbose_name_plural",
+"q400": "Use Admin Inline verbose_name as default for Inline verbose_name_plural\nDescription\n\t\nDjango allows specification of a verbose_name and a verbose_name_plural for Inline classes in admin views. However, verbose_name_plural for an Inline is not currently based on a specified verbose_name. Instead, it continues to be based on the model name, or an a verbose_name specified in the model's Meta class. T"
+},
+"gold": [
+"django/contrib/admin/options.py"
+]
+},
+{
+"id": "django__django-13757",
+"queries": {
+"title": "Using __isnull=True on a KeyTransform should not match JSON null on SQLite and Oracle",
+"q400": "Using __isnull=True on a KeyTransform should not match JSON null on SQLite and Oracle\nDescription\n\t\nThe KeyTransformIsNull lookup borrows the logic from HasKey for isnull=False, which is correct. If isnull=True, the query should only match objects that do not have the key. The query is correct for MariaDB, MySQL, and PostgreSQL. However, on SQLite and Oracle, the query also matches objects that ha"
+},
+"gold": [
+"django/db/models/fields/json.py"
+]
+},
+{
+"id": "django__django-13768",
+"queries": {
+"title": "Log exceptions handled in Signal.send_robust()",
+"q400": "Log exceptions handled in Signal.send_robust()\nDescription\n\t\nAs pointed out by \u200bHaki Benita on Twitter, by default Signal.send_robust() doesn't have any log messages for exceptions raised in receivers. Since Django logs exceptions in other similar situations, such as missing template variables, I think it would be worth adding a logger.exception() call in the except clause of send_robust() . Users"
+},
+"gold": [
+"django/dispatch/dispatcher.py"
+]
+},
+{
+"id": "django__django-13925",
+"queries": {
+"title": "models.W042 is raised on inherited manually specified primary key.",
+"q400": "models.W042 is raised on inherited manually specified primary key.\nDescription\n\t\nI have models which inherit from other models, and they should inherit the primary key. This works fine with Django 3.1. However, if I install Django 3.2 alpha, when I run make_migrations I get the following error messages:\nSystem check identified some issues:\nWARNINGS:\naccounts.ReservedUsername: (models.W042) Auto-cr"
+},
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"id": "django__django-13933",
+"queries": {
+"title": "ModelChoiceField does not provide value of invalid choice when raising ValidationError",
+"q400": "ModelChoiceField does not provide value of invalid choice when raising ValidationError\nDescription\n\t \n\t\t(last modified by Aaron Wiegel)\n\t \nCompared with ChoiceField and others, ModelChoiceField does not show the value of the invalid choice when raising a validation error. Passing in parameters with the invalid value and modifying the default error message for the code invalid_choice should fix thi"
+},
+"gold": [
+"django/forms/models.py"
+]
+},
+{
+"id": "django__django-13964",
+"queries": {
+"title": "Saving parent object after setting on child leads to data loss for parents with non-numeric primary key.",
+"q400": "Saving parent object after setting on child leads to data loss for parents with non-numeric primary key.\nDescription\n\t \n\t\t(last modified by Charlie DeTar)\n\t \nGiven a model with a foreign key relation to another model that has a non-auto CharField as its primary key:\nclass Product(models.Model):\n\tsku = models.CharField(primary_key=True, max_length=50)\nclass Order(models.Model):\n\tproduct = models.Fo"
+},
+"gold": [
+"django/db/models/base.py"
+]
+},
+{
+"id": "django__django-14016",
+"queries": {
+"title": "\"TypeError: cannot pickle\" when applying | operator to a Q object",
+"q400": "\"TypeError: cannot pickle\" when applying | operator to a Q object\nDescription\n\t \n\t\t(last modified by Daniel Izquierdo)\n\t \nUsing a reference to a non-pickleable type of object such as dict_keys in a Q object makes the | operator fail:\n>>> from django.db.models import Q\n>>> Q(x__in={}.keys())\n<Q: (AND: ('x__in', dict_keys([])))>\n>>> Q() | Q(x__in={}.keys())\nTraceback (most recent call last):\n...\nTyp"
+},
+"gold": [
+"django/db/models/query_utils.py"
+]
+},
+{
+"id": "django__django-14017",
+"queries": {
+"title": "Q(...) & Exists(...) raises a TypeError",
+"q400": "Q(...) & Exists(...) raises a TypeError\nDescription\n\t\nExists(...) & Q(...) works, but Q(...) & Exists(...) raise a TypeError\nHere's a minimal example:\nIn [3]: Exists(Product.objects.all()) & Q()\nOut[3]: <Q: (AND: <django.db.models.expressions.Exists object at 0x7fc18dd0ed90>, (AND: ))>\nIn [4]: Q() & Exists(Product.objects.all())\n---------------------------------------------------------------------"
+},
+"gold": [
+"django/db/models/query_utils.py"
+]
+},
+{
+"id": "django__django-14155",
+"queries": {
+"title": "ResolverMatch.__repr__() doesn't handle functools.partial() nicely.",
+"q400": "ResolverMatch.__repr__() doesn't handle functools.partial() nicely.\nDescription\n\t \n\t\t(last modified by Nick Pope)\n\t \nWhen a partial function is passed as the view, the __repr__ shows the func argument as functools.partial which isn't very helpful, especially as it doesn't reveal the underlying function or arguments provided.\nBecause a partial function also has arguments provided up front, we need "
+},
+"gold": [
+"django/urls/resolvers.py"
+]
+},
+{
+"id": "django__django-14238",
+"queries": {
+"title": "DEFAULT_AUTO_FIELD subclass check fails for subclasses of BigAutoField and SmallAutoField.",
+"q400": "DEFAULT_AUTO_FIELD subclass check fails for subclasses of BigAutoField and SmallAutoField.\nDescription\n\t\nSet DEFAULT_AUTO_FIELD = \"example.core.models.MyBigAutoField\" , with contents of example.core.models:\nfrom django.db import models\nclass MyBigAutoField(models.BigAutoField):\n\tpass\nclass MyModel(models.Model):\n\tpass\nDjango then crashes with:\nTraceback (most recent call last):\n File \"/..././manag"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-14382",
+"queries": {
+"title": "django-admin startapp with trailing slash in directory name results in error",
+"q400": "django-admin startapp with trailing slash in directory name results in error\nDescription\n\t\nBash tab-completion appends trailing slashes to directory names. django-admin startapp name directory/ results in the error:\nCommandError: '' is not a valid app directory. Please make sure the directory is a valid identifier.\nThe error is caused by \u200bline 77 of django/core/management/templates.py by calling b"
+},
+"gold": [
+"django/core/management/templates.py"
+]
+},
+{
+"id": "django__django-14411",
+"queries": {
+"title": "Label for ReadOnlyPasswordHashWidget points to non-labelable element.",
+"q400": "Label for ReadOnlyPasswordHashWidget points to non-labelable element.\nDescription\n\t \n\t\t(last modified by David Sanders)\n\t \nIn the admin, the label element for the ReadOnlyPasswordHashWidget widget has a 'for' attribute which points to a non-labelable element, since the widget just renders text, not an input. There's no labelable element for the widget, so the label shouldn't have a 'for' attribute"
+},
+"gold": [
+"django/contrib/auth/forms.py"
+]
+},
+{
+"id": "django__django-14534",
+"queries": {
+"title": "BoundWidget.id_for_label ignores id set by ChoiceWidget.options",
+"q400": "BoundWidget.id_for_label ignores id set by ChoiceWidget.options\nDescription\n\t\nIf you look at the implementation of BoundField.subwidgets\nclass BoundField:\n\t...\n\tdef subwidgets(self):\n\t\tid_ = self.field.widget.attrs.get('id') or self.auto_id\n\t\tattrs = {'id': id_} if id_ else {}\n\t\tattrs = self.build_widget_attrs(attrs)\n\t\treturn [\n\t\t\tBoundWidget(self.field.widget, widget, self.form.renderer)\n\t\t\tfor w"
+},
+"gold": [
+"django/forms/boundfield.py"
+]
+},
+{
+"id": "django__django-14580",
+"queries": {
+"title": "Missing import statement in generated migration (NameError: name 'models' is not defined)",
+"q400": "Missing import statement in generated migration (NameError: name 'models' is not defined)\nDescription\n\t\nI found a bug in Django's latest release: 3.2.4. \nGiven the following contents of models.py:\nfrom django.db import models\nclass MyField(models.TextField):\n\tpass\nclass MyBaseModel(models.Model):\n\tclass Meta:\n\t\tabstract = True\nclass MyMixin:\n\tpass\nclass MyModel(MyMixin, MyBaseModel):\n\tname = MyFie"
+},
+"gold": [
+"django/db/migrations/serializer.py"
+]
+},
+{
+"id": "django__django-14608",
+"queries": {
+"title": "Add `nonform` CSS class for non form errors in FormSets",
+"q400": "Add `nonform` CSS class for non form errors in FormSets\nDescription\n\t \n\t\t(last modified by Ties Jan Hefting)\n\t \nForms add the nonfield CSS class for non field errors in ErrorList instances. This is documented in a section on \u200brendering form error messages. Similarly, in FormSets I'd expect to see the nonform CSS class added for non form errors. This would allow a custom ErrorList to make a distinc"
+},
+"gold": [
+"django/forms/formsets.py"
+]
+},
+{
+"id": "django__django-14667",
+"queries": {
+"title": "QuerySet.defer() doesn't clear deferred field when chaining with only().",
+"q400": "QuerySet.defer() doesn't clear deferred field when chaining with only().\nDescription\n\t\nConsidering a simple Company model with four fields: id, name, trade_number and country. If we evaluate a queryset containing a .defer() following a .only(), the generated sql query selects unexpected fields. For example: \nCompany.objects.only(\"name\").defer(\"name\")\nloads all the fields with the following query:\n"
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-14672",
+"queries": {
+"title": "Missing call `make_hashable` on `through_fields` in `ManyToManyRel`",
+"q400": "Missing call `make_hashable` on `through_fields` in `ManyToManyRel`\nDescription\n\t\nIn 3.2 identity property has been added to all ForeignObjectRel to make it possible to compare them. A hash is derived from said identity and it's possible because identity is a tuple. To make limit_choices_to hashable (one of this tuple elements), \u200bthere's a call to make_hashable.\nIt happens that through_fields can "
+},
+"gold": [
+"django/db/models/fields/reverse_related.py"
+]
+},
+{
+"id": "django__django-14730",
+"queries": {
+"title": "Prevent developers from defining a related_name on symmetrical ManyToManyFields",
+"q400": "Prevent developers from defining a related_name on symmetrical ManyToManyFields\nDescription\n\t\nIn ManyToManyField, if the symmetrical argument is passed, or if it's a self-referential ManyToMany relationship, the related field on the target model is not created. However, if a developer passes in the related_name not understanding this fact, they may be confused until they find the information about"
+},
+"gold": [
+"django/db/models/fields/related.py"
+]
+},
+{
+"id": "django__django-14752",
+"queries": {
+"title": "Refactor AutocompleteJsonView to support extra fields in autocomplete response",
+"q400": "Refactor AutocompleteJsonView to support extra fields in autocomplete response\nDescription\n\t \n\t\t(last modified by mrts)\n\t \nAdding data attributes to items in ordinary non-autocomplete foreign key fields that use forms.widgets.Select-based widgets is relatively easy. This enables powerful and dynamic admin site customizations where fields from related models are updated immediately when users chang"
+},
+"gold": [
+"django/contrib/admin/views/autocomplete.py"
+]
+},
+{
+"id": "django__django-14787",
+"queries": {
+"title": "method_decorator() should preserve wrapper assignments",
+"q400": "method_decorator() should preserve wrapper assignments\nDescription\n\t\nthe function that is passed to the decorator is a partial object and does not have any of the attributes expected from a function i.e. __name__, __module__ etc...\nconsider the following case\ndef logger(func):\n\t@wraps(func)\n\tdef inner(*args, **kwargs):\n\t\ttry:\n\t\t\tresult = func(*args, **kwargs)\n\t\texcept Exception as e:\n\t\t\tresult = s"
+},
+"gold": [
+"django/utils/decorators.py"
+]
+},
+{
+"id": "django__django-14855",
+"queries": {
+"title": "Wrong URL generated by get_admin_url for readonly field in custom Admin Site",
+"q400": "Wrong URL generated by get_admin_url for readonly field in custom Admin Site\nDescription\n\t\nWhen a model containing a ForeignKey field is viewed (or edited) in a custom Admin Site, and that ForeignKey field is listed in readonly_fields, the url generated for the link is /admin/... instead of /custom-admin/....\nThis appears to be caused by the following line in django.contrib.admin.helpers get_admin"
+},
+"gold": [
+"django/contrib/admin/helpers.py"
+]
+},
+{
+"id": "django__django-14915",
+"queries": {
+"title": "ModelChoiceIteratorValue is not hashable.",
+"q400": "ModelChoiceIteratorValue is not hashable.\nDescription\n\t\nRecently I migrated from Django 3.0 to Django 3.1. In my code, I add custom data-* attributes to the select widget options. After the upgrade some of those options broke. Error is {TypeError}unhashable type: 'ModelChoiceIteratorValue'.\nExample (this one breaks):\n\tdef create_option(self, name, value, label, selected, index, subindex=None, attr"
+},
+"gold": [
+"django/forms/models.py"
+]
+},
+{
+"id": "django__django-14997",
+"queries": {
+"title": "Remaking table with unique constraint crashes on SQLite.",
+"q400": "Remaking table with unique constraint crashes on SQLite.\nDescription\n\t\nIn Django 4.0a1, this model:\nclass Tag(models.Model):\n\tname = models.SlugField(help_text=\"The tag key.\")\n\tvalue = models.CharField(max_length=150, help_text=\"The tag value.\")\n\tclass Meta:\n\t\tordering = [\"name\", \"value\"]\n\t\tconstraints = [\n\t\t\tmodels.UniqueConstraint(\n\t\t\t\t\"name\",\n\t\t\t\t\"value\",\n\t\t\t\tname=\"unique_name_value\",\n\t\t\t)\n\t\t]\n"
+},
+"gold": [
+"django/db/backends/ddl_references.py"
+]
+},
+{
+"id": "django__django-14999",
+"queries": {
+"title": "RenameModel with db_table should be a noop.",
+"q400": "RenameModel with db_table should be a noop.\nDescription\n\t\nA RenameModel operation that already has db_table defined must be a noop.\nIn Postgres, it drops and recreates foreign key constraints. In sqlite it recreates the table (as expected for a table renaming).\n"
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"id": "django__django-15061",
+"queries": {
+"title": "Remove \"for = ...\" from MultiWidget's <label>.",
+"q400": "Remove \"for = ...\" from MultiWidget's <label>.\nDescription\n\t\nThe instance from Raw MultiWidget class generate id_for_label like f'{id_}0'\nIt has not sense.\nFor example ChoiceWidget has self.add_id_index and I can decide it myself, how I will see label_id - with or without index.\nI think, it is better to remove completely id_for_label method from MultiWidget Class.\n"
+},
+"gold": [
+"django/forms/widgets.py"
+]
+},
+{
+"id": "django__django-15202",
+"queries": {
+"title": "URLField throws ValueError instead of ValidationError on clean",
+"q400": "URLField throws ValueError instead of ValidationError on clean\nDescription\n\t\nforms.URLField( ).clean('////]@N.AN')\nresults in:\n\tValueError: Invalid IPv6 URL\n\tTraceback (most recent call last):\n\t File \"basic_fuzzer.py\", line 22, in TestOneInput\n\t File \"fuzzers.py\", line 350, in test_forms_URLField\n\t File \"django/forms/fields.py\", line 151, in clean\n\t File \"django/forms/fields.py\", line 136, in run_"
+},
+"gold": [
+"django/core/validators.py"
+]
+},
+{
+"id": "django__django-15213",
+"queries": {
+"title": "ExpressionWrapper for ~Q(pk__in=[]) crashes.",
+"q400": "ExpressionWrapper for ~Q(pk__in=[]) crashes.\nDescription\n\t \n\t\t(last modified by Stefan Brand)\n\t \nProblem Description\nI'm reducing some Q objects (similar to what is described in ticket:32554. Everything is fine for the case where the result is ExpressionWrapper(Q(pk__in=[])). However, when I reduce to ExpressionWrapper(~Q(pk__in=[])) the query breaks.\nSymptoms\nWorking for ExpressionWrapper(Q(pk__i"
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+]
+},
+{
+"id": "django__django-15252",
+"queries": {
+"title": "MigrationRecorder does not obey db_router allow_migrate rules",
+"q400": "MigrationRecorder does not obey db_router allow_migrate rules\nDescription\n\t\nHi,\nWe have a multi-db setup. We have one connection that is for the django project, and several connections that talk to other dbs for information (ie models with managed = False). Django should only create tables in the first connection, never in any of the other connections. We have a simple router that does the followi"
+},
+"gold": [
+"django/db/migrations/executor.py"
+]
+},
+{
+"id": "django__django-15320",
+"queries": {
+"title": "Subquery.as_sql() generates invalid SQL.",
+"q400": "Subquery.as_sql() generates invalid SQL.\nDescription\n\t \n\t\t(last modified by M1ha Shvn)\n\t \nSince \u200bthis commit Subquery.as_sql(...) method returns incorrect SQL removing first and last symbols instead of absent breakets. Adding Subquery().query.subquery = True attribute fixes the problem. From my point of view, it should be set in Subquery constructor.\nfrom django.db import connection\nfrom apps.mode"
+},
+"gold": [
+"django/db/models/expressions.py"
+]
+},
+{
+"id": "django__django-15347",
+"queries": {
+"title": "Messages framework incorrectly serializes/deserializes extra_tags when it's an empty string",
+"q400": "Messages framework incorrectly serializes/deserializes extra_tags when it's an empty string\nDescription\n\t\nWhen a message is serialised and then deserialised with any of the built in storage backends, then extra_tags==\"\" is converted to extra_tags==None. This is because MessageEncoder checks for the truthyness of extra_tags rather than checking it is not None.\nTo replicate this bug\n>>> from django."
+},
+"gold": [
+"django/contrib/messages/storage/cookie.py"
+]
+},
+{
+"id": "django__django-15388",
+"queries": {
+"title": "Dev Server fails to restart after adding BASE_DIR to TEMPLATES[0]['DIRS'] in settings",
+"q400": "Dev Server fails to restart after adding BASE_DIR to TEMPLATES[0]['DIRS'] in settings\nDescription\n\t\nRepro steps:\n$ pip install -U django\n$ django-admin startproject <name>\nOpen settings.py, copy the BASE_DIR variable from line 16 and paste it into the empty DIRS list on line 57\n$ ./manage.py runserver\nBack in your IDE, save a file and watch the dev server *NOT* restart.\nBack in settings.py, remove"
+},
+"gold": [
+"django/template/autoreload.py"
+]
+},
+{
+"id": "django__django-15400",
+"queries": {
+"title": "SimpleLazyObject doesn't implement __radd__",
+"q400": "SimpleLazyObject doesn't implement __radd__\nDescription\n\t\nTechnically, there's a whole bunch of magic methods it doesn't implement, compared to a complete proxy implementation, like that of wrapt.ObjectProxy, but __radd__ being missing is the one that's biting me at the moment.\nAs far as I can tell, the implementation can't just be\n__radd__ = new_method_proxy(operator.radd)\nbecause that doesn't ex"
+},
+"gold": [
+"django/utils/functional.py"
+]
+},
+{
+"id": "django__django-15498",
+"queries": {
+"title": "Fix handling empty string for If-Modified-Since header",
+"q400": "Fix handling empty string for If-Modified-Since header\nDescription\n\t\nEmpty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3.\nFix handling empty string for If-Modified-Since header\nDescription\n\t\nEmpty string used to be ignored for If-Modified-Since header, but now raises exception since d6aff369ad3.\n"
+},
+"gold": [
+"django/views/static.py"
+]
+},
+{
+"id": "django__django-15695",
+"queries": {
+"title": "RenameIndex() crashes when unnamed index is moving backward and forward.",
+"q400": "RenameIndex() crashes when unnamed index is moving backward and forward.\nDescription\n\t\nRenameIndex() should restore the old auto-generated name when an unnamed index for unique_together is moving backward. Now re-applying RenameIndex() crashes. For example:\ntests/migrations/test_operations.py\ndiff --git a/tests/migrations/test_operations.py b/tests/migrations/test_operations.py\nindex cfd28b1b39..c"
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"id": "django__django-15738",
+"queries": {
+"title": "Models migration with change field foreign to many and deleting unique together.",
+"q400": "Models migration with change field foreign to many and deleting unique together.\nDescription\n\t \n\t\t(last modified by Simon Charette)\n\t \nI have models like\nclass Authors(models.Model):\n\tproject_data_set = models.ForeignKey(\n\t\tProjectDataSet,\n\t\ton_delete=models.PROTECT\n\t)\n\tstate = models.IntegerField()\n\tstart_date = models.DateField()\n\tclass Meta:\n\t\t unique_together = (('project_data_set', 'state', '"
+},
+"gold": [
+"django/db/migrations/autodetector.py"
+]
+},
+{
+"id": "django__django-15781",
+"queries": {
+"title": "Customizable management command formatters.",
+"q400": "Customizable management command formatters.\nDescription\n\t\nWith code like:\nclass Command(BaseCommand):\n\thelp = '''\n\tImport a contract from tzkt.\n\tExample usage:\n\t\t./manage.py tzkt_import 'Tezos Mainnet' KT1HTDtMBRCKoNHjfWEEvXneGQpCfPAt6BRe\n\t'''\nHelp output is:\n$ ./manage.py help tzkt_import\nusage: manage.py tzkt_import [-h] [--api API] [--version] [-v {0,1,2,3}] [--settings SETTINGS]\n\t\t\t\t\t\t\t [--pyt"
+},
+"gold": [
+"django/core/management/base.py"
+]
+},
+{
+"id": "django__django-15789",
+"queries": {
+"title": "Add an encoder parameter to django.utils.html.json_script().",
+"q400": "Add an encoder parameter to django.utils.html.json_script().\nDescription\n\t\nI have a use case where I want to customize the JSON encoding of some values to output to the template layer. It looks like django.utils.html.json_script is a good utility for that, however the JSON encoder is hardcoded to DjangoJSONEncoder. I think it would be nice to be able to pass a custom encoder class.\nBy the way, dja"
+},
+"gold": [
+"django/utils/html.py"
+]
+},
+{
+"id": "django__django-15790",
+"queries": {
+"title": "check_for_template_tags_with_the_same_name with libraries in TEMPLATES",
+"q400": "check_for_template_tags_with_the_same_name with libraries in TEMPLATES\nDescription\n\t\nI didn't explore this thoroughly, but I think there might be an issue with the check_for_template_tags_with_the_same_name when you add a template tag library into TEMPLATES['OPTIONS']['librairies'].\nI'm getting an error like: \n(templates.E003) 'my_tags' is used for multiple template tag modules: 'someapp.templatet"
+},
+"gold": [
+"django/core/checks/templates.py"
+]
+},
+{
+"id": "django__django-15814",
+"queries": {
+"title": "QuerySet.only() after select_related() crash on proxy models.",
+"q400": "QuerySet.only() after select_related() crash on proxy models.\nDescription\n\t\nWhen I optimize a query using select_related() and only() methods from the proxy model I encounter an error:\nWindows 10; Python 3.10; Django 4.0.5\nTraceback (most recent call last):\n File \"D:\\study\\django_college\\manage.py\", line 22, in <module>\n\tmain()\n File \"D:\\study\\django_college\\manage.py\", line 18, in main\n\texecute_f"
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-15819",
+"queries": {
+"title": "inspectdb should generate related_name on same relation links.",
+"q400": "inspectdb should generate related_name on same relation links.\nDescription\n\t\nHi!\nAfter models generation with inspectdb command we have issue with relations to same enities\nmodule.Model.field1: (fields.E304) Reverse accessor for 'module.Model.field1' clashes with reverse accessor for 'module.Model.field2'.\nHINT: Add or change a related_name argument to the definition for 'module.Model.field1' or '"
+},
+"gold": [
+"django/core/management/commands/inspectdb.py"
+]
+},
+{
+"id": "django__django-15851",
+"queries": {
+"title": "dbshell additional parameters should be passed before dbname on PostgreSQL.",
+"q400": "dbshell additional parameters should be passed before dbname on PostgreSQL.\nDescription\n\t\npsql expects all options to proceed the database name, if provided. So, if doing something like `./manage.py dbshell -- -c \"select * from some_table;\" one will get this:\n$ ./manage.py dbshell -- -c \"select * from some_table;\"\npsql: warning: extra command-line argument \"-c\" ignored\npsql: warning: extra command"
+},
+"gold": [
+"django/db/backends/postgresql/client.py"
+]
+},
+{
+"id": "django__django-15902",
+"queries": {
+"title": "\"default.html\" deprecation warning raised for ManagementForm's",
+"q400": "\"default.html\" deprecation warning raised for ManagementForm's\nDescription\n\t\nI have a project where I never render forms with the {{ form }} expression. However, I'm still getting the new template deprecation warning because of the formset management form production, during which the template used is insignificant (only hidden inputs are produced).\nIs it worth special-casing this and avoid produci"
+},
+"gold": [
+"django/forms/formsets.py"
+]
+},
+{
+"id": "django__django-15996",
+"queries": {
+"title": "Support for serialization of combination of Enum flags.",
+"q400": "Support for serialization of combination of Enum flags.\nDescription\n\t \n\t\t(last modified by Willem Van Onsem)\n\t \nIf we work with a field:\nregex_flags = models.IntegerField(default=re.UNICODE | re.IGNORECASE)\nThis is turned into a migration with:\ndefault=re.RegexFlag[None]\nThis is due to the fact that the EnumSerializer aims to work with the .name of the item, but if there is no single item for the "
+},
+"gold": [
+"django/db/migrations/serializer.py"
+]
+},
+{
+"id": "django__django-16041",
+"queries": {
+"title": "Rendering empty_form crashes when empty_permitted is passed to form_kwargs",
+"q400": "Rendering empty_form crashes when empty_permitted is passed to form_kwargs\nDescription\n\t\nIssue\nWhen explicitly setting form_kwargs = {'empty_permitted':True} or form_kwargs = {'empty_permitted':False} , a KeyError occurs when rendering a template that uses a formset's empty_form.\nExpected Behavior\nempty_permitted is ignored for formset.empty_form since empty_permitted is irrelevant for empty_form,"
+},
+"gold": [
+"django/forms/formsets.py"
+]
+},
+{
+"id": "django__django-16046",
+"queries": {
+"title": "Fix numberformat.py \"string index out of range\" when null",
+"q400": "Fix numberformat.py \"string index out of range\" when null\nDescription\n\t\nWhen:\nif str_number[0] == \"-\"\nencounters a number field that's null when formatting for the admin list_display this causes an \nIndexError: string index out of range\nI can attach the proposed fix here, or open a pull request on GitHub if you like?\n"
+},
+"gold": [
+"django/utils/numberformat.py"
+]
+},
+{
+"id": "django__django-16139",
+"queries": {
+"title": "Accessing UserAdmin via to_field leads to link to PasswordResetForm being broken (404)",
+"q400": "Accessing UserAdmin via to_field leads to link to PasswordResetForm being broken (404)\nDescription\n\t \n\t\t(last modified by Simon Kern)\n\t \nAccessing the UserAdmin via another model's Admin that has a reference to User (with to_field set, e.g., to_field=\"uuid\") leads to the UserAdmin being accessed via an url that looks similar to this one:\n.../user/22222222-3333-4444-5555-666677778888/change/?_to_fi"
+},
+"gold": [
+"django/contrib/auth/forms.py"
+]
+},
+{
+"id": "django__django-16229",
+"queries": {
+"title": "ModelForm fields with callable defaults don't correctly propagate default values",
+"q400": "ModelForm fields with callable defaults don't correctly propagate default values\nDescription\n\t\nWhen creating an object via the admin, if an inline contains an ArrayField in error, the validation will be bypassed (and the inline dismissed) if we submit the form a second time (without modification).\ngo to /admin/my_app/thing/add/\ntype anything in plop\nsubmit -> it shows an error on the inline\nsubmit"
+},
+"gold": [
+"django/forms/boundfield.py"
+]
+},
+{
+"id": "django__django-16255",
+"queries": {
+"title": "Sitemaps without items raise ValueError on callable lastmod.",
+"q400": "Sitemaps without items raise ValueError on callable lastmod.\nDescription\n\t\nWhen sitemap contains not items, but supports returning lastmod for an item, it fails with a ValueError:\nTraceback (most recent call last):\n File \"/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py\", line 55, in inner\n\tresponse = get_response(request)\n File \"/usr/local/lib/python3.10/site-packages/dja"
+},
+"gold": [
+"django/contrib/sitemaps/__init__.py"
+]
+},
+{
+"id": "django__django-16379",
+"queries": {
+"title": "FileBasedCache has_key is susceptible to race conditions",
+"q400": "FileBasedCache has_key is susceptible to race conditions\nDescription\n\t \n\t\t(last modified by Marti Raudsepp)\n\t \nI received the exception from Django's cache framework:\nFileNotFoundError: [Errno 2] No such file or directory: '/app/var/cache/d729e4cf4ba88cba5a0f48e0396ec48a.djcache'\n[...]\n File \"django/core/cache/backends/base.py\", line 229, in get_or_set\n\tself.add(key, default, timeout=timeout, vers"
+},
+"gold": [
+"django/core/cache/backends/filebased.py"
+]
+},
+{
+"id": "django__django-16400",
+"queries": {
+"title": "migrate management command does not respect database parameter when adding Permissions.",
+"q400": "migrate management command does not respect database parameter when adding Permissions.\nDescription\n\t \n\t\t(last modified by Vasanth)\n\t \nWhen invoking migrate with a database parameter, the migration runs successfully. However, there seems to be a DB read request that runs after the migration. This call does not respect the db param and invokes the db router .\nWhen naming the db as a parameter, all "
+},
+"gold": [
+"django/contrib/auth/management/__init__.py"
+]
+},
+{
+"id": "django__django-16408",
+"queries": {
+"title": "Multi-level FilteredRelation with select_related() may set wrong related object.",
+"q400": "Multi-level FilteredRelation with select_related() may set wrong related object.\nDescription\n\t\ntest case:\n# add to known_related_objects.tests.ExistingRelatedInstancesTests\n\tdef test_wrong_select_related(self):\n\t\twith self.assertNumQueries(3):\n\t\t\tp = list(PoolStyle.objects.annotate(\n\t\t\t\ttournament_pool=FilteredRelation('pool__tournament__pool'),\n\t\t\t\t).select_related('tournament_pool'))\n\t\t\tself.ass"
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+]
+},
+{
+"id": "django__django-16527",
+"queries": {
+"title": "\"show_save_as_new\" in admin can add without this permission",
+"q400": "\"show_save_as_new\" in admin can add without this permission\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nAt \"django/contrib/admin/templatetags/admin_modify.py\" file, line 102, I think you must put one more verification for this tag: \"and has_add_permission\", because \"save_as_new\" is a add modification.\nI rewrite this for my project:\n\t\t\t\"show_save_as_new\": not is_popup\n\t\t\tand has_add_per"
+},
+"gold": [
+"django/contrib/admin/templatetags/admin_modify.py"
+]
+},
+{
+"id": "django__django-16595",
+"queries": {
+"title": "Migration optimizer does not reduce multiple AlterField",
+"q400": "Migration optimizer does not reduce multiple AlterField\nDescription\n\t\nLet's consider the following operations: \noperations = [\n\tmigrations.AddField(\n\t\tmodel_name=\"book\",\n\t\tname=\"title\",\n\t\tfield=models.CharField(max_length=256, null=True),\n\t),\n\tmigrations.AlterField(\n\t\tmodel_name=\"book\",\n\t\tname=\"title\",\n\t\tfield=models.CharField(max_length=128, null=True),\n\t),\n\tmigrations.AlterField(\n\t\tmodel_name=\"b"
+},
+"gold": [
+"django/db/migrations/operations/fields.py"
+]
+},
+{
+"id": "django__django-16816",
+"queries": {
+"title": "Error E108 does not cover some cases",
+"q400": "Error E108 does not cover some cases\nDescription\n\t \n\t\t(last modified by Baha Sdtbekov)\n\t \nI have two models, Question and Choice. And if I write list_display = [\"choice\"] in QuestionAdmin, I get no errors.\nBut when I visit /admin/polls/question/, the following trace is returned:\nInternal Server Error: /admin/polls/question/\nTraceback (most recent call last):\n File \"/some/path/django/contrib/admin/"
+},
+"gold": [
+"django/contrib/admin/checks.py"
+]
+},
+{
+"id": "django__django-16820",
+"queries": {
+"title": "Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.",
+"q400": "Squashing migrations with Meta.index_together -> indexes transition should remove deprecation warnings.\nDescription\n\t\nSquashing migrations with Meta.index_together -> Meta.indexes transition should remove deprecation warnings. As far as I'm aware, it's a 4.2 release blocker because you cannot get rid of the index_together deprecation warnings without rewriting migrations, see comment.\n"
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+]
+},
+{
+"id": "django__django-16873",
+"queries": {
+"title": "Template filter `join` should not escape the joining string if `autoescape` is `off`",
+"q400": "Template filter `join` should not escape the joining string if `autoescape` is `off`\nDescription\n\t\nConsider the following template code snippet:\n{% autoescape off %}\n{{ some_list|join:some_var }}\n{% endautoescape %}\nin this case, the items inside some_list will not be escaped (matching the expected behavior) but some_var will forcibly be escaped. From the docs for autoescape or join I don't think "
+},
+"gold": [
+"django/template/defaultfilters.py"
+]
+},
+{
+"id": "django__django-16910",
+"queries": {
+"title": "QuerySet.only() doesn't work with select_related() on a reverse OneToOneField relation.",
+"q400": "QuerySet.only() doesn't work with select_related() on a reverse OneToOneField relation.\nDescription\n\t\nOn Django 4.2 calling only() with select_related() on a query using the reverse lookup for a OneToOne relation does not generate the correct query.\nAll the fields from the related model are still included in the generated SQL.\nSample models:\nclass Main(models.Model):\n\tmain_field_1 = models.CharFie"
+},
+"gold": [
+"django/db/models/sql/query.py"
+]
+},
+{
+"id": "django__django-17051",
+"queries": {
+"title": "Allow returning IDs in QuerySet.bulk_create() when updating conflicts.",
+"q400": "Allow returning IDs in QuerySet.bulk_create() when updating conflicts.\nDescription\n\t\nCurrently, when using bulk_create with a conflict handling flag turned on (e.g. ignore_conflicts or update_conflicts), the primary keys are not set in the returned queryset, as documented in bulk_create.\nWhile I understand using ignore_conflicts can lead to PostgreSQL not returning the IDs when a row is ignored (s"
+},
+"gold": [
+"django/db/models/query.py"
+]
+},
+{
+"id": "django__django-17087",
+"queries": {
+"title": "Class methods from nested classes cannot be used as Field.default.",
+"q400": "Class methods from nested classes cannot be used as Field.default.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nGiven the following model:\n \nclass Profile(models.Model):\n\tclass Capability(models.TextChoices):\n\t\tBASIC = (\"BASIC\", \"Basic\")\n\t\tPROFESSIONAL = (\"PROFESSIONAL\", \"Professional\")\n\t\t\n\t\t@classmethod\n\t\tdef default(cls) -> list[str]:\n\t\t\treturn [cls.BASIC]\n\tcapabilities = ArrayField(\n"
+},
+"gold": [
+"django/db/migrations/serializer.py"
+]
+}
+]

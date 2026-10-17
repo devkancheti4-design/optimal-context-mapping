@@ -1,0 +1,232 @@
+[
+{
+"id": "matplotlib__matplotlib-18869",
+"queries": {
+"title": "Add easily comparable version info to toplevel",
+"q400": "Add easily comparable version info to toplevel\n<!--\r\nWelcome! Thanks for thinking of a way to improve Matplotlib.\r\n\r\n\r\nBefore creating a new feature request please search the issues for relevant feature requests.\r\n-->\r\n\r\n### Problem\r\n\r\nCurrently matplotlib only exposes `__version__`.  For quick version checks, exposing either a `version_info` tuple (which can be compared with other tuples) or a `L"
+},
+"gold": [
+"lib/matplotlib/__init__.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-22711",
+"queries": {
+"title": "[Bug]: cannot give init value for RangeSlider widget",
+"q400": "[Bug]: cannot give init value for RangeSlider widget\n### Bug summary\r\n\r\nI think `xy[4] = .25, val[0]` should be commented in /matplotlib/widgets. py\", line 915, in set_val\r\nas it prevents to initialized value for RangeSlider\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport numpy as np\r\nimport matplotlib.pyplot as plt\r\nfrom matplotlib.widgets import RangeSlider\r\n\r\n# generate a fake image\r\nnp.rando"
+},
+"gold": [
+"lib/matplotlib/widgets.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-22835",
+"queries": {
+"title": "[Bug]: scalar mappable format_cursor_data crashes on BoundarNorm",
+"q400": "[Bug]: scalar mappable format_cursor_data crashes on BoundarNorm\n### Bug summary\r\n\r\nIn 3.5.0 if you do:\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nimport numpy as np\r\nimport matplotlib as mpl\r\n\r\nfig, ax = plt.subplots()\r\nnorm = mpl.colors.BoundaryNorm(np.linspace(-4, 4, 5), 256)\r\nX = np.random.randn(10, 10)\r\npc = ax.imshow(X, cmap='RdBu_r', norm=norm)\r\n```\r\n\r\nand mouse over the image, it crash"
+},
+"gold": [
+"lib/matplotlib/artist.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23299",
+"queries": {
+"title": "[Bug]: get_backend() clears figures from Gcf.figs if they were created under rc_context",
+"q400": "[Bug]: get_backend() clears figures from Gcf.figs if they were created under rc_context\n### Bug summary\r\n\r\ncalling `matplotlib.get_backend()` removes all figures from `Gcf` if the *first* figure in `Gcf.figs` was created in an `rc_context`.\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nfrom matplotlib import get_backend, rc_context\r\n\r\n# fig1 = plt.figure()  # <- UNCOM"
+},
+"gold": [
+"lib/matplotlib/__init__.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23314",
+"queries": {
+"title": "[Bug]: set_visible() not working for 3d projection",
+"q400": "[Bug]: set_visible() not working for 3d projection \n### Bug summary\r\n\r\nin the subplot projection=\"3d\" the set_visible function doesn't work even if the value is set to False\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nfrom matplotlib.gridspec import GridSpec\r\n\r\nfig, (ax1, ax2) = plt.subplots(1, 2, subplot_kw={'projection': '3d'})\r\nax1.scatter(1,1,1)\r\nax2.scatter(1,1"
+},
+"gold": [
+"lib/mpl_toolkits/mplot3d/axes3d.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23476",
+"queries": {
+"title": "[Bug]: DPI of a figure is doubled after unpickling on M1 Mac",
+"q400": "[Bug]: DPI of a figure is doubled after unpickling on M1 Mac\n### Bug summary\r\n\r\nWhen a figure is unpickled, it's dpi is doubled. This behaviour happens every time and if done in a loop it can cause an `OverflowError`.\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport numpy as np\r\nimport matplotlib\r\nimport matplotlib.pyplot as plt\r\nimport pickle\r\nimport platform\r\n\r\nprint(matplotlib.get_backend())\r\n"
+},
+"gold": [
+"lib/matplotlib/figure.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23562",
+"queries": {
+"title": "'Poly3DCollection' object has no attribute '_facecolors2d'",
+"q400": "'Poly3DCollection' object has no attribute '_facecolors2d'\nThe following minimal example demonstrates the issue:\n\n```\nimport numpy as np\nimport matplotlib.tri as mtri\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\ny,x = np.ogrid[1:10:100j, 1:10:100j]\nz2 = np.cos(x)**3 - np.sin(y)**2\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nr = ax.plot_surface(x,y,z2, "
+},
+"gold": [
+"lib/mpl_toolkits/mplot3d/art3d.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23563",
+"queries": {
+"title": "[Bug]: 'Line3D' object has no attribute '_verts3d'",
+"q400": "[Bug]: 'Line3D' object has no attribute '_verts3d'\n### Bug summary\n\nI use matplotlib 3D to visualize some lines in 3D. When I first run the following code, the code can run right. But, if I give `x_s_0[n]` a numpy array, it will report the error 'input operand has more dimensions than allowed by the axis remapping'. The point is when next I give  `x_s_0[n]` and other variables an int number, the A"
+},
+"gold": [
+"lib/mpl_toolkits/mplot3d/art3d.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23913",
+"queries": {
+"title": "legend draggable as keyword",
+"q400": "legend draggable as keyword\n<!--To help us understand and resolve your issue, please fill out the form to the best of your ability.-->\r\n<!--You can feel free to delete the sections that do not apply.-->\r\n\r\n### Feature request\r\n\r\n**There is not keyword to make legend draggable at creation**\r\n\r\n<!--A short 1-2 sentences that succinctly describes the bug-->\r\n\r\nIs there a code reason why one can not a"
+},
+"gold": [
+"lib/matplotlib/legend.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23964",
+"queries": {
+"title": "[Bug]: Text label with empty line causes a \"TypeError: cannot unpack non-iterable NoneType object\" in PostScript backend",
+"q400": "[Bug]: Text label with empty line causes a \"TypeError: cannot unpack non-iterable NoneType object\" in PostScript backend\n### Bug summary\n\nWhen saving a figure with the PostScript backend, a\r\n> TypeError: cannot unpack non-iterable NoneType object\r\n\r\nhappens if the figure contains a multi-line text label with an empty line (see example).\n\n### Code for reproduction\n\n```python\nfrom matplotlib.figure "
+},
+"gold": [
+"lib/matplotlib/backends/backend_ps.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-23987",
+"queries": {
+"title": "[Bug]: Constrained layout UserWarning even when False",
+"q400": "[Bug]: Constrained layout UserWarning even when False\n### Bug summary\r\n\r\nWhen using layout settings such as `plt.subplots_adjust` or `bbox_inches='tight`, a UserWarning is produced due to incompatibility with constrained_layout, even if constrained_layout = False. This was not the case in previous versions.\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nimport numpy as"
+},
+"gold": [
+"lib/matplotlib/figure.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-24149",
+"queries": {
+"title": "[Bug]: ax.bar raises for all-nan data on matplotlib 3.6.1",
+"q400": "[Bug]: ax.bar raises for all-nan data on matplotlib 3.6.1 \n### Bug summary\n\n`ax.bar` raises an exception in 3.6.1 when passed only nan data. This irrevocably breaks seaborn's histogram function (which draws and then removes a \"phantom\" bar to trip the color cycle).\n\n### Code for reproduction\n\n```python\nimport numpy as np\r\nimport matplotlib.pyplot as plt\r\nf, ax = plt.subplots()\r\nax.bar([np.nan], [n"
+},
+"gold": [
+"lib/matplotlib/axes/_axes.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-24265",
+"queries": {
+"title": "[Bug]: Setting matplotlib.pyplot.style.library['seaborn-colorblind'] result in key error on matplotlib v3.6.1",
+"q400": "[Bug]: Setting matplotlib.pyplot.style.library['seaborn-colorblind'] result in key error on matplotlib v3.6.1\n### Bug summary\n\nI have code that executes:\r\n```\r\nimport matplotlib.pyplot as plt\r\nthe_rc = plt.style.library[\"seaborn-colorblind\"]\r\n```\r\n\r\nUsing version 3.4.3 of matplotlib, this works fine. I recently installed my code on a machine with matplotlib version 3.6.1 and upon importing my code"
+},
+"gold": [
+"lib/matplotlib/style/core.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-24334",
+"queries": {
+"title": "[ENH]: Axes.set_xticks/Axis.set_ticks only validates kwargs if ticklabels are set, but they should",
+"q400": "[ENH]: Axes.set_xticks/Axis.set_ticks only validates kwargs if ticklabels are set, but they should\n### Problem\n\nPer the doc of `Axis.set_ticks`:\r\n```\r\n        **kwargs\r\n            `.Text` properties for the labels. These take effect only if you\r\n            pass *labels*. In other cases, please use `~.Axes.tick_params`.\r\n```\r\nThis means that in e.g. `ax.set_xticks([0, 1], xticklabels=[\"a\", \"b\"])`"
+},
+"gold": [
+"lib/matplotlib/axis.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-24970",
+"queries": {
+"title": "[Bug]: NumPy 1.24 deprecation warnings",
+"q400": "[Bug]: NumPy 1.24 deprecation warnings\n### Bug summary\r\n\r\nStarting NumPy 1.24 I observe several deprecation warnings.\r\n\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nimport numpy as np\r\n\r\nplt.get_cmap()(np.empty((0, ), dtype=np.uint8))\r\n```\r\n\r\n\r\n### Actual outcome\r\n\r\n```\r\n/usr/lib/python3.10/site-packages/matplotlib/colors.py:730: DeprecationWarning: NumPy will stop a"
+},
+"gold": [
+"lib/matplotlib/colors.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-25079",
+"queries": {
+"title": "[Bug]: Setting norm with existing colorbar fails with 3.6.3",
+"q400": "[Bug]: Setting norm with existing colorbar fails with 3.6.3\n### Bug summary\r\n\r\nSetting the norm to a `LogNorm` after the colorbar has been created (e.g. in interactive code) fails with an `Invalid vmin` value in matplotlib 3.6.3.\r\n\r\nThe same code worked in previous matplotlib versions.\r\n\r\nNot that vmin and vmax are explicitly set to values valid for `LogNorm` and no negative values (or values == 0"
+},
+"gold": [
+"lib/matplotlib/colors.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-25311",
+"queries": {
+"title": "[Bug]: Unable to pickle figure with draggable legend",
+"q400": "[Bug]: Unable to pickle figure with draggable legend\n### Bug summary\r\n\r\nI am unable to pickle figure with draggable legend. Same error comes for draggable annotations.\r\n\r\n\r\n\r\n\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nimport pickle\r\n\r\nfig = plt.figure()\r\nax = fig.add_subplot(111)\r\n\r\ntime=[0,1,2,3,4]\r\nspeed=[40,43,45,47,48]\r\n\r\nax.plot(time,speed,label=\"speed\")\r\n\r\nl"
+},
+"gold": [
+"lib/matplotlib/offsetbox.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-25332",
+"queries": {
+"title": "[Bug]: Unable to pickle figure with aligned labels",
+"q400": "[Bug]: Unable to pickle figure with aligned labels\n### Bug summary\r\n\r\n Unable to pickle figure after calling `align_labels()`\r\n\r\n### Code for reproduction\r\n\r\n```python\r\nimport matplotlib.pyplot as plt\r\nimport pickle\r\n\r\nfig = plt.figure()\r\nax1 = fig.add_subplot(211)\r\nax2 = fig.add_subplot(212)\r\ntime=[0,1,2,3,4]\r\nspeed=[40000,4300,4500,4700,4800]\r\nacc=[10,11,12,13,14]\r\nax1.plot(time,speed)\r\nax1.set_"
+},
+"gold": [
+"lib/matplotlib/cbook.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-25433",
+"queries": {
+"title": "[Bug]: using clf and pyplot.draw in range slider on_changed callback blocks input to widgets",
+"q400": "[Bug]: using clf and pyplot.draw in range slider on_changed callback blocks input to widgets\n### Bug summary\n\nWhen using clear figure, adding new widgets and then redrawing the current figure in the on_changed callback of a range slider the inputs to all the widgets in the figure are blocked. When doing the same in the button callback on_clicked, everything works fine.\n\n### Code for reproduction\n\n"
+},
+"gold": [
+"lib/matplotlib/figure.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-25442",
+"queries": {
+"title": "[Bug]: Attribute Error combining matplotlib 3.7.1 and mplcursor on data selection",
+"q400": "[Bug]: Attribute Error combining matplotlib 3.7.1 and mplcursor on data selection\n### Bug summary\r\n\r\nIf you combine mplcursor and matplotlib 3.7.1, you'll get an `AttributeError: 'NoneType' object has no attribute 'canvas'` after clicking a few data points. Henceforth, selecting a new data point will trigger the same traceback. Otherwise, it works fine. \r\n\r\n### Code for reproduction\r\n\r\n```python\r\n"
+},
+"gold": [
+"lib/matplotlib/offsetbox.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-25498",
+"queries": {
+"title": "Update colorbar after changing mappable.norm",
+"q400": "Update colorbar after changing mappable.norm\nHow can I update a colorbar, after I changed the norm instance of the colorbar?\n\n`colorbar.update_normal(mappable)` has now effect and `colorbar.update_bruteforce(mappable)` throws a `ZeroDivsionError`-Exception.\n\nConsider this example:\n\n``` python\nimport matplotlib.pyplot as plt\nfrom matplotlib.colors import LogNorm\nimport numpy as np\n\nimg = 10**np.ran"
+},
+"gold": [
+"lib/matplotlib/colorbar.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-26011",
+"queries": {
+"title": "xlim_changed not emitted on shared axis",
+"q400": "xlim_changed not emitted on shared axis\n<!--To help us understand and resolve your issue, please fill out the form to the best of your ability.-->\r\n<!--You can feel free to delete the sections that do not apply.-->\r\n\r\n### Bug report\r\n\r\n**Bug summary**\r\n\r\nWhen an axis is shared with another its registered \"xlim_changed\" callbacks does not get called when the change is induced by a shared axis (via "
+},
+"gold": [
+"lib/matplotlib/axis.py"
+]
+},
+{
+"id": "matplotlib__matplotlib-26020",
+"queries": {
+"title": "Error creating AxisGrid with non-default axis class",
+"q400": "Error creating AxisGrid with non-default axis class\n<!--To help us understand and resolve your issue, please fill out the form to the best of your ability.-->\r\n<!--You can feel free to delete the sections that do not apply.-->\r\n\r\n### Bug report\r\n\r\n**Bug summary**\r\n\r\nCreating `AxesGrid` using cartopy `GeoAxes` as `axis_class` raises `TypeError: 'method' object is not subscriptable`. Seems to be due"
+},
+"gold": [
+"lib/mpl_toolkits/axes_grid1/axes_grid.py"
+]
+}
+]

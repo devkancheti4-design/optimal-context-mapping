@@ -1,0 +1,3321 @@
+[
+{
+"id": 4876,
+"queries": {
+"q": "Where is the code behind this change: Fixed adding nullable unique fields on SQLite.",
+"raw": "Fixed adding nullable unique fields on SQLite."
+},
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+],
+"date": "2022-01-04"
+},
+{
+"id": 4877,
+"queries": {
+"q": "Where is the code behind this change: Avoided creation of MaxLengthValidator(None) when resolving Value.output_field for strings.",
+"raw": "Avoided creation of MaxLengthValidator(None) when resolving Value.output_field for strings."
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+],
+"date": "2022-01-03"
+},
+{
+"id": 4878,
+"queries": {
+"q": "Where is the code behind this change: Optimized multiple AlterFooTogether operations.",
+"raw": "Optimized multiple AlterFooTogether operations."
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"date": "2022-01-04"
+},
+{
+"id": 4879,
+"queries": {
+"q": "Where is the code behind this change: Corrected handling prefetched nested reverse relationships.",
+"raw": "Corrected handling prefetched nested reverse relationships."
+},
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-01-04"
+},
+{
+"id": 4880,
+"queries": {
+"q": "Where is the code behind this change: Added support for msg_prefix and count arguments to assertTemplateUsed()/assertTemplateNotUsed() used as context managers.",
+"raw": "Added support for msg_prefix and count arguments to assertTemplateUsed()/assertTemplateNotUsed() used as context managers."
+},
+"gold": [
+"django/test/testcases.py"
+],
+"date": "2022-01-01"
+},
+{
+"id": 4881,
+"queries": {
+"q": "Where is the code behind this change: Fixed recursive capturing of callbacks by TestCase.captureOnCommitCallbacks().",
+"raw": "Fixed recursive capturing of callbacks by TestCase.captureOnCommitCallbacks()."
+},
+"gold": [
+"django/test/testcases.py"
+],
+"date": "2022-01-04"
+},
+{
+"id": 4884,
+"queries": {
+"q": "Where is the code behind this change: Fixed view name for CBVs on technical 404 debug page.",
+"raw": "Fixed view name for CBVs on technical 404 debug page."
+},
+"gold": [
+"django/views/debug.py"
+],
+"date": "2022-01-07"
+},
+{
+"id": 4885,
+"queries": {
+"q": "Where is the code behind this change: Fixed ResolverMatch.__repr_() for class-based views.",
+"raw": "Fixed ResolverMatch.__repr_() for class-based views."
+},
+"gold": [
+"django/urls/resolvers.py"
+],
+"date": "2022-01-10"
+},
+{
+"id": 4888,
+"queries": {
+"q": "Where is the code behind this change: Changed default value of ModelAdmin.actions/inlines to empty tuples.",
+"raw": "Changed default value of ModelAdmin.actions/inlines to empty tuples."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-01-01"
+},
+{
+"id": 4889,
+"queries": {
+"q": "Where is the code behind this change: Avoided unnecessary resolve() calls in technical_404_response().",
+"raw": "Avoided unnecessary resolve() calls in technical_404_response()."
+},
+"gold": [
+"django/views/debug.py"
+],
+"date": "2022-01-12"
+},
+{
+"id": 4890,
+"queries": {
+"q": "Where is the code behind this change: Added view name to technical 500 debug page.",
+"raw": "Added view name to technical 500 debug page."
+},
+"gold": [
+"django/views/debug.py"
+],
+"date": "2022-01-06"
+},
+{
+"id": 4892,
+"queries": {
+"q": "Where is the code behind this change: Restored immutability of models.Field.__hash__().",
+"raw": "Restored immutability of models.Field.__hash__()."
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+],
+"date": "2022-01-13"
+},
+{
+"id": 4893,
+"queries": {
+"q": "Where is the code behind this change: Made simplify_regex() handle non-capturing groups.",
+"raw": "Made simplify_regex() handle non-capturing groups."
+},
+"gold": [
+"django/contrib/admindocs/utils.py",
+"django/contrib/admindocs/views.py"
+],
+"date": "2022-01-14"
+},
+{
+"id": 4894,
+"queries": {
+"q": "Where is the code behind this change: Fixed invalid SQL generatered by Subquery.as_sql().",
+"raw": "Fixed invalid SQL generatered by Subquery.as_sql()."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-01-15"
+},
+{
+"id": 4895,
+"queries": {
+"q": "Where is the code behind this change: Allowed using combined queryset in Subquery.",
+"raw": "Allowed using combined queryset in Subquery."
+},
+"gold": [
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/query.py"
+],
+"date": "2022-01-17"
+},
+{
+"id": 4896,
+"queries": {
+"q": "Where is the code behind this change: Added CSS source map support to ManifestStaticFilesStorage.",
+"raw": "Added CSS source map support to ManifestStaticFilesStorage."
+},
+"gold": [
+"django/contrib/staticfiles/storage.py"
+],
+"date": "2022-01-18"
+},
+{
+"id": 4898,
+"queries": {
+"q": "Where is the code behind this change: Made MultiPartParser remove non-printable chars from file names.",
+"raw": "Made MultiPartParser remove non-printable chars from file names."
+},
+"gold": [
+"django/http/multipartparser.py"
+],
+"date": "2022-01-17"
+},
+{
+"id": 4899,
+"queries": {
+"q": "Where is the code behind this change: Dropped support for GDAL 2.1.",
+"raw": "Dropped support for GDAL 2.1."
+},
+"gold": [
+"django/contrib/gis/gdal/field.py",
+"django/contrib/gis/gdal/libgdal.py",
+"django/contrib/gis/gdal/prototypes/ds.py",
+"django/contrib/gis/gdal/prototypes/srs.py"
+],
+"date": "2022-01-20"
+},
+{
+"id": 4900,
+"queries": {
+"q": "Where is the code behind this change: Fixed makemigrations crash on models without Meta.order_with_respect_to but with _order field.",
+"raw": "Fixed makemigrations crash on models without Meta.order_with_respect_to but with _order field."
+},
+"gold": [
+"django/db/migrations/state.py"
+],
+"date": "2022-01-19"
+},
+{
+"id": 4902,
+"queries": {
+"q": "Where is the code behind this change: Fixed encoding of messages with empty string as extra_tags.",
+"raw": "Fixed encoding of messages with empty string as extra_tags."
+},
+"gold": [
+"django/contrib/messages/storage/cookie.py"
+],
+"date": "2022-01-22"
+},
+{
+"id": 4903,
+"queries": {
+"q": "Where is the code behind this change: Used VALUES clause for insert in bulk on SQLite.",
+"raw": "Used VALUES clause for insert in bulk on SQLite."
+},
+"gold": [
+"django/db/backends/sqlite3/operations.py"
+],
+"date": "2022-01-24"
+},
+{
+"id": 4904,
+"queries": {
+"q": "Where is the code behind this change: Added QuerySet.iterator() support for prefetching related objects.",
+"raw": "Added QuerySet.iterator() support for prefetching related objects."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-01-09"
+},
+{
+"id": 4905,
+"queries": {
+"q": "Where is the code behind this change: Fixed migration crash when altering type of primary key with MTI and foreign key.",
+"raw": "Fixed migration crash when altering type of primary key with MTI and foreign key."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-01-27"
+},
+{
+"id": 4906,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.bulk_update() with F() expressions.",
+"raw": "Fixed QuerySet.bulk_update() with F() expressions."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-01-27"
+},
+{
+"id": 4908,
+"queries": {
+"q": "Where is the code behind this change: Added empty __slots__ to SafeString and SafeData.",
+"raw": "Added empty __slots__ to SafeString and SafeData."
+},
+"gold": [
+"django/utils/safestring.py"
+],
+"date": "2022-01-25"
+},
+{
+"id": 4909,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.aggregate() after annotate() crash on aggregates with default.",
+"raw": "Fixed QuerySet.aggregate() after annotate() crash on aggregates with default."
+},
+"gold": [
+"django/db/models/aggregates.py"
+],
+"date": "2022-01-31"
+},
+{
+"id": 4910,
+"queries": {
+"q": "Where is the code behind this change: Fixed makemigrations crash when renaming field of renamed model.",
+"raw": "Fixed makemigrations crash when renaming field of renamed model."
+},
+"gold": [
+"django/db/migrations/autodetector.py"
+],
+"date": "2022-02-01"
+},
+{
+"id": 4912,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet filtering againts negated Exists() with empty queryset.",
+"raw": "Fixed QuerySet filtering againts negated Exists() with empty queryset."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-02-01"
+},
+{
+"id": 4913,
+"queries": {
+"q": "Where is the code behind this change: Added __slots__ to Variable and FilterExpression.",
+"raw": "Added __slots__ to Variable and FilterExpression."
+},
+"gold": [
+"django/template/base.py"
+],
+"date": "2022-01-29"
+},
+{
+"id": 4914,
+"queries": {
+"q": "Where is the code behind this change: Fixed detecting changes by autoreloader in .py files inside template directories.",
+"raw": "Fixed detecting changes by autoreloader in .py files inside template directories."
+},
+"gold": [
+"django/template/autoreload.py"
+],
+"date": "2022-02-02"
+},
+{
+"id": 4915,
+"queries": {
+"q": "Where is the code behind this change: Made QuerySet.bulk_update() perform atomic writes against write database.",
+"raw": "Made QuerySet.bulk_update() perform atomic writes against write database."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-02-09"
+},
+{
+"id": 4916,
+"queries": {
+"q": "Where is the code behind this change: Improved debug logging message about adapting handlers for middlewares.",
+"raw": "Improved debug logging message about adapting handlers for middlewares."
+},
+"gold": [
+"django/core/handlers/base.py"
+],
+"date": "2022-02-09"
+},
+{
+"id": 4917,
+"queries": {
+"q": "Where is the code behind this change: Made order_with_respect_to respect database routers.",
+"raw": "Made order_with_respect_to respect database routers."
+},
+"gold": [
+"django/db/models/base.py"
+],
+"date": "2022-02-07"
+},
+{
+"id": 4918,
+"queries": {
+"q": "Where is the code behind this change: Added support for object-based Media CSS and JS paths.",
+"raw": "Added support for object-based Media CSS and JS paths."
+},
+"gold": [
+"django/forms/widgets.py"
+],
+"date": "2022-01-22"
+},
+{
+"id": 4919,
+"queries": {
+"q": "Where is the code behind this change: Added support for addition operations to SimpleLazyObject.",
+"raw": "Added support for addition operations to SimpleLazyObject."
+},
+"gold": [
+"django/utils/functional.py"
+],
+"date": "2022-02-05"
+},
+{
+"id": 4920,
+"queries": {
+"q": "Where is the code behind this change: Prevented LazyObject from mimicking nonexistent attributes.",
+"raw": "Prevented LazyObject from mimicking nonexistent attributes."
+},
+"gold": [
+"django/conf/__init__.py",
+"django/utils/functional.py"
+],
+"date": "2022-02-13"
+},
+{
+"id": 4921,
+"queries": {
+"q": "Where is the code behind this change: Prevented recreation of migration for ManyToManyField to lowercased swappable setting.",
+"raw": "Prevented recreation of migration for ManyToManyField to lowercased swappable setting."
+},
+"gold": [
+"django/db/models/fields/related.py"
+],
+"date": "2022-02-16"
+},
+{
+"id": 4922,
+"queries": {
+"q": "Where is the code behind this change: Added fallbacks to subsequent language codes in Select2 translations.",
+"raw": "Added fallbacks to subsequent language codes in Select2 translations."
+},
+"gold": [
+"django/contrib/admin/widgets.py"
+],
+"date": "2022-02-18"
+},
+{
+"id": 4924,
+"queries": {
+"q": "Where is the code behind this change: Added RemovedAfterNextVersionWarning.",
+"raw": "Added RemovedAfterNextVersionWarning."
+},
+"gold": [
+"django/utils/deprecation.py"
+],
+"date": "2022-02-18"
+},
+{
+"id": 4925,
+"queries": {
+"q": "Where is the code behind this change: Prevented mark_safe() from evaluating lazy objects.",
+"raw": "Prevented mark_safe() from evaluating lazy objects."
+},
+"gold": [
+"django/utils/safestring.py"
+],
+"date": "2022-02-18"
+},
+{
+"id": 4926,
+"queries": {
+"q": "Where is the code behind this change: Unified behavior of reverse foreign key and many-to-many relations for unsaved instances.",
+"raw": "Unified behavior of reverse foreign key and many-to-many relations for unsaved instances."
+},
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-01-14"
+},
+{
+"id": 4928,
+"queries": {
+"q": "Where is the code behind this change: Optimized CaseInsensitiveMapping instantiation for dicts.",
+"raw": "Optimized CaseInsensitiveMapping instantiation for dicts."
+},
+"gold": [
+"django/utils/datastructures.py"
+],
+"date": "2022-02-23"
+},
+{
+"id": 4929,
+"queries": {
+"q": "Where is the code behind this change: Fixed spaces in WITH SQL for indexes on PostgreSQL.",
+"raw": "Fixed spaces in WITH SQL for indexes on PostgreSQL."
+},
+"gold": [
+"django/contrib/postgres/indexes.py"
+],
+"date": "2022-02-23"
+},
+{
+"id": 4930,
+"queries": {
+"q": "Where is the code behind this change: Added link to related item to related widget wrapper in admin.",
+"raw": "Added link to related item to related widget wrapper in admin."
+},
+"gold": [
+"django/contrib/admin/widgets.py"
+],
+"date": "2022-01-10"
+},
+{
+"id": 4931,
+"queries": {
+"q": "Where is the code behind this change: Deprecated passing unsaved objects to related filters.",
+"raw": "Deprecated passing unsaved objects to related filters."
+},
+"gold": [
+"django/db/models/fields/related_lookups.py"
+],
+"date": "2022-02-05"
+},
+{
+"id": 4932,
+"queries": {
+"q": "Where is the code behind this change: Fixed DatabaseFeatures.supports_index_column_ordering on MariaDB 10.8+.",
+"raw": "Fixed DatabaseFeatures.supports_index_column_ordering on MariaDB 10.8+."
+},
+"gold": [
+"django/db/backends/mysql/features.py"
+],
+"date": "2022-02-26"
+},
+{
+"id": 4933,
+"queries": {
+"q": "Where is the code behind this change: Removed unnecessary code in ModelAdmin._changeform_view().",
+"raw": "Removed unnecessary code in ModelAdmin._changeform_view()."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-02-26"
+},
+{
+"id": 4934,
+"queries": {
+"q": "Where is the code behind this change: Allowed overriding empty_label for ForeignKey in ModelAdmin.radio_fields.",
+"raw": "Allowed overriding empty_label for ForeignKey in ModelAdmin.radio_fields."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-02-27"
+},
+{
+"id": 4935,
+"queries": {
+"q": "Where is the code behind this change: Fixed error when rendering invalid inlines with readonly fields in admin.",
+"raw": "Fixed error when rendering invalid inlines with readonly fields in admin."
+},
+"gold": [
+"django/contrib/admin/templatetags/admin_modify.py"
+],
+"date": "2022-03-01"
+},
+{
+"id": 4936,
+"queries": {
+"q": "Where is the code behind this change: Used built-in math functions in SQLite 3.35+.",
+"raw": "Used built-in math functions in SQLite 3.35+."
+},
+"gold": [
+"django/db/backends/sqlite3/_functions.py"
+],
+"date": "2022-01-28"
+},
+{
+"id": 4938,
+"queries": {
+"q": "Where is the code behind this change: Made HttpResponse.set_cookie() support timedelta for the max_age argument.",
+"raw": "Made HttpResponse.set_cookie() support timedelta for the max_age argument."
+},
+"gold": [
+"django/http/response.py"
+],
+"date": "2022-03-04"
+},
+{
+"id": 4939,
+"queries": {
+"q": "Where is the code behind this change: Fixed contenttype reverse data migration crash with a multiple databases setup.",
+"raw": "Fixed contenttype reverse data migration crash with a multiple databases setup."
+},
+"gold": [
+"django/contrib/contenttypes/migrations/0002_remove_content_type_name.py"
+],
+"date": "2022-03-08"
+},
+{
+"id": 4940,
+"queries": {
+"q": "Where is the code behind this change: Avoided setting default text/html content type on responses.",
+"raw": "Avoided setting default text/html content type on responses."
+},
+"gold": [
+"django/views/csrf.py",
+"django/views/debug.py",
+"django/views/defaults.py"
+],
+"date": "2022-03-08"
+},
+{
+"id": 4941,
+"queries": {
+"q": "Where is the code behind this change: Allowed synchronization of user attributes in RemoteUserBackend.",
+"raw": "Allowed synchronization of user attributes in RemoteUserBackend."
+},
+"gold": [
+"django/contrib/auth/backends.py"
+],
+"date": "2022-03-04"
+},
+{
+"id": 4942,
+"queries": {
+"q": "Where is the code behind this change: Fixed static serving views crash when If-Modified-Since is empty.",
+"raw": "Fixed static serving views crash when If-Modified-Since is empty."
+},
+"gold": [
+"django/views/static.py"
+],
+"date": "2022-03-11"
+},
+{
+"id": 4943,
+"queries": {
+"q": "Where is the code behind this change: Implemented CreateModel/AlterModelManagers reduction.",
+"raw": "Implemented CreateModel/AlterModelManagers reduction."
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"date": "2022-03-11"
+},
+{
+"id": 4944,
+"queries": {
+"q": "Where is the code behind this change: Fixed get_for_models() crash for stale content types when model with the same name exists in another app.",
+"raw": "Fixed get_for_models() crash for stale content types when model with the same name exists in another app."
+},
+"gold": [
+"django/contrib/contenttypes/models.py"
+],
+"date": "2022-03-14"
+},
+{
+"id": 4945,
+"queries": {
+"q": "Where is the code behind this change: Fixed JSONField has key lookups with numeric keys on MariaDB, MySQL, Oracle, and SQLite.",
+"raw": "Fixed JSONField has key lookups with numeric keys on MariaDB, MySQL, Oracle, and SQLite."
+},
+"gold": [
+"django/db/models/fields/json.py"
+],
+"date": "2022-03-12"
+},
+{
+"id": 4946,
+"queries": {
+"q": "Where is the code behind this change: Adapted the parallel test runner to use spawn.",
+"raw": "Adapted the parallel test runner to use spawn."
+},
+"gold": [
+"django/db/backends/sqlite3/creation.py",
+"django/test/runner.py",
+"django/utils/autoreload.py"
+],
+"date": "2022-02-12"
+},
+{
+"id": 4947,
+"queries": {
+"q": "Where is the code behind this change: Confirmed support for GDAL 3.4.",
+"raw": "Confirmed support for GDAL 3.4."
+},
+"gold": [
+"django/contrib/gis/gdal/libgdal.py"
+],
+"date": "2022-03-16"
+},
+{
+"id": 4948,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash when checking support for terminal colors on Wine.",
+"raw": "Fixed crash when checking support for terminal colors on Wine."
+},
+"gold": [
+"django/core/management/color.py"
+],
+"date": "2022-03-16"
+},
+{
+"id": 4949,
+"queries": {
+"q": "Where is the code behind this change: Fixed deserializing natural keys with foreing key dependencies in a multiple database setup.",
+"raw": "Fixed deserializing natural keys with foreing key dependencies in a multiple database setup."
+},
+"gold": [
+"django/core/serializers/base.py"
+],
+"date": "2022-03-18"
+},
+{
+"id": 4950,
+"queries": {
+"q": "Where is the code behind this change: Fixed \"View on Site\" links in custom admin site.",
+"raw": "Fixed \"View on Site\" links in custom admin site."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-03-18"
+},
+{
+"id": 4951,
+"queries": {
+"q": "Where is the code behind this change: Added SECURE_PROXY_SSL_HEADER support for list of protocols in the header value.",
+"raw": "Added SECURE_PROXY_SSL_HEADER support for list of protocols in the header value."
+},
+"gold": [
+"django/http/request.py"
+],
+"date": "2022-03-07"
+},
+{
+"id": 4952,
+"queries": {
+"q": "Where is the code behind this change: Allowed overriding the order of apps and models in admin.",
+"raw": "Allowed overriding the order of apps and models in admin."
+},
+"gold": [
+"django/contrib/admin/sites.py"
+],
+"date": "2022-03-05"
+},
+{
+"id": 4954,
+"queries": {
+"q": "Where is the code behind this change: Added ResolveMatch.captured_kwargs and extra_kwargs.",
+"raw": "Added ResolveMatch.captured_kwargs and extra_kwargs."
+},
+"gold": [
+"django/urls/resolvers.py"
+],
+"date": "2022-03-28"
+},
+{
+"id": 4955,
+"queries": {
+"q": "Where is the code behind this change: Reverted \"Removed unnecessary reuse_with_filtered_relation argument from Query methods.\"",
+"raw": "Reverted \"Removed unnecessary reuse_with_filtered_relation argument from Query methods.\""
+},
+"gold": [
+"django/db/models/sql/query.py"
+],
+"date": "2022-03-30"
+},
+{
+"id": 4957,
+"queries": {
+"q": "Where is the code behind this change: Made createsuperuser detect uniqueness of USERNAME_FIELD when using Meta.constraints.",
+"raw": "Made createsuperuser detect uniqueness of USERNAME_FIELD when using Meta.constraints."
+},
+"gold": [
+"django/contrib/auth/management/commands/createsuperuser.py"
+],
+"date": "2022-03-31"
+},
+{
+"id": 4958,
+"queries": {
+"q": "Where is the code behind this change: Fixed migration crash when altering RegexValidator to pre-compiled regular expression.",
+"raw": "Fixed migration crash when altering RegexValidator to pre-compiled regular expression."
+},
+"gold": [
+"django/db/migrations/utils.py"
+],
+"date": "2022-03-29"
+},
+{
+"id": 4960,
+"queries": {
+"q": "Where is the code behind this change: Made AlterField operation a noop when changing \"choices\".",
+"raw": "Made AlterField operation a noop when changing \"choices\"."
+},
+"gold": [
+"django/db/backends/base/schema.py",
+"django/db/models/fields/__init__.py"
+],
+"date": "2022-04-01"
+},
+{
+"id": 4961,
+"queries": {
+"q": "Where is the code behind this change: Allowed View subclasses to define async method handlers.",
+"raw": "Allowed View subclasses to define async method handlers."
+},
+"gold": [
+"django/views/generic/base.py"
+],
+"date": "2022-04-07"
+},
+{
+"id": 4962,
+"queries": {
+"q": "Where is the code behind this change: Fixed MTI updates outside of primary key chain.",
+"raw": "Fixed MTI updates outside of primary key chain."
+},
+"gold": [
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/subqueries.py"
+],
+"date": "2022-04-05"
+},
+{
+"id": 4963,
+"queries": {
+"q": "Where is the code behind this change: Ignored directories with empty names in autoreloader check for template changes.",
+"raw": "Ignored directories with empty names in autoreloader check for template changes."
+},
+"gold": [
+"django/template/autoreload.py"
+],
+"date": "2022-04-09"
+},
+{
+"id": 4964,
+"queries": {
+"q": "Where is the code behind this change: Cleared cache when unregistering a lookup.",
+"raw": "Cleared cache when unregistering a lookup."
+},
+"gold": [
+"django/db/models/query_utils.py"
+],
+"date": "2022-04-08"
+},
+{
+"id": 4965,
+"queries": {
+"q": "Where is the code behind this change: Made QuerySet.exists() clear selected columns for not sliced distinct querysets.",
+"raw": "Made QuerySet.exists() clear selected columns for not sliced distinct querysets."
+},
+"gold": [
+"django/db/models/sql/query.py"
+],
+"date": "2022-04-11"
+},
+{
+"id": 4966,
+"queries": {
+"q": "Where is the code behind this change: Used identity columns instead of serials on PostgreSQL.",
+"raw": "Used identity columns instead of serials on PostgreSQL."
+},
+"gold": [
+"django/db/backends/base/schema.py",
+"django/db/backends/postgresql/base.py",
+"django/db/backends/postgresql/introspection.py",
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-03-24"
+},
+{
+"id": 4967,
+"queries": {
+"q": "Where is the code behind this change: Allowed admin select widgets to display new related objects.",
+"raw": "Allowed admin select widgets to display new related objects."
+},
+"gold": [
+"django/contrib/admin/widgets.py"
+],
+"date": "2022-04-13"
+},
+{
+"id": 4968,
+"queries": {
+"q": "Where is the code behind this change: Made PostgresIndex.create_sql() respect the \"using\" argument.",
+"raw": "Made PostgresIndex.create_sql() respect the \"using\" argument."
+},
+"gold": [
+"django/contrib/postgres/indexes.py"
+],
+"date": "2022-04-15"
+},
+{
+"id": 4969,
+"queries": {
+"q": "Where is the code behind this change: Fixed inspectdb crash on functional unique constraints on Oracle.",
+"raw": "Fixed inspectdb crash on functional unique constraints on Oracle."
+},
+"gold": [
+"django/core/management/commands/inspectdb.py"
+],
+"date": "2022-04-16"
+},
+{
+"id": 4970,
+"queries": {
+"q": "Where is the code behind this change: Prevented extra redirect in LogoutView on invalid next page when LOGOUT_REDIRECT_URL is set.",
+"raw": "Prevented extra redirect in LogoutView on invalid next page when LOGOUT_REDIRECT_URL is set."
+},
+"gold": [
+"django/contrib/auth/views.py"
+],
+"date": "2022-04-18"
+},
+{
+"id": 4971,
+"queries": {
+"q": "Where is the code behind this change: Enabled cached template loader in development.",
+"raw": "Enabled cached template loader in development."
+},
+"gold": [
+"django/template/engine.py"
+],
+"date": "2022-04-12"
+},
+{
+"id": 4972,
+"queries": {
+"q": "Where is the code behind this change: Added localdate to utils.timezone.__all__.",
+"raw": "Added localdate to utils.timezone.__all__."
+},
+"gold": [
+"django/utils/timezone.py"
+],
+"date": "2022-04-20"
+},
+{
+"id": 4973,
+"queries": {
+"q": "Where is the code behind this change: Made saving objects with unsaved GenericForeignKey raise ValueError.",
+"raw": "Made saving objects with unsaved GenericForeignKey raise ValueError."
+},
+"gold": [
+"django/db/models/base.py"
+],
+"date": "2022-04-19"
+},
+{
+"id": 4974,
+"queries": {
+"q": "Where is the code behind this change: Added \"(no-op)\" to sqlmigrate output for operations without SQL statement.",
+"raw": "Added \"(no-op)\" to sqlmigrate output for operations without SQL statement."
+},
+"gold": [
+"django/db/migrations/migration.py"
+],
+"date": "2022-02-10"
+},
+{
+"id": 4975,
+"queries": {
+"q": "Where is the code behind this change: Removed unnecessary constant from GROUP BY clause for QuerySet.exists().",
+"raw": "Removed unnecessary constant from GROUP BY clause for QuerySet.exists()."
+},
+"gold": [
+"django/db/models/sql/query.py"
+],
+"date": "2022-04-25"
+},
+{
+"id": 4976,
+"queries": {
+"q": "Where is the code behind this change: Fixed MultiWidget crash when compressed value is a tuple.",
+"raw": "Fixed MultiWidget crash when compressed value is a tuple."
+},
+"gold": [
+"django/forms/widgets.py"
+],
+"date": "2022-04-22"
+},
+{
+"id": 4978,
+"queries": {
+"q": "Where is the code behind this change: Corrected Catalan date-format localization.",
+"raw": "Corrected Catalan date-format localization."
+},
+"gold": [
+"django/conf/locale/ca/formats.py"
+],
+"date": "2022-04-28"
+},
+{
+"id": 4979,
+"queries": {
+"q": "Where is the code behind this change: Fixed altering primary key on SQLite.",
+"raw": "Fixed altering primary key on SQLite."
+},
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+],
+"date": "2022-04-29"
+},
+{
+"id": 4980,
+"queries": {
+"q": "Where is the code behind this change: Made migrations propage collations to related fields.",
+"raw": "Made migrations propage collations to related fields."
+},
+"gold": [
+"django/db/backends/base/schema.py",
+"django/db/backends/oracle/features.py",
+"django/db/backends/sqlite3/schema.py",
+"django/db/models/fields/related.py"
+],
+"date": "2022-04-28"
+},
+{
+"id": 4981,
+"queries": {
+"q": "Where is the code behind this change: Made _all_related_fields() return deterministically ordered fields.",
+"raw": "Made _all_related_fields() return deterministically ordered fields."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-04-26"
+},
+{
+"id": 4982,
+"queries": {
+"q": "Where is the code behind this change: Dropped support for PostgreSQL 10 and PostGIS 2.4.",
+"raw": "Dropped support for PostgreSQL 10 and PostGIS 2.4."
+},
+"gold": [
+"django/contrib/gis/db/backends/postgis/operations.py",
+"django/db/backends/postgresql/features.py"
+],
+"date": "2022-05-04"
+},
+{
+"id": 4983,
+"queries": {
+"q": "Where is the code behind this change: Checked deferred constraints before updating rows on PostgreSQL.",
+"raw": "Checked deferred constraints before updating rows on PostgreSQL."
+},
+"gold": [
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-05-02"
+},
+{
+"id": 4984,
+"queries": {
+"q": "Where is the code behind this change: Added div.html form template.",
+"raw": "Added div.html form template."
+},
+"gold": [
+"django/forms/forms.py",
+"django/forms/formsets.py",
+"django/forms/utils.py"
+],
+"date": "2022-05-05"
+},
+{
+"id": 4985,
+"queries": {
+"q": "Where is the code behind this change: Added support for Meta.constraints validation.",
+"raw": "Added support for Meta.constraints validation."
+},
+"gold": [
+"django/contrib/postgres/constraints.py",
+"django/db/models/base.py",
+"django/db/models/constraints.py",
+"django/db/models/expressions.py",
+"django/forms/models.py"
+],
+"date": "2022-01-31"
+},
+{
+"id": 4986,
+"queries": {
+"q": "Where is the code behind this change: Allowed customizing error messages for invalid number of forms.",
+"raw": "Allowed customizing error messages for invalid number of forms."
+},
+"gold": [
+"django/forms/formsets.py"
+],
+"date": "2022-05-08"
+},
+{
+"id": 4987,
+"queries": {
+"q": "Where is the code behind this change: Deprecated django.contrib.auth.hashers.CryptPasswordHasher.",
+"raw": "Deprecated django.contrib.auth.hashers.CryptPasswordHasher."
+},
+"gold": [
+"django/contrib/auth/hashers.py"
+],
+"date": "2022-05-11"
+},
+{
+"id": 4988,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash of ordering by related fields when Meta.ordering contains expressions.",
+"raw": "Fixed crash of ordering by related fields when Meta.ordering contains expressions."
+},
+"gold": [
+"django/db/models/expressions.py",
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-05-04"
+},
+{
+"id": 4989,
+"queries": {
+"q": "Where is the code behind this change: Deprecated passing nulls_first/nulls_last=False to OrderBy and Expression.asc()/desc().",
+"raw": "Deprecated passing nulls_first/nulls_last=False to OrderBy and Expression.asc()/desc()."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-05-12"
+},
+{
+"id": 4990,
+"queries": {
+"q": "Where is the code behind this change: Added 'step_size\u2019 to numeric form fields.",
+"raw": "Added 'step_size\u2019 to numeric form fields."
+},
+"gold": [
+"django/core/validators.py",
+"django/forms/fields.py"
+],
+"date": "2022-05-12"
+},
+{
+"id": 4991,
+"queries": {
+"q": "Where is the code behind this change: Made Redis client pass CACHES[\"OPTIONS\"] to a connection pool.",
+"raw": "Made Redis client pass CACHES[\"OPTIONS\"] to a connection pool."
+},
+"gold": [
+"django/core/cache/backends/redis.py"
+],
+"date": "2022-05-16"
+},
+{
+"id": 4992,
+"queries": {
+"q": "Where is the code behind this change: Allowed GEOSGeometry.normalize() to return a normalized clone.",
+"raw": "Allowed GEOSGeometry.normalize() to return a normalized clone."
+},
+"gold": [
+"django/contrib/gis/geos/geometry.py"
+],
+"date": "2022-05-13"
+},
+{
+"id": 4993,
+"queries": {
+"q": "Where is the code behind this change: Made RenameIndex operation a noop when the old and new name match.",
+"raw": "Made RenameIndex operation a noop when the old and new name match."
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"date": "2022-05-16"
+},
+{
+"id": 4994,
+"queries": {
+"q": "Where is the code behind this change: Document HttpResponseBase and allow import from django.http",
+"raw": "Document HttpResponseBase and allow import from django.http"
+},
+"gold": [
+"django/http/__init__.py"
+],
+"date": "2022-05-05"
+},
+{
+"id": 4995,
+"queries": {
+"q": "Where is the code behind this change: Moved internal URLResolver view-strings mapping to admindocs.",
+"raw": "Moved internal URLResolver view-strings mapping to admindocs."
+},
+"gold": [
+"django/contrib/admindocs/apps.py",
+"django/contrib/admindocs/utils.py",
+"django/contrib/admindocs/views.py",
+"django/urls/resolvers.py"
+],
+"date": "2022-05-17"
+},
+{
+"id": 4996,
+"queries": {
+"q": "Where is the code behind this change: Dropped support for MariaDB 10.3.",
+"raw": "Dropped support for MariaDB 10.3."
+},
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/backends/mysql/operations.py"
+],
+"date": "2022-05-18"
+},
+{
+"id": 4997,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash when using IsNull() lookup in filters.",
+"raw": "Fixed crash when using IsNull() lookup in filters."
+},
+"gold": [
+"django/db/models/lookups.py"
+],
+"date": "2022-05-17"
+},
+{
+"id": 4998,
+"queries": {
+"q": "Where is the code behind this change: Dropped support for PostgreSQL 11.",
+"raw": "Dropped support for PostgreSQL 11."
+},
+"gold": [
+"django/contrib/postgres/constraints.py",
+"django/contrib/postgres/indexes.py",
+"django/contrib/postgres/operations.py",
+"django/db/backends/postgresql/features.py"
+],
+"date": "2022-05-19"
+},
+{
+"id": 4999,
+"queries": {
+"q": "Where is the code behind this change: Fixed test command crash when running in parallel.",
+"raw": "Fixed test command crash when running in parallel."
+},
+"gold": [
+"django/test/runner.py"
+],
+"date": "2022-05-19"
+},
+{
+"id": 5000,
+"queries": {
+"q": "Where is the code behind this change: Allowed keyboard interrupt to abort queries in MySQL dbshell.",
+"raw": "Allowed keyboard interrupt to abort queries in MySQL dbshell."
+},
+"gold": [
+"django/db/backends/mysql/client.py"
+],
+"date": "2022-05-20"
+},
+{
+"id": 5001,
+"queries": {
+"q": "Where is the code behind this change: Fixed template crash when calling methods for built-in types without required arguments.",
+"raw": "Fixed template crash when calling methods for built-in types without required arguments."
+},
+"gold": [
+"django/template/base.py"
+],
+"date": "2022-05-19"
+},
+{
+"id": 5002,
+"queries": {
+"q": "Where is the code behind this change: Fixed removing unique_together constraint if exists primary key/unique constraint on the same field.",
+"raw": "Fixed removing unique_together constraint if exists primary key/unique constraint on the same field."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-05-24"
+},
+{
+"id": 5003,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash of Feed with decorated methods.",
+"raw": "Fixed crash of Feed with decorated methods."
+},
+"gold": [
+"django/contrib/syndication/views.py"
+],
+"date": "2022-05-02"
+},
+{
+"id": 5004,
+"queries": {
+"q": "Where is the code behind this change: Fixed date template filter crash with lazy format.",
+"raw": "Fixed date template filter crash with lazy format."
+},
+"gold": [
+"django/utils/formats.py"
+],
+"date": "2022-05-28"
+},
+{
+"id": 5005,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash with prematurely closed ASGI request body.",
+"raw": "Fixed crash with prematurely closed ASGI request body."
+},
+"gold": [
+"django/core/handlers/asgi.py"
+],
+"date": "2022-05-30"
+},
+{
+"id": 5006,
+"queries": {
+"q": "Where is the code behind this change: Avoided clearing cached reference when saving child after parent.",
+"raw": "Avoided clearing cached reference when saving child after parent."
+},
+"gold": [
+"django/db/models/base.py"
+],
+"date": "2022-05-27"
+},
+{
+"id": 5007,
+"queries": {
+"q": "Where is the code behind this change: Made inspectdb inform about composite primary keys.",
+"raw": "Made inspectdb inform about composite primary keys."
+},
+"gold": [
+"django/core/management/commands/inspectdb.py",
+"django/db/backends/base/features.py",
+"django/db/backends/base/introspection.py",
+"django/db/backends/mysql/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/backends/oracle/introspection.py",
+"django/db/backends/postgresql/features.py",
+"django/db/backends/sqlite3/features.py",
+"django/db/backends/sqlite3/introspection.py"
+],
+"date": "2022-05-12"
+},
+{
+"id": 5008,
+"queries": {
+"q": "Where is the code behind this change: Preserved wrapper assignment for manager methods.",
+"raw": "Preserved wrapper assignment for manager methods."
+},
+"gold": [
+"django/db/models/manager.py"
+],
+"date": "2022-05-24"
+},
+{
+"id": 5009,
+"queries": {
+"q": "Where is the code behind this change: Added id to GeoJSON serializer.",
+"raw": "Added id to GeoJSON serializer."
+},
+"gold": [
+"django/contrib/gis/serializers/geojson.py"
+],
+"date": "2022-05-28"
+},
+{
+"id": 5010,
+"queries": {
+"q": "Where is the code behind this change: Fixed migration optimization after altering field to ManyToManyField.",
+"raw": "Fixed migration optimization after altering field to ManyToManyField."
+},
+"gold": [
+"django/db/migrations/autodetector.py"
+],
+"date": "2022-06-02"
+},
+{
+"id": 5011,
+"queries": {
+"q": "Where is the code behind this change: Skipped extra resolution for successful requests not ending with /.",
+"raw": "Skipped extra resolution for successful requests not ending with /."
+},
+"gold": [
+"django/middleware/common.py"
+],
+"date": "2022-06-02"
+},
+{
+"id": 5012,
+"queries": {
+"q": "Where is the code behind this change: Deprecated BaseUserManager.make_random_password().",
+"raw": "Deprecated BaseUserManager.make_random_password()."
+},
+"gold": [
+"django/contrib/auth/base_user.py"
+],
+"date": "2022-06-02"
+},
+{
+"id": 5013,
+"queries": {
+"q": "Where is the code behind this change: Improved locale format validation for the makemessages command.",
+"raw": "Improved locale format validation for the makemessages command."
+},
+"gold": [
+"django/core/management/commands/makemessages.py"
+],
+"date": "2022-03-17"
+},
+{
+"id": 5014,
+"queries": {
+"q": "Where is the code behind this change: Moved ASGI body-file cleanup into request class.",
+"raw": "Moved ASGI body-file cleanup into request class."
+},
+"gold": [
+"django/contrib/staticfiles/handlers.py",
+"django/core/handlers/asgi.py",
+"django/core/handlers/wsgi.py",
+"django/http/request.py",
+"django/test/client.py"
+],
+"date": "2022-06-02"
+},
+{
+"id": 5015,
+"queries": {
+"q": "Where is the code behind this change: Made Index with multiple fields respect DEFAULT_INDEX_TABLESPACE.",
+"raw": "Made Index with multiple fields respect DEFAULT_INDEX_TABLESPACE."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-06-13"
+},
+{
+"id": 5016,
+"queries": {
+"q": "Where is the code behind this change: Added QuerySet.first()/last() error message on unordered queryset with aggregation.",
+"raw": "Added QuerySet.first()/last() error message on unordered queryset with aggregation."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-06-12"
+},
+{
+"id": 5017,
+"queries": {
+"q": "Where is the code behind this change: Confirmed support for GDAL 3.5.",
+"raw": "Confirmed support for GDAL 3.5."
+},
+"gold": [
+"django/contrib/gis/gdal/libgdal.py"
+],
+"date": "2022-06-16"
+},
+{
+"id": 5018,
+"queries": {
+"q": "Where is the code behind this change: Added --update option to makemigrations command.",
+"raw": "Added --update option to makemigrations command."
+},
+"gold": [
+"django/core/management/commands/makemigrations.py"
+],
+"date": "2022-06-14"
+},
+{
+"id": 5019,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.update() on querysets ordered by annotations.",
+"raw": "Fixed QuerySet.update() on querysets ordered by annotations."
+},
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/models/query.py"
+],
+"date": "2022-06-17"
+},
+{
+"id": 5020,
+"queries": {
+"q": "Where is the code behind this change: Added TrigramStrictWordSimilarity() and TrigramStrictWordDistance() on PostgreSQL.",
+"raw": "Added TrigramStrictWordSimilarity() and TrigramStrictWordDistance() on PostgreSQL."
+},
+"gold": [
+"django/contrib/postgres/apps.py",
+"django/contrib/postgres/lookups.py",
+"django/contrib/postgres/search.py"
+],
+"date": "2022-06-17"
+},
+{
+"id": 5021,
+"queries": {
+"q": "Where is the code behind this change: Made parsing HTTP Accept-Language header case-insensitive.",
+"raw": "Made parsing HTTP Accept-Language header case-insensitive."
+},
+"gold": [
+"django/utils/translation/trans_null.py",
+"django/utils/translation/trans_real.py"
+],
+"date": "2022-06-16"
+},
+{
+"id": 5022,
+"queries": {
+"q": "Where is the code behind this change: Fixed pickling HttpResponse and subclasses.",
+"raw": "Fixed pickling HttpResponse and subclasses."
+},
+"gold": [
+"django/http/response.py",
+"django/template/response.py"
+],
+"date": "2022-06-16"
+},
+{
+"id": 5023,
+"queries": {
+"q": "Where is the code behind this change: Allowed customizing formatter class of argument parsers.",
+"raw": "Allowed customizing formatter class of argument parsers."
+},
+"gold": [
+"django/core/management/base.py"
+],
+"date": "2022-06-20"
+},
+{
+"id": 5024,
+"queries": {
+"q": "Where is the code behind this change: Fixed string-casting of GIS queries on PostgreSQL.",
+"raw": "Fixed string-casting of GIS queries on PostgreSQL."
+},
+"gold": [
+"django/contrib/gis/db/backends/postgis/adapter.py"
+],
+"date": "2022-06-21"
+},
+{
+"id": 5025,
+"queries": {
+"q": "Where is the code behind this change: Used ModelAdmin's opts attribute instead of model._meta.",
+"raw": "Used ModelAdmin's opts attribute instead of model._meta."
+},
+"gold": [
+"django/contrib/admin/options.py",
+"django/contrib/auth/admin.py"
+],
+"date": "2022-06-20"
+},
+{
+"id": 5026,
+"queries": {
+"q": "Where is the code behind this change: Fixed #33799, Refs #31685 -- Added parameters for updating conflicts to QuerySeta.abulk_create().",
+"raw": "Fixed #33799, Refs #31685 -- Added parameters for updating conflicts to QuerySeta.abulk_create()."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-06-23"
+},
+{
+"id": 5027,
+"queries": {
+"q": "Where is the code behind this change: Fixed system check for the same template tag module in installed apps and template tag libraries.",
+"raw": "Fixed system check for the same template tag module in installed apps and template tag libraries."
+},
+"gold": [
+"django/core/checks/templates.py"
+],
+"date": "2022-06-23"
+},
+{
+"id": 5028,
+"queries": {
+"q": "Where is the code behind this change: Fixed ordered combined queryset crash when used in subquery on PostgreSQL and MySQL.",
+"raw": "Fixed ordered combined queryset crash when used in subquery on PostgreSQL and MySQL."
+},
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-06-24"
+},
+{
+"id": 5029,
+"queries": {
+"q": "Where is the code behind this change: Made admin's many-to-many widgets do not display help text for selecting values when allow_multiple_selected is False.",
+"raw": "Made admin's many-to-many widgets do not display help text for selecting values when allow_multiple_selected is False."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-06-27"
+},
+{
+"id": 5030,
+"queries": {
+"q": "Where is the code behind this change: Allowed customizing encoder class in django.utils.html.json_script().",
+"raw": "Allowed customizing encoder class in django.utils.html.json_script()."
+},
+"gold": [
+"django/utils/html.py"
+],
+"date": "2022-06-23"
+},
+{
+"id": 5031,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.only() after select_related() crash on proxy models.",
+"raw": "Fixed QuerySet.only() after select_related() crash on proxy models."
+},
+"gold": [
+"django/db/models/sql/query.py"
+],
+"date": "2022-07-04"
+},
+{
+"id": 5032,
+"queries": {
+"q": "Where is the code behind this change: Fixed last_executed_query() on Oracle when parameter names overlap.",
+"raw": "Fixed last_executed_query() on Oracle when parameter names overlap."
+},
+"gold": [
+"django/db/backends/oracle/operations.py"
+],
+"date": "2022-07-05"
+},
+{
+"id": 5033,
+"queries": {
+"q": "Where is the code behind this change: Fixed save() crash on model formsets when not created by modelformset_factory().",
+"raw": "Fixed save() crash on model formsets when not created by modelformset_factory()."
+},
+"gold": [
+"django/forms/models.py"
+],
+"date": "2022-07-04"
+},
+{
+"id": 5034,
+"queries": {
+"q": "Where is the code behind this change: Made inspectdb generate unique related_name when reverse accessor clashes.",
+"raw": "Made inspectdb generate unique related_name when reverse accessor clashes."
+},
+"gold": [
+"django/core/management/commands/inspectdb.py"
+],
+"date": "2022-07-04"
+},
+{
+"id": 5035,
+"queries": {
+"q": "Where is the code behind this change: Fixed RedisCache.set_many()/delete_many() crash with an empty list.",
+"raw": "Fixed RedisCache.set_many()/delete_many() crash with an empty list."
+},
+"gold": [
+"django/core/cache/backends/redis.py"
+],
+"date": "2022-07-05"
+},
+{
+"id": 5036,
+"queries": {
+"q": "Where is the code behind this change: Made BaseConstraint.deconstruct() and equality handle violation_error_message.",
+"raw": "Made BaseConstraint.deconstruct() and equality handle violation_error_message."
+},
+"gold": [
+"django/contrib/postgres/constraints.py",
+"django/db/models/constraints.py"
+],
+"date": "2022-07-07"
+},
+{
+"id": 5037,
+"queries": {
+"q": "Where is the code behind this change: Dropped support for MySQL 5.7.",
+"raw": "Dropped support for MySQL 5.7."
+},
+"gold": [
+"django/contrib/gis/db/backends/mysql/features.py",
+"django/contrib/gis/db/backends/mysql/introspection.py",
+"django/contrib/gis/db/backends/mysql/operations.py",
+"django/contrib/gis/db/backends/mysql/schema.py",
+"django/db/backends/mysql/features.py",
+"django/db/backends/mysql/operations.py"
+],
+"date": "2022-07-08"
+},
+{
+"id": 5038,
+"queries": {
+"q": "Where is the code behind this change: Deprecated Meta.index_together in favor of Meta.indexes.",
+"raw": "Deprecated Meta.index_together in favor of Meta.indexes."
+},
+"gold": [
+"django/db/migrations/operations/models.py",
+"django/db/models/options.py"
+],
+"date": "2022-05-17"
+},
+{
+"id": 5039,
+"queries": {
+"q": "Where is the code behind this change: Marked {% blocktranslate asvar %} result as HTML safe.",
+"raw": "Marked {% blocktranslate asvar %} result as HTML safe."
+},
+"gold": [
+"django/templatetags/i18n.py"
+],
+"date": "2022-07-13"
+},
+{
+"id": 5040,
+"queries": {
+"q": "Where is the code behind this change: Optimized StateApps.clone().",
+"raw": "Optimized StateApps.clone()."
+},
+"gold": [
+"django/db/migrations/state.py"
+],
+"date": "2022-07-15"
+},
+{
+"id": 5041,
+"queries": {
+"q": "Where is the code behind this change: Corrected the order of parameters in dbshell on PostgreSQL.",
+"raw": "Corrected the order of parameters in dbshell on PostgreSQL."
+},
+"gold": [
+"django/db/backends/postgresql/client.py"
+],
+"date": "2022-07-17"
+},
+{
+"id": 5042,
+"queries": {
+"q": "Where is the code behind this change: Removed unnecessary system check calls from test worker initialization.",
+"raw": "Removed unnecessary system check calls from test worker initialization."
+},
+"gold": [
+"django/test/runner.py"
+],
+"date": "2022-07-19"
+},
+{
+"id": 5044,
+"queries": {
+"q": "Where is the code behind this change: Fixed JavaScriptCatalog with more than 1 level of fallback translations.",
+"raw": "Fixed JavaScriptCatalog with more than 1 level of fallback translations."
+},
+"gold": [
+"django/views/i18n.py"
+],
+"date": "2022-07-23"
+},
+{
+"id": 5045,
+"queries": {
+"q": "Where is the code behind this change: Added pathlib.Path support to GDALRaster constructor.",
+"raw": "Added pathlib.Path support to GDALRaster constructor."
+},
+"gold": [
+"django/contrib/gis/gdal/raster/source.py"
+],
+"date": "2022-07-25"
+},
+{
+"id": 5046,
+"queries": {
+"q": "Where is the code behind this change: Allowed GeoIP2 to use DB-IP Lite datasets.",
+"raw": "Allowed GeoIP2 to use DB-IP Lite datasets."
+},
+"gold": [
+"django/contrib/gis/geoip2/base.py"
+],
+"date": "2022-07-29"
+},
+{
+"id": 5047,
+"queries": {
+"q": "Where is the code behind this change: Fixed #33876, Refs #32229 -- Made management forms render with div.html template.",
+"raw": "Fixed #33876, Refs #32229 -- Made management forms render with div.html template."
+},
+"gold": [
+"django/forms/formsets.py"
+],
+"date": "2022-08-02"
+},
+{
+"id": 5048,
+"queries": {
+"q": "Where is the code behind this change: Added support for database collations to ArrayField(Char/TextFields).",
+"raw": "Added support for database collations to ArrayField(Char/TextFields)."
+},
+"gold": [
+"django/contrib/postgres/fields/array.py",
+"django/db/backends/base/schema.py",
+"django/db/backends/oracle/schema.py",
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-08-02"
+},
+{
+"id": 5049,
+"queries": {
+"q": "Where is the code behind this change: Deprecated django.contrib.postgres.fields.CIText/CICharField/CIEmailField/CITextField.",
+"raw": "Deprecated django.contrib.postgres.fields.CIText/CICharField/CIEmailField/CITextField."
+},
+"gold": [
+"django/contrib/postgres/fields/array.py",
+"django/contrib/postgres/fields/citext.py",
+"django/db/backends/postgresql/operations.py"
+],
+"date": "2022-08-03"
+},
+{
+"id": 5050,
+"queries": {
+"q": "Where is the code behind this change: Reallowed using GeoIP2() when GEOS is not installed.",
+"raw": "Reallowed using GeoIP2() when GEOS is not installed."
+},
+"gold": [
+"django/contrib/gis/geoip2/base.py"
+],
+"date": "2022-08-03"
+},
+{
+"id": 5051,
+"queries": {
+"q": "Where is the code behind this change: Fixed get_select2_language() crash with no language activated.",
+"raw": "Fixed get_select2_language() crash with no language activated."
+},
+"gold": [
+"django/contrib/admin/widgets.py"
+],
+"date": "2022-08-03"
+},
+{
+"id": 5052,
+"queries": {
+"q": "Where is the code behind this change: Fixed test command crash when running in parallel using spawn.",
+"raw": "Fixed test command crash when running in parallel using spawn."
+},
+"gold": [
+"django/test/runner.py"
+],
+"date": "2022-08-04"
+},
+{
+"id": 5053,
+"queries": {
+"q": "Where is the code behind this change: Fixed Window() expression crash with ArrayAgg().",
+"raw": "Fixed Window() expression crash with ArrayAgg()."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-08-06"
+},
+{
+"id": 5054,
+"queries": {
+"q": "Where is the code behind this change: Fixed migration crash when removing indexed field on SQLite 3.35.5+.",
+"raw": "Fixed migration crash when removing indexed field on SQLite 3.35.5+."
+},
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+],
+"date": "2022-08-06"
+},
+{
+"id": 5055,
+"queries": {
+"q": "Where is the code behind this change: Allowed ModelForm meta to specify form fields.",
+"raw": "Allowed ModelForm meta to specify form fields."
+},
+"gold": [
+"django/forms/models.py"
+],
+"date": "2022-08-04"
+},
+{
+"id": 5056,
+"queries": {
+"q": "Where is the code behind this change: Fixed Meta.constraints validation crash with F() expressions.",
+"raw": "Fixed Meta.constraints validation crash with F() expressions."
+},
+"gold": [
+"django/db/models/constraints.py",
+"django/db/models/expressions.py"
+],
+"date": "2022-08-09"
+},
+{
+"id": 5057,
+"queries": {
+"q": "Where is the code behind this change: Fixed Case() crash with filters that match everything in When().",
+"raw": "Fixed Case() crash with filters that match everything in When()."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-08-07"
+},
+{
+"id": 5058,
+"queries": {
+"q": "Where is the code behind this change: Fixed CheckConstraint() validation on range fields.",
+"raw": "Fixed CheckConstraint() validation on range fields."
+},
+"gold": [
+"django/contrib/postgres/fields/ranges.py"
+],
+"date": "2022-08-09"
+},
+{
+"id": 5059,
+"queries": {
+"q": "Where is the code behind this change: Made PostGIS backend skip extension creation if installed.",
+"raw": "Made PostGIS backend skip extension creation if installed."
+},
+"gold": [
+"django/contrib/gis/db/backends/postgis/base.py"
+],
+"date": "2022-08-10"
+},
+{
+"id": 5060,
+"queries": {
+"q": "Where is the code behind this change: Deprecated BaseGeometryWidget.map_height/map_width attributes.",
+"raw": "Deprecated BaseGeometryWidget.map_height/map_width attributes."
+},
+"gold": [
+"django/contrib/gis/forms/widgets.py"
+],
+"date": "2022-08-12"
+},
+{
+"id": 5061,
+"queries": {
+"q": "Where is the code behind this change: Fixed adding AutoFields on PostgreSQL.",
+"raw": "Fixed adding AutoFields on PostgreSQL."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-08-12"
+},
+{
+"id": 5062,
+"queries": {
+"q": "Where is the code behind this change: Skipped varchar_pattern_ops/text_pattern_ops index creation when db_collation is set.",
+"raw": "Skipped varchar_pattern_ops/text_pattern_ops index creation when db_collation is set."
+},
+"gold": [
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-08-14"
+},
+{
+"id": 5063,
+"queries": {
+"q": "Where is the code behind this change: Added prefetch_related() support for sliced queries.",
+"raw": "Added prefetch_related() support for sliced queries."
+},
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-08-13"
+},
+{
+"id": 5064,
+"queries": {
+"q": "Where is the code behind this change: Fixed altering AutoFields to OneToOneField on PostgreSQL.",
+"raw": "Fixed altering AutoFields to OneToOneField on PostgreSQL."
+},
+"gold": [
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-08-17"
+},
+{
+"id": 5065,
+"queries": {
+"q": "Where is the code behind this change: Fixed fixture dirs duplicates with Path instances.",
+"raw": "Fixed fixture dirs duplicates with Path instances."
+},
+"gold": [
+"django/core/management/commands/loaddata.py"
+],
+"date": "2022-08-23"
+},
+{
+"id": 5066,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash when displaying ArrayField with choices in admin.",
+"raw": "Fixed crash when displaying ArrayField with choices in admin."
+},
+"gold": [
+"django/contrib/admin/utils.py"
+],
+"date": "2022-08-22"
+},
+{
+"id": 5067,
+"queries": {
+"q": "Where is the code behind this change: Added support for serialization of enum.Flag in migrations.",
+"raw": "Added support for serialization of enum.Flag in migrations."
+},
+"gold": [
+"django/db/migrations/serializer.py"
+],
+"date": "2022-08-11"
+},
+{
+"id": 5068,
+"queries": {
+"q": "Where is the code behind this change: Fixed VariableDoesNotExist when rendering ClearableFileInput.",
+"raw": "Fixed VariableDoesNotExist when rendering ClearableFileInput."
+},
+"gold": [
+"django/forms/widgets.py"
+],
+"date": "2022-08-24"
+},
+{
+"id": 5069,
+"queries": {
+"q": "Where is the code behind this change: Fixed migration crash for m2m with a through model in another app.",
+"raw": "Fixed migration crash for m2m with a through model in another app."
+},
+"gold": [
+"django/db/migrations/autodetector.py"
+],
+"date": "2022-08-19"
+},
+{
+"id": 5070,
+"queries": {
+"q": "Where is the code behind this change: Reverted \"Fixed #33201 -- Made RenameModel operation a noop for models with db_table.\"",
+"raw": "Reverted \"Fixed #33201 -- Made RenameModel operation a noop for models with db_table.\""
+},
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"date": "2022-08-24"
+},
+{
+"id": 5071,
+"queries": {
+"q": "Where is the code behind this change: Avoided unnecessary queries when cascade updating.",
+"raw": "Avoided unnecessary queries when cascade updating."
+},
+"gold": [
+"django/db/models/deletion.py"
+],
+"date": "2022-08-17"
+},
+{
+"id": 5072,
+"queries": {
+"q": "Where is the code behind this change: Reallowed creating reverse foreign key managers on unsaved instances.",
+"raw": "Reallowed creating reverse foreign key managers on unsaved instances."
+},
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-08-24"
+},
+{
+"id": 5073,
+"queries": {
+"q": "Where is the code behind this change: Prevented models.DecimalField from accepting NaN, Inf, and -Inf values.",
+"raw": "Prevented models.DecimalField from accepting NaN, Inf, and -Inf values."
+},
+"gold": [
+"django/db/models/fields/__init__.py"
+],
+"date": "2022-08-26"
+},
+{
+"id": 5074,
+"queries": {
+"q": "Where is the code behind this change: Fixed migrations crash on SQLite < 3.26.",
+"raw": "Fixed migrations crash on SQLite < 3.26."
+},
+"gold": [
+"django/db/backends/sqlite3/base.py"
+],
+"date": "2022-08-29"
+},
+{
+"id": 5075,
+"queries": {
+"q": "Where is the code behind this change: Tracked field deferrals by field instead of models.",
+"raw": "Tracked field deferrals by field instead of models."
+},
+"gold": [
+"django/db/models/query_utils.py",
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/query.py"
+],
+"date": "2022-08-18"
+},
+{
+"id": 5076,
+"queries": {
+"q": "Where is the code behind this change: Fixed #33955, Fixed #33971 -- Reverted \"Fixed #32565 -- Moved internal URLResolver view-strings mapping to admindocs.\"",
+"raw": "Fixed #33955, Fixed #33971 -- Reverted \"Fixed #32565 -- Moved internal URLResolver view-strings mapping to admindocs.\""
+},
+"gold": [
+"django/contrib/admindocs/apps.py",
+"django/contrib/admindocs/utils.py",
+"django/contrib/admindocs/views.py",
+"django/urls/resolvers.py"
+],
+"date": "2022-09-01"
+},
+{
+"id": 5077,
+"queries": {
+"q": "Where is the code behind this change: Allowed registering lookups per field instances.",
+"raw": "Allowed registering lookups per field instances."
+},
+"gold": [
+"django/db/models/fields/related.py",
+"django/db/models/query_utils.py"
+],
+"date": "2022-06-23"
+},
+{
+"id": 5078,
+"queries": {
+"q": "Where is the code behind this change: Optimized serialization of related m2m fields without natural keys.",
+"raw": "Optimized serialization of related m2m fields without natural keys."
+},
+"gold": [
+"django/core/serializers/python.py",
+"django/core/serializers/xml_serializer.py"
+],
+"date": "2022-09-03"
+},
+{
+"id": 5079,
+"queries": {
+"q": "Where is the code behind this change: Allowed registering callbacks that can fail in transaction.on_commit().",
+"raw": "Allowed registering callbacks that can fail in transaction.on_commit()."
+},
+"gold": [
+"django/db/backends/base/base.py",
+"django/db/transaction.py",
+"django/test/testcases.py"
+],
+"date": "2022-06-07"
+},
+{
+"id": 5080,
+"queries": {
+"q": "Where is the code behind this change: Fixed migrations crash when adding model with ExclusionConstraint.",
+"raw": "Fixed migrations crash when adding model with ExclusionConstraint."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-09-07"
+},
+{
+"id": 5081,
+"queries": {
+"q": "Where is the code behind this change: Hardened binary lookup in template commands.",
+"raw": "Hardened binary lookup in template commands."
+},
+"gold": [
+"django/core/management/templates.py",
+"django/core/management/utils.py"
+],
+"date": "2022-08-24"
+},
+{
+"id": 5082,
+"queries": {
+"q": "Where is the code behind this change: Fixed queryset crash when aggregating over a group containing Exists.",
+"raw": "Fixed queryset crash when aggregating over a group containing Exists."
+},
+"gold": [
+"django/db/models/expressions.py",
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-09-07"
+},
+{
+"id": 5083,
+"queries": {
+"q": "Where is the code behind this change: Fixed __in lookup when rhs is a queryset with annotate() and alias().",
+"raw": "Fixed __in lookup when rhs is a queryset with annotate() and alias()."
+},
+"gold": [
+"django/db/models/fields/related_lookups.py",
+"django/db/models/sql/query.py"
+],
+"date": "2022-09-06"
+},
+{
+"id": 5084,
+"queries": {
+"q": "Where is the code behind this change: Fixed FormSet.empty_form crash when empty_permitted is passed to form_kwargs.",
+"raw": "Fixed FormSet.empty_form crash when empty_permitted is passed to form_kwargs."
+},
+"gold": [
+"django/forms/formsets.py"
+],
+"date": "2022-09-09"
+},
+{
+"id": 5085,
+"queries": {
+"q": "Where is the code behind this change: Fixed numberformat.format() crash on empty strings.",
+"raw": "Fixed numberformat.format() crash on empty strings."
+},
+"gold": [
+"django/utils/numberformat.py"
+],
+"date": "2022-09-10"
+},
+{
+"id": 5087,
+"queries": {
+"q": "Where is the code behind this change: Fixed CheckConstraint validation on NULL values.",
+"raw": "Fixed CheckConstraint validation on NULL values."
+},
+"gold": [
+"django/db/backends/base/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/models/query_utils.py"
+],
+"date": "2022-09-09"
+},
+{
+"id": 5088,
+"queries": {
+"q": "Where is the code behind this change: Fixed pickling HttpRequest and subclasses.",
+"raw": "Fixed pickling HttpRequest and subclasses."
+},
+"gold": [
+"django/core/handlers/wsgi.py",
+"django/http/request.py",
+"django/http/response.py"
+],
+"date": "2022-08-09"
+},
+{
+"id": 5089,
+"queries": {
+"q": "Where is the code behind this change: Added support for using KeyTextTransform from lookup.",
+"raw": "Added support for using KeyTextTransform from lookup."
+},
+"gold": [
+"django/db/models/fields/json.py"
+],
+"date": "2022-08-30"
+},
+{
+"id": 5090,
+"queries": {
+"q": "Where is the code behind this change: Fixed DecimalValidator validating 0 in positive exponent scientific notation.",
+"raw": "Fixed DecimalValidator validating 0 in positive exponent scientific notation."
+},
+"gold": [
+"django/core/validators.py"
+],
+"date": "2022-09-16"
+},
+{
+"id": 5091,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.values()/values_list() crash on ArrayAgg() and JSONBAgg().",
+"raw": "Fixed QuerySet.values()/values_list() crash on ArrayAgg() and JSONBAgg()."
+},
+"gold": [
+"django/contrib/postgres/aggregates/mixins.py"
+],
+"date": "2022-09-16"
+},
+{
+"id": 5092,
+"queries": {
+"q": "Where is the code behind this change: Allowed filtering by transforms on relation fields.",
+"raw": "Allowed filtering by transforms on relation fields."
+},
+"gold": [
+"django/db/models/sql/query.py"
+],
+"date": "2022-09-22"
+},
+{
+"id": 5093,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash when aggregating querysets with Q objects annotations.",
+"raw": "Fixed crash when aggregating querysets with Q objects annotations."
+},
+"gold": [
+"django/db/models/sql/where.py"
+],
+"date": "2022-09-24"
+},
+{
+"id": 5094,
+"queries": {
+"q": "Where is the code behind this change: Added inline argument to user_deleted_form().",
+"raw": "Added inline argument to user_deleted_form()."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-09-24"
+},
+{
+"id": 5095,
+"queries": {
+"q": "Where is the code behind this change: Fixed WKBReader.read() crash on string input.",
+"raw": "Fixed WKBReader.read() crash on string input."
+},
+"gold": [
+"django/contrib/gis/geos/prototypes/io.py"
+],
+"date": "2022-09-24"
+},
+{
+"id": 5096,
+"queries": {
+"q": "Where is the code behind this change: Fixed migrations crash when altering type of char/text fields referenced by foreign key on PostgreSQL.",
+"raw": "Fixed migrations crash when altering type of char/text fields referenced by foreign key on PostgreSQL."
+},
+"gold": [
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-09-24"
+},
+{
+"id": 5097,
+"queries": {
+"q": "Where is the code behind this change: Replaced invalid chars in migration names with '_'.",
+"raw": "Replaced invalid chars in migration names with '_'."
+},
+"gold": [
+"django/db/migrations/migration.py"
+],
+"date": "2022-09-26"
+},
+{
+"id": 5098,
+"queries": {
+"q": "Where is the code behind this change: Resolved output_field for combined numeric expressions with MOD operator.",
+"raw": "Resolved output_field for combined numeric expressions with MOD operator."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-09-27"
+},
+{
+"id": 5099,
+"queries": {
+"q": "Where is the code behind this change: Made migrate --check don't emit signals and output when up to date.",
+"raw": "Made migrate --check don't emit signals and output when up to date."
+},
+"gold": [
+"django/core/management/commands/migrate.py"
+],
+"date": "2022-09-27"
+},
+{
+"id": 5100,
+"queries": {
+"q": "Where is the code behind this change: Made makemigrations --check exit before making migrations.",
+"raw": "Made makemigrations --check exit before making migrations."
+},
+"gold": [
+"django/core/management/commands/makemigrations.py"
+],
+"date": "2022-09-25"
+},
+{
+"id": 5101,
+"queries": {
+"q": "Where is the code behind this change: Updated the list of common passwords for CommonPasswordValidator.",
+"raw": "Updated the list of common passwords for CommonPasswordValidator."
+},
+"gold": [
+"django/contrib/auth/password_validation.py"
+],
+"date": "2022-09-28"
+},
+{
+"id": 5102,
+"queries": {
+"q": "Where is the code behind this change: Made parallel tests using spawn set up Django.",
+"raw": "Made parallel tests using spawn set up Django."
+},
+"gold": [
+"django/test/runner.py"
+],
+"date": "2022-09-28"
+},
+{
+"id": 5103,
+"queries": {
+"q": "Where is the code behind this change: Changed sequence types when altering pre-Django 4.1 auto fields on PostgreSQL.",
+"raw": "Changed sequence types when altering pre-Django 4.1 auto fields on PostgreSQL."
+},
+"gold": [
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-09-29"
+},
+{
+"id": 5104,
+"queries": {
+"q": "Where is the code behind this change: Updated View.http_method_not_allowed() to support async.",
+"raw": "Updated View.http_method_not_allowed() to support async."
+},
+"gold": [
+"django/views/generic/base.py"
+],
+"date": "2022-09-29"
+},
+{
+"id": 5105,
+"queries": {
+"q": "Where is the code behind this change: Made QuerySet.update_or_create() save only fields passed in defaults or with custom pre_save().",
+"raw": "Made QuerySet.update_or_create() save only fields passed in defaults or with custom pre_save()."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-09-27"
+},
+{
+"id": 5106,
+"queries": {
+"q": "Where is the code behind this change: Reverted \"Fixed #32980 -- Made models cache related managers.\"",
+"raw": "Reverted \"Fixed #32980 -- Made models cache related managers.\""
+},
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/base.py",
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-09-30"
+},
+{
+"id": 5107,
+"queries": {
+"q": "Where is the code behind this change: Used \"raise from\" when raising TransactionManagementError.",
+"raw": "Used \"raise from\" when raising TransactionManagementError."
+},
+"gold": [
+"django/db/backends/base/base.py",
+"django/db/transaction.py"
+],
+"date": "2022-10-02"
+},
+{
+"id": 5108,
+"queries": {
+"q": "Where is the code behind this change: Added subsecond support to Now() on SQLite and MySQL.",
+"raw": "Added subsecond support to Now() on SQLite and MySQL."
+},
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/models/functions/datetime.py"
+],
+"date": "2022-09-25"
+},
+{
+"id": 5109,
+"queries": {
+"q": "Where is the code behind this change: Made QuerySet.order_by() apply transforms on related fields for models with Meta.ordering.",
+"raw": "Made QuerySet.order_by() apply transforms on related fields for models with Meta.ordering."
+},
+"gold": [
+"django/db/models/sql/compiler.py",
+"django/db/models/sql/query.py"
+],
+"date": "2022-09-18"
+},
+{
+"id": 5110,
+"queries": {
+"q": "Where is the code behind this change: Corrected output of runserver command for \"0\" IP address.",
+"raw": "Corrected output of runserver command for \"0\" IP address."
+},
+"gold": [
+"django/core/management/commands/runserver.py"
+],
+"date": "2022-10-04"
+},
+{
+"id": 5111,
+"queries": {
+"q": "Where is the code behind this change: Improved error message for Range(Min/Max)ValueValidator.",
+"raw": "Improved error message for Range(Min/Max)ValueValidator."
+},
+"gold": [
+"django/contrib/postgres/validators.py"
+],
+"date": "2022-10-03"
+},
+{
+"id": 5112,
+"queries": {
+"q": "Where is the code behind this change: Fixed ordering compound queries by nulls_first/nulls_last on MySQL.",
+"raw": "Fixed ordering compound queries by nulls_first/nulls_last on MySQL."
+},
+"gold": [
+"django/db/backends/base/features.py",
+"django/db/backends/oracle/features.py",
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-07-04"
+},
+{
+"id": 5113,
+"queries": {
+"q": "Where is the code behind this change: Made ModelAdmin.list_editable use transactions.",
+"raw": "Made ModelAdmin.list_editable use transactions."
+},
+"gold": [
+"django/contrib/admin/options.py"
+],
+"date": "2022-09-24"
+},
+{
+"id": 5114,
+"queries": {
+"q": "Where is the code behind this change: Fixed ContentTypeManager.get_for_models() crash when using in migrations.",
+"raw": "Fixed ContentTypeManager.get_for_models() crash when using in migrations."
+},
+"gold": [
+"django/contrib/contenttypes/models.py"
+],
+"date": "2022-10-10"
+},
+{
+"id": 5115,
+"queries": {
+"q": "Where is the code behind this change: Made LocaleMiddleware respect language from requests when i18n patterns are used.",
+"raw": "Made LocaleMiddleware respect language from requests when i18n patterns are used."
+},
+"gold": [
+"django/middleware/locale.py",
+"django/utils/translation/trans_null.py",
+"django/utils/translation/trans_real.py"
+],
+"date": "2022-10-02"
+},
+{
+"id": 5116,
+"queries": {
+"q": "Where is the code behind this change: Fixed crash of ordering by nested selected expression.",
+"raw": "Fixed crash of ordering by nested selected expression."
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-10-18"
+},
+{
+"id": 5117,
+"queries": {
+"q": "Where is the code behind this change: Made management commands don't use black for non-Python files.",
+"raw": "Made management commands don't use black for non-Python files."
+},
+"gold": [
+"django/core/management/templates.py"
+],
+"date": "2022-10-18"
+},
+{
+"id": 5118,
+"queries": {
+"q": "Where is the code behind this change: Made test runner with --debug-sql format SQL queries.",
+"raw": "Made test runner with --debug-sql format SQL queries."
+},
+"gold": [
+"django/test/runner.py"
+],
+"date": "2022-10-21"
+},
+{
+"id": 5119,
+"queries": {
+"q": "Where is the code behind this change: Fixed loss of precision for Decimal values in floatformat filter.",
+"raw": "Fixed loss of precision for Decimal values in floatformat filter."
+},
+"gold": [
+"django/template/defaultfilters.py"
+],
+"date": "2022-10-24"
+},
+{
+"id": 5120,
+"queries": {
+"q": "Where is the code behind this change: Fixed file_move_safe() crash when moving files with SELinux.",
+"raw": "Fixed file_move_safe() crash when moving files with SELinux."
+},
+"gold": [
+"django/core/files/move.py"
+],
+"date": "2022-09-14"
+},
+{
+"id": 5121,
+"queries": {
+"q": "Where is the code behind this change: Fixed rendering ClearableFileInput when editing with invalid files.",
+"raw": "Fixed rendering ClearableFileInput when editing with invalid files."
+},
+"gold": [
+"django/forms/fields.py"
+],
+"date": "2022-10-16"
+},
+{
+"id": 5122,
+"queries": {
+"q": "Where is the code behind this change: Cleansed sessionid cookie in error reports.",
+"raw": "Cleansed sessionid cookie in error reports."
+},
+"gold": [
+"django/views/debug.py"
+],
+"date": "2022-10-26"
+},
+{
+"id": 5123,
+"queries": {
+"q": "Where is the code behind this change: Fixed link to password reset view in UserChangeForm.password's help text when using to_field.",
+"raw": "Fixed link to password reset view in UserChangeForm.password's help text when using to_field."
+},
+"gold": [
+"django/contrib/auth/forms.py"
+],
+"date": "2022-09-30"
+},
+{
+"id": 5124,
+"queries": {
+"q": "Where is the code behind this change: Fixed sliced QuerySet.union() crash on a single non-empty queryset.",
+"raw": "Fixed sliced QuerySet.union() crash on a single non-empty queryset."
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-10-29"
+},
+{
+"id": 5125,
+"queries": {
+"q": "Where is the code behind this change: Added logical NOT support to F expressions.",
+"raw": "Added logical NOT support to F expressions."
+},
+"gold": [
+"django/db/models/expressions.py"
+],
+"date": "2022-09-26"
+},
+{
+"id": 5126,
+"queries": {
+"q": "Where is the code behind this change: Added async-compatible interface to Model methods.",
+"raw": "Added async-compatible interface to Model methods."
+},
+"gold": [
+"django/db/models/base.py"
+],
+"date": "2022-10-30"
+},
+{
+"id": 5127,
+"queries": {
+"q": "Where is the code behind this change: Fixed __exact lookup when nested arrays contain only NULL values.",
+"raw": "Fixed __exact lookup when nested arrays contain only NULL values."
+},
+"gold": [
+"django/contrib/postgres/fields/array.py"
+],
+"date": "2022-10-09"
+},
+{
+"id": 5128,
+"queries": {
+"q": "Where is the code behind this change: Avoided table rebuild when adding inline m2m fields on SQLite.",
+"raw": "Avoided table rebuild when adding inline m2m fields on SQLite."
+},
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+],
+"date": "2022-11-04"
+},
+{
+"id": 5129,
+"queries": {
+"q": "Where is the code behind this change: Propagated alters_data attribute to callables overridden in subclasses.",
+"raw": "Propagated alters_data attribute to callables overridden in subclasses."
+},
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/base.py",
+"django/db/models/fields/files.py",
+"django/db/models/fields/related_descriptors.py",
+"django/db/models/query.py",
+"django/db/models/utils.py",
+"django/forms/models.py"
+],
+"date": "2022-10-04"
+},
+{
+"id": 5130,
+"queries": {
+"q": "Where is the code behind this change: Fixed Sitemap.get_latest_lastmod() crash with empty items.",
+"raw": "Fixed Sitemap.get_latest_lastmod() crash with empty items."
+},
+"gold": [
+"django/contrib/sitemaps/__init__.py"
+],
+"date": "2022-11-04"
+},
+{
+"id": 5131,
+"queries": {
+"q": "Where is the code behind this change: Made Model.refresh_from_db() clear cached generic relations.",
+"raw": "Made Model.refresh_from_db() clear cached generic relations."
+},
+"gold": [
+"django/db/models/base.py"
+],
+"date": "2022-11-07"
+},
+{
+"id": 5132,
+"queries": {
+"q": "Where is the code behind this change: Switched MySQL to group by selected primary keys.",
+"raw": "Switched MySQL to group by selected primary keys."
+},
+"gold": [
+"django/db/backends/mysql/features.py",
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-11-05"
+},
+{
+"id": 5133,
+"queries": {
+"q": "Where is the code behind this change: Fixed acreate(), aget_or_create(), and aupdate_or_create() methods for related managers.",
+"raw": "Fixed acreate(), aget_or_create(), and aupdate_or_create() methods for related managers."
+},
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-11-04"
+},
+{
+"id": 5134,
+"queries": {
+"q": "Where is the code behind this change: Added support for pyformat style parameters on SQLite.",
+"raw": "Added support for pyformat style parameters on SQLite."
+},
+"gold": [
+"django/db/backends/sqlite3/base.py",
+"django/db/backends/sqlite3/features.py"
+],
+"date": "2022-10-30"
+},
+{
+"id": 5135,
+"queries": {
+"q": "Where is the code behind this change: Fixed reading request body with async request factory and client.",
+"raw": "Fixed reading request body with async request factory and client."
+},
+"gold": [
+"django/test/client.py"
+],
+"date": "2022-11-08"
+},
+{
+"id": 5136,
+"queries": {
+"q": "Where is the code behind this change: Added async-compatible interface to related managers.",
+"raw": "Added async-compatible interface to related managers."
+},
+"gold": [
+"django/contrib/contenttypes/fields.py",
+"django/db/models/fields/related_descriptors.py"
+],
+"date": "2022-11-03"
+},
+{
+"id": 5137,
+"queries": {
+"q": "Where is the code behind this change: Stripped unused annotations on aggregation.",
+"raw": "Stripped unused annotations on aggregation."
+},
+"gold": [
+"django/db/models/expressions.py",
+"django/db/models/query_utils.py",
+"django/db/models/sql/query.py",
+"django/db/models/sql/where.py"
+],
+"date": "2022-11-06"
+},
+{
+"id": 5138,
+"queries": {
+"q": "Where is the code behind this change: Allowed adding deferrable conditional exclusion constraints on PostgreSQL.",
+"raw": "Allowed adding deferrable conditional exclusion constraints on PostgreSQL."
+},
+"gold": [
+"django/contrib/postgres/constraints.py"
+],
+"date": "2022-11-10"
+},
+{
+"id": 5139,
+"queries": {
+"q": "Where is the code behind this change: Added headers argument to RequestFactory and Client classes.",
+"raw": "Added headers argument to RequestFactory and Client classes."
+},
+"gold": [
+"django/http/__init__.py",
+"django/http/request.py",
+"django/middleware/csrf.py",
+"django/test/client.py"
+],
+"date": "2022-10-09"
+},
+{
+"id": 5140,
+"queries": {
+"q": "Where is the code behind this change: Fixed combinator order by alias when using select_related().",
+"raw": "Fixed combinator order by alias when using select_related()."
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-11-15"
+},
+{
+"id": 5141,
+"queries": {
+"q": "Where is the code behind this change: Fixed altering ManyToManyField when changing to self-referential.",
+"raw": "Fixed altering ManyToManyField when changing to self-referential."
+},
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+],
+"date": "2022-11-11"
+},
+{
+"id": 5142,
+"queries": {
+"q": "Where is the code behind this change: Added QuerySet.values()/values_list() support for ArrayField's __overlap lookup.",
+"raw": "Added QuerySet.values()/values_list() support for ArrayField's __overlap lookup."
+},
+"gold": [
+"django/contrib/postgres/lookups.py"
+],
+"date": "2022-10-26"
+},
+{
+"id": 5143,
+"queries": {
+"q": "Where is the code behind this change: Reverted \"Fixed #32901 -- Optimized BaseForm.__getitem__().\"",
+"raw": "Reverted \"Fixed #32901 -- Optimized BaseForm.__getitem__().\""
+},
+"gold": [
+"django/forms/forms.py"
+],
+"date": "2022-11-17"
+},
+{
+"id": 5144,
+"queries": {
+"q": "Where is the code behind this change: Fixed queryset crash when excluding reverse GenericRelation.",
+"raw": "Fixed queryset crash when excluding reverse GenericRelation."
+},
+"gold": [
+"django/contrib/contenttypes/fields.py"
+],
+"date": "2022-11-17"
+},
+{
+"id": 5145,
+"queries": {
+"q": "Where is the code behind this change: Prevented callable default hidden widget value from being overridden.",
+"raw": "Prevented callable default hidden widget value from being overridden."
+},
+"gold": [
+"django/forms/boundfield.py"
+],
+"date": "2022-10-26"
+},
+{
+"id": 5146,
+"queries": {
+"q": "Where is the code behind this change: Logged transaction management queries.",
+"raw": "Logged transaction management queries."
+},
+"gold": [
+"django/db/backends/base/base.py",
+"django/db/backends/oracle/base.py",
+"django/db/backends/utils.py"
+],
+"date": "2022-10-20"
+},
+{
+"id": 5147,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.bulk_create() crash on \"pk\" in unique_fields.",
+"raw": "Fixed QuerySet.bulk_create() crash on \"pk\" in unique_fields."
+},
+"gold": [
+"django/db/models/query.py"
+],
+"date": "2022-11-22"
+},
+{
+"id": 5148,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.bulk_create() on fields with db_column in unique_fields/update_fields.",
+"raw": "Fixed QuerySet.bulk_create() on fields with db_column in unique_fields/update_fields."
+},
+"gold": [
+"django/db/models/query.py",
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-11-22"
+},
+{
+"id": 5149,
+"queries": {
+"q": "Where is the code behind this change: Delayed annotating aggregations.",
+"raw": "Delayed annotating aggregations."
+},
+"gold": [
+"django/db/models/query.py",
+"django/db/models/sql/query.py"
+],
+"date": "2022-11-22"
+},
+{
+"id": 5150,
+"queries": {
+"q": "Where is the code behind this change: Prevented possibility of database lock when using LiveServerTestCase with in-memory SQLite database.",
+"raw": "Prevented possibility of database lock when using LiveServerTestCase with in-memory SQLite database."
+},
+"gold": [
+"django/db/backends/sqlite3/features.py",
+"django/test/testcases.py"
+],
+"date": "2022-11-18"
+},
+{
+"id": 5151,
+"queries": {
+"q": "Where is the code behind this change: Skipped saving sessions on 5xx responses.",
+"raw": "Skipped saving sessions on 5xx responses."
+},
+"gold": [
+"django/contrib/sessions/middleware.py"
+],
+"date": "2022-11-24"
+},
+{
+"id": 5152,
+"queries": {
+"q": "Where is the code behind this change: Added exception notes to the technical 500 debug page.",
+"raw": "Added exception notes to the technical 500 debug page."
+},
+"gold": [
+"django/views/debug.py"
+],
+"date": "2022-11-21"
+},
+{
+"id": 5153,
+"queries": {
+"q": "Where is the code behind this change: Fixed logging SQL queries with duplicate parameters on Oracle.",
+"raw": "Fixed logging SQL queries with duplicate parameters on Oracle."
+},
+"gold": [
+"django/db/backends/oracle/operations.py"
+],
+"date": "2022-10-18"
+},
+{
+"id": 5154,
+"queries": {
+"q": "Where is the code behind this change: Made UserCreationForm save many-to-many fields.",
+"raw": "Made UserCreationForm save many-to-many fields."
+},
+"gold": [
+"django/contrib/auth/forms.py"
+],
+"date": "2022-11-27"
+},
+{
+"id": 5155,
+"queries": {
+"q": "Where is the code behind this change: Added fine-grained error locations to the technical 500 debug page.",
+"raw": "Added fine-grained error locations to the technical 500 debug page."
+},
+"gold": [
+"django/views/debug.py"
+],
+"date": "2022-11-03"
+},
+{
+"id": 5156,
+"queries": {
+"q": "Where is the code behind this change: Added django.utils.http.content_disposition_header().",
+"raw": "Added django.utils.http.content_disposition_header()."
+},
+"gold": [
+"django/http/response.py",
+"django/utils/http.py"
+],
+"date": "2022-11-30"
+},
+{
+"id": 5157,
+"queries": {
+"q": "Where is the code behind this change: Added ES module support to ManifestStaticFilesStorage.",
+"raw": "Added ES module support to ManifestStaticFilesStorage."
+},
+"gold": [
+"django/contrib/staticfiles/storage.py"
+],
+"date": "2022-12-07"
+},
+{
+"id": 5158,
+"queries": {
+"q": "Where is the code behind this change: Bumped minimum supported SQLite to 3.21.0.",
+"raw": "Bumped minimum supported SQLite to 3.21.0."
+},
+"gold": [
+"django/db/backends/sqlite3/base.py",
+"django/db/backends/sqlite3/features.py"
+],
+"date": "2022-12-08"
+},
+{
+"id": 5159,
+"queries": {
+"q": "Where is the code behind this change: Deprecated passing positional arguments to Signer/TimestampSigner.",
+"raw": "Deprecated passing positional arguments to Signer/TimestampSigner."
+},
+"gold": [
+"django/core/signing.py"
+],
+"date": "2022-11-30"
+},
+{
+"id": 5160,
+"queries": {
+"q": "Where is the code behind this change: Fixed Meta.constraints validation crash with ArrayField and __len lookup.",
+"raw": "Fixed Meta.constraints validation crash with ArrayField and __len lookup."
+},
+"gold": [
+"django/contrib/postgres/fields/array.py"
+],
+"date": "2022-12-10"
+},
+{
+"id": 5161,
+"queries": {
+"q": "Where is the code behind this change: Prevented FileBasedCache.has_key() crash caused by a race condition.",
+"raw": "Prevented FileBasedCache.has_key() crash caused by a race condition."
+},
+"gold": [
+"django/core/cache/backends/filebased.py"
+],
+"date": "2022-12-13"
+},
+{
+"id": 5162,
+"queries": {
+"q": "Where is the code behind this change: Made RedisCacheClient.incr() use write connection.",
+"raw": "Made RedisCacheClient.incr() use write connection."
+},
+"gold": [
+"django/core/cache/backends/redis.py"
+],
+"date": "2022-12-16"
+},
+{
+"id": 5163,
+"queries": {
+"q": "Where is the code behind this change: Implemented Heal The Breach (HTB) in GzipMiddleware.",
+"raw": "Implemented Heal The Breach (HTB) in GzipMiddleware."
+},
+"gold": [
+"django/middleware/gzip.py",
+"django/utils/text.py"
+],
+"date": "2022-11-20"
+},
+{
+"id": 5164,
+"queries": {
+"q": "Where is the code behind this change: Allowed Sitemap to customize languages for each item.",
+"raw": "Allowed Sitemap to customize languages for each item."
+},
+"gold": [
+"django/contrib/sitemaps/__init__.py"
+],
+"date": "2022-10-21"
+},
+{
+"id": 5165,
+"queries": {
+"q": "Where is the code behind this change: Preserved Char/TextField.db_collation when altering column type.",
+"raw": "Preserved Char/TextField.db_collation when altering column type."
+},
+"gold": [
+"django/contrib/gis/db/backends/postgis/schema.py",
+"django/db/backends/base/schema.py",
+"django/db/backends/mysql/schema.py",
+"django/db/backends/oracle/schema.py",
+"django/db/backends/postgresql/schema.py"
+],
+"date": "2022-12-22"
+},
+{
+"id": 5166,
+"queries": {
+"q": "Where is the code behind this change: Added async support to StreamingHttpResponse.",
+"raw": "Added async support to StreamingHttpResponse."
+},
+"gold": [
+"django/core/handlers/asgi.py",
+"django/http/response.py",
+"django/middleware/gzip.py",
+"django/utils/asyncio.py"
+],
+"date": "2022-12-13"
+},
+{
+"id": 5167,
+"queries": {
+"q": "Where is the code behind this change: Made permissions creation respect the \"using\" parameter.",
+"raw": "Made permissions creation respect the \"using\" parameter."
+},
+"gold": [
+"django/contrib/auth/management/__init__.py"
+],
+"date": "2022-12-23"
+},
+{
+"id": 5168,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.select_related() with multiple FilteredRelations to the OneToOneField.",
+"raw": "Fixed QuerySet.select_related() with multiple FilteredRelations to the OneToOneField."
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-12-26"
+},
+{
+"id": 5169,
+"queries": {
+"q": "Where is the code behind this change: Fixed migration crash when removing check constraints on MySQL < 8.0.16.",
+"raw": "Fixed migration crash when removing check constraints on MySQL < 8.0.16."
+},
+"gold": [
+"django/db/backends/base/schema.py"
+],
+"date": "2022-12-25"
+},
+{
+"id": 5170,
+"queries": {
+"q": "Where is the code behind this change: Added support for comments on columns and tables.",
+"raw": "Added support for comments on columns and tables."
+},
+"gold": [
+"django/core/management/commands/inspectdb.py",
+"django/db/backends/base/features.py",
+"django/db/backends/base/schema.py",
+"django/db/backends/mysql/features.py",
+"django/db/backends/mysql/introspection.py",
+"django/db/backends/mysql/schema.py",
+"django/db/backends/oracle/features.py",
+"django/db/backends/oracle/introspection.py",
+"django/db/backends/postgresql/features.py",
+"django/db/backends/postgresql/introspection.py",
+"django/db/migrations/autodetector.py",
+"django/db/migrations/operations/__init__.py",
+"django/db/migrations/operations/models.py",
+"django/db/models/base.py",
+"django/db/models/fields/__init__.py",
+"django/db/models/fields/related.py",
+"django/db/models/options.py"
+],
+"date": "2022-10-16"
+},
+{
+"id": 5171,
+"queries": {
+"q": "Where is the code behind this change: Added support for unlimited CharField on PostgreSQL.",
+"raw": "Added support for unlimited CharField on PostgreSQL."
+},
+"gold": [
+"django/core/management/commands/inspectdb.py",
+"django/db/backends/base/features.py",
+"django/db/backends/postgresql/base.py",
+"django/db/backends/postgresql/features.py",
+"django/db/models/fields/__init__.py"
+],
+"date": "2022-11-10"
+},
+{
+"id": 5172,
+"queries": {
+"q": "Where is the code behind this change: Added case-insensitive unique username validation in UserCreationForm.",
+"raw": "Added case-insensitive unique username validation in UserCreationForm."
+},
+"gold": [
+"django/contrib/auth/forms.py"
+],
+"date": "2022-09-24"
+},
+{
+"id": 5173,
+"queries": {
+"q": "Where is the code behind this change: Confirmed support for GDAL 3.6.",
+"raw": "Confirmed support for GDAL 3.6."
+},
+"gold": [
+"django/contrib/gis/gdal/libgdal.py"
+],
+"date": "2022-12-29"
+},
+{
+"id": 5174,
+"queries": {
+"q": "Where is the code behind this change: Added ManifestFilesMixin.manifest_hash attribute.",
+"raw": "Added ManifestFilesMixin.manifest_hash attribute."
+},
+"gold": [
+"django/contrib/staticfiles/storage.py"
+],
+"date": "2022-12-29"
+},
+{
+"id": 5175,
+"queries": {
+"q": "Where is the code behind this change: Added IsEmpty GIS database function and __isempty lookup on PostGIS.",
+"raw": "Added IsEmpty GIS database function and __isempty lookup on PostGIS."
+},
+"gold": [
+"django/contrib/gis/db/backends/base/operations.py",
+"django/contrib/gis/db/backends/mysql/operations.py",
+"django/contrib/gis/db/backends/oracle/operations.py",
+"django/contrib/gis/db/backends/spatialite/operations.py",
+"django/contrib/gis/db/models/functions.py"
+],
+"date": "2022-12-31"
+},
+{
+"id": 5176,
+"queries": {
+"q": "Where is the code behind this change: Made the session role configurable on PostgreSQL.",
+"raw": "Made the session role configurable on PostgreSQL."
+},
+"gold": [
+"django/db/backends/postgresql/base.py"
+],
+"date": "2022-12-05"
+},
+{
+"id": 5179,
+"queries": {
+"q": "Where is the code behind this change: Optimized LimitedStream wrapper.",
+"raw": "Optimized LimitedStream wrapper."
+},
+"gold": [
+"django/core/handlers/wsgi.py",
+"django/core/servers/basehttp.py"
+],
+"date": "2022-07-22"
+},
+{
+"id": 5192,
+"queries": {
+"q": "Where is the code behind this change: Fixed QuerySet.select_related() with multi-level FilteredRelation.",
+"raw": "Fixed QuerySet.select_related() with multi-level FilteredRelation."
+},
+"gold": [
+"django/db/models/sql/compiler.py"
+],
+"date": "2022-12-29"
+},
+{
+"id": 5233,
+"queries": {
+"q": "Where is the code behind this change: Used app_config.verbose_name in ContentType.__str__().",
+"raw": "Used app_config.verbose_name in ContentType.__str__()."
+},
+"gold": [
+"django/contrib/contenttypes/models.py"
+],
+"date": "2022-09-13"
+},
+{
+"id": 5246,
+"queries": {
+"q": "Where is the code behind this change: Added form field rendering.",
+"raw": "Added form field rendering."
+},
+"gold": [
+"django/forms/boundfield.py",
+"django/forms/fields.py",
+"django/forms/renderers.py",
+"django/forms/utils.py"
+],
+"date": "2022-11-02"
+},
+{
+"id": 5253,
+"queries": {
+"q": "Where is the code behind this change: Allowed handling ASGI http.disconnect in long-lived requests.",
+"raw": "Allowed handling ASGI http.disconnect in long-lived requests."
+},
+"gold": [
+"django/core/handlers/asgi.py"
+],
+"date": "2022-12-21"
+}
+]

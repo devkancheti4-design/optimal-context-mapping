@@ -1,0 +1,11 @@
+5,791 pieces of code to write questions for (0 already written)
+estimated cost: $0.23 of claude-haiku-5-5 (cap $11.76)
+  100/232 requests, $0.102
+  200/232 requests, $0.196
+  232/232 requests, $0.227
+questions written: $0.227
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22359.13it/s]
+  taught 2,000/5,781 (29s)
+  taught 4,000/5,781 (55s)
+  taught 5,781/5,781 (80s)
+taught 5,781 questions onto code; 5,781 taught in all; the learned law is active

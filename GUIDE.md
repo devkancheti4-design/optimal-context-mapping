@@ -34,6 +34,12 @@ modeld build . --out modeld-out --cache ~/.cache/modeld/embed.sqlite
 The rebuild carries every lesson, and re-finds its line even after the code moves (38 of 38 across 400 commits). With
 `--cache`, it embeds only the code that changed, and gives the same workspace bit for bit.
 
+## 5b. Teach it the whole codebase once
+`modeld cover` has Claude Haiku write one question for each piece of non-test code and teaches each as a pointer to
+that code. It costs about $1 for 24k pieces. It helps from day one, before the team has asked anything: on Django the
+right file came first 28% more often. Run it again after a rebuild, and it writes questions only for new or changed
+code.
+
 ## 6. When a wrong answer costs more than a search
 By default, learned code goes first whenever the router law trusts it, which is the cheapest policy. If your team would
 rather pay a little more for fewer wrong first picks, set:

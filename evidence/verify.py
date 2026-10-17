@@ -201,3 +201,105 @@ if os.path.isdir(f"{E}/team-year"):
         line(f"{name}: paired fixes, cost alone -> {name}", f"{len(ks)} · ${a_usd:.2f} -> ${d_usd:.2f} ({a_usd / d_usd:.2f}x)", f"rows {arm}.jsonl")
         line(f"{name}: right (pre-registered / cited, D4) vs alone", f"{sum(md[k]['right'] for k in ks)} / {sum(cited(md[k]) for k in ks)} vs {sum(al[k]['right'] for k in ks)}", f"rows {arm}.jsonl")
         line(f"{name}: novelty (share on the teach path)", f"{sum(md[k]['path'] == 'teach' for k in ks) / len(ks):.2f}", f"rows {arm}.jsonl")
+
+
+def mcnemar(a, b):
+    """Exact two-sided McNemar on paired booleans: (a only, b only, p)."""
+    import math
+    n10 = sum(x and not y for x, y in zip(a, b)); n01 = sum(y and not x for x, y in zip(a, b)); n = n10 + n01
+    k = min(n10, n01)
+    return n10, n01, (1.0 if n == 0 else min(1.0, 2 * sum(math.comb(n, i) for i in range(k + 1)) / 2 ** n))
+
+
+def prereg(folder, names):
+    """Check each named file against every hash recorded for it in <folder>/PREREG_HASHES.txt."""
+    rec = {}
+    for line_ in open(f"{E}/{folder}/PREREG_HASHES.txt"):
+        parts = line_.split()
+        if len(parts) == 2 and len(parts[0]) == 64:
+            rec.setdefault(parts[1].split("/")[-1] if "/" not in parts[1] or parts[1].startswith(("~", "/")) else parts[1], []).append(parts[0])
+    for name in names:
+        h = hashlib.sha256(open(f"{E}/{folder}/{name}", "rb").read()).hexdigest()
+        hs = rec.get(name) or rec.get(name.split("/")[-1], [])
+        line(f"pre-registered {name}", "hash matches" if h in hs else "HASH MISMATCH", f"{folder}/PREREG_HASHES.txt")
+
+
+# --- 9. Real comprehension questions: bluesky atproto's answered Discussions, blind judge --------------------------
+if os.path.isdir(f"{E}/oss-comprehension"):
+    section("Real comprehension questions: 115 atproto Discussions, blind judge (PROTOCOL_OSS_COMPREHENSION)")
+    prereg("oss-comprehension", ["PROTOCOL_OSS_COMPREHENSION.md", "comp_questions.json", "comp_meta.json"])
+    oc = lambda name: {json.loads(l)["k"]: json.loads(l) for l in open(f"{E}/oss-comprehension/rows/{name}")}
+    md, al = oc("md.jsonl"), oc("alone.jsonl")
+    V = {(r["key"].split("|")[0], int(r["key"].split("|")[1])): r["verdict"] for r in map(json.loads, open(f"{E}/oss-comprehension/rows/judged.jsonl"))}
+    ks = sorted(k for k in md.keys() & al.keys() if ("md", k) in V and ("alone", k) in V)
+    a_usd, d_usd = sum(al[k]["usd"] for k in ks), sum(md[k]["usd"] for k in ks)
+    line("paired and judged questions; cost alone -> Model D", f"{len(ks)} · ${a_usd:.2f} -> ${d_usd:.2f} ({a_usd / d_usd:.2f}x)", "rows md/alone.jsonl")
+    for arm, name in (("md", "Model D"), ("alone", "alone")):
+        c = [V[(arm, k)] for k in ks]
+        line(f"{name}: RIGHT / PARTIAL / WRONG", f"{c.count('RIGHT')} / {c.count('PARTIAL')} / {c.count('WRONG')}", "rows judged.jsonl")
+    ok = lambda arm: [V[(arm, k)] in ("RIGHT", "PARTIAL") for k in ks]
+    n10, n01, p = mcnemar(ok("md"), ok("alone"))
+    line("right or partial, paired: Model D only / alone only, p", f"{n10} / {n01}, p = {p:.2f}", "rows judged.jsonl")
+    pts = lambda arm: sum({"RIGHT": 2, "PARTIAL": 1}.get(V[(arm, k)], 0) for k in ks)
+    line("quality points, Model D / alone", f"{pts('md')} / {pts('alone')} ({pts('md') / pts('alone'):.0%})", "rows judged.jsonl")
+
+# --- 10. Coverage: teach the whole codebase once, then the 288 real Django 2022 questions ---------------------------
+if os.path.isdir(f"{E}/team-year/coverage"):
+    section("Coverage: one generated question per piece of Django code, taught once (PROTOCOL_COVERAGE)")
+    h = hashlib.sha256(open(f"{E}/team-year/coverage/PROTOCOL_COVERAGE.md", "rb").read()).hexdigest()
+    line("pre-registered PROTOCOL_COVERAGE.md", "hash matches" if h in open(f"{E}/team-year/PREREG_HASHES.txt").read() else "HASH MISMATCH", "team-year/PREREG_HASHES.txt")
+    line("questions written and taught", f"{sum(1 for _ in open(f'{E}/team-year/coverage/coverage_questions.jsonl')):,}", "coverage_questions.jsonl")
+    cv = load("team-year/coverage/coverage_eval.json")
+    cold, cov = {r["k"]: r for r in cv["cold"]["rows"]}, {r["k"]: r for r in cv["covered"]["rows"]}
+    ks = sorted(cold.keys() & cov.keys())
+    for key, label in (("right1", "right file first"), ("right5", "right file in the top 5")):
+        n10, n01, p = mcnemar([cov[k][key] for k in ks], [cold[k][key] for k in ks])
+        line(f"{label}: cold -> covered (covered only / cold only, p)", f"{sum(cold[k][key] for k in ks)} -> {sum(cov[k][key] for k in ks)} ({n10} / {n01}, p = {p:.2g})", "coverage_eval.json")
+    line("readouts led by taught code", f"{sum(cov[k]['taught'] for k in ks)} of {len(ks)}", "coverage_eval.json")
+
+# --- 11. Final Model D against Graphify 0.9.92 --------------------------------------------------------------------
+if os.path.isdir(f"{E}/vs-graphify"):
+    section("Final Model D against Graphify 0.9.92 (PROTOCOL_VS_GRAPHIFY; Part B interim, D1)")
+    G = f"{E}/vs-graphify"
+    prereg("vs-graphify", ["PROTOCOL_VS_GRAPHIFY.md", "ADDENDUM_A1_TOKEN_CLAIM.md", "questions/django2022.json", "scripts/point.py",
+                           "scripts/gf_mcp.py", "scripts/e2e_graphify.py", "scripts/score.py"])
+    arms = (("md_cover", "Model D taught"), ("md_cold", "Model D cold"), ("gf", "Graphify 0.9.92"))
+
+    def hits(qs, res, q):
+        return {a: [[any(f in it["gold"] for f in res[a][str(it["id"])][q]["files"][:k]) for it in qs] for k in (1, 3, 5)] for a, _ in arms}
+
+    dj = json.load(open(f"{G}/questions/django2022.json"))
+    R = {a: json.load(open(f"{G}/results/dj_{a}.json")) for a, _ in arms}
+    H = hits(dj, R, "q")
+    for a, name in arms:
+        tok = mean(R[a][str(it["id"])]["q"]["chars"] / 4 for it in dj)
+        line(f"Django 2022 (288), {name}: top-1 / 3 / 5", f"{' / '.join(str(sum(x)) for x in H[a])} · {tok:,.0f} tok", f"rows dj_{a}.json")
+    n10, n01, p = mcnemar(H["md_cover"][0], H["gf"][0])
+    line("Django right first, Model D taught only / Graphify only, p", f"{n10} / {n01}, p = {p:.1e}", "rows")
+    lite = [(json.load(open(f"{G}/questions/lite_{n}.json")), {a: json.load(open(f"{G}/results/lite_{a}_{n}.json")) for a, _ in arms})
+            for n in sorted(p_.split("lite_")[1][:-5] for p_ in os.listdir(f"{G}/questions") if p_.startswith("lite_"))]
+    for q, label in (("title", "issue title"), ("q400", "title + 400 characters")):
+        tot = {a: [0, 0, 0] for a, _ in arms}
+        for qs, res in lite:
+            for a, x in hits(qs, res, q).items():
+                tot[a] = [t + sum(v) for t, v in zip(tot[a], x)]
+        line(f"SWE-bench Lite ({sum(len(qs) for qs, _ in lite)}), {label}: top-1 / 3 / 5",
+             "  ".join(f"{ {'md_cover': 'taught', 'md_cold': 'cold', 'gf': 'Graphify'}[a]} {'/'.join(map(str, tot[a]))}" for a, _ in arms), "rows lite_*.json")
+    tc = load("vs-graphify/results/token_claim.json")
+    line("Graphify's token formula on its own Karpathy example (0.9.92)", f"{tc['karpathy, its reported corpus words']['reduction_ratio']}x (claimed 71.5x)", "token_claim.json")
+    line("the same formula on Django 2022: Graphify / Model D cold", f"{tc['django 2022, the 288 real questions']['reduction_ratio']:,}x / {tc['django 2022, formula on Part A readouts: md_cold']['reduction_ratio']:,}x", "token_claim.json")
+    gfr = {json.loads(l)["k"]: json.loads(l) for f in sorted(os.listdir(f"{G}/rows")) if f.startswith("rows_gf") for l in open(f"{G}/rows/{f}")}
+    al = {json.loads(l)["k"]: json.loads(l) for l in open(f"{E}/team-year/rows/alone.jsonl")}
+    md = {json.loads(l)["k"]: json.loads(l) for l in open(f"{E}/team-year/rows/md.jsonl")}
+    ks = sorted(gfr.keys() & al.keys() & md.keys())
+    cited = lambda r: r["right"] if r["path"] != "read" else any(g in r["answer"] or "django/" + g in r["answer"] for g in r["gold"])
+    for d, name in ((al, "Claude alone"), (gfr, "Claude + Graphify"), (md, "Claude + Model D (cold)")):
+        line(f"Part B, interim ({len(ks)} fixes): {name}", f"${sum(d[k]['usd'] for k in ks):.2f} · {sum(d[k]['requests'] for k in ks)} req · {sum(cited(d[k]) for k in ks)} right", "rows")
+
+# --- 12. Every evidence file is present and unchanged ---------------------------------------------------------------
+section("Every file listed in MANIFEST.json, present with its recorded SHA-256")
+M = load("MANIFEST.json")
+bad = [m["file"] for m in M if not os.path.exists(f"{E}/{m['file']}") or hashlib.sha256(open(f"{E}/{m['file']}", "rb").read()).hexdigest() != m["sha256"]]
+line("files listed / missing or changed", f"{len(M)} / {len(bad)}", "MANIFEST.json")
+for f in bad:
+    line(f"  MISSING OR CHANGED {f}", "", "MANIFEST.json")

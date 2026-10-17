@@ -1,0 +1,62 @@
+[
+{
+"id": "pylint-dev__pylint-5859",
+"queries": {
+"title": "\"--notes\" option ignores note tags that are entirely punctuation",
+"q400": "\"--notes\" option ignores note tags that are entirely punctuation\n### Bug description\n\nIf a note tag specified with the `--notes` option is entirely punctuation, pylint won't report a fixme warning (W0511).\r\n\r\n```python\r\n# YES: yes\r\n# ???: no\r\n```\r\n\r\n`pylint test.py --notes=\"YES,???\"` will return a fixme warning (W0511) for the first line, but not the second.\n\n### Configuration\n\n```ini\nDefault\n```\n"
+},
+"gold": [
+"pylint/checkers/misc.py"
+]
+},
+{
+"id": "pylint-dev__pylint-6506",
+"queries": {
+"title": "Traceback printed for unrecognized option",
+"q400": "Traceback printed for unrecognized option\n### Bug description\n\nA traceback is printed when an unrecognized option is passed to pylint.\n\n### Configuration\n\n_No response_\n\n### Command used\n\n```shell\npylint -Q\n```\n\n\n### Pylint output\n\n```shell\n************* Module Command line\r\nCommand line:1:0: E0015: Unrecognized option found: Q (unrecognized-option)\r\nTraceback (most recent call last):\r\n  File \"/Us"
+},
+"gold": [
+"pylint/config/config_initialization.py"
+]
+},
+{
+"id": "pylint-dev__pylint-7080",
+"queries": {
+"title": "`--recursive=y` ignores `ignore-paths`",
+"q400": "`--recursive=y` ignores `ignore-paths`\n### Bug description\r\n\r\nWhen running recursively, it seems `ignore-paths` in my settings in pyproject.toml is completely ignored\r\n\r\n### Configuration\r\n\r\n```ini\r\n[tool.pylint.MASTER]\r\nignore-paths = [\r\n  # Auto generated\r\n  \"^src/gen/.*$\",\r\n]\r\n```\r\n\r\n\r\n### Command used\r\n\r\n```shell\r\npylint --recursive=y src/\r\n```\r\n\r\n\r\n### Pylint output\r\n\r\n```shell\r\n*************"
+},
+"gold": [
+"pylint/lint/expand_modules.py"
+]
+},
+{
+"id": "pylint-dev__pylint-7114",
+"queries": {
+"title": "Linting fails if module contains module of the same name",
+"q400": "Linting fails if module contains module of the same name\n### Steps to reproduce\r\n\r\nGiven multiple files:\r\n```\r\n.\r\n`-- a/\r\n    |-- a.py\r\n    `-- b.py\r\n```\r\nWhich are all empty, running `pylint a` fails:\r\n\r\n```\r\n$ pylint a\r\n************* Module a\r\na/__init__.py:1:0: F0010: error while code parsing: Unable to load file a/__init__.py:\r\n[Errno 2] No such file or directory: 'a/__init__.py' (parse-error)"
+},
+"gold": [
+"pylint/lint/expand_modules.py"
+]
+},
+{
+"id": "pylint-dev__pylint-7228",
+"queries": {
+"title": "rxg include '\\p{Han}' will throw error",
+"q400": "rxg include '\\p{Han}' will throw error\n### Bug description\r\n\r\nconfig rxg in pylintrc with \\p{Han} will throw err\r\n\r\n### Configuration\r\n.pylintrc:\r\n\r\n```ini\r\nfunction-rgx=[\\p{Han}a-z_][\\p{Han}a-z0-9_]{2,30}$\r\n```\r\n\r\n### Command used\r\n\r\n```shell\r\npylint\r\n```\r\n\r\n\r\n### Pylint output\r\n\r\n```shell\r\n(venvtest) tsung-hande-MacBook-Pro:robot_is_comming tsung-han$ pylint\r\nTraceback (most recent call last):\r\n"
+},
+"gold": [
+"pylint/config/argument.py"
+]
+},
+{
+"id": "pylint-dev__pylint-7993",
+"queries": {
+"title": "Using custom braces in message template does not work",
+"q400": "Using custom braces in message template does not work\n### Bug description\n\nHave any list of errors:\r\n\r\nOn pylint 1.7 w/ python3.6 - I am able to use this as my message template\r\n```\r\n$ pylint test.py --msg-template='{{ \"Category\": \"{category}\" }}'\r\nNo config file found, using default configuration\r\n************* Module [redacted].test\r\n{ \"Category\": \"convention\" }\r\n{ \"Category\": \"error\" }\r\n{ \"Cate"
+},
+"gold": [
+"pylint/reporters/text.py"
+]
+}
+]

@@ -1,0 +1,15 @@
+D1 (2026-10-17, before any Part B analysis beyond interim counts): the Part B runs stopped when the Claude Code session
+ended, with Claude + Graphify at 236 of 288 fixes and Model D final at 110. Both resume from where they stopped; done
+fixes are skipped. The Claude + Graphify cap was written as "$12 per shard", but the runner checks it against all three
+shards' spend combined, so a resumed shard would stop at once. The remainder runs as one unsharded process
+(results/rows_gf.jsonl, read together with the shard files) with a total cap of $36, which is the written cap. Model D
+final resumes against its saved workspace (taught entries are saved on every teach), with the same $15 cap.
+
+D1, addendum: the resume found the cause. The Anthropic API credit balance had run out ("Your credit balance is too low"),
+which is also why the first runs stopped. Part B stands at Claude + Graphify 236 of 288 and Model D final 110 of 288
+until credit is added. Nothing was spent on the resume; every call was refused.
+
+D2 (2026-10-17, found while scoring Part A): the same credit exhaustion stopped `modeld cover` on SWE-bench Lite after
+6 of the 12 repositories (flask, requests, seaborn, xarray, pytest and pylint: 40 of the 285 issues, $1.49). On sphinx,
+astropy, matplotlib, scikit-learn, django and sympy every request was refused, nothing was taught, and their md_cover
+readouts are the cold ones. G3 is scored as written, over all 285, and is also reported over the 40 covered issues.

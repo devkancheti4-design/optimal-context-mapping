@@ -1,0 +1,752 @@
+[
+{
+"id": "sympy__sympy-11870",
+"queries": {
+"title": "simplifying exponential -> trig identities",
+"q400": "simplifying exponential -> trig identities\n```\r\nf = 1 / 2 * (-I*exp(I*k) + I*exp(-I*k))\r\ntrigsimp(f)\r\n```\r\n\r\nIdeally, this would yield `sin(k)`. Is there a way to do this?\r\n\r\nAs a corollary, it would be awesome if \r\n\r\n```\r\nf = 1 / 2 / k* (-I*exp(I*k) + I*exp(-I*k))\r\ntrigsimp(f)\r\n```\r\n\r\ncould yield `sinc(k)`. Thank you for your consideration!\n"
+},
+"gold": [
+"sympy/functions/elementary/trigonometric.py"
+]
+},
+{
+"id": "sympy__sympy-11897",
+"queries": {
+"title": "LaTeX printer inconsistent with pretty printer",
+"q400": "LaTeX printer inconsistent with pretty printer\nThe LaTeX printer should always give the same output as the pretty printer, unless better output is possible from LaTeX. In some cases it is inconsistent. For instance:\n\n``` py\nIn [9]: var('x', positive=True)\nOut[9]: x\n\nIn [10]: latex(exp(-x)*log(x))\nOut[10]: '\\\\frac{1}{e^{x}} \\\\log{\\\\left (x \\\\right )}'\n\nIn [11]: pprint(exp(-x)*log(x))\n -x\n\u212f  \u22c5log(x)"
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-12171",
+"queries": {
+"title": "matematica code printer does not handle floats and derivatives correctly",
+"q400": "matematica code printer does not handle floats and derivatives correctly\nIn its current state the mathematica code printer does not handle Derivative(func(vars), deriver) \r\ne.g. Derivative(f(t), t) yields Derivative(f(t), t) instead of D[f[t],t]\r\n\r\nAlso floats with exponents are not handled correctly e.g. 1.0e-4 is not converted to 1.0*^-4\r\n\r\nThis has an easy fix by adding the following lines to M"
+},
+"gold": [
+"sympy/printing/mathematica.py"
+]
+},
+{
+"id": "sympy__sympy-12236",
+"queries": {
+"title": "Wrong result with apart",
+"q400": "Wrong result with apart\n```\r\nPython 3.6.0 |Continuum Analytics, Inc.| (default, Dec 23 2016, 12:22:00) \r\nType \"copyright\", \"credits\" or \"license\" for more information.\r\n\r\nIPython 5.1.0 -- An enhanced Interactive Python.\r\n?         -> Introduction and overview of IPython's features.\r\n%quickref -> Quick reference.\r\nhelp      -> Python's own help system.\r\nobject?   -> Details about 'object', use 'obj"
+},
+"gold": [
+"sympy/polys/domains/polynomialring.py"
+]
+},
+{
+"id": "sympy__sympy-12419",
+"queries": {
+"title": "Sum of the elements of an identity matrix is zero",
+"q400": "Sum of the elements of an identity matrix is zero\nI think this is a bug.\r\n\r\nI created a matrix by M.T * M under an assumption that M is orthogonal.  SymPy successfully recognized that the result is an identity matrix.  I tested its identity-ness by element-wise, queries, and sum of the diagonal elements and received expected results.\r\n\r\nHowever, when I attempt to evaluate the total sum of the elem"
+},
+"gold": [
+"sympy/matrices/expressions/matexpr.py"
+]
+},
+{
+"id": "sympy__sympy-12454",
+"queries": {
+"title": "is_upper() raises IndexError for tall matrices",
+"q400": "is_upper() raises IndexError for tall matrices\nThe function Matrix.is_upper raises an IndexError for a 4x2 matrix of zeros.\r\n```\r\n>>> sympy.zeros(4,2).is_upper\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"sympy/matrices/matrices.py\", line 1112, in is_upper\r\n    for i in range(1, self.rows)\r\n  File \"sympy/matrices/matrices.py\", line 1113, in <genexpr>\r\n    for"
+},
+"gold": [
+"sympy/matrices/matrices.py"
+]
+},
+{
+"id": "sympy__sympy-12481",
+"queries": {
+"title": "`Permutation` constructor fails with non-disjoint cycles",
+"q400": "`Permutation` constructor fails with non-disjoint cycles\nCalling `Permutation([[0,1],[0,1]])` raises a `ValueError` instead of constructing the identity permutation.  If the cycles passed in are non-disjoint, they should be applied in left-to-right order and the resulting permutation should be returned.\r\n\r\nThis should be easy to compute.  I don't see a reason why non-disjoint cycles should be forb"
+},
+"gold": [
+"sympy/combinatorics/permutations.py"
+]
+},
+{
+"id": "sympy__sympy-13031",
+"queries": {
+"title": "Behavior of Matrix hstack and vstack changed in sympy 1.1",
+"q400": "Behavior of Matrix hstack and vstack changed in sympy 1.1\nIn sympy 1.0:\r\n```\r\nimport sympy as sy\r\nM1 = sy.Matrix.zeros(0, 0)\r\nM2 = sy.Matrix.zeros(0, 1)\r\nM3 = sy.Matrix.zeros(0, 2)\r\nM4 = sy.Matrix.zeros(0, 3)\r\nsy.Matrix.hstack(M1, M2, M3, M4).shape\r\n```\r\nreturns \r\n`(0, 6)`\r\n\r\nNow, same in sympy 1.1:\r\n```\r\nimport sympy as sy\r\nM1 = sy.Matrix.zeros(0, 0)\r\nM2 = sy.Matrix.zeros(0, 1)\r\nM3 = sy.Matrix.ze"
+},
+"gold": [
+"sympy/matrices/sparse.py"
+]
+},
+{
+"id": "sympy__sympy-13043",
+"queries": {
+"title": "decompose() function in intpoly returns a list of arbitrary order",
+"q400": "decompose() function in intpoly returns a list of arbitrary order\nThe decompose() function, with separate=True, returns `list(poly_dict.values())`, which is ordered arbitrarily.  \r\n\r\nWhat is this used for? It should be sorted somehow, or returning a set (in which case, why not just use the returned dictionary and have the caller take the values). This is causing test failures for me after some cha"
+},
+"gold": [
+"sympy/integrals/intpoly.py"
+]
+},
+{
+"id": "sympy__sympy-13146",
+"queries": {
+"title": "Exponent doesn't fully simplify",
+"q400": "Exponent doesn't fully simplify\nSay I have code like this:\n\n```\nimport sympy\nfrom sympy import *\nx=Symbol('x')\nexpr1 = S(1)/2*x**2.5\nexpr2 = S(1)*x**(S(5)/2)/2\nres = expr1-expr2\nres= simplify(res.evalf(5))\nprint res\n```\n\nThe output is\n`-0.5*x**2.5 + 0.5*x**2.5`\nHow do I simplify it to 0?\n\n"
+},
+"gold": [
+"sympy/core/operations.py"
+]
+},
+{
+"id": "sympy__sympy-13177",
+"queries": {
+"title": "Mod(x**2, x) is not (always) 0",
+"q400": "Mod(x**2, x) is not (always) 0\nWhen the base is not an integer, `x**2 % x` is not 0. The base is not tested to be an integer in Mod's eval logic:\r\n\r\n```\r\nif (p == q or p == -q or\r\n        p.is_Pow and p.exp.is_Integer and p.base == q or\r\n        p.is_integer and q == 1):\r\n    return S.Zero\r\n```\r\n\r\nso\r\n\r\n```\r\n>>> Mod(x**2, x)\r\n0\r\n```\r\nbut\r\n```\r\n>>> x = S(1.5)\r\n>>> Mod(x**2, x)\r\n0.75\r\n```\n"
+},
+"gold": [
+"sympy/core/mod.py"
+]
+},
+{
+"id": "sympy__sympy-13437",
+"queries": {
+"title": "bell(n).limit(n, oo) should be oo rather than bell(oo)",
+"q400": "bell(n).limit(n, oo) should be oo rather than bell(oo)\n`bell(n).limit(n,oo)` should take the value infinity, but the current output is `bell(oo)`. As the Bell numbers represent the number of partitions of a set, it seems natural that `bell(oo)` should be able to be evaluated rather than be returned unevaluated. This issue is also in line with the recent fixes to the corresponding limit for the Fib"
+},
+"gold": [
+"sympy/functions/combinatorial/numbers.py"
+]
+},
+{
+"id": "sympy__sympy-13471",
+"queries": {
+"title": "Python 2->3 pickle fails with float-containing expressions",
+"q400": "Python 2->3 pickle fails with float-containing expressions\nDumping a pickled sympy expression containing a float in Python 2, then loading it in Python 3 generates an error.\r\n\r\nHere is a minimum working example, verified with sympy git commit 3546ac7 (master at time of writing), Python 2.7 and Python 3.6:\r\n\r\n```python\r\npython2 -c 'import pickle; import sympy; x = sympy.symbols(\"x\"); print pickle.d"
+},
+"gold": [
+"sympy/core/numbers.py"
+]
+},
+{
+"id": "sympy__sympy-13480",
+"queries": {
+"title": ".subs on coth(log(tan(x))) errors for certain integral values",
+"q400": ".subs on coth(log(tan(x))) errors for certain integral values\n    >>> from sympy import *\r\n    >>> x = Symbol('x')\r\n    >>> e = coth(log(tan(x)))\r\n    >>> print(e.subs(x, 2))\r\n    ...\r\n    File \"C:\\Users\\E\\Desktop\\sympy-master\\sympy\\functions\\elementary\\hyperbolic.py\", line 590, in eval\r\n        if cotm is S.ComplexInfinity:\r\n    NameError: name 'cotm' is not defined\r\n\r\nFails for 2, 3, 5, 6, 8, 9,"
+},
+"gold": [
+"sympy/functions/elementary/hyperbolic.py"
+]
+},
+{
+"id": "sympy__sympy-13647",
+"queries": {
+"title": "Matrix.col_insert() no longer seems to work correctly.",
+"q400": "Matrix.col_insert() no longer seems to work correctly.\nExample:\r\n\r\n```\r\nIn [28]: import sympy as sm\r\n\r\nIn [29]: M = sm.eye(6)\r\n\r\nIn [30]: M\r\nOut[30]: \r\n\u23a11  0  0  0  0  0\u23a4\r\n\u23a2                \u23a5\r\n\u23a20  1  0  0  0  0\u23a5\r\n\u23a2                \u23a5\r\n\u23a20  0  1  0  0  0\u23a5\r\n\u23a2                \u23a5\r\n\u23a20  0  0  1  0  0\u23a5\r\n\u23a2                \u23a5\r\n\u23a20  0  0  0  1  0\u23a5\r\n\u23a2                \u23a5\r\n\u23a30  0  0  0  0  1\u23a6\r\n\r\nIn [31]: V = 2 * sm.ones(6"
+},
+"gold": [
+"sympy/matrices/common.py"
+]
+},
+{
+"id": "sympy__sympy-13773",
+"queries": {
+"title": "@ (__matmul__) should fail if one argument is not a matrix",
+"q400": "@ (__matmul__) should fail if one argument is not a matrix\n```\r\n>>> A = Matrix([[1, 2], [3, 4]])\r\n>>> B = Matrix([[2, 3], [1, 2]])\r\n>>> A@B\r\nMatrix([\r\n[ 4,  7],\r\n[10, 17]])\r\n>>> 2@B\r\nMatrix([\r\n[4, 6],\r\n[2, 4]])\r\n```\r\n\r\nRight now `@` (`__matmul__`) just copies `__mul__`, but it should actually only work if the multiplication is actually a matrix multiplication. \r\n\r\nThis is also how NumPy works\r\n\r\n`"
+},
+"gold": [
+"sympy/matrices/common.py"
+]
+},
+{
+"id": "sympy__sympy-13895",
+"queries": {
+"title": "(-x/4 - S(1)/12)**x - 1 simplifies to an inequivalent expression",
+"q400": "(-x/4 - S(1)/12)**x - 1 simplifies to an inequivalent expression\n    >>> from sympy import *\r\n    >>> x = Symbol('x')\r\n    >>> e = (-x/4 - S(1)/12)**x - 1\r\n    >>> e\r\n    (-x/4 - 1/12)**x - 1\r\n    >>> f = simplify(e)\r\n    >>> f\r\n    12**(-x)*(-12**x + (-3*x - 1)**x)\r\n    >>> a = S(9)/5\r\n    >>> simplify(e.subs(x,a))\r\n    -1 - 32*15**(1/5)*2**(2/5)/225\r\n    >>> simplify(f.subs(x,a))\r\n    -1 - 32*(-"
+},
+"gold": [
+"sympy/core/numbers.py"
+]
+},
+{
+"id": "sympy__sympy-13915",
+"queries": {
+"title": "Issue with a substitution that leads to an undefined expression",
+"q400": "Issue with a substitution that leads to an undefined expression\n```\r\nPython 3.6.4 |Anaconda custom (64-bit)| (default, Dec 21 2017, 15:39:08) \r\nType 'copyright', 'credits' or 'license' for more information\r\nIPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.\r\n\r\nIn [1]: from sympy import *\r\n\r\nIn [2]: a,b = symbols('a,b')\r\n\r\nIn [3]: r = (1/(a+b) + 1/(a-b))/(1/(a+b) - 1/(a-b))\r\n\r\nIn ["
+},
+"gold": [
+"sympy/core/mul.py"
+]
+},
+{
+"id": "sympy__sympy-13971",
+"queries": {
+"title": "Display of SeqFormula()",
+"q400": "Display of SeqFormula()\n```\r\nimport sympy as sp\r\nk, m, n = sp.symbols('k m n', integer=True)\r\nsp.init_printing()\r\n\r\nsp.SeqFormula(n**2, (n,0,sp.oo))\r\n```\r\n\r\nThe Jupyter rendering of this command backslash-escapes the brackets producing:\r\n\r\n`\\left\\[0, 1, 4, 9, \\ldots\\right\\]`\r\n\r\nCopying this output to a markdown cell this does not render properly.  Whereas:\r\n\r\n`[0, 1, 4, 9, \\ldots ]`\r\n\r\ndoes render"
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-14024",
+"queries": {
+"title": "Inconsistency when simplifying (-a)**x * a**(-x), a a positive integer",
+"q400": "Inconsistency when simplifying (-a)**x * a**(-x), a a positive integer\nCompare:\r\n\r\n```\r\n>>> a = Symbol('a', integer=True, positive=True)\r\n>>> e = (-a)**x * a**(-x)\r\n>>> f = simplify(e)\r\n>>> print(e)\r\na**(-x)*(-a)**x\r\n>>> print(f)\r\n(-1)**x\r\n>>> t = -S(10)/3\r\n>>> n1 = e.subs(x,t)\r\n>>> n2 = f.subs(x,t)\r\n>>> print(N(n1))\r\n-0.5 + 0.866025403784439*I\r\n>>> print(N(n2))\r\n-0.5 + 0.866025403784439*I\r\n```\r\n\r"
+},
+"gold": [
+"sympy/core/numbers.py"
+]
+},
+{
+"id": "sympy__sympy-14308",
+"queries": {
+"title": "vectors break pretty printing",
+"q400": "vectors break pretty printing\n```py\r\nIn [1]: from sympy.vector import *\r\n\r\nIn [2]: e = CoordSysCartesian('e')\r\n\r\nIn [3]: (x/y)**t*e.j\r\nOut[3]:\r\n\u239b   t\u239e e_j\r\n\u239c\u239bx\u239e e_j \u239f\r\n\u239c\u239c\u2500\u239f \u239f\r\n\u239d\u239dy\u23a0 \u23a0\r\n```\r\n\r\nAlso, when it does print correctly, the baseline is wrong (it should be centered). \n"
+},
+"gold": [
+"sympy/printing/pretty/pretty.py"
+]
+},
+{
+"id": "sympy__sympy-14317",
+"queries": {
+"title": "LaTeX printer does not use the same order of monomials as pretty and str",
+"q400": "LaTeX printer does not use the same order of monomials as pretty and str \nWhen printing a Poly, the str and pretty printers use the logical order of monomials, from highest to lowest degrees. But latex printer does not. \r\n```\r\n>>> var('a b c x')\r\n>>> p = Poly([a, 1, b, 2, c, 3], x)\r\n>>> p\r\nPoly(a*x**5 + x**4 + b*x**3 + 2*x**2 + c*x + 3, x, domain='ZZ[a,b,c]')\r\n>>> pretty(p)\r\n\"Poly(a*x**5 + x**4 + "
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-14396",
+"queries": {
+"title": "Poly(domain='RR[y,z]') doesn't work",
+"q400": "Poly(domain='RR[y,z]') doesn't work\n``` py\nIn [14]: Poly(1.2*x*y*z, x)\nOut[14]: Poly(1.2*y*z*x, x, domain='RR[y,z]')\n\nIn [15]: Poly(1.2*x*y*z, x, domain='RR[y,z]')\n---------------------------------------------------------------------------\nOptionError                               Traceback (most recent call last)\n<ipython-input-15-d83389519ae1> in <module>()\n----> 1 Poly(1.2*x*y*z, x, domain='RR["
+},
+"gold": [
+"sympy/polys/polyoptions.py"
+]
+},
+{
+"id": "sympy__sympy-14774",
+"queries": {
+"title": "Latex printer does not support full inverse trig function names for acsc and asec",
+"q400": "Latex printer does not support full inverse trig function names for acsc and asec\nFor example\r\n`latex(asin(x), inv_trig_style=\"full\")` works as expected returning `'\\\\arcsin{\\\\left (x \\\\right )}'`\r\nBut `latex(acsc(x), inv_trig_style=\"full\")` gives `'\\\\operatorname{acsc}{\\\\left (x \\\\right )}'` instead of `'\\\\operatorname{arccsc}{\\\\left (x \\\\right )}'`\r\n\r\nA fix seems to be to change line 743 of symp"
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-14817",
+"queries": {
+"title": "Error pretty printing MatAdd",
+"q400": "Error pretty printing MatAdd\n```py\r\n>>> pprint(MatrixSymbol('x', n, n) + MatrixSymbol('y*', n, n))\r\nTraceback (most recent call last):\r\n  File \"./sympy/core/sympify.py\", line 368, in sympify\r\n    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)\r\n  File \"./sympy/parsing/sympy_parser.py\", line 950, in parse_expr\r\n    return eval_expr(code, local_dict, globa"
+},
+"gold": [
+"sympy/printing/pretty/pretty.py"
+]
+},
+{
+"id": "sympy__sympy-15011",
+"queries": {
+"title": "lambdify does not work with certain MatrixSymbol names even with dummify=True",
+"q400": "lambdify does not work with certain MatrixSymbol names even with dummify=True\n`lambdify` is happy with curly braces in a symbol name and with `MatrixSymbol`s, but not with both at the same time, even if `dummify` is `True`.\r\n\r\nHere is some basic code that gives the error.\r\n```\r\nimport sympy as sy\r\ncurlyx = sy.symbols(\"{x}\")\r\nv = sy.MatrixSymbol(\"v\", 2, 1)\r\ncurlyv = sy.MatrixSymbol(\"{v}\", 2, 1)\r\n``"
+},
+"gold": [
+"sympy/utilities/lambdify.py"
+]
+},
+{
+"id": "sympy__sympy-15308",
+"queries": {
+"title": "LaTeX printing for Matrix Expression",
+"q400": "LaTeX printing for Matrix Expression\n```py\r\n>>> A = MatrixSymbol(\"A\", n, n)\r\n>>> latex(trace(A**2))\r\n'Trace(A**2)'\r\n```\r\n\r\nThe bad part is not only is Trace not recognized, but whatever printer is being used doesn't fallback to the LaTeX printer for the inner expression (it should be `A^2`). \n"
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-15345",
+"queries": {
+"title": "mathematica_code gives wrong output with Max",
+"q400": "mathematica_code gives wrong output with Max\nIf I run the code\r\n\r\n```\r\nx = symbols('x')\r\nmathematica_code(Max(x,2))\r\n```\r\n\r\nthen I would expect the output `'Max[x,2]'` which is valid Mathematica code but instead I get `'Max(2, x)'` which is not valid Mathematica code.\n"
+},
+"gold": [
+"sympy/printing/mathematica.py"
+]
+},
+{
+"id": "sympy__sympy-15346",
+"queries": {
+"title": "can't simplify sin/cos with Rational?",
+"q400": "can't simplify sin/cos with Rational?\nlatest cloned sympy, python 3 on windows\r\nfirstly, cos, sin with symbols can be simplified; rational number can be simplified\r\n```python\r\nfrom sympy import *\r\n\r\nx, y = symbols('x, y', real=True)\r\nr = sin(x)*sin(y) + cos(x)*cos(y)\r\nprint(r)\r\nprint(r.simplify())\r\nprint()\r\n\r\nr = Rational(1, 50) - Rational(1, 25)\r\nprint(r)\r\nprint(r.simplify())\r\nprint()\r\n```\r\nsays\r"
+},
+"gold": [
+"sympy/simplify/trigsimp.py"
+]
+},
+{
+"id": "sympy__sympy-15609",
+"queries": {
+"title": "Indexed matrix-expression LaTeX printer is not compilable",
+"q400": "Indexed matrix-expression LaTeX printer is not compilable\n```python\r\ni, j, k = symbols(\"i j k\")\r\nM = MatrixSymbol(\"M\", k, k)\r\nN = MatrixSymbol(\"N\", k, k)\r\nlatex((M*N)[i, j])\r\n```\r\n\r\nThe LaTeX string produced by the last command is:\r\n```\r\n\\sum_{i_{1}=0}^{k - 1} M_{i, _i_1} N_{_i_1, j}\r\n```\r\nLaTeX complains about a double subscript `_`. This expression won't render in MathJax either.\n"
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-15678",
+"queries": {
+"title": "Some issues with idiff",
+"q400": "Some issues with idiff\nidiff doesn't support Eq, and it also doesn't support f(x) instead of y. Both should be easy to correct.\r\n\r\n```\r\n>>> idiff(Eq(y*exp(y), x*exp(x)), y, x)\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"./sympy/geometry/util.py\", line 582, in idiff\r\n    yp = solve(eq.diff(x), dydx)[0].subs(derivs)\r\nIndexError: list index out of range\r\n>>> id"
+},
+"gold": [
+"sympy/geometry/util.py"
+]
+},
+{
+"id": "sympy__sympy-16106",
+"queries": {
+"title": "mathml printer for IndexedBase required",
+"q400": "mathml printer for IndexedBase required\nWriting an `Indexed` object to MathML fails with a `TypeError` exception: `TypeError: 'Indexed' object is not iterable`:\r\n\r\n```\r\nIn [340]: sympy.__version__\r\nOut[340]: '1.0.1.dev'\r\n\r\nIn [341]: from sympy.abc import (a, b)\r\n\r\nIn [342]: sympy.printing.mathml(sympy.IndexedBase(a)[b])\r\n---------------------------------------------------------------------------\r\n"
+},
+"gold": [
+"sympy/printing/mathml.py"
+]
+},
+{
+"id": "sympy__sympy-16281",
+"queries": {
+"title": "Product pretty print could be improved",
+"q400": "Product pretty print could be improved\nThis is what the pretty printing for `Product` looks like:\r\n\r\n```\r\n>>> pprint(Product(1, (n, 1, oo)))\r\n  \u221e\r\n\u252c\u2500\u2500\u2500\u252c\r\n\u2502   \u2502 1\r\n\u2502   \u2502\r\nn = 1\r\n>>> pprint(Product(1/n, (n, 1, oo)))\r\n   \u221e\r\n\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u252c\r\n\u2502      \u2502 1\r\n\u2502      \u2502 \u2500\r\n\u2502      \u2502 n\r\n\u2502      \u2502\r\n n = 1\r\n>>> pprint(Product(1/n**2, (n, 1, oo)))\r\n    \u221e\r\n\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\r\n\u2502        \u2502 1\r\n\u2502        \u2502 \u2500\u2500\r\n\u2502        \u2502  2\r\n\u2502        \u2502 "
+},
+"gold": [
+"sympy/printing/pretty/pretty.py"
+]
+},
+{
+"id": "sympy__sympy-16503",
+"queries": {
+"title": "Bad centering for Sum pretty print",
+"q400": "Bad centering for Sum pretty print\n```\r\n>>> pprint(Sum(x, (x, 1, oo)) + 3)\r\n  \u221e\r\n ___\r\n \u2572\r\n  \u2572   x\r\n  \u2571     + 3\r\n \u2571\r\n \u203e\u203e\u203e\r\nx = 1\r\n```\r\n\r\nThe `x` and the `+ 3` should be aligned. I'm not sure if the `x` should be lower of if the `+ 3` should be higher. \n"
+},
+"gold": [
+"sympy/printing/pretty/pretty.py"
+]
+},
+{
+"id": "sympy__sympy-16792",
+"queries": {
+"title": "autowrap with cython backend fails when array arguments do not appear in wrapped expr",
+"q400": "autowrap with cython backend fails when array arguments do not appear in wrapped expr\nWhen using the cython backend for autowrap, it appears that the code is not correctly generated when the function in question has array arguments that do not appear in the final expression. A minimal counterexample is:\r\n\r\n```python\r\nfrom sympy.utilities.autowrap import autowrap\r\nfrom sympy import MatrixSymbol\r\nim"
+},
+"gold": [
+"sympy/utilities/codegen.py"
+]
+},
+{
+"id": "sympy__sympy-16988",
+"queries": {
+"title": "Intersection should remove duplicates",
+"q400": "Intersection should remove duplicates\n```python\r\n>>> Intersection({1},{1},{x})\r\nEmptySet()\r\n>>> Intersection({1},{x})\r\n{1}\r\n```\r\nThe answer should be `Piecewise(({1}, Eq(x, 1)), (S.EmptySet, True))` or remain unevaluated.\r\n\r\nThe routine should give the same answer if duplicates are present; my initial guess is that duplicates should just be removed at the outset of instantiation. Ordering them wil"
+},
+"gold": [
+"sympy/sets/sets.py"
+]
+},
+{
+"id": "sympy__sympy-17022",
+"queries": {
+"title": "Lambdify misinterprets some matrix expressions",
+"q400": "Lambdify misinterprets some matrix expressions\nUsing lambdify on an expression containing an identity matrix gives us an unexpected result:\r\n\r\n```python\r\n>>> import numpy as np\r\n>>> n = symbols('n', integer=True)\r\n>>> A = MatrixSymbol(\"A\", n, n)\r\n>>> a = np.array([[1, 2], [3, 4]])\r\n>>> f = lambdify(A, A + Identity(n))\r\n>>> f(a)\r\narray([[1.+1.j, 2.+1.j],\r\n       [3.+1.j, 4.+1.j]])\r\n```\r\n\r\nInstead, "
+},
+"gold": [
+"sympy/printing/pycode.py"
+]
+},
+{
+"id": "sympy__sympy-17139",
+"queries": {
+"title": "simplify(cos(x)**I): Invalid comparison of complex I (fu.py)",
+"q400": "simplify(cos(x)**I): Invalid comparison of complex I (fu.py)\n```\r\n>>> from sympy import *\r\n>>> x = Symbol('x')\r\n>>> print(simplify(cos(x)**I))\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/home/e/se/sympy/simplify/simplify.py\", line 587, in simplify\r\n    expr = trigsimp(expr, deep=True)\r\n  File \"/home/e/se/sympy/simplify/trigsimp.py\", line 508, in trigsimp\r\n "
+},
+"gold": [
+"sympy/simplify/fu.py"
+]
+},
+{
+"id": "sympy__sympy-17630",
+"queries": {
+"title": "Exception when multiplying BlockMatrix containing ZeroMatrix blocks",
+"q400": "Exception when multiplying BlockMatrix containing ZeroMatrix blocks\nWhen a block matrix with zero blocks is defined\r\n\r\n```\r\n>>> from sympy import *\r\n>>> a = MatrixSymbol(\"a\", 2, 2)\r\n>>> z = ZeroMatrix(2, 2)\r\n>>> b = BlockMatrix([[a, z], [z, z]])\r\n```\r\n\r\nthen block-multiplying it once seems to work fine:\r\n\r\n```\r\n>>> block_collapse(b * b)\r\nMatrix([\r\n[a**2, 0],\r\n[0, 0]])\r\n>>> b._blockmul(b)\r\nMatrix(["
+},
+"gold": [
+"sympy/matrices/expressions/matexpr.py"
+]
+},
+{
+"id": "sympy__sympy-17655",
+"queries": {
+"title": "Unexpected exception when multiplying geometry.Point and number",
+"q400": "Unexpected exception when multiplying geometry.Point and number\n```python\r\nfrom sympy import geometry as ge\r\nimport sympy\r\n\r\npoint1 = ge.Point(0,0)\r\npoint2 = ge.Point(1,1)\r\n```\r\n\r\nThis line works fine\r\n```python\r\npoint1 + point2 * sympy.sympify(2.0)\r\n```\r\n\r\nBut when I write the same this way it raises an exception\r\n```python\r\npoint1 + sympy.sympify(2.0) * point2\r\n```\r\n\r\n```\r\n----------------------"
+},
+"gold": [
+"sympy/geometry/point.py"
+]
+},
+{
+"id": "sympy__sympy-18057",
+"queries": {
+"title": "Sympy incorrectly attempts to eval reprs in its __eq__ method",
+"q400": "Sympy incorrectly attempts to eval reprs in its __eq__ method\nPassing strings produced by unknown objects into eval is **very bad**. It is especially surprising for an equality check to trigger that kind of behavior. This should be fixed ASAP.\r\n\r\nRepro code:\r\n\r\n```\r\nimport sympy\r\nclass C:\r\n    def __repr__(self):\r\n        return 'x.y'\r\n_ = sympy.Symbol('x') == C()\r\n```\r\n\r\nResults in:\r\n\r\n```\r\nE   A"
+},
+"gold": [
+"sympy/core/expr.py"
+]
+},
+{
+"id": "sympy__sympy-18087",
+"queries": {
+"title": "Simplify of simple trig expression fails",
+"q400": "Simplify of simple trig expression fails\ntrigsimp in various versions, including 1.5, incorrectly simplifies cos(x)+sqrt(sin(x)**2) as though it were cos(x)+sin(x) for general complex x. (Oddly it gets this right if x is real.)\r\n\r\nEmbarrassingly I found this by accident while writing sympy-based teaching material...\r\n\n"
+},
+"gold": [
+"sympy/core/exprtools.py"
+]
+},
+{
+"id": "sympy__sympy-18199",
+"queries": {
+"title": "nthroot_mod function misses one root of x = 0 mod p.",
+"q400": "nthroot_mod function misses one root of x = 0 mod p.\nWhen in the equation x**n = a mod p , when a % p == 0. Then x = 0 mod p is also a root of this equation. But right now `nthroot_mod` does not check for this condition. `nthroot_mod(17*17, 5 , 17)` has a root `0 mod 17`. But it does not return it.\n"
+},
+"gold": [
+"sympy/ntheory/residue_ntheory.py"
+]
+},
+{
+"id": "sympy__sympy-18532",
+"queries": {
+"title": "expr.atoms() should return objects with no args instead of subclasses of Atom",
+"q400": "expr.atoms() should return objects with no args instead of subclasses of Atom\n`expr.atoms()` with no arguments returns subclasses of `Atom` in `expr`. But the correct definition of a leaf node should be that it has no `.args`. \n\nThis should be easy to fix, but one needs to check that this doesn't affect the performance. \n\n"
+},
+"gold": [
+"sympy/core/basic.py"
+]
+},
+{
+"id": "sympy__sympy-18621",
+"queries": {
+"title": "BlockDiagMatrix with one element cannot be converted to regular Matrix",
+"q400": "BlockDiagMatrix with one element cannot be converted to regular Matrix\nCreating a BlockDiagMatrix with one Matrix element will raise if trying to convert it back to a regular Matrix:\r\n\r\n```python\r\nM = sympy.Matrix([[1, 2], [3, 4]])\r\nD = sympy.BlockDiagMatrix(M)\r\nB = sympy.Matrix(D)\r\n```\r\n\r\n```\r\nTraceback (most recent call last):\r\n\r\n  File \"<ipython-input-37-5b65c1f8f23e>\", line 3, in <module>\r\n   "
+},
+"gold": [
+"sympy/matrices/expressions/blockmatrix.py"
+]
+},
+{
+"id": "sympy__sympy-18698",
+"queries": {
+"title": "sqf and sqf_list output is not consistant",
+"q400": "sqf and sqf_list output is not consistant\nThe example below is wrong in the sense that we should have (x*_2 - 5_x + 6, 3) and not 2 factors of multiplicity 3.\n\n```\n>  sqf_list(  (x**2 + 1)  * (x - 1)**2 * (x - 2)**3 * (x - 3)**3  )\n\n>  (1, [(x**2 + 1, 1), (x - 1, 2), (x - 3, 3), (x - 2, 3)])\n```\n\nwhereas below is correct --- one factor of multiplicity 2\n\n```\n>  sqf_list( x**5 - 2*x**4 - 2*x**3 + 4"
+},
+"gold": [
+"sympy/polys/polytools.py"
+]
+},
+{
+"id": "sympy__sympy-18835",
+"queries": {
+"title": "uniq modifies list argument",
+"q400": "uniq modifies list argument\nWhen you iterate over a dictionary or set and try to modify it while doing so you get an error from Python:\r\n```python\r\n>>> multiset('THISTLE')\r\n{'T': 2, 'H': 1, 'I': 1, 'S': 1, 'L': 1, 'E': 1}\r\n>>> for i in _:\r\n...   _.pop(i)\r\n...\r\n2\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\nRuntimeError: dictionary changed size during iteration\r\n```\r\n"
+},
+"gold": [
+"sympy/utilities/iterables.py"
+]
+},
+{
+"id": "sympy__sympy-19007",
+"queries": {
+"title": "Wrong matrix element fetched from BlockMatrix",
+"q400": "Wrong matrix element fetched from BlockMatrix\nGiven this code:\r\n```\r\nfrom sympy import *\r\nn, i = symbols('n, i', integer=True)\r\nA = MatrixSymbol('A', 1, 1)\r\nB = MatrixSymbol('B', n, 1)\r\nC = BlockMatrix([[A], [B]])\r\nprint('C is')\r\npprint(C)\r\nprint('C[i, 0] is')\r\npprint(C[i, 0])\r\n```\r\nI get this output:\r\n```\r\nC is\r\n\u23a1A\u23a4\r\n\u23a2 \u23a5\r\n\u23a3B\u23a6\r\nC[i, 0] is\r\n(A)[i, 0]\r\n```\r\n`(A)[i, 0]` is the wrong here. `C[i, 0]` s"
+},
+"gold": [
+"sympy/matrices/expressions/blockmatrix.py"
+]
+},
+{
+"id": "sympy__sympy-19254",
+"queries": {
+"title": "sympy.polys.factortools.dmp_zz_mignotte_bound improvement",
+"q400": "sympy.polys.factortools.dmp_zz_mignotte_bound improvement\nThe method `dup_zz_mignotte_bound(f, K)` can be significantly improved by using the **Knuth-Cohen bound** instead. After our research with Prof. Ag.Akritas we have implemented the Knuth-Cohen bound among others, and compare them among dozens of polynomials with different degree, density and coefficients range. Considering the results and th"
+},
+"gold": [
+"sympy/polys/factortools.py"
+]
+},
+{
+"id": "sympy__sympy-19487",
+"queries": {
+"title": "Rewrite sign as abs",
+"q400": "Rewrite sign as abs\nIn sympy the `sign` function is defined as\r\n```\r\n    sign(z)  :=  z / Abs(z)\r\n```\r\nfor all complex non-zero `z`. There should be a way to rewrite the sign in terms of `Abs` e.g.:\r\n```\r\n>>> sign(x).rewrite(Abs)                                                                                                                   \r\n x \r\n\u2500\u2500\u2500\r\n\u2502x\u2502\r\n```\r\nI'm not sure how the possibility o"
+},
+"gold": [
+"sympy/functions/elementary/complexes.py"
+]
+},
+{
+"id": "sympy__sympy-20049",
+"queries": {
+"title": "Point.vel() should calculate the velocity if possible",
+"q400": "Point.vel() should calculate the velocity if possible\nIf you specify the orientation of two reference frames and then ask for the angular velocity between the two reference frames the angular velocity will be calculated. But if you try to do the same thing with velocities, this doesn't work. See below:\r\n\r\n```\r\nIn [1]: import sympy as sm                                                              "
+},
+"gold": [
+"sympy/physics/vector/point.py"
+]
+},
+{
+"id": "sympy__sympy-20154",
+"queries": {
+"title": "partitions() reusing the output dictionaries",
+"q400": "partitions() reusing the output dictionaries\nThe partitions() iterator in sympy.utilities.iterables reuses the output dictionaries. There is a caveat about it in the docstring. \r\n\r\nI'm wondering if it's really that important for it to do this. It shouldn't be that much of a performance loss to copy the dictionary before yielding it. This behavior is very confusing. It means that something as simpl"
+},
+"gold": [
+"sympy/utilities/iterables.py"
+]
+},
+{
+"id": "sympy__sympy-20212",
+"queries": {
+"title": "0**-oo produces 0, the documentation says it should produce zoo",
+"q400": "0**-oo produces 0, the documentation says it should produce zoo\nUsing SymPy 1.5.1, evaluate `0**-oo` produces `0`.\r\n\r\nThe documentation for the Pow class states that it should return `ComplexInfinity`, aka `zoo`\r\n\r\n| expr | value | reason |\r\n| :-- | :-- | :--|\r\n| `0**-oo` | `zoo` | This is not strictly true, as 0**oo may be oscillating between positive and negative values or rotating in the comple"
+},
+"gold": [
+"sympy/core/power.py"
+]
+},
+{
+"id": "sympy__sympy-20322",
+"queries": {
+"title": "Inconsistent behavior for sympify/simplify with ceiling",
+"q400": "Inconsistent behavior for sympify/simplify with ceiling\nIn sympy v1.5.1:\r\n```python\r\nIn [16]: sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).simplify()\r\nOut[16]: 4*ceiling(x/4 - 3/4)\r\n\r\nIn [17]: sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=True).simplify()\r\nOut[17]: 4*ceiling(x/4 - 3/4)\r\n```\r\n\r\nIn sympy v.1.6.2:\r\n```python\r\nIn [16]: sympy.sympify('4*ceiling(x/4 - 3/4)', evaluate=False).si"
+},
+"gold": [
+"sympy/core/mul.py"
+]
+},
+{
+"id": "sympy__sympy-20442",
+"queries": {
+"title": "convert_to seems to combine orthogonal units",
+"q400": "convert_to seems to combine orthogonal units\nTested in sympy 1.4, not presently in a position to install 1.5+.\r\nSimple example. Consider `J = kg*m**2/s**2 => J*s = kg*m**2/s`. The convert_to behavior is odd:\r\n```\r\n>>>convert_to(joule*second,joule)\r\n    joule**(7/9)\r\n```\r\nI would expect the unchanged original expression back, an expression in terms of base units, or an error. It appears that conver"
+},
+"gold": [
+"sympy/physics/units/util.py"
+]
+},
+{
+"id": "sympy__sympy-20590",
+"queries": {
+"title": "Symbol instances have __dict__ since 1.7?",
+"q400": "Symbol instances have __dict__ since 1.7?\nIn version 1.6.2 Symbol instances had no `__dict__` attribute\r\n```python\r\n>>> sympy.Symbol('s').__dict__\r\n---------------------------------------------------------------------------\r\nAttributeError                            Traceback (most recent call last)\r\n<ipython-input-3-e2060d5eec73> in <module>\r\n----> 1 sympy.Symbol('s').__dict__\r\n\r\nAttributeError: "
+},
+"gold": [
+"sympy/core/_print_helpers.py"
+]
+},
+{
+"id": "sympy__sympy-20639",
+"queries": {
+"title": "inaccurate rendering of pi**(1/E)",
+"q400": "inaccurate rendering of pi**(1/E)\nThis claims to be version 1.5.dev; I just merged from the project master, so I hope this is current.  I didn't notice this bug among others in printing.pretty.\r\n\r\n```\r\nIn [52]: pi**(1/E)                                                               \r\nOut[52]: \r\n-1___\r\n\u2572\u2571 \u03c0 \r\n\r\n```\r\nLaTeX and str not fooled:\r\n```\r\nIn [53]: print(latex(pi**(1/E)))                   "
+},
+"gold": [
+"sympy/printing/pretty/pretty.py"
+]
+},
+{
+"id": "sympy__sympy-21055",
+"queries": {
+"title": "`refine()` does not understand how to simplify complex arguments",
+"q400": "`refine()` does not understand how to simplify complex arguments\nJust learned about the refine-function, which would come in handy frequently for me.  But\r\n`refine()` does not recognize that argument functions simplify for real numbers.\r\n\r\n```\r\n>>> from sympy import *                                                     \r\n>>> var('a,x')                                                              \r"
+},
+"gold": [
+"sympy/assumptions/refine.py"
+]
+},
+{
+"id": "sympy__sympy-21171",
+"queries": {
+"title": "_print_SingularityFunction() got an unexpected keyword argument 'exp'",
+"q400": "_print_SingularityFunction() got an unexpected keyword argument 'exp'\nOn a Jupyter Notebook cell, type the following:\r\n\r\n```python\r\nfrom sympy import *\r\nfrom sympy.physics.continuum_mechanics import Beam\r\n# Young's modulus\r\nE = symbols(\"E\")\r\n# length of the beam\r\nL = symbols(\"L\")\r\n# concentrated load at the end tip of the beam\r\nF = symbols(\"F\")\r\n# square cross section\r\nB, H = symbols(\"B, H\")\r\nI = "
+},
+"gold": [
+"sympy/printing/latex.py"
+]
+},
+{
+"id": "sympy__sympy-21379",
+"queries": {
+"title": "Unexpected `PolynomialError` when using simple `subs()` for particular expressions",
+"q400": "Unexpected `PolynomialError` when using simple `subs()` for particular expressions\nI am seeing weird behavior with `subs` for particular expressions with hyperbolic sinusoids with piecewise arguments. When applying `subs`, I obtain an unexpected `PolynomialError`. For context, I was umbrella-applying a casting from int to float of all int atoms for a bunch of random expressions before using a tens"
+},
+"gold": [
+"sympy/core/mod.py"
+]
+},
+{
+"id": "sympy__sympy-21612",
+"queries": {
+"title": "Latex parsing of fractions yields wrong expression due to missing brackets",
+"q400": "Latex parsing of fractions yields wrong expression due to missing brackets\nProblematic latex expression: `\"\\\\frac{\\\\frac{a^3+b}{c}}{\\\\frac{1}{c^2}}\"`\r\n\r\nis parsed to: `((a**3 + b)/c)/1/(c**2)`.\r\n\r\nExpected is: `((a**3 + b)/c)/(1/(c**2))`. \r\n\r\nThe missing brackets in the denominator result in a wrong expression.\r\n\r\n## Tested on\r\n\r\n- 1.8\r\n- 1.6.2\r\n\r\n## Reproduce:\r\n\r\n```\r\nroot@d31ef1c26093:/# python3"
+},
+"gold": [
+"sympy/printing/str.py"
+]
+},
+{
+"id": "sympy__sympy-21614",
+"queries": {
+"title": "Wrong Derivative kind attribute",
+"q400": "Wrong Derivative kind attribute\nI'm playing around with the `kind` attribute.\r\n\r\nThe following is correct:\r\n\r\n```\r\nfrom sympy import Integral, Derivative\r\nfrom sympy import MatrixSymbol\r\nfrom sympy.abc import x\r\nA = MatrixSymbol('A', 2, 2)\r\ni = Integral(A, x)\r\ni.kind\r\n# MatrixKind(NumberKind)\r\n```\r\n\r\nThis one is wrong:\r\n```\r\nd = Derivative(A, x)\r\nd.kind\r\n# UndefinedKind\r\n```\n"
+},
+"gold": [
+"sympy/core/function.py"
+]
+},
+{
+"id": "sympy__sympy-21627",
+"queries": {
+"title": "Bug: maximum recusion depth error when checking is_zero of cosh expression",
+"q400": "Bug: maximum recusion depth error when checking is_zero of cosh expression\nThe following code causes a `RecursionError: maximum recursion depth exceeded while calling a Python object` error when checked if it is zero:\r\n```\r\nexpr =sympify(\"cosh(acos(-i + acosh(-g + i)))\")\r\nexpr.is_zero\r\n```\n"
+},
+"gold": [
+"sympy/functions/elementary/complexes.py"
+]
+},
+{
+"id": "sympy__sympy-21847",
+"queries": {
+"title": "itermonomials returns incorrect monomials when using min_degrees argument",
+"q400": "itermonomials returns incorrect monomials when using min_degrees argument\n`itermonomials` returns incorrect monomials when using optional `min_degrees` argument\r\n\r\nFor example, the following code introduces three symbolic variables and generates monomials with max and min degree of 3:\r\n\r\n\r\n```\r\nimport sympy as sp\r\nfrom sympy.polys.orderings import monomial_key\r\n\r\nx1, x2, x3 = sp.symbols('x1, x2, x"
+},
+"gold": [
+"sympy/polys/monomials.py"
+]
+},
+{
+"id": "sympy__sympy-22005",
+"queries": {
+"title": "detection of infinite solution request",
+"q400": "detection of infinite solution request\n```python\r\n>>> solve_poly_system((x - 1,), x, y)\r\nTraceback (most recent call last):\r\n...\r\nNotImplementedError:\r\nonly zero-dimensional systems supported (finite number of solutions)\r\n>>> solve_poly_system((y - 1,), x, y)  <--- this is not handled correctly\r\n[(1,)]\r\n```\r\n```diff\r\ndiff --git a/sympy/solvers/polysys.py b/sympy/solvers/polysys.py\r\nindex b9809fd4e"
+},
+"gold": [
+"sympy/solvers/polysys.py"
+]
+},
+{
+"id": "sympy__sympy-22714",
+"queries": {
+"title": "simpify gives `Imaginary coordinates are not permitted.` with evaluate(False)",
+"q400": "simpify gives `Imaginary coordinates are not permitted.` with evaluate(False)\n## Issue\r\n`with evaluate(False)` crashes unexpectedly with `Point2D`\r\n\r\n## Code\r\n```python\r\nimport sympy as sp\r\nwith sp.evaluate(False):\r\n  sp.S('Point2D(Integer(1),Integer(2))')\r\n```\r\n\r\n## Error\r\n```\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/home/avinash/.local/lib/python3.8/si"
+},
+"gold": [
+"sympy/geometry/point.py"
+]
+},
+{
+"id": "sympy__sympy-22840",
+"queries": {
+"title": "cse() has strange behaviour for MatrixSymbol indexing",
+"q400": "cse() has strange behaviour for MatrixSymbol indexing\nExample: \r\n```python\r\nimport sympy as sp\r\nfrom pprint import pprint\r\n\r\n\r\ndef sub_in_matrixsymbols(exp, matrices):\r\n    for matrix in matrices:\r\n        for i in range(matrix.shape[0]):\r\n            for j in range(matrix.shape[1]):\r\n                name = \"%s_%d_%d\" % (matrix.name, i, j)\r\n                sym = sp.symbols(name)\r\n                e"
+},
+"gold": [
+"sympy/simplify/cse_main.py"
+]
+},
+{
+"id": "sympy__sympy-23117",
+"queries": {
+"title": "sympy.Array([]) fails, while sympy.Matrix([]) works",
+"q400": "sympy.Array([]) fails, while sympy.Matrix([]) works\nSymPy 1.4 does not allow to construct empty Array (see code below). Is this the intended behavior?\r\n\r\n```\r\n>>> import sympy\r\nKeyboardInterrupt\r\n>>> import sympy\r\n>>> from sympy import Array\r\n>>> sympy.__version__\r\n'1.4'\r\n>>> a = Array([])\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/Users/hcui7/miniconda3/e"
+},
+"gold": [
+"sympy/tensor/array/ndim_array.py"
+]
+},
+{
+"id": "sympy__sympy-23191",
+"queries": {
+"title": "display bug while using pretty_print with sympy.vector object in the terminal",
+"q400": "display bug while using pretty_print with sympy.vector object in the terminal\nThe following code jumbles some of the outputs in the terminal, essentially by inserting the unit vector in the middle -\r\n```python\r\nfrom sympy import *\r\nfrom sympy.vector import CoordSys3D, Del\r\n\r\ninit_printing()\r\n\r\ndelop = Del()\r\nCC_ = CoordSys3D(\"C\")\r\nx,    y,    z    = CC_.x, CC_.y, CC_.z\r\nxhat, yhat, zhat = CC_.i, C"
+},
+"gold": [
+"sympy/printing/pretty/pretty.py"
+]
+},
+{
+"id": "sympy__sympy-23262",
+"queries": {
+"title": "Python code printer not respecting tuple with one element",
+"q400": "Python code printer not respecting tuple with one element\nHi,\r\n\r\nThanks for the recent updates in SymPy! I'm trying to update my code to use SymPy 1.10 but ran into an issue with the Python code printer. MWE:\r\n\r\n\r\n```python\r\nimport inspect\r\nfrom sympy import lambdify\r\n\r\ninspect.getsource(lambdify([], tuple([1])))\r\n```\r\nSymPy 1.9 and under outputs:\r\n```\r\n'def _lambdifygenerated():\\n    return (1,)\\"
+},
+"gold": [
+"sympy/utilities/lambdify.py"
+]
+},
+{
+"id": "sympy__sympy-24066",
+"queries": {
+"title": "SI._collect_factor_and_dimension() cannot properly detect that exponent is dimensionless",
+"q400": "SI._collect_factor_and_dimension() cannot properly detect that exponent is dimensionless\nHow to reproduce:\r\n\r\n```python\r\nfrom sympy import exp\r\nfrom sympy.physics import units\r\nfrom sympy.physics.units.systems.si import SI\r\n\r\nexpr = units.second / (units.ohm * units.farad)\r\ndim = SI._collect_factor_and_dimension(expr)[1]\r\n\r\nassert SI.get_dimension_system().is_dimensionless(dim)\r\n\r\nbuggy_expr = 100"
+},
+"gold": [
+"sympy/physics/units/unitsystem.py"
+]
+},
+{
+"id": "sympy__sympy-24102",
+"queries": {
+"title": "Cannot parse Greek characters (and possibly others) in parse_mathematica",
+"q400": "Cannot parse Greek characters (and possibly others) in parse_mathematica\nThe old Mathematica parser `mathematica` in the package `sympy.parsing.mathematica` was able to parse e.g. Greek characters. Hence the following example works fine:\r\n```\r\nfrom sympy.parsing.mathematica import mathematica\r\nmathematica('\u03bb')\r\nOut[]: \r\n\u03bb\r\n```\r\n\r\nAs of SymPy v. 1.11, the `mathematica` function is deprecated, and i"
+},
+"gold": [
+"sympy/parsing/mathematica.py"
+]
+},
+{
+"id": "sympy__sympy-24152",
+"queries": {
+"title": "Bug in expand of TensorProduct + Workaround + Fix",
+"q400": "Bug in expand of TensorProduct + Workaround + Fix\n### Error description\r\nThe expansion of a TensorProduct object stops incomplete if summands in the tensor product factors have (scalar) factors, e.g.\r\n```\r\nfrom sympy import *\r\nfrom sympy.physics.quantum import *\r\nU = Operator('U')\r\nV = Operator('V')\r\nP = TensorProduct(2*U - V, U + V)\r\nprint(P) \r\n# (2*U - V)x(U + V)\r\nprint(P.expand(tensorproduct=Tr"
+},
+"gold": [
+"sympy/physics/quantum/tensorproduct.py"
+]
+},
+{
+"id": "sympy__sympy-24213",
+"queries": {
+"title": "collect_factor_and_dimension does not detect equivalent dimensions in addition",
+"q400": "collect_factor_and_dimension does not detect equivalent dimensions in addition\nCode to reproduce:\r\n```python\r\nfrom sympy.physics import units\r\nfrom sympy.physics.units.systems.si import SI\r\n\r\nv1 = units.Quantity('v1')\r\nSI.set_quantity_dimension(v1, units.velocity)\r\nSI.set_quantity_scale_factor(v1, 2 * units.meter / units.second)\r\n\r\na1 = units.Quantity('a1')\r\nSI.set_quantity_dimension(a1, units.acc"
+},
+"gold": [
+"sympy/physics/units/unitsystem.py"
+]
+},
+{
+"id": "sympy__sympy-24909",
+"queries": {
+"title": "Bug with milli prefix",
+"q400": "Bug with milli prefix\nWhat happened:\r\n```\r\nIn [1]: from sympy.physics.units import milli, W\r\nIn [2]: milli*W == 1\r\nOut[2]: True\r\nIn [3]: W*milli\r\nOut[3]: watt*Prefix(milli, m, -3, 10)\r\n```\r\nWhat I expected to happen: milli*W should evaluate to milli watts / mW\r\n\r\n`milli*W` or more generally `milli` times some unit evaluates to the number 1. I have tried this with Watts and Volts, I'm not sure what"
+},
+"gold": [
+"sympy/physics/units/prefixes.py"
+]
+}
+]

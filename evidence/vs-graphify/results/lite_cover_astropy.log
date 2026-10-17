@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "~/optimal-context-mapping/ocm/cli.py", line 162, in main
+    COMMANDS[cmd](rest)
+  File "~/optimal-context-mapping/ocm/cli.py", line 168, in run
+    importlib.import_module(f"ocm.{name}").main(rest)
+  File "~/optimal-context-mapping/ocm/cover.py", line 141, in main
+    usd = write_questions(client(), w, todo, out, a.cap, a.threads)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/optimal-context-mapping/ocm/cover.py", line 82, in write_questions
+    for i, _ in enumerate(ex.map(batch, chunks), 1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "~/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "~/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "~/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/optimal-context-mapping/ocm/cover.py", line 65, in batch
+    r = cl.messages.create(model=MODEL, max_tokens=8000, system=SYS, messages=[{"role": "user", "content": blocks}],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/ocm-eval/venvs/t021/lib/python3.12/site-packages/anthropic/_utils/_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "~/ocm-eval/venvs/t021/lib/python3.12/site-packages/anthropic/resources/messages/messages.py", line 1029, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "~/ocm-eval/venvs/t021/lib/python3.12/site-packages/anthropic/_base_client.py", line 1557, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/ocm-eval/venvs/t021/lib/python3.12/site-packages/anthropic/_base_client.py", line 1222, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cg7TaokBMiWNpRrvTzFos'}
+54,394 pieces of code to write questions for (0 already written)
+estimated cost: $2.20 of claude-haiku-5-5 (cap $10.51)

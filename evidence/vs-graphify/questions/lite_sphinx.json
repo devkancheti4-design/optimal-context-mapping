@@ -1,0 +1,162 @@
+[
+{
+"id": "sphinx-doc__sphinx-7686",
+"queries": {
+"title": "autosummary: The members variable for module template contains imported members",
+"q400": "autosummary: The members variable for module template contains imported members\n**Describe the bug**\r\nautosummary: The members variable for module template contains imported members even if autosummary_imported_members is False.\r\n\r\n**To Reproduce**\r\n\r\n```\r\n# _templates/autosummary/module.rst\r\n{{ fullname | escape | underline }}\r\n\r\n.. automodule:: {{ fullname }}\r\n\r\n   .. autosummary::\r\n   {% for it"
+},
+"gold": [
+"sphinx/ext/autosummary/generate.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-7738",
+"queries": {
+"title": "overescaped trailing underscore on attribute with napoleon",
+"q400": "overescaped trailing underscore on attribute with napoleon\n**Describe the bug**\r\nAttribute name `hello_` shows up as `hello\\_` in the html (visible backslash) with napoleon.\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n\r\nempty `__init__.py`\r\n`a.py` contains\r\n```python\r\nclass A:\r\n    \"\"\"\r\n    Attributes\r\n    ----------\r\n    hello_: int\r\n        hi\r\n    \"\"\"\r\n    pass\r\n```\r\nrun `sphinx-quic"
+},
+"gold": [
+"sphinx/ext/napoleon/docstring.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-7975",
+"queries": {
+"title": "Two sections called Symbols in index",
+"q400": "Two sections called Symbols in index\nWhen using index entries with the following leading characters: _@_, _\u00a3_, and _\u2190_ I get two sections called _Symbols_ in the HTML output, the first containing all _@_ entries before \u201dnormal\u201d words and the second containing _\u00a3_ and _\u2190_ entries after the \u201dnormal\u201d words.  Both have the same anchor in HTML so the links at the top of the index page contain two _Symb"
+},
+"gold": [
+"sphinx/environment/adapters/indexentries.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8273",
+"queries": {
+"title": "Generate man page section directories",
+"q400": "Generate man page section directories\n**Current man page generation does not conform to `MANPATH` search functionality**\r\nCurrently, all generated man pages are placed in to a single-level directory: `<build-dir>/man`. Unfortunately, this cannot be used in combination with the unix `MANPATH` environment variable. The `man` program explicitly looks for man pages in section directories (such as `man"
+},
+"gold": [
+"sphinx/builders/manpage.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8282",
+"queries": {
+"title": "autodoc_typehints does not effect to overloaded callables",
+"q400": "autodoc_typehints does not effect to overloaded callables\n**Describe the bug**\r\nautodoc_typehints does not effect to overloaded callables.\r\n\r\n**To Reproduce**\r\n\r\n```\r\n# in conf.py\r\nautodoc_typehints = 'none'\r\n```\r\n```\r\n# in index.rst\r\n.. automodule:: example\r\n   :members:\r\n   :undoc-members:\r\n```\r\n```\r\n# in example.py\r\nfrom typing import overload\r\n\r\n\r\n@overload\r\ndef foo(x: int) -> int:\r\n    ...\r\n\r"
+},
+"gold": [
+"sphinx/ext/autodoc/__init__.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8435",
+"queries": {
+"title": "autodoc_type_aliases does not effect to variables and attributes",
+"q400": "autodoc_type_aliases does not effect to variables and attributes\n**Describe the bug**\r\nautodoc_type_aliases does not effect to variables and attributes\r\n\r\n**To Reproduce**\r\n\r\n```\r\n# example.py\r\nfrom __future__ import annotations\r\n\r\n\r\n#: blah blah blah\r\nvar: String\r\n\r\n\r\nclass MyString:\r\n    \"mystring\"\r\n\r\n    #: blah blah blah\r\n    var: String\r\n```\r\n```\r\n# index.rst\r\n.. automodule:: example\r\n   :mem"
+},
+"gold": [
+"sphinx/ext/autodoc/__init__.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8474",
+"queries": {
+"title": "v3.3 upgrade started generating \"WARNING: no number is assigned for table\" warnings",
+"q400": "v3.3 upgrade started generating \"WARNING: no number is assigned for table\" warnings\nWe've updated to Sphinx 3.3 in our documentation, and suddenly the following warning started popping up in our builds when we build either `singlehtml` or `latex`.:\r\n\r\n`WARNING: no number is assigned for table:`\r\n\r\nI looked through the changelog but it didn't seem like there was anything related to `numref` that wa"
+},
+"gold": [
+"sphinx/domains/std.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8506",
+"queries": {
+"title": "Sphinx 3.2 complains about option:: syntax that earlier versions accepted",
+"q400": "Sphinx 3.2 complains about option:: syntax that earlier versions accepted\nSphinx 3.2 complains about use of the option:: directive that earlier versions accepted without complaint.\r\n\r\nThe QEMU documentation includes this:\r\n```\r\n.. option:: [enable=]PATTERN\r\n\r\n   Immediately enable events matching *PATTERN*\r\n```\r\n\r\nas part of the documentation of the command line options of one of its programs. Ear"
+},
+"gold": [
+"sphinx/domains/std.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8595",
+"queries": {
+"title": "autodoc: empty __all__ attribute is ignored",
+"q400": "autodoc: empty __all__ attribute is ignored\n**Describe the bug**\r\nautodoc: empty `__all__` attribute is ignored\r\n\r\n**To Reproduce**\r\n```\r\n# example.py\r\n__all__ = []\r\n\r\n\r\ndef foo():\r\n    \"docstring\"\r\n\r\n\r\ndef bar():\r\n    \"docstring\"\r\n\r\n\r\ndef baz():\r\n    \"docstring\"\r\n```\r\n```\r\n# index.rst\r\n.. automodule:: example\r\n   :members:\r\n```\r\n\r\nAll foo, bar, and baz are shown.\r\n\r\n**Expected behavior**\r\nNo entr"
+},
+"gold": [
+"sphinx/ext/autodoc/__init__.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8627",
+"queries": {
+"title": "autodoc isn't able to resolve struct.Struct type annotations",
+"q400": "autodoc isn't able to resolve struct.Struct type annotations\n**Describe the bug**\r\nIf `struct.Struct` is declared in any type annotations, I get `class reference target not found: Struct`\r\n\r\n**To Reproduce**\r\nSimple `index.rst`\r\n```\r\nHello World\r\n===========\r\n\r\ncode docs\r\n=========\r\n\r\n.. automodule:: helloworld.helloworld\r\n```\r\n\r\nSimple `helloworld.py`\r\n```\r\nimport struct\r\nimport pathlib\r\n\r\ndef co"
+},
+"gold": [
+"sphinx/util/typing.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8713",
+"queries": {
+"title": "napoleon_use_param should also affect \"other parameters\" section",
+"q400": "napoleon_use_param should also affect \"other parameters\" section\nSubject: napoleon_use_param should also affect \"other parameters\" section\r\n\r\n### Problem\r\nCurrently, napoleon always renders the Other parameters section as if napoleon_use_param was False, see source\r\n```\r\n    def _parse_other_parameters_section(self, section):\r\n        # type: (unicode) -> List[unicode]\r\n        return self._format"
+},
+"gold": [
+"sphinx/ext/napoleon/docstring.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8721",
+"queries": {
+"title": "viewcode creates pages for epub even if `viewcode_enable_epub=False` on `make html epub`",
+"q400": "viewcode creates pages for epub even if `viewcode_enable_epub=False` on `make html epub`\n**Describe the bug**\r\nviewcode creates pages for epub even if `viewcode_enable_epub=False` on `make html epub`\r\n\r\n**To Reproduce**\r\n```\r\n$ make html epub\r\n```\r\n\r\n**Expected behavior**\r\nmodule pages should not be created for epub by default.\r\n\r\n**Your project**\r\nNo\r\n\r\n**Screenshots**\r\nNo\r\n\r\n**Environment info**"
+},
+"gold": [
+"sphinx/ext/viewcode.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-8801",
+"queries": {
+"title": "autodoc: The annotation only member in superclass is treated as \"undocumented\"",
+"q400": "autodoc: The annotation only member in superclass is treated as \"undocumented\"\n**Describe the bug**\r\nautodoc: The annotation only member in superclass is treated as \"undocumented\".\r\n\r\n**To Reproduce**\r\n\r\n```\r\n# example.py\r\nclass Foo:\r\n    \"\"\"docstring\"\"\"\r\n    attr1: int  #: docstring\r\n\r\n\r\nclass Bar(Foo):\r\n    \"\"\"docstring\"\"\"\r\n    attr2: str  #: docstring\r\n```\r\n```\r\n# index.rst\r\n.. autoclass:: exam"
+},
+"gold": [
+"sphinx/ext/autodoc/importer.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-10325",
+"queries": {
+"title": "inherited-members should support more than one class",
+"q400": "inherited-members should support more than one class\n**Is your feature request related to a problem? Please describe.**\r\nI have two situations:\r\n- A class inherits from multiple other classes. I want to document members from some of the base classes but ignore some of the base classes\r\n- A module contains several class definitions that inherit from different classes that should all be ignored (e.g"
+},
+"gold": [
+"sphinx/ext/autodoc/__init__.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-10451",
+"queries": {
+"title": "Fix duplicated *args and **kwargs with autodoc_typehints",
+"q400": "Fix duplicated *args and **kwargs with autodoc_typehints\nFix duplicated *args and **kwargs with autodoc_typehints\r\n\r\n### Bugfix\r\n- Bugfix\r\n\r\n### Detail\r\nConsider this\r\n```python\r\nclass _ClassWithDocumentedInitAndStarArgs:\r\n    \"\"\"Class docstring.\"\"\"\r\n\r\n    def __init__(self, x: int, *args: int, **kwargs: int) -> None:\r\n        \"\"\"Init docstring.\r\n\r\n        :param x: Some integer\r\n        :param *a"
+},
+"gold": [
+"sphinx/ext/autodoc/typehints.py"
+]
+},
+{
+"id": "sphinx-doc__sphinx-11445",
+"queries": {
+"title": "Using rst_prolog removes top level headings containing a domain directive",
+"q400": "Using rst_prolog removes top level headings containing a domain directive\n### Describe the bug\r\n\r\nIf `rst_prolog` is set, then any documents that contain a domain directive as the first heading (eg `:mod:`) do not render the heading correctly or include the heading in the toctree.\r\n\r\nIn the example below, if the heading of `docs/mypackage.rst` were `mypackage2` instead of `:mod:mypackage2` then th"
+},
+"gold": [
+"sphinx/util/rst.py"
+]
+}
+]

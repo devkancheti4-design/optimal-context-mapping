@@ -1,0 +1,62 @@
+[
+{
+"id": "psf__requests-863",
+"queries": {
+"title": "Allow lists in the dict values of the hooks argument",
+"q400": "Allow lists in the dict values of the hooks argument\nCurrently the Request class has a .register_hook() method but it parses the dictionary it expects from it's hooks argument weirdly: the argument can only specify one hook function per hook.  If you pass in a list of hook functions per hook the code in Request.**init**() will wrap the list in a list which then fails when the hooks are consumed (s"
+},
+"gold": [
+"requests/models.py"
+]
+},
+{
+"id": "psf__requests-1963",
+"queries": {
+"title": "`Session.resolve_redirects` copies the original request for all subsequent requests, can cause incorrect method selection",
+"q400": "`Session.resolve_redirects` copies the original request for all subsequent requests, can cause incorrect method selection\nConsider the following redirection chain:\n\n```\nPOST /do_something HTTP/1.1\nHost: server.example.com\n...\n\nHTTP/1.1 303 See Other\nLocation: /new_thing_1513\n\nGET /new_thing_1513\nHost: server.example.com\n...\n\nHTTP/1.1 307 Temporary Redirect\nLocation: //failover.example.com/new_thin"
+},
+"gold": [
+"requests/sessions.py"
+]
+},
+{
+"id": "psf__requests-2148",
+"queries": {
+"title": "socket.error exception not caught/wrapped in a requests exception (ConnectionError perhaps?)",
+"q400": "socket.error exception not caught/wrapped in a requests exception (ConnectionError perhaps?)\nI just noticed a case where I had a socket reset on me, and was raised to me as a raw socket error as opposed to something like a requests.exceptions.ConnectionError:\n\n```\n  File \"/home/rtdean/***/***/***/***/***/***.py\", line 67, in dir_parse\n    root = ElementTree.fromstring(response.text)\n  File \"/home/"
+},
+"gold": [
+"requests/models.py"
+]
+},
+{
+"id": "psf__requests-2317",
+"queries": {
+"title": "method = builtin_str(method) problem",
+"q400": "method = builtin_str(method) problem\nIn requests/sessions.py is a command:\n\nmethod = builtin_str(method)\nConverts method from\nb\u2019GET\u2019\nto\n\"b'GET\u2019\"\n\nWhich is the literal string, no longer a binary string.  When requests tries to use the method \"b'GET\u2019\u201d, it gets a 404 Not Found response.\n\nI am using python3.4 and python-neutronclient (2.3.9) with requests (2.4.3).  neutronclient is broken because it u"
+},
+"gold": [
+"requests/sessions.py"
+]
+},
+{
+"id": "psf__requests-2674",
+"queries": {
+"title": "urllib3 exceptions passing through requests API",
+"q400": "urllib3 exceptions passing through requests API\nI don't know if it's a design goal of requests to hide urllib3's exceptions and wrap them around requests.exceptions types.\n\n(If it's not IMHO it should be, but that's another discussion)\n\nIf it is, I have at least two of them passing through that I have to catch in addition to requests' exceptions. They are requests.packages.urllib3.exceptions.Decod"
+},
+"gold": [
+"requests/adapters.py"
+]
+},
+{
+"id": "psf__requests-3362",
+"queries": {
+"title": "Uncertain about content/text vs iter_content(decode_unicode=True/False)",
+"q400": "Uncertain about content/text vs iter_content(decode_unicode=True/False)\nWhen requesting an application/json document, I'm seeing `next(r.iter_content(16*1024, decode_unicode=True))` returning bytes, whereas `r.text` returns unicode. My understanding was that both should return a unicode object. In essence, I thought \"iter_content\" was equivalent to \"iter_text\" when decode_unicode was True. Have I "
+},
+"gold": [
+"requests/utils.py"
+]
+}
+]

@@ -1,0 +1,42 @@
+{
+ "karpathy, graph-estimated corpus": {
+  "corpus_tokens": 11800,
+  "avg_query_tokens": 3742,
+  "reduction_ratio": 3.2,
+  "nodes": 177
+ },
+ "karpathy, its reported corpus words": {
+  "corpus_words": 92616,
+  "corpus_tokens": 123488,
+  "avg_query_tokens": 3742,
+  "reduction_ratio": 33.0
+ },
+ "django 2022, their 5 sample questions": {
+  "corpus_words": 2036363,
+  "files": 3911,
+  "corpus_tokens": 2715150,
+  "avg_query_tokens": 1631,
+  "reduction_ratio": 1664.7,
+  "questions answered": 5
+ },
+ "django 2022, the 288 real questions": {
+  "corpus_words": 2036363,
+  "files": 3911,
+  "corpus_tokens": 2715150,
+  "avg_query_tokens": 1519,
+  "reduction_ratio": 1787.5,
+  "questions answered": 288
+ },
+ "django 2022, formula on Part A readouts: md_cold": {
+  "avg_readout_tokens": 735,
+  "reduction_ratio": 3694.5
+ },
+ "django 2022, formula on Part A readouts: md_cover": {
+  "avg_readout_tokens": 390,
+  "reduction_ratio": 6970.1
+ },
+ "django 2022, formula on Part A readouts: gf": {
+  "avg_readout_tokens": 1536,
+  "reduction_ratio": 1767.4
+ }
+}

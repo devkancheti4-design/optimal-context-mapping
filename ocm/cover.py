@@ -56,14 +56,17 @@ def client():
 def write_questions(cl, w, todo, out, cap, threads=8, log=print):
     """Ask Haiku for one question per unit in todo, append them to out, stop at cap dollars. Returns dollars spent."""
     from concurrent.futures import ThreadPoolExecutor
-    m, lock, spent = w.mem, threading.Lock(), [0.0]
+    m, lock, spent, failed = w.mem, threading.Lock(), [0.0], []
 
     def batch(rows):
-        if spent[0] >= cap:
+        if spent[0] >= cap or failed:
             return
         blocks = "\n\n".join(f"<block id=\"{j}\" file=\"{p}\">\n{m.texts[j][:1200]}\n</block>" for j, p, _ in rows)
-        r = cl.messages.create(model=MODEL, max_tokens=8000, system=SYS, messages=[{"role": "user", "content": blocks}],
-                               output_config={"format": {"type": "json_schema", "schema": SCHEMA}})
+        try:
+            r = cl.messages.create(model=MODEL, max_tokens=8000, system=SYS, messages=[{"role": "user", "content": blocks}],
+                                   output_config={"format": {"type": "json_schema", "schema": SCHEMA}})
+        except Exception as e:                      # out of credit, a bad key, the network: stop, keep what was written
+            failed.append(e); return
         usd = (r.usage.input_tokens * PRICE[0] + r.usage.output_tokens * PRICE[1]) / 1e6
         text = next((b.text for b in r.content if b.type == "text"), "{}")
         try:
@@ -82,6 +85,8 @@ def write_questions(cl, w, todo, out, cap, threads=8, log=print):
         for i, _ in enumerate(ex.map(batch, chunks), 1):
             if i % 100 == 0 or i == len(chunks):
                 log(f"  {i:,}/{len(chunks):,} requests, ${spent[0]:.3f}")
+    if failed:
+        log(f"stopped: {type(failed[0]).__name__}: {str(failed[0])[:300]}\nthe questions written so far are kept; run `modeld cover` again to go on")
     return spent[0]
 
 
@@ -91,6 +96,8 @@ def teach(w, out, log=print):
     from .router import router as RL
     import numpy as np
     m = w.mem
+    if not os.path.exists(out):
+        return 0
     by_sha = {}
     for j, p, line in units(w):
         by_sha.setdefault(sha(m.texts[j]), (j, p, line))
@@ -133,6 +140,12 @@ def main(argv=None):
     if todo:
         est = len(todo) * PER_UNIT
         print(f"estimated cost: ${est:.2f} of {MODEL} (cap ${a.cap:.2f})")
+        try:
+            import anthropic  # noqa: F401
+        except ImportError:
+            sys.exit('modeld cover needs the Anthropic SDK: pip install "model-d[claude]" (or uv tool install "model-d[claude]")')
+        if not (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("OCM_VERTEX_PROJECT")):
+            sys.exit("set ANTHROPIC_API_KEY (or OCM_VERTEX_PROJECT for Claude on Vertex AI) first; nothing spent")
         if not a.yes:
             if not sys.stdin.isatty():
                 sys.exit("pass --yes to spend without a prompt")

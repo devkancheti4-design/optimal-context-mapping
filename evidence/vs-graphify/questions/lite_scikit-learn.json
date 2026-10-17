@@ -1,0 +1,112 @@
+[
+{
+"id": "scikit-learn__scikit-learn-10949",
+"queries": {
+"title": "warn_on_dtype with DataFrame",
+"q400": "warn_on_dtype with DataFrame\n#### Description\r\n\r\n``warn_on_dtype`` has no effect when input is a pandas ``DataFrame``\r\n\r\n#### Steps/Code to Reproduce\r\n```python\r\nfrom sklearn.utils.validation import check_array\r\nimport pandas as pd\r\ndf = pd.DataFrame([[1, 2, 3], [2, 3, 4]], dtype=object)\r\nchecked = check_array(df, warn_on_dtype=True)\r\n```\r\n\r\n#### Expected result: \r\n\r\n```python-traceback\r\nDataConve"
+},
+"gold": [
+"sklearn/utils/validation.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-12471",
+"queries": {
+"title": "OneHotEncoder ignore unknown error when categories are strings",
+"q400": "OneHotEncoder ignore unknown error when categories are strings \n#### Description\r\n\r\nThis bug is very specific, but it happens when you set OneHotEncoder to ignore unknown entries.\r\nand your labels are strings. The memory of the arrays is not handled safely and it can lead to a ValueError\r\n\r\nBasically, when you call the transform method it will sets all the unknown strings on your array to OneHotEn"
+},
+"gold": [
+"sklearn/preprocessing/_encoders.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-13439",
+"queries": {
+"title": "Pipeline should implement __len__",
+"q400": "Pipeline should implement __len__\n#### Description\r\n\r\nWith the new indexing support `pipe[:len(pipe)]` raises an error.\r\n\r\n#### Steps/Code to Reproduce\r\n\r\n```python\r\nfrom sklearn import svm\r\nfrom sklearn.datasets import samples_generator\r\nfrom sklearn.feature_selection import SelectKBest\r\nfrom sklearn.feature_selection import f_regression\r\nfrom sklearn.pipeline import Pipeline\r\n\r\n# generate some d"
+},
+"gold": [
+"sklearn/pipeline.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-13584",
+"queries": {
+"title": "bug in print_changed_only in new repr: vector values",
+"q400": "bug in print_changed_only in new repr: vector values\n```python\r\nimport sklearn\r\nimport numpy as np\r\nfrom sklearn.linear_model import LogisticRegressionCV\r\nsklearn.set_config(print_changed_only=True)\r\nprint(LogisticRegressionCV(Cs=np.array([0.1, 1])))\r\n```\r\n> ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\r\n\r\nping @NicolasHug \r\n\n"
+},
+"gold": [
+"sklearn/utils/_pprint.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-14983",
+"queries": {
+"title": "RepeatedKFold and RepeatedStratifiedKFold do not show correct __repr__ string",
+"q400": "RepeatedKFold and RepeatedStratifiedKFold do not show correct __repr__ string\n#### Description\r\n\r\n`RepeatedKFold` and `RepeatedStratifiedKFold` do not show correct \\_\\_repr\\_\\_ string.\r\n\r\n#### Steps/Code to Reproduce\r\n\r\n```python\r\n>>> from sklearn.model_selection import RepeatedKFold, RepeatedStratifiedKFold\r\n>>> repr(RepeatedKFold())\r\n>>> repr(RepeatedStratifiedKFold())\r\n```\r\n\r\n#### Expected Resu"
+},
+"gold": [
+"sklearn/model_selection/_split.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-15512",
+"queries": {
+"title": "Return values of non converged affinity propagation clustering",
+"q400": "Return values of non converged affinity propagation clustering\nThe affinity propagation Documentation states: \r\n\"When the algorithm does not converge, it returns an empty array as cluster_center_indices and -1 as label for each training sample.\"\r\n\r\nExample:\r\n```python\r\nfrom sklearn.cluster import AffinityPropagation\r\nimport pandas as pd\r\n\r\ndata = pd.DataFrame([[1,0,0,0,0,0],[0,1,1,1,0,0],[0,0,1,0,"
+},
+"gold": [
+"sklearn/cluster/_affinity_propagation.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-15535",
+"queries": {
+"title": "regression in input validation of clustering metrics",
+"q400": "regression in input validation of clustering metrics\n```python\r\nfrom sklearn.metrics.cluster import mutual_info_score\r\nimport numpy as np\r\n\r\nx = np.random.choice(['a', 'b'], size=20).astype(object)\r\nmutual_info_score(x, x)\r\n```\r\nValueError: could not convert string to float: 'b'\r\n\r\nwhile\r\n```python\r\nx = np.random.choice(['a', 'b'], size=20)\r\nmutual_info_score(x, x)\r\n```\r\nworks with a warning?\r\n\r\nt"
+},
+"gold": [
+"sklearn/metrics/cluster/_supervised.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-25500",
+"queries": {
+"title": "CalibratedClassifierCV doesn't work with `set_config(transform_output=\"pandas\")`",
+"q400": "CalibratedClassifierCV doesn't work with `set_config(transform_output=\"pandas\")`\n### Describe the bug\r\n\r\nCalibratedClassifierCV with isotonic regression doesn't work when we previously set `set_config(transform_output=\"pandas\")`.\r\nThe IsotonicRegression seems to return a dataframe, which is a problem for `_CalibratedClassifier`  in `predict_proba` where it tries to put the dataframe in a numpy arr"
+},
+"gold": [
+"sklearn/isotonic.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-25570",
+"queries": {
+"title": "ColumnTransformer with pandas output can't handle transformers with no features",
+"q400": "ColumnTransformer with pandas output can't handle transformers with no features\n### Describe the bug\r\n\r\nHi,\r\n\r\nColumnTransformer doesn't deal well with transformers that apply to 0 features (categorical_features in the example below) when using \"pandas\" as output. It seems steps with 0 features are not fitted, hence don't appear in `self._iter(fitted=True)` (_column_transformer.py l.856) and hence"
+},
+"gold": [
+"sklearn/compose/_column_transformer.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-25638",
+"queries": {
+"title": "Support nullable pandas dtypes in `unique_labels`",
+"q400": "Support nullable pandas dtypes in `unique_labels`\n### Describe the workflow you want to enable\n\nI would like to be able to pass the nullable pandas dtypes (\"Int64\", \"Float64\", \"boolean\") into sklearn's `unique_labels` function. Because the dtypes become `object` dtype when converted to numpy arrays we get `ValueError: Mix type of y not allowed, got types {'binary', 'unknown'}`:\r\n\r\nRepro with sklea"
+},
+"gold": [
+"sklearn/utils/multiclass.py"
+]
+},
+{
+"id": "scikit-learn__scikit-learn-25747",
+"queries": {
+"title": "FeatureUnion not working when aggregating data and pandas transform output selected",
+"q400": "FeatureUnion not working when aggregating data and pandas transform output selected\n### Describe the bug\n\nI would like to use `pandas` transform output and use a custom transformer in a feature union which aggregates data. When I'm using this combination I got an error. When I use default `numpy` output it works fine.\n\n### Steps/Code to Reproduce\n\n```python\r\nimport pandas as pd\r\nfrom sklearn.base "
+},
+"gold": [
+"sklearn/utils/_set_output.py"
+]
+}
+]

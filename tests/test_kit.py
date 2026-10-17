@@ -182,3 +182,19 @@ def test_cover_teaches_every_piece_of_code_once_as_pointers_and_resumes():
     assert again.startswith("(readout: the code a taught question") and "MAX_CHARGE_RETRIES = 3" in again, again
     assert len(ws.life.store) == taught                                         # each recorded by its exact line, for a rebuild
     assert cover.teach(Workspace(out), qfile, log=lambda *a: None) == 0         # a second run teaches nothing twice
+
+
+def test_cover_stops_cleanly_when_the_api_refuses_and_keeps_what_was_written():
+    from types import SimpleNamespace as NS
+    from ocm import cover
+    out = os.path.join(tempfile.mkdtemp(), "ws")
+    build([os.path.join(HERE, "fixture_repo")], out, log=lambda *a: None)
+    ws = Workspace(out)
+
+    class Refuses:
+        def create(self, **kw):
+            raise RuntimeError("Your credit balance is too low")
+
+    said = []
+    usd = cover.write_questions(NS(messages=Refuses()), ws, cover.units(ws), os.path.join(out, "cover.jsonl"), cap=1.0, threads=2, log=said.append)
+    assert usd == 0 and any("credit balance" in s for s in said) and cover.teach(ws, os.path.join(out, "cover.jsonl"), log=lambda *a: None) == 0

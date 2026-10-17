@@ -1,0 +1,42 @@
+[
+{
+"id": "mwaskom__seaborn-2848",
+"queries": {
+"title": "pairplot fails with hue_order not containing all hue values in seaborn 0.11.1",
+"q400": "pairplot fails with hue_order not containing all hue values in seaborn 0.11.1\nIn seaborn < 0.11, one could plot only a subset of the values in the hue column, by passing a hue_order list containing only the desired values. Points with hue values not in the list were simply not plotted.\n```python\niris = sns.load_dataset(\"iris\")`\n# The hue column contains three different species; here we want to plo"
+},
+"gold": [
+"seaborn/_oldcore.py"
+]
+},
+{
+"id": "mwaskom__seaborn-3010",
+"queries": {
+"title": "PolyFit is not robust to missing data",
+"q400": "PolyFit is not robust to missing data\n```python\r\nso.Plot([1, 2, 3, None, 4], [1, 2, 3, 4, 5]).add(so.Line(), so.PolyFit())\r\n```\r\n\r\n<details><summary>Traceback</summary>\r\n\r\n```python-traceback\r\n---------------------------------------------------------------------------\r\nLinAlgError                               Traceback (most recent call last)\r\nFile ~/miniconda3/envs/seaborn-py39-latest/lib/python"
+},
+"gold": [
+"seaborn/_stats/regression.py"
+]
+},
+{
+"id": "mwaskom__seaborn-3190",
+"queries": {
+"title": "Color mapping fails with boolean data",
+"q400": "Color mapping fails with boolean data\n```python\r\nso.Plot([\"a\", \"b\"], [1, 2], color=[True, False]).add(so.Bar())\r\n```\r\n```python-traceback\r\n---------------------------------------------------------------------------\r\nTypeError                                 Traceback (most recent call last)\r\n...\r\nFile ~/code/seaborn/seaborn/_core/plot.py:841, in Plot._plot(self, pyplot)\r\n    838 plotter._compute_s"
+},
+"gold": [
+"seaborn/_core/scales.py"
+]
+},
+{
+"id": "mwaskom__seaborn-3407",
+"queries": {
+"title": "pairplot raises KeyError with MultiIndex DataFrame",
+"q400": "pairplot raises KeyError with MultiIndex DataFrame\nWhen trying to pairplot a MultiIndex DataFrame, `pairplot` raises a `KeyError`:\r\n\r\nMRE:\r\n\r\n```python\r\nimport numpy as np\r\nimport pandas as pd\r\nimport seaborn as sns\r\n\r\n\r\ndata = {\r\n    (\"A\", \"1\"): np.random.rand(100),\r\n    (\"A\", \"2\"): np.random.rand(100),\r\n    (\"B\", \"1\"): np.random.rand(100),\r\n    (\"B\", \"2\"): np.random.rand(100),\r\n}\r\ndf = pd.DataFr"
+},
+"gold": [
+"seaborn/axisgrid.py"
+]
+}
+]
