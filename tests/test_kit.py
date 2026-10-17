@@ -150,3 +150,35 @@ def test_a_cached_rebuild_is_bit_identical_and_reuses_every_embedding():
         (ta, fa), (tb, fb) = bits(cold), bits(warm)
         assert ta == tb and np.array_equal(fa, fb)                                           # bit for bit
     assert "newly embedded, the rest from the cache" in out[-1]
+
+
+def test_cover_teaches_every_piece_of_code_once_as_pointers_and_resumes():
+    from types import SimpleNamespace as NS
+    from ocm import cover
+    out = os.path.join(tempfile.mkdtemp(), "ws")
+    build([os.path.join(HERE, "fixture_repo")], out, log=lambda *a: None)
+    ws = Workspace(out)
+    todo = cover.units(ws)
+    assert todo and all(ws.code[j] for j, _, _ in todo)
+    asked = []
+
+    class Fake:                                                                 # stands in for Claude Haiku
+        def create(self, **kw):
+            assert kw["model"] == cover.MODEL and kw["output_config"]["format"]["type"] == "json_schema"
+            ids = [int(x.split('"')[0]) for x in kw["messages"][0]["content"].split('<block id="')[1:]]
+            asked.extend(ids)
+            qs = [{"id": j, "question": "How many times do we retry a failed card charge?" if "MAX_CHARGE_RETRIES" in ws.mem.texts[j]
+                   else f"What does the code at unit {j} do?"} for j in ids]
+            return NS(usage=NS(input_tokens=1000, output_tokens=100), content=[NS(type="text", text=json.dumps({"questions": qs}))])
+
+    qfile = os.path.join(out, "cover.jsonl")
+    usd = cover.write_questions(NS(messages=Fake()), ws, todo, qfile, cap=1.0, threads=2, log=lambda *a: None)
+    assert sorted(asked) == sorted(j for j, _, _ in todo) and usd > 0
+    units = len(ws.mem.texts)
+    taught = cover.teach(ws, qfile, log=lambda *a: None)
+    assert taught == len({q for q in map(lambda l: json.loads(l)["question"], open(qfile))})   # one pointer per distinct question
+    assert len(ws.mem.texts) == units                                           # pointers only: no text is stored
+    again = ws.handle("ask", {"question": "what is the retry limit when a payment to a card fails?", "scope": "code"})
+    assert again.startswith("(readout: the code a taught question") and "MAX_CHARGE_RETRIES = 3" in again, again
+    assert len(ws.life.store) == taught                                         # each recorded by its exact line, for a rebuild
+    assert cover.teach(Workspace(out), qfile, log=lambda *a: None) == 0         # a second run teaches nothing twice
