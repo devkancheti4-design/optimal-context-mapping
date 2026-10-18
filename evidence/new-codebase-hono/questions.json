@@ -1,0 +1,8038 @@
+[
+{
+"id": "5af7b4fc91",
+"parent": "fa6f51bb1b110cddc7dc41cb7e531fab27fe871f",
+"date": "2025-01-05",
+"subject": "fix(context): single body overrides other returns (#3800)",
+"queries": {
+"subject": "fix(context): single body overrides other returns",
+"bare": "single body overrides other returns"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+119,
+122
+],
+[
+726,
+729
+]
+]
+}
+},
+{
+"id": "100745a27f",
+"parent": "5af7b4fc9126e17303f50c2f801da7be0cc2e0e5",
+"date": "2025-01-05",
+"subject": "fix(types): correct `app.on(method,path[],middleware,handler)` type (#3802)",
+"queries": {
+"subject": "fix(types): correct `app.on(method,path[],middleware,handler)` type",
+"bare": "correct `app.on(method,path[],middleware,handler)` type"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+1748,
+1748
+],
+[
+1751,
+1751
+]
+]
+}
+},
+{
+"id": "2a68c594d2",
+"parent": "2ead4d8faa58d187bf7ec74bac2160bab882eab0",
+"date": "2025-01-14",
+"subject": "fix(helper/factory): Reduce the code size of createMiddleware (#3824)",
+"queries": {
+"subject": "fix(helper/factory): Reduce the code size of createMiddleware",
+"bare": "Reduce the code size of createMiddleware"
+},
+"gold": [
+"src/helper/factory/index.ts"
+],
+"gold_lines": {
+"src/helper/factory/index.ts": [
+[
+319,
+319
+]
+]
+}
+},
+{
+"id": "49366df8a9",
+"parent": "2a68c594d24c282d0c9f9c286f114acf5019f383",
+"date": "2025-01-17",
+"subject": "fix(compress): don't compress server-sent events (#3833)",
+"queries": {
+"subject": "fix(compress): don't compress server-sent events",
+"bare": "don't compress server-sent events"
+},
+"gold": [
+"src/utils/compress.ts"
+],
+"gold_lines": {
+"src/utils/compress.ts": [
+[
+10,
+10
+]
+]
+}
+},
+{
+"id": "3fba7a5e7d",
+"parent": "ac4d42ce36706953502f8eab3b2260cce870809d",
+"date": "2025-01-20",
+"subject": "fix(types): Calculate Context<Env> type for each handler (#3675)",
+"queries": {
+"subject": "fix(types): Calculate Context<Env> type for each handler",
+"bare": "Calculate Context<Env> type for each handler"
+},
+"gold": [
+"src/helper/factory/index.ts",
+"src/types.ts"
+],
+"gold_lines": {
+"src/helper/factory/index.ts": [
+[
+43,
+43
+],
+[
+59,
+60
+],
+[
+78,
+80
+],
+[
+100,
+103
+],
+[
+132,
+136
+],
+[
+168,
+173
+],
+[
+208,
+214
+],
+[
+252,
+259
+]
+],
+"src/types.ts": [
+[
+160,
+160
+],
+[
+193,
+194
+],
+[
+213,
+213
+],
+[
+230,
+232
+],
+[
+252,
+253
+],
+[
+276,
+279
+],
+[
+307,
+309
+],
+[
+334,
+338
+],
+[
+368,
+371
+],
+[
+398,
+403
+],
+[
+435,
+439
+],
+[
+468,
+474
+],
+[
+508,
+513
+],
+[
+544,
+551
+],
+[
+587,
+593
+],
+[
+626,
+633
+],
+[
+715,
+715
+],
+[
+736,
+737
+],
+[
+754,
+754
+],
+[
+764,
+766
+],
+[
+784,
+785
+],
+[
+804,
+807
+],
+[
+826,
+828
+],
+[
+848,
+852
+],
+[
+872,
+875
+],
+[
+896,
+901
+],
+[
+922,
+926
+],
+[
+948,
+954
+],
+[
+976,
+981
+],
+[
+1004,
+1011
+],
+[
+1034,
+1040
+],
+[
+1127,
+1127
+],
+[
+1150,
+1151
+],
+[
+1180,
+1182
+],
+[
+1213,
+1216
+],
+[
+1249,
+1253
+],
+[
+1288,
+1293
+],
+[
+1330,
+1336
+],
+[
+1374,
+1381
+],
+[
+1464,
+1464
+],
+[
+1487,
+1488
+],
+[
+1517,
+1519
+],
+[
+1550,
+1553
+],
+[
+1586,
+1590
+],
+[
+1625,
+1630
+],
+[
+1666,
+1672
+],
+[
+1710,
+1717
+]
+]
+}
+},
+{
+"id": "7a7918d2d3",
+"parent": "3fba7a5e7d92cdb69c817dd15702508812305171",
+"date": "2025-01-23",
+"subject": "fix(factory): correct the type of `factory.createMiddleware()` (#3849)",
+"queries": {
+"subject": "fix(factory): correct the type of `factory.createMiddleware()`",
+"bare": "correct the type of `factory.createMiddleware()`"
+},
+"gold": [
+"src/helper/factory/index.ts"
+],
+"gold_lines": {
+"src/helper/factory/index.ts": [
+[
+286,
+286
+],
+[
+301,
+301
+],
+[
+309,
+309
+]
+]
+}
+},
+{
+"id": "d75e9ec605",
+"parent": "ecf5a0b2aeaf29c26ffe1eaf41520f867510cb17",
+"date": "2025-01-25",
+"subject": "fix(types): missing response type on `OnHandlerInterface` (#3852)",
+"queries": {
+"subject": "fix(types): missing response type on `OnHandlerInterface`",
+"bare": "missing response type on `OnHandlerInterface`"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+1362,
+1363
+],
+[
+1396,
+1396
+],
+[
+1655,
+1656
+],
+[
+1686,
+1686
+],
+[
+1698,
+1699
+],
+[
+1732,
+1732
+]
+]
+}
+},
+{
+"id": "f5e9f3a2ee",
+"parent": "d75e9ec60518d042e3e67416ab9f0555046c3168",
+"date": "2025-01-26",
+"subject": "fix(helper/adapter): `env` should set `c` type correctly (#3856)",
+"queries": {
+"subject": "fix(helper/adapter): `env` should set `c` type correctly",
+"bare": "`env` should set `c` type correctly"
+},
+"gold": [
+"src/helper/adapter/index.ts"
+],
+"gold_lines": {
+"src/helper/adapter/index.ts": [
+[
+10,
+10
+]
+]
+}
+},
+{
+"id": "a1ae224dcf",
+"parent": "0ef206b47227acf59e06b8db69214958eda0d048",
+"date": "2025-01-31",
+"subject": "fix(lambda-edge-adapter): Support Alternate Domain Names and Multiple Cookies in Lambda@Edge (#3858)",
+"queries": {
+"subject": "fix(lambda-edge-adapter): Support Alternate Domain Names and Multiple Cookies in Lambda@Edge",
+"bare": "Support Alternate Domain Names and Multiple Cookies in Lambda@Edge"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+108,
+108
+],
+[
+150,
+150
+]
+]
+}
+},
+{
+"id": "0847a0830e",
+"parent": "65edaf277a2dd3bb47406379904996ffdd3563e5",
+"date": "2025-02-04",
+"subject": "fix(helper/adapter): correct `env` type (#3885)",
+"queries": {
+"subject": "fix(helper/adapter): correct `env` type",
+"bare": "correct `env` type"
+},
+"gold": [
+"src/helper/adapter/index.ts"
+],
+"gold_lines": {
+"src/helper/adapter/index.ts": [
+[
+12,
+16
+],
+[
+18,
+18
+]
+]
+}
+},
+{
+"id": "6b6fbadbee",
+"parent": "066c342f808bd8f4613d8f46f952b03d10d65679",
+"date": "2025-02-06",
+"subject": "fix(router/trie-router): fix label with trailing wildcard pattern (#3892)",
+"queries": {
+"subject": "fix(router/trie-router): fix label with trailing wildcard pattern",
+"bare": "fix label with trailing wildcard pattern"
+},
+"gold": [
+"src/router/trie-router/node.ts"
+],
+"gold_lines": {
+"src/router/trie-router/node.ts": [
+[
+152,
+153
+]
+]
+}
+},
+{
+"id": "8fe1951d37",
+"parent": "7ce0ddd350b839417c697f6db27a24769ff1f587",
+"date": "2025-02-06",
+"subject": "fix(client): correct inferring empty object `c.json({})` (#3873)",
+"queries": {
+"subject": "fix(client): correct inferring empty object `c.json({})`",
+"bare": "correct inferring empty object `c.json({})`"
+},
+"gold": [
+"src/client/types.ts"
+],
+"gold_lines": {
+"src/client/types.ts": [
+[
+57,
+65
+],
+[
+92,
+96
+]
+]
+}
+},
+{
+"id": "6ceb1ab22e",
+"parent": "3a7259bec224addb33c49496c3944a3bdb21ddcc",
+"date": "2025-02-09",
+"subject": "fix(combine): halt middleware evaluation if error in `next()` (#3905)",
+"queries": {
+"subject": "fix(combine): halt middleware evaluation if error in `next()`",
+"bare": "halt middleware evaluation if error in `next()`"
+},
+"gold": [
+"src/middleware/combine/index.ts"
+],
+"gold_lines": {
+"src/middleware/combine/index.ts": [
+[
+39,
+40
+],
+[
+43,
+43
+],
+[
+45,
+45
+],
+[
+54,
+54
+]
+]
+}
+},
+{
+"id": "8340a7b67a",
+"parent": "6ceb1ab22e70d5232e092bfea7313f5f1f100198",
+"date": "2025-02-10",
+"subject": "fix(utils/url): calculate ends with slash on every iteration (#3910)",
+"queries": {
+"subject": "fix(utils/url): calculate ends with slash on every iteration",
+"bare": "calculate ends with slash on every iteration"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+143,
+144
+],
+[
+145,
+145
+],
+[
+147,
+147
+]
+]
+}
+},
+{
+"id": "9892b471ab",
+"parent": "40ea0eee58e39b31053a0246c595434f1094ad31",
+"date": "2025-02-13",
+"subject": "fix(adapter/aws-lambda): remove unneeded import and compatibility for LLRT (#3915)",
+"queries": {
+"subject": "fix(adapter/aws-lambda): remove unneeded import and compatibility for LLRT",
+"bare": "remove unneeded import and compatibility for LLRT"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+1,
+1
+],
+[
+13,
+16
+]
+]
+}
+},
+{
+"id": "d6757c7241",
+"parent": "9892b471ab6db445bf4c0d35624e8fa77c791e10",
+"date": "2025-02-13",
+"subject": "fix(etag): change where to check for `crypto` (#3916)",
+"queries": {
+"subject": "fix(etag): change where to check for `crypto`",
+"bare": "change where to check for `crypto`"
+},
+"gold": [
+"src/middleware/etag/digest.ts",
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/digest.ts": [
+[
+15,
+15
+]
+],
+"src/middleware/etag/index.ts": [
+[
+33,
+34
+],
+[
+60,
+68
+],
+[
+78,
+79
+]
+]
+}
+},
+{
+"id": "0c405b9a3a",
+"parent": "e7fbc3e2d60a657f5a330daa59b068073f061d5e",
+"date": "2025-02-16",
+"subject": "fix(proxy): fix header overwrite (#3922)",
+"queries": {
+"subject": "fix(proxy): fix header overwrite",
+"bare": "fix header overwrite"
+},
+"gold": [
+"src/helper/proxy/index.ts"
+],
+"gold_lines": {
+"src/helper/proxy/index.ts": [
+[
+51,
+52
+],
+[
+92,
+99
+]
+]
+}
+},
+{
+"id": "6ae021371a",
+"parent": "0c405b9a3a6310acc9cc1bd95ab60cee2e3d96ba",
+"date": "2025-02-17",
+"subject": "fix(proxy): include original request signal in proxy request (#3925)",
+"queries": {
+"subject": "fix(proxy): include original request signal in proxy request",
+"bare": "include original request signal in proxy request"
+},
+"gold": [
+"src/helper/proxy/index.ts"
+],
+"gold_lines": {
+"src/helper/proxy/index.ts": [
+[
+48,
+49
+]
+]
+}
+},
+{
+"id": "35fccf28a7",
+"parent": "6ae021371a38216a02f6fbddc06eebff506dfd04",
+"date": "2025-02-19",
+"subject": "fix(helper/proxy): missing proxy response status (#3927)",
+"queries": {
+"subject": "fix(helper/proxy): missing proxy response status",
+"bare": "missing proxy response status"
+},
+"gold": [
+"src/helper/proxy/index.ts"
+],
+"gold_lines": {
+"src/helper/proxy/index.ts": [
+[
+133,
+133
+]
+]
+}
+},
+{
+"id": "87963713c5",
+"parent": "a2ec84866b21fe830d88ebb5f69e32b3bdfe71fc",
+"date": "2025-02-28",
+"subject": "fix(bun): export `BunWebSocketHandler` (#3964)",
+"queries": {
+"subject": "fix(bun): export `BunWebSocketHandler`",
+"bare": "export `BunWebSocketHandler`"
+},
+"gold": [
+"src/adapter/bun/websocket.ts"
+],
+"gold_lines": {
+"src/adapter/bun/websocket.ts": [
+[
+15,
+15
+]
+]
+}
+},
+{
+"id": "2eaaa5eec7",
+"parent": "87963713c5db1a86a460195ff131fa82e5af9a63",
+"date": "2025-03-05",
+"subject": "fix(hono-base): prevent options object mutation (#3975)",
+"queries": {
+"subject": "fix(hono-base): prevent options object mutation",
+"bare": "prevent options object mutation"
+},
+"gold": [
+"src/hono-base.ts"
+],
+"gold_lines": {
+"src/hono-base.ts": [
+[
+165,
+168
+]
+]
+}
+},
+{
+"id": "6952ae1c80",
+"parent": "fe90028f6228d27fb3b46ecd9e26403a038a39c3",
+"date": "2025-03-05",
+"subject": "fix(types): fix unhandled types for Deno 2.2 (#3977)",
+"queries": {
+"subject": "fix(types): fix unhandled types for Deno 2.2",
+"bare": "fix unhandled types for Deno 2.2"
+},
+"gold": [
+"src/adapter/bun/websocket.ts",
+"src/middleware/secure-headers/secure-headers.ts"
+],
+"gold_lines": {
+"src/adapter/bun/websocket.ts": [
+[
+9,
+9
+]
+],
+"src/middleware/secure-headers/secure-headers.ts": [
+[
+129,
+131
+]
+]
+}
+},
+{
+"id": "6659ea1270",
+"parent": "d629c6233864ec891c4d23319979d1d6d91385e0",
+"date": "2025-03-16",
+"subject": "fix(bun): export `BunWebSocketData` and `BunWebSocketHandler` (#4002)",
+"queries": {
+"subject": "fix(bun): export `BunWebSocketData` and `BunWebSocketHandler`",
+"bare": "export `BunWebSocketData` and `BunWebSocketHandler`"
+},
+"gold": [
+"src/adapter/bun/index.ts"
+],
+"gold_lines": {
+"src/adapter/bun/index.ts": [
+[
+8,
+9
+]
+]
+}
+},
+{
+"id": "0e4dfe587d",
+"parent": "035c2d72c0769442309978501fadcf40b6f56436",
+"date": "2025-03-19",
+"subject": "fix(adapter/aws-lambda): APIGWProxyResult should contain either of headers or multiValueHeaders, not both (#3883)",
+"queries": {
+"subject": "fix(adapter/aws-lambda): APIGWProxyResult should contain either of headers or multiValueHeaders, not both",
+"bare": "APIGWProxyResult should contain either of headers or multiValueHeaders, not both"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+73,
+73
+],
+[
+77,
+77
+],
+[
+79,
+81
+],
+[
+83,
+83
+],
+[
+165,
+165
+],
+[
+193,
+197
+],
+[
+237,
+238
+],
+[
+240,
+241
+],
+[
+244,
+246
+],
+[
+248,
+249
+],
+[
+263,
+263
+],
+[
+289,
+293
+],
+[
+368,
+372
+],
+[
+449,
+453
+],
+[
+455,
+455
+]
+]
+}
+},
+{
+"id": "0bb821a4a1",
+"parent": "5473682ba0d768c345e2e06e6620fa6d52035fd5",
+"date": "2025-03-29",
+"subject": "fix(compress): avoid compressing if transfer-encoding is set (#4027)",
+"queries": {
+"subject": "fix(compress): avoid compressing if transfer-encoding is set",
+"bare": "avoid compressing if transfer-encoding is set"
+},
+"gold": [
+"src/middleware/compress/index.ts"
+],
+"gold_lines": {
+"src/middleware/compress/index.ts": [
+[
+44,
+45
+]
+]
+}
+},
+{
+"id": "76a3c50498",
+"parent": "882e75a3e00e98997177aaaef60bbf9b1b4eb3bf",
+"date": "2025-04-08",
+"subject": "fix(client): Support browsers without Array.prototype.at (#4057)",
+"queries": {
+"subject": "fix(client): Support browsers without Array.prototype.at",
+"bare": "Support browsers without Array.prototype.at"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+127,
+128
+],
+[
+130,
+131
+],
+[
+133,
+133
+],
+[
+139,
+140
+],
+[
+142,
+142
+],
+[
+149,
+149
+]
+]
+}
+},
+{
+"id": "02377efde5",
+"parent": "16a9a949c66bd561e55fffba1580ddc18ef30857",
+"date": "2025-04-10",
+"subject": "fix(trailing-slash): handle HEAD request in trailing slash middleware  (#4049)",
+"queries": {
+"subject": "fix(trailing-slash): handle HEAD request in trailing slash middleware",
+"bare": "handle HEAD request in trailing slash middleware"
+},
+"gold": [
+"src/middleware/trailing-slash/index.ts"
+],
+"gold_lines": {
+"src/middleware/trailing-slash/index.ts": [
+[
+29,
+29
+],
+[
+60,
+60
+]
+]
+}
+},
+{
+"id": "fb84c0b8af",
+"parent": "02377efde52c5b182a1d1ade904b1a3caea7f827",
+"date": "2025-04-14",
+"subject": "fix(proxy): accept a Request object as proxyInit (#4067)",
+"queries": {
+"subject": "fix(proxy): accept a Request object as proxyInit",
+"bare": "accept a Request object as proxyInit"
+},
+"gold": [
+"src/helper/proxy/index.ts"
+],
+"gold_lines": {
+"src/helper/proxy/index.ts": [
+[
+113,
+113
+]
+]
+}
+},
+{
+"id": "4b2095626f",
+"parent": "b68da3945e23f0ddef8878b08df3a359eeef4a75",
+"date": "2025-04-15",
+"subject": "fix(context): don't throw the error with `c.header()` when it's finalized (#4078)",
+"queries": {
+"subject": "fix(context): don't throw the error with `c.header()` when it's finalized",
+"bare": "don't throw the error with `c.header()` when it's finalized"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+415,
+428
+],
+[
+430,
+437
+],
+[
+439,
+439
+],
+[
+526,
+527
+]
+]
+}
+},
+{
+"id": "ebc7e4bf4f",
+"parent": "c277c75a928da4d99269b78a47a03b89cbaf6596",
+"date": "2025-05-03",
+"subject": "fix(helper/cookie): correct `getSignedCookie` parameters type (#4123)",
+"queries": {
+"subject": "fix(helper/cookie): correct `getSignedCookie` parameters type",
+"bare": "correct `getSignedCookie` parameters type"
+},
+"gold": [
+"src/helper/cookie/index.ts"
+],
+"gold_lines": {
+"src/helper/cookie/index.ts": [
+[
+18,
+18
+]
+]
+}
+},
+{
+"id": "9381d5fb6f",
+"parent": "ebc7e4bf4f9546404b4d436dd673069c432e71ca",
+"date": "2025-05-09",
+"subject": "fix(ssg): Fix SSG Extension Map (#4130)",
+"queries": {
+"subject": "fix(ssg): Fix SSG Extension Map",
+"bare": "Fix SSG Extension Map"
+},
+"gold": [
+"src/helper/ssg/ssg.ts"
+],
+"gold_lines": {
+"src/helper/ssg/ssg.ts": [
+[
+363,
+363
+]
+]
+}
+},
+{
+"id": "633ebcff10",
+"parent": "9381d5fb6f6774f145f483df025791dcaffbaf9b",
+"date": "2025-05-09",
+"subject": "fix(cookie): get deleted value with prefix (#4133)",
+"queries": {
+"subject": "fix(cookie): get deleted value with prefix",
+"bare": "get deleted value with prefix"
+},
+"gold": [
+"src/helper/cookie/index.ts"
+],
+"gold_lines": {
+"src/helper/cookie/index.ts": [
+[
+13,
+13
+],
+[
+23,
+23
+],
+[
+127,
+127
+]
+]
+}
+},
+{
+"id": "e0f8dd83fb",
+"parent": "be0dbd6f862efcdbdb4d9f6f2013989162c3e088",
+"date": "2025-05-14",
+"subject": "fix(hono-base): copy notfound and error handlers in `#clone()` (#4139)",
+"queries": {
+"subject": "fix(hono-base): copy notfound and error handlers in `#clone()`",
+"bare": "copy notfound and error handlers in `#clone()`"
+},
+"gold": [
+"src/hono-base.ts"
+],
+"gold_lines": {
+"src/hono-base.ts": [
+[
+174,
+175
+]
+]
+}
+},
+{
+"id": "5facfad1d8",
+"parent": "e0f8dd83fb8b84b1a28dee087c50693263fefde6",
+"date": "2025-05-17",
+"subject": "fix(jwt): use `header.alg` as fallback in `verifyFromJwks` (#4144)",
+"queries": {
+"subject": "fix(jwt): use `header.alg` as fallback in `verifyFromJwks`",
+"bare": "use `header.alg` as fallback in `verifyFromJwks`"
+},
+"gold": [
+"src/utils/jwt/jwt.ts"
+],
+"gold_lines": {
+"src/utils/jwt/jwt.ts": [
+[
+156,
+156
+]
+]
+}
+},
+{
+"id": "091ecb7e86",
+"parent": "2590c60b61742fa98454ce30c18d9d5c9447d4a5",
+"date": "2025-05-29",
+"subject": "fix(middleware/etag): should return 304 when weak etag is passed in  'If-None-Match' (#4171)",
+"queries": {
+"subject": "fix(middleware/etag): should return 304 when weak etag is passed in  'If-None-Match'",
+"bare": "should return 304 when weak etag is passed in  'If-None-Match'"
+},
+"gold": [
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/index.ts": [
+[
+29,
+30
+],
+[
+31,
+31
+]
+]
+}
+},
+{
+"id": "c12956be1c",
+"parent": "4eb7979e9b63208a09fd3c76b9bc76c0fdd22e19",
+"date": "2025-06-01",
+"subject": "fix(base): use `c.newResponse()` for the response of `err.getResponse()` (#4181)",
+"queries": {
+"subject": "fix(base): use `c.newResponse()` for the response of `err.getResponse()`",
+"bare": "use `c.newResponse()` for the response of `err.getResponse()`"
+},
+"gold": [
+"src/hono-base.ts"
+],
+"gold_lines": {
+"src/hono-base.ts": [
+[
+38,
+38
+]
+]
+}
+},
+{
+"id": "548d73f061",
+"parent": "53656e126df4855969afa55603cd063343d65552",
+"date": "2025-06-05",
+"subject": "fix(etag): fallback if `res.clone()` is not supported (#4198)",
+"queries": {
+"subject": "fix(etag): fallback if `res.clone()` is not supported",
+"bare": "fallback if `res.clone()` is not supported"
+},
+"gold": [
+"src/middleware/etag/digest.ts",
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/digest.ts": [
+[
+12,
+12
+],
+[
+15,
+15
+],
+[
+20,
+25
+],
+[
+27,
+28
+]
+],
+"src/middleware/etag/index.ts": [
+[
+96,
+96
+]
+]
+}
+},
+{
+"id": "7087b13a27",
+"parent": "b6957190abd1ac9cd65191a618d2dda6d300f4e6",
+"date": "2025-06-16",
+"subject": "fix(context): add `props` to `ExecutionContext` (#4030)",
+"queries": {
+"subject": "fix(context): add `props` to `ExecutionContext`",
+"bare": "add `props` to `ExecutionContext`"
+},
+"gold": [
+"src/adapter/cloudflare-pages/handler.ts",
+"src/context.ts"
+],
+"gold_lines": {
+"src/adapter/cloudflare-pages/handler.ts": [
+[
+16,
+17
+],
+[
+40,
+41
+]
+],
+"src/context.ts": [
+[
+47,
+48
+]
+]
+}
+},
+{
+"id": "a95a81a08f",
+"parent": "3552b59a09ca291adf8ee7262f117725eccd2860",
+"date": "2025-06-16",
+"subject": "fix(utils/body): normalize key names in parseBody",
+"queries": {
+"subject": "fix(utils/body): normalize key names in parseBody",
+"bare": "normalize key names in parseBody"
+},
+"gold": [
+"src/utils/body.ts"
+],
+"gold_lines": {
+"src/utils/body.ts": [
+[
+191,
+191
+]
+]
+}
+},
+{
+"id": "b89dae0b22",
+"parent": "7ccb276ad1d4f8211262e865eda0f2bcdc8d191f",
+"date": "2025-06-16",
+"subject": "fix(helper/route): fix the type errors",
+"queries": {
+"subject": "fix(helper/route): fix the type errors",
+"bare": "fix the type errors"
+},
+"gold": [
+"src/helper/route/index.ts"
+],
+"gold_lines": {
+"src/helper/route/index.ts": [
+[
+33,
+33
+]
+]
+}
+},
+{
+"id": "9cdfdf3c65",
+"parent": "9e42fd1c9d895a655c4fb1ed82af9d2f2cb4abe7",
+"date": "2025-06-17",
+"subject": "fix: reduce Context code (#4100)",
+"queries": {
+"subject": "fix: reduce Context code",
+"bare": "reduce Context code"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+281,
+290
+],
+[
+292,
+292
+],
+[
+337,
+337
+],
+[
+339,
+340
+],
+[
+342,
+342
+],
+[
+345,
+346
+],
+[
+408,
+409
+],
+[
+418,
+418
+],
+[
+523,
+523
+],
+[
+525,
+542
+],
+[
+544,
+557
+],
+[
+562,
+562
+],
+[
+642,
+677
+],
+[
+679,
+679
+],
+[
+681,
+682
+],
+[
+685,
+692
+],
+[
+697,
+700
+],
+[
+730,
+734
+],
+[
+753,
+768
+],
+[
+791,
+797
+],
+[
+805,
+818
+],
+[
+840,
+841
+]
+]
+}
+},
+{
+"id": "3df5bf9f16",
+"parent": "9cdfdf3c65affaec4d3682d66fbd1cffeede975d",
+"date": "2025-06-17",
+"subject": "fix(req): don't throw if the query param is invalid (#4110)",
+"queries": {
+"subject": "fix(req): don't throw if the query param is invalid",
+"bare": "don't throw if the query param is invalid"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+212,
+212
+]
+]
+}
+},
+{
+"id": "f4f5f3f752",
+"parent": "17449f5aa6051d3305c5cdacaa6024c1bed20e19",
+"date": "2025-06-20",
+"subject": "fix(utils/color): avoid unhandled scheme errors (#4234)",
+"queries": {
+"subject": "fix(utils/color): avoid unhandled scheme errors",
+"bare": "avoid unhandled scheme errors"
+},
+"gold": [
+"src/utils/color.ts"
+],
+"gold_lines": {
+"src/utils/color.ts": [
+[
+38,
+39
+],
+[
+44,
+44
+]
+]
+}
+},
+{
+"id": "3b57a05ccf",
+"parent": "56446ca24cc90b2855da52f352760518e8587064",
+"date": "2025-06-21",
+"subject": "fix(utils/color): avoid resolving pacakages via Bun.build (#4239)",
+"queries": {
+"subject": "fix(utils/color): avoid resolving pacakages via Bun.build",
+"bare": "avoid resolving pacakages via Bun.build"
+},
+"gold": [
+"src/utils/color.ts"
+],
+"gold_lines": {
+"src/utils/color.ts": [
+[
+44,
+46
+]
+]
+}
+},
+{
+"id": "54cf3fb362",
+"parent": "3e51a1f33a3b2ff83f61cbe236fd966c7e992f06",
+"date": "2025-06-21",
+"subject": "fix(cookie): use `tryDecode` when parsing cookie (#4240)",
+"queries": {
+"subject": "fix(cookie): use `tryDecode` when parsing cookie",
+"bare": "use `tryDecode` when parsing cookie"
+},
+"gold": [
+"src/utils/cookie.ts"
+],
+"gold_lines": {
+"src/utils/cookie.ts": [
+[
+6,
+6
+],
+[
+104,
+104
+]
+]
+}
+},
+{
+"id": "c03f245368",
+"parent": "54cf3fb3622ef483a4d22c74073486931652282a",
+"date": "2025-06-21",
+"subject": "fix(jsx): throw new Error instead of string (#4241)",
+"queries": {
+"subject": "fix(jsx): throw new Error instead of string",
+"bare": "throw new Error instead of string"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+212,
+212
+],
+[
+221,
+221
+]
+]
+}
+},
+{
+"id": "62e47be2fc",
+"parent": "c03f24536833d1edd081df5b62624a95234bacfb",
+"date": "2025-06-24",
+"subject": "fix(jwt): fix the `JwtTokenIssuedAt` error message (#4244)",
+"queries": {
+"subject": "fix(jwt): fix the `JwtTokenIssuedAt` error message",
+"bare": "fix the `JwtTokenIssuedAt` error message"
+},
+"gold": [
+"src/utils/jwt/types.ts"
+],
+"gold_lines": {
+"src/utils/jwt/types.ts": [
+[
+36,
+36
+]
+]
+}
+},
+{
+"id": "52e071a345",
+"parent": "62e47be2fc5dda6b466b7130884c5943f0c95d89",
+"date": "2025-06-24",
+"subject": "fix(jsx): Fix the JSXNode validation. Allow the function type for props.ref (#4236)",
+"queries": {
+"subject": "fix(jsx): Fix the JSXNode validation. Allow the function type for props.ref",
+"bare": "Fix the JSXNode validation. Allow the function type for props.ref"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+220,
+220
+]
+]
+}
+},
+{
+"id": "407d1bdf64",
+"parent": "108e35b5e93354874767251aa7a2d34383e7c69d",
+"date": "2025-07-02",
+"subject": "fix(cookie): remove not used `signingSecret` option (#4263)",
+"queries": {
+"subject": "fix(cookie): remove not used `signingSecret` option",
+"bare": "remove not used `signingSecret` option"
+},
+"gold": [
+"src/utils/cookie.ts"
+],
+"gold_lines": {
+"src/utils/cookie.ts": [
+[
+24,
+24
+]
+]
+}
+},
+{
+"id": "09a81e4f01",
+"parent": "407d1bdf64048c4876b883bc1b5cf270e12791e7",
+"date": "2025-07-03",
+"subject": "fix(jsx): cloneElement didn't copy children (#4257)",
+"queries": {
+"subject": "fix(jsx): cloneElement didn't copy children",
+"bare": "cloneElement didn't copy children"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+425,
+426
+],
+[
+429,
+429
+]
+]
+}
+},
+{
+"id": "0432f81c37",
+"parent": "09a81e4f01375f3b37c671d7e213893879474778",
+"date": "2025-07-03",
+"subject": "fix(client): remove `index` string when calling `$url()` (#4267)",
+"queries": {
+"subject": "fix(client): remove `index` string when calling `$url()`",
+"bare": "remove `index` string when calling `$url()`"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+168,
+169
+]
+]
+}
+},
+{
+"id": "ed9d72ff3d",
+"parent": "0432f81c376a3854d5a00da350b6f8f74a6ad9f2",
+"date": "2025-07-04",
+"subject": "fix(ssg): invoke callback when it's only a dynamic route (#4249)",
+"queries": {
+"subject": "fix(ssg): invoke callback when it's only a dynamic route",
+"bare": "invoke callback when it's only a dynamic route"
+},
+"gold": [
+"src/helper/ssg/middleware.ts",
+"src/helper/ssg/ssg.ts",
+"src/helper/ssg/utils.ts"
+],
+"gold_lines": {
+"src/helper/ssg/middleware.ts": [
+[
+2,
+3
+],
+[
+43,
+43
+]
+],
+"src/helper/ssg/ssg.ts": [
+[
+8,
+8
+],
+[
+283,
+286
+]
+],
+"src/helper/ssg/utils.ts": [
+[
+71,
+72
+]
+]
+}
+},
+{
+"id": "993d808621",
+"parent": "ed9d72ff3d280cff3edbb147273b1a76584befb0",
+"date": "2025-07-04",
+"subject": "fix(request): `req.json()` keeps the content as is (#4269)",
+"queries": {
+"subject": "fix(request): `req.json()` keeps the content as is",
+"bare": "`req.json()` keeps the content as is"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+246,
+246
+]
+]
+}
+},
+{
+"id": "7ecf369332",
+"parent": "530ab09ae10caf33903dfb677dff239df01d5ded",
+"date": "2025-07-14",
+"subject": "fix(serve-static): support Windows (#3477)",
+"queries": {
+"subject": "fix(serve-static): support Windows",
+"bare": "support Windows"
+},
+"gold": [
+"src/middleware/serve-static/index.ts"
+],
+"gold_lines": {
+"src/middleware/serve-static/index.ts": [
+[
+31,
+32
+],
+[
+46,
+46
+],
+[
+48,
+48
+]
+]
+}
+},
+{
+"id": "acb94b15fa",
+"parent": "89f4c9691dd688d70e2b707fe87a8b97cb932136",
+"date": "2025-07-25",
+"subject": "fix(context): encode the redirect location (#4297)",
+"queries": {
+"subject": "fix(context): encode the redirect location",
+"bare": "encode the redirect location"
+},
+"gold": [
+"src/context.ts",
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+22,
+23
+],
+[
+749,
+749
+]
+],
+"src/utils/url.ts": [
+[
+312,
+313
+]
+]
+}
+},
+{
+"id": "d806626b40",
+"parent": "28f981af6ddbf1f0ba753f795dab78f4b35714c5",
+"date": "2025-07-26",
+"subject": "fix(utils/url): prevent double encoding in `safeEncodeURI` (#4306)",
+"queries": {
+"subject": "fix(utils/url): prevent double encoding in `safeEncodeURI`",
+"bare": "prevent double encoding in `safeEncodeURI`"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+321,
+323
+],
+[
+325,
+326
+]
+]
+}
+},
+{
+"id": "38ac5a0d55",
+"parent": "c128f0dcfe2a31fcd7800ec9e8fa9b6f0e33d879",
+"date": "2025-07-26",
+"subject": "fix(context): use `isByteString` in `c.redirect` (#4307)",
+"queries": {
+"subject": "fix(context): use `isByteString` in `c.redirect`",
+"bare": "use `isByteString` in `c.redirect`"
+},
+"gold": [
+"src/context.ts",
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+23,
+23
+],
+[
+750,
+750
+]
+],
+"src/utils/url.ts": [
+[
+313,
+332
+]
+]
+}
+},
+{
+"id": "f934117c22",
+"parent": "d02366fad5145439bf921895ca21fb82d294bee1",
+"date": "2025-07-29",
+"subject": "fix(cookie): support lowercase priority for compatibility with other libraries (#4293)",
+"queries": {
+"subject": "fix(cookie): support lowercase priority for compatibility with other libraries",
+"bare": "support lowercase priority for compatibility with other libraries"
+},
+"gold": [
+"src/utils/cookie.ts"
+],
+"gold_lines": {
+"src/utils/cookie.ts": [
+[
+26,
+26
+],
+[
+209,
+209
+]
+]
+}
+},
+{
+"id": "955bd8f726",
+"parent": "b76ca6e37dfae7cefcadd3527c83c5d79ff31793",
+"date": "2025-07-29",
+"subject": "fix(types): should populate `output` type for `c.body()` (#4318)",
+"queries": {
+"subject": "fix(types): should populate `output` type for `c.body()`",
+"bare": "should populate `output` type for `c.body()`"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+124,
+126
+],
+[
+128,
+130
+]
+]
+}
+},
+{
+"id": "6d18f17e58",
+"parent": "bd454fe8a6c494050fc48f7a3eb61af3d49f91b4",
+"date": "2025-07-31",
+"subject": "fix(service-worker): pass `FetchEvent` as second argument to `app.fetch` (#4328)",
+"queries": {
+"subject": "fix(service-worker): pass `FetchEvent` as second argument to `app.fetch`",
+"bare": "pass `FetchEvent` as second argument to `app.fetch`"
+},
+"gold": [
+"src/adapter/service-worker/handler.ts"
+],
+"gold_lines": {
+"src/adapter/service-worker/handler.ts": [
+[
+27,
+27
+]
+]
+}
+},
+{
+"id": "e316dbeefd",
+"parent": "f43afc64783522a9d32abe45a5ff16ee6cb2b236",
+"date": "2025-08-02",
+"subject": "fix(router): support `/files/:name{.*}` (#4329)",
+"queries": {
+"subject": "fix(router): support `/files/:name{.*}`",
+"bare": "support `/files/:name{.*}`"
+},
+"gold": [
+"src/router/reg-exp-router/node.ts",
+"src/router/trie-router/node.ts"
+],
+"gold_lines": {
+"src/router/reg-exp-router/node.ts": [
+[
+83,
+84
+]
+],
+"src/router/trie-router/node.ts": [
+[
+158,
+158
+],
+[
+162,
+163
+]
+]
+}
+},
+{
+"id": "87858fb237",
+"parent": "b0b8129e616844b671b3da18e73e732524d3a1fa",
+"date": "2025-08-07",
+"subject": "fix(bun): exports functions related to websocket (#4341)",
+"queries": {
+"subject": "fix(bun): exports functions related to websocket",
+"bare": "exports functions related to websocket"
+},
+"gold": [
+"src/adapter/bun/index.ts"
+],
+"gold_lines": {
+"src/adapter/bun/index.ts": [
+[
+8,
+8
+]
+]
+}
+},
+{
+"id": "08a80e2a16",
+"parent": "855e5b1adbf685bf4b3e6b76573aa7cb0a108d04",
+"date": "2025-08-12",
+"subject": "fix(parseResponse): should not include error responses in result (#4348)",
+"queries": {
+"subject": "fix(parseResponse): should not include error responses in result",
+"bare": "should not include error responses in result"
+},
+"gold": [
+"src/client/types.ts",
+"src/client/utils.ts"
+],
+"gold_lines": {
+"src/client/types.ts": [
+[
+138,
+139
+]
+],
+"src/client/utils.ts": [
+[
+0,
+1
+],
+[
+2,
+2
+],
+[
+90,
+90
+],
+[
+96,
+96
+]
+]
+}
+},
+{
+"id": "193d5dcbf9",
+"parent": "31f2406336d2a6e475c590ed594832f2799c0273",
+"date": "2025-08-14",
+"subject": "fix(jsx): 'plaintext-only' value for contenteditable attribute (#4349)",
+"queries": {
+"subject": "fix(jsx): 'plaintext-only' value for contenteditable attribute",
+"bare": "'plaintext-only' value for contenteditable attribute"
+},
+"gold": [
+"src/jsx/intrinsic-elements.ts"
+],
+"gold_lines": {
+"src/jsx/intrinsic-elements.ts": [
+[
+157,
+157
+]
+]
+}
+},
+{
+"id": "6b19b5e365",
+"parent": "193d5dcbf91cf759574a3eca6b56cb123d0ae273",
+"date": "2025-08-15",
+"subject": "fix(client): handle query parameters in `removeIndexString` (#4352)",
+"queries": {
+"subject": "fix(client): handle query parameters in `removeIndexString`",
+"bare": "handle query parameters in `removeIndexString`"
+},
+"gold": [
+"src/client/utils.ts"
+],
+"gold_lines": {
+"src/client/utils.ts": [
+[
+55,
+57
+],
+[
+59,
+59
+]
+]
+}
+},
+{
+"id": "a268569254",
+"parent": "67f2c8d4be3901aba2cbc4dbb157f4a5a42acda0",
+"date": "2025-08-26",
+"subject": "fix(aws-lambda): preserve percent-encoded values in query strings (#4372)",
+"queries": {
+"subject": "fix(aws-lambda): preserve percent-encoded values in query strings",
+"bare": "preserve percent-encoded values in query strings"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+385,
+386
+],
+[
+389,
+389
+],
+[
+394,
+394
+]
+]
+}
+},
+{
+"id": "c4577e9374",
+"parent": "5bfbff8acf54395174d54c65ad8d796493c2b7ea",
+"date": "2025-08-28",
+"subject": "fix(cors): Allow returning null or undefined for origin (#4375)",
+"queries": {
+"subject": "fix(cors): Allow returning null or undefined for origin",
+"bare": "Allow returning null or undefined for origin"
+},
+"gold": [
+"src/middleware/cors/index.ts"
+],
+"gold_lines": {
+"src/middleware/cors/index.ts": [
+[
+13,
+13
+],
+[
+27,
+27
+]
+]
+}
+},
+{
+"id": "0e3db674ad",
+"parent": "c4577e93746c4642d5e663509febcb803d20f47e",
+"date": "2025-08-28",
+"subject": "fix(service-worker): correct args for `app.fetch` in `handle` (#4374)",
+"queries": {
+"subject": "fix(service-worker): correct args for `app.fetch` in `handle`",
+"bare": "correct args for `app.fetch` in `handle`"
+},
+"gold": [
+"src/adapter/service-worker/handler.ts"
+],
+"gold_lines": {
+"src/adapter/service-worker/handler.ts": [
+[
+27,
+27
+]
+]
+}
+},
+{
+"id": "b3e8cab13d",
+"parent": "0e3db674ad3f40be215a55a18062dd8e387ce525",
+"date": "2025-08-29",
+"subject": "fix(language-detector): Detect language from path after getPath changed (#4369)",
+"queries": {
+"subject": "fix(language-detector): Detect language from path after getPath changed",
+"bare": "Detect language from path after getPath changed"
+},
+"gold": [
+"src/middleware/language/language.ts"
+],
+"gold_lines": {
+"src/middleware/language/language.ts": [
+[
+162,
+162
+]
+]
+}
+},
+{
+"id": "5b277d811c",
+"parent": "7f4311c010dbd15bd25e16551ecf58059887d105",
+"date": "2025-09-04",
+"subject": "fix(client): Fix `parseResponse` not parsing json in react native (#4399)",
+"queries": {
+"subject": "fix(client): Fix `parseResponse` not parsing json in react native",
+"bare": "Fix `parseResponse` not parsing json in react native"
+},
+"gold": [
+"src/client/fetch-result-please.ts"
+],
+"gold_lines": {
+"src/client/fetch-result-please.ts": [
+[
+15,
+15
+],
+[
+17,
+17
+]
+]
+}
+},
+{
+"id": "f8c9b6e5cb",
+"parent": "5ece99500fbcdc1026ab7f458f65cbe9eab29a6b",
+"date": "2025-09-12",
+"subject": "fix(types): JSONParsed infer unknown values (#4405)",
+"queries": {
+"subject": "fix(types): JSONParsed infer unknown values",
+"bare": "JSONParsed infer unknown values"
+},
+"gold": [
+"src/context.ts",
+"src/utils/types.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+197,
+197
+],
+[
+202,
+211
+]
+],
+"src/utils/types.ts": [
+[
+44,
+45
+],
+[
+50,
+50
+],
+[
+56,
+57
+],
+[
+60,
+64
+]
+]
+}
+},
+{
+"id": "3fe60f180a",
+"parent": "9987081fe0738695de17225a0dd6b68c8d8ae652",
+"date": "2025-09-18",
+"subject": "fix(request): return empty string for empty catch-all param (#4395)",
+"queries": {
+"subject": "fix(request): return empty string for empty catch-all param",
+"bare": "return empty string for empty catch-all param"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+101,
+101
+],
+[
+110,
+110
+]
+]
+}
+},
+{
+"id": "3f89b6ff36",
+"parent": "ba98aa2a94a7d480952b559ce464bca4566bd72f",
+"date": "2025-09-21",
+"subject": "fix(service-worker): Update service-worker fire() to accept generic variants of Hono (#4420)",
+"queries": {
+"subject": "fix(service-worker): Update service-worker fire() to accept generic variants of Hono",
+"bare": "Update service-worker fire() to accept generic variants of Hono"
+},
+"gold": [
+"src/adapter/service-worker/index.ts"
+],
+"gold_lines": {
+"src/adapter/service-worker/index.ts": [
+[
+5,
+6
+],
+[
+27,
+28
+]
+]
+}
+},
+{
+"id": "393ded9619",
+"parent": "3f89b6ff361fa3ba8341d94cffcb857056c3f4a7",
+"date": "2025-09-21",
+"subject": "fix(service-worker): correct generics for `handle` (#4421)",
+"queries": {
+"subject": "fix(service-worker): correct generics for `handle`",
+"bare": "correct generics for `handle`"
+},
+"gold": [
+"src/adapter/service-worker/handler.ts"
+],
+"gold_lines": {
+"src/adapter/service-worker/handler.ts": [
+[
+6,
+7
+],
+[
+17,
+18
+]
+]
+}
+},
+{
+"id": "e3bf8c8913",
+"parent": "16eb88269ffb0ae68590ad55ac9ac58807850f26",
+"date": "2025-09-29",
+"subject": "fix(context): Fix #4427 type regression by removing non-public export JSONRespondReturn (#4433)",
+"queries": {
+"subject": "fix(context): Fix #4427 type regression by removing non-public export JSONRespondReturn",
+"bare": "Fix #4427 type regression by removing non-public export JSONRespondReturn"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+193,
+193
+]
+]
+}
+},
+{
+"id": "38f756dd92",
+"parent": "e3bf8c8913a707e49f374575bdf6c88f0ec7e3f6",
+"date": "2025-10-05",
+"subject": "fix(aws-lambda): sanitize non-ASCII header values to prevent ByteString errors (#4437)",
+"queries": {
+"subject": "fix(aws-lambda): sanitize non-ASCII header values to prevent ByteString errors",
+"bare": "sanitize non-ASCII header values to prevent ByteString errors"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+11,
+12
+],
+[
+417,
+417
+],
+[
+426,
+426
+],
+[
+451,
+451
+],
+[
+457,
+457
+]
+]
+}
+},
+{
+"id": "4f5a305992",
+"parent": "cc8868dd7e3fe95cb546134b431c066ff08c24aa",
+"date": "2025-10-06",
+"subject": "fix(types): fix 4.9.8 regression (#4448)",
+"queries": {
+"subject": "fix(types): fix 4.9.8 regression",
+"bare": "fix 4.9.8 regression"
+},
+"gold": [
+"src/utils/types.ts"
+],
+"gold_lines": {
+"src/utils/types.ts": [
+[
+57,
+61
+],
+[
+86,
+86
+]
+]
+}
+},
+{
+"id": "9ae98c9416",
+"parent": "4b796cfb0b105418bbf806050e788741f2739125",
+"date": "2025-10-17",
+"subject": "fix(proxy): Correct hop-by-hop header handling per RFC 9110 (#4459)",
+"queries": {
+"subject": "fix(proxy): Correct hop-by-hop header handling per RFC 9110",
+"bare": "Correct hop-by-hop header handling per RFC 9110"
+},
+"gold": [
+"src/helper/proxy/index.ts"
+],
+"gold_lines": {
+"src/helper/proxy/index.ts": [
+[
+5,
+6
+],
+[
+15,
+15
+],
+[
+16,
+17
+],
+[
+18,
+19
+],
+[
+26,
+27
+],
+[
+34,
+34
+],
+[
+40,
+41
+],
+[
+110,
+111
+],
+[
+114,
+115
+],
+[
+118,
+118
+]
+]
+}
+},
+{
+"id": "8774bf9a59",
+"parent": "5eb7c15bb11543fca0f2fb8ee0246d3cb8ec9c96",
+"date": "2025-10-17",
+"subject": "fix(types): cannot `.use` non-return mw from `createMiddleware` (#4465)",
+"queries": {
+"subject": "fix(types): cannot `.use` non-return mw from `createMiddleware`",
+"bare": "cannot `.use` non-return mw from `createMiddleware`"
+},
+"gold": [
+"src/helper/factory/index.ts"
+],
+"gold_lines": {
+"src/helper/factory/index.ts": [
+[
+308,
+310
+],
+[
+327,
+327
+],
+[
+329,
+330
+]
+]
+}
+},
+{
+"id": "253ec2857a",
+"parent": "0c6455dc10db6428257bdd601eca559247e27de6",
+"date": "2025-10-23",
+"subject": "fix(aws-lambda): serve microsoft office files as binary in lambda handler (#4469)",
+"queries": {
+"subject": "fix(aws-lambda): serve microsoft office files as binary in lambda handler",
+"bare": "serve microsoft office files as binary in lambda handler"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+567,
+567
+]
+]
+}
+},
+{
+"id": "52161170e8",
+"parent": "253ec2857a083595e52a446694923645084e9ecd",
+"date": "2025-10-24",
+"subject": "fix(request-id): validation accepts `=` (#4478)",
+"queries": {
+"subject": "fix(request-id): validation accepts `=`",
+"bare": "validation accepts `=`"
+},
+"gold": [
+"src/middleware/request-id/request-id.ts"
+],
+"gold_lines": {
+"src/middleware/request-id/request-id.ts": [
+[
+49,
+49
+]
+]
+}
+},
+{
+"id": "16b21fb07d",
+"parent": "c12d21cf3a300915ef6d6a171aae1628577983eb",
+"date": "2025-10-29",
+"subject": "fix(secure-headers): proposed features typo spelling mistake (#4494)",
+"queries": {
+"subject": "fix(secure-headers): proposed features typo spelling mistake",
+"bare": "proposed features typo spelling mistake"
+},
+"gold": [
+"src/middleware/secure-headers/permissions-policy.ts"
+],
+"gold_lines": {
+"src/middleware/secure-headers/permissions-policy.ts": [
+[
+65,
+65
+]
+]
+}
+},
+{
+"id": "b7117c4683",
+"parent": "16b21fb07df049418676304ecc9b5f09ded4a7b9",
+"date": "2025-10-29",
+"subject": "fix(types): preserve handler response typing in createHandlers (#4492)",
+"queries": {
+"subject": "fix(types): preserve handler response typing in createHandlers",
+"bare": "preserve handler response typing in createHandlers"
+},
+"gold": [
+"src/helper/factory/index.ts"
+],
+"gold_lines": {
+"src/helper/factory/index.ts": [
+[
+29,
+30
+],
+[
+34,
+35
+],
+[
+42,
+43
+],
+[
+48,
+50
+],
+[
+58,
+59
+],
+[
+65,
+68
+],
+[
+77,
+78
+],
+[
+85,
+89
+],
+[
+99,
+100
+],
+[
+108,
+112
+],
+[
+115,
+119
+],
+[
+131,
+132
+],
+[
+141,
+146
+],
+[
+149,
+154
+],
+[
+167,
+168
+],
+[
+178,
+184
+],
+[
+187,
+193
+],
+[
+207,
+208
+],
+[
+219,
+226
+],
+[
+251,
+252
+],
+[
+264,
+272
+],
+[
+275,
+283
+]
+]
+}
+},
+{
+"id": "fa8eef7079",
+"parent": "d3479a37c7a85de3378554dada57599db0ba886d",
+"date": "2025-11-07",
+"subject": "fix(utils/url): make _getQueryParam search behind question mark (#4507)",
+"queries": {
+"subject": "fix(utils/url): make _getQueryParam search behind question mark",
+"bare": "make _getQueryParam search behind question mark"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+220,
+220
+],
+[
+222,
+222
+]
+]
+}
+},
+{
+"id": "c44c5c22e5",
+"parent": "fa8eef707990e80a593fa32c2f67713a2ecd2e9b",
+"date": "2025-11-10",
+"subject": "fix(jsx): self-close wrapped empty tags (#4511)",
+"queries": {
+"subject": "fix(jsx): self-close wrapped empty tags",
+"bare": "self-close wrapped empty tags"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+248,
+251
+]
+]
+}
+},
+{
+"id": "df851842a4",
+"parent": "46ec3001265400fe196fe52867994bb5d253b3ca",
+"date": "2025-11-11",
+"subject": "fix(middleware/cache): skip caching when `Vary: *` is present (#4504)",
+"queries": {
+"subject": "fix(middleware/cache): skip caching when `Vary: *` is present",
+"bare": "skip caching when `Vary: *` is present"
+},
+"gold": [
+"src/middleware/cache/index.ts"
+],
+"gold_lines": {
+"src/middleware/cache/index.ts": [
+[
+14,
+15
+],
+[
+131,
+132
+]
+]
+}
+},
+{
+"id": "a5f395812e",
+"parent": "4960c063938763a9344c554286e72dcd2545b751",
+"date": "2025-11-18",
+"subject": "fix(validator): fix incomplete types and wrong tests (#4521)",
+"queries": {
+"subject": "fix(validator): fix incomplete types and wrong tests",
+"bare": "fix incomplete types and wrong tests"
+},
+"gold": [
+"src/validator/validator.ts"
+],
+"gold_lines": {
+"src/validator/validator.ts": [
+[
+4,
+4
+],
+[
+69,
+69
+],
+[
+78,
+78
+]
+]
+}
+},
+{
+"id": "342ff3b52d",
+"parent": "8fe7fee51631491a6d3985eb073e1b20e8a77164",
+"date": "2025-11-22",
+"subject": "fix: add JSX type for hono/jsx/dom (#4534)",
+"queries": {
+"subject": "fix: add JSX type for hono/jsx/dom",
+"bare": "add JSX type for hono/jsx/dom"
+},
+"gold": [
+"src/jsx/dom/jsx-dev-runtime.ts",
+"src/jsx/dom/jsx-runtime.ts"
+],
+"gold_lines": {
+"src/jsx/dom/jsx-dev-runtime.ts": [
+[
+6,
+7
+]
+],
+"src/jsx/dom/jsx-runtime.ts": [
+[
+7,
+8
+]
+]
+}
+},
+{
+"id": "7d6d04ea4b",
+"parent": "342ff3b52dda2d655aa5c5b649557e9d6f247909",
+"date": "2025-11-26",
+"subject": "fix(adapter/bun): fix TypeError: null is not an object (#4429) (#4538)",
+"queries": {
+"subject": "fix(adapter/bun): fix TypeError: null is not an object",
+"bare": "fix TypeError: null is not an object"
+},
+"gold": [
+"src/adapter/bun/conninfo.ts",
+"src/adapter/bun/server.ts"
+],
+"gold_lines": {
+"src/adapter/bun/conninfo.ts": [
+[
+18,
+19
+],
+[
+20,
+21
+]
+],
+"src/adapter/bun/server.ts": [
+[
+15,
+15
+]
+]
+}
+},
+{
+"id": "c059695c10",
+"parent": "81666ac6186ea98b96bde8ff9cfd91011c4d3af9",
+"date": "2025-12-09",
+"subject": "fix(linear-router): incorrect path matching (#4567)",
+"queries": {
+"subject": "fix(linear-router): incorrect path matching",
+"bare": "incorrect path matching"
+},
+"gold": [
+"src/router/linear-router/router.ts"
+],
+"gold_lines": {
+"src/router/linear-router/router.ts": [
+[
+81,
+82
+]
+]
+}
+},
+{
+"id": "6efc564af9",
+"parent": "ee52b250fcdc6822b8235ae1224e97b7282a534d",
+"date": "2025-12-13",
+"subject": "fix(hono/jsx): display blank when children is nullish (#4573)",
+"queries": {
+"subject": "fix(hono/jsx): display blank when children is nullish",
+"bare": "display blank when children is nullish"
+},
+"gold": [
+"src/jsx/streaming.ts"
+],
+"gold_lines": {
+"src/jsx/streaming.ts": [
+[
+46,
+48
+]
+]
+}
+},
+{
+"id": "3e12de624a",
+"parent": "6d626387ad8d348a93ce20aee0f125ee49ca5756",
+"date": "2025-12-13",
+"subject": "fix(types): replace schema-based path tracking with CurrentPath parameter (#4552)",
+"queries": {
+"subject": "fix(types): replace schema-based path tracking with CurrentPath parameter",
+"bare": "replace schema-based path tracking with CurrentPath parameter"
+},
+"gold": [
+"src/hono-base.ts",
+"src/types.ts"
+],
+"gold_lines": {
+"src/hono-base.ts": [
+[
+98,
+105
+],
+[
+170,
+171
+],
+[
+207,
+208
+],
+[
+210,
+211
+],
+[
+241,
+241
+],
+[
+263,
+263
+],
+[
+283,
+283
+],
+[
+324,
+324
+]
+],
+"src/types.ts": [
+[
+71,
+71
+],
+[
+128,
+129
+],
+[
+132,
+132
+],
+[
+138,
+138
+],
+[
+142,
+142
+],
+[
+154,
+154
+],
+[
+167,
+167
+],
+[
+171,
+171
+],
+[
+193,
+193
+],
+[
+212,
+214
+],
+[
+219,
+219
+],
+[
+247,
+247
+],
+[
+269,
+276
+],
+[
+281,
+281
+],
+[
+319,
+319
+],
+[
+349,
+359
+],
+[
+364,
+364
+],
+[
+407,
+407
+],
+[
+441,
+452
+],
+[
+457,
+457
+],
+[
+505,
+505
+],
+[
+543,
+555
+],
+[
+560,
+560
+],
+[
+613,
+613
+],
+[
+655,
+668
+],
+[
+673,
+673
+],
+[
+731,
+731
+],
+[
+777,
+791
+],
+[
+796,
+796
+],
+[
+859,
+859
+],
+[
+909,
+924
+],
+[
+978,
+994
+],
+[
+999,
+999
+],
+[
+1004,
+1004
+],
+[
+1009,
+1010
+],
+[
+1015,
+1015
+],
+[
+1031,
+1032
+],
+[
+1036,
+1037
+],
+[
+1043,
+1043
+],
+[
+1046,
+1046
+],
+[
+1048,
+1048
+],
+[
+1052,
+1052
+],
+[
+1059,
+1059
+],
+[
+1066,
+1066
+],
+[
+1068,
+1068
+],
+[
+1077,
+1077
+],
+[
+1085,
+1085
+],
+[
+1093,
+1093
+],
+[
+1095,
+1095
+],
+[
+1105,
+1105
+],
+[
+1114,
+1114
+],
+[
+1123,
+1123
+],
+[
+1125,
+1125
+],
+[
+1141,
+1145
+],
+[
+1155,
+1155
+],
+[
+1165,
+1165
+],
+[
+1167,
+1167
+],
+[
+1185,
+1189
+],
+[
+1200,
+1200
+],
+[
+1211,
+1211
+],
+[
+1213,
+1213
+],
+[
+1233,
+1237
+],
+[
+1249,
+1249
+],
+[
+1261,
+1261
+],
+[
+1263,
+1263
+],
+[
+1285,
+1289
+],
+[
+1302,
+1302
+],
+[
+1315,
+1315
+],
+[
+1317,
+1317
+],
+[
+1341,
+1345
+],
+[
+1359,
+1359
+],
+[
+1373,
+1373
+],
+[
+1375,
+1375
+],
+[
+1403,
+1404
+],
+[
+1411,
+1411
+],
+[
+1440,
+1440
+],
+[
+1460,
+1460
+],
+[
+1482,
+1482
+],
+[
+1511,
+1511
+],
+[
+1543,
+1543
+],
+[
+1578,
+1578
+],
+[
+1616,
+1616
+],
+[
+1657,
+1657
+],
+[
+1701,
+1701
+],
+[
+1748,
+1748
+],
+[
+1751,
+1751
+],
+[
+1760,
+1761
+],
+[
+1763,
+1763
+],
+[
+1778,
+1778
+],
+[
+1781,
+1781
+],
+[
+1798,
+1798
+],
+[
+1801,
+1801
+],
+[
+1820,
+1820
+],
+[
+1823,
+1823
+],
+[
+1849,
+1849
+],
+[
+1852,
+1852
+],
+[
+1881,
+1881
+],
+[
+1884,
+1884
+],
+[
+1916,
+1916
+],
+[
+1919,
+1919
+],
+[
+1954,
+1954
+],
+[
+1957,
+1957
+],
+[
+1995,
+1995
+],
+[
+1998,
+1998
+],
+[
+2039,
+2039
+],
+[
+2042,
+2042
+],
+[
+2086,
+2086
+],
+[
+2093,
+2094
+],
+[
+2097,
+2097
+],
+[
+2099,
+2101
+],
+[
+2104,
+2105
+],
+[
+2117,
+2140
+],
+[
+2142,
+2145
+],
+[
+2153,
+2155
+],
+[
+2261,
+2267
+],
+[
+2344,
+2344
+]
+]
+}
+},
+{
+"id": "37c3809c6c",
+"parent": "fe278e951d50eff9846ccd49a49126f748d20533",
+"date": "2025-12-14",
+"subject": "fix(types): fix app.on method array type inference (#4578)",
+"queries": {
+"subject": "fix(types): fix app.on method array type inference",
+"bare": "fix app.on method array type inference"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+1818,
+1818
+],
+[
+1825,
+1825
+],
+[
+1830,
+1830
+],
+[
+1837,
+1837
+],
+[
+1846,
+1846
+],
+[
+1851,
+1851
+],
+[
+1858,
+1858
+],
+[
+1869,
+1869
+],
+[
+1874,
+1874
+],
+[
+1881,
+1881
+],
+[
+1894,
+1894
+],
+[
+1904,
+1904
+],
+[
+1911,
+1911
+],
+[
+1926,
+1926
+],
+[
+1937,
+1937
+],
+[
+1944,
+1944
+],
+[
+1961,
+1961
+],
+[
+1973,
+1973
+],
+[
+1980,
+1980
+],
+[
+1999,
+1999
+],
+[
+2012,
+2012
+],
+[
+2019,
+2019
+],
+[
+2040,
+2040
+],
+[
+2054,
+2054
+],
+[
+2061,
+2061
+],
+[
+2084,
+2084
+],
+[
+2099,
+2099
+],
+[
+2106,
+2106
+],
+[
+2131,
+2131
+],
+[
+2147,
+2147
+],
+[
+2152,
+2154
+],
+[
+2159,
+2159
+],
+[
+2165,
+2166
+],
+[
+2171,
+2171
+],
+[
+2176,
+2176
+]
+]
+}
+},
+{
+"id": "bde9a03d53",
+"parent": "d3abeb1f801aaa1b334285c73da5f5f022dbcadb",
+"date": "2025-12-18",
+"subject": "fix(validator): preserve literal union types in input type inference (#4583)",
+"queries": {
+"subject": "fix(validator): preserve literal union types in input type inference",
+"bare": "preserve literal union types in input type inference"
+},
+"gold": [
+"src/validator/index.ts",
+"src/validator/validator.ts"
+],
+"gold_lines": {
+"src/validator/index.ts": [
+[
+7,
+8
+]
+],
+"src/validator/validator.ts": [
+[
+6,
+7
+],
+[
+69,
+69
+],
+[
+78,
+78
+]
+]
+}
+},
+{
+"id": "489af0b082",
+"parent": "6ca01ec69b17c56f84fccd866702f7f999332030",
+"date": "2025-12-26",
+"subject": "fix(types): fix middleware union type merging in MergeMiddlewareResponse (#4602)",
+"queries": {
+"subject": "fix(types): fix middleware union type merging in MergeMiddlewareResponse",
+"bare": "fix middleware union type merging in MergeMiddlewareResponse"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+2370,
+2371
+],
+[
+2374,
+2375
+],
+[
+2378,
+2379
+]
+]
+}
+},
+{
+"id": "5d4e6aa897",
+"parent": "28452f06319ef12df94b826450f36486e286565d",
+"date": "2026-01-22",
+"subject": "fix(client): exclude $all from ClientRequest type (#4611)",
+"queries": {
+"subject": "fix(client): exclude $all from ClientRequest type",
+"bare": "exclude $all from ClientRequest type"
+},
+"gold": [
+"src/client/types.ts"
+],
+"gold_lines": {
+"src/client/types.ts": [
+[
+2,
+3
+],
+[
+6,
+7
+],
+[
+47,
+47
+],
+[
+50,
+51
+]
+]
+}
+},
+{
+"id": "2a9cd953b6",
+"parent": "8078bbf7591ec133ac8a4f7cfc4f2666a50909a9",
+"date": "2026-01-26",
+"subject": "fix(sse): handle `\\r` and `\\r\\n` line endings in writeSSE (#4644)",
+"queries": {
+"subject": "fix(sse): handle `\\r` and `\\r\\n` line endings in writeSSE",
+"bare": "handle `\\r` and `\\r\\n` line endings in writeSSE"
+},
+"gold": [
+"src/helper/streaming/sse.ts"
+],
+"gold_lines": {
+"src/helper/streaming/sse.ts": [
+[
+21,
+21
+]
+]
+}
+},
+{
+"id": "cea7b7b993",
+"parent": "f7d272abe1644e50ab5fe9cb53f5965c35d77226",
+"date": "2026-02-06",
+"subject": "fix(jsx): preserve context when using await before html helper (#4662)",
+"queries": {
+"subject": "fix(jsx): preserve context when using await before html helper",
+"bare": "preserve context when using await before html helper"
+},
+"gold": [
+"src/jsx/context.ts"
+],
+"gold_lines": {
+"src/jsx/context.ts": [
+[
+27,
+27
+],
+[
+28,
+29
+],
+[
+32,
+32
+],
+[
+33,
+34
+]
+]
+}
+},
+{
+"id": "3aa2f9ae09",
+"parent": "cea7b7b993af682fbf10bb29937d028a55b8ab7e",
+"date": "2026-02-06",
+"subject": "fix(bearer-auth): make auth-scheme case-insensitive (#4659)",
+"queries": {
+"subject": "fix(bearer-auth): make auth-scheme case-insensitive",
+"bare": "make auth-scheme case-insensitive"
+},
+"gold": [
+"src/middleware/bearer-auth/index.ts"
+],
+"gold_lines": {
+"src/middleware/bearer-auth/index.ts": [
+[
+116,
+116
+]
+]
+}
+},
+{
+"id": "0c1d4c76cf",
+"parent": "5ca5c3e9764486b31ad7db4c0c19b2c926753ae3",
+"date": "2026-02-08",
+"subject": "fix(url): ignore fragment identifiers in getPath() (#4627)",
+"queries": {
+"subject": "fix(url): ignore fragment identifiers in getPath()",
+"bare": "ignore fragment identifiers in getPath()"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+114,
+114
+],
+[
+117,
+117
+],
+[
+119,
+120
+]
+]
+}
+},
+{
+"id": "3d536ff38d",
+"parent": "0c1d4c76cf6b2aace8bbef745d375c2cc176d99f",
+"date": "2026-02-08",
+"subject": "fix: determine if rendered or not by `node.vC[0]` instead of referring to `node.pP` (#4663)",
+"queries": {
+"subject": "fix: determine if rendered or not by `node.vC[0]` instead of referring to `node.pP`",
+"bare": "determine if rendered or not by `node.vC[0]` instead of referring to `node.pP`"
+},
+"gold": [
+"src/jsx/dom/render.ts"
+],
+"gold_lines": {
+"src/jsx/dom/render.ts": [
+[
+305,
+312
+],
+[
+313,
+314
+],
+[
+346,
+346
+],
+[
+431,
+431
+]
+]
+}
+},
+{
+"id": "11c7828fa7",
+"parent": "a40d210834adfa4f24cc42faaed5661cd025e6af",
+"date": "2026-02-19",
+"subject": "fix(jsx/dom): handle empty arrays in render children loop (#4729)",
+"queries": {
+"subject": "fix(jsx/dom): handle empty arrays in render children loop",
+"bare": "handle empty arrays in render children loop"
+},
+"gold": [
+"src/jsx/dom/render.ts"
+],
+"gold_lines": {
+"src/jsx/dom/render.ts": [
+[
+489,
+490
+]
+]
+}
+},
+{
+"id": "67ac19a99f",
+"parent": "11a19424497a0e4610757c4e6900731a073dd938",
+"date": "2026-02-19",
+"subject": "fix(client): skip undefined values in form data serialization (#4732)",
+"queries": {
+"subject": "fix(client): skip undefined values in form data serialization",
+"bare": "skip undefined values in form data serialization"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+66,
+67
+]
+]
+}
+},
+{
+"id": "91ef235f9f",
+"parent": "d2ed2e9c966d82e2369bd74bdae4acd4e8f57807",
+"date": "2026-02-21",
+"subject": "fix(client): export `ApplyGlobalResponse` from `hono/client` (#4743)",
+"queries": {
+"subject": "fix(client): export `ApplyGlobalResponse` from `hono/client`",
+"bare": "export `ApplyGlobalResponse` from `hono/client`"
+},
+"gold": [
+"src/client/index.ts"
+],
+"gold_lines": {
+"src/client/index.ts": [
+[
+14,
+15
+]
+]
+}
+},
+{
+"id": "212c64f2c2",
+"parent": "5cc8f8f79eb600a1d98be117c2c7c2de3e0d400e",
+"date": "2026-02-23",
+"subject": "fix(context): revert PR #4707 (#4757)",
+"queries": {
+"subject": "fix(context): revert PR #4707",
+"bare": "revert PR #4707"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+670,
+673
+],
+[
+691,
+692
+],
+[
+720,
+728
+]
+]
+}
+},
+{
+"id": "4bb70fafbc",
+"parent": "df97e5f49771a2a219770515859b9cc1d80abab0",
+"date": "2026-02-24",
+"subject": "fix(validator): prevent type diff bug in form data parsing (#4753)",
+"queries": {
+"subject": "fix(validator): prevent type diff bug in form data parsing",
+"bare": "prevent type diff bug in form data parsing"
+},
+"gold": [
+"src/validator/validator.ts"
+],
+"gold_lines": {
+"src/validator/validator.ts": [
+[
+129,
+129
+],
+[
+135,
+135
+]
+]
+}
+},
+{
+"id": "e4602ad11a",
+"parent": "4bb70fafbc4819b2e3ef64a0c5fb4ba55e315bba",
+"date": "2026-02-24",
+"subject": "fix(jwt): use `Math.floor` instead of bitwise OR for safe timestamp (#4754)",
+"queries": {
+"subject": "fix(jwt): use `Math.floor` instead of bitwise OR for safe timestamp",
+"bare": "use `Math.floor` instead of bitwise OR for safe timestamp"
+},
+"gold": [
+"src/utils/jwt/jwt.ts"
+],
+"gold_lines": {
+"src/utils/jwt/jwt.ts": [
+[
+130,
+130
+]
+]
+}
+},
+{
+"id": "b1df30439a",
+"parent": "e4602ad11a2879eeb4f06d5114d21e0565c114a9",
+"date": "2026-02-24",
+"subject": "fix(jwt): fix `JwtVariables` for `ContextVariableMap` (#4764)",
+"queries": {
+"subject": "fix(jwt): fix `JwtVariables` for `ContextVariableMap`",
+"bare": "fix `JwtVariables` for `ContextVariableMap`"
+},
+"gold": [
+"src/middleware/jwt/index.ts"
+],
+"gold_lines": {
+"src/middleware/jwt/index.ts": [
+[
+8,
+8
+]
+]
+}
+},
+{
+"id": "eb9c112614",
+"parent": "b1df30439afcaac8205790ecad272f49caf0fa7e",
+"date": "2026-02-26",
+"subject": "fix(types): remove DOM type dependencies from ClientResponse and request method (#4768)",
+"queries": {
+"subject": "fix(types): remove DOM type dependencies from ClientResponse and request method",
+"bare": "remove DOM type dependencies from ClientResponse and request method"
+},
+"gold": [
+"src/client/types.ts",
+"src/hono-base.ts"
+],
+"gold_lines": {
+"src/client/types.ts": [
+[
+132,
+133
+],
+[
+140,
+141
+],
+[
+142,
+143
+],
+[
+146,
+147
+]
+],
+"src/hono-base.ts": [
+[
+494,
+494
+]
+]
+}
+},
+{
+"id": "0f505f4d0f",
+"parent": "eb9c112614230d6e29e06e444eb26fcc7592eb7d",
+"date": "2026-02-26",
+"subject": "fix(types): correct middleware types (#4774)",
+"queries": {
+"subject": "fix(types): correct middleware types",
+"bare": "correct middleware types"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+158,
+158
+],
+[
+196,
+197
+],
+[
+223,
+223
+],
+[
+254,
+256
+],
+[
+287,
+288
+],
+[
+321,
+324
+],
+[
+364,
+366
+],
+[
+409,
+413
+],
+[
+457,
+460
+],
+[
+507,
+512
+],
+[
+560,
+564
+],
+[
+615,
+621
+],
+[
+673,
+678
+],
+[
+733,
+740
+],
+[
+796,
+802
+],
+[
+861,
+869
+],
+[
+929,
+936
+],
+[
+998,
+1006
+]
+]
+}
+},
+{
+"id": "bda46ac114",
+"parent": "0f505f4d0f732659b35396710445cabfc2315cb3",
+"date": "2026-02-26",
+"subject": "fix(jwt): prevent memory leak by avoiding mutation of options object (#4759)",
+"queries": {
+"subject": "fix(jwt): prevent memory leak by avoiding mutation of options object",
+"bare": "prevent memory leak by avoiding mutation of options object"
+},
+"gold": [
+"src/utils/jwt/jwt.ts"
+],
+"gold_lines": {
+"src/utils/jwt/jwt.ts": [
+[
+221,
+222
+],
+[
+234,
+239
+],
+[
+243,
+243
+]
+]
+}
+},
+{
+"id": "0768232203",
+"parent": "790c57baa24b628a37b95025a8d41b1911b99d5d",
+"date": "2026-03-02",
+"subject": "fix(client): preserve route schema in ApplyGlobalResponse (#4777)",
+"queries": {
+"subject": "fix(client): preserve route schema in ApplyGlobalResponse",
+"bare": "preserve route schema in ApplyGlobalResponse"
+},
+"gold": [
+"src/client/types.ts"
+],
+"gold_lines": {
+"src/client/types.ts": [
+[
+4,
+4
+],
+[
+359,
+360
+]
+]
+}
+},
+{
+"id": "80a9837904",
+"parent": "6a0607a929d888893f0c91d92dce2fcfdb3662a3",
+"date": "2026-03-03",
+"subject": "fix(utils/url): specify the return type of `tryDecodeURI` (#4779)",
+"queries": {
+"subject": "fix(utils/url): specify the return type of `tryDecodeURI`",
+"bare": "specify the return type of `tryDecodeURI`"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+104,
+104
+]
+]
+}
+},
+{
+"id": "0f499152ee",
+"parent": "19d20d23a2921e26c3bbfdb5549fce98b4a39b28",
+"date": "2026-03-04",
+"subject": "fix(request): return `string | undefined` from param() when path type is any (#4723)",
+"queries": {
+"subject": "fix(request): return `string | undefined` from param() when path type is any",
+"bare": "return `string | undefined` from param() when path type is any"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+94,
+94
+]
+]
+}
+},
+{
+"id": "8c4d7f3d2f",
+"parent": "0f499152ee20daf4f394d1f0ef5cc700ce7e2735",
+"date": "2026-03-04",
+"subject": "fix(jwt): validate token format in decode and decodeHeader functions (#4752)",
+"queries": {
+"subject": "fix(jwt): validate token format in decode and decodeHeader functions",
+"bare": "validate token format in decode and decodeHeader functions"
+},
+"gold": [
+"src/utils/jwt/jwt.ts"
+],
+"gold_lines": {
+"src/utils/jwt/jwt.ts": [
+[
+258,
+259
+],
+[
+260,
+262
+],
+[
+272,
+273
+],
+[
+274,
+275
+]
+]
+}
+},
+{
+"id": "b8cff18905",
+"parent": "8c4d7f3d2feea19c726bcaf3b7d01b62215eae8b",
+"date": "2026-03-04",
+"subject": "fix(jsx): Fix \"Invalid state: Controller is already closed\" (#4770)",
+"queries": {
+"subject": "fix(jsx): Fix \"Invalid state: Controller is already closed\"",
+"bare": "Fix \"Invalid state: Controller is already closed\""
+},
+"gold": [
+"src/jsx/streaming.ts"
+],
+"gold_lines": {
+"src/jsx/streaming.ts": [
+[
+145,
+146
+],
+[
+160,
+160
+],
+[
+185,
+185
+],
+[
+202,
+202
+]
+]
+}
+},
+{
+"id": "5086956298",
+"parent": "18cc595fc2a6a24c919bda8d733e7f95460eef4f",
+"date": "2026-03-06",
+"subject": "fix(accept): replace regex split to mitigate ReDoS (#4758)",
+"queries": {
+"subject": "fix(accept): replace regex split to mitigate ReDoS",
+"bare": "replace regex split to mitigate ReDoS"
+},
+"gold": [
+"src/utils/accept.ts"
+],
+"gold_lines": {
+"src/utils/accept.ts": [
+[
+7,
+14
+],
+[
+15,
+16
+],
+[
+17,
+17
+],
+[
+19,
+23
+],
+[
+25,
+33
+],
+[
+36,
+37
+],
+[
+39,
+39
+],
+[
+42,
+46
+],
+[
+48,
+49
+],
+[
+79,
+86
+]
+]
+}
+},
+{
+"id": "8217d9ece6",
+"parent": "50869562980628b2984f73e064bb80691e5286bc",
+"date": "2026-03-07",
+"subject": "fix(jsx): align link hoisting and dedupe with React 19 (#4792)",
+"queries": {
+"subject": "fix(jsx): align link hoisting and dedupe with React 19",
+"bare": "align link hoisting and dedupe with React 19"
+},
+"gold": [
+"src/jsx/dom/intrinsic-element/components.ts",
+"src/jsx/intrinsic-element/common.ts",
+"src/jsx/intrinsic-element/components.ts"
+],
+"gold_lines": {
+"src/jsx/dom/intrinsic-element/components.ts": [
+[
+4,
+4
+],
+[
+74,
+75
+],
+[
+76,
+76
+],
+[
+79,
+79
+],
+[
+99,
+102
+],
+[
+118,
+118
+],
+[
+131,
+132
+],
+[
+150,
+150
+],
+[
+166,
+167
+],
+[
+185,
+185
+],
+[
+271,
+271
+]
+],
+"src/jsx/intrinsic-element/common.ts": [
+[
+0,
+1
+],
+[
+11,
+12
+]
+],
+"src/jsx/intrinsic-element/components.ts": [
+[
+10,
+10
+],
+[
+33,
+33
+],
+[
+34,
+35
+],
+[
+46,
+46
+],
+[
+54,
+56
+],
+[
+59,
+60
+],
+[
+62,
+62
+],
+[
+65,
+65
+],
+[
+67,
+67
+],
+[
+68,
+69
+],
+[
+154,
+154
+]
+]
+}
+},
+{
+"id": "53b66aeac5",
+"parent": "58825a72f7cc0a36d08535fc11dc90934ba77aeb",
+"date": "2026-03-10",
+"subject": "fix(lambda-edge): avoid callback handler deprecation on NODEJS_24_X (#4782)",
+"queries": {
+"subject": "fix(lambda-edge): avoid callback handler deprecation on NODEJS_24_X",
+"bare": "avoid callback handler deprecation on NODEJS_24_X"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+124,
+124
+]
+]
+}
+},
+{
+"id": "488ea6ab3e",
+"parent": "b0aba5bd76f11a9f0fef1210a705523fa30172ab",
+"date": "2026-03-11",
+"subject": "fix(utils/mime): Normalize input extension to lowercase before MIME check (#4800)",
+"queries": {
+"subject": "fix(utils/mime): Normalize input extension to lowercase before MIME check",
+"bare": "Normalize input extension to lowercase before MIME check"
+},
+"gold": [
+"src/utils/mime.ts"
+],
+"gold_lines": {
+"src/utils/mime.ts": [
+[
+15,
+15
+]
+]
+}
+},
+{
+"id": "0c0bf8d789",
+"parent": "488ea6ab3e601d89fc57438db7275734af14a3b3",
+"date": "2026-03-13",
+"subject": "fix(bearer-auth): escape regex metacharacters in bearer auth prefix option (#4750)",
+"queries": {
+"subject": "fix(bearer-auth): escape regex metacharacters in bearer auth prefix option",
+"bare": "escape regex metacharacters in bearer auth prefix option"
+},
+"gold": [
+"src/middleware/bearer-auth/index.ts"
+],
+"gold_lines": {
+"src/middleware/bearer-auth/index.ts": [
+[
+115,
+117
+],
+[
+167,
+168
+],
+[
+182,
+182
+],
+[
+184,
+184
+],
+[
+187,
+187
+]
+]
+}
+},
+{
+"id": "8bd9dddce2",
+"parent": "fe689eceb7834db653a64ecae5f8d203d9c23b9a",
+"date": "2026-03-21",
+"subject": "fix(request): remove `parseBody` from bodyCache to prevent TypeError (#4807)",
+"queries": {
+"subject": "fix(request): remove `parseBody` from bodyCache to prevent TypeError",
+"bare": "remove `parseBody` from bodyCache to prevent TypeError"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+27,
+27
+],
+[
+217,
+217
+]
+]
+}
+},
+{
+"id": "be85106d45",
+"parent": "d1722e3e56a9cf0fdac24982c9a55195e093a3f7",
+"date": "2026-03-23",
+"subject": "fix(ssg): pass SSG_CONTEXT to forGetInfoURLRequest (#4810)",
+"queries": {
+"subject": "fix(ssg): pass SSG_CONTEXT to forGetInfoURLRequest",
+"bare": "pass SSG_CONTEXT to forGetInfoURLRequest"
+},
+"gold": [
+"src/helper/ssg/ssg.ts"
+],
+"gold_lines": {
+"src/helper/ssg/ssg.ts": [
+[
+232,
+232
+]
+]
+}
+},
+{
+"id": "50e26118cb",
+"parent": "be85106d45e74ec5720fd5fc848970daaf1978c8",
+"date": "2026-03-23",
+"subject": "fix(service-worker): make `fire()` fallback behavior consistent with `handle()` (#4821)",
+"queries": {
+"subject": "fix(service-worker): make `fire()` fallback behavior consistent with `handle()`",
+"bare": "make `fire()` fallback behavior consistent with `handle()`"
+},
+"gold": [
+"src/adapter/service-worker/index.ts"
+],
+"gold_lines": {
+"src/adapter/service-worker/index.ts": [
+[
+30,
+32
+]
+]
+}
+},
+{
+"id": "66fe9feec2",
+"parent": "50e26118cb7a802469f566e4e5a6b8a18cb95e07",
+"date": "2026-03-23",
+"subject": "fix(cors): reflect request origin when credentials is true with wildcard (#4813)",
+"queries": {
+"subject": "fix(cors): reflect request origin when credentials is true with wildcard",
+"bare": "reflect request origin when credentials is true with wildcard"
+},
+"gold": [
+"src/middleware/cors/index.ts"
+],
+"gold_lines": {
+"src/middleware/cors/index.ts": [
+[
+77,
+78
+],
+[
+118,
+118
+],
+[
+156,
+156
+]
+]
+}
+},
+{
+"id": "75b4308496",
+"parent": "f47b559684aa361f41276e53bf058082ff3f58bd",
+"date": "2026-03-31",
+"subject": "fix(jsx/dom): apply select value after children are rendered (#4847)",
+"queries": {
+"subject": "fix(jsx/dom): apply select value after children are rendered",
+"bare": "apply select value after children are rendered"
+},
+"gold": [
+"src/jsx/dom/render.ts"
+],
+"gold_lines": {
+"src/jsx/dom/render.ts": [
+[
+143,
+144
+],
+[
+191,
+193
+],
+[
+198,
+202
+],
+[
+406,
+407
+],
+[
+408,
+409
+]
+]
+}
+},
+{
+"id": "0bce36bf36",
+"parent": "75b4308496d64aed39e96fc105db233bde3d29b3",
+"date": "2026-03-31",
+"subject": "fix(compress): convert strong ETag to weak ETag when compressing (#4848)",
+"queries": {
+"subject": "fix(compress): convert strong ETag to weak ETag when compressing",
+"bare": "convert strong ETag to weak ETag when compressing"
+},
+"gold": [
+"src/middleware/compress/index.ts"
+],
+"gold_lines": {
+"src/middleware/compress/index.ts": [
+[
+65,
+66
+]
+]
+}
+},
+{
+"id": "1aa32fb91e",
+"parent": "c37ba26da9709ad03b803d1972773ed864b7e60d",
+"date": "2026-04-08",
+"subject": "fix(types): infer response type from last handler in app.on 9- and 10-handler overloads (#4865)",
+"queries": {
+"subject": "fix(types): infer response type from last handler in app.on 9- and 10-handler overloads",
+"bare": "infer response type from last handler in app.on 9- and 10-handler overloads"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+1793,
+1793
+],
+[
+2098,
+2098
+],
+[
+2146,
+2146
+]
+]
+}
+},
+{
+"id": "fa2c74fe5c",
+"parent": "3779927c17201dc6bfd20697f0e1ec65407da779",
+"date": "2026-04-15",
+"subject": "fix(aws-lambda): handle invalid header names in request processing (#4883)",
+"queries": {
+"subject": "fix(aws-lambda): handle invalid header names in request processing",
+"bare": "handle invalid header names in request processing"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+255,
+256
+]
+]
+}
+},
+{
+"id": "18fe604c8c",
+"parent": "cf2d2b7edcf07adef2db7614557f4d7f9e2be7ba",
+"date": "2026-04-23",
+"subject": "fix(jwt): support single-line PEM keys (#4889)",
+"queries": {
+"subject": "fix(jwt): support single-line PEM keys",
+"bare": "support single-line PEM keys"
+},
+"gold": [
+"src/utils/jwt/jws.ts"
+],
+"gold_lines": {
+"src/utils/jwt/jws.ts": [
+[
+51,
+51
+]
+]
+}
+},
+{
+"id": "027e3dfca9",
+"parent": "f774f8df49e7ec7e205f15c5076a37132c515ebf",
+"date": "2026-04-26",
+"subject": "fix(method-override): handle Content-Type with charset parameter (#4894)",
+"queries": {
+"subject": "fix(method-override): handle Content-Type with charset parameter",
+"bare": "handle Content-Type with charset parameter"
+},
+"gold": [
+"src/middleware/method-override/index.ts"
+],
+"gold_lines": {
+"src/middleware/method-override/index.ts": [
+[
+92,
+92
+]
+]
+}
+},
+{
+"id": "bfba97ca7e",
+"parent": "90d4182aabd328e2ec6af3f25ec62ddc574ad8cb",
+"date": "2026-05-01",
+"subject": "fix(jsx): normalize SVG attributes on the <svg> root element (#4893)",
+"queries": {
+"subject": "fix(jsx): normalize SVG attributes on the <svg> root element",
+"bare": "normalize SVG attributes on the <svg> root element"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+188,
+188
+]
+]
+}
+},
+{
+"id": "8f027e5574",
+"parent": "bfba97ca7ea3d4541a3419f1749e5a1a3e8f1727",
+"date": "2026-05-03",
+"subject": "fix(ssg): add `atom+xml` and `rss+xml` to `defaultExtensionMap` (#4899)",
+"queries": {
+"subject": "fix(ssg): add `atom+xml` and `rss+xml` to `defaultExtensionMap`",
+"bare": "add `atom+xml` and `rss+xml` to `defaultExtensionMap`"
+},
+"gold": [
+"src/helper/ssg/ssg.ts"
+],
+"gold_lines": {
+"src/helper/ssg/ssg.ts": [
+[
+93,
+94
+]
+]
+}
+},
+{
+"id": "76d5589e9b",
+"parent": "8f027e5574e91e3c7f263a728656e3888559e51a",
+"date": "2026-05-05",
+"subject": "fix(cors): make origin optional in CORSOptions (#4905)",
+"queries": {
+"subject": "fix(cors): make origin optional in CORSOptions",
+"bare": "make origin optional in CORSOptions"
+},
+"gold": [
+"src/middleware/cors/index.ts"
+],
+"gold_lines": {
+"src/middleware/cors/index.ts": [
+[
+10,
+10
+],
+[
+64,
+64
+],
+[
+69,
+71
+],
+[
+73,
+73
+]
+]
+}
+},
+{
+"id": "52aaaf9714",
+"parent": "76d5589e9b0569f4e74ec37e8dd6979455f70dfa",
+"date": "2026-05-05",
+"subject": "fix(types): propagate middleware response types to app.on overloads (#4906)",
+"queries": {
+"subject": "fix(types): propagate middleware response types to app.on overloads",
+"bare": "propagate middleware response types to app.on overloads"
+},
+"gold": [
+"src/types.ts"
+],
+"gold_lines": {
+"src/types.ts": [
+[
+1490,
+1491
+],
+[
+1494,
+1494
+],
+[
+1497,
+1497
+],
+[
+1513,
+1514
+],
+[
+1517,
+1517
+],
+[
+1520,
+1520
+],
+[
+1538,
+1539
+],
+[
+1543,
+1545
+],
+[
+1550,
+1550
+],
+[
+1570,
+1571
+],
+[
+1575,
+1578
+],
+[
+1583,
+1583
+],
+[
+1605,
+1606
+],
+[
+1610,
+1614
+],
+[
+1619,
+1619
+],
+[
+1643,
+1644
+],
+[
+1648,
+1653
+],
+[
+1658,
+1658
+],
+[
+1684,
+1685
+],
+[
+1689,
+1695
+],
+[
+1700,
+1700
+],
+[
+1728,
+1729
+],
+[
+1733,
+1740
+],
+[
+1745,
+1745
+],
+[
+1775,
+1776
+],
+[
+1780,
+1788
+],
+[
+1793,
+1793
+],
+[
+1843,
+1844
+],
+[
+1847,
+1847
+],
+[
+1850,
+1850
+],
+[
+1866,
+1867
+],
+[
+1870,
+1870
+],
+[
+1873,
+1873
+],
+[
+1891,
+1892
+],
+[
+1896,
+1898
+],
+[
+1903,
+1903
+],
+[
+1923,
+1924
+],
+[
+1928,
+1931
+],
+[
+1936,
+1936
+],
+[
+1958,
+1959
+],
+[
+1963,
+1967
+],
+[
+1972,
+1972
+],
+[
+1996,
+1997
+],
+[
+2001,
+2006
+],
+[
+2011,
+2011
+],
+[
+2037,
+2038
+],
+[
+2042,
+2048
+],
+[
+2053,
+2053
+],
+[
+2081,
+2082
+],
+[
+2086,
+2093
+],
+[
+2098,
+2098
+],
+[
+2128,
+2129
+],
+[
+2133,
+2141
+],
+[
+2146,
+2146
+]
+]
+}
+},
+{
+"id": "26f8c33f23",
+"parent": "16c4e3885f51376cb6cbddc80eeae0202cd86234",
+"date": "2026-05-16",
+"subject": "fix(serveStatic): make options parameter optional in all adapters (#4934)",
+"queries": {
+"subject": "fix(serveStatic): make options parameter optional in all adapters",
+"bare": "make options parameter optional in all adapters"
+},
+"gold": [
+"src/adapter/bun/serve-static.ts",
+"src/adapter/cloudflare-workers/serve-static.ts",
+"src/adapter/deno/serve-static.ts"
+],
+"gold_lines": {
+"src/adapter/bun/serve-static.ts": [
+[
+9,
+9
+]
+],
+"src/adapter/cloudflare-workers/serve-static.ts": [
+[
+9,
+9
+],
+[
+22,
+22
+]
+],
+"src/adapter/deno/serve-static.ts": [
+[
+9,
+9
+]
+]
+}
+},
+{
+"id": "ff7522fdcc",
+"parent": "26f8c33f23e6151873d165107f2dbcadf1204d15",
+"date": "2026-05-16",
+"subject": "fix(cookie): return the first cookie when there are multiple cookies with the same name (#4922)",
+"queries": {
+"subject": "fix(cookie): return the first cookie when there are multiple cookies with the same name",
+"bare": "return the first cookie when there are multiple cookies with the same name"
+},
+"gold": [
+"src/utils/cookie.ts"
+],
+"gold_lines": {
+"src/utils/cookie.ts": [
+[
+108,
+108
+],
+[
+116,
+116
+],
+[
+141,
+141
+]
+]
+}
+},
+{
+"id": "e2f252a874",
+"parent": "54f2f0cfdae64055ea58ab0372f854c35a780290",
+"date": "2026-05-16",
+"subject": "fix(stream): upgrade `@hono/node-server` to v2 and fix abort handling (#4940)",
+"queries": {
+"subject": "fix(stream): upgrade `@hono/node-server` to v2 and fix abort handling",
+"bare": "upgrade `@hono/node-server` to v2 and fix abort handling"
+},
+"gold": [
+"src/utils/stream.ts"
+],
+"gold_lines": {
+"src/utils/stream.ts": [
+[
+41,
+41
+],
+[
+67,
+68
+],
+[
+73,
+73
+]
+]
+}
+},
+{
+"id": "dcabbece34",
+"parent": "7e62bcd22fa4e8f0e83cb564bac85e32f5434dd3",
+"date": "2026-05-19",
+"subject": "fix(route): preserve the base path of the mounted route() app (#4942)",
+"queries": {
+"subject": "fix(route): preserve the base path of the mounted route() app",
+"bare": "preserve the base path of the mounted route() app"
+},
+"gold": [
+"src/hono-base.ts"
+],
+"gold_lines": {
+"src/hono-base.ts": [
+[
+229,
+229
+],
+[
+385,
+385
+],
+[
+388,
+388
+]
+]
+}
+},
+{
+"id": "eb2d0c238a",
+"parent": "dcabbece347817ef7193439c39d28546b8ac3a85",
+"date": "2026-05-19",
+"subject": "fix(jsx): widen jsx and jsxFn children to Child[] (#4947)",
+"queries": {
+"subject": "fix(jsx): widen jsx and jsxFn children to Child[]",
+"bare": "widen jsx and jsxFn children to Child[]"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+305,
+309
+],
+[
+324,
+328
+]
+]
+}
+},
+{
+"id": "a192df0844",
+"parent": "cf6ef7056a59acdc5cd2eacdca201147885d3e54",
+"date": "2026-05-22",
+"subject": "fix(mime): specify charset parameter per MIME type instead of mechanical detection (#4912)",
+"queries": {
+"subject": "fix(mime): specify charset parameter per MIME type instead of mechanical detection",
+"bare": "specify charset parameter per MIME type instead of mechanical detection"
+},
+"gold": [
+"src/utils/mime.ts"
+],
+"gold_lines": {
+"src/utils/mime.ts": [
+[
+15,
+19
+],
+[
+22,
+23
+],
+[
+24,
+24
+],
+[
+44,
+45
+],
+[
+50,
+51
+],
+[
+53,
+53
+],
+[
+56,
+56
+],
+[
+62,
+62
+],
+[
+74,
+74
+],
+[
+79,
+79
+],
+[
+87,
+88
+]
+]
+}
+},
+{
+"id": "f0ed246591",
+"parent": "a192df0844724aeaf5cbc6f1ea2f8425d3f8a86a",
+"date": "2026-05-22",
+"subject": "fix(compress): respect Accept-Encoding when encoding option is set (#4951)",
+"queries": {
+"subject": "fix(compress): respect Accept-Encoding when encoding option is set",
+"bare": "respect Accept-Encoding when encoding option is set"
+},
+"gold": [
+"src/middleware/compress/index.ts"
+],
+"gold_lines": {
+"src/middleware/compress/index.ts": [
+[
+6,
+7
+],
+[
+9,
+10
+],
+[
+13,
+13
+],
+[
+16,
+17
+],
+[
+35,
+36
+],
+[
+55,
+56
+]
+]
+}
+},
+{
+"id": "7e0555d14c",
+"parent": "f0ed2465913f2a89ebdf65cc54d6254915fc3ff6",
+"date": "2026-05-22",
+"subject": "fix(deno): echo negotiated WebSocket subprotocol in upgrade response (#4955)",
+"queries": {
+"subject": "fix(deno): echo negotiated WebSocket subprotocol in upgrade response",
+"bare": "echo negotiated WebSocket subprotocol in upgrade response"
+},
+"gold": [
+"src/adapter/deno/websocket.ts"
+],
+"gold_lines": {
+"src/adapter/deno/websocket.ts": [
+[
+10,
+10
+]
+]
+}
+},
+{
+"id": "82dad6297c",
+"parent": "2f01b774b168911d24e4864fb66054f5de9d9a4e",
+"date": "2026-05-24",
+"subject": "fix(serve-static): normalize all backslashes in file paths, not just the first (#4962)",
+"queries": {
+"subject": "fix(serve-static): normalize all backslashes in file paths, not just the first",
+"bare": "normalize all backslashes in file paths, not just the first"
+},
+"gold": [
+"src/utils/filepath.ts"
+],
+"gold_lines": {
+"src/utils/filepath.ts": [
+[
+46,
+46
+]
+]
+}
+},
+{
+"id": "bcd290a64c",
+"parent": "c968177d9c11ddc7c7cca57c384497f11a6d60ae",
+"date": "2026-05-25",
+"subject": "fix(utils/ipaddr): do not compress a single 0 group to `::` (#4971)",
+"queries": {
+"subject": "fix(utils/ipaddr): do not compress a single 0 group to `::`",
+"bare": "do not compress a single 0 group to `::`"
+},
+"gold": [
+"src/utils/ipaddr.ts"
+],
+"gold_lines": {
+"src/utils/ipaddr.ts": [
+[
+358,
+358
+]
+]
+}
+},
+{
+"id": "413d3cbd0e",
+"parent": "2cbeadda34892425470464f5fbfabc07439e88ae",
+"date": "2026-06-01",
+"subject": "fix(bearer-auth): mention verifyToken in missing-options error message (#4987)",
+"queries": {
+"subject": "fix(bearer-auth): mention verifyToken in missing-options error message",
+"bare": "mention verifyToken in missing-options error message"
+},
+"gold": [
+"src/middleware/bearer-auth/index.ts"
+],
+"gold_lines": {
+"src/middleware/bearer-auth/index.ts": [
+[
+108,
+108
+]
+]
+}
+},
+{
+"id": "d22ff9c6fe",
+"parent": "8e2cccc2fb3899519e43c774d0626cebaf79fe5a",
+"date": "2026-06-02",
+"subject": "fix(utils/ipaddr): expand \"::\" to eight zero groups (#4973)",
+"queries": {
+"subject": "fix(utils/ipaddr): expand \"::\" to eight zero groups",
+"bare": "expand \"::\" to eight zero groups"
+},
+"gold": [
+"src/utils/ipaddr.ts"
+],
+"gold_lines": {
+"src/utils/ipaddr.ts": [
+[
+29,
+29
+]
+]
+}
+},
+{
+"id": "c78932d745",
+"parent": "5ef800ee4500bbf5f270bba9d2b743eb3ddb64b6",
+"date": "2026-06-03",
+"subject": "fix(utils/ipaddr): render the unspecified address binary as \"::\" (#4998)",
+"queries": {
+"subject": "fix(utils/ipaddr): render the unspecified address binary as \"::\"",
+"bare": "render the unspecified address binary as \"::\""
+},
+"gold": [
+"src/utils/ipaddr.ts"
+],
+"gold_lines": {
+"src/utils/ipaddr.ts": [
+[
+327,
+328
+]
+]
+}
+},
+{
+"id": "e50df01453",
+"parent": "fce483e11466b72d27e61d44523c7e6edeb19e50",
+"date": "2026-06-09",
+"subject": "fix(lambda-edge): satisfy Deno lib types for Content-Length body encoding (#5013)",
+"queries": {
+"subject": "fix(lambda-edge): satisfy Deno lib types for Content-Length body encoding",
+"bare": "satisfy Deno lib types for Content-Length body encoding"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+171,
+171
+]
+]
+}
+},
+{
+"id": "6735fea78d",
+"parent": "fab3b13639339cbd5ba1166a5b23d9ac30c5f64f",
+"date": "2026-06-23",
+"subject": "fix(jsx): cast awaitedFallback through unknown to fix Deno type check (#5036)",
+"queries": {
+"subject": "fix(jsx): cast awaitedFallback through unknown to fix Deno type check",
+"bare": "cast awaitedFallback through unknown to fix Deno type check"
+},
+"gold": [
+"src/jsx/components.ts"
+],
+"gold_lines": {
+"src/jsx/components.ts": [
+[
+89,
+89
+]
+]
+}
+},
+{
+"id": "03a9416a13",
+"parent": "97c6fe1f12298c715eb7b2da65b4b6e0d81682bb",
+"date": "2026-06-30",
+"subject": "fix(serve-static): treat empty string content as found (#5062)",
+"queries": {
+"subject": "fix(serve-static): treat empty string content as found",
+"bare": "treat empty string content as found"
+},
+"gold": [
+"src/middleware/serve-static/index.ts"
+],
+"gold_lines": {
+"src/middleware/serve-static/index.ts": [
+[
+92,
+92
+]
+]
+}
+},
+{
+"id": "b20d4225c9",
+"parent": "9728702911073aec5a63a3ba2840b7240e5d3205",
+"date": "2026-07-01",
+"subject": "fix(utils/body,validator): normalize Content-Type media type for case-insensitive matching (#5067)",
+"queries": {
+"subject": "fix(utils/body,validator): normalize Content-Type media type for case-insensitive matching",
+"bare": "normalize Content-Type media type for case-insensitive matching"
+},
+"gold": [
+"src/utils/body.ts",
+"src/utils/buffer.ts",
+"src/validator/validator.ts"
+],
+"gold_lines": {
+"src/utils/body.ts": [
+[
+6,
+7
+],
+[
+103,
+106
+],
+[
+125,
+125
+]
+],
+"src/utils/buffer.ts": [
+[
+112,
+112
+]
+],
+"src/validator/validator.ts": [
+[
+24,
+26
+]
+]
+}
+},
+{
+"id": "82b321b5b0",
+"parent": "b20d4225c9aa9e615717ca74e437852cc9fd5b94",
+"date": "2026-07-03",
+"subject": "fix: avoid circular dependency between body.ts and request.ts (#5071)",
+"queries": {
+"subject": "fix: avoid circular dependency between body.ts and request.ts",
+"bare": "avoid circular dependency between body.ts and request.ts"
+},
+"gold": [
+"src/utils/body.ts"
+],
+"gold_lines": {
+"src/utils/body.ts": [
+[
+6,
+6
+],
+[
+76,
+77
+],
+[
+101,
+101
+],
+[
+125,
+125
+],
+[
+128,
+128
+]
+]
+}
+},
+{
+"id": "872997d283",
+"parent": "82b321b5b0e7a57cdaab45f2f90671ec0737795b",
+"date": "2026-07-04",
+"subject": "fix(bun): report the requested subprotocol on WSContext.protocol (#5059)",
+"queries": {
+"subject": "fix(bun): report the requested subprotocol on WSContext.protocol",
+"bare": "report the requested subprotocol on WSContext.protocol"
+},
+"gold": [
+"src/adapter/bun/websocket.ts"
+],
+"gold_lines": {
+"src/adapter/bun/websocket.ts": [
+[
+65,
+65
+]
+]
+}
+},
+{
+"id": "45b081b9b9",
+"parent": "a05813c0586cd8ee7873dab8158c08a5f772a9ed",
+"date": "2026-07-04",
+"subject": "fix(aws-lambda): detect V2 events by request context, not rawPath alone (#5033)",
+"queries": {
+"subject": "fix(aws-lambda): detect V2 events by request context, not rawPath alone",
+"bare": "detect V2 events by request context, not rawPath alone"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+647,
+647
+]
+]
+}
+},
+{
+"id": "f9992096de",
+"parent": "626b185d0e80fa1c2a3cc1a8945afd0df6aaf3ec",
+"date": "2026-07-07",
+"subject": "fix(client): merge function headers with per-request headers (#5092)",
+"queries": {
+"subject": "fix(client): merge function headers with per-request headers",
+"bare": "merge function headers with per-request headers"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+219,
+219
+]
+]
+}
+},
+{
+"id": "24547a6ed5",
+"parent": "9c6ccd76f1fefc692388aa06b1232b58715b0ff1",
+"date": "2026-07-07",
+"subject": "fix(lambda-edge): resolve the handler with the value passed to the callback (#5094)",
+"queries": {
+"subject": "fix(lambda-edge): resolve the handler with the value passed to the callback",
+"bare": "resolve the handler with the value passed to the callback"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+123,
+123
+],
+[
+125,
+126
+],
+[
+129,
+130
+],
+[
+136,
+136
+]
+]
+}
+},
+{
+"id": "6217f4b74c",
+"parent": "ba89e973c71f83fc5f01025df6edc9e0f6b7463f",
+"date": "2026-07-10",
+"subject": "fix(lambda-edge): base64 encode content-encoded response bodies (#5099)",
+"queries": {
+"subject": "fix(lambda-edge): base64 encode content-encoded response bodies",
+"bare": "base64 encode content-encoded response bodies"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+150,
+150
+]
+]
+}
+},
+{
+"id": "b93a2547a3",
+"parent": "6217f4b74c02789015b4e14fd1c1d8dab58dd22e",
+"date": "2026-07-10",
+"subject": "fix(aws-lambda): treat any non-identity content-encoding as binary (#5101)",
+"queries": {
+"subject": "fix(aws-lambda): treat any non-identity content-encoding as binary",
+"bare": "treat any non-identity content-encoding as binary"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+673,
+676
+]
+]
+}
+},
+{
+"id": "ab590e4ec8",
+"parent": "b93a2547a334678ff870313c1ac900b13e5e212c",
+"date": "2026-07-10",
+"subject": "fix(types): strip extra properties from array types in JSONParsed (#5103)",
+"queries": {
+"subject": "fix(types): strip extra properties from array types in JSONParsed",
+"bare": "strip extra properties from array types in JSONParsed"
+},
+"gold": [
+"src/utils/types.ts"
+],
+"gold_lines": {
+"src/utils/types.ts": [
+[
+66,
+66
+]
+]
+}
+},
+{
+"id": "0fc7ffc949",
+"parent": "ab590e4ec8be6be06cf66bb3dcadd93d2841a835",
+"date": "2026-07-10",
+"subject": "fix(trie-router): match empty wildcard remainder after regexp param (#5102)",
+"queries": {
+"subject": "fix(trie-router): match empty wildcard remainder after regexp param",
+"bare": "match empty wildcard remainder after regexp param"
+},
+"gold": [
+"src/router/trie-router/node.ts"
+],
+"gold_lines": {
+"src/router/trie-router/node.ts": [
+[
+189,
+190
+]
+]
+}
+},
+{
+"id": "2126289c15",
+"parent": "0fc7ffc94988d0dce19477d3e1cce29f3c2da1cb",
+"date": "2026-07-10",
+"subject": "fix(etag): treat If-None-Match: `*` as a match (#5084)",
+"queries": {
+"subject": "fix(etag): treat If-None-Match: `*` as a match",
+"bare": "treat If-None-Match: `*` as a match"
+},
+"gold": [
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/index.ts": [
+[
+107,
+107
+]
+]
+}
+},
+{
+"id": "a48c8bf248",
+"parent": "3bb9a0e3a7dc0083061e91e885b2e9308585ee40",
+"date": "2026-07-12",
+"subject": "fix(cache): deduplicate Cache-Control directives case-insensitively (#5025)",
+"queries": {
+"subject": "fix(cache): deduplicate Cache-Control directives case-insensitively",
+"bare": "deduplicate Cache-Control directives case-insensitively"
+},
+"gold": [
+"src/middleware/cache/index.ts"
+],
+"gold_lines": {
+"src/middleware/cache/index.ts": [
+[
+111,
+111
+]
+]
+}
+},
+{
+"id": "67efb27f7b",
+"parent": "a48c8bf248eec5c2ecd468be5054c0d260a0dbfe",
+"date": "2026-07-13",
+"subject": "fix(compress): do not compress 206 Partial Content responses (#5020)",
+"queries": {
+"subject": "fix(compress): do not compress 206 Partial Content responses",
+"bare": "do not compress 206 Partial Content responses"
+},
+"gold": [
+"src/middleware/compress/index.ts"
+],
+"gold_lines": {
+"src/middleware/compress/index.ts": [
+[
+92,
+93
+]
+]
+}
+},
+{
+"id": "653025e5c3",
+"parent": "67efb27f7bcba7a99cae7779b7eb71c3fcada8d8",
+"date": "2026-07-12",
+"subject": "fix(client): replaceUrlParam should not match a param that prefixes another (#5096)",
+"queries": {
+"subject": "fix(client): replaceUrlParam should not match a param that prefixes another",
+"bare": "replaceUrlParam should not match a param that prefixes another"
+},
+"gold": [
+"src/client/utils.ts"
+],
+"gold_lines": {
+"src/client/utils.ts": [
+[
+20,
+20
+]
+]
+}
+},
+{
+"id": "e0cdeb0a89",
+"parent": "653025e5c3a5eaf3b0e50d338250f601d7a5e56a",
+"date": "2026-07-13",
+"subject": "fix(method-override): set duplex when forwarding a stream body in query mode (#5110)",
+"queries": {
+"subject": "fix(method-override): set duplex when forwarding a stream body in query mode",
+"bare": "set duplex when forwarding a stream body in query mode"
+},
+"gold": [
+"src/middleware/method-override/index.ts"
+],
+"gold_lines": {
+"src/middleware/method-override/index.ts": [
+[
+127,
+127
+],
+[
+131,
+131
+]
+]
+}
+},
+{
+"id": "80959d47d5",
+"parent": "21b44b6db6118fc77fabb49832fc4cadd0ef8ec8",
+"date": "2026-07-18",
+"subject": "fix(utils/body): reuse cached formData in `parseBody()` (#5131)",
+"queries": {
+"subject": "fix(utils/body): reuse cached formData in `parseBody()`",
+"bare": "reuse cached formData in `parseBody()`"
+},
+"gold": [
+"src/utils/body.ts"
+],
+"gold_lines": {
+"src/utils/body.ts": [
+[
+126,
+127
+]
+]
+}
+},
+{
+"id": "d7964503c9",
+"parent": "80959d47d56ac18c2985336ad311917dc56497c5",
+"date": "2026-07-18",
+"subject": "fix(request): fix multipart boundary mismatch in `cloneRawRequest` (#5133)",
+"queries": {
+"subject": "fix(request): fix multipart boundary mismatch in `cloneRawRequest`",
+"bare": "fix multipart boundary mismatch in `cloneRawRequest`"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+488,
+489
+],
+[
+490,
+490
+],
+[
+493,
+493
+]
+]
+}
+},
+{
+"id": "aeba9ece77",
+"parent": "d7964503c956ae4af78597b7b11a05f9e5e73d2d",
+"date": "2026-07-19",
+"subject": "fix(sse): emit retry feild when retry is `0` (#5135)",
+"queries": {
+"subject": "fix(sse): emit retry feild when retry is `0`",
+"bare": "emit retry feild when retry is `0`"
+},
+"gold": [
+"src/helper/streaming/sse.ts"
+],
+"gold_lines": {
+"src/helper/streaming/sse.ts": [
+[
+27,
+28
+],
+[
+38,
+38
+]
+]
+}
+},
+{
+"id": "e36f57dac0",
+"parent": "bf8608cb77f91c3768311d9977f807ec2f3fd6b9",
+"date": "2026-07-21",
+"subject": "fix(aws-lambda): add jwt and lambda authorizer types for API Gateway v2 (#5142)",
+"queries": {
+"subject": "fix(aws-lambda): add jwt and lambda authorizer types for API Gateway v2",
+"bare": "add jwt and lambda authorizer types for API Gateway v2"
+},
+"gold": [
+"src/adapter/aws-lambda/types.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/types.ts": [
+[
+116,
+117
+]
+]
+}
+},
+{
+"id": "44f884321a",
+"parent": "e36f57dac0615c1bdd03ff1975b6ca8d3dc5917f",
+"date": "2026-07-21",
+"subject": "fix(sse): emit empty id field to reset Last-Event-ID (#5138)",
+"queries": {
+"subject": "fix(sse): emit empty id field to reset Last-Event-ID",
+"bare": "emit empty id field to reset Last-Event-ID"
+},
+"gold": [
+"src/helper/streaming/sse.ts"
+],
+"gold_lines": {
+"src/helper/streaming/sse.ts": [
+[
+38,
+38
+]
+]
+}
+},
+{
+"id": "c85aead088",
+"parent": "a88c89dac6e230cbb5f1bf627522d4914b81dffd",
+"date": "2026-07-24",
+"subject": "fix: use `Object.create(null)` when parsing query, headers, and params (#5161)",
+"queries": {
+"subject": "fix: use `Object.create(null)` when parsing query, headers, and params",
+"bare": "use `Object.create(null)` when parsing query, headers, and params"
+},
+"gold": [
+"src/request.ts",
+"src/utils/accept.ts",
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+193,
+193
+]
+],
+"src/utils/accept.ts": [
+[
+165,
+165
+]
+],
+"src/utils/url.ts": [
+[
+255,
+255
+]
+]
+}
+},
+{
+"id": "402eb3abe5",
+"parent": "c85aead088659b98b8d05a1187a07d064e12ffe6",
+"date": "2026-07-24",
+"subject": "fix(secure-headers): keep CSP callbacks scoped to their header (#5147)",
+"queries": {
+"subject": "fix(secure-headers): keep CSP callbacks scoped to their header",
+"bare": "keep CSP callbacks scoped to their header"
+},
+"gold": [
+"src/middleware/secure-headers/secure-headers.ts"
+],
+"gold_lines": {
+"src/middleware/secure-headers/secure-headers.ts": [
+[
+185,
+185
+],
+[
+193,
+193
+],
+[
+241,
+241
+],
+[
+273,
+276
+]
+]
+}
+},
+{
+"id": "09cf01c0a8",
+"parent": "26d8e42bfff7eb78fc323a01e1d02d63b9dbcc72",
+"date": "2026-07-26",
+"subject": "fix(cookie): relax name validation when parsing Cookie header (#5164)",
+"queries": {
+"subject": "fix(cookie): relax name validation when parsing Cookie header",
+"bare": "relax name validation when parsing Cookie header"
+},
+"gold": [
+"src/utils/cookie.ts"
+],
+"gold_lines": {
+"src/utils/cookie.ts": [
+[
+69,
+70
+],
+[
+71,
+72
+],
+[
+118,
+118
+]
+]
+}
+},
+{
+"id": "224d2f5cbf",
+"parent": "df653cea0450657977887d56a5188368387456c8",
+"date": "2026-07-26",
+"subject": "fix(jsx): handle useSyncExternalStore subscription and snapshot changes (#5166)",
+"queries": {
+"subject": "fix(jsx): handle useSyncExternalStore subscription and snapshot changes",
+"bare": "handle useSyncExternalStore subscription and snapshot changes"
+},
+"gold": [
+"src/jsx/hooks/index.ts"
+],
+"gold_lines": {
+"src/jsx/hooks/index.ts": [
+[
+411,
+414
+],
+[
+416,
+417
+],
+[
+419,
+422
+],
+[
+424,
+424
+]
+]
+}
+},
+{
+"id": "3feb3551d4",
+"parent": "5d911d2ab7bcb2adb2e974ddd5b17742fb5a0bca",
+"date": "2026-08-04",
+"subject": "fix(jsx): allow a function component to return an array (#5179)",
+"queries": {
+"subject": "fix(jsx): allow a function component to return an array",
+"bare": "allow a function component to return an array"
+},
+"gold": [
+"src/jsx/base.ts",
+"src/jsx/dom/render.ts",
+"src/middleware/jsx-renderer/index.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+27,
+28
+],
+[
+29,
+29
+],
+[
+37,
+38
+],
+[
+107,
+108
+],
+[
+117,
+120
+],
+[
+121,
+122
+],
+[
+146,
+146
+],
+[
+176,
+176
+],
+[
+270,
+270
+],
+[
+273,
+282
+],
+[
+285,
+286
+]
+],
+"src/jsx/dom/render.ts": [
+[
+287,
+287
+]
+],
+"src/middleware/jsx-renderer/index.ts": [
+[
+13,
+13
+],
+[
+23,
+26
+],
+[
+31,
+31
+]
+]
+}
+},
+{
+"id": "8f07028270",
+"parent": "8a0b18fd9b4d64dd2eb1d7f18e3536fc06cb54b2",
+"date": "2026-08-04",
+"subject": "fix(compress): set Vary: Accept-Encoding on negotiated responses (#5137)",
+"queries": {
+"subject": "fix(compress): set Vary: Accept-Encoding on negotiated responses",
+"bare": "set Vary: Accept-Encoding on negotiated responses"
+},
+"gold": [
+"src/middleware/compress/index.ts"
+],
+"gold_lines": {
+"src/middleware/compress/index.ts": [
+[
+45,
+46
+],
+[
+103,
+104
+]
+]
+}
+},
+{
+"id": "569b4191a2",
+"parent": "192768fbaf9aa99a45404dc2f171541227c11d20",
+"date": "2026-08-06",
+"subject": "fix(trie-router): count every slash a pattern consumes (#5189)",
+"queries": {
+"subject": "fix(trie-router): count every slash a pattern consumes",
+"bare": "count every slash a pattern consumes"
+},
+"gold": [
+"src/router/trie-router/node.ts"
+],
+"gold_lines": {
+"src/router/trie-router/node.ts": [
+[
+203,
+203
+]
+]
+}
+},
+{
+"id": "cd31bc196e",
+"parent": "569b4191a291ef7a4116881e521c3a0179407332",
+"date": "2026-08-06",
+"subject": "fix(utils/stream): re-acquire writer lock when pipe() throws (#4988)",
+"queries": {
+"subject": "fix(utils/stream): re-acquire writer lock when pipe() throws",
+"bare": "re-acquire writer lock when pipe() throws"
+},
+"gold": [
+"src/utils/stream.ts"
+],
+"gold_lines": {
+"src/utils/stream.ts": [
+[
+80,
+81
+]
+]
+}
+},
+{
+"id": "f6aa913c3f",
+"parent": "cd31bc196eb234bcaaae18ecf889784cf30004fd",
+"date": "2026-08-07",
+"subject": "fix(etag): skip unsafe methods or error responses on non-* case (#5196)",
+"queries": {
+"subject": "fix(etag): skip unsafe methods or error responses on non-* case",
+"bare": "skip unsafe methods or error responses on non-* case"
+},
+"gold": [
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/index.ts": [
+[
+88,
+89
+],
+[
+107,
+110
+]
+]
+}
+},
+{
+"id": "13a9481ee1",
+"parent": "cf785287b5ab41496a333c9c4b53b0f98ac731b9",
+"date": "2026-08-09",
+"subject": "fix(secure-headers): output standard empty parentheses () instead of none for disabled Permissions-Policy directives (#5197)",
+"queries": {
+"subject": "fix(secure-headers): output standard empty parentheses () instead of none for disabled Permissions-Policy directives",
+"bare": "output standard empty parentheses () instead of none for disabled Permissions-Policy directives"
+},
+"gold": [
+"src/middleware/secure-headers/secure-headers.ts"
+],
+"gold_lines": {
+"src/middleware/secure-headers/secure-headers.ts": [
+[
+300,
+300
+],
+[
+307,
+308
+]
+]
+}
+},
+{
+"id": "765d13b009",
+"parent": "13a9481ee1812f84ede5ba9088104645be80f26b",
+"date": "2026-08-09",
+"subject": "fix(jsx): render async children of document metadata tags instead of [object Promise] (#5204)",
+"queries": {
+"subject": "fix(jsx): render async children of document metadata tags instead of [object Promise]",
+"bare": "render async children of document metadata tags instead of [object Promise]"
+},
+"gold": [
+"src/jsx/intrinsic-element/components.ts"
+],
+"gold_lines": {
+"src/jsx/intrinsic-element/components.ts": [
+[
+111,
+111
+]
+]
+}
+},
+{
+"id": "f2a72d333a",
+"parent": "8a5852d4c1d0c9bc46460d679e6f54a6d88575a1",
+"date": "2026-08-09",
+"subject": "fix(client): serialize multiple cookies correctly (#5202)",
+"queries": {
+"subject": "fix(client): serialize multiple cookies correctly",
+"bare": "serialize multiple cookies correctly"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+101,
+101
+],
+[
+103,
+103
+]
+]
+}
+},
+{
+"id": "26de73133b",
+"parent": "7075369e1f6161e04a227eba37373469c09fc743",
+"date": "2026-08-10",
+"subject": "fix(etag): stabilize digest across stream chunks (#5205)",
+"queries": {
+"subject": "fix(etag): stabilize digest across stream chunks",
+"bare": "stabilize digest across stream chunks"
+},
+"gold": [
+"src/middleware/etag/digest.ts"
+],
+"gold_lines": {
+"src/middleware/etag/digest.ts": [
+[
+15,
+16
+],
+[
+24,
+25
+],
+[
+33,
+33
+]
+]
+}
+},
+{
+"id": "d982f637eb",
+"parent": "26de73133b8552f56ba72e025ecd82b08900d796",
+"date": "2026-08-12",
+"subject": "fix(url): strip trailing question mark correctly for optional params with regex quantifiers (#5209)",
+"queries": {
+"subject": "fix(url): strip trailing question mark correctly for optional params with regex quantifiers",
+"bare": "strip trailing question mark correctly for optional params with regex quantifiers"
+},
+"gold": [
+"src/utils/url.ts"
+],
+"gold_lines": {
+"src/utils/url.ts": [
+[
+190,
+190
+],
+[
+196,
+196
+]
+]
+}
+},
+{
+"id": "329b6f4686",
+"parent": "a1e4ac7d46a3e627c143c4dd6dcf7bc59031bb9a",
+"date": "2026-08-13",
+"subject": "fix(client): send falsy JSON bodies (#5215)",
+"queries": {
+"subject": "fix(client): send falsy JSON bodies",
+"bare": "send falsy JSON bodies"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+81,
+81
+]
+]
+}
+},
+{
+"id": "4eb022de68",
+"parent": "41bdc4288ed7023c24d35f32bd065bd963435e3e",
+"date": "2026-08-16",
+"subject": "fix(client): prevent URL corruption when replaceUrlParam contains $ replacement tokens (#5227)",
+"queries": {
+"subject": "fix(client): prevent URL corruption when replaceUrlParam contains $ replacement tokens",
+"bare": "prevent URL corruption when replaceUrlParam contains $ replacement tokens"
+},
+"gold": [
+"src/client/utils.ts"
+],
+"gold_lines": {
+"src/client/utils.ts": [
+[
+21,
+21
+]
+]
+}
+},
+{
+"id": "7195c24860",
+"parent": "4eb022de6869b8d5a7ce4edb1489e384cd76b9fe",
+"date": "2026-08-16",
+"subject": "fix(etag): copy pending stream bytes (#5239)",
+"queries": {
+"subject": "fix(etag): copy pending stream bytes",
+"bare": "copy pending stream bytes"
+},
+"gold": [
+"src/middleware/etag/digest.ts"
+],
+"gold_lines": {
+"src/middleware/etag/digest.ts": [
+[
+54,
+54
+]
+]
+}
+},
+{
+"id": "546eca0c40",
+"parent": "7195c2486037a2caa51355a33f2ff31f6d1279c9",
+"date": "2026-08-16",
+"subject": "fix(etag): avoid skipping headers when filtering 304 response headers (#5234)",
+"queries": {
+"subject": "fix(etag): avoid skipping headers when filtering 304 response headers",
+"bare": "avoid skipping headers when filtering 304 response headers"
+},
+"gold": [
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/index.ts": [
+[
+124,
+124
+],
+[
+128,
+128
+]
+]
+}
+},
+{
+"id": "8bf03c377a",
+"parent": "546eca0c402a031aaeb4a3b422c5d9cb87fe1576",
+"date": "2026-08-16",
+"subject": "fix(cors): append Origin to Vary header on OPTIONS preflight (#5235)",
+"queries": {
+"subject": "fix(cors): append Origin to Vary header on OPTIONS preflight",
+"bare": "append Origin to Vary header on OPTIONS preflight"
+},
+"gold": [
+"src/middleware/cors/index.ts"
+],
+"gold_lines": {
+"src/middleware/cors/index.ts": [
+[
+120,
+120
+]
+]
+}
+},
+{
+"id": "63bbcf508c",
+"parent": "ef0739d5f6e83242ba2b64c1365c9f96738933a1",
+"date": "2026-08-17",
+"subject": "fix(trie-router): match suffix wildcard routes (#5236)",
+"queries": {
+"subject": "fix(trie-router): match suffix wildcard routes",
+"bare": "match suffix wildcard routes"
+},
+"gold": [
+"src/router/trie-router/node.ts",
+"src/router/trie-router/router.ts"
+],
+"gold_lines": {
+"src/router/trie-router/node.ts": [
+[
+17,
+23
+],
+[
+26,
+26
+],
+[
+28,
+30
+],
+[
+33,
+46
+],
+[
+51,
+64
+],
+[
+66,
+71
+],
+[
+73,
+73
+],
+[
+79,
+80
+],
+[
+83,
+84
+],
+[
+97,
+98
+],
+[
+101,
+108
+],
+[
+149,
+150
+],
+[
+155,
+160
+],
+[
+165,
+165
+],
+[
+167,
+167
+],
+[
+171,
+172
+],
+[
+174,
+176
+],
+[
+183,
+183
+],
+[
+201,
+201
+],
+[
+205,
+206
+],
+[
+237,
+237
+]
+],
+"src/router/trie-router/router.ts": [
+[
+7,
+11
+],
+[
+14,
+19
+],
+[
+21,
+22
+]
+]
+}
+},
+{
+"id": "a194628797",
+"parent": "63bbcf508c74d9fe7a3e20f4dfe7ffacc566dcce",
+"date": "2026-08-17",
+"subject": "fix(pattern-router/linear-router): prevent prefix overmatch on wildcard routes (#5252)",
+"queries": {
+"subject": "fix(pattern-router/linear-router): prevent prefix overmatch on wildcard routes",
+"bare": "prevent prefix overmatch on wildcard routes"
+},
+"gold": [
+"src/router/linear-router/router.ts",
+"src/router/pattern-router/router.ts"
+],
+"gold_lines": {
+"src/router/linear-router/router.ts": [
+[
+43,
+43
+],
+[
+54,
+54
+]
+],
+"src/router/pattern-router/router.ts": [
+[
+13,
+16
+],
+[
+34,
+38
+]
+]
+}
+},
+{
+"id": "eea9735fe3",
+"parent": "a19462879716e7b600daed8eb3a1b2af4bd68feb",
+"date": "2026-08-17",
+"subject": "fix(csrf): exempt OPTIONS request from CSRF validation (#5250)",
+"queries": {
+"subject": "fix(csrf): exempt OPTIONS request from CSRF validation",
+"bare": "exempt OPTIONS request from CSRF validation"
+},
+"gold": [
+"src/middleware/csrf/index.ts"
+],
+"gold_lines": {
+"src/middleware/csrf/index.ts": [
+[
+28,
+28
+]
+]
+}
+},
+{
+"id": "c91ec9b60d",
+"parent": "eea9735fe308e6549509c312d80e13cd9e18898b",
+"date": "2026-08-18",
+"subject": "fix(utils/ipaddr): avoid truncation on embedded IPv4 addresses in expandIPv6 (#5247)",
+"queries": {
+"subject": "fix(utils/ipaddr): avoid truncation on embedded IPv4 addresses in expandIPv6",
+"bare": "avoid truncation on embedded IPv4 addresses in expandIPv6"
+},
+"gold": [
+"src/utils/ipaddr.ts"
+],
+"gold_lines": {
+"src/utils/ipaddr.ts": [
+[
+15,
+15
+],
+[
+19,
+21
+]
+]
+}
+},
+{
+"id": "7967760748",
+"parent": "0293343dbf8f0bca52b210a98bcef31cc61395ee",
+"date": "2026-08-19",
+"subject": "fix(request): handle params on unmatched requests (#5268)",
+"queries": {
+"subject": "fix(request): handle params on unmatched requests",
+"bare": "handle params on unmatched requests"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+104,
+104
+],
+[
+112,
+112
+]
+]
+}
+},
+{
+"id": "48e360fcaa",
+"parent": "7967760748503b50de7c315fe3aa76666a8e6cab",
+"date": "2026-08-19",
+"subject": "fix(jsx/dom): execute previous ref cleanup when ref prop changes on re-render (#5264)",
+"queries": {
+"subject": "fix(jsx/dom): execute previous ref cleanup when ref prop changes on re-render",
+"bare": "execute previous ref cleanup when ref prop changes on re-render"
+},
+"gold": [
+"src/jsx/dom/render.ts"
+],
+"gold_lines": {
+"src/jsx/dom/render.ts": [
+[
+189,
+190
+],
+[
+259,
+260
+]
+]
+}
+},
+{
+"id": "a10592f3e1",
+"parent": "48e360fcaa107c7706fcf8adccb93505876791dc",
+"date": "2026-08-19",
+"subject": "fix(reg-exp-router): associate wildcard middleware with matching routes (#5266)",
+"queries": {
+"subject": "fix(reg-exp-router): associate wildcard middleware with matching routes",
+"bare": "associate wildcard middleware with matching routes"
+},
+"gold": [
+"src/router/reg-exp-router/node.ts",
+"src/router/reg-exp-router/router.ts"
+],
+"gold_lines": {
+"src/router/reg-exp-router/node.ts": [
+[
+1,
+3
+]
+],
+"src/router/reg-exp-router/router.ts": [
+[
+1,
+1
+],
+[
+10,
+10
+],
+[
+13,
+13
+],
+[
+18,
+22
+],
+[
+26,
+37
+],
+[
+69,
+69
+],
+[
+71,
+71
+],
+[
+77,
+77
+],
+[
+79,
+79
+],
+[
+82,
+83
+],
+[
+89,
+90
+],
+[
+94,
+95
+],
+[
+102,
+115
+],
+[
+117,
+117
+],
+[
+123,
+136
+],
+[
+138,
+138
+],
+[
+147,
+151
+],
+[
+155,
+155
+],
+[
+166,
+167
+],
+[
+168,
+168
+],
+[
+176,
+185
+],
+[
+187,
+206
+],
+[
+209,
+209
+]
+]
+}
+},
+{
+"id": "f8b7847d75",
+"parent": "4b44abe1b5c7755aac8555d7943611555183450b",
+"date": "2026-08-22",
+"subject": "fix(etag): match If-None-Match tags with optional whitespace before the comma (#5222)",
+"queries": {
+"subject": "fix(etag): match If-None-Match tags with optional whitespace before the comma",
+"bare": "match If-None-Match tags with optional whitespace before the comma"
+},
+"gold": [
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/index.ts": [
+[
+34,
+34
+]
+]
+}
+},
+{
+"id": "d6c0b0de16",
+"parent": "f8b7847d755d98009feb2d7d1e6dff0921f8c500",
+"date": "2026-08-22",
+"subject": "fix(client): skip undefined header and cookie values (#5244)",
+"queries": {
+"subject": "fix(client): skip undefined header and cookie values",
+"bare": "skip undefined header and cookie values"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+93,
+93
+],
+[
+100,
+101
+],
+[
+103,
+103
+],
+[
+110,
+110
+]
+]
+}
+},
+{
+"id": "2059584f84",
+"parent": "d6c0b0de163a3b709e4dc57de0e0e8581aa08b7b",
+"date": "2026-08-22",
+"subject": "fix(client): skip an undefined entry inside a query array (#5272)",
+"queries": {
+"subject": "fix(client): skip an undefined entry inside a query array",
+"bare": "skip an undefined entry inside a query array"
+},
+"gold": [
+"src/client/utils.ts"
+],
+"gold_lines": {
+"src/client/utils.ts": [
+[
+35,
+36
+]
+]
+}
+},
+{
+"id": "c4a44071ee",
+"parent": "2059584f84187a688354956e0647269834ccf3a6",
+"date": "2026-08-22",
+"subject": "fix(client): skip an undefined entry inside a form array (#5280)",
+"queries": {
+"subject": "fix(client): skip an undefined entry inside a form array",
+"bare": "skip an undefined entry inside a form array"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+71,
+72
+]
+]
+}
+},
+{
+"id": "1096d66e03",
+"parent": "c4a44071eee614c7317403f3534cd213d3f0e0b3",
+"date": "2026-08-22",
+"subject": "fix(client): support custom buildSearchParams and filter undefined query in $ws() (#5256)",
+"queries": {
+"subject": "fix(client): support custom buildSearchParams and filter undefined query in $ws()",
+"bare": "support custom buildSearchParams and filter undefined query in $ws()"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+202,
+202
+],
+[
+209,
+214
+]
+]
+}
+},
+{
+"id": "28a9c12891",
+"parent": "1096d66e03a3fd16a5cc5f912c2d5e8fd6d990b0",
+"date": "2026-08-22",
+"subject": "fix(accepts): support wildcard media types and specificity ordering in defaultMatch (#5255)",
+"queries": {
+"subject": "fix(accepts): support wildcard media types and specificity ordering in defaultMatch",
+"bare": "support wildcard media types and specificity ordering in defaultMatch"
+},
+"gold": [
+"src/helper/accepts/accepts.ts"
+],
+"gold_lines": {
+"src/helper/accepts/accepts.ts": [
+[
+20,
+21
+],
+[
+23,
+24
+]
+]
+}
+},
+{
+"id": "73794bdabe",
+"parent": "28a9c128912de19f3fb28b00ae289c9b93f6f392",
+"date": "2026-08-23",
+"subject": "fix(client): omit empty query delimiter (#5283)",
+"queries": {
+"subject": "fix(client): omit empty query delimiter",
+"bare": "omit empty query delimiter"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+32,
+33
+],
+[
+130,
+130
+],
+[
+191,
+191
+]
+]
+}
+},
+{
+"id": "612b59c022",
+"parent": "73794bdabeadca93676cdbd54aa82d018feb69b8",
+"date": "2026-08-23",
+"subject": "fix(request): drop stale content length for cloned FormData (#5282)",
+"queries": {
+"subject": "fix(request): drop stale content length for cloned FormData",
+"bare": "drop stale content length for cloned FormData"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+488,
+489
+],
+[
+490,
+491
+]
+]
+}
+},
+{
+"id": "c409d855d9",
+"parent": "612b59c0227b421090d46721cd5a98243ad8c6ec",
+"date": "2026-08-23",
+"subject": "fix(request): serialize cached JSON body in cloneRawRequest (#5288)",
+"queries": {
+"subject": "fix(request): serialize cached JSON body in cloneRawRequest",
+"bare": "serialize cached JSON body in cloneRawRequest"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+485,
+485
+],
+[
+487,
+489
+]
+]
+}
+},
+{
+"id": "241ae4c72b",
+"parent": "c409d855d91d1f0904d19439692216fcf789e6cb",
+"date": "2026-08-23",
+"subject": "fix(cookie): allow parsing signed cookies with empty string values (#5246)",
+"queries": {
+"subject": "fix(cookie): allow parsing signed cookies with empty string values",
+"bare": "allow parsing signed cookies with empty string values"
+},
+"gold": [
+"src/utils/cookie.ts"
+],
+"gold_lines": {
+"src/utils/cookie.ts": [
+[
+156,
+156
+]
+]
+}
+},
+{
+"id": "5e5b83d6ed",
+"parent": "241ae4c72b7ab732e425f40ea28cd3af2e78d8a2",
+"date": "2026-08-23",
+"subject": "fix(utils/stream): do not let abort listeners crash abort() (#5274)",
+"queries": {
+"subject": "fix(utils/stream): do not let abort listeners crash abort()",
+"bare": "do not let abort listeners crash abort()"
+},
+"gold": [
+"src/utils/stream.ts"
+],
+"gold_lines": {
+"src/utils/stream.ts": [
+[
+98,
+98
+]
+]
+}
+},
+{
+"id": "50b8788cf5",
+"parent": "06880c4a2b04de9dd74217f26dd831209b9c01f1",
+"date": "2026-08-27",
+"subject": "fix(client): keep a param value of \"index\" in $url() and $path() (#5297)",
+"queries": {
+"subject": "fix(client): keep a param value of \"index\" in $url() and $path()",
+"bare": "keep a param value of \"index\" in $url() and $path()"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+190,
+190
+],
+[
+193,
+193
+],
+[
+199,
+199
+]
+]
+}
+},
+{
+"id": "499c35ebda",
+"parent": "50b8788cf54cb60112b7cd93642bc5094901475c",
+"date": "2026-08-27",
+"subject": "fix(client): normalize root WebSocket URLs (#5291)",
+"queries": {
+"subject": "fix(client): normalize root WebSocket URLs",
+"bare": "normalize root WebSocket URLs"
+},
+"gold": [
+"src/client/client.ts"
+],
+"gold_lines": {
+"src/client/client.ts": [
+[
+206,
+207
+],
+[
+208,
+208
+]
+]
+}
+},
+{
+"id": "e2740d5a1b",
+"parent": "499c35ebda35777fd35a7dd1906dd4f2687da61e",
+"date": "2026-08-28",
+"subject": "fix(types): allow symbol keys in Context<any> get and set fallbacks (#5300)",
+"queries": {
+"subject": "fix(types): allow symbol keys in Context<any> get and set fallbacks",
+"bare": "allow symbol keys in Context<any> get and set fallbacks"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+554,
+554
+],
+[
+557,
+557
+],
+[
+579,
+579
+],
+[
+582,
+582
+]
+]
+}
+},
+{
+"id": "90e1b94846",
+"parent": "7792f5dc14acaa92056c1bf402241567ff9c7396",
+"date": "2026-09-10",
+"subject": "fix(aws-lambda): respect backpressure when streaming the response body (#5351)",
+"queries": {
+"subject": "fix(aws-lambda): respect backpressure when streaming the response body",
+"bare": "respect backpressure when streaming the response body"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+0,
+1
+],
+[
+126,
+129
+],
+[
+132,
+132
+],
+[
+135,
+135
+],
+[
+137,
+138
+]
+]
+}
+},
+{
+"id": "f147de5ea1",
+"parent": "90e1b948467961718afd3ae34af9dee582b42248",
+"date": "2026-09-12",
+"subject": "fix(accepts, language): skip accept entries with quality 0 when matching (#5311)",
+"queries": {
+"subject": "fix(accepts, language): skip accept entries with quality 0 when matching",
+"bare": "skip accept entries with quality 0 when matching"
+},
+"gold": [
+"src/helper/accepts/accepts.ts",
+"src/middleware/language/language.ts"
+],
+"gold_lines": {
+"src/helper/accepts/accepts.ts": [
+[
+48,
+53
+]
+],
+"src/middleware/language/language.ts": [
+[
+161,
+161
+]
+]
+}
+},
+{
+"id": "65cff90e15",
+"parent": "f147de5ea1eeadd4b4851ab075999673e140a303",
+"date": "2026-09-12",
+"subject": "fix(accept): treat the q parameter name as case-insensitive (#5349)",
+"queries": {
+"subject": "fix(accept): treat the q parameter name as case-insensitive",
+"bare": "treat the q parameter name as case-insensitive"
+},
+"gold": [
+"src/utils/accept.ts"
+],
+"gold_lines": {
+"src/utils/accept.ts": [
+[
+224,
+224
+]
+]
+}
+},
+{
+"id": "9b4e9c2864",
+"parent": "65cff90e152dbbbcdde2808af15b48344676edfe",
+"date": "2026-09-12",
+"subject": "fix(accept): clamp a negative q to 0, not 1 (#5357)",
+"queries": {
+"subject": "fix(accept): clamp a negative q to 0, not 1",
+"bare": "clamp a negative q to 0, not 1"
+},
+"gold": [
+"src/utils/accept.ts"
+],
+"gold_lines": {
+"src/utils/accept.ts": [
+[
+254,
+254
+],
+[
+257,
+257
+],
+[
+260,
+263
+]
+]
+}
+},
+{
+"id": "edd138ee30",
+"parent": "9b4e9c2864c30ea9275cf426e2d2716bd9f05195",
+"date": "2026-09-12",
+"subject": "fix(request): keep the request media type when reusing a cached body (#5366)",
+"queries": {
+"subject": "fix(request): keep the request media type when reusing a cached body",
+"bare": "keep the request media type when reusing a cached body"
+},
+"gold": [
+"src/request.ts"
+],
+"gold_lines": {
+"src/request.ts": [
+[
+230,
+230
+]
+]
+}
+},
+{
+"id": "cb5bea3614",
+"parent": "098e11912ab244c5c33931de007f04dc8e3c2929",
+"date": "2026-09-20",
+"subject": "fix(jsx): replace Suspense and ErrorBoundary content across newlines (#5380)",
+"queries": {
+"subject": "fix(jsx): replace Suspense and ErrorBoundary content across newlines",
+"bare": "replace Suspense and ErrorBoundary content across newlines"
+},
+"gold": [
+"src/jsx/components.ts",
+"src/jsx/streaming.ts"
+],
+"gold_lines": {
+"src/jsx/components.ts": [
+[
+129,
+129
+]
+],
+"src/jsx/streaming.ts": [
+[
+112,
+112
+]
+]
+}
+},
+{
+"id": "f5a53463ad",
+"parent": "cb5bea3614e6591e8ab933ef9a38ce7addf1d09a",
+"date": "2026-09-20",
+"subject": "fix(accepts): match media types and language tags case-insensitively (#5376)",
+"queries": {
+"subject": "fix(accepts): match media types and language tags case-insensitively",
+"bare": "match media types and language tags case-insensitively"
+},
+"gold": [
+"src/helper/accepts/accepts.ts"
+],
+"gold_lines": {
+"src/helper/accepts/accepts.ts": [
+[
+22,
+22
+],
+[
+25,
+25
+],
+[
+28,
+30
+]
+]
+}
+},
+{
+"id": "00ee875728",
+"parent": "f5a53463ad2ff791fc02418b645750ce75a260ad",
+"date": "2026-09-20",
+"subject": "fix(linear-router): don't match an empty path segment as a param (#5373)",
+"queries": {
+"subject": "fix(linear-router): don't match an empty path segment as a param",
+"bare": "don't match an empty path segment as a param"
+},
+"gold": [
+"src/router/linear-router/router.ts"
+],
+"gold_lines": {
+"src/router/linear-router/router.ts": [
+[
+114,
+116
+],
+[
+118,
+119
+]
+]
+}
+},
+{
+"id": "f950277cd3",
+"parent": "00ee875728e2369b98a9ab7dda0690b77afedcff",
+"date": "2026-09-20",
+"subject": "fix(pretty-json): don't break responses with unparseable JSON bodies (#5377)",
+"queries": {
+"subject": "fix(pretty-json): don't break responses with unparseable JSON bodies",
+"bare": "don't break responses with unparseable JSON bodies"
+},
+"gold": [
+"src/middleware/pretty-json/index.ts"
+],
+"gold_lines": {
+"src/middleware/pretty-json/index.ts": [
+[
+55,
+55
+],
+[
+56,
+57
+]
+]
+}
+},
+{
+"id": "52febbcc30",
+"parent": "f950277cd3d9264622785e82785f21c648da699a",
+"date": "2026-09-20",
+"subject": "fix(jwt): throw JwtTokenInvalid when the signature is not valid base64url (#5379)",
+"queries": {
+"subject": "fix(jwt): throw JwtTokenInvalid when the signature is not valid base64url",
+"bare": "throw JwtTokenInvalid when the signature is not valid base64url"
+},
+"gold": [
+"src/utils/jwt/jwt.ts"
+],
+"gold_lines": {
+"src/utils/jwt/jwt.ts": [
+[
+177,
+182
+]
+]
+}
+},
+{
+"id": "0d86899d28",
+"parent": "52febbcc30bc509d5e4987577e63906fe08fc471",
+"date": "2026-09-21",
+"subject": "fix(aws-lambda): treat binary +xml archive media types as binary (#5424)",
+"queries": {
+"subject": "fix(aws-lambda): treat binary +xml archive media types as binary",
+"bare": "treat binary +xml archive media types as binary"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+671,
+671
+]
+]
+}
+},
+{
+"id": "28e8572cd2",
+"parent": "0d86899d28e146da0c8760201b2d08ddae732eaa",
+"date": "2026-09-21",
+"subject": "fix(aws-lambda): preserve empty query parameters (#5292)",
+"queries": {
+"subject": "fix(aws-lambda): preserve empty query parameters",
+"bare": "preserve empty query parameters"
+},
+"gold": [
+"src/adapter/aws-lambda/handler.ts"
+],
+"gold_lines": {
+"src/adapter/aws-lambda/handler.ts": [
+[
+468,
+468
+],
+[
+558,
+558
+]
+]
+}
+},
+{
+"id": "de310ac063",
+"parent": "28e8572cd265b4da1160ce6cd51919bb70516e2c",
+"date": "2026-09-22",
+"subject": "fix(lambda-edge): sync content type detection with aws-lambda (#5426)",
+"queries": {
+"subject": "fix(lambda-edge): sync content type detection with aws-lambda",
+"bare": "sync content type detection with aws-lambda"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+215,
+215
+]
+]
+}
+},
+{
+"id": "6cadf75373",
+"parent": "de310ac063febf3e7b73f6206142d0e88800661f",
+"date": "2026-09-21",
+"subject": "fix(lambda-edge): fail with a descriptive error on a malformed event (#5358)",
+"queries": {
+"subject": "fix(lambda-edge): fail with a descriptive error on a malformed event",
+"bare": "fail with a descriptive error on a malformed event"
+},
+"gold": [
+"src/adapter/lambda-edge/handler.ts"
+],
+"gold_lines": {
+"src/adapter/lambda-edge/handler.ts": [
+[
+128,
+128
+],
+[
+138,
+140
+],
+[
+164,
+169
+],
+[
+173,
+173
+],
+[
+177,
+178
+]
+]
+}
+},
+{
+"id": "90d02fb164",
+"parent": "5f31392d724cf98c9e48a3de119a55284583ad5f",
+"date": "2026-09-25",
+"subject": "fix(types): allow returning a Blob as a response body (#5446)",
+"queries": {
+"subject": "fix(types): allow returning a Blob as a response body",
+"bare": "allow returning a Blob as a response body"
+},
+"gold": [
+"src/context.ts"
+],
+"gold_lines": {
+"src/context.ts": [
+[
+24,
+24
+],
+[
+26,
+26
+]
+]
+}
+},
+{
+"id": "be1f7498fe",
+"parent": "37ce06904e732d4bc11c9075adf362c76049a594",
+"date": "2026-09-30",
+"subject": "fix(build): keep internal types private in bundled d.ts and avoid a self-referencing JSX.IntrinsicElements (#5485)",
+"queries": {
+"subject": "fix(build): keep internal types private in bundled d.ts and avoid a self-referencing JSX.IntrinsicElements",
+"bare": "keep internal types private in bundled d.ts and avoid a self-referencing JSX.IntrinsicElements"
+},
+"gold": [
+"adapters/aws-lambda/vite.config.ts",
+"adapters/bun/vite.config.ts",
+"adapters/cloudflare-workers/vite.config.ts",
+"adapters/deno/vite.config.ts",
+"adapters/lambda-edge/vite.config.ts",
+"adapters/netlify/vite.config.ts",
+"adapters/service-worker/vite.config.ts",
+"adapters/vercel/vite.config.ts",
+"src/jsx/base.ts",
+"vite.config.ts"
+],
+"gold_lines": {
+"adapters/aws-lambda/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/bun/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/cloudflare-workers/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/deno/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/lambda-edge/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/netlify/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/service-worker/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"adapters/vercel/vite.config.ts": [
+[
+1,
+2
+],
+[
+9,
+10
+]
+],
+"src/jsx/base.ts": [
+[
+15,
+18
+],
+[
+47,
+47
+]
+],
+"vite.config.ts": [
+[
+6,
+7
+],
+[
+115,
+115
+]
+]
+}
+},
+{
+"id": "c3053ccf14",
+"parent": "c437d7569219a21e45fa81797749e8f34fe19dcc",
+"date": "2026-09-30",
+"subject": "fix(etag): correctly match mixed-case header name in retainedHeader option (#5475)",
+"queries": {
+"subject": "fix(etag): correctly match mixed-case header name in retainedHeader option",
+"bare": "correctly match mixed-case header name in retainedHeader option"
+},
+"gold": [
+"src/middleware/etag/index.ts"
+],
+"gold_lines": {
+"src/middleware/etag/index.ts": [
+[
+81,
+81
+],
+[
+126,
+126
+]
+]
+}
+},
+{
+"id": "e5bb2062a3",
+"parent": "c3053ccf14f1c4c70a0c2888eed6121b9f6c8f95",
+"date": "2026-09-30",
+"subject": "fix(jsx): add px to numeric gridGap, gridRowGap and gridColumnGap (#5487)",
+"queries": {
+"subject": "fix(jsx): add px to numeric gridGap, gridRowGap and gridColumnGap",
+"bare": "add px to numeric gridGap, gridRowGap and gridColumnGap"
+},
+"gold": [
+"src/jsx/utils.ts"
+],
+"gold_lines": {
+"src/jsx/utils.ts": [
+[
+188,
+188
+]
+]
+}
+},
+{
+"id": "afb2068c1c",
+"parent": "e5bb2062a3ddd645e3a16d1300bd76d6c9af33a5",
+"date": "2026-09-30",
+"subject": "fix(combine): return a Response from a short-circuiting middleware in some() (#5391)",
+"queries": {
+"subject": "fix(combine): return a Response from a short-circuiting middleware in some()",
+"bare": "return a Response from a short-circuiting middleware in some()"
+},
+"gold": [
+"src/middleware/combine/index.ts"
+],
+"gold_lines": {
+"src/middleware/combine/index.ts": [
+[
+46,
+47
+],
+[
+54,
+55
+],
+[
+67,
+68
+]
+]
+}
+},
+{
+"id": "f23b146afc",
+"parent": "6d73a74f9757ed65d6103c0e8375097fa20873c4",
+"date": "2026-10-01",
+"subject": "fix(jsx): allow JSXNode function component results (#5476)",
+"queries": {
+"subject": "fix(jsx): allow JSXNode function component results",
+"bare": "allow JSXNode function component results"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+26,
+27
+],
+[
+28,
+28
+]
+]
+}
+},
+{
+"id": "588ec13fa6",
+"parent": "552ea024250093a48071b3ded9710de4c6e05f14",
+"date": "2026-10-13",
+"subject": "fix(serve-static): only serve GET and HEAD requests (#5514)",
+"queries": {
+"subject": "fix(serve-static): only serve GET and HEAD requests",
+"bare": "only serve GET and HEAD requests"
+},
+"gold": [
+"src/middleware/serve-static/index.ts"
+],
+"gold_lines": {
+"src/middleware/serve-static/index.ts": [
+[
+61,
+62
+]
+]
+}
+},
+{
+"id": "3362244401",
+"parent": "588ec13fa68ea44fed1b5e1b503341db2bf09d70",
+"date": "2026-10-16",
+"subject": "fix(build): keep barrel imports in the bundled `d.ts` (#5557)",
+"queries": {
+"subject": "fix(build): keep barrel imports in the bundled `d.ts`",
+"bare": "keep barrel imports in the bundled `d.ts`"
+},
+"gold": [
+"build/dts-plugins.ts",
+"build/fixtures/declaration-emit/index.ts",
+"src/helper/testing/index.ts",
+"vite.config.ts"
+],
+"gold_lines": {
+"build/dts-plugins.ts": [
+[
+0,
+1
+],
+[
+55,
+56
+]
+],
+"build/fixtures/declaration-emit/index.ts": [
+[
+2,
+3
+],
+[
+10,
+11
+]
+],
+"src/helper/testing/index.ts": [
+[
+7,
+7
+]
+],
+"vite.config.ts": [
+[
+5,
+5
+],
+[
+361,
+361
+]
+]
+}
+},
+{
+"id": "43379d93e2",
+"parent": "3362244401515a1530616aefb87eb388152f82a3",
+"date": "2026-10-16",
+"subject": "fix(jsx): preserve self-closing void elements in cloneElement (#5314)",
+"queries": {
+"subject": "fix(jsx): preserve self-closing void elements in cloneElement",
+"bare": "preserve self-closing void elements in cloneElement"
+},
+"gold": [
+"src/jsx/base.ts"
+],
+"gold_lines": {
+"src/jsx/base.ts": [
+[
+481,
+481
+]
+]
+}
+},
+{
+"id": "2013fed5b2",
+"parent": "43379d93e23abaaa54ff85f2ce64a149f50d4295",
+"date": "2026-10-16",
+"subject": "fix(css): keep \"//\" inside an unquoted url() when minifying (#5450)",
+"queries": {
+"subject": "fix(css): keep \"//\" inside an unquoted url() when minifying",
+"bare": "keep \"//\" inside an unquoted url() when minifying"
+},
+"gold": [
+"src/helper/css/common.ts"
+],
+"gold_lines": {
+"src/helper/css/common.ts": [
+[
+82,
+83
+],
+[
+86,
+86
+]
+]
+}
+},
+{
+"id": "ae401f0800",
+"parent": "2013fed5b21719bb1e6f44ce7f49757660946856",
+"date": "2026-10-16",
+"subject": "fix(css): keep the descendant combinator before a pseudo-class when minifying (#5451)",
+"queries": {
+"subject": "fix(css): keep the descendant combinator before a pseudo-class when minifying",
+"bare": "keep the descendant combinator before a pseudo-class when minifying"
+},
+"gold": [
+"src/helper/css/common.ts"
+],
+"gold_lines": {
+"src/helper/css/common.ts": [
+[
+100,
+101
+],
+[
+107,
+107
+]
+]
+}
+},
+{
+"id": "d54720da80",
+"parent": "ae401f080004872678100e890fd3398d3df09e67",
+"date": "2026-10-16",
+"subject": "fix(serve-static): respect q-values in Accept-Encoding for precompressed files (#5436)",
+"queries": {
+"subject": "fix(serve-static): respect q-values in Accept-Encoding for precompressed files",
+"bare": "respect q-values in Accept-Encoding for precompressed files"
+},
+"gold": [
+"src/middleware/serve-static/index.ts"
+],
+"gold_lines": {
+"src/middleware/serve-static/index.ts": [
+[
+7,
+8
+],
+[
+107,
+110
+]
+]
+}
+},
+{
+"id": "e77c7c8eb9",
+"parent": "d54720da80134a180f5fe2dd98a7676cfc8f08b4",
+"date": "2026-10-16",
+"subject": "fix(helper/route): match regex params in basePath() the same way as the router (#5498)",
+"queries": {
+"subject": "fix(helper/route): match regex params in basePath() the same way as the router",
+"bare": "match regex params in basePath() the same way as the router"
+},
+"gold": [
+"src/helper/route/index.ts"
+],
+"gold_lines": {
+"src/helper/route/index.ts": [
+[
+128,
+128
+]
+]
+}
+},
+{
+"id": "08807ce12a",
+"parent": "e77c7c8eb9fea50a496ba10010063998b55d7a6b",
+"date": "2026-10-16",
+"subject": "fix(trie-router): keep first value for duplicate path params (#5422) (#5423)",
+"queries": {
+"subject": "fix(trie-router): keep first value for duplicate path params",
+"bare": "keep first value for duplicate path params"
+},
+"gold": [
+"src/router/trie-router/node.ts"
+],
+"gold_lines": {
+"src/router/trie-router/node.ts": [
+[
+158,
+158
+],
+[
+185,
+185
+]
+]
+}
+},
+{
+"id": "e9c01079a9",
+"parent": "08807ce12aa3aa27c8c5adf63e677bbab6bceda9",
+"date": "2026-10-17",
+"subject": "fix(hono-base): disallow `getPath` when `strict` is `false` (#5563)",
+"queries": {
+"subject": "fix(hono-base): disallow `getPath` when `strict` is `false`",
+"bare": "disallow `getPath` when `strict` is `false`"
+},
+"gold": [
+"src/helper/factory/index.ts",
+"src/hono-base.ts"
+],
+"gold_lines": {
+"src/helper/factory/index.ts": [
+[
+343,
+343
+],
+[
+345,
+345
+]
+],
+"src/hono-base.ts": [
+[
+47,
+54
+],
+[
+66,
+87
+]
+]
+}
+},
+{
+"id": "5ca49b0720",
+"parent": "e9c01079a932ffdfa269c0011075ac43fd8a1035",
+"date": "2026-10-17",
+"subject": "fix(css): Fix multiline CSS handling in style replacement (#5405)",
+"queries": {
+"subject": "fix(css): Fix multiline CSS handling in style replacement",
+"bare": "Fix multiline CSS handling in style replacement"
+},
+"gold": [
+"src/helper/css/index.ts"
+],
+"gold_lines": {
+"src/helper/css/index.ts": [
+[
+86,
+86
+]
+]
+}
+}
+]

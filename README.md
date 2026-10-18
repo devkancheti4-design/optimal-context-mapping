@@ -29,6 +29,7 @@ modeld cover                                         # optional: teaches it the 
 | The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs |
 | Brand-new, scattered bugs | about 1.35x | 114 Django bugs, 3 runs |
 | Finding the fixed file, offline, against Graphify 0.9.92 | right file first 149 (taught) / 111 (cold) vs 89 as Graphify prints, 116 read at its best; 390 vs 1,537 tokens; top-5 197 vs 172 at its best | Graphify's own MCP server, defaults ([evidence/vs-graphify](evidence/vs-graphify)) |
+| A codebase it had never seen (TypeScript), offline and cold | right file first 26% vs 16% for a grep-first look, top 5 56% vs 42%; exact changed lines in the top 5 for 27% | 241 real honojs/hono fixes, each against the code right before it ([evidence/new-codebase-hono](evidence/new-codebase-hono)) |
 | Code review | small, about 1.3x at most: reviewers search about 3 times per PR | SWR-Bench pilot, partial ([evidence/swr-pilot](evidence/swr-pilot)) |
 
 Every plan was hashed before it ran, and `python evidence/verify.py` recomputes every number from the raw rows.

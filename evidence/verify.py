@@ -211,17 +211,17 @@ def mcnemar(a, b):
     return n10, n01, (1.0 if n == 0 else min(1.0, 2 * sum(math.comb(n, i) for i in range(k + 1)) / 2 ** n))
 
 
-def prereg(folder, names):
+def prereg(folder, names, hashfile="PREREG_HASHES.txt"):
     """Check each named file against every hash recorded for it in <folder>/PREREG_HASHES.txt."""
     rec = {}
-    for line_ in open(f"{E}/{folder}/PREREG_HASHES.txt"):
+    for line_ in open(f"{E}/{folder}/{hashfile}"):
         parts = line_.split()
         if len(parts) == 2 and len(parts[0]) == 64:
             rec.setdefault(parts[1].split("/")[-1] if "/" not in parts[1] or parts[1].startswith(("~", "/")) else parts[1], []).append(parts[0])
     for name in names:
         h = hashlib.sha256(open(f"{E}/{folder}/{name}", "rb").read()).hexdigest()
         hs = rec.get(name) or rec.get(name.split("/")[-1], [])
-        line(f"pre-registered {name}", "hash matches" if h in hs else "HASH MISMATCH", f"{folder}/PREREG_HASHES.txt")
+        line(f"pre-registered {name}", "hash matches" if h in hs else "HASH MISMATCH", f"{folder}/{hashfile}")
 
 
 # --- 9. Real comprehension questions: bluesky atproto's answered Discussions, blind judge --------------------------
@@ -299,6 +299,23 @@ if os.path.isdir(f"{E}/vs-graphify"):
     cited = lambda r: r["right"] if r["path"] != "read" else any(g in r["answer"] or "django/" + g in r["answer"] for g in r["gold"])
     for d, name in ((al, "Claude alone"), (gfr, "Claude + Graphify"), (md, "Claude + Model D (cold)")):
         line(f"Part B, interim ({len(ks)} fixes): {name}", f"${sum(d[k]['usd'] for k in ks):.2f} · {sum(d[k]['requests'] for k in ks)} req · {sum(cited(d[k]) for k in ks)} right", "rows")
+
+# --- 11b. A codebase Model D had never seen: 241 real Hono fixes, file and line level -------------------------------
+if os.path.isdir(f"{E}/new-codebase-hono"):
+    section("A new codebase: 241 real honojs/hono fixes, each against its parent commit (METHOD.md, offline)")
+    prereg("new-codebase-hono", ["METHOD.md", "questions.json", "questions.py"], "HASHES.txt")   # run.py changed by D1, before any result
+    HQ = {q["id"]: q for q in load("new-codebase-hono/questions.json")}
+    HR = [json.loads(l) for l in open(f"{E}/new-codebase-hono/results.jsonl")]
+    for qn, label in (("bare", "plain question"), ("subject", "commit subject")):
+        md = [list(dict.fromkeys(i[0] for i in r["q"][qn]["items"])) for r in HR]; gr = [r["q"][qn]["grep"] for r in HR]
+        gold = [HQ[r["id"]]["gold"] for r in HR]
+        h = lambda F, k: [any(f in g for f in L[:k]) for L, g in zip(F, gold)]
+        n10, n01, p = mcnemar(h(md, 1), h(gr, 1))
+        line(f"{label}: right file first / top 5, Model D vs grep", f"{sum(h(md, 1))}/{sum(h(md, 5))} vs {sum(h(gr, 1))}/{sum(h(gr, 5))} of {len(HR)}", "rows results.jsonl")
+        line(f"{label}: right file first, paired (MD only / grep only, p)", f"{n10} / {n01}, p = {p:.2g}", "rows results.jsonl")
+        lh = lambda it, gl: any(a <= hi and b >= lo for p_, a, b in [it] for lo, hi in gl.get(p_, []))
+        l5 = sum(any(lh(x, HQ[r["id"]]["gold_lines"]) for x in r["q"][qn]["items"][:5]) for r in HR)
+        line(f"{label}: exact changed lines in the top 5", f"{l5} of {len(HR)} ({l5 / len(HR):.1%})", "rows results.jsonl")
 
 # --- 12. Every evidence file is present and unchanged ---------------------------------------------------------------
 section("Every file listed in MANIFEST.json, present with its recorded SHA-256")

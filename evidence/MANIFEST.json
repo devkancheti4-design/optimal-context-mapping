@@ -1416,6 +1416,72 @@
   "pre-registered": false
  },
  {
+  "file": "new-codebase-hono/HASHES.txt",
+  "from": "HASHES.txt",
+  "sha256": "d0751462f86f034157a9fd943fa32ff206a95bbfcc7ee9e67be3b052bd49d261",
+  "pre-registered": true
+ },
+ {
+  "file": "new-codebase-hono/METHOD.md",
+  "from": "METHOD.md",
+  "sha256": "f4c830af5109cfbdf0e59539e0ab6e39b5f8bd5099ec7f995139d11b149dfeae",
+  "pre-registered": true
+ },
+ {
+  "file": "new-codebase-hono/METHOD.md.deviations",
+  "from": "METHOD.md.deviations",
+  "sha256": "b46d17380f95c8026a3eac746db0c2e68da6f5528a1c696cc54aae96fed84d29",
+  "pre-registered": true
+ },
+ {
+  "file": "new-codebase-hono/RESULTS.md",
+  "from": "RESULTS.md",
+  "sha256": "543284621d6d7bbe4302de12c8fbc6442556a1389ba59724ad68907f5f466a61",
+  "pre-registered": false
+ },
+ {
+  "file": "new-codebase-hono/hono_head.txt",
+  "from": "hono_head.txt",
+  "sha256": "b513fe3857fc2607806ab5ddf1347a7f225b65e526423e36309b46b44b76a1fa",
+  "pre-registered": false
+ },
+ {
+  "file": "new-codebase-hono/questions.json",
+  "from": "questions.json",
+  "sha256": "75a796250fff0f7279327bedd2888fc13c41a78d55cfb4dde8796ef119a98bb3",
+  "pre-registered": true
+ },
+ {
+  "file": "new-codebase-hono/questions.py",
+  "from": "questions.py",
+  "sha256": "29a737ce95dabb13bc0aa5b4ffaad70ce8fb06bc7ac8714d7d93951632f51d1b",
+  "pre-registered": true
+ },
+ {
+  "file": "new-codebase-hono/report.json",
+  "from": "report.json",
+  "sha256": "ab6468c6b9e0fe6a9dad5859332fde169cc65a8b6599c9b4c2d4e2b030904976",
+  "pre-registered": false
+ },
+ {
+  "file": "new-codebase-hono/results.jsonl",
+  "from": "results.jsonl",
+  "sha256": "3bbd3a384b31b9006122936bd39d28c168d40f85e621a71656add70ebd1d2e45",
+  "pre-registered": false
+ },
+ {
+  "file": "new-codebase-hono/run.py",
+  "from": "run.py",
+  "sha256": "ab53b8c924a1f891bcd25a1d980af996c34816130d1c7e858e27b9360bc3f42c",
+  "pre-registered": false
+ },
+ {
+  "file": "new-codebase-hono/score.py",
+  "from": "score.py",
+  "sha256": "105449793698fb32a4cd62f1320aee45d06ee0b7817019bf920a3b802aabdb10",
+  "pre-registered": false
+ },
+ {
   "file": "oss-comprehension/PREREG_HASHES.txt",
   "from": "PREREG_HASHES.txt",
   "sha256": "b9ff033e2e98a48a0182727869a68e93e7a47c5d4c253d0d8fd9d704b9b3537a",

@@ -1,0 +1,125 @@
+{
+ "fixes": 241,
+ "bare": {
+  "model_d": {
+   "file hit@1/3/5": [
+    62,
+    109,
+    135
+   ],
+   "hit@1 95% CI": [
+    0.206,
+    0.316
+   ],
+   "MRR@10": 0.376,
+   "line hit@1/@5 (\u00b10)": [
+    27,
+    66
+   ],
+   "line hit@5 95% CI": [
+    0.221,
+    0.333
+   ],
+   "line hit@1/@5 (\u00b15)": [
+    33,
+    80
+   ],
+   "tokens per readout": 685,
+   "ask latency ms (median / p90)": [
+    18.7,
+    25.3
+   ],
+   "lanes used": {
+    "(readout: meaning and keyword matches)": 241
+   }
+  },
+  "grep": {
+   "file hit@1/3/5": [
+    39,
+    82,
+    102
+   ],
+   "hit@1 95% CI": [
+    0.121,
+    0.214
+   ],
+   "MRR@10": 0.277
+  },
+  "mcnemar file hit@1 model_d vs grep": [
+   36,
+   13,
+   0.001402688503695515
+  ],
+  "mcnemar file hit@5 model_d vs grep": [
+   51,
+   18,
+   8.768662462846019e-05
+  ]
+ },
+ "subject": {
+  "model_d": {
+   "file hit@1/3/5": [
+    81,
+    151,
+    178
+   ],
+   "hit@1 95% CI": [
+    0.279,
+    0.398
+   ],
+   "MRR@10": 0.501,
+   "line hit@1/@5 (\u00b10)": [
+    37,
+    80
+   ],
+   "line hit@5 95% CI": [
+    0.276,
+    0.394
+   ],
+   "line hit@1/@5 (\u00b15)": [
+    48,
+    99
+   ],
+   "tokens per readout": 668,
+   "ask latency ms (median / p90)": [
+    19.9,
+    30.6
+   ],
+   "lanes used": {
+    "(readout: meaning and keyword matches)": 241
+   }
+  },
+  "grep": {
+   "file hit@1/3/5": [
+    44,
+    112,
+    138
+   ],
+   "hit@1 95% CI": [
+    0.139,
+    0.236
+   ],
+   "MRR@10": 0.357
+  },
+  "mcnemar file hit@1 model_d vs grep": [
+   51,
+   14,
+   4.47522484948754e-06
+  ],
+  "mcnemar file hit@5 model_d vs grep": [
+   62,
+   22,
+   1.4655953475888017e-05
+  ]
+ },
+ "build seconds (first / median of the rest)": [
+  2.5,
+  0.4
+ ],
+ "units per build (median)": 10423,
+ "predictions": {
+  "N1 bare: model_d file hit@1 > grep": true,
+  "N2 bare: model_d file hit@5 > grep": true,
+  "N3 bare: model_d line hit@5 >= 25%": true
+ }
+}

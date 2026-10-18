@@ -1,0 +1,3 @@
+D1 (2026-10-18, before any result was written): the first run crashed in the grep baseline (the file lister takes the
+workspace roots mapping, not a list). Fixed to pass w.meta["roots"]; nothing was scored before the fix.
+The restart then found the crashed run's workspace in place; the runner now clears it before each build.
