@@ -13,7 +13,7 @@ import os
 
 from .cmlm_vector.chunk import units as sentences
 
-CODE = {".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".java", ".kt", ".kts", ".go", ".rs", ".rb", ".php", ".cs",
+CODE = {".py", ".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs", ".astro", ".java", ".kt", ".kts", ".go", ".rs", ".rb", ".php", ".cs",
         ".c", ".h", ".cc", ".cpp", ".hpp", ".m", ".swift", ".scala", ".sql", ".sh", ".bash", ".ps1", ".css", ".scss", ".less",
         ".html", ".vue", ".svelte", ".yaml", ".yml", ".toml", ".ini", ".cfg", ".gradle", ".tf", ".proto", ".graphql", ".json",
         ".conf", ".mjml"}

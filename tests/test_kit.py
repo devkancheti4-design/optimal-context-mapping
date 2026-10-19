@@ -244,3 +244,12 @@ def test_every_code_file_is_read_whatever_its_size_but_not_minified_bundles_or_d
         assert sorted(rel.split("/", 1)[1] for _, rel, _ in files({"r": root})) == ["small.json"]
     finally:
         del os.environ["OCM_MAX_FILE_KB"]
+
+
+def test_every_typescript_and_javascript_module_kind_is_read():
+    from ocm.units import files
+    root = tempfile.mkdtemp()
+    names = ["a.ts", "b.tsx", "c.mts", "d.cts", "e.d.ts", "f.js", "g.jsx", "h.mjs", "i.cjs", "j.vue", "k.svelte", "l.astro"]
+    for n in names:
+        open(os.path.join(root, n), "w").write("export const value = 1\n")
+    assert sorted(rel.split("/", 1)[1] for _, rel, _ in files({"r": root})) == sorted(names)

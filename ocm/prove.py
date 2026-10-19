@@ -19,7 +19,7 @@ import argparse, json, os, re, shutil, subprocess, sys, tempfile, time
 
 from .forecast import FIX
 
-CODE = (".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".go", ".rs", ".java", ".kt", ".rb", ".php", ".cs", ".c", ".h",
+CODE = (".py", ".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs", ".astro", ".go", ".rs", ".java", ".kt", ".rb", ".php", ".cs", ".c", ".h",
         ".cc", ".cpp", ".hpp", ".swift", ".scala", ".vue", ".svelte")
 TEST = re.compile(r"(^|/)(tests?|__tests__|testing|spec|specs|docs?|examples?|benchmarks?|fixtures?)/|(^|/)test_[^/]*\.py$|_test\.(py|go)$"
                   r"|\.(test|spec)\.[a-z]+$|(^|/)conftest\.py$|\.d\.ts$", re.I)
