@@ -19,6 +19,18 @@ modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; reb
 modeld cover                                         # optional: teaches it the whole codebase once (about $1 per 24k pieces)
 ```
 
+## Test it on your own repository first (no API key, nothing leaves your machine)
+
+```bash
+cd your-repo
+modeld forecast .     # from your git history alone: how much of your fix work repeats, and the bill it predicts
+modeld prove .        # replays your last 50 bug fixes against the code right before each one: does Model D find the
+                      # file and the lines the fix really changed? Side by side with a grep-first look. Zero tokens.
+```
+
+Both commands read your repository locally. `prove` downloads the embedding model once (about 440 MB) and embeds your
+code on your machine: the first build takes minutes on a large repository, the rest take seconds.
+
 ## Where it pays
 
 | work | vs the same agent alone | measured on |

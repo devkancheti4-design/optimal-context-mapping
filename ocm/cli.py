@@ -5,6 +5,8 @@
   modeld next "question"                the next readout for the same question
   modeld teach "question" path:line     teach the line the answer is on
   modeld stats                          units, files, questions taught
+  modeld forecast [repo]                how much Model D would cut an agent's bill here, from git history alone
+  modeld prove [repo] [--fixes 50]      check it on your own recent bug fixes, at zero tokens, against grep
   modeld cover [--cap USD] [--yes]      teach it the whole codebase once: Claude Haiku writes one question per piece of
                                         code, each taught as a pointer to that code (about $1 for Django's 24k pieces)
   modeld install [--team URL]           register Model D with the coding assistants found on this machine
@@ -176,7 +178,7 @@ def install_cmd(argv):
 
 COMMANDS = {"build": build_cmd, "ask": ask_cmd, "next": lambda r: ask_cmd(r, "next"), "teach": teach_cmd,
             "stats": stats_cmd, "serve": serve_cmd, "fetch-model": fetch_model_cmd, "install": install_cmd,
-            "cover": _module("cover"), "init": _module("init"), "mcp": _module("mcp"), "hybrid": _module("hybrid"), "measure": _module("measure"),
+            "cover": _module("cover"), "forecast": _module("forecast"), "prove": _module("prove"), "init": _module("init"), "mcp": _module("mcp"), "hybrid": _module("hybrid"), "measure": _module("measure"),
             "calc": _module("calc"), "hook": _module("loop")}
 
 

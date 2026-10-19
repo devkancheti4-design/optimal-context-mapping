@@ -198,3 +198,33 @@ def test_cover_stops_cleanly_when_the_api_refuses_and_keeps_what_was_written():
     said = []
     usd = cover.write_questions(NS(messages=Refuses()), ws, cover.units(ws), os.path.join(out, "cover.jsonl"), cap=1.0, threads=2, log=said.append)
     assert usd == 0 and any("credit balance" in s for s in said) and cover.teach(ws, os.path.join(out, "cover.jsonl"), log=lambda *a: None) == 0
+
+
+def _git_repo_with_fixes():
+    """The fixture repo as a git history: one commit, then two fix commits on the same file."""
+    import subprocess
+    repo = os.path.join(tempfile.mkdtemp(), "shop")
+    shutil.copytree(os.path.join(HERE, "fixture_repo"), repo)
+    g = lambda *a: subprocess.run(["git", "-C", repo, "-c", "user.name=t", "-c", "user.email=t@t", *a], check=True, capture_output=True)
+    g("init", "-q"); g("add", "-A"); g("commit", "-qm", "the shop")
+    for i, (old, new, msg) in enumerate([("MAX_CHARGE_RETRIES = 3", "MAX_CHARGE_RETRIES = 4", "fix: retry a failed card charge one more time"),
+                                         ("RETRY_BACKOFF_SECONDS = 2", "RETRY_BACKOFF_SECONDS = 3", "fix(config): wait longer between charge retries")]):
+        p = os.path.join(repo, "src", "config.py"); text = open(p).read()
+        open(p, "w").write(text.replace(old, new))
+        g("commit", "-qam", msg)
+    return repo
+
+
+def test_forecast_reads_fixes_and_repetition_from_git_history():
+    from ocm import forecast
+    f = forecast.forecast(_git_repo_with_fixes(), months=1)
+    assert f["fixes"] == 2 and f["repetition_r"] == 0.5 and f["saving"] > 1.8 and f["distinct_files"] == 1
+
+
+def test_prove_replays_each_fix_against_its_parent_and_scores_the_true_lines():
+    from ocm import prove
+    r = prove.prove(_git_repo_with_fixes(), n=5, months=1, cache=os.path.join(tempfile.mkdtemp(), "c.sqlite"), log=lambda *a: None)
+    assert r["fixes"] == 2 and [x["gold"] for x in r["rows"]] == [["src/config.py"], ["src/config.py"]]
+    assert r["rows"][0]["question"] == "retry a failed card charge one more time"         # "fix:" removed
+    assert r["rows"][1]["question"] == "wait longer between charge retries"               # "fix(config):" removed
+    assert r["model_d"]["right_first"] >= 1 and r["model_d"]["lines_top5"] >= 1
