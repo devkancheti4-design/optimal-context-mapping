@@ -10,7 +10,19 @@ Model D is a deterministic kit fused with the Claude API you already use:
 - The kit maps your code once, on your machines, into 1,024-bit fingerprints ranked by small laws.
 - Before each request, it decides where to look, at zero tokens.
 - Claude reads what the kit already knows and explores only what is new.
-- Every exploration teaches the kit, so the next engineer's question costs less.
+- Every exploration pins the question to the line that answered it, so the same question asked again, in any wording,
+  costs one cheap read.
+
+**Where the saving comes from.** On Django's real 2022 year (285 paired fixes) it was 2.09x, with a 95% interval of
+1.84x–2.39x:
+- **85% from retrieval:** the zero-token readout means Claude explores less. On fixes it still had to explore, it was
+  1.92x cheaper than Claude alone.
+- **15% from memory:** 40 fixes were answered by one $0.0004 read of code an earlier question had pinned.
+- **The learned law added nothing measurable.** Forced on, it changed no result
+  ([evidence/learning-ablation](evidence/learning-ablation)).
+
+Memory makes repeated questions cheap. It does not make Model D better at brand-new questions. `modeld cover`, which
+teaches it the whole codebase once, is what does that.
 
 ```bash
 uv tool install "model-d[claude]"                    # or: pipx / pip install "model-d[claude]"; plain model-d skips the Claude SDK
@@ -113,9 +125,9 @@ modeld cover --workspace ~/ocm-workspace
 - **What it costs:** it shows an estimate and asks before spending (`--yes` skips the prompt, `--cap` sets a limit).
   For Django's 23,976 pieces it cost $0.97, and teaching took 10 minutes on a laptop.
 - **What it did:** on 288 real Django fix questions it had never seen, the right file came first 142 times against 111
-  cold (p = 0.0035), and the learned law switched itself on ([evidence/team-year/coverage](evidence/team-year/coverage)).
-  The top 5 did not improve (193 vs 197), and a learned pointer is right about half the time, so the agent still
-  checks the code it is pointed at.
+  cold (p = 0.0035) ([evidence/team-year/coverage](evidence/team-year/coverage)).
+  - In 0.5.1, a taught pointer no longer hides the rest of the readout, and the top 5 rose to 219, against 197 cold.
+  - A learned pointer is right about half the time, so the agent still checks the code it is pointed at.
 - **After a rebuild:** pointers carry like any taught question. Running `modeld cover` again writes questions only
   for code that is new or changed.
 
@@ -249,10 +261,14 @@ The workspace is a CMLM: vectors and laws, not a store of text.
   to, the 10 nearest by meaning, by keyword, or both. When the first readout is the taught one, the hook also sends
   the router's next readout (its ADVANCE), so a near miss costs no search.
 - **The learned law** reorders the nearest by meaning once it beats the vector order on your team's own questions.
+  It rarely switches on, and forced on it changed nothing in our tests, so treat it as experimental.
 
 **Teaching trains the CMLM on your machine, at no model cost.** A TEACH line names a question and the line its answer
 is on. The question's vector becomes a cue on the unit holding that line, so a later question near it in meaning is
-drawn to that code (vector generalisation), and it is an example for the learned law. Nothing the model wrote is
+drawn to that code (vector generalisation), and it is an example for the learned law.
+- **Since 0.5.1, only a close match counts.** A taught question pulls a later one only when it beats the code's own
+  match by 37 bits (the relation limit), so a merely similar question is not pulled to an old answer.
+- **The pointer never stands alone.** A taught pointer leads the readout, followed by the normal top four. Nothing the model wrote is
 stored, and what the model gets back is always the code itself, with its path and line.
 
 It is ranking math. The readout is ranked, not verified, so the model is told to use it only if it answers the
@@ -279,7 +295,12 @@ your network.
 - **Deep dives** that chain across many files save little today: a taught question points at one line, not a whole
   trail.
 - **Billed input falls less than requests**, because readouts add reading.
-- **The learned law rarely switches on for code** in our tests.
+- **Memory helps repeated questions, not new ones.** After a year of real teaching in 0.5.0, the right file came
+  first on 84 of 288 new questions, against 111 cold (top 5: 107 vs 197).
+  - 0.5.1's two fixes bring this to 99 (top 5: 176), and reworded repeats stay at 107 of 114.
+  - `OCM_RELATION_LIMIT=off` restores 0.5.0.
+  - Details: [evidence/learning-ablation](evidence/learning-ablation).
+- **The learned law rarely switches on for code,** and forced on it changed nothing.
 - **Taught vectors are append-only.** A rebuild carries them only with `--carry`: to the same line, or to the same line
   reformatted (whitespace ignored), and `--prune-after N` drops a lesson whose line has been gone for N rebuilds in a
   row. In our live test a carry over 400 commits kept 40 of 47 entries, but it did not save requests (section 13).

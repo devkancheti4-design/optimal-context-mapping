@@ -17,17 +17,20 @@ N9 = 277681                                                     # sentences in t
 import os as _os
 
 
-def _bits(name):
-    """An optional limit in bits from the environment (e.g. OCM_CERT_MIN_OVER_OWN=37); unset or empty: None."""
-    v = _os.environ.get(name, "").strip()
-    return int(v) if v else None
+def _bits(name, default=None):
+    """An optional limit in bits from the environment (e.g. OCM_CERT_MIN_OVER_OWN=37); unset or empty: the default;
+    "off": None."""
+    v = _os.environ.get(name, "").strip().lower()
+    return None if v == "off" else int(v) if v else default
 
 
 CERT_MIN_LIFT = _bits("OCM_CERT_MIN_LIFT")   # bits; when set, the taught lane also needs its cue this far above the question's median
                        # agreement (its chance level). None: the law as published (the lead alone decides).
-RELATION_LIMIT = _bits("OCM_RELATION_LIMIT")      # bits; when set, taught question vectors count for a question only if the best of them
-                           # beats the best code text's agreement by this much (candidate: 37 bits, one sd of chance
-                           # agreement); otherwise the code alone ranks it, as if nothing were taught. None: off.
+RELATION_LIMIT = _bits("OCM_RELATION_LIMIT", 37)  # bits; taught question vectors count for a question only if the best of them beats
+                           # the best code text's agreement by this much (37 bits, one sd of chance agreement); otherwise
+                           # the code alone ranks it, as if nothing were taught. Default on since 0.5.1: after a year of
+                           # real teaching it lifted right-file-first on new questions 84 -> 99 of 288, and kept reworded
+                           # repeats at 107 of 114 (evidence/learning-ablation). OCM_RELATION_LIMIT=off restores 0.5.0.
 CERT_MIN_OVER_OWN = _bits("OCM_CERT_MIN_OVER_OWN")   # bits; when set, the taught lane also needs its cue this far above the best code text's
                            # agreement (a candidate relation limit: one sd of chance agreement, 37 bits). None: off.
 

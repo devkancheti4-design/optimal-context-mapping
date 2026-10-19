@@ -185,8 +185,12 @@ class Workspace:
                 rows[3] = list(dict.fromkeys(law[:5] + [j for j in rows[3] if j not in set(cand[:5])]))
             else:
                 rows[lane] = law[:len(rows[lane])]
-        rows = [j for j in rows[lane] if j < len(self.mem.texts)]
-        return f"(readout: {NAMES[lane]})\n\n" + "\n\n".join(self.fmt(j, i) for i, j in enumerate(rows, 1))
+        if lane == 0:                       # a taught pointer leads, then the normal readout: never the pointer alone (0.5.1)
+            out = list(dict.fromkeys(list(rows[0][:1]) + list(rows[3]) + list(rows[1])))[:5]
+        else:
+            out = rows[lane]
+        out = [j for j in out if j < len(self.mem.texts)]
+        return f"(readout: {NAMES[lane]})\n\n" + "\n\n".join(self.fmt(j, i) for i, j in enumerate(out, 1))
 
     def handle(self, path, req):
         m = self.mem

@@ -317,6 +317,30 @@ if os.path.isdir(f"{E}/new-codebase-hono"):
         l5 = sum(any(lh(x, HQ[r["id"]]["gold_lines"]) for x in r["q"][qn]["items"][:5]) for r in HR)
         line(f"{label}: exact changed lines in the top 5", f"{l5} of {len(HR)} ({l5 / len(HR):.1%})", "rows results.jsonl")
 
+# --- 11c. What the learning does: the saving's sources, the learned law forced on, and the 0.5.1 fixes ----------------
+if os.path.isdir(f"{E}/learning-ablation"):
+    section("Learning: where the 2.09x comes from, the learned law forced on, and the 0.5.1 fixes (evidence/learning-ablation)")
+    import random
+    ty = lambda name: {json.loads(l)["k"]: json.loads(l) for l in open(f"{E}/team-year/rows/{name}")}
+    al, md = ty("alone.jsonl"), ty("md.jsonl"); ks = sorted(al.keys() & md.keys())
+    A_, M_ = sum(al[k]["usd"] for k in ks), sum(md[k]["usd"] for k in ks)
+    rnd = random.Random(0); rs = []
+    for _ in range(10000):
+        smp = [rnd.choice(ks) for _ in ks]; rs.append(sum(al[k]["usd"] for k in smp) / sum(md[k]["usd"] for k in smp))
+    rs.sort()
+    line("team year: saving, bootstrap 95% interval", f"{A_ / M_:.2f}x ({rs[250]:.2f}x-{rs[9750]:.2f}x)", "rows team-year")
+    teach = [k for k in ks if md[k]["path"] == "teach"]; reads = [k for k in ks if md[k]["path"] == "read"]
+    K_ = sum(md[k]["usd"] for k in teach) / len(teach); nolearn = sum(md[k]["usd"] for k in teach) + K_ * len(reads)
+    line("share of dollars saved: retrieval / memory", f"{(A_ - nolearn) / (A_ - M_):.0%} / {(nolearn - M_) / (A_ - M_):.0%}", "rows team-year")
+    G = f"{E}/learning-ablation"; tot = lambda rows, key: sum(r[key] for r in rows)
+    a_on, a_off = load("learning-ablation/results_A_on.json")["rows"], load("learning-ablation/results_A_off.json")["rows"]
+    line("learned law on / off (coverage): right first", f"{tot(a_on, 'right1')} / {tot(a_off, 'right1')}", "results_A_*.json")
+    for arm, label in (("base", "0.5.0"), ("f13", "0.5.1 (F1 + F3)")):
+        b = load(f"learning-ablation/results2_B_{arm}.json"); r = load(f"learning-ablation/results2_R_{arm}.json")["rows"]
+        a = load(f"learning-ablation/results2_A_{arm}.json")
+        line(f"{label}: new / repeats / coverage, right first", f"{tot(b, 'right1')} / {tot(r, 'right1')} of {len(r)} / {tot(a, 'right1')}", "results2_*.json")
+        line(f"{label}: new / repeats / coverage, top 5", f"{tot(b, 'right5')} / {tot(r, 'right5')} / {tot(a, 'right5')}", "results2_*.json")
+
 # --- 12. Every evidence file is present and unchanged ---------------------------------------------------------------
 section("Every file listed in MANIFEST.json, present with its recorded SHA-256")
 M = load("MANIFEST.json")

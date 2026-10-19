@@ -1218,6 +1218,204 @@
   "pre-registered": false
  },
  {
+  "file": "learning-ablation/HASHES.txt",
+  "from": "HASHES.txt",
+  "pre-registered": true,
+  "sha256": "28ad09531dd3273f5db9a1594530d95151cf724486184aeca462b0d057d850c2"
+ },
+ {
+  "file": "learning-ablation/METHOD.md",
+  "from": "METHOD.md",
+  "pre-registered": true,
+  "sha256": "580c89f22160d625e725c28d66304d6e3ed8b5439c9674e19692a5fc3b745000"
+ },
+ {
+  "file": "learning-ablation/METHOD2.md",
+  "from": "METHOD2.md",
+  "pre-registered": true,
+  "sha256": "9eef589623b5a716912ec2b46515c97fadbefc777f012d24ffad3462569528aa"
+ },
+ {
+  "file": "learning-ablation/RESULTS.md",
+  "from": "RESULTS.md",
+  "pre-registered": false,
+  "sha256": "28389a0e2ed31f26fbb0e1337dc24a14e6eca8d7b8e55fb9c331d8d84fa52ca6"
+ },
+ {
+  "file": "learning-ablation/results2_A_base.json",
+  "from": "results2_A_base.json",
+  "pre-registered": false,
+  "sha256": "5a0cc8a0a5984e6df226e87ffb5a2c92f19d3a38b21f447799603457ded7a064"
+ },
+ {
+  "file": "learning-ablation/results2_A_f1.json",
+  "from": "results2_A_f1.json",
+  "pre-registered": false,
+  "sha256": "a4b05b45d1e9119fcab58eb65cbd479745050851e7aaa06a4de1967865cfb748"
+ },
+ {
+  "file": "learning-ablation/results2_A_f12.json",
+  "from": "results2_A_f12.json",
+  "pre-registered": false,
+  "sha256": "51c36ffe15d151f1d2502023e9ff84f1669b660cd20bc4224cad7c57fe0da744"
+ },
+ {
+  "file": "learning-ablation/results2_A_f13.json",
+  "from": "results2_A_f13.json",
+  "pre-registered": false,
+  "sha256": "b9b1d54835b4d78dd9e72b59e6a17307d919e747598ee12ffd4c3511bdd74681"
+ },
+ {
+  "file": "learning-ablation/results2_A_f2.json",
+  "from": "results2_A_f2.json",
+  "pre-registered": false,
+  "sha256": "8bfa953a4a2d0608d176fe0c57f6280a324507793de8631441dd805e5eb1ccaa"
+ },
+ {
+  "file": "learning-ablation/results2_A_f3.json",
+  "from": "results2_A_f3.json",
+  "pre-registered": false,
+  "sha256": "83cdb94e17e1dc291a7bb13972110ba5f4e16083970ada538fd21946c2142101"
+ },
+ {
+  "file": "learning-ablation/results2_A_product.json",
+  "from": "results2_A_product.json",
+  "pre-registered": false,
+  "sha256": "b9b1d54835b4d78dd9e72b59e6a17307d919e747598ee12ffd4c3511bdd74681"
+ },
+ {
+  "file": "learning-ablation/results2_B_base.json",
+  "from": "results2_B_base.json",
+  "pre-registered": false,
+  "sha256": "10df9f1295f836701aebf9083de5a6c6834388be21d2f9fabd5fb78b1baad3c0"
+ },
+ {
+  "file": "learning-ablation/results2_B_f1.json",
+  "from": "results2_B_f1.json",
+  "pre-registered": false,
+  "sha256": "34171e5d754743e792496ea93e05c22c2116b03d9e9ac8e9de91dd82008f9410"
+ },
+ {
+  "file": "learning-ablation/results2_B_f12.json",
+  "from": "results2_B_f12.json",
+  "pre-registered": false,
+  "sha256": "38afd2dea9c72e7d9814c59cf43225152fa1963325e451666e96043aab775a6c"
+ },
+ {
+  "file": "learning-ablation/results2_B_f13.json",
+  "from": "results2_B_f13.json",
+  "pre-registered": false,
+  "sha256": "663822e31550968b4edb1d0104eaab111bdf18844458ee38ccf15f93a45a73bb"
+ },
+ {
+  "file": "learning-ablation/results2_B_f2.json",
+  "from": "results2_B_f2.json",
+  "pre-registered": false,
+  "sha256": "2b9f28ac3c88cb64a7af66c70ebe744a629739066dab52cb1833334566488905"
+ },
+ {
+  "file": "learning-ablation/results2_B_f3.json",
+  "from": "results2_B_f3.json",
+  "pre-registered": false,
+  "sha256": "bcdb0c2be6eb20920a24f86365bc1e98668668b3531c393918de5e97672b581d"
+ },
+ {
+  "file": "learning-ablation/results2_B_product.json",
+  "from": "results2_B_product.json",
+  "pre-registered": false,
+  "sha256": "663822e31550968b4edb1d0104eaab111bdf18844458ee38ccf15f93a45a73bb"
+ },
+ {
+  "file": "learning-ablation/results2_R_base.json",
+  "from": "results2_R_base.json",
+  "pre-registered": false,
+  "sha256": "fb998ffc97edee9514d9a71c0096c2419fe487e3d47127a4d74ea9a932f01b2b"
+ },
+ {
+  "file": "learning-ablation/results2_R_f1.json",
+  "from": "results2_R_f1.json",
+  "pre-registered": false,
+  "sha256": "6084a0a394aa13f564a04e45a3713a6787672b5b77b3b13461736349b9ff368f"
+ },
+ {
+  "file": "learning-ablation/results2_R_f12.json",
+  "from": "results2_R_f12.json",
+  "pre-registered": false,
+  "sha256": "959dd2e4cd82e63dd15be3a7a72b56fbc169e12f00523e04a674f13313d88976"
+ },
+ {
+  "file": "learning-ablation/results2_R_f13.json",
+  "from": "results2_R_f13.json",
+  "pre-registered": false,
+  "sha256": "333d7e8c5cde5d261fbd109300be0cb2c5d92added578a6cc0347ae7e745cc53"
+ },
+ {
+  "file": "learning-ablation/results2_R_f2.json",
+  "from": "results2_R_f2.json",
+  "pre-registered": false,
+  "sha256": "959dd2e4cd82e63dd15be3a7a72b56fbc169e12f00523e04a674f13313d88976"
+ },
+ {
+  "file": "learning-ablation/results2_R_f3.json",
+  "from": "results2_R_f3.json",
+  "pre-registered": false,
+  "sha256": "333d7e8c5cde5d261fbd109300be0cb2c5d92added578a6cc0347ae7e745cc53"
+ },
+ {
+  "file": "learning-ablation/results2_R_product.json",
+  "from": "results2_R_product.json",
+  "pre-registered": false,
+  "sha256": "333d7e8c5cde5d261fbd109300be0cb2c5d92added578a6cc0347ae7e745cc53"
+ },
+ {
+  "file": "learning-ablation/results_A_off.json",
+  "from": "results_A_off.json",
+  "pre-registered": false,
+  "sha256": "92540c8842c6e02d16a63634e013542bc972c4c0162979cfccbec20e1e38e62a"
+ },
+ {
+  "file": "learning-ablation/results_A_on.json",
+  "from": "results_A_on.json",
+  "pre-registered": false,
+  "sha256": "f7e89354a33012198deff32aad260b153959f1fc1af40ad66df18e13eff11acc"
+ },
+ {
+  "file": "learning-ablation/results_B_forced.json",
+  "from": "results_B_forced.json",
+  "pre-registered": false,
+  "sha256": "31fab1a64ceb440612cb2150b8e303e49efc9cc4b3f4e3b5f7c4e4b2658e9e8c"
+ },
+ {
+  "file": "learning-ablation/results_B_gate.json",
+  "from": "results_B_gate.json",
+  "pre-registered": false,
+  "sha256": "ecab7bbcbf18dcd065a2602281d280c7d34aec0bc44071dafa0acaf5dbefbb32"
+ },
+ {
+  "file": "learning-ablation/run.py",
+  "from": "run.py",
+  "pre-registered": false,
+  "sha256": "8cb94cdc481509516e462e2d1f3e899da23f530a2316a8a9ac2e20ace0068b37"
+ },
+ {
+  "file": "learning-ablation/run2.py",
+  "from": "run2.py",
+  "pre-registered": false,
+  "sha256": "16d281a0e42679bffaccf0c09c8363558a21a0f3a831d90e24726de031cfbc2f"
+ },
+ {
+  "file": "learning-ablation/run_product.py",
+  "from": "run_product.py",
+  "pre-registered": false,
+  "sha256": "6317b8f649cb789c4971d021fde7c8f1ac0a7c1fe0bc8a28862d28891174c0aa"
+ },
+ {
+  "file": "learning-ablation/score.py",
+  "from": "score.py",
+  "pre-registered": false,
+  "sha256": "072580599358e715ee7fa7d16f02e18d87c8424fb31581c599343d4d3edcfbc0"
+ },
+ {
   "file": "learning/large-codebase/PROTOCOL_LARGE.md",
   "from": "PROTOCOL_LARGE.md",
   "sha256": "09844b5bfef7f0868a155218e2602a4ac51a8a69c352fec4ecf8714a3a293b67",
