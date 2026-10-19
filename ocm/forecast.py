@@ -69,7 +69,8 @@ def main(argv=None):
         print(json.dumps(f)); return
     print(f"Model D forecast for {f['repo']} (from git history since {f['since']}; no model calls)\n")
     if f["fixes"] < 10:
-        print(f"only {f['fixes']} fix commits in the window: too few for a forecast. Try --months 24.")
+        print(f"only {f['fixes']} fix commits in the last {a.months:g} months: too few for a forecast. "
+              f"Try a longer window, e.g. --months {max(24, int(a.months * 2))}.")
         return
     print(f"  fix commits                 {f['fixes']} ({f['fixes_per_month']} a month, {f['files_per_fix']} files each)")
     print(f"  fixes on a file fixed before {f['repetition_r']:.0%}   <- work that repeats; Model D learns it")
