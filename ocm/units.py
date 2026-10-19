@@ -4,8 +4,11 @@ Code files are cut into blocks (split at blank lines, at most 400 characters, ea
 code in two files stays two units); documentation is cut into sentences, each with the lines it spans, so a taught
 question can point at a doc line as it can at a code line. Build files with no extension (Dockerfile, Makefile and the
 like), server configs (.conf), email templates (.mjml) and editor launch settings (.vscode) are code. Skipped, always:
-Model D's and Graphify's own output folders (modeld-out, graphify-out), version control, dependency and build folders, lockfiles, binaries, anything over 512 KB, and anything that looks like a secret (.env files, keys,
-certificates, credential files). Nothing is read outside the folders you pass."""
+Model D's and Graphify's own output folders (modeld-out, graphify-out), version control, dependency and build folders,
+lockfiles, binaries, minified bundles (*.min.js, *.min.css), .json data files over 2 MB, and anything that looks like a
+secret (.env files, keys, certificates, credential files). Every other code file is read, whatever its size (since
+0.5.2; before, anything over 512 KB was skipped). OCM_MAX_FILE_KB, or `modeld build --max-file-kb N`, sets a limit.
+Nothing is read outside the folders you pass."""
 import os
 
 from .cmlm_vector.chunk import units as sentences
@@ -23,7 +26,13 @@ SKIP_DIRS = {".git", ".hg", ".svn", "node_modules", "bower_components", "dist", 
              "coverage", ".cache", ".gradle", ".terraform", "Pods", "DerivedData"}
 LOCKS = {"package-lock.json", "yarn.lock", "pnpm-lock.yaml", "poetry.lock", "Cargo.lock", "Gemfile.lock", "composer.lock",
          "go.sum", "Pipfile.lock"}
-MAX_BYTES = 512_000
+JSON_MAX_BYTES = 2_000_000          # a .json file larger than this is a data dump, not code
+
+
+def max_bytes():
+    """The optional per-file limit, read at call time: OCM_MAX_FILE_KB (kilobytes), unset for no limit."""
+    v = os.environ.get("OCM_MAX_FILE_KB", "").strip()
+    return int(v) * 1000 if v else None
 MAXC, MINC = 400, 20
 
 
@@ -40,19 +49,20 @@ def named(f):
 
 def files(roots):
     """[(name, rel, path)] for every file kept, in a stable order; roots is {name: folder}."""
-    out = []
+    out, limit = [], max_bytes()
     for name, root in sorted(roots.items()):
         for d, dirs, fs in os.walk(root):
             dirs[:] = sorted(x for x in dirs if (x not in SKIP_DIRS and not x.startswith(".") or x in DOT_DIRS)
                              and not x.startswith(TOOL_OUT))
             for f in sorted(fs):
                 ext = os.path.splitext(f)[1].lower(); p = os.path.join(d, f)
-                if not (ext in CODE or ext in DOCS or named(f)) or f in LOCKS or looks_secret(f):
+                if not (ext in CODE or ext in DOCS or named(f)) or f in LOCKS or looks_secret(f) or ".min." in f.lower():
                     continue
                 try:
-                    if os.path.getsize(p) > MAX_BYTES:
-                        continue
+                    size = os.path.getsize(p)
                 except OSError:
+                    continue
+                if (limit is not None and size > limit) or (ext == ".json" and size > JSON_MAX_BYTES):
                     continue
                 out.append((name, f"{name}/{os.path.relpath(p, root)}", p))
     return out

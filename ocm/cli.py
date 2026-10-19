@@ -74,7 +74,10 @@ def build_cmd(argv):
     ap.add_argument("path", nargs="*", default=["."]); ap.add_argument("--out")
     ap.add_argument("--model"); ap.add_argument("--device"); ap.add_argument("--carry")
     ap.add_argument("--cache", help="an embedding cache file ($MODELD_CACHE): a rebuild embeds only changed code")
+    ap.add_argument("--max-file-kb", type=int, help="skip files larger than this (default: no limit; every code file is read)")
     a = ap.parse_args(argv)
+    if a.max_file_kb:
+        os.environ["OCM_MAX_FILE_KB"] = str(a.max_file_kb)
     roots = [os.path.abspath(p) for p in a.path]
     out = os.path.abspath(a.out or os.path.join(roots[0], OUT))
     carry = a.carry or (out if os.path.exists(os.path.join(out, "workspace.json")) else None)

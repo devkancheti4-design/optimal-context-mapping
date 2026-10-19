@@ -95,8 +95,12 @@ modeld build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-workspace
 
 - **What gets kept:** every code and doc file under the folders you pass. Code is cut into blocks and docs into
   sentences, and each becomes a 1,024-bit fingerprint, computed on your machine.
-- **What is skipped:** `.env` files, keys, certificates, credential files, lockfiles, dependency and build folders, and
-  anything over 512 KB.
+- **What is skipped:**
+  - `.env` files, keys, certificates and credential files;
+  - lockfiles, and dependency and build folders;
+  - minified bundles (`*.min.js`, `*.min.css`), and `.json` data files over 2 MB.
+
+  Every other code file is read, whatever its size. `--max-file-kb N` sets a limit if you want one.
 - **Also indexed:** build files with no extension (`Dockerfile`, `Makefile` and the like), `.conf`, `.mjml`, `.vscode`.
   Doc sentences keep their line numbers.
 - **Device:** a GPU is used automatically when present (CUDA, or Apple silicon); `--device cpu` forces the CPU.

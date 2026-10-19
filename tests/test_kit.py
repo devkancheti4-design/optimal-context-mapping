@@ -228,3 +228,19 @@ def test_prove_replays_each_fix_against_its_parent_and_scores_the_true_lines():
     assert r["rows"][0]["question"] == "retry a failed card charge one more time"         # "fix:" removed
     assert r["rows"][1]["question"] == "wait longer between charge retries"               # "fix(config):" removed
     assert r["model_d"]["right_first"] >= 1 and r["model_d"]["lines_top5"] >= 1
+
+
+def test_every_code_file_is_read_whatever_its_size_but_not_minified_bundles_or_data_dumps():
+    from ocm.units import files
+    root = tempfile.mkdtemp()
+    open(os.path.join(root, "big.py"), "w").write("def f():\n    return 1\n\n" * 30000)          # about 680 KB of real code
+    open(os.path.join(root, "app.min.js"), "w").write("var a=1;" * 1000)
+    open(os.path.join(root, "dump.json"), "w").write("[" + "1," * 1_100_000 + "1]")             # about 2.2 MB of data
+    open(os.path.join(root, "small.json"), "w").write('{"a": 1}')
+    kept = sorted(rel.split("/", 1)[1] for _, rel, _ in files({"r": root}))
+    assert kept == ["big.py", "small.json"], kept
+    os.environ["OCM_MAX_FILE_KB"] = "100"
+    try:
+        assert sorted(rel.split("/", 1)[1] for _, rel, _ in files({"r": root})) == ["small.json"]
+    finally:
+        del os.environ["OCM_MAX_FILE_KB"]
