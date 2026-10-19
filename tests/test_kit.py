@@ -39,6 +39,8 @@ def test_workspace_end_to_end():
 def test_mcp_protocol():
     init = handle({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18"}})
     assert init["protocolVersion"] == "2025-06-18" and "tools" in init["capabilities"]
+    import ocm
+    assert init["serverInfo"]["version"] == ocm.__version__                     # the server reports the real version
     names = [t["name"] for t in handle({"jsonrpc": "2.0", "id": 2, "method": "tools/list"})["tools"]]
     assert names == ["workspace_ask", "workspace_next", "workspace_recall", "workspace_teach"]
 
