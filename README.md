@@ -89,7 +89,7 @@ Every test plan was written and hashed before it ran. The raw rows are in [`evid
 | Graphify, as it prints its answer | 89 |
 | Graphify, read at its best by its own scores | 116 (a tie with cold 0.5.2) |
 
-Model D hands over 390–735 tokens per answer, against Graphify's 1,537. Graphify's graph itself is accurate: only
+Model D hands over 597–735 tokens per answer (0.5.3, taught and cold), against Graphify's 1,537. Graphify's graph itself is accurate: only
 0.7% of its Python import edges were wrong.
 
 ---

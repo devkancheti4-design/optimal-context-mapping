@@ -301,3 +301,20 @@ def test_tests_come_after_the_code_they_test_unless_the_question_is_about_tests(
     assert off[0] == "tests/test_charge.py", off                               # by meaning alone the test leads
     assert on[0] == "src/charge.py" and sorted(on) == sorted(off), on           # the same items, the code first
     assert about_on == about_off                                                # a question about tests keeps the order
+
+
+def test_graph_links_files_by_meaning_and_each_taught_question_to_its_line():
+    from ocm import graph
+    out = os.path.join(tempfile.mkdtemp(), "ws")
+    build([os.path.join(HERE, "fixture_repo")], out, log=lambda *a: None)
+    Workspace(out).handle("teach", {"pairs": [{"question": "How many times do we retry a failed card charge?", "at": "src/config.py:4"}]})
+    g = graph.context_graph(out, k=2, log=lambda *a: None)
+    files = [n for n in g["nodes"] if n["kind"] == "file"]
+    assert g["stats"]["files"] == len(files) > 1 and g["stats"]["units"] == sum(f["units"] for f in files)
+    q = [n for n in g["nodes"] if n["kind"] == "question"]
+    assert len(q) == 1 and q[0]["at"] == "src/config.py:4" and q[0]["line"] == "MAX_CHARGE_RETRIES = 3"
+    taught = [e for e in g["edges"] if e["kind"] == "taught"]
+    assert [next(f["path"] for f in files if f["id"] == e["target"]) for e in taught] == ["src/config.py"]
+    assert all(e["over_median"] >= graph.GAP for e in g["edges"] if e["kind"] == "meaning")
+    html = graph.page(g)
+    assert "<title>Context graph</title>" in html and "src/config.py" in html and "http" not in html.split("<script>")[1]
