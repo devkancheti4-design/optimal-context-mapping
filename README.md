@@ -1,170 +1,197 @@
 # Model D (Optimal Context Mapping)
 
+[![PyPI](https://img.shields.io/pypi/v/model-d)](https://pypi.org/project/model-d/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23289068.svg)](https://doi.org/10.5281/zenodo.23289068)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
-**AI on your codebase, with a bill that flattens as your team works.**
+**Your AI coding agent pays to search the same code again and again. Model D tells it where to look, and never lets
+it pay twice for the same question.**
 
-Every AI coding agent on a team pays to search the same code again, and each search step is a paid model request.
-Model D is a deterministic kit fused with the Claude API you already use:
-- The kit maps your code once, on your machines, into 1,024-bit fingerprints ranked by small laws.
-- Before each request, it decides where to look, at zero tokens.
-- Claude reads what the kit already knows and explores only what is new.
-- Every exploration pins the question to the line that answered it, so the same question asked again, in any wording,
-  costs one cheap read.
+On a real team's year of work (Django's 288 fixes from 2022), the same Claude agent cost **2.09x less with Model D**
+(95% interval 1.84x–2.39x), at the same accuracy: 252 vs 253 right.
 
-**Where the saving comes from.** On Django's real 2022 year (285 paired fixes) it was 2.09x, with a 95% interval of
-1.84x–2.39x:
-- **85% from retrieval:** the zero-token readout means Claude explores less. On fixes it still had to explore, it was
-  1.92x cheaper than Claude alone.
-- **15% from memory:** 40 fixes were answered by one $0.0004 read of code an earlier question had pinned.
-- **The learned law added nothing measurable.** Forced on, it changed no result
-  ([evidence/learning-ablation](evidence/learning-ablation)).
+---
 
-Memory makes repeated questions cheap. It does not make Model D better at brand-new questions. `modeld cover`, which
-teaches it the whole codebase once, is what does that.
+## Try it on your own code first
+
+You need no API key, and nothing leaves your machine:
 
 ```bash
-uv tool install "model-d[claude]"                    # or: pipx / pip install "model-d[claude]"; plain model-d skips the Claude SDK
-modeld install                                       # wires it into Claude Code, Codex, Gemini CLI and Kiro
-modeld build . --cache ~/.cache/modeld/embed.sqlite  # maps this repository; rebuilds embed only what changed
-modeld cover                                         # optional: teaches it the whole codebase once (about $1 per 24k pieces)
-```
-
-## Test it on your own repository first (no API key, nothing leaves your machine)
-
-```bash
+uv tool install "model-d[claude]"      # or: pipx install "model-d[claude]"  /  pip install "model-d[claude]"
 cd your-repo
-modeld forecast .     # from your git history alone: how much of your fix work repeats, and the bill it predicts
-modeld prove .        # replays your last 50 bug fixes against the code right before each one: does Model D find the
-                      # file and the lines the fix really changed? Side by side with a grep-first look. Zero tokens.
+modeld forecast .                      # from your git history: how much of your work repeats, and the saving it predicts
+modeld prove .                         # replays your last 50 real bug fixes and checks whether Model D finds the code
+                                       # each one changed, side by side with a plain search
 ```
 
-Both commands read your repository locally. `prove` downloads the embedding model once (about 440 MB) and embeds your
-code on your machine: the first build takes minutes on a large repository, the rest take seconds.
+- **`forecast`** reads only `git log` and answers in about a second.
+- **`prove`** downloads a small embedding model once (about 440 MB) and maps your code on your machine. The first
+  build takes minutes on a large repository; every later one takes seconds.
+- **Example:** on Hono (TypeScript, 241 real fixes), `prove` found the right file first 26% of the time against 16%
+  for grep, and in its top 5 56% against 42%.
 
-## Where it pays
+---
 
-| work | vs the same agent alone | measured on |
+## What it is, and what it is not
+
+**It is** a small layer under the coding agent you already use: Claude Code, Kiro, Codex, Gemini CLI, or any MCP
+client.
+1. **It maps your codebase once, on your machine.** Every piece of code becomes a 1,024-bit fingerprint.
+2. **Before the agent spends a token, it points it to the likely code** (about 400–700 tokens), so the agent searches
+   less. The pointing costs nothing: it is arithmetic, not a model call.
+3. **When the agent finds an answer, Model D pins the question to that line.** The same question later, in any
+   wording, costs one cheap read ($0.0004) instead of a new search.
+4. **It stores pointers, never answers.** The agent always reads the current code, so nothing goes stale.
+
+**It is not** an agent. It does not write code, run tests or plan work; your agent does that. It saves most where
+work repeats: a team on one codebase, support questions, onboarding. It saves little on one-off questions, writing
+fixes or code review (see Limits).
+
+---
+
+## Results
+
+Every test plan was written and hashed before it ran. The raw rows are in [`evidence/`](evidence), and
+`python evidence/verify.py` recomputes every number below.
+
+| work | result, against the same agent alone | measured on |
 |---|---|---|
-| **A team's real year of fixes on one codebase** | **2.09x cheaper, the same work (252 vs 253 right); 1.88x → 2.57x as the year went on** | Django's 288 fixes from 2022, in order ([evidence/team-year](evidence/team-year)) |
-| Real questions about how a codebase works, from a project that pays for Claude | 2.36x cheaper, 93% of the quality (not a significant gap, p = 0.24) | bluesky atproto, 115 answered Discussions, blind judge ([evidence/oss-comprehension](evidence/oss-comprehension)) |
-| A team asking about its own repository | 2.3–2.8x cheaper, same accuracy | a company app, 5 roles, 3 runs |
-| The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs |
-| Brand-new, scattered bugs | about 1.35x | 114 Django bugs, 3 runs |
-| Finding the fixed file, offline, against Graphify 0.9.92 | right file first 149 (taught) / 111 (cold) vs 89 as Graphify prints, 116 read at its best; 390 vs 1,537 tokens; top-5 197 vs 172 at its best | Graphify's own MCP server, defaults ([evidence/vs-graphify](evidence/vs-graphify)) |
-| A codebase it had never seen (TypeScript), offline and cold | right file first 26% vs 16% for a grep-first look, top 5 56% vs 42%; exact changed lines in the top 5 for 27% | 241 real honojs/hono fixes, each against the code right before it ([evidence/new-codebase-hono](evidence/new-codebase-hono)) |
-| Code review | small, about 1.3x at most: reviewers search about 3 times per PR | SWR-Bench pilot, partial ([evidence/swr-pilot](evidence/swr-pilot)) |
+| **A team's real year of fixes** | **2.09x cheaper (1.84x–2.39x), same work (252 vs 253 right); 1.88x → 2.57x as work repeated** | Django's 288 fixes from 2022, in order ([team-year](evidence/team-year)) |
+| Real "how does this work?" questions | 2.36x cheaper at 93% of the quality (gap not significant, p = 0.24) | bluesky atproto, 115 real GitHub Discussions, blind judge ([oss-comprehension](evidence/oss-comprehension)) |
+| A team asking about its own app | 2.3–2.8x cheaper, same accuracy | a company-style app, 5 roles, 3 runs ([claude-api](evidence/claude-api)) |
+| The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs ([gemini](evidence/gemini)) |
+| Repository Q&A benchmark | 2.22x cheaper, score 61.0 vs 65.3 out of 100; a retest with caching on both sides: 1.90x, 73.3 vs 75.9 | SWE-QA: 336 questions in 7 repositories; the retest on 91 ([claude-api](evidence/claude-api)) |
+| Brand-new, scattered bugs | 1.33–1.50x | 114 Django bugs; sympy, scikit-learn, pytest; matplotlib, sphinx, requests, flask |
+| A TypeScript codebase it had never seen (offline, no model) | right file first 26% vs 16% for grep; top 5 56% vs 42% | 241 real honojs/hono fixes, each against the code right before it ([new-codebase-hono](evidence/new-codebase-hono)) |
+| Writing fixes | not cheaper ($0.197 vs $0.160 per fix) | 19 Django issues |
+| Code review | about 1.3x at most | SWR-Bench pilot, partial ([swr-pilot](evidence/swr-pilot)) |
 
-Every plan was hashed before it ran, and `python evidence/verify.py` recomputes every number from the raw rows.
+**In one line:** 1.3x to 2.8x cheaper, depending on how much your work repeats; 2.09x on a real team's year.
 
-## Pricing
-- **Open source, $0:** the whole kit under Apache-2.0, self-hosted, for one developer or a team server.
-- **Team, $49 per engineer per month:** we set up your team server, send a monthly savings report from your own
-  logs, and give priority fixes and a private support channel.
-- **Enterprise, by contract:** air-gapped installs, rollout across many repositories, and a guaranteed response time.
+**Where Django's 2.09x comes from** ([learning-ablation](evidence/learning-ablation)):
+- **85% from pointing.** The agent explores less. On fixes it still had to explore, it was 1.92x cheaper.
+- **15% from memory.** 40 fixes were answered by one $0.0004 read of code an earlier question had pinned.
+- **The learned law added nothing.** Forced on, it changed no result, so it is treated as experimental.
 
-Model D adds no model cost of its own. It cuts the API bill you already pay. For a team server, Docker and offline
-installs, see [DEPLOY.md](DEPLOY.md). To get the most out of it, see [GUIDE.md](GUIDE.md).
+**Against Graphify 0.9.92** ([vs-graphify](evidence/vs-graphify)), on Django's 288 questions, offline:
 
-## Why it works: work on a codebase isn't novel
+| | right file first |
+|---|---|
+| Model D, cold | 111 |
+| Model D, after learning the codebase once | 149 |
+| Graphify, as it prints its answer | 89 |
+| Graphify, read at its best by its own scores | 116, a tie with cold Model D |
 
-Ten years of Django, 5,333 real fixes, touched only 650 files. After the first thousand fixes, 96–99% landed in a
-file already fixed before. The files a team touches grow like the square root of its work (Heaps' law, fitted:
-D(n) = 12·n^0.48). So the search for where to look should be paid once. The learning law says how much that
-saves: S = A / ((1 − ν)·E + ν·K), where ν is the share of new work, E one learned read ($0.0004) and K a first
-exploration with the kit. On Django's 2022 it forecast each quarter's saving from the earlier ones within 14%.
+Model D hands over 390–735 tokens per answer, against Graphify's 1,537. Graphify's graph itself is accurate: only
+0.7% of its Python import edges were wrong.
+
+---
+
+## How it works
+
+```text
+your repo ──► cut into pieces ──► embedded on your machine ──► 1,024-bit fingerprints + keyword index
+                                     (bge-base-en-v1.5)            (SimHash)          (SQLite FTS5)
+
+question ──► router law picks the code (0 tokens) ──► learned code?  ──► Claude Haiku reads it ($0.0004)
+                                                      new code?      ──► Claude Sonnet explores from there (~$0.05)
+                                                                              │
+                                                    the question is pinned to the line it found ◄┘
+```
+
+- **Fingerprints.** Each piece of code (blocks of up to 400 characters; docs as sentences) is embedded locally by
+  `BAAI/bge-base-en-v1.5` (768 numbers). Then 1,024 fixed random planes turn it into 1,024 sign bits (128 bytes).
+  Two texts that share more bits mean more nearly the same thing, so a question in new words still lands near what it
+  means.
+- **The router law.** Eight yes/no checks, all free (lead size, crowding, rare words, agreement between meaning and
+  keywords), pick which readout to send: taught code, the nearest by meaning, by keyword, or both. Its thresholds
+  were set once from the geometry: a lead under 8 bits is noise, and 74 bits is twice the 37-bit spread of chance.
+- **Memory.** A taught question's vector becomes a pointer on the code that answered it. Since 0.5.1:
+  - it counts only when it clearly beats the code's own match (by 37 bits, the relation limit), so a merely similar
+    question is not pulled to an old answer;
+  - a taught pointer leads the readout, followed by the normal top four.
+- **No summaries.** Model D never summarises code. What the model gets back is always the code itself, with its path
+  and line.
+
+The laws, their constants and the cost formulas are in [GUIDE.md](GUIDE.md) and the evidence folders.
+
+---
 
 ## How to use it
 
 ### 1. Install (Python 3.10+)
 
 ```bash
-uv tool install model-d     # or pipx install model-d, or pip install model-d; from a clone: pip install -e .
+uv tool install "model-d[claude]"     # plain "model-d" works too, but leaves out the Anthropic SDK (needed by cover and hybrid)
 ```
 
-This installs the `modeld` command (and `modeld-mcp`), with numpy, torch and transformers. `python -m ocm` runs
-the same commands. The embedding model (bge-base-en-v1.5) downloads once on the first build;
-after that you can set `OCM_OFFLINE=1`.
+This installs the `modeld` command, with numpy, torch and transformers. The embedding model downloads once, on the
+first build. After that, `OCM_OFFLINE=1` keeps everything offline.
 
-### 2. Scan your repositories into a workspace
+### 2. Map your repositories
 
 ```bash
-modeld build ~/code/our-api ~/code/our-web ~/code/our-docs --out ~/ocm-workspace
+modeld build ~/code/our-api ~/code/our-web --out ~/ocm-workspace --cache ~/.cache/modeld/embed.sqlite
 ```
 
-- **What gets kept:** every code and doc file under the folders you pass. Code is cut into blocks and docs into
-  sentences, and each becomes a 1,024-bit fingerprint, computed on your machine.
-- **What is skipped:**
-  - `.env` files, keys, certificates and credential files;
-  - lockfiles, and dependency and build folders;
-  - minified bundles (`*.min.js`, `*.min.css`), and `.json` data files over 2 MB.
+- **Read:** every code and doc file, whatever its size. That covers:
+  - Python;
+  - TypeScript and JavaScript (`.ts .tsx .mts .cts .d.ts .js .jsx .mjs .cjs`), Vue, Svelte and Astro;
+  - Go, Rust, Java, Kotlin, C#, C/C++, Ruby, PHP and Swift;
+  - SQL, shell, YAML/TOML/JSON configs, Dockerfiles and Makefiles.
+- **Skipped, because it isn't your code:**
+  - `.git`, dependencies (`node_modules`, `vendor`, `venv`…) and build output;
+  - lockfiles, minified bundles (`*.min.js`, `*.min.css`) and `.json` data dumps over 2 MB;
+  - anything that looks like a secret (`.env`, keys, certificates).
 
-  Every other code file is read, whatever its size. `--max-file-kb N` sets a limit if you want one.
-- **Also indexed:** build files with no extension (`Dockerfile`, `Makefile` and the like), `.conf`, `.mjml`, `.vscode`.
-  Doc sentences keep their line numbers.
-- **Device:** a GPU is used automatically when present (CUDA, or Apple silicon); `--device cpu` forces the CPU.
+  Add `--max-file-kb N` if you want a size limit.
+- **Rebuilds are fast:** with `--cache`, only changed code is embedded again. What was taught carries over (add
+  `--carry <old workspace>` when building into a new folder). Each pointer follows its exact line, and a pointer
+  whose line is gone is dropped, never guessed.
+- **A GPU** (CUDA or Apple silicon) is used automatically when present.
 
-**Rebuilding after code changes?** Carry what the team taught into the new workspace:
-
-```bash
-modeld build ~/code/our-api ~/code/our-web --out ~/ocm-workspace-new --carry ~/ocm-workspace
-```
-
-The workspace keeps an exact memory of what was taught (`taught.life.json`, a Life from living-fused). On a carry,
-each taught question is found in the new code by its exact line and its vector is taught again; an entry whose line
-is gone abstains instead of guessing.
-
-**Teach it the whole codebase once (optional):**
+### 3. Optional: teach it the whole codebase once
 
 ```bash
-uv tool install "model-d[claude]"     # cover calls Claude Haiku through the Anthropic SDK
 export ANTHROPIC_API_KEY=...          # or OCM_VERTEX_PROJECT for Claude on Vertex AI
 modeld cover --workspace ~/ocm-workspace
 ```
 
-- **What it does:** Claude Haiku writes one question for every piece of non-test code, 25 pieces per request. Each
-  question is taught onto the code it was written from, as a pointer: nothing is stored as an answer. An asked question
-  is pointed at code, and the agent reads that code.
+- **What it does:** Claude Haiku writes one question for every piece of non-test code, and each is taught as a
+  pointer to that code.
 - **What it costs:** it shows an estimate and asks before spending (`--yes` skips the prompt, `--cap` sets a limit).
-  For Django's 23,976 pieces it cost $0.97, and teaching took 10 minutes on a laptop.
-- **What it did:** on 288 real Django fix questions it had never seen, the right file came first 142 times against 111
-  cold (p = 0.0035) ([evidence/team-year/coverage](evidence/team-year/coverage)).
-  - In 0.5.1, a taught pointer no longer hides the rest of the readout, and the top 5 rose to 219, against 197 cold.
-  - A learned pointer is right about half the time, so the agent still checks the code it is pointed at.
-- **After a rebuild:** pointers carry like any taught question. Running `modeld cover` again writes questions only
-  for code that is new or changed.
+  Django's 23,976 pieces cost $0.97.
+- **What it did:** on 288 real questions it had never seen, the right file came first 142–149 times against 111 cold,
+  and the top 5 rose to 219 against 197.
+- **After a rebuild:** run it again, and it writes questions only for new or changed code.
 
-### 3. Serve it to the team
+### 4. Serve it to your team
 
 ```bash
 modeld serve ~/ocm-workspace --port 7700                  # just you
-modeld serve ~/ocm-workspace --port 7700 --host 0.0.0.0   # your team, on your network
+modeld serve ~/ocm-workspace --port 7700 --host 0.0.0.0   # your team, on your network (see Limits: no login yet)
 ```
 
-Run one server per team; everyone's agents share it. Every call is logged to `<workspace>/calls.jsonl`.
+- **One server per team:** everyone's agents share one memory.
+- **Logging:** every call is logged to `<workspace>/calls.jsonl`.
+- **Code scope:** for bug reports and code questions, ask with `"scope": "code"`, or set `OCM_SCOPE=code`, so
+  release notes and docs stay out of the ranking.
+- **Docker and offline installs:** see [DEPLOY.md](DEPLOY.md).
 
-For a bug report, or any question whose answer is in code, ask with `"scope": "code"`. Documentation (`.md`, `.rst`,
-`.txt` and the like) then stays out of the ranking. In a full repository, release notes and reference pages can
-otherwise fill much of the readout. `OCM_SCOPE=code` makes it the server's default; the MCP tools take `scope` too.
-
-### 4. Put it in your agents' loop
-
-**One command per agent.** `ocm init` writes the right config into a repository. It merges into existing files, keeps
-your other settings, and is safe to run again:
+### 5. Put it in your agent's loop
 
 ```bash
-modeld init claude ~/code/our-api --url http://ws.internal:7700    # Claude Code: two hooks + a CLAUDE.md note
-modeld init kiro   ~/code/our-api --url http://ws.internal:7700    # Kiro: .kiro/settings/mcp.json + .kiro/steering/ocm.md
-modeld init codex  ~/code/our-api --url http://ws.internal:7700    # OpenAI Codex: .codex/config.toml + AGENTS.md
-modeld init gemini ~/code/our-api --url http://ws.internal:7700    # Gemini CLI: .gemini/settings.json + GEMINI.md
-modeld init all    ~/code/our-api --url http://ws.internal:7700    # all four
+modeld install                                                    # registers Model D with the agents on this machine
+modeld init claude ~/code/our-api --url http://ws.internal:7700   # Claude Code: two hooks + a CLAUDE.md note
+modeld init kiro   ~/code/our-api --url http://ws.internal:7700   # Kiro: MCP config + steering file
+modeld init codex  ~/code/our-api --url http://ws.internal:7700   # OpenAI Codex: MCP config + AGENTS.md
+modeld init gemini ~/code/our-api --url http://ws.internal:7700   # Gemini CLI: MCP config + GEMINI.md
+modeld init all    ~/code/our-api --url http://ws.internal:7700   # all four
 ```
 
-What each writes, by hand, follows.
+`init` merges into existing files, keeps your settings, and is safe to run again.
 
-**Claude Code (recommended): two hooks, nothing for the model to call.** Add this to the project's
-`.claude/settings.json`, and point `OCM_URL` at the team's server if it is not local:
+**Claude Code (recommended): two hooks, nothing for the model to call.** In the project's `.claude/settings.json`:
 
 ```json
 {"env": {"OCM_URL": "http://127.0.0.1:7700"},
@@ -174,150 +201,130 @@ What each writes, by hand, follows.
 }}
 ```
 
-- **Before each request**, the prompt hook adds the code its laws rank for the question: the code a taught question's
-  vector points to (and then the router's next readout), or the nearest code and docs by meaning and keyword.
-- **The model** answers from them when they answer the question, searches when they do not, and ends its reply with
-  `TEACH: <question> | <path>:<line>`, the line its answer is on.
-- **After the reply**, the stop hook teaches those lines on your machine, at no model cost: each question's vector
-  becomes a cue on the code holding that line. No answer text is stored.
-- **Between tasks**, run `/clear`. The next task starts from the workspace, not from the old transcript.
+- **Before each request,** the prompt hook adds the code Model D ranks for the question.
+- **The model** answers from it when it answers the question, searches when it does not, and ends with
+  `TEACH: <question> | <path>:<line>`.
+- **After the reply,** the stop hook pins those lines on your machine, at no model cost.
+- **Between tasks, run `/clear`.** Model D keeps what was learned, so the transcript doesn't have to.
 
-**Cursor and other MCP clients: as tools.** Add this to `.mcp.json` (Cursor: `.cursor/mcp.json`), and add
-`pilot/AGENT_INSTRUCTIONS.md` to the agent's rules:
+**Cursor and other MCP clients.** Add this to `.mcp.json` (Cursor: `.cursor/mcp.json`), and add
+`pilot/AGENT_INSTRUCTIONS.md` to the agent's rules. The tools are `workspace_ask`, `workspace_next`,
+`workspace_recall` and `workspace_teach`.
 
 ```json
 {"mcpServers": {"ocm": {"command": "modeld", "args": ["mcp"], "env": {"OCM_URL": "http://127.0.0.1:7700"}}}}
 ```
 
-This costs a round trip per question, and in our team proof it did not save requests on its own (section 6). Use the
-hooks where you can.
+**Any other agent loop:** call `ocm.loop.prefetch(question)` before the model call, put the result in the prompt,
+and call `ocm.loop.teach_from_reply(reply)` after it.
 
-**Kiro, OpenAI Codex, Gemini CLI: as MCP tools.** `ocm init kiro|codex|gemini` registers the same four tools in each
-tool's own MCP config, and puts the instructions where that agent reads them (`.kiro/steering/`, `AGENTS.md`,
-`GEMINI.md`).
+### 6. Or let Model D drive the model: the hybrid
 
-**Any other agent loop:** call `ocm.loop.prefetch(question)` before the model call, put the result in the prompt, and
-call `ocm.loop.teach_from_reply(reply)` after it.
-
-### The hybrid: the kit decides, the model reads or teaches
-
-`ocm hybrid` runs a question through the hybrid. The kit's laws make every decision, at no model cost, and a model is
-called only for one of two jobs:
-
-- **Read:** the question is near one the kit was taught. The model reads the code the kit chose, once and with no tools,
-  and answers. If that code does not hold the answer, it says so and the question goes on to be taught.
-- **Teach:** the question is new. The model explores (search, read, list on the team's workspace) just enough to find
-  the one line the answer is on. The kit learns that line, so the next question like it costs one read.
+`modeld hybrid` makes every decision with its laws, and calls a model for one of two jobs only:
+- **Read:** if it has learned this code, a small model reads it once and answers, or says the code doesn't hold the
+  answer.
+- **Explore and teach:** otherwise a stronger model explores (search, read, list) until it finds the line, and Model D
+  learns it.
 
 ```bash
-export OCM_URL=http://ws.internal:7700
 modeld hybrid "What stops a deploy with placeholder secrets?" --provider claude   # ANTHROPIC_API_KEY
-modeld hybrid "..." --provider openai                                             # OPENAI_API_KEY (pip install openai)
-modeld hybrid "..." --provider gemini                                             # GEMINI_API_KEY, or a Vertex project
 ```
 
-| Provider | Reads with | Teaches with | Keys |
+| provider | reads with | explores with | status |
 |---|---|---|---|
-| `claude` (Anthropic SDK) | Claude Haiku 5.5 | Claude Sonnet 5.5 | `ANTHROPIC_API_KEY`, or `OCM_VERTEX_PROJECT` for Claude on Vertex AI |
-| `openai` (OpenAI SDK) | `--reader`, default `gpt-5.6-terra` | `--teacher`, same default | `OPENAI_API_KEY` |
-| `gemini` (REST) | gemini-2.5-flash | gemini-2.5-flash | `GEMINI_API_KEY`, or `OCM_VERTEX_PROJECT` |
+| `claude` | Claude Haiku 5.5 | Claude Sonnet 5.5 | run live: Django's team year, atproto, SWE-QA |
+| `gemini` | gemini-2.5-flash | gemini-2.5-flash | run live: 3 runs on transformers |
+| `openai` | `--reader` (default `gpt-5.6-terra`) | `--teacher` | offline tests only |
 
 In code: `from ocm.hybrid import run, provider, Workspace`, then
-`run(question, provider("claude"), Workspace("http://ws.internal:7700"))`. It returns the path taken (`read` or
-`teach`), the answer, the line taught, and the number of model requests. Measured so far (gemini-2.5-flash): one read
-was right on 90/90 taught questions, and on 30/30 with Claude Haiku 5.5. The Gemini adapter has been run live end to
-end. The Claude and OpenAI adapters are covered by the offline tests, but have not yet been run against their live
-APIs.
+`run(question, provider("claude"), Workspace("http://ws.internal:7700"))`.
 
-### 5. Measure what it saves you
+### 7. Measure what it saves you
 
 ```bash
-modeld calc --repeat 0.5 --deep 0.3 --questions-per-month 16800   # an estimate for your mix
-modeld measure compare ~/before-transcripts ~/after-transcripts    # the real thing, from your agents' transcripts
+modeld forecast .                                                   # from git history, before you install anything
+modeld prove .                                                      # pointing quality on your own fixes, zero tokens
+modeld measure compare ~/before-transcripts ~/after-transcripts     # the real bill, from your agents' transcripts
 ```
 
-`pilot/PILOT.md` is a two-to-four-week plan for a fair before-and-after; fix it before you start
-(`pilot/PREREGISTRATION.md`). Run the kit's tests with `python -m pytest -q tests`.
+[`pilot/PILOT.md`](pilot/PILOT.md) is a two-to-four-week plan for a fair before-and-after. Fix it before you start
+([`pilot/PREREGISTRATION.md`](pilot/PREREGISTRATION.md)).
+
+---
 
 ## Big repositories
 
-What we measured with this kit on a MacBook (Apple silicon; its GPU was picked automatically):
-
-| | measured |
+| | measured on a MacBook (Apple silicon) |
 |---|---|
-| Scanning | 3,898 units in 13 s; transformers (10.8M tokens, 2,347 files) is 183,830 units and took 28 minutes |
-| Storage | 128 bytes of fingerprint per unit: 183,875 units take 23.5 MB |
-| Readout per request | 0.07 s over 183,875 units (the bit comparison itself takes 2.5 ms) |
-| Results at size | live, this kit: 1.71x fewer requests over 10.8M tokens against 1.25x over 148k; earlier research harness: 9.2x on repeats over 10.8M, 6.1x over 7 codebases (7M tokens) |
+| Django (54 MB of source, 3,808 files) | 113,271 pieces; first build about 10 minutes; workspace 80 MB |
+| Hugging Face transformers (43 MB, 2,347 files) | 183,830 pieces; first build 28 minutes |
+| Storage | 128 bytes of fingerprint per piece |
+| One readout | 0.07 s over 183,875 pieces |
+| Rebuild with the cache | seconds (0.4 s per Hono commit) |
 
-- **Scope it.** Build one workspace over the repositories a team actually works in; one workspace over everything beat
-  one per codebase in our test.
-- **Recall falls as size grows.** First-time questions find their answer less often in the first readout. Repeated
-  questions, drawn by a taught question's vector, hold up.
-- **Rebuild after large code changes,** with `--carry` to bring what was taught along.
+- **Size on disk is not the issue.** Repositories are gigabytes mostly because of `.git`, dependencies, build output
+  and media, none of which Model D reads.
+- **Not yet tested:** monorepos with gigabytes of actual source. By extrapolation, 1 GB of source is a few million
+  pieces and roughly half a day for the first build on a laptop. Build it once on a server and share it with
+  `modeld serve`.
 
-## How it works
-
-The workspace is a CMLM: vectors and laws, not a store of text.
-- **The vector law** ranks every unit by bits shared with the question: through the vectors of questions taught on
-  it, and through its own text.
-- **The router law** picks which readout to send from eight free checks: the code a taught question's vector points
-  to, the 10 nearest by meaning, by keyword, or both. When the first readout is the taught one, the hook also sends
-  the router's next readout (its ADVANCE), so a near miss costs no search.
-- **The learned law** reorders the nearest by meaning once it beats the vector order on your team's own questions.
-  It rarely switches on, and forced on it changed nothing in our tests, so treat it as experimental.
-
-**Teaching trains the CMLM on your machine, at no model cost.** A TEACH line names a question and the line its answer
-is on. The question's vector becomes a cue on the unit holding that line, so a later question near it in meaning is
-drawn to that code (vector generalisation), and it is an example for the learned law.
-- **Since 0.5.1, only a close match counts.** A taught question pulls a later one only when it beats the code's own
-  match by 37 bits (the relation limit), so a merely similar question is not pulled to an old answer.
-- **The pointer never stands alone.** A taught pointer leads the readout, followed by the normal top four. Nothing the model wrote is
-stored, and what the model gets back is always the code itself, with its path and line.
-
-It is ranking math. The readout is ranked, not verified, so the model is told to use it only if it answers the
-question.
+---
 
 ## Privacy
 
-Everything runs on your machines. Only the embedding model is downloaded, once; your code and questions never leave
-your network.
+- **Model D itself sends nothing anywhere.** Mapping, fingerprints, ranking and memory all run on your machines.
+  Only the embedding model is downloaded, once.
+- **Your agent still sends the code it reads to its own model provider,** as it does without Model D. Model D usually
+  means it reads less.
+- **`modeld cover` and `modeld hybrid` call Claude** (or Gemini, or OpenAI) with code pieces, and only when you run
+  them. `cover` shows its estimate and asks first.
+
+---
 
 ## Limits, stated plainly
 
-- **Repetition drives savings.** One-off questions save less, and short sessions that keep their own context gain
-  little.
-- **Clear the session between tasks.** In Claude Code the facts the hook adds stay in the transcript and are re-read
-  on every later request:
-  - At 100 questions in one session, that cost 1.25x more than no CMLM (section 10).
-  - The same 100 questions in fresh 10-question sessions cost 1.31x less than one long session, at the same accuracy
-    (section 11). The CMLM keeps what was taught.
-  - If you must keep one long session, `OCM_COMPACT=1` cuts each readout to its top 3 items. That cut the pile-up
-    1.19x, but it still cost 1.05x more than no CMLM.
-- **Repeats still cost a read today.** The TEACH rule asks for the exact line, and agents read the file to confirm it
-  even when the readout held the answer. Only 6 of 100 questions were answered with no search (section 12).
-- **Deep dives** that chain across many files save little today: a taught question points at one line, not a whole
-  trail.
-- **Billed input falls less than requests**, because readouts add reading.
-- **Memory helps repeated questions, not new ones.** After a year of real teaching in 0.5.0, the right file came
-  first on 84 of 288 new questions, against 111 cold (top 5: 107 vs 197).
-  - 0.5.1's two fixes bring this to 99 (top 5: 176), and reworded repeats stay at 107 of 114.
+- **Savings depend on repetition.** On all-new, one-off work the saving is about 1.3x. Writing fixes and code review
+  barely benefit.
+- **Memory helps repeated questions, not new ones.** A remembered answer doesn't make it smarter at a different
+  question.
+  - In 0.5.0, a year of real teaching even made pointing on new questions worse: 84 vs 111 right file first, out of
+    288.
+  - 0.5.1 recovers most of it (99, with the top 5 at 176 vs 197), while reworded repeats stay at 107 of 114.
   - `OCM_RELATION_LIMIT=off` restores 0.5.0.
-  - Details: [evidence/learning-ablation](evidence/learning-ablation).
-- **The learned law rarely switches on for code,** and forced on it changed nothing.
-- **Taught vectors are append-only.** A rebuild carries them only with `--carry`: to the same line, or to the same line
-  reformatted (whitespace ignored), and `--prune-after N` drops a lesson whose line has been gone for N rebuilds in a
-  row. In our live test a carry over 400 commits kept 40 of 47 entries, but it did not save requests (section 13).
-- **The tests are narrow:** open-source code and one client app, with Claude agents and judges. Your codebase is the
-  real test.
+- **The learned law is experimental.** It rarely switches on, and forced on it changed nothing.
+- **Clear the session between tasks.** In one 100-question session, what the hook added piled up in the transcript
+  and cost 1.25x more than no Model D. The same questions in fresh sessions cost 1.31x less (results/RESULTS.md,
+  sections 10–11).
+- **Deep dives across many files save little:** a pointer marks one line, not a whole trail.
+- **The team server has no login yet,** and there is no SSO and no audit log. Run it inside your own network.
+- **Evidence:** mostly Python, plus one TypeScript project and one app with a React frontend. Every test was run by
+  us. Your codebase is the real test, which is why `forecast` and `prove` exist.
 
-## Public benchmarks
+---
 
-Model D's retrieval is compared with Graphify on LOCOMO and on finding the file a fix changed. On 285 SWE-bench Lite
-issues in 12 full repositories, with the code scope and the test plan fixed before it ran, Model D listed the fixed file
-in its first five 176 times (issue titles) and 183 times (title + 400 characters), against 131 and 122 for Graphify
-0.9.87, with about 2.4x fewer tokens (`evidence/swe-bench-lite/`). The study is reproducible, and the Claude Code
-plugin is in the same repository: https://github.com/devkancheti4-design/model-d-graphify
+## Pricing
+
+- **Open source, $0:** everything in this repository, Apache-2.0, self-hosted.
+- **Team, $49 per engineer per month:**
+  - we set up your team server;
+  - you get a monthly savings report from your own logs;
+  - you get priority fixes and a private support channel.
+
+  It starts with a free 2-week pilot measured on your real bill. If it doesn't save at least 1.5x, you owe nothing.
+- **Enterprise, by contract:** air-gapped installs, many repositories, and a guaranteed response time.
+
+Model D adds no model cost of its own, apart from the optional `cover`. It cuts the API bill you already pay.
+
+---
+
+## Evidence and reproducibility
+
+[`evidence/README.md`](evidence/README.md) lists every claim with its folder, plan and raw rows, including the
+predictions that failed.
+
+```bash
+python evidence/verify.py     # recomputes every number and checks all 627 evidence files against their hashes
+```
 
 ## Licence
 
@@ -327,11 +334,10 @@ Apache License 2.0 (see `LICENSE` and `NOTICE`).
 
 ## Cite
 
-If you use this work, please cite it:
-
 > Kancheti, D. (2026). *Optimal Context Mapping (Model D): a shared, learning retrieval layer for AI coding agents*
-> (Version 0.2.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23289068
+> [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23289067
 
-`CITATION.cff` has the same citation, and the DOI for all versions is 10.5281/zenodo.23289067.
+That DOI covers all versions; the archived record is version 0.2.1 (10.5281/zenodo.23289068). `CITATION.cff` has the
+same citation.
 
 Copyright 2026 Devieswar Kancheti.
