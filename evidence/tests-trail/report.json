@@ -1,0 +1,134 @@
+{
+ "claude-mem/q": {
+  "n": 50,
+  "off": {
+   "right_first": 13,
+   "top5": 24,
+   "line_top5": 7
+  },
+  "on": {
+   "right_first": 15,
+   "top5": 27,
+   "line_top5": 10
+  },
+  "grep": {
+   "right_first": 1,
+   "top5": 10
+  },
+  "paired_right_first": {
+   "on_only": 2,
+   "off_only": 0,
+   "p": 0.5
+  },
+  "changed": 39,
+  "exempt": 0
+ },
+ "django-cold/q": {
+  "n": 288,
+  "off": {
+   "right_first": 111,
+   "top5": 197
+  },
+  "on": {
+   "right_first": 133,
+   "top5": 204
+  },
+  "paired_right_first": {
+   "on_only": 22,
+   "off_only": 0,
+   "p": 4.77e-07
+  },
+  "changed": 221,
+  "exempt": 8
+ },
+ "django-taught/q": {
+  "n": 288,
+  "off": {
+   "right_first": 149,
+   "top5": 219
+  },
+  "on": {
+   "right_first": 153,
+   "top5": 220
+  },
+  "paired_right_first": {
+   "on_only": 4,
+   "off_only": 0,
+   "p": 0.125
+  },
+  "changed": 102,
+  "exempt": 8
+ },
+ "graphify/q": {
+  "n": 50,
+  "off": {
+   "right_first": 12,
+   "top5": 36,
+   "line_top5": 11
+  },
+  "on": {
+   "right_first": 21,
+   "top5": 37,
+   "line_top5": 13
+  },
+  "grep": {
+   "right_first": 19,
+   "top5": 40
+  },
+  "paired_right_first": {
+   "on_only": 9,
+   "off_only": 0,
+   "p": 0.00391
+  },
+  "changed": 48,
+  "exempt": 0
+ },
+ "hono/subject": {
+  "n": 241,
+  "off": {
+   "right_first": 79,
+   "top5": 179,
+   "line_top5": 79
+  },
+  "on": {
+   "right_first": 117,
+   "top5": 187,
+   "line_top5": 97
+  },
+  "grep": {
+   "right_first": 44,
+   "top5": 137
+  },
+  "paired_right_first": {
+   "on_only": 38,
+   "off_only": 0,
+   "p": 7.28e-12
+  },
+  "changed": 189,
+  "exempt": 1
+ },
+ "hono/bare": {
+  "n": 241,
+  "off": {
+   "right_first": 60,
+   "top5": 134,
+   "line_top5": 63
+  },
+  "on": {
+   "right_first": 74,
+   "top5": 145,
+   "line_top5": 74
+  },
+  "grep": {
+   "right_first": 39,
+   "top5": 102
+  },
+  "paired_right_first": {
+   "on_only": 14,
+   "off_only": 0,
+   "p": 0.000122
+  },
+  "changed": 197,
+  "exempt": 1
+ }
+}

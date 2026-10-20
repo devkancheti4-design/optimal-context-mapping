@@ -1,0 +1,1813 @@
+{
+ "repo": "thedotmack/claude-mem @ 9e4f313a",
+ "fixes": 50,
+ "model_d": {
+  "right_first": 15,
+  "top5": 27,
+  "lines_top5": 10
+ },
+ "grep": {
+  "right_first": 1,
+  "top5": 10
+ },
+ "tokens_per_readout": 859,
+ "rows": [
+  {
+   "hash": "606bb446a4",
+   "author": "author 1",
+   "question": "show merged worktree rows under the selected project",
+   "gold": [
+    "src/services/worker-types.ts",
+    "src/services/worker/PaginationHelper.ts",
+    "src/ui/viewer/App.tsx",
+    "src/ui/viewer/types.ts",
+    "src/ui/viewer/utils/sessions.ts"
+   ],
+   "first": [
+    "src/services/infrastructure/WorktreeAdoption.ts"
+   ],
+   "top5": [
+    "src/services/infrastructure/WorktreeAdoption.ts",
+    "src/services/sqlite/project-read-keys.ts",
+    "src/services/infrastructure/ProjectMerge.ts",
+    "src/services/sync/remap-outbox.ts",
+    "tests/worker/http/routes/search-by-file-projects.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 957,
+   "build_s": 5.3,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/infrastructure/WorktreeAdoption.ts"
+   ],
+   "from_memory": false,
+   "lessons": 0,
+   "carried": 0,
+   "taught": "src/ui/viewer/utils/sessions.ts"
+  },
+  {
+   "hash": "d1acf57500",
+   "author": "author 1",
+   "question": "show both savings amount and percent in the model's stats line",
+   "gold": [
+    "src/services/context/formatters/AgentFormatter.ts"
+   ],
+   "first": [
+    "src/services/context/formatters/HumanFormatter.ts"
+   ],
+   "top5": [
+    "src/services/context/formatters/HumanFormatter.ts",
+    "scripts/openrouter-price-history/build-dataset.py",
+    "plugin/skills/agent-cost-report/scripts/acr/costs.py",
+    "openclaw/skills/agent-cost-report/scripts/acr/costs.py",
+    "src/ui/viewer/types.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 966,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/context/formatters/HumanFormatter.ts"
+   ],
+   "from_memory": false,
+   "lessons": 1,
+   "carried": 1,
+   "taught": "src/services/context/formatters/AgentFormatter.ts"
+  },
+  {
+   "hash": "7eecaeaf29",
+   "author": "author 2",
+   "question": "guard concepts JSON in the context injection query",
+   "gold": [
+    "src/services/context/ObservationCompiler.ts"
+   ],
+   "first": [
+    "src/services/sqlite/SessionStore.ts"
+   ],
+   "top5": [
+    "src/services/sqlite/SessionStore.ts",
+    "src/servers/mcp-server.ts",
+    "src/services/worker/http/routes/SettingsRoutes.ts",
+    "openclaw/src/index.test.ts",
+    "tests/context/context-config-observation-filters.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 699,
+   "build_s": 2.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/sqlite/SessionStore.ts"
+   ],
+   "from_memory": false,
+   "lessons": 2,
+   "carried": 2,
+   "taught": "src/services/context/ObservationCompiler.ts"
+  },
+  {
+   "hash": "99093f61f6",
+   "author": "author 2",
+   "question": "stop caching a missing UI file for the life of the worker",
+   "gold": [
+    "src/services/worker/http/routes/ViewerRoutes.ts"
+   ],
+   "first": [
+    "src/cli/handlers/file-context.ts"
+   ],
+   "top5": [
+    "src/cli/handlers/file-context.ts",
+    "src/services/worker-spawner.ts",
+    "src/supervisor/shutdown.ts",
+    "src/services/worker-service.ts",
+    "src/npx-cli/utils/prune-cache.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 809,
+   "build_s": 2.8,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/cli/handlers/file-context.ts"
+   ],
+   "from_memory": false,
+   "lessons": 3,
+   "carried": 3,
+   "taught": "src/services/worker/http/routes/ViewerRoutes.ts"
+  },
+  {
+   "hash": "c63e556c39",
+   "author": "author 3",
+   "question": "track every unindexed row pending when bootstrap finds an empty collection",
+   "gold": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "first": [
+    "src/services/integrations/grok-bot-index-format.ts"
+   ],
+   "top5": [
+    "src/services/integrations/grok-bot-index-format.ts",
+    "src/services/sync/ChromaSync.ts",
+    "src/services/worker/search/SearchOrchestrator.ts",
+    "src/services/sqlite/SessionStore.ts",
+    "tests/services/sync/chroma-sync-corrupt-collection.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 1037,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/integrations/grok-bot-index-format.ts"
+   ],
+   "from_memory": false,
+   "lessons": 4,
+   "carried": 4,
+   "taught": "src/services/sync/ChromaSync.ts"
+  },
+  {
+   "hash": "8508178a2d",
+   "author": "author 1",
+   "question": "find .mcp.json at the installed plugin root for status and toggle",
+   "gold": [
+    "src/services/worker/http/routes/SettingsRoutes.ts"
+   ],
+   "first": [
+    "src/services/worker/http/routes/SettingsRoutes.ts"
+   ],
+   "top5": [
+    "src/services/worker/http/routes/SettingsRoutes.ts",
+    "src/npx-cli/commands/install.ts",
+    "src/services/integrations/OpenCodeInstaller.ts",
+    "src/services/integrations/T3CodeInstaller.ts",
+    "src/services/integrations/install-paths.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 907,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/services/worker/http/routes/SettingsRoutes.ts"
+   ],
+   "from_memory": false,
+   "lessons": 5,
+   "carried": 5,
+   "taught": "src/services/worker/http/routes/SettingsRoutes.ts"
+  },
+  {
+   "hash": "cdd6810e69",
+   "author": "author 4",
+   "question": "skip V2 setup when the context has no checkout directory",
+   "gold": [
+    "src/integrations/opencode-plugin/v2.ts"
+   ],
+   "first": [
+    "src/integrations/opencode-plugin/v2.ts"
+   ],
+   "top5": [
+    "src/integrations/opencode-plugin/v2.ts",
+    "src/services/transcripts/processor.ts",
+    "plugin/skills/agent-cost-report/scripts/acr/rollup.py",
+    "src/integrations/opencode-plugin/index.ts",
+    "tests/claude-md-git-paths.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 792,
+   "build_s": 2.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/integrations/opencode-plugin/v2.ts"
+   ],
+   "from_memory": false,
+   "lessons": 6,
+   "carried": 6,
+   "taught": "src/integrations/opencode-plugin/v2.ts"
+  },
+  {
+   "hash": "7c7d9f0c1d",
+   "author": "author 1",
+   "question": "render the worker's text results in search, recent and timeline commands",
+   "gold": [
+    "openclaw/src/index.ts"
+   ],
+   "first": [
+    "src/services/worker/SearchManager.ts"
+   ],
+   "top5": [
+    "src/services/worker/SearchManager.ts",
+    "src/integrations/dsh-plugin/dedupe.ts",
+    "src/services/worker/TimelineService.ts",
+    "claude-mem-cursor/skills/agent-cost-report/scripts/acr.py",
+    "src/npx-cli/commands/telemetry.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 999,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/worker/SearchManager.ts"
+   ],
+   "from_memory": false,
+   "lessons": 7,
+   "carried": 7,
+   "taught": "openclaw/src/index.ts"
+  },
+  {
+   "hash": "e04dba2c32",
+   "author": "author 1",
+   "question": "strip memory tags with whitespace before the closing > in server payloads",
+   "gold": [
+    "src/utils/tag-stripping.ts"
+   ],
+   "first": [
+    "src/services/integrations/grok-bot-index-format.ts"
+   ],
+   "top5": [
+    "src/services/integrations/grok-bot-index-format.ts",
+    "cowork/scripts/cmem-hook.mjs",
+    "src/server/generation/processGeneratedResponse.ts",
+    "src/services/worker/OpenAICompatProvider.ts",
+    "src/utils/tag-stripping.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 804,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/integrations/grok-bot-index-format.ts"
+   ],
+   "from_memory": false,
+   "lessons": 8,
+   "carried": 8,
+   "taught": "src/utils/tag-stripping.ts"
+  },
+  {
+   "hash": "40f253e33a",
+   "author": "author 5",
+   "question": "make the authenticated remote spool body limit configurable",
+   "gold": [
+    "src/services/worker-service.ts",
+    "src/services/worker/http/middleware.ts",
+    "src/services/worker/http/routes/HookSpoolRoutes.ts",
+    "src/shared/SettingsDefaultsManager.ts"
+   ],
+   "first": [
+    "src/shared/hook-spool-remote.ts"
+   ],
+   "top5": [
+    "src/shared/hook-spool-remote.ts",
+    "src/services/worker/http/routes/HookSpoolRoutes.ts",
+    "src/shared/openrouter-extra-body.ts",
+    "src/cli/spool-hook-event.ts",
+    "tests/cli/remote-spool-transport.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 677,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/shared/hook-spool-remote.ts"
+   ],
+   "from_memory": false,
+   "lessons": 9,
+   "carried": 9,
+   "taught": "src/services/worker/http/routes/HookSpoolRoutes.ts"
+  },
+  {
+   "hash": "85486d2092",
+   "author": "author 6",
+   "question": "rerank the full semantic candidate window before cutting mem_search to limit",
+   "gold": [
+    "src/services/worker/ProgressiveMemorySearch.ts"
+   ],
+   "first": [
+    "src/shared/progressive-search.ts"
+   ],
+   "top5": [
+    "src/shared/progressive-search.ts",
+    "src/services/worker/knowledge/CorpusBuilder.ts",
+    "src/services/worker/search/SearchOrchestrator.ts",
+    "tests/worker/search/semantic-pagination.test.ts",
+    "tests/worker/knowledge/corpus-budget-http.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 970,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/shared/progressive-search.ts"
+   ],
+   "from_memory": false,
+   "lessons": 10,
+   "carried": 10,
+   "taught": "src/services/worker/ProgressiveMemorySearch.ts"
+  },
+  {
+   "hash": "027d3ce976",
+   "author": "author 7",
+   "question": "remove the plugin data dir under CLAUDE_CONFIG_DIR",
+   "gold": [
+    "src/npx-cli/commands/uninstall.ts"
+   ],
+   "first": [
+    "plugin/skills/agent-cost-report/scripts/acr/snapshot.py"
+   ],
+   "top5": [
+    "plugin/skills/agent-cost-report/scripts/acr/snapshot.py",
+    "src/services/integrations/OpenCodeInstaller.ts",
+    "tests/integration/opencode-installer.test.ts",
+    "tests/env-isolation.test.ts",
+    "tests/plugin-version-check-ensure-deps.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 947,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "plugin/skills/agent-cost-report/scripts/acr/snapshot.py"
+   ],
+   "from_memory": false,
+   "lessons": 11,
+   "carried": 11,
+   "taught": "src/npx-cli/commands/uninstall.ts"
+  },
+  {
+   "hash": "f0d82a33a4",
+   "author": "author 8",
+   "question": "install a glibc-compatible build when the release asset needs GLIBC_2.39",
+   "gold": [
+    "src/services/smart-file-read/tree-sitter-cli-checksums.ts",
+    "src/services/smart-file-read/tree-sitter-cli-provision.ts",
+    "src/services/worker/tree-sitter-cli-provisioning.ts"
+   ],
+   "first": [
+    "openclaw/install.sh"
+   ],
+   "top5": [
+    "openclaw/install.sh",
+    "scripts/harness-plugin-build-options.js",
+    "src/shared/worker-utils.ts",
+    "src/services/integrations/OpenCodeInstaller.ts",
+    "openclaw/skills/agent-cost-report/scripts/acr.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 887,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "openclaw/install.sh"
+   ],
+   "from_memory": false,
+   "lessons": 12,
+   "carried": 12,
+   "taught": "src/services/smart-file-read/tree-sitter-cli-provision.ts"
+  },
+  {
+   "hash": "80a018f91e",
+   "author": "author 2",
+   "question": "skip ENOENT when a concurrent drain moved the file first",
+   "gold": [
+    "src/shared/hook-spool.ts"
+   ],
+   "first": [
+    "src/shared/hook-spool.ts"
+   ],
+   "top5": [
+    "src/shared/hook-spool.ts",
+    "src/cli/handlers/file-context.ts",
+    "scripts/worker-logs.cjs",
+    "src/shared/api-key-pool.ts",
+    "src/shared/hook-io.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 802,
+   "build_s": 2.5,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/shared/hook-spool.ts"
+   ],
+   "from_memory": false,
+   "lessons": 13,
+   "carried": 13,
+   "taught": "src/shared/hook-spool.ts"
+  },
+  {
+   "hash": "3f60181569",
+   "author": "author 1",
+   "question": "keep Chroma relevance order for session summaries and prompts",
+   "gold": [
+    "src/services/worker/SearchManager.ts"
+   ],
+   "first": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "top5": [
+    "src/services/sync/ChromaSync.ts",
+    "src/services/worker/SearchManager.ts",
+    "tests/integration/chroma-windows-lifecycle.test.ts",
+    "tests/worker/search-manager.test.ts",
+    "tests/services/sqlite/get-observations-by-ids-relevance.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 979,
+   "build_s": 2.5,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "from_memory": false,
+   "lessons": 14,
+   "carried": 14,
+   "taught": "src/services/worker/SearchManager.ts"
+  },
+  {
+   "hash": "339be5b70d",
+   "author": "author 1",
+   "question": "name the fish PATH line the installer wrote",
+   "gold": [
+    "src/launcher/install-launcher.ts"
+   ],
+   "first": [
+    "src/npx-cli/install/tool-path.ts"
+   ],
+   "top5": [
+    "src/npx-cli/install/tool-path.ts",
+    "openclaw/install.sh",
+    "openclaw/test-install.sh",
+    "src/launcher/install-launcher.ts",
+    "tests/launcher/install-launcher.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 808,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/npx-cli/install/tool-path.ts"
+   ],
+   "from_memory": false,
+   "lessons": 15,
+   "carried": 15,
+   "taught": "src/launcher/install-launcher.ts"
+  },
+  {
+   "hash": "711f9d99f6",
+   "author": "author 2",
+   "question": "catch a synchronous spawn throw in spawnGit",
+   "gold": [
+    "src/services/infrastructure/WorktreeAdoption.ts"
+   ],
+   "first": [
+    "src/services/worker-spawner.ts"
+   ],
+   "top5": [
+    "src/services/worker-spawner.ts",
+    "src/shared/worker-spawn-gate.ts",
+    "services/sync-api/src/user-queue.ts",
+    "src/shared/spawn.ts",
+    "src/supervisor/process-registry.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 986,
+   "build_s": 2.5,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/worker-spawner.ts"
+   ],
+   "from_memory": false,
+   "lessons": 16,
+   "carried": 16,
+   "taught": "src/services/infrastructure/WorktreeAdoption.ts"
+  },
+  {
+   "hash": "d7ed8bb5e7",
+   "author": "author 1",
+   "question": "redact GitHub ghu_ user-to-server tokens",
+   "gold": [
+    "src/utils/redaction.ts"
+   ],
+   "first": [
+    "scripts/pr-babysit-status.ts"
+   ],
+   "top5": [
+    "scripts/pr-babysit-status.ts",
+    "cowork/skills/agent-cost-report/scripts/acr/wins.py",
+    "plugin/skills/agent-cost-report/scripts/acr/wins.py",
+    "src/utils/redaction.ts",
+    "src/shared/SettingsDefaultsManager.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 980,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "scripts/pr-babysit-status.ts"
+   ],
+   "from_memory": false,
+   "lessons": 17,
+   "carried": 17,
+   "taught": "src/utils/redaction.ts"
+  },
+  {
+   "hash": "fdd41c52e8",
+   "author": "author 1",
+   "question": "reject unsupported tree-sitter CLI versions",
+   "gold": [
+    "src/services/smart-file-read/tree-sitter-bin-path.ts"
+   ],
+   "first": [
+    "src/services/smart-file-read/tree-sitter-cli-provision.ts"
+   ],
+   "top5": [
+    "src/services/smart-file-read/tree-sitter-cli-provision.ts",
+    "src/servers/mcp-server.ts",
+    "package.json",
+    "plugin/package.json",
+    "scripts/postinstall-allowlist.js"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 1070,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/smart-file-read/tree-sitter-cli-provision.ts"
+   ],
+   "from_memory": false,
+   "lessons": 18,
+   "carried": 18,
+   "taught": "src/services/smart-file-read/tree-sitter-bin-path.ts"
+  },
+  {
+   "hash": "636b87225d",
+   "author": "author 1",
+   "question": "read credentials from a BOM-prefixed ~/.claude-mem/.env",
+   "gold": [
+    "src/shared/EnvManager.ts"
+   ],
+   "first": [
+    "src/shared/EnvManager.ts"
+   ],
+   "top5": [
+    "src/shared/EnvManager.ts",
+    ".github/workflows/claude.yml",
+    "tests/shared/oauth-token.test.ts",
+    "tests/shared/settings-defaults-manager.test.ts",
+    "tests/transcripts/json-bom.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 792,
+   "build_s": 2.5,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/shared/EnvManager.ts"
+   ],
+   "from_memory": false,
+   "lessons": 19,
+   "carried": 19,
+   "taught": "src/shared/EnvManager.ts"
+  },
+  {
+   "hash": "8ac62b3e63",
+   "author": "author 1",
+   "question": "never store a fully private prompt as the session's user_prompt",
+   "gold": [
+    "src/services/sqlite/prompt-storage.ts"
+   ],
+   "first": [
+    "src/services/worker/http/routes/SessionRoutes.ts"
+   ],
+   "top5": [
+    "src/services/worker/http/routes/SessionRoutes.ts",
+    "src/services/sqlite/SessionStore.ts",
+    "src/services/worker/validation/PrivacyCheckValidator.ts",
+    "src/services/worker/ClaudeProvider.ts",
+    "tests/worker/http/routes/session-routes-init-checkout.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 761,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/worker/http/routes/SessionRoutes.ts"
+   ],
+   "from_memory": false,
+   "lessons": 20,
+   "carried": 20,
+   "taught": "src/services/sqlite/prompt-storage.ts"
+  },
+  {
+   "hash": "20886901bf",
+   "author": "author 9",
+   "question": "bound the FTS any-term fallback with the measured #4804 rules (builds on #4824)",
+   "gold": [
+    "src/services/sqlite/SessionSearch.ts"
+   ],
+   "first": [
+    "scripts/openrouter-price-history/build-dataset.py"
+   ],
+   "top5": [
+    "scripts/openrouter-price-history/build-dataset.py",
+    "src/services/worker/SearchManager.ts",
+    "tests/services/sqlite/search-fts-any-term.test.ts",
+    "tests/worker/http/routes/session-routes-cmem-gateway-fallback.test.ts",
+    "tests/services/sqlite/search-cjk-fallback.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 874,
+   "build_s": 2.5,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "scripts/openrouter-price-history/build-dataset.py"
+   ],
+   "from_memory": false,
+   "lessons": 21,
+   "carried": 21,
+   "taught": "src/services/sqlite/SessionSearch.ts"
+  },
+  {
+   "hash": "b31198df2b",
+   "author": "author 1",
+   "question": "read the viewer's worker log from the effective data directory",
+   "gold": [
+    "src/services/worker/http/routes/LogsRoutes.ts"
+   ],
+   "first": [
+    "scripts/worker-logs.cjs"
+   ],
+   "top5": [
+    "scripts/worker-logs.cjs",
+    "src/services/transcripts/processor.ts",
+    "src/shared/worker-spawn-gate.ts",
+    "src/services/worker-spawner.ts",
+    "tests/integration/chroma-windows-lifecycle.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 900,
+   "build_s": 2.5,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "scripts/worker-logs.cjs"
+   ],
+   "from_memory": false,
+   "lessons": 22,
+   "carried": 22,
+   "taught": "src/services/worker/http/routes/LogsRoutes.ts"
+  },
+  {
+   "hash": "4ba631847d",
+   "author": "author 9",
+   "question": "look past npx's own claude-mem when checking the hook launcher",
+   "gold": [
+    "src/npx-cli/commands/doctor.ts"
+   ],
+   "first": [
+    "src/npx-cli/commands/doctor.ts"
+   ],
+   "top5": [
+    "src/npx-cli/commands/doctor.ts",
+    "src/npx-cli/commands/install.ts",
+    "scripts/build-hooks.js",
+    "src/npx-cli/index.ts",
+    "src/npx-cli/commands/uninstall.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 752,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/npx-cli/commands/doctor.ts"
+   ],
+   "from_memory": false,
+   "lessons": 23,
+   "carried": 23,
+   "taught": "src/npx-cli/commands/doctor.ts"
+  },
+  {
+   "hash": "85a6dd3b8f",
+   "author": "author 1",
+   "question": "keep newest-first day order when rewriting the by-file timeline",
+   "gold": [
+    "src/cli/claude-md-commands.ts",
+    "src/utils/claude-md-utils.ts"
+   ],
+   "first": [
+    "src/shared/timeline-formatting.ts"
+   ],
+   "top5": [
+    "src/shared/timeline-formatting.ts",
+    "src/services/reinforcement/rank.ts",
+    "src/services/worker/http/routes/CorpusRoutes.ts",
+    "src/services/worker/SearchManager.ts",
+    "src/npx-cli/utils/prune-cache.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 878,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/shared/timeline-formatting.ts"
+   ],
+   "from_memory": false,
+   "lessons": 24,
+   "carried": 24,
+   "taught": "src/cli/claude-md-commands.ts"
+  },
+  {
+   "hash": "eacbab27cc",
+   "author": "author 2",
+   "question": "return 401 for a signed-out Claude CLI instead of a 500",
+   "gold": [
+    "src/services/worker/knowledge/KnowledgeAgent.ts"
+   ],
+   "first": [
+    "src/npx-cli/commands/install.ts"
+   ],
+   "top5": [
+    "src/npx-cli/commands/install.ts",
+    "src/shared/oauth-token.ts",
+    "scripts/translate-readme/cli.ts",
+    "workers/sync-hub/src/index.ts",
+    "workers/sync-hub/vitest.config.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 954,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/npx-cli/commands/install.ts"
+   ],
+   "from_memory": false,
+   "lessons": 25,
+   "carried": 25,
+   "taught": null
+  },
+  {
+   "hash": "de377c65b2",
+   "author": "author 2",
+   "question": "retry Windows EPERM renames and keep a failed checkpoint write from aborting backfill",
+   "gold": [
+    "src/services/sync/ChromaSyncState.ts",
+    "src/shared/atomic-json.ts",
+    "src/shared/observer-health.ts"
+   ],
+   "first": [
+    "cowork/scripts/cmem-hook.mjs"
+   ],
+   "top5": [
+    "cowork/scripts/cmem-hook.mjs",
+    "src/services/worker/SessionManager.ts",
+    "src/services/sync/ChromaSync.ts",
+    "workers/sync-hub/src/index.ts",
+    "src/services/transcripts/watcher.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 930,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "cowork/scripts/cmem-hook.mjs"
+   ],
+   "from_memory": false,
+   "lessons": 25,
+   "carried": 25,
+   "taught": "src/services/sync/ChromaSyncState.ts"
+  },
+  {
+   "hash": "7eaa528ef8",
+   "author": "author 2",
+   "question": "stop sending cloud sync auth pauses to error tracking",
+   "gold": [
+    "src/services/sync/CloudSync.ts"
+   ],
+   "first": [
+    "src/services/sync/CloudSync.ts"
+   ],
+   "top5": [
+    "src/services/sync/CloudSync.ts",
+    "src/services/sync/SyncClient.ts",
+    "tests/worker/sync/cloud-sync-health.test.ts",
+    "tests/observer-health.test.ts",
+    "tests/worker/sync/cloud-sync.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 736,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/services/sync/CloudSync.ts"
+   ],
+   "from_memory": false,
+   "lessons": 26,
+   "carried": 26,
+   "taught": "src/services/sync/CloudSync.ts"
+  },
+  {
+   "hash": "c9b79ecdaa",
+   "author": "author 10",
+   "question": "match zero directories in intermediate globstars",
+   "gold": [
+    "src/utils/project-filter.ts"
+   ],
+   "first": [
+    "src/utils/project-filter.ts"
+   ],
+   "top5": [
+    "src/utils/project-filter.ts",
+    "src/services/smart-file-read/search.ts",
+    "src/services/smart-file-read/tree-sitter-cli-conda.ts",
+    "scripts/check-hook-io-discipline.cjs",
+    "scripts/mirror-dir.cjs"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 936,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/utils/project-filter.ts"
+   ],
+   "from_memory": false,
+   "lessons": 27,
+   "carried": 27,
+   "taught": "src/utils/project-filter.ts"
+  },
+  {
+   "hash": "94f062ad7d",
+   "author": "author 2",
+   "question": "flag hook_failed escalations that read a pre-latch failure counter",
+   "gold": [
+    "src/npx-cli/commands/telemetry.ts",
+    "src/services/telemetry/scrub.ts",
+    "src/shared/worker-utils.ts"
+   ],
+   "first": [
+    "src/shared/worker-utils.ts"
+   ],
+   "top5": [
+    "src/shared/worker-utils.ts",
+    "scripts/eval-read-gate.ts",
+    "tests/cli/worker-failure-latch.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 878,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/shared/worker-utils.ts"
+   ],
+   "from_memory": false,
+   "lessons": 28,
+   "carried": 28,
+   "taught": "src/shared/worker-utils.ts"
+  },
+  {
+   "hash": "5d084e83d3",
+   "author": "author 1",
+   "question": "treat type=\"all\" as every category instead of an observation type",
+   "gold": [
+    "src/services/worker/SearchManager.ts"
+   ],
+   "first": [
+    "src/services/worker/SearchManager.ts"
+   ],
+   "top5": [
+    "src/services/worker/SearchManager.ts",
+    "src/ui/viewer/utils/category.ts",
+    "src/services/worker/search/SearchOrchestrator.ts",
+    "tests/worker/search/search-request-boundary.test.ts",
+    "tests/viewer/category.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 804,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/services/worker/SearchManager.ts"
+   ],
+   "from_memory": false,
+   "lessons": 29,
+   "carried": 29,
+   "taught": "src/services/worker/SearchManager.ts"
+  },
+  {
+   "hash": "a72fb47810",
+   "author": "author 1",
+   "question": "print search results text instead of the raw MCP wrapper",
+   "gold": [
+    "src/npx-cli/commands/runtime.ts"
+   ],
+   "first": [
+    "src/servers/mcp-text-format.ts"
+   ],
+   "top5": [
+    "src/servers/mcp-text-format.ts",
+    "src/shared/progressive-search.ts",
+    "src/servers/mcp-server.ts",
+    "plugin/scripts/mcp-server.cjs",
+    "cowork/scripts/cmem-hook.mjs"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 860,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/servers/mcp-text-format.ts"
+   ],
+   "from_memory": false,
+   "lessons": 30,
+   "carried": 30,
+   "taught": "src/npx-cli/commands/runtime.ts"
+  },
+  {
+   "hash": "398cd9e0c9",
+   "author": "author 2",
+   "question": "report why the compiled launcher and the Windows worker launch fail",
+   "gold": [
+    "src/launcher/install-launcher.ts",
+    "src/npx-cli/commands/doctor.ts",
+    "src/npx-cli/commands/install.ts",
+    "src/services/infrastructure/ProcessManager.ts",
+    "src/services/worker-spawner.ts"
+   ],
+   "first": [
+    "src/services/worker-spawner.ts"
+   ],
+   "top5": [
+    "src/services/worker-spawner.ts",
+    "src/shared/port-reclaim.ts",
+    "src/launcher/install-launcher.ts",
+    "plugin/scripts/worker-service.cjs",
+    "tests/services/worker-spawner.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 871,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/services/worker-spawner.ts"
+   ],
+   "from_memory": false,
+   "lessons": 31,
+   "carried": 31,
+   "taught": "src/launcher/install-launcher.ts"
+  },
+  {
+   "hash": "8c6c5ef35c",
+   "author": "author 2",
+   "question": "return 424 CLAUDE_CLI_SETUP_REQUIRED when no usable Claude CLI is found",
+   "gold": [
+    "src/services/worker/knowledge/KnowledgeAgent.ts"
+   ],
+   "first": [
+    "src/npx-cli/commands/install.ts"
+   ],
+   "top5": [
+    "src/npx-cli/commands/install.ts",
+    "src/shared/find-claude-executable.ts",
+    "src/services/worker-service.ts",
+    "tests/worker/dependency-preflight.test.ts",
+    "tests/worker/claude-setup-gate.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 868,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/npx-cli/commands/install.ts"
+   ],
+   "from_memory": false,
+   "lessons": 32,
+   "carried": 32,
+   "taught": "src/services/worker/knowledge/KnowledgeAgent.ts"
+  },
+  {
+   "hash": "fbb22d951b",
+   "author": "author 1",
+   "question": "cap the brief in UTF-16 units so it fits its reserve",
+   "gold": [
+    "src/shared/relayed-text.ts",
+    "src/shared/teambrain.ts"
+   ],
+   "first": [
+    "src/shared/transcript-parser.ts"
+   ],
+   "top5": [
+    "src/shared/transcript-parser.ts",
+    "src/utils/redaction.ts",
+    "src/services/work-view/human-copy.mjs",
+    "src/shared/teambrain.ts",
+    "tests/server/generation/summary-input-budget.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 654,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/shared/transcript-parser.ts"
+   ],
+   "from_memory": false,
+   "lessons": 33,
+   "carried": 33,
+   "taught": "src/shared/relayed-text.ts"
+  },
+  {
+   "hash": "4e89293195",
+   "author": "author 11",
+   "question": "register claude-mem under extensions, where Goose loads MCP servers",
+   "gold": [
+    "src/npx-cli/commands/uninstall.ts",
+    "src/services/integrations/McpIntegrations.ts"
+   ],
+   "first": [
+    "plugin/scripts/worker-service.cjs"
+   ],
+   "top5": [
+    "plugin/scripts/worker-service.cjs",
+    "src/services/integrations/McpIntegrations.ts",
+    "src/npx-cli/commands/ide-detection.ts",
+    "src/services/worker/CodexAppServerClient.ts",
+    "tests/servers/mcp-server-name-safety.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 677,
+   "build_s": 2.9,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "plugin/scripts/worker-service.cjs"
+   ],
+   "from_memory": false,
+   "lessons": 34,
+   "carried": 34,
+   "taught": "src/services/integrations/McpIntegrations.ts"
+  },
+  {
+   "hash": "cf0c7cdcc4",
+   "author": "author 9",
+   "question": "hand an out-of-budget hook reclaim to a detached daemon",
+   "gold": [
+    "src/shared/worker-utils.ts"
+   ],
+   "first": [
+    "src/shared/worker-utils.ts"
+   ],
+   "top5": [
+    "src/shared/worker-utils.ts",
+    "src/shared/port-reclaim.ts",
+    "src/server/runtime/ServerService.ts",
+    "src/services/infrastructure/ProcessManager.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 706,
+   "build_s": 2.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/shared/worker-utils.ts"
+   ],
+   "from_memory": false,
+   "lessons": 35,
+   "carried": 35,
+   "taught": "src/shared/worker-utils.ts"
+  },
+  {
+   "hash": "f4573bbd60",
+   "author": "author 2",
+   "question": "report a missing or unrunnable CLI correctly on musl",
+   "gold": [
+    "src/npx-cli/commands/doctor.ts",
+    "src/npx-cli/install/error-taxonomy.ts",
+    "src/npx-cli/install/setup-runtime.ts",
+    "src/servers/mcp-server.ts",
+    "src/services/smart-file-read/tree-sitter-bin-path.ts",
+    "src/services/smart-file-read/tree-sitter-cli-provision.ts"
+   ],
+   "first": [
+    "src/cli/handlers/file-context.ts"
+   ],
+   "top5": [
+    "src/cli/handlers/file-context.ts",
+    "openclaw/skills/agent-cost-report/scripts/acr/labels.py",
+    "scripts/pr-babysit-status.ts",
+    "openclaw/install.sh",
+    "src/services/smart-file-read/tree-sitter-cli-provision.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 829,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/cli/handlers/file-context.ts"
+   ],
+   "from_memory": false,
+   "lessons": 36,
+   "carried": 36,
+   "taught": "src/services/smart-file-read/tree-sitter-bin-path.ts"
+  },
+  {
+   "hash": "c566dbd74e",
+   "author": "author 1",
+   "question": "run project-scoped subcommands in the caller's directory",
+   "gold": [
+    "src/services/worker-service.ts"
+   ],
+   "first": [
+    "src/npx-cli/commands/server-jobs.ts"
+   ],
+   "top5": [
+    "src/npx-cli/commands/server-jobs.ts",
+    "cowork/skills/agent-cost-report/scripts/acr.py",
+    "src/server/routes/v1/ServerV1PostgresRoutes.ts",
+    "openclaw/skills/agent-cost-report/scripts/acr.py",
+    "src/utils/project-name.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 1096,
+   "build_s": 2.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/npx-cli/commands/server-jobs.ts"
+   ],
+   "from_memory": false,
+   "lessons": 37,
+   "carried": 37,
+   "taught": "src/services/worker-service.ts"
+  },
+  {
+   "hash": "1d51b6cfc2",
+   "author": "author 12",
+   "question": "isolate Claude plugin disable state",
+   "gold": [
+    "plugin/scripts/bun-runner.js",
+    "plugin/scripts/qoder-hook-launcher.cjs",
+    "src/shared/plugin-state.ts"
+   ],
+   "first": [
+    "openclaw/src/index.ts"
+   ],
+   "top5": [
+    "openclaw/src/index.ts",
+    "src/shared/plugin-state.ts",
+    "plugin/scripts/bun-runner.js",
+    "src/npx-cli/commands/uninstall.ts",
+    "workers/sync-hub/src/kill-switch.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 849,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "openclaw/src/index.ts"
+   ],
+   "from_memory": false,
+   "lessons": 38,
+   "carried": 38,
+   "taught": "src/shared/plugin-state.ts"
+  },
+  {
+   "hash": "23f1b61fc4",
+   "author": "author 1",
+   "question": "sweep app-server workdirs a dead worker left in the temp directory",
+   "gold": [
+    "src/services/worker/CodexAppServerClient.ts"
+   ],
+   "first": [
+    "src/supervisor/shutdown.ts"
+   ],
+   "top5": [
+    "src/supervisor/shutdown.ts",
+    "src/services/infrastructure/ProcessManager.ts",
+    "src/services/worker-spawner.ts",
+    "src/supervisor/orphan-chroma-sweep.ts",
+    "src/cli/adapters/kimi.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 860,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/supervisor/shutdown.ts"
+   ],
+   "from_memory": false,
+   "lessons": 39,
+   "carried": 39,
+   "taught": "src/services/worker/CodexAppServerClient.ts"
+  },
+  {
+   "hash": "5a6c94f973",
+   "author": "author 13",
+   "question": "delete a row's Chroma documents when the delete API removes it",
+   "gold": [
+    "src/services/sync/ChromaSync.ts",
+    "src/services/worker/http/routes/DataRoutes.ts"
+   ],
+   "first": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "top5": [
+    "src/services/sync/ChromaSync.ts",
+    "src/services/sync/SyncApply.ts",
+    "tests/worker/sync/sync-revision-lookup-response.test.ts",
+    "tests/services/sync/chroma-sqlite-id-lookup.test.ts",
+    "tests/worker/sync/sync-revision-reconcile.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 891,
+   "build_s": 2.5,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "from_memory": false,
+   "lessons": 40,
+   "carried": 40,
+   "taught": "src/services/sync/ChromaSync.ts"
+  },
+  {
+   "hash": "041d5ecbf8",
+   "author": "author 14",
+   "question": "switch back to the recovered primary at the next message boundary",
+   "gold": [
+    "src/services/worker-types.ts",
+    "src/services/worker/SessionManager.ts",
+    "src/services/worker/http/routes/SessionRoutes.ts",
+    "src/services/worker/session/GeneratorExitHandler.ts",
+    "src/services/worker/session/GeneratorRunner.ts",
+    "src/services/worker/session/abort-reason.ts"
+   ],
+   "first": [
+    "src/services/worker/provider-dispatch.ts"
+   ],
+   "top5": [
+    "src/services/worker/provider-dispatch.ts",
+    "src/services/worker/CodexProvider.ts",
+    "src/services/worker/session/GeneratorRunner.ts",
+    "workers/sync-hub/src/control-plane-probe.ts",
+    "workers/sync-hub/src/kill-switch.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 957,
+   "build_s": 2.5,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/worker/provider-dispatch.ts"
+   ],
+   "from_memory": false,
+   "lessons": 41,
+   "carried": 41,
+   "taught": "src/services/worker/http/routes/SessionRoutes.ts"
+  },
+  {
+   "hash": "983d6b2584",
+   "author": "author 15",
+   "question": "linearize tag stripping to kill quadratic regex stalls",
+   "gold": [
+    "src/services/context/ObservationCompiler.ts",
+    "src/shared/advisor-transcript.ts",
+    "src/shared/transcript-parser.ts",
+    "src/utils/tag-stripping.ts"
+   ],
+   "first": [
+    "hermes/claude-mem/client.py"
+   ],
+   "top5": [
+    "hermes/claude-mem/client.py",
+    "src/services/telemetry/error-scrub.ts",
+    "cowork/scripts/cmem-hook.mjs",
+    "src/utils/tag-stripping.ts",
+    "src/services/worker/history-pruning.ts"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 737,
+   "build_s": 2.5,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/utils/tag-stripping.ts"
+   ],
+   "from_memory": true,
+   "lessons": 42,
+   "carried": 42,
+   "taught": "src/utils/tag-stripping.ts"
+  },
+  {
+   "hash": "25248f0adb",
+   "author": "author 16",
+   "question": "recognize npx's Windows cmd-shim when checking the hook launcher",
+   "gold": [
+    "src/npx-cli/commands/doctor.ts"
+   ],
+   "first": [
+    "src/npx-cli/commands/doctor.ts"
+   ],
+   "top5": [
+    "src/npx-cli/commands/doctor.ts",
+    "src/launcher/ensure-launcher.ts",
+    "src/npx-cli/commands/uninstall.ts",
+    "src/shared/spawn.ts",
+    "src/launcher/install-launcher.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 823,
+   "build_s": 2.5,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/npx-cli/commands/doctor.ts"
+   ],
+   "from_memory": true,
+   "lessons": 43,
+   "carried": 43,
+   "taught": "src/npx-cli/commands/doctor.ts"
+  },
+  {
+   "hash": "b5d3560713",
+   "author": "author 17",
+   "question": "edit config.yaml beside a byte-order mark and refuse an indented root",
+   "gold": [
+    "src/services/integrations/hermes-config-yaml.ts"
+   ],
+   "first": [
+    "src/services/integrations/hermes-config-yaml.ts"
+   ],
+   "top5": [
+    "src/services/integrations/hermes-config-yaml.ts",
+    "src/services/integrations/HermesInstaller.ts",
+    "tests/utils/tag-stripping.test.ts",
+    "tests/integrations/goose-mcp-config.test.ts",
+    "tests/transcripts/standalone-spool-retry-order.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 568,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/integrations/hermes-config-yaml.ts"
+   ],
+   "from_memory": false,
+   "lessons": 44,
+   "carried": 44,
+   "taught": "src/services/integrations/hermes-config-yaml.ts"
+  },
+  {
+   "hash": "6ef76845f8",
+   "author": "author 2",
+   "question": "log a corrupt-collection drop at warn level in live write catches",
+   "gold": [
+    "src/services/memory/save-memory.ts",
+    "src/services/sync/SyncApply.ts",
+    "src/services/worker/agents/ResponseProcessor.ts",
+    "src/services/worker/http/routes/DataRoutes.ts",
+    "src/services/worker/http/routes/MemoryIngestRoutes.ts",
+    "src/services/worker/http/routes/SessionRoutes.ts",
+    "src/services/worker/search/errors.ts"
+   ],
+   "first": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "top5": [
+    "src/services/sync/ChromaSync.ts",
+    "src/npx-cli/commands/doctor.ts",
+    "tests/services/sync/chroma-sync-corrupt-collection.test.ts"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 978,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "src/services/sync/ChromaSync.ts"
+   ],
+   "from_memory": false,
+   "lessons": 45,
+   "carried": 45,
+   "taught": null
+  },
+  {
+   "hash": "a3f030fe08",
+   "author": "author 2",
+   "question": "reject pending calls when chroma-mcp closes unexpectedly",
+   "gold": [
+    "src/services/sync/ChromaMcpManager.ts"
+   ],
+   "first": [
+    "src/services/sync/ChromaMcpManager.ts"
+   ],
+   "top5": [
+    "src/services/sync/ChromaMcpManager.ts",
+    "tests/services/sync/chroma-mcp-manager-singleton.test.ts"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 958,
+   "build_s": 2.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "src/services/sync/ChromaMcpManager.ts"
+   ],
+   "from_memory": false,
+   "lessons": 45,
+   "carried": 45,
+   "taught": "src/services/sync/ChromaMcpManager.ts"
+  },
+  {
+   "hash": "7d0ecdbfc6",
+   "author": "author 2",
+   "question": "recognize human requests written in any language",
+   "gold": [
+    "src/services/work-view/request-projection.mjs"
+   ],
+   "first": [
+    "openclaw/skills/agent-cost-report/scripts/acr/patterns.py"
+   ],
+   "top5": [
+    "openclaw/skills/agent-cost-report/scripts/acr/patterns.py",
+    "cowork/skills/agent-cost-report/scripts/acr/patterns.py",
+    "claude-mem-cursor/skills/agent-cost-report/scripts/acr/patterns.py",
+    "plugin/skills/agent-cost-report/scripts/acr/patterns.py",
+    "claude-mem-grok-bot/skills/agent-cost-report/scripts/acr/patterns.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 697,
+   "build_s": 2.5,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "openclaw/skills/agent-cost-report/scripts/acr/patterns.py"
+   ],
+   "from_memory": false,
+   "lessons": 46,
+   "carried": 46,
+   "taught": "src/services/work-view/request-projection.mjs"
+  },
+  {
+   "hash": "9e4f313a89",
+   "author": "author 18",
+   "question": "map context to SessionStart to preserve LLM prefix caching",
+   "gold": [
+    "src/cli/adapters/antigravity-cli.ts",
+    "src/services/integrations/AntigravityCliHooksInstaller.ts"
+   ],
+   "first": [
+    "plugin/scripts/worker-service.cjs"
+   ],
+   "top5": [
+    "plugin/scripts/worker-service.cjs",
+    "src/services/worker-service.ts",
+    "src/shared/context-cache.ts",
+    "src/supervisor/env-sanitizer.ts",
+    "cowork/test/run-tests.mjs"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 793,
+   "build_s": 2.6,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "plugin/scripts/worker-service.cjs"
+   ],
+   "from_memory": false,
+   "lessons": 47,
+   "carried": 47,
+   "taught": "src/services/integrations/AntigravityCliHooksInstaller.ts"
+  }
+ ],
+ "memory": {
+  "right_first": 16,
+  "top5": 27,
+  "lines_top5": 11,
+  "pointer_led": 2,
+  "pointer_right": 2,
+  "from_teammate": 2,
+  "taught": 48,
+  "authors": 18,
+  "lessons_at_end": 47,
+  "carried_at_end": 47
+ }
+}

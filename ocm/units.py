@@ -8,8 +8,9 @@ Model D's and Graphify's own output folders (modeld-out, graphify-out), version 
 lockfiles, binaries, minified bundles (*.min.js, *.min.css), .json data files over 2 MB, and anything that looks like a
 secret (.env files, keys, certificates, credential files). Every other code file is read, whatever its size (since
 0.5.2; before, anything over 512 KB was skipped). OCM_MAX_FILE_KB, or `modeld build --max-file-kb N`, sets a limit.
-Nothing is read outside the folders you pass."""
-import os
+Nothing is read outside the folders you pass. Test files are indexed like any code; is_test() names them, so a readout
+can put them after the code they test."""
+import os, re
 
 from .cmlm_vector.chunk import units as sentences
 
@@ -20,6 +21,8 @@ CODE = {".py", ".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs", ".a
 NAMED = {"Dockerfile", "Containerfile", "Makefile", "GNUmakefile", "Procfile", "Jenkinsfile", "Vagrantfile", "Rakefile", "Gemfile"}
 DOT_DIRS = {".github", ".vscode", ".devcontainer", ".circleci", ".gitlab"}
 DOCS = {".md", ".mdx", ".rst", ".txt", ".adoc"}
+TESTS = re.compile(r"(^|/)(tests|__tests__|spec|specs)/|^test/|(^|/)src/test/|(^|/)test_[^/]*\.py$|_test\.(py|go)$"
+                   r"|\.(test|spec)\.[a-z]+$|(^|/)conftest\.py$", re.I)   # a test/ folder only at the top: django/test/ is library code
 TOOL_OUT = ("modeld-out", "graphify-out")         # tools' own output folders (a workspace, a graph): never indexed
 SKIP_DIRS = {".git", ".hg", ".svn", "node_modules", "bower_components", "dist", "build", "out", ".next", ".nuxt", ".output",
              "venv", ".venv", "env", "__pycache__", ".mypy_cache", ".pytest_cache", "target", "vendor", ".idea",
@@ -45,6 +48,22 @@ def looks_secret(name):
 
 def named(f):
     return f in NAMED or f.split(".")[0] in ("Dockerfile", "Containerfile")
+
+
+def is_test(rel):
+    """Whether the file at this repository-relative path is a test: tests/, __tests__/ or spec/ anywhere, test/ at the
+    top (or Java's src/test/), test_*.py, *_test.py, *_test.go, *.test.ts, *.spec.js, conftest.py."""
+    return bool(TESTS.search(rel))
+
+
+def wanted(rel):
+    """Whether files() would keep the file at this repository-relative path, judged by its path alone (sizes are
+    checked when the file is read). Lets a caller fetch only what will be indexed, e.g. from a git commit."""
+    parts = rel.split("/"); f = parts[-1]; ext = os.path.splitext(f)[1].lower()
+    for d in parts[:-1]:
+        if d in SKIP_DIRS or (d.startswith(".") and d not in DOT_DIRS) or d.startswith(TOOL_OUT):
+            return False
+    return (ext in CODE or ext in DOCS or named(f)) and f not in LOCKS and not looks_secret(f) and ".min." not in f.lower()
 
 
 def files(roots):

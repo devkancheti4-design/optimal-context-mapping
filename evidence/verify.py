@@ -341,6 +341,24 @@ if os.path.isdir(f"{E}/learning-ablation"):
         line(f"{label}: new / repeats / coverage, right first", f"{tot(b, 'right1')} / {tot(r, 'right1')} of {len(r)} / {tot(a, 'right1')}", "results2_*.json")
         line(f"{label}: new / repeats / coverage, top 5", f"{tot(b, 'right5')} / {tot(r, 'right5')} / {tot(a, 'right5')}", "results2_*.json")
 
+# --- 11d. Tests after code (0.5.3), and the context graph across sessions (prove --learn) ---------------------------
+if os.path.isdir(f"{E}/tests-trail"):
+    section("Tests after code: every readout OFF (0.5.2) and ON (0.5.3), same workspace (evidence/tests-trail, METHOD.md)")
+    prereg("tests-trail", ["METHOD.md"], "HASHES.txt")                       # run.py changed by D1, before any Hono result
+    for name, qk in (("hono", "bare"), ("hono", "subject"), ("django-cold", "q"), ("django-taught", "q"), ("graphify", "q"), ("claude-mem", "q")):
+        R = [json.loads(l) for l in open(f"{E}/tests-trail/results_{name}.jsonl")]
+        hit = lambda files, gold: any(f == g or f.endswith("/" + g) for f in files for g in gold)
+        first = {arm: [hit(list(dict.fromkeys(i[0] for i in r["q"][qk][arm]))[:1], r["gold"]) for r in R] for arm in ("off", "on")}
+        n10, n01, p = mcnemar(first["on"], first["off"])
+        line(f"{name} ({qk}): right file first, OFF -> ON", f"{sum(first['off'])} -> {sum(first['on'])} of {len(R)}", "rows results_*.jsonl")
+        line(f"{name} ({qk}): paired (ON only / OFF only, p)", f"{n10} / {n01}, p = {p:.2g}", "rows results_*.jsonl")
+if os.path.isdir(f"{E}/prove-learn"):
+    section("The context graph across 50 fresh sessions: modeld prove --learn (evidence/prove-learn, exploratory)")
+    for name in ("graphify", "claude-mem"):
+        r = load(f"prove-learn/{name}.json"); rows_ = r["rows"]; last = rows_[-1]
+        line(f"{name}: lessons still found at the last fix", f"{last['carried']} of {last['lessons']}", "prove-learn rows")
+        line(f"{name}: right file first, cold -> with the graph", f"{sum(x['md_first'] for x in rows_)} -> {sum(x['mem_first'] for x in rows_)} of {len(rows_)}", "prove-learn rows")
+
 # --- 12. Every evidence file is present and unchanged ---------------------------------------------------------------
 section("Every file listed in MANIFEST.json, present with its recorded SHA-256")
 M = load("MANIFEST.json")

@@ -4,8 +4,10 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23289068.svg)](https://doi.org/10.5281/zenodo.23289068)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
-**Your AI coding agent pays to search the same code again and again. Model D tells it where to look, and never lets
-it pay twice for the same question.**
+**What your AI coding agent learns about your codebase lives in its context: gone when the session ends, and paid
+for again once the prompt cache expires (an hour at most on Claude). Model D keeps it on disk, as a context graph of
+the repository. It tells the agent where to look in every new session, and never lets it pay twice for the same
+question.**
 
 On a real team's year of work (Django's 288 fixes from 2022), the same Claude agent cost **2.09x less with Model D**
 (95% interval 1.84x–2.39x), at the same accuracy: 252 vs 253 right.
@@ -22,13 +24,14 @@ cd your-repo
 modeld forecast .                      # from your git history: how much of your work repeats, and the saving it predicts
 modeld prove .                         # replays your last 50 real bug fixes and checks whether Model D finds the code
                                        # each one changed, side by side with a plain search
+modeld prove . --learn                 # the same as a team over time: each fix a new session, every lesson kept on disk
 ```
 
 - **`forecast`** reads only `git log` and answers in about a second.
 - **`prove`** downloads a small embedding model once (about 440 MB) and maps your code on your machine. The first
   build takes minutes on a large repository; every later one takes seconds.
-- **Example:** on Hono (TypeScript, 241 real fixes), `prove` found the right file first 26% of the time against 16%
-  for grep, and in its top 5 56% against 42%.
+- **Example:** on Hono (TypeScript, 241 real fixes), `prove` found the right file first 31% of the time against 16%
+  for grep, and in its top 5 60% against 42%.
 
 ---
 
@@ -36,14 +39,18 @@ modeld prove .                         # replays your last 50 real bug fixes and
 
 **It is** a small layer under the coding agent you already use: Claude Code, Kiro, Codex, Gemini CLI, or any MCP
 client.
-1. **It maps your codebase once, on your machine.** Every piece of code becomes a 1,024-bit fingerprint.
+1. **It builds a context graph of your codebase, once, on your machine.** Every piece of code becomes a 1,024-bit
+   fingerprint, and every question your agents answer becomes a link from that question to the line that answered it.
+   The graph lives on disk, so it outlasts any session or cache, and a rebuild carries every link into the new code:
+   replaying Graphify's last 50 fixes as 50 fresh sessions, 45 of 46 links were still found at the end.
 2. **Before the agent spends a token, it points it to the likely code** (about 400–700 tokens), so the agent searches
    less. The pointing costs nothing: it is arithmetic, not a model call.
 3. **When the agent finds an answer, Model D pins the question to that line.** The same question later, in any
    wording, costs one cheap read ($0.0004) instead of a new search.
 4. **It stores pointers, never answers.** The agent always reads the current code, so nothing goes stale.
 
-**It is not** an agent. It does not write code, run tests or plan work; your agent does that. It saves most where
+**It is not** an agent. It does not write code, run tests or plan work; your agent does that. Nor is its graph a
+call or import graph: it links questions to code, and leaves the code's structure to the agent reading it. It saves most where
 work repeats: a team on one codebase, support questions, onboarding. It saves little on one-off questions, writing
 fixes or code review (see Limits).
 
@@ -62,7 +69,7 @@ Every test plan was written and hashed before it ran. The raw rows are in [`evid
 | The same question again, in other words | 5–10x cheaper | 228-question stream; Gemini, 3 runs ([gemini](evidence/gemini)) |
 | Repository Q&A benchmark | 2.22x cheaper, score 61.0 vs 65.3 out of 100; a retest with caching on both sides: 1.90x, 73.3 vs 75.9 | SWE-QA: 336 questions in 7 repositories; the retest on 91 ([claude-api](evidence/claude-api)) |
 | Brand-new, scattered bugs | 1.33–1.50x | 114 Django bugs; sympy, scikit-learn, pytest; matplotlib, sphinx, requests, flask |
-| A TypeScript codebase it had never seen (offline, no model) | right file first 26% vs 16% for grep; top 5 56% vs 42% | 241 real honojs/hono fixes, each against the code right before it ([new-codebase-hono](evidence/new-codebase-hono)) |
+| A TypeScript codebase it had never seen (offline, no model) | right file first 31% vs 16% for grep; top 5 60% vs 42% (0.5.2: 25%, 56%) | 241 real honojs/hono fixes, each against the code right before it ([new-codebase-hono](evidence/new-codebase-hono), [tests-trail](evidence/tests-trail)) |
 | Writing fixes | not cheaper ($0.197 vs $0.160 per fix) | 19 Django issues |
 | Code review | about 1.3x at most | SWR-Bench pilot, partial ([swr-pilot](evidence/swr-pilot)) |
 
@@ -77,10 +84,10 @@ Every test plan was written and hashed before it ran. The raw rows are in [`evid
 
 | | right file first |
 |---|---|
-| Model D, cold | 111 |
-| Model D, after learning the codebase once | 149 |
+| Model D 0.5.3, cold | **133** (0.5.2: 111) |
+| Model D 0.5.3, after learning the codebase once | **153** (0.5.2: 149) |
 | Graphify, as it prints its answer | 89 |
-| Graphify, read at its best by its own scores | 116, a tie with cold Model D |
+| Graphify, read at its best by its own scores | 116 (a tie with cold 0.5.2) |
 
 Model D hands over 390–735 tokens per answer, against Graphify's 1,537. Graphify's graph itself is accurate: only
 0.7% of its Python import edges were wrong.
@@ -110,6 +117,13 @@ question ──► router law picks the code (0 tokens) ──► learned code? 
   - it counts only when it clearly beats the code's own match (by 37 bits, the relation limit), so a merely similar
     question is not pulled to an old answer;
   - a taught pointer leads the readout, followed by the normal top four.
+- **Tests after code (0.5.3).** In a readout, test files come after the code they test, unless the question is about
+  tests. Before, a test file often led (23 of 50 readouts on Graphify, 73 of 241 on Hono), because a test names the
+  behaviour in the words of a bug report. With the same items reordered, right file first rose on every set, with no answer lost
+  ([tests-trail](evidence/tests-trail)):
+  - Django, cold: 111 → 133 of 288;
+  - Hono: 60 → 74 of 241;
+  - Graphify: 12 → 21 of 50.
 - **No summaries.** Model D never summarises code. What the model gets back is always the code itself, with its path
   and line.
 
@@ -162,7 +176,7 @@ modeld cover --workspace ~/ocm-workspace
 - **What it costs:** it shows an estimate and asks before spending (`--yes` skips the prompt, `--cap` sets a limit).
   Django's 23,976 pieces cost $0.97.
 - **What it did:** on 288 real questions it had never seen, the right file came first 142–149 times against 111 cold,
-  and the top 5 rose to 219 against 197.
+  and the top 5 rose to 219 against 197. With 0.5.3's tests-after-code, 153 against 133.
 - **After a rebuild:** run it again, and it writes questions only for new or changed code.
 
 ### 4. Serve it to your team
@@ -291,6 +305,9 @@ modeld measure compare ~/before-transcripts ~/after-transcripts     # the real b
     288.
   - 0.5.1 recovers most of it (99, with the top 5 at 176 vs 197), while reworded repeats stay at 107 of 114.
   - `OCM_RELATION_LIMIT=off` restores 0.5.0.
+- **Tests after code can hide a test that is the answer.** If the question doesn't say "test" (or spec, pytest,
+  fixture...), test files go last. In every measured set the answer was code, so this risk is unmeasured.
+  `OCM_TESTS_TRAIL=off` turns it off.
 - **The learned law is experimental.** It rarely switches on, and forced on it changed nothing.
 - **Clear the session between tasks.** In one 100-question session, what the hook added piled up in the transcript
   and cost 1.25x more than no Model D. The same questions in fresh sessions cost 1.31x less (results/RESULTS.md,

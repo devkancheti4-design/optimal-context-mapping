@@ -16,6 +16,9 @@ POST JSON to these paths (the hooks in ocm.loop and the MCP plugin call them):
             both take an optional "scope": "code" leaves documentation out (the DOCS files of ocm.units: .md, .mdx,
             .rst, .txt, .adoc) and ranks code, config and build files only, for questions whose answer is in code,
             such as a bug report; "all" (the default) ranks everything. OCM_SCOPE sets the default.
+            In either scope, test files come after the code they test (since 0.5.3), unless the question is about
+            tests (it says test, spec, pytest, jest, fixture and the like) or a taught pointer leads with one; the
+            readout keeps the same items. OCM_TESTS_TRAIL=off restores the vector order.
   /recall   {"query", "k"}          the k units nearest in meaning (k up to 10)
   /teach    {"pairs": [{"question", "at"}, ...]}
                                     "at" names the line the answer is on, as path:line (the first path:line in it is
@@ -39,8 +42,10 @@ from .cmlm_vector import Memory
 from .life import Life
 from .router import router as RL
 from .router import lanes as L
-from .units import DOCS, files as list_files
+from .units import DOCS, files as list_files, is_test
 
+TESTS_TRAIL = os.environ.get("OCM_TESTS_TRAIL", "").strip().lower() != "off"   # on since 0.5.3: evidence/tests-trail
+ABOUT_TESTS = re.compile(r"\b(tests?|testing|test\w+|specs?|pytest|unittest|jest|vitest|mocha|conftest|fixtures?)\b", re.I)
 NAMES = {0: "the code a taught question's vector points to (ranked by meaning, not verified: use it only if it answers the question)",
          1: "meaning", 2: "keyword matches", 3: "meaning and keyword matches", 4: "meaning, wider"}
 
@@ -62,6 +67,7 @@ class Workspace:
         n = min(self.meta["units"], len(m.texts))
         self.code = np.array([m.src[j] >= 0 and os.path.splitext(m.sources[m.src[j]]["path"])[1].lower() not in DOCS
                               for j in range(n)], bool)
+        self.test = np.array([m.src[j] >= 0 and is_test(m.sources[m.src[j]]["path"].split("/", 1)[-1]) for j in range(n)], bool)
         self.scope = os.environ.get("OCM_SCOPE", "all")
         lines = json.load(open(sp)) if os.path.exists(sp) else None
         for j in range(min(self.meta["units"], len(m.texts))):
@@ -190,6 +196,10 @@ class Workspace:
         else:
             out = rows[lane]
         out = [j for j in out if j < len(self.mem.texts)]
+        if TESTS_TRAIL and not ABOUT_TESTS.search(question):     # tests after the code they test; a taught pointer keeps the lead
+            lead, rest = (out[:1], out[1:]) if lane == 0 else ([], out)
+            test = lambda j: j < len(self.test) and bool(self.test[j])
+            out = lead + [j for j in rest if not test(j)] + [j for j in rest if test(j)]
         return f"(readout: {NAMES[lane]})\n\n" + "\n\n".join(self.fmt(j, i) for i, j in enumerate(out, 1))
 
     def handle(self, path, req):

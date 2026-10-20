@@ -1,0 +1,6 @@
+# Deviations from METHOD.md
+
+**D1 (2026-10-20, before any Hono result):** run.py read Hono's `gold_lines` with `ast.literal_eval`, but
+questions.json already stores them as JSON objects, so the Hono set stopped at its first question with a ValueError.
+Fixed to read them as they are. No other set was affected (Graphify and claude-mem take their lines from git, and
+Django has none). Nothing was recorded for Hono before the fix.

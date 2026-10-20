@@ -1,6 +1,6 @@
 """Smoke tests: build a workspace over the fixture repo, ask, teach in one batch, ask again in other words, and speak
 MCP. Needs the embedding model (downloaded once). Run: python -m pytest -q tests"""
-import json, os, shutil, tempfile
+import json, os, re, shutil, tempfile
 
 from ocm.build import build
 from ocm.mcp import handle
@@ -225,11 +225,34 @@ def test_forecast_reads_fixes_and_repetition_from_git_history():
 
 def test_prove_replays_each_fix_against_its_parent_and_scores_the_true_lines():
     from ocm import prove
-    r = prove.prove(_git_repo_with_fixes(), n=5, months=1, cache=os.path.join(tempfile.mkdtemp(), "c.sqlite"), log=lambda *a: None)
+    repo = _git_repo_with_fixes()
+    r = prove.prove(repo, n=5, months=1, cache=os.path.join(tempfile.mkdtemp(), "c.sqlite"), log=lambda *a: None)
+    import subprocess
+    assert subprocess.run(["git", "-C", repo, "status", "--porcelain"], capture_output=True, text=True).stdout == ""   # repo untouched
     assert r["fixes"] == 2 and [x["gold"] for x in r["rows"]] == [["src/config.py"], ["src/config.py"]]
     assert r["rows"][0]["question"] == "retry a failed card charge one more time"         # "fix:" removed
     assert r["rows"][1]["question"] == "wait longer between charge retries"               # "fix(config):" removed
     assert r["model_d"]["right_first"] >= 1 and r["model_d"]["lines_top5"] >= 1
+
+
+def test_prove_learn_carries_each_fix_lesson_into_later_commits_and_a_teammate_question_finds_it():
+    import subprocess
+    from ocm import prove
+    repo = os.path.join(tempfile.mkdtemp(), "shop"); shutil.copytree(os.path.join(HERE, "fixture_repo"), repo)
+    g = lambda who, *a: subprocess.run(["git", "-C", repo, "-c", f"user.name={who}", "-c", "user.email=t@t", *a], check=True, capture_output=True)
+    g("ana", "init", "-q"); g("ana", "add", "-A"); g("ana", "commit", "-qm", "the shop")
+    for who, old, new, msg in [("ana", "MAX_CHARGE_RETRIES = 3", "MAX_CHARGE_RETRIES = 4", "fix: retry a failed card charge one more time"),
+                               ("ben", "MAX_CHARGE_RETRIES = 4", "MAX_CHARGE_RETRIES = 5", "fix: retry a failed card charge two more times")]:
+        p = os.path.join(repo, "src", "config.py"); text = open(p).read()
+        open(p, "w").write(text.replace(old, new))
+        g(who, "commit", "-qam", msg)
+    r = prove.prove(repo, n=5, months=1, cache=os.path.join(tempfile.mkdtemp(), "c.sqlite"), log=lambda *a: None, learn=True)
+    assert subprocess.run(["git", "-C", repo, "status", "--porcelain"], capture_output=True, text=True).stdout == ""
+    first, second = r["rows"]
+    assert not first["from_memory"] and first["taught"] == "src/config.py"         # nothing taught before the first fix
+    assert second["lessons"] == 1 and second["carried"] == 1                       # ana's lesson, found in the next commit
+    assert second["from_memory"] and second["mem_first"], second                    # ben's question finds it
+    assert r["memory"]["from_teammate"] == 1 and r["memory"]["authors"] == 2
 
 
 def test_every_code_file_is_read_whatever_its_size_but_not_minified_bundles_or_data_dumps():
@@ -255,3 +278,26 @@ def test_every_typescript_and_javascript_module_kind_is_read():
     for n in names:
         open(os.path.join(root, n), "w").write("export const value = 1\n")
     assert sorted(rel.split("/", 1)[1] for _, rel, _ in files({"r": root})) == sorted(names)
+
+
+def test_tests_come_after_the_code_they_test_unless_the_question_is_about_tests():
+    from ocm import server as SV
+    from ocm.units import is_test
+    assert is_test("tests/test_charge.py") and is_test("src/charge.test.ts") and is_test("test/app.js")
+    assert not is_test("django/test/client.py") and not is_test("src/latest.py")   # a library test/ package is code
+    root = tempfile.mkdtemp(); os.makedirs(os.path.join(root, "src")); os.makedirs(os.path.join(root, "tests"))
+    open(os.path.join(root, "src", "charge.py"), "w").write(
+        "MAX_CHARGE_RETRIES = 3\n\n\ndef charge(card):\n    return retry(card, MAX_CHARGE_RETRIES)\n")
+    open(os.path.join(root, "tests", "test_charge.py"), "w").write(
+        "def test_a_failed_card_charge_is_retried_three_times():\n    assert retries_after_a_failed_card_charge() == 3\n")
+    out = os.path.join(tempfile.mkdtemp(), "ws"); build([root], out, log=lambda *a: None); ws = Workspace(out)
+    cited = lambda q: [m.split(":")[0].split("/", 1)[1] for m in re.findall(r"(?m)^\d+\. \[([^\]]+)\]", ws.handle("ask", {"question": q, "scope": "code"}))]
+    q, about = "a failed card charge is retried three times", "the test for a failed card charge retried three times"
+    try:
+        SV.TESTS_TRAIL = False; off, about_off = cited(q), cited(about)
+        SV.TESTS_TRAIL = True; on, about_on = cited(q), cited(about)
+    finally:
+        SV.TESTS_TRAIL = True
+    assert off[0] == "tests/test_charge.py", off                               # by meaning alone the test leads
+    assert on[0] == "src/charge.py" and sorted(on) == sorted(off), on           # the same items, the code first
+    assert about_on == about_off                                                # a question about tests keeps the order

@@ -3760,5 +3760,95 @@
   "from": "token_claim.py",
   "sha256": "2534f8b2eb35de5425d78919140c185936165eacac2c434cab869827cd74e012",
   "pre-registered": false
+ },
+ {
+  "file": "tests-trail/HASHES.txt",
+  "from": "tests-trail/HASHES.txt",
+  "sha256": "16d5e347b82020c6d9b678ff5c086853465b848cc375ee8fed120b1491c2e7ac",
+  "pre-registered": true
+ },
+ {
+  "file": "tests-trail/METHOD.md",
+  "from": "tests-trail/METHOD.md",
+  "sha256": "9b0c4896f1f7b6d198ff820a238a6d12ee9643776584339d50d942fd251e9ece",
+  "pre-registered": true
+ },
+ {
+  "file": "tests-trail/METHOD.md.deviations",
+  "from": "tests-trail/METHOD.md.deviations",
+  "sha256": "56154ddf1b9143dedf1c0b64a8cefa42890e0231fbe40fbd20c4a59ac936a11f",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/RESULTS.md",
+  "from": "tests-trail/RESULTS.md",
+  "sha256": "07bee729105e52051540195bcfd8df9c9ae380591f8d4d8d312c9429db5e1eea",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/report.json",
+  "from": "tests-trail/report.json",
+  "sha256": "79eff2de6ee1c7bd1dfbfe408fda0d3c364d46f49306f528babcc659746b828a",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/results_claude-mem.jsonl",
+  "from": "tests-trail/results_claude-mem.jsonl",
+  "sha256": "353abeda458bdc83ea7dcae924fe58b30073c4e26468634ddca0e80d0b543f26",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/results_django-cold.jsonl",
+  "from": "tests-trail/results_django-cold.jsonl",
+  "sha256": "2842bb122a98a0e24518cb5faacd935d709ffce68daf522cfb00fbac90d41f56",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/results_django-taught.jsonl",
+  "from": "tests-trail/results_django-taught.jsonl",
+  "sha256": "8fc1172caa786c1abfa133226804db5ff71526085f5b1f59c808ee5c445098a0",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/results_graphify.jsonl",
+  "from": "tests-trail/results_graphify.jsonl",
+  "sha256": "6f9562a2c4e4ec74dafb06def90c910db142551300a16e3bcdbc417e2a4add79",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/results_hono.jsonl",
+  "from": "tests-trail/results_hono.jsonl",
+  "sha256": "b9b61f3ded075e792b434d82ba03ccb167708c671cb7131114df6a7c0b55686f",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/run.py",
+  "from": "tests-trail/run.py",
+  "sha256": "4095f478387c223ddfc5aad12d1c3a405069bdc299f9924b05358140d96a2d7a",
+  "pre-registered": false
+ },
+ {
+  "file": "tests-trail/score.py",
+  "from": "tests-trail/score.py",
+  "sha256": "4d00a0e02273bd05ab20303603d961b0a3e164ca991a7c7a9a6d1724aafa9cbb",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-learn/RESULTS.md",
+  "from": "prove-learn/RESULTS.md",
+  "sha256": "021260a4958e57a820fef747114afe4431fea66b5ef2cce2f04e24354241c764",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-learn/claude-mem.json",
+  "from": "prove-learn/claude-mem.json",
+  "sha256": "baf4db85fc18aa76082d10daaa8afbc69b307b22b3265f71bc0409b9067bf33c",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-learn/graphify.json",
+  "from": "prove-learn/graphify.json",
+  "sha256": "2372eda26a6703a2adf733a008dcbe0df30b0d019de53123b9a98128f0b2d9c4",
+  "pre-registered": false
  }
 ]

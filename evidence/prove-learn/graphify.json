@@ -1,0 +1,1782 @@
+{
+ "repo": "Graphify-Labs/graphify @ 86c57be8",
+ "fixes": 50,
+ "model_d": {
+  "right_first": 21,
+  "top5": 37,
+  "lines_top5": 13
+ },
+ "grep": {
+  "right_first": 19,
+  "top5": 40
+ },
+ "tokens_per_readout": 835,
+ "rows": [
+  {
+   "hash": "750b564285",
+   "author": "author 1",
+   "question": "preserve earlier binary URL captures",
+   "gold": [
+    "graphify/ingest.py"
+   ],
+   "first": [
+    "graphify/detect.py"
+   ],
+   "top5": [
+    "graphify/detect.py",
+    "graphify/ingest.py",
+    "worked/httpx/raw/auth.py",
+    "graphify/extractors/pascal_forms.py",
+    "tests/test_cache.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 648,
+   "build_s": 11.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/detect.py"
+   ],
+   "from_memory": false,
+   "lessons": 0,
+   "carried": 0,
+   "taught": "graphify/ingest.py"
+  },
+  {
+   "hash": "9aa9d03aa5",
+   "author": "author 2",
+   "question": "don't count gate-failing implementers toward confidence",
+   "gold": [
+    "graphify/interface_dispatch.py"
+   ],
+   "first": [
+    "graphify/interface_dispatch.py"
+   ],
+   "top5": [
+    "graphify/interface_dispatch.py",
+    "graphify/validate.py",
+    "worked/rsl-siege-manager/graph.json",
+    "tests/test_evidence_binding.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 884,
+   "build_s": 4.0,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/interface_dispatch.py"
+   ],
+   "from_memory": false,
+   "lessons": 1,
+   "carried": 1,
+   "taught": "graphify/interface_dispatch.py"
+  },
+  {
+   "hash": "6d64681bd9",
+   "author": "author 3",
+   "question": "drop Kotlin generic type parameters from references",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/serve.py",
+    "graphify/extractors/go.py",
+    "tests/test_languages.py",
+    "tests/test_go_generic_type_params.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 953,
+   "build_s": 7.2,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 2,
+   "carried": 2,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "836fb8ff9c",
+   "author": "author 3",
+   "question": "drop Scala generic type parameters from references",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/serve.py",
+    "tests/test_scala_top_level_binding.py",
+    "tests/test_go_generic_type_params.py",
+    "tests/test_kotlin_generic_type_params.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 780,
+   "build_s": 3.8,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 3,
+   "carried": 3,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "5299fb1e81",
+   "author": "author 3",
+   "question": "drop C++ template type parameters from references",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/serve.py",
+    "graphify/extract.py",
+    "tests/test_csharp_type_resolution.py",
+    "tests/test_csharp_tuple_type_refs.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 995,
+   "build_s": 2.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 4,
+   "carried": 4,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "786e8868a0",
+   "author": "author 3",
+   "question": "drop Swift generic type parameters from references",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/serve.py",
+    "tests/test_kotlin_generic_type_params.py",
+    "tests/test_languages.py",
+    "tests/test_go_generic_type_params.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 704,
+   "build_s": 3.2,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 5,
+   "carried": 5,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "810a02ef28",
+   "author": "author 1",
+   "question": "reject incomplete Objective-C enum macro parses",
+   "gold": [
+    "graphify/extractors/objc.py"
+   ],
+   "first": [
+    "graphify/extractors/objc.py"
+   ],
+   "top5": [
+    "graphify/extractors/objc.py",
+    "tests/test_objc_enum_declarations.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 528,
+   "build_s": 2.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/objc.py"
+   ],
+   "from_memory": false,
+   "lessons": 6,
+   "carried": 6,
+   "taught": null
+  },
+  {
+   "hash": "62094a7626",
+   "author": "author 1",
+   "question": "preserve attributed Objective-C enum members",
+   "gold": [
+    "graphify/extractors/objc.py"
+   ],
+   "first": [
+    "graphify/extractors/objc.py"
+   ],
+   "top5": [
+    "graphify/extractors/objc.py",
+    "tests/test_objc_enum_declarations.py",
+    "tests/test_csharp_enum_members.py",
+    "tests/test_java_enum_members.py",
+    "tests/test_typescript_enum_members.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 510,
+   "build_s": 2.2,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/objc.py"
+   ],
+   "from_memory": false,
+   "lessons": 6,
+   "carried": 6,
+   "taught": "graphify/extractors/objc.py"
+  },
+  {
+   "hash": "15d2312b03",
+   "author": "author 4",
+   "question": "fold a package's type into one node when its methods span files",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/resolution.py"
+   ],
+   "first": [
+    "graphify/build.py"
+   ],
+   "top5": [
+    "graphify/build.py",
+    "graphify/dedup.py",
+    "graphify/file_slice.py",
+    "graphify/extractors/go.py",
+    "tests/test_multilang.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 835,
+   "build_s": 1.9,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/build.py"
+   ],
+   "from_memory": false,
+   "lessons": 7,
+   "carried": 7,
+   "taught": "graphify/extractors/resolution.py"
+  },
+  {
+   "hash": "87f8b25d0c",
+   "author": "author 4",
+   "question": "gate the declaration index on Go files, type the method's own receiver",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/go.py"
+   ],
+   "first": [
+    "graphify/csharp_dispatch.py"
+   ],
+   "top5": [
+    "graphify/csharp_dispatch.py",
+    "graphify/swift_dispatch.py",
+    "graphify/extract.py",
+    "graphify/extractors/engine.py",
+    "graphify/extractors/objc.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 1021,
+   "build_s": 1.9,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/csharp_dispatch.py"
+   ],
+   "from_memory": false,
+   "lessons": 8,
+   "carried": 8,
+   "taught": "graphify/extractors/go.py"
+  },
+  {
+   "hash": "e159d57c8a",
+   "author": "author 4",
+   "question": "type a receiver from its own function's scope before the flat table",
+   "gold": [
+    "graphify/extractors/go.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/extractors/go.py",
+    "graphify/extract.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 784,
+   "build_s": 2.0,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 9,
+   "carried": 9,
+   "taught": "graphify/extractors/go.py"
+  },
+  {
+   "hash": "bf13b63ca4",
+   "author": "author 4",
+   "question": "index only the JS/TS interop family for receiver typing",
+   "gold": [
+    "graphify/cross_repo_calls.py",
+    "graphify/extract.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/build.py",
+    "graphify/extract.py",
+    "tests/test_cross_language_call_resolution.py",
+    "tests/test_objc_member_calls.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 827,
+   "build_s": 2.2,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 10,
+   "carried": 9,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "8d5b139da4",
+   "author": "author 5",
+   "question": "keep a dropped-folder doc next to a top-level same-id file",
+   "gold": [
+    "graphify/dedup.py"
+   ],
+   "first": [
+    "graphify/cache.py"
+   ],
+   "top5": [
+    "graphify/cache.py",
+    "graphify/dedup.py",
+    "graphify/analyze.py",
+    "tests/test_cache.py",
+    "tests/test_dedup.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 976,
+   "build_s": 1.9,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/cache.py"
+   ],
+   "from_memory": false,
+   "lessons": 11,
+   "carried": 10,
+   "taught": "graphify/dedup.py"
+  },
+  {
+   "hash": "22124ba76d",
+   "author": "author 6",
+   "question": "classify Jinja templates as documents",
+   "gold": [
+    "graphify/detect.py",
+    "graphify/file_slice.py"
+   ],
+   "first": [
+    "worked/example/raw/api.py"
+   ],
+   "top5": [
+    "worked/example/raw/api.py",
+    "graphify/llm.py",
+    "graphify/detect.py",
+    "graphify/scip_ingest.py",
+    "tests/test_detect.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 693,
+   "build_s": 1.9,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "worked/example/raw/api.py"
+   ],
+   "from_memory": false,
+   "lessons": 12,
+   "carried": 11,
+   "taught": "graphify/file_slice.py"
+  },
+  {
+   "hash": "edb93314b0",
+   "author": "author 7",
+   "question": "walk enclosing scopes for module member calls",
+   "gold": [
+    "graphify/extract.py"
+   ],
+   "first": [
+    "graphify/extractors/elixir.py"
+   ],
+   "top5": [
+    "graphify/extractors/elixir.py",
+    "graphify/extractors/ocaml.py",
+    "graphify/extractors/csharp.py",
+    "graphify/extractors/engine.py",
+    "tests/test_indirect_call_block_scoped_shadow.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 967,
+   "build_s": 1.8,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/elixir.py"
+   ],
+   "from_memory": false,
+   "lessons": 13,
+   "carried": 12,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "642e4b8462",
+   "author": "author 7",
+   "question": "keep edges between kept nodes when edge source_file is undispatched",
+   "gold": [
+    "graphify/cache.py",
+    "graphify/llm.py"
+   ],
+   "first": [
+    "graphify/extractors/resolution.py"
+   ],
+   "top5": [
+    "graphify/extractors/resolution.py",
+    "graphify/dedup.py",
+    "graphify/build.py",
+    "graphify/llm.py",
+    "graphify/watch.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 973,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/resolution.py"
+   ],
+   "from_memory": false,
+   "lessons": 14,
+   "carried": 13,
+   "taught": "graphify/cache.py"
+  },
+  {
+   "hash": "ab8d63bf4c",
+   "author": "author 8",
+   "question": "salt colliding ids before the partial merge, so a half keeps its members",
+   "gold": [
+    "graphify/extract.py"
+   ],
+   "first": [
+    "graphify/extractors/go.py"
+   ],
+   "top5": [
+    "graphify/extractors/go.py",
+    "graphify/cluster.py",
+    "graphify/extractors/resolution.py",
+    "graphify/extractors/engine.py",
+    "graphify/cache.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 1058,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/go.py"
+   ],
+   "from_memory": false,
+   "lessons": 15,
+   "carried": 14,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "f41ec2ec26",
+   "author": "author 9",
+   "question": "never bind a nameless member-call receiver to a same-named method in the file",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "tests/test_csharp_member_calls.py",
+    "tests/test_csharp_enum_members.py",
+    "tests/test_extract.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 706,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 16,
+   "carried": 15,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "50436e7860",
+   "author": "author 9",
+   "question": "`new X()` never binds to a method that shares X's name",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/extractors/fortran.py",
+    "graphify/extractors/vbnet.py",
+    "graphify/extractors/rust.py",
+    "tests/test_csharp_partial_classes.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 958,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 17,
+   "carried": 16,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "931ca2269a",
+   "author": "author 8",
+   "question": "keep names that differ only by `_` or case apart, in ids and in member-call keys",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/export.py"
+   ],
+   "top5": [
+    "graphify/export.py",
+    "graphify/extractors/engine.py",
+    "graphify/semantic_cleanup.py",
+    "graphify/extractors/resolution.py",
+    "tests/test_languages.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 963,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/export.py"
+   ],
+   "from_memory": false,
+   "lessons": 18,
+   "carried": 17,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "1331be175c",
+   "author": "author 2",
+   "question": "normalize a generic receiver type before building its id",
+   "gold": [
+    "graphify/extractors/go.py"
+   ],
+   "first": [
+    "graphify/ids.py"
+   ],
+   "top5": [
+    "graphify/ids.py",
+    "graphify/extractors/engine.py",
+    "worked/rsl-siege-manager/graph.json",
+    "tests/test_id_normalization_contract.py",
+    "tests/test_serve.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 797,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/go.py"
+   ],
+   "from_memory": true,
+   "lessons": 19,
+   "carried": 18,
+   "taught": "graphify/extractors/go.py"
+  },
+  {
+   "hash": "9cbb70a41c",
+   "author": "author 10",
+   "question": "sweep source-less placeholders orphaned by re-extraction",
+   "gold": [
+    "graphify/build.py"
+   ],
+   "first": [
+    "graphify/extract.py"
+   ],
+   "top5": [
+    "graphify/extract.py",
+    "graphify/build.py",
+    "graphify/extractors/pascal.py",
+    "graphify/cache.py",
+    "graphify/cli.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 907,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/ingest.py"
+   ],
+   "from_memory": true,
+   "lessons": 20,
+   "carried": 19,
+   "taught": null
+  },
+  {
+   "hash": "aa18a71c30",
+   "author": "author 10",
+   "question": "spare hyperedge members and pre-prune semantic isolates in orphan sweep",
+   "gold": [
+    "graphify/build.py"
+   ],
+   "first": [
+    "graphify/semantic_cleanup.py"
+   ],
+   "top5": [
+    "graphify/semantic_cleanup.py",
+    "graphify/cli.py",
+    "tests/test_prune_sweeps_orphans.py",
+    "tests/test_merge_sweeps_reextract_orphans.py",
+    "tests/test_cache.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 600,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/semantic_cleanup.py"
+   ],
+   "from_memory": false,
+   "lessons": 20,
+   "carried": 19,
+   "taught": "graphify/build.py"
+  },
+  {
+   "hash": "9dfe13254f",
+   "author": "author 11",
+   "question": "don't hand git the server's stdin in _git_head",
+   "gold": [
+    "graphify/export.py",
+    "graphify/watch.py"
+   ],
+   "first": [
+    "graphify/export.py"
+   ],
+   "top5": [
+    "graphify/export.py",
+    "graphify/watch.py",
+    "graphify/hooks.py",
+    "graphify/prs.py",
+    "graphify/serve.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 831,
+   "build_s": 1.9,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/export.py"
+   ],
+   "from_memory": false,
+   "lessons": 21,
+   "carried": 20,
+   "taught": "graphify/export.py"
+  },
+  {
+   "hash": "1af5104b68",
+   "author": "author 11",
+   "question": "shadow a file-scope callback's own params",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "tests/test_indirect_call_block_scoped_shadow.py",
+    "tests/test_indirect_call_function_expression_shadow.py",
+    "tests/test_js_callback_calls.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 905,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 22,
+   "carried": 21,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "ef1d256ec8",
+   "author": "author 11",
+   "question": "land a `use` on the declaration it imports",
+   "gold": [
+    "graphify/cache.py",
+    "graphify/extract.py",
+    "graphify/extractors/rust.py"
+   ],
+   "first": [
+    "graphify/extractors/resolution.py"
+   ],
+   "top5": [
+    "graphify/extractors/resolution.py",
+    "graphify/extractors/engine.py",
+    "graphify/extractors/rust.py",
+    "tests/test_rust_use_trees.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 796,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/resolution.py"
+   ],
+   "from_memory": false,
+   "lessons": 23,
+   "carried": 22,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "5faa05c852",
+   "author": "author 11",
+   "question": "only land a `use` rooted in this crate",
+   "gold": [
+    "graphify/extractors/rust.py"
+   ],
+   "first": [
+    "graphify/cargo_introspect.py"
+   ],
+   "top5": [
+    "graphify/cargo_introspect.py",
+    "tests/test_cargo_introspect.py",
+    "tests/test_rust_use_trees.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 1014,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extract.py"
+   ],
+   "from_memory": true,
+   "lessons": 24,
+   "carried": 23,
+   "taught": "graphify/extractors/rust.py"
+  },
+  {
+   "hash": "c29950f822",
+   "author": "author 5",
+   "question": "keep a symbol that spells a sibling's old file id on its own node",
+   "gold": [
+    "graphify/extract.py"
+   ],
+   "first": [
+    "graphify/extractors/dart.py"
+   ],
+   "top5": [
+    "graphify/extractors/dart.py",
+    "graphify/extract.py",
+    "graphify/dedup.py",
+    "graphify/extractors/engine.py",
+    "tests/test_python_import_resolution.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 876,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/dedup.py"
+   ],
+   "from_memory": true,
+   "lessons": 25,
+   "carried": 24,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "5fd413a057",
+   "author": "author 12",
+   "question": "scope class-field receiver types to the field's own class",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/extractors/go.py",
+    "tests/test_inherited_field_receivers.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 852,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 26,
+   "carried": 25,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "990ab1b75c",
+   "author": "author 12",
+   "question": "read `this.x` from the caller's class and its bases only, with constructor, accessor and static fields",
+   "gold": [
+    "graphify/cli.py",
+    "graphify/extract.py",
+    "graphify/extractors/engine.py",
+    "graphify/watch.py"
+   ],
+   "first": [
+    "graphify/extractors/base.py"
+   ],
+   "top5": [
+    "graphify/extractors/base.py",
+    "graphify/extract.py",
+    "graphify/extractors/engine.py",
+    "tests/test_csharp_member_calls.py",
+    "tests/test_csharp_type_resolution.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 1005,
+   "build_s": 1.8,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 27,
+   "carried": 26,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "a0587559ca",
+   "author": "author 7",
+   "question": "keep a community label when membership overlap stays a majority",
+   "gold": [
+    "graphify/cli.py",
+    "graphify/cluster.py",
+    "graphify/watch.py"
+   ],
+   "first": [
+    "graphify/cli.py"
+   ],
+   "top5": [
+    "graphify/cli.py",
+    "graphify/watch.py",
+    "graphify/dedup.py",
+    "worked/rsl-siege-manager/graph.json",
+    "tests/test_community_hub_labels.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 870,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/cli.py"
+   ],
+   "from_memory": false,
+   "lessons": 28,
+   "carried": 27,
+   "taught": "graphify/cli.py"
+  },
+  {
+   "hash": "08f5304ac7",
+   "author": "author 13",
+   "question": "pin source_file to the dispatched file in the extraction prompt",
+   "gold": [
+    "graphify/llm.py"
+   ],
+   "first": [
+    "graphify/llm.py"
+   ],
+   "top5": [
+    "graphify/llm.py",
+    "graphify/file_slice.py",
+    "graphify/cache.py",
+    "graphify/extractors/base.py",
+    "tests/test_partial_cache.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 675,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/llm.py"
+   ],
+   "from_memory": false,
+   "lessons": 29,
+   "carried": 28,
+   "taught": "graphify/llm.py"
+  },
+  {
+   "hash": "f97677d5d1",
+   "author": "author 11",
+   "question": "fall back to src/ when a workspace package's exports name only dist/",
+   "gold": [
+    "graphify/extractors/resolution.py"
+   ],
+   "first": [
+    "graphify/paths.py"
+   ],
+   "top5": [
+    "graphify/paths.py",
+    "tests/test_js_import_resolution.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 959,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/paths.py"
+   ],
+   "from_memory": false,
+   "lessons": 30,
+   "carried": 29,
+   "taught": "graphify/extractors/resolution.py"
+  },
+  {
+   "hash": "7b76ce3a97",
+   "author": "author 11",
+   "question": "drop the barrel-named import edge once the import resolves past it",
+   "gold": [
+    "graphify/extractors/resolution.py"
+   ],
+   "first": [
+    "graphify/extract.py"
+   ],
+   "top5": [
+    "graphify/extract.py",
+    "graphify/extractors/resolution.py",
+    "tests/test_js_import_resolution.py",
+    "tests/test_objc_member_calls.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 926,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extract.py"
+   ],
+   "from_memory": false,
+   "lessons": 31,
+   "carried": 30,
+   "taught": "graphify/extractors/resolution.py"
+  },
+  {
+   "hash": "6c81b838b5",
+   "author": "author 10",
+   "question": "only treat a valid .git as a VCS root",
+   "gold": [
+    "graphify/detect.py"
+   ],
+   "first": [
+    "graphify/detect.py"
+   ],
+   "top5": [
+    "graphify/detect.py",
+    "graphify/watch.py",
+    "graphify/hooks.py",
+    "tests/test_hooks.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 687,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/export.py"
+   ],
+   "from_memory": true,
+   "lessons": 32,
+   "carried": 31,
+   "taught": "graphify/detect.py"
+  },
+  {
+   "hash": "b3af356532",
+   "author": "author 5",
+   "question": "drop MERGE_HEAD guard from post-merge so real merges rebuild",
+   "gold": [
+    "graphify/hooks.py"
+   ],
+   "first": [
+    "graphify/watch.py"
+   ],
+   "top5": [
+    "graphify/watch.py",
+    "tests/test_build_merge_shrink_guard.py",
+    "tests/test_dedup.py",
+    "tests/test_watch.py",
+    "tests/test_hooks.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 784,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/watch.py"
+   ],
+   "from_memory": false,
+   "lessons": 33,
+   "carried": 32,
+   "taught": "graphify/hooks.py"
+  },
+  {
+   "hash": "74ed051be0",
+   "author": "author 5",
+   "question": "rebuild after cherry-pick, rebase and pull --rebase",
+   "gold": [
+    "graphify/__main__.py",
+    "graphify/hooks.py"
+   ],
+   "first": [
+    "graphify/build.py"
+   ],
+   "top5": [
+    "graphify/build.py",
+    "graphify/extract.py",
+    "graphify/hooks.py",
+    "tests/test_watch.py",
+    "tests/test_hooks.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 823,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/build.py"
+   ],
+   "from_memory": false,
+   "lessons": 34,
+   "carried": 33,
+   "taught": null
+  },
+  {
+   "hash": "627c49a770",
+   "author": "author 14",
+   "question": "salt module-level class ids that collide with a function or class",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/extract.py",
+    "graphify/extractors/pascal.py",
+    "graphify/extractors/resolution.py",
+    "tests/test_python_underscore_resolution.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 855,
+   "build_s": 1.8,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 34,
+   "carried": 33,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "70a600196f",
+   "author": "author 10",
+   "question": "keep class members that differ only by _, $ or # as separate nodes",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extract.py"
+   ],
+   "top5": [
+    "graphify/extract.py",
+    "graphify/extractors/resolution.py",
+    "graphify/extractors/engine.py",
+    "graphify/__main__.py",
+    "tests/test_csharp_enum_members.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 982,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 35,
+   "carried": 34,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "c4589a0c1b",
+   "author": "author 10",
+   "question": "don't guess between members the normalized key can't tell apart",
+   "gold": [
+    "graphify/extract.py"
+   ],
+   "first": [
+    "graphify/build.py"
+   ],
+   "top5": [
+    "graphify/build.py",
+    "worked/mixed-corpus/raw/analyze.py",
+    "graphify/cache.py",
+    "graphify/detect.py",
+    "graphify/dedup.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 768,
+   "build_s": 1.8,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 36,
+   "carried": 35,
+   "taught": "graphify/extract.py"
+  },
+  {
+   "hash": "d19401ebe5",
+   "author": "author 15",
+   "question": "infer field types from method assignments",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/objc.py"
+   ],
+   "top5": [
+    "graphify/extractors/objc.py",
+    "graphify/extract.py",
+    "graphify/extractors/engine.py",
+    "tests/test_languages.py",
+    "tests/test_java_enum_members.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 909,
+   "build_s": 1.8,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 37,
+   "carried": 36,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "4c65a7f09a",
+   "author": "author 15",
+   "question": "preserve ambiguous constructor assignment guard",
+   "gold": [
+    "graphify/extractors/engine.py"
+   ],
+   "first": [
+    "graphify/extractors/engine.py"
+   ],
+   "top5": [
+    "graphify/extractors/engine.py",
+    "graphify/symbol_resolution.py",
+    "graphify/watch.py",
+    "tests/test_cpp_objc_cross_file_calls.py",
+    "tests/test_hook_strict.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 1020,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": false,
+   "lessons": 38,
+   "carried": 37,
+   "taught": "graphify/extractors/engine.py"
+  },
+  {
+   "hash": "102fff9f15",
+   "author": "author 16",
+   "question": "keep same-file declarations whose names differ only by case apart",
+   "gold": [
+    "graphify/extractors/go.py",
+    "graphify/extractors/rust.py"
+   ],
+   "first": [
+    "graphify/export.py"
+   ],
+   "top5": [
+    "graphify/export.py",
+    "graphify/extract.py",
+    "graphify/extractors/engine.py",
+    "tests/test_export.py",
+    "tests/test_languages.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 993,
+   "build_s": 1.8,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extractors/engine.py"
+   ],
+   "from_memory": true,
+   "lessons": 39,
+   "carried": 38,
+   "taught": "graphify/extractors/rust.py"
+  },
+  {
+   "hash": "918483e6a3",
+   "author": "author 17",
+   "question": "resolve a forward reference to a type that keeps its id beside a case-only sibling",
+   "gold": [
+    "graphify/extractors/rust.py"
+   ],
+   "first": [
+    "graphify/extract.py"
+   ],
+   "top5": [
+    "graphify/extract.py",
+    "tests/test_multilang.py",
+    "tests/test_go_qualified_resolution.py",
+    "tests/test_ext_tagged_id_clash.py",
+    "tests/test_typescript_enum_members.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 707,
+   "build_s": 1.8,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/extract.py"
+   ],
+   "from_memory": false,
+   "lessons": 40,
+   "carried": 39,
+   "taught": "graphify/extractors/rust.py"
+  },
+  {
+   "hash": "f2f1b66c56",
+   "author": "author 5",
+   "question": "drop backticks bash ran inside Part C and the update merge",
+   "gold": [
+    "tools/skillgen/gen.py"
+   ],
+   "first": [
+    "tools/skillgen/gen.py"
+   ],
+   "top5": [
+    "tools/skillgen/gen.py",
+    "tests/test_skill_no_backtick_substitution.py",
+    "tests/test_opencode_plugin_refresh.py",
+    "tests/test_install.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 565,
+   "build_s": 1.7,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "tools/skillgen/gen.py"
+   ],
+   "from_memory": false,
+   "lessons": 41,
+   "carried": 40,
+   "taught": "tools/skillgen/gen.py"
+  },
+  {
+   "hash": "ea2bc68ba8",
+   "author": "author 5",
+   "question": "aider and devin code-only runs reach the merge",
+   "gold": [
+    "tools/skillgen/gen.py"
+   ],
+   "first": [
+    "graphify/extract.py"
+   ],
+   "top5": [
+    "graphify/extract.py",
+    "graphify/cross_repo_calls.py",
+    "graphify/cli.py",
+    "tests/test_php_receiver_member_calls.py",
+    "tests/test_serve.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 921,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/hooks.py"
+   ],
+   "from_memory": false,
+   "lessons": 42,
+   "carried": 41,
+   "taught": "tools/skillgen/gen.py"
+  },
+  {
+   "hash": "b4406d7cd7",
+   "author": "author 5",
+   "question": "aider and devin --update populate .graphify_detect.json",
+   "gold": [
+    "tools/skillgen/gen.py"
+   ],
+   "first": [
+    "worked/rsl-siege-manager/graph.json"
+   ],
+   "top5": [
+    "worked/rsl-siege-manager/graph.json",
+    "graphify/cli.py",
+    "tests/test_code_only_update_all_hosts.py",
+    "tests/test_skillgen.py",
+    "tests/test_skillgen_input_path_injection.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 623,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "worked/rsl-siege-manager/graph.json"
+   ],
+   "from_memory": false,
+   "lessons": 43,
+   "carried": 42,
+   "taught": "tools/skillgen/gen.py"
+  },
+  {
+   "hash": "97922b9c66",
+   "author": "author 18",
+   "question": "share the in-flight scan root via base, not graphify.extract",
+   "gold": [
+    "graphify/extract.py",
+    "graphify/extractors/base.py",
+    "graphify/extractors/markdown.py"
+   ],
+   "first": [
+    "graphify/extractors/markdown.py"
+   ],
+   "top5": [
+    "graphify/extractors/markdown.py",
+    "graphify/extract.py",
+    "graphify/build.py",
+    "graphify/cli.py",
+    "tests/test_extract.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 758,
+   "build_s": 1.8,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "graphify/extractors/markdown.py"
+   ],
+   "from_memory": false,
+   "lessons": 44,
+   "carried": 43,
+   "taught": "graphify/extractors/base.py"
+  },
+  {
+   "hash": "e2d2fddffb",
+   "author": "author 11",
+   "question": "dispatch Pi's semantic subagents as pi-subagents' delegate",
+   "gold": [
+    "tools/skillgen/gen.py"
+   ],
+   "first": [
+    "tools/skillgen/gen.py"
+   ],
+   "top5": [
+    "tools/skillgen/gen.py",
+    "graphify/swift_dispatch.py",
+    "graphify/extract.py",
+    "tests/test_skillgen.py",
+    "tests/test_skill_semantic_all_cached.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 705,
+   "build_s": 1.8,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "tools/skillgen/gen.py"
+   ],
+   "from_memory": false,
+   "lessons": 45,
+   "carried": 44,
+   "taught": "tools/skillgen/gen.py"
+  },
+  {
+   "hash": "3ab2cbabb4",
+   "author": "author 19",
+   "question": "preserve parallel edges through graph.json round-trip and MCP output",
+   "gold": [
+    "graphify/build.py",
+    "graphify/export.py",
+    "graphify/serve.py"
+   ],
+   "first": [
+    "graphify/multigraph_compat.py"
+   ],
+   "top5": [
+    "graphify/multigraph_compat.py",
+    "graphify/build.py",
+    "tests/test_hyperedge_roundtrip.py",
+    "tests/test_cli_export.py",
+    "tests/test_query_mcp_direction.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 889,
+   "build_s": 1.7,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "graphify/multigraph_compat.py"
+   ],
+   "from_memory": false,
+   "lessons": 46,
+   "carried": 45,
+   "taught": "graphify/serve.py"
+  }
+ ],
+ "memory": {
+  "right_first": 23,
+  "top5": 38,
+  "lines_top5": 12,
+  "pointer_led": 13,
+  "pointer_right": 7,
+  "from_teammate": 5,
+  "taught": 47,
+  "authors": 19,
+  "lessons_at_end": 46,
+  "carried_at_end": 45
+ }
+}
