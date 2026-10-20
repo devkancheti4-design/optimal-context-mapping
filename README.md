@@ -5,8 +5,8 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 **What your AI coding agent learns about your codebase lives in its context: gone when the session ends, and paid
-for again once the prompt cache expires (an hour at most on Claude). Model D keeps it on disk, as a context graph of
-the repository. It tells the agent where to look in every new session, and never lets it pay twice for the same
+for again once the prompt cache expires (an hour at most on Claude). Model D keeps it on disk, as Cortex D: a context
+graph of the repository. It tells the agent where to look in every new session, and never lets it pay twice for the same
 question.**
 
 On a real team's year of work (Django's 288 fixes from 2022), the same Claude agent cost **2.09x less with Model D**
@@ -25,6 +25,7 @@ modeld forecast .                      # from your git history: how much of your
 modeld prove .                         # replays your last 50 real bug fixes and checks whether Model D finds the code
                                        # each one changed, side by side with a plain search
 modeld prove . --learn                 # the same as a team over time: each fix a new session, every lesson kept on disk
+modeld cortex                          # see Cortex D, your repository's context graph, as a page that opens offline
 ```
 
 - **`forecast`** reads only `git log` and answers in about a second.
@@ -39,7 +40,7 @@ modeld prove . --learn                 # the same as a team over time: each fix 
 
 **It is** a small layer under the coding agent you already use: Claude Code, Kiro, Codex, Gemini CLI, or any MCP
 client.
-1. **It builds a context graph of your codebase, once, on your machine.** Every piece of code becomes a 1,024-bit
+1. **It builds Cortex D, a context graph of your codebase, once, on your machine.** Every piece of code becomes a 1,024-bit
    fingerprint, and every question your agents answer becomes a link from that question to the line that answered it.
    The graph lives on disk, so it outlasts any session or cache, and a rebuild carries every link into the new code:
    replaying Graphify's last 50 fixes as 50 fresh sessions, 45 of 46 links were still found at the end.
@@ -53,6 +54,32 @@ client.
 call or import graph: it links questions to code, and leaves the code's structure to the agent reading it. It saves most where
 work repeats: a team on one codebase, support questions, onboarding. It saves little on one-off questions, writing
 fixes or code review (see Limits).
+
+---
+
+## Cortex D: the context graph
+
+Cortex D is what Model D keeps between sessions, made visible with `modeld cortex`:
+- **every piece of code**, as a 1,024-bit meaning fingerprint;
+- **every question your agents answered**, linked to the exact line that answered it;
+- **files linked by meaning:** each file to its nearest files, whether or not either imports the other.
+
+It is built from the workspace in seconds, with no model calls. It lives on disk, so it outlasts the session, the
+prompt cache and the teammate who taught it, and a rebuild carries every link into the new code.
+
+**On Django** (the same commit Graphify 0.9.92 was run on):
+
+| | Graphify's knowledge graph | Cortex D |
+|---|---|---|
+| made of | 46,373 named nodes, 108,300 edges (calls, methods, imports) | 113,271 pieces of code, 23,770 question links, 6,945 meaning edges |
+| what a link means | how code is wired | what code means, and where an answer was found |
+| overlap | | 81% of its meaning edges join files Graphify does not link directly |
+| right file first, 288 real fixes | 89 (116 read at its best) | 133 cold, 153 after learning once |
+| tokens per answer | 1,537 | 597–735 |
+
+Graphify answers how things connect: call paths, what a change touches, architecture. Cortex D answers where the
+answer is, and remembers it. It never draws a call graph or a blast radius. Built in 1.9 s on Django
+([cortex-d](evidence/cortex-d), [tests-trail](evidence/tests-trail), [vs-graphify](evidence/vs-graphify)).
 
 ---
 

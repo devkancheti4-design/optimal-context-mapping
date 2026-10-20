@@ -1,0 +1,102 @@
+{
+ "graphify": {
+  "nodes": 46373,
+  "links": 108300,
+  "files": 2840,
+  "file_pairs_linked": 11665,
+  "relations": [
+   [
+    "calls",
+    28769
+   ],
+   [
+    "method",
+    24031
+   ],
+   [
+    "imports",
+    11136
+   ],
+   [
+    "contains",
+    9982
+   ],
+   [
+    "imports_from",
+    9584
+   ],
+   [
+    "rationale_for",
+    8428
+   ],
+   [
+    "uses",
+    5402
+   ],
+   [
+    "references",
+    4747
+   ],
+   [
+    "inherits",
+    4530
+   ],
+   [
+    "indirect_call",
+    1500
+   ],
+   [
+    "re_exports",
+    191
+   ]
+  ],
+  "built_at_commit": "0ab58c120939093fea90822f376e1866fc714d1f"
+ },
+ "cortex": {
+  "files": 3143,
+  "units": 113271,
+  "questions": 23770,
+  "meaning_edges": 6945,
+  "taught_edges": 23770,
+  "median_agreement_bits": 523,
+  "gap_bits": 74,
+  "k": 3
+ },
+ "meaning_edges_both_files_covered": 4726,
+ "graphify_links_them": 908,
+ "graphify_does_not": 3818,
+ "their_relations_where_linked": [
+  [
+   "imports_from",
+   791
+  ],
+  [
+   "imports",
+   743
+  ],
+  [
+   "calls",
+   467
+  ],
+  [
+   "uses",
+   357
+  ],
+  [
+   "inherits",
+   207
+  ],
+  [
+   "re_exports",
+   47
+  ],
+  [
+   "indirect_call",
+   38
+  ],
+  [
+   "references",
+   22
+  ]
+ ]
+}

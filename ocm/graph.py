@@ -1,7 +1,7 @@
-"""modeld graph: the context graph, the repository's DNA as Model D keeps it between sessions, written as JSON and as a
-page that opens offline.
+"""modeld cortex: Cortex D, the context graph of a repository, its DNA as Model D keeps it between sessions, written as
+JSON and as a page that opens offline. (`modeld graph` is the same command.)
 
-  modeld graph [workspace] [--out DIR] [--k 3] [--show 400]
+  modeld cortex [workspace] [--out DIR] [--k 3] [--show 400]
 
 What it holds:
 - **file nodes:** every file of the workspace. A file's fingerprint is the majority, bit by bit, of the 1,024-bit
@@ -15,7 +15,7 @@ What it holds:
 It is not a call or import graph. Model D never reads the code's structure; it leaves that to the agent reading the
 code. No model calls: every fingerprint is already in the workspace.
 
-Writes <out>/context-graph.json (everything) and <out>/context-graph.html. The page draws the `--show` files with the
+Writes <out>/cortex.json (everything) and <out>/cortex.html. The page draws the `--show` files with the
 most taught questions and meaning edges; click a file for its nearest files and its questions."""
 import argparse, datetime, json, os, sys
 
@@ -76,7 +76,7 @@ def context_graph(folder, k=3, log=print):
         edges.append({"source": qid, "target": nodes[i]["id"], "kind": "taught", "line": int(line)})
     stats = {"files": nf, "units": int(len(keep)), "questions": nq, "meaning_edges": len(seen),
              "taught_edges": nq, "median_agreement_bits": med, "gap_bits": GAP, "k": k}
-    log(f"context graph of {os.path.abspath(folder)}: {nf:,} files ({len(keep):,} pieces of code), {nq:,} taught "
+    log(f"Cortex D of {os.path.abspath(folder)}: {nf:,} files ({len(keep):,} pieces of code), {nq:,} taught "
         f"questions, {len(seen):,} meaning edges (k = {k}, at least {GAP} bits over the median {med})")
     return {"workspace": os.path.basename(os.path.abspath(folder)), "built": datetime.date.today().isoformat(),
             "stats": stats, "nodes": nodes, "edges": edges}
@@ -106,7 +106,7 @@ def page(g, show=400, per_file=40):
 
 
 PAGE = """<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Context graph</title><style>
+<title>Cortex D</title><style>
 :root{--bg:#fbfaf7;--fg:#1f1e1c;--mut:#6b6963;--line:#d9d6cc;--card:#fff;--q:#0f6e56;--accent:#534ab7}
 @media (prefers-color-scheme:dark){:root{--bg:#1c1b19;--fg:#ecebe6;--mut:#a3a199;--line:#3a3935;--card:#262522;--q:#5dcaa5;--accent:#afa9ec}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,sans-serif}
@@ -116,7 +116,7 @@ header p{margin:4px 0 0;color:var(--mut);font-size:13px}main{display:flex;flex-w
 border-left:1px solid var(--line);overflow:auto;max-height:calc(100vh - 70px)}input{width:100%;padding:7px 9px;border:1px solid var(--line);
 border-radius:8px;background:var(--card);color:var(--fg);font:inherit}h2{font-size:15px;font-weight:500;margin:14px 0 4px;word-break:break-all}
 .m{color:var(--mut);font-size:12px}ul{padding-left:18px;margin:6px 0}li{margin:3px 0}.q{color:var(--q)}a{color:var(--accent);cursor:pointer}
-</style></head><body><header><h1>Context graph</h1><p id="s"></p></header><main><canvas id="c"></canvas><aside>
+</style></head><body><header><h1>Cortex D</h1><p id="s"></p></header><main><canvas id="c"></canvas><aside>
 <input id="f" placeholder="Find a file"><div id="info"><p class="m">Files sized by the questions taught onto them, linked by
 meaning (not by imports). Click a file.</p></div></aside></main><script>
 const D=__DATA__,S=D.stats;document.getElementById('s').textContent=`${D.workspace}: ${S.files.toLocaleString()} files, `+
@@ -154,7 +154,7 @@ addEventListener('resize',fit);fit();
 
 def main(argv=None):
     from .cli import find_workspace
-    ap = argparse.ArgumentParser(prog="modeld graph", description=__doc__.split("\n\n")[0])
+    ap = argparse.ArgumentParser(prog="modeld cortex", description=__doc__.split("\n\n")[0])
     ap.add_argument("workspace", nargs="?"); ap.add_argument("--out"); ap.add_argument("--k", type=int, default=3)
     ap.add_argument("--show", type=int, default=400)
     a = ap.parse_args(argv)
@@ -163,9 +163,9 @@ def main(argv=None):
         sys.exit("no workspace here: run `modeld build .` first, or pass the workspace folder")
     g = context_graph(ws, a.k)
     out = a.out or ws; os.makedirs(out, exist_ok=True)
-    json.dump(g, open(os.path.join(out, "context-graph.json"), "w"))
-    open(os.path.join(out, "context-graph.html"), "w", encoding="utf-8").write(page(g, a.show))
-    print(f"  {os.path.join(out, 'context-graph.json')}\n  {os.path.join(out, 'context-graph.html')}  (opens offline)")
+    json.dump(g, open(os.path.join(out, "cortex.json"), "w"))
+    open(os.path.join(out, "cortex.html"), "w", encoding="utf-8").write(page(g, a.show))
+    print(f"  {os.path.join(out, 'cortex.json')}\n  {os.path.join(out, 'cortex.html')}  (opens offline)")
 
 
 if __name__ == "__main__":

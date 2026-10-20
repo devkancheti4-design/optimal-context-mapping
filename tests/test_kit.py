@@ -317,4 +317,4 @@ def test_graph_links_files_by_meaning_and_each_taught_question_to_its_line():
     assert [next(f["path"] for f in files if f["id"] == e["target"]) for e in taught] == ["src/config.py"]
     assert all(e["over_median"] >= graph.GAP for e in g["edges"] if e["kind"] == "meaning")
     html = graph.page(g)
-    assert "<title>Context graph</title>" in html and "src/config.py" in html and "http" not in html.split("<script>")[1]
+    assert "<title>Cortex D</title>" in html and "src/config.py" in html and "http" not in html.split("<script>")[1]

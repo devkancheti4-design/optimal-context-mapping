@@ -1,0 +1,76 @@
+{
+ "seed": 20261020,
+ "question": {
+  "id": 5129,
+  "queries": {
+   "q": "Where is the code behind this change: Propagated alters_data attribute to callables overridden in subclasses.",
+   "raw": "Propagated alters_data attribute to callables overridden in subclasses."
+  },
+  "gold": [
+   "django/contrib/contenttypes/fields.py",
+   "django/db/models/base.py",
+   "django/db/models/fields/files.py",
+   "django/db/models/fields/related_descriptors.py",
+   "django/db/models/query.py",
+   "django/db/models/utils.py",
+   "django/forms/models.py"
+  ],
+  "date": "2022-10-04"
+ },
+ "graphify_answer": "Graph: graphify-out/graph.json (46373 nodes) | Traversal: BFS depth=3 | Start: ['subclasses()', 'Data()', 'AttributeErrors are allowed to bubble when raised inside a change list view.\u2026', 'CallableSettingWrapper', 'OverriddenRedirectMiddlewareTests', 'AttributeSetter', 'CODE_OF_CONDUCT.md', 'ChangeListTests', '.test_alters_data()', 'A TypeError within a backend is propagated properly (#18171).', '._test_https_good_referer_behind_proxy()'] | 1815 nodes found\n\n[!] TRUNCATED: showing 60 of 1815 nodes (~2000-token budget). The answer may be among the 1755 cut nodes \u2014 raise the token budget to 61488 to get all 1815 (CLI: --budget 61488, MCP: token_budget=61488) or narrow the query (e.g. context_filter=['call'], or get_node for a specific symbol).\n\nNODE subclasses() [src=django/db/models/query_utils.py loc=L23 community=RegisterLookupMixin]\nNODE Data() [src=django/contrib/admin/static/admin/js/vendor/jquery/jquery.js loc=L4236 community=jquery.js]\nNODE AttributeErrors are allowed to bubble when raised inside a change list view.\u2026 [src=tests/admin_views/tests.py loc=L956 community=admin_views/admin.py]\nNODE CallableSettingWrapper [src=django/views/debug.py loc=L44 community=CallableSettingWrapper]\nNODE OverriddenRedirectMiddlewareTests [src=tests/redirects_tests/tests.py loc=L82 community=modify_settings]\nNODE AttributeSetter [src=django/contrib/postgres/fields/utils.py loc=L1 community=fields/ranges.py]\nNODE CODE_OF_CONDUCT.md [src=.github/CODE_OF_CONDUCT.md loc=L1 community=CODE_OF_CONDUCT.md]\nNODE ChangeListTests [src=tests/admin_changelist/tests.py loc=L55 community=ChangeListTests]\nNODE .test_alters_data() [src=tests/template_tests/test_callables.py loc=L42 community=CallableVariablesTests]\nNODE A TypeError within a backend is propagated properly (#18171). [src=tests/auth_tests/test_auth_backends.py loc=L681 community=BaseModelBackendTest]\nNODE ._test_https_good_referer_behind_proxy() [src=tests/csrf_tests/tests.py loc=L722 community=CsrfViewMiddleware]\nNODE override_settings [src=django/test/utils.py loc=L448 community=override_settings]\nNODE TestCase [src=django/test/testcases.py loc=L1145 community=TestCase]\nNODE User [src=django/contrib/auth/models.py loc=L392 community=TestCase]\nNODE isolate_apps [src=django/test/utils.py loc=L870 community=isolate_apps]\nNODE Context [src=django/template/context.py loc=L133 community=Context]\nNODE modify_settings [src=django/test/utils.py loc=L526 community=modify_settings]\nNODE CaptureQueriesContext [src=django/test/utils.py loc=L670 community=.connection]\nNODE RequestFactory [src=django/test/client.py loc=L308 community=RequestFactory]\nNODE CsrfViewMiddleware [src=django/middleware/csrf.py loc=L166 community=CsrfViewMiddleware]\nNODE jquery.js [src=django/contrib/admin/static/admin/js/vendor/jquery/jquery.js loc=L1 community=jquery.js]\nNODE admin_changelist/tests.py [src=tests/admin_changelist/tests.py loc=L1 community=ChangeListTests]\nNODE test_debug.py [src=tests/view_tests/tests/test_debug.py loc=L1 community=test_debug.py]\nNODE Site [src=django/contrib/sites/models.py loc=L78 community=modify_settings]\nNODE .process_view() [src=django/middleware/csrf.py loc=L411 community=CsrfViewMiddleware]\nNODE CsrfViewMiddlewareTestMixin [src=tests/csrf_tests/tests.py loc=L201 community=CsrfViewMiddleware]\nNODE ArrayField [src=django/contrib/postgres/fields/array.py loc=L18 community=ArrayField]\nNODE views/debug.py [src=django/views/debug.py loc=L1 community=core/exceptions.py]\nNODE query_utils.py [src=django/db/models/query_utils.py loc=L1 community=functional.py]\nNODE fields/array.py [src=django/contrib/postgres/fields/array.py loc=L1 community=test_array.py]\nNODE fields/ranges.py [src=django/contrib/postgres/fields/ranges.py loc=L1 community=fields/ranges.py]\nNODE post_form_view() [src=tests/csrf_tests/views.py loc=L63 community=CsrfViewMiddleware]\nNODE ._get_POST_request_with_token() [src=tests/csrf_tests/tests.py loc=L273 community=CsrfViewMiddleware]\nNODE BandAdmin [src=tests/admin_changelist/admin.py loc=L66 community=ModelAdminTests]\nNODE .process_request() [src=django/middleware/csrf.py loc=L398 community=CsrfViewMiddleware]\nNODE Exact [src=django/db/models/lookups.py loc=L302 community=Lookup]\nNODE redirects_tests/tests.py [src=tests/redirects_tests/tests.py loc=L1 community=modify_settings]\nNODE CookieStorage [src=django/contrib/messages/storage/cookie.py loc=L62 community=messages_tests/test_cookie.py]\nNODE IncorrectLookupParameters [src=django/contrib/admin/options.py loc=L71 community=ChangeList]\nNODE ._create_superuser() [src=tests/admin_changelist/tests.py loc=L62 community=ChangeListTests]\nNODE RangeField [src=django/contrib/postgres/fields/ranges.py loc=L43 community=fields/ranges.py]\nNODE ChildAdmin [src=tests/admin_changelist/admin.py loc=L45 community=ChangeListTests]\nNODE ._mocked_authenticated_request() [src=tests/admin_changelist/tests.py loc=L65 community=ChangeListTests]\nNODE .cleanse_setting() [src=django/views/debug.py loc=L96 community=ExceptionReporterFilterTests]\nNODE ConcertAdmin [src=tests/admin_changelist/admin.py loc=L99 community=ChangeListTests]\nNODE Redirect [src=django/contrib/redirects/models.py loc=L6 community=modify_settings]\nNODE EventAdmin [src=tests/admin_changelist/admin.py loc=L18 community=ChangeListTests]\nNODE .test_dynamic_list_display_links() [src=tests/admin_changelist/tests.py loc=L819 community=ChangeListTests]\nNODE Contains [src=django/db/models/lookups.py loc=L486 community=ChangeListTests]\nNODE ParentAdmin [src=tests/admin_changelist/admin.py loc=L33 community=ChangeListTests]\nNODE SwallowAdmin [src=tests/admin_changelist/admin.py loc=L149 community=ChangeListTests]\nNODE Parent [src=tests/admin_changelist/models.py loc=L11 community=ChangeListTests]\nNODE .test_changelist_view_list_editable_changed_objects_uses_filter() [src=tests/admin_changelist/tests.py loc=L1069 community=.connection]\nNODE .test_dynamic_list_display() [src=tests/admin_changelist/tests.py loc=L750 community=ChangeListTests]\nNODE .test_no_list_display_links() [src=tests/admin_changelist/tests.py loc=L840 community=ChangeListTests]\nNODE .test_result_list_empty_changelist_value() [src=tests/admin_changelist/tests.py loc=L192 community=ChangeListTests]\nNODE .test_result_list_html() [src=tests/admin_changelist/tests.py loc=L251 community=ChangeListTests]\nNODE .test_result_list_set_empty_value_display_in_model_admin() [src=tests/admin_changelist/tests.py loc=L229 community=ChangeListTests]\nNODE .test_result_list_set_empty_value_display_on_admin_site() [src=tests/admin_changelist/tests.py loc=L210 community=ChangeListTests]\nNODE .test_total_ordering_optimization() [src=tests/admin_changelist/tests.py loc=L1182 community=ChangeListTests]\n... (truncated \u2014 1755 more nodes cut by ~2000-token budget. Narrow with context_filter=['call'] or use get_node for a specific symbol)",
+ "graphify_files": [
+  "django/db/models/query_utils.py",
+  "django/contrib/admin/static/admin/js/vendor/jquery/jquery.js",
+  "tests/admin_views/tests.py",
+  "django/views/debug.py",
+  "tests/redirects_tests/tests.py",
+  "django/contrib/postgres/fields/utils.py",
+  ".github/CODE_OF_CONDUCT.md",
+  "tests/admin_changelist/tests.py",
+  "tests/template_tests/test_callables.py",
+  "tests/auth_tests/test_auth_backends.py",
+  "tests/csrf_tests/tests.py",
+  "django/test/utils.py",
+  "django/test/testcases.py",
+  "django/contrib/auth/models.py",
+  "django/template/context.py",
+  "django/test/client.py",
+  "django/middleware/csrf.py",
+  "tests/view_tests/tests/test_debug.py",
+  "django/contrib/sites/models.py",
+  "django/contrib/postgres/fields/array.py",
+  "django/contrib/postgres/fields/ranges.py",
+  "tests/csrf_tests/views.py",
+  "tests/admin_changelist/admin.py",
+  "django/db/models/lookups.py",
+  "django/contrib/messages/storage/cookie.py",
+  "django/contrib/admin/options.py",
+  "django/contrib/redirects/models.py",
+  "tests/admin_changelist/models.py"
+ ],
+ "model_d_cold": {
+  "text": "(readout: meaning and keyword matches)\n\n1. [django/django/utils/datastructures.py:221]\nclass ImmutableList(tuple):\n    \"\"\"\n    A tuple-like object that raises useful errors when it is asked to mutate.\n\n2. [django/django/db/models/fields/files.py:231]\n        self.storage = storage or default_storage\n        if callable(self.storage):\n            # Hold a reference to the callable for deconstruct().\n            self._storage_callable = self.storage\n            self.storage = self.storage()\n            if not isinstance(self.storage, Storage):\n                raise TypeError(\n                    \"%s.storage must be a subclass/instance of %s.%s\"\n\n3. [django/django/forms/models.py:474]\n    save.alters_data = True\n\n4. [django/tests/template_tests/test_callables.py:42]\n    def test_alters_data(self):\n\n5. [django/tests/template_tests/test_callables.py:44]\n        class Doodad:\n            alters_data = True\n\n6. [django/tests/urlpatterns/tests.py:332]\n    def test_resolve_type_error_propagates(self):\n        @DynamicConverter.register_to_python\n        def raises_type_error(value):\n            raise TypeError('This type error propagates.')\n        with self.assertRaisesMessage(TypeError, 'This type error propagates.'):\n            resolve('/dynamic/abc/')\n\n7. [django/tests/template_tests/test_callables.py:98]\n    def test_do_not_call_and_alters_data(self):\n        # If we combine ``alters_data`` and ``do_not_call_in_templates``, the\n        # ``alters_data`` attribute will not make any difference in the\n        # template system's behavior.\n\n8. [django/tests/template_tests/test_callables.py:103]\n        class Doodad:\n            do_not_call_in_templates = True\n            alters_data = True",
+  "files": [
+   "django/utils/datastructures.py",
+   "django/db/models/fields/files.py",
+   "django/forms/models.py",
+   "tests/template_tests/test_callables.py",
+   "tests/urlpatterns/tests.py"
+  ]
+ },
+ "model_d_taught": {
+  "text": "(readout: meaning and keyword matches)\n\n1. [django/django/contrib/gis/geos/mutable_list.py:1]\n# Copyright (c) 2008-2009 Aryeh Leib Taurog, all rights reserved.\n# Released under the New BSD license.\n\"\"\"\nThis module contains a base type which provides list-style mutations\nwithout specific data storage methods.\n\n2. [django/django/template/base.py:884]\n                if callable(current):\n                    if getattr(current, 'do_not_call_in_templates', False):\n                        pass\n                    elif getattr(current, 'alters_data', False):\n                        current = context.template.engine.string_if_invalid\n                    else:\n                        try:  # method call (assuming no args required)\n\n3. [django/django/views/debug.py:54]\n    def __repr__(self):\n        return repr(self._wrapped)\n\n4. [django/django/core/handlers/exception.py:21]\ndef convert_exception_to_response(get_response):\n    \"\"\"\n    Wrap the given get_response callable in exception-to-response conversion.\n\n5. [django/django/utils/decorators.py:70]\n        if not callable(method):\n            raise TypeError(\n                \"Cannot decorate '%s' as it isn't a callable attribute of \"\n                \"%s (%s).\" % (name, obj, method)\n            )\n        _wrapper = _multi_decorate(decorator, method)\n        setattr(obj, name, _wrapper)\n        return obj\n\n6. [django/django/utils/datastructures.py:221]\nclass ImmutableList(tuple):\n    \"\"\"\n    A tuple-like object that raises useful errors when it is asked to mutate.\n\n7. [django/django/db/models/fields/files.py:231]\n        self.storage = storage or default_storage\n        if callable(self.storage):\n            # Hold a reference to the callable for deconstruct().\n            self._storage_callable = self.storage\n            self.storage = self.storage()\n            if not isinstance(self.storage, Storage):\n                raise TypeError(\n                    \"%s.storage must be a subclass/instance of %s.%s\"\n\n8. [django/django/forms/models.py:474]\n    save.alters_data = True\n\n9. [django/tests/template_tests/test_callables.py:42]\n    def test_alters_data(self):\n\n10. [django/tests/template_tests/test_callables.py:44]\n        class Doodad:\n            alters_data = True\n\n11. [django/tests/urlpatterns/tests.py:332]\n    def test_resolve_type_error_propagates(self):\n        @DynamicConverter.register_to_python\n        def raises_type_error(value):\n            raise TypeError('This type error propagates.')\n        with self.assertRaisesMessage(TypeError, 'This type error propagates.'):\n            resolve('/dynamic/abc/')\n\n12. [django/tests/template_tests/test_callables.py:98]\n    def test_do_not_call_and_alters_data(self):\n        # If we combine ``alters_data`` and ``do_not_call_in_templates``, the\n        # ``alters_data`` attribute will not make any difference in the\n        # template system's behavior.\n\n13. [django/tests/template_tests/test_callables.py:103]\n        class Doodad:\n            do_not_call_in_templates = True\n            alters_data = True",
+  "files": [
+   "django/contrib/gis/geos/mutable_list.py",
+   "django/template/base.py",
+   "django/views/debug.py",
+   "django/core/handlers/exception.py",
+   "django/utils/decorators.py",
+   "django/utils/datastructures.py",
+   "django/db/models/fields/files.py",
+   "django/forms/models.py",
+   "tests/template_tests/test_callables.py",
+   "tests/urlpatterns/tests.py"
+  ]
+ }
+}

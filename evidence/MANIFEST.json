@@ -3850,5 +3850,29 @@
   "from": "prove-learn/graphify.json",
   "sha256": "2372eda26a6703a2adf733a008dcbe0df30b0d019de53123b9a98128f0b2d9c4",
   "pre-registered": false
+ },
+ {
+  "file": "cortex-d/RESULTS.md",
+  "from": "cortex-d/RESULTS.md",
+  "sha256": "fff5a7b44f2b80ccb62e6b2d115cf4719902ad8f86ccd67473fc1c668af1224f",
+  "pre-registered": false
+ },
+ {
+  "file": "cortex-d/example.json",
+  "from": "cortex-d/example.json",
+  "sha256": "8f38f95b016b94cb621deba6343be4999f2797f143e4986b1a4b419c0be230fc",
+  "pre-registered": false
+ },
+ {
+  "file": "cortex-d/overlap.json",
+  "from": "cortex-d/overlap.json",
+  "sha256": "5b61016a7d9817aabf7706d7437d0ed7c475c9755528c2b91fa1ab92c156e6d2",
+  "pre-registered": false
+ },
+ {
+  "file": "cortex-d/overlap.py",
+  "from": "cortex-d/overlap.py",
+  "sha256": "d669fae177e88cacbf14ede006edee92f0e90c4bf871d41404af3d22b7792833",
+  "pre-registered": false
  }
 ]
