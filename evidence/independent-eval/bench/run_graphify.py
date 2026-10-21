@@ -1,11 +1,11 @@
 """Graphify: rebuild the AST graph (no LLM) for the code before each fix, then `graphify query` the fix's question.
 Files are ranked in the order Graphify prints its nodes (seeds first, then by hop distance), its default 2,000-token budget."""
-import json, os, re, subprocess, sys, time
+import json, os, re, shutil, subprocess, sys, time
 
 sys.path.insert(0, os.path.dirname(__file__))
 from common import snapshot, ranked_code_files, score
 
-GRAPHIFY = "~/eval/envs/graphify/bin/graphify"
+GRAPHIFY = os.environ.get("GRAPHIFY") or shutil.which("graphify") or os.path.expanduser("~/eval/envs/graphify/bin/graphify")
 SRC = re.compile(r"\[src=([^ \]]*)")
 env = {**os.environ, "GRAPHIFY_QUERY_LOG_DISABLE": "1", "GRAPHIFY_BACKEND": "none"}
 

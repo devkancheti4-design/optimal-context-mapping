@@ -3878,7 +3878,7 @@
  {
   "file": "independent-eval/README.md",
   "from": "independent-eval/README.md",
-  "sha256": "e8ee3ad29030cfa5099e610f535a3400f9ef712d32a79d680f13f3725ae8f418",
+  "sha256": "40c3cf292629ef20a5809fdbfca65bd60ae48828145449efbe7147812ca82966",
   "pre-registered": false
  },
  {
@@ -3968,13 +3968,13 @@
  {
   "file": "independent-eval/bench/analyze.py",
   "from": "independent-eval/bench/analyze.py",
-  "sha256": "d0f0bd4005cba91778168584f15f73730f90582a86de4a8266985100b52b6ae4",
+  "sha256": "37b966fca7744cce2f745ed791bc43e2048bea0aac871bd06afb1bfaafb55e6f",
   "pre-registered": false
  },
  {
   "file": "independent-eval/bench/analyze_team.py",
   "from": "independent-eval/bench/analyze_team.py",
-  "sha256": "0917eee2f114ac5ba95d9f2a35e900157d267fc114cfe8b2b1217c7b3b9d4364",
+  "sha256": "65747ad949477bae5ad7a4073e86f3bce3b0efe22d6ae458dfe7bb9e5781b97c",
   "pre-registered": false
  },
  {
@@ -4076,7 +4076,7 @@
  {
   "file": "independent-eval/bench/run_graphify.py",
   "from": "independent-eval/bench/run_graphify.py",
-  "sha256": "a4cb4b800f96a677346ab472b0ed5e2794c0556fd419d25a899bbb5a341feac5",
+  "sha256": "75fa708370ffa84e6edabd372734b42da31a3f568c3d16c91d613a25032c0d18",
   "pre-registered": false
  },
  {
@@ -4197,6 +4197,24 @@
   "file": "independent-eval/bench/results/team_modeld.json",
   "from": "independent-eval/bench/results/team_modeld.json",
   "sha256": "5b2c17db5b78e35536bf4f93f5e94ca042e0119ac0c58a48335215a52d648530",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/reproduce.py",
+  "from": "independent-eval/reproduce.py",
+  "sha256": "7262cd5090a9193dbce82d02725f27e253a8479dfd8cbd61375f95b6fc234cea",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/env/graphify.lock.txt",
+  "from": "independent-eval/env/graphify.lock.txt",
+  "sha256": "5cb98254e2b26aeba72dce9f92b4b3c5ce99a625d45a5545a242ac78f361bcba",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/env/modeld.lock.txt",
+  "from": "independent-eval/env/modeld.lock.txt",
+  "sha256": "1ed2e0b1a394def7f8794009b5f21831d26fe01b6856e83843523af9c5d406a7",
   "pre-registered": false
  }
 ]

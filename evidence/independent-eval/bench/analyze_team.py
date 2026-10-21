@@ -1,7 +1,7 @@
 """Saleor team replay: 200 real fixes in commit order. Does Model D's lead grow as the team's lessons pile up?"""
 import json, math, os
 
-R = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
+R = os.environ.get("RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 md = json.load(open(f"{R}/team_modeld.json"))
 gf = [r for k in range(3) if os.path.exists(f"{R}/team_graphify_{k}.json") for r in json.load(open(f"{R}/team_graphify_{k}.json"))]
 bl = json.load(open(f"{R}/team_baselines.json")) if os.path.exists(f"{R}/team_baselines.json") else {}

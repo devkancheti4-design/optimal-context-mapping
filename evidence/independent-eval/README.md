@@ -16,7 +16,27 @@ Model D's author commissioned it; the agent wrote [REPORT.md](REPORT.md).
 - a memory test on fastify;
 - 24 Claude agent sessions.
 
-**Recompute the tables from the raw rows, from this folder:**
+**Reproduce it from nothing** (no API key, no model calls):
+
+```bash
+python3 reproduce.py --repos aiohttp     # one repository, both tools and the baselines: about 15 minutes
+python3 reproduce.py                     # everything: 120 fixes plus Saleor's 200 as a team, about 4 hours
+```
+
+What `reproduce.py` does:
+1. **Installs both tools as the evaluation ran them:**
+   - Model D 0.5.3 (commit ec440d7) and Graphify 0.9.93 (commit b90b9df), each in its own Python 3.12 environment;
+   - every library pinned to the evaluation's versions (`env/*.lock.txt`);
+   - Model D's embedding model pinned to the revision it used.
+2. **Clones** aiohttp, fastify, zod and Saleor.
+3. **Re-runs** the evaluation's own runners on the published question sets.
+4. **Compares** every answer with the published rows, and exits 0 only when every right-file-first and top-5 count
+   matches.
+
+The evaluation ran on Apple Silicon, where Model D embeds on the GPU. Other hardware can round a few floats
+differently, which can move a handful of answers.
+
+**Or recompute the tables from the raw rows, from this folder:**
 
 ```bash
 python3 bench/analyze.py          # test 1: 120 fixes, right file first / top 5 / MRR / tokens
@@ -27,11 +47,13 @@ python3 bench/agent_score_b.py    # test 4: shared memory between teammates
 
 **Changes from the agent's folder:**
 - The copied files had the evaluator's home-folder path in them; it is replaced with `~/eval`.
-- The four analysis scripts read their data from beside themselves instead.
+- The four analysis scripts read their data from beside themselves instead, or from `$RESULTS` when it is set.
+- `bench/run_graphify.py` finds Graphify through `$GRAPHIFY` or the PATH, instead of the evaluator's folder.
+- Added for reproduction: `reproduce.py` and `env/` (lock files frozen from the evaluator's two environments).
 - Section 13 of the report, a note about the evaluator's local machine setup, is left out.
 - Logs and caches (3 GB) are not included; `bench/results/` holds every per-question row.
 - Nothing else was changed.
 
-**To rerun the benchmarks themselves**, you need the runners `bench/run_*.py` and the question builders
-`bench/questions.py` and `bench/team_questions.py`. They need local clones of the target repositories and each
-tool installed, so they do not run from this folder alone.
+**The question sets** (`bench/q_*.json`) are the published ones, with each fix's commit. `reproduce.py` re-runs on
+them, not on new questions. `bench/questions.py` and `bench/team_questions.py` show how they were drawn from each
+repository's git history.

@@ -1,7 +1,7 @@
 """Aggregate the localization benchmark: per repo and overall, with paired exact McNemar tests against Model D."""
 import json, math, os
 
-R = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
+R = os.environ.get("RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 REPOS = ["aiohttp", "fastify", "zod"]
 
 
