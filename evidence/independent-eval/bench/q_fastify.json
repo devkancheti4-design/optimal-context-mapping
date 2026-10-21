@@ -1,0 +1,378 @@
+[
+ {
+  "hash": "c06fc06d33e66354cf6f5dc000b1ef2002a5eb96",
+  "parent": "d1133d7eac09e075ccfd3b947f6a6e25d727d4d4",
+  "subject": "fix: use ContentType parser for response schema lookup (#6685)",
+  "question": "use ContentType parser for response schema lookup",
+  "gold": [
+   "lib/schemas.js"
+  ]
+ },
+ {
+  "hash": "21b4c3c101038030e552ad2cfcca3f43a349f464",
+  "parent": "9bbf60978d013c26663b7be8031ecc12e6db12bd",
+  "subject": "fix: guard forwarded host and protocol on socket presence (#6684)",
+  "question": "guard forwarded host and protocol on socket presence",
+  "gold": [
+   "lib/request.js"
+  ]
+ },
+ {
+  "hash": "6d202c6203f33ceb709dbcf6311b2d7152a8a057",
+  "parent": "10c69d153c6ee4a61878eabfb2a8f3ec34ab9c8c",
+  "subject": "fix: enable diagnostics tracking for async error handlers (#6458)",
+  "question": "enable diagnostics tracking for async error handlers",
+  "gold": [
+   "lib/error-handler.js",
+   "lib/handle-request.js",
+   "lib/symbols.js"
+  ]
+ },
+ {
+  "hash": "9026164f5a2e78db59ff8f98933279161a85a6e3",
+  "parent": "6d202c6203f33ceb709dbcf6311b2d7152a8a057",
+  "subject": "fix: ignore duplicate trailer completions (#6714)",
+  "question": "ignore duplicate trailer completions",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "2bf4265b991aa4c9a2d3886882be6f062338c7bc",
+  "parent": "fc9eafddae37dea167d2affc26a29a04f9412047",
+  "subject": "fix: chunk large HTTP/2 buffer replies (#6746)",
+  "question": "chunk large HTTP/2 buffer replies",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "c647de44cceaf8ec6ce81796374ff6ffd944d873",
+  "parent": "27f4d6222dd945238e96c1fdaa632d5dc3c37b2c",
+  "subject": "fix: replace AssertionError with FST_ERR_PLUGIN_DEPENDENCY_NOT_REGISTERED in checkDependencies (#6774)",
+  "question": "replace AssertionError with FST_ERR_PLUGIN_DEPENDENCY_NOT_REGISTERED in checkDependencies",
+  "gold": [
+   "lib/errors.js",
+   "lib/plugin-utils.js"
+  ]
+ },
+ {
+  "hash": "8b9c07b645a8156c23a1d2619267fc84ea879250",
+  "parent": "9d2914857906a98b6366266417d6527ab8e5e06f",
+  "subject": "fix: clear socket._meta after response to prevent keep-alive leaks (#6799)",
+  "question": "clear socket._meta after response to prevent keep-alive leaks",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "2f597a9297a3020a9f30bf5548a8442c28ddb1c1",
+  "parent": "8b9c07b645a8156c23a1d2619267fc84ea879250",
+  "subject": "fix: avoid double slash when joining nested prefixes (#6803)",
+  "question": "avoid double slash when joining nested prefixes",
+  "gold": [
+   "lib/plugin-override.js"
+  ]
+ },
+ {
+  "hash": "cc8d9a3c961d65cb1a39c4142ce63285d2de1e3c",
+  "parent": "6e6be153127cbe6e025f73efba78d1db7dd5788b",
+  "subject": "fix: make hasRequestDecorator/hasReplyDecorator recognize constructor-assigned built-in properties (#6753)",
+  "question": "make hasRequestDecorator/hasReplyDecorator recognize constructor-assigned built-in properties",
+  "gold": [
+   "lib/decorate.js",
+   "lib/reply.js",
+   "lib/request.js"
+  ]
+ },
+ {
+  "hash": "7f6d31980632eaa9c751dda48da8d12ff76ab411",
+  "parent": "0c28b57cef28d15b6873df77c0f76a80a0ad2269",
+  "subject": "fix: clear socket._meta on reply.hijack() when onTimeout is registered (#6810)",
+  "question": "clear socket._meta on reply.hijack() when onTimeout is registered",
+  "gold": [
+   "lib/reply.js",
+   "lib/route.js"
+  ]
+ },
+ {
+  "hash": "6f63ce9324b7368ac8beff1f385b31addce35c2d",
+  "parent": "75d74e1af74598deb18f2c052d64f815a5eec8f8",
+  "subject": "fix: use ContentType to detect `json` and `charset` in reply.send (#6830)",
+  "question": "use ContentType to detect `json` and `charset` in reply.send",
+  "gold": [
+   "lib/content-type-parser.js",
+   "lib/content-type.js",
+   "lib/handle-request.js",
+   "lib/reply.js",
+   "lib/request.js"
+  ]
+ },
+ {
+  "hash": "6ac2e953705312d0ac8776166b96f509dd153613",
+  "parent": "5f4871f931d45d576bc3385cd1e95f0d668abf4f",
+  "subject": "fix: derive request.port from request.host (#6680)",
+  "question": "derive request.port from request.host",
+  "gold": [
+   "lib/request.js"
+  ]
+ },
+ {
+  "hash": "6682c4f9a76cbb60c372ba5cad9dd2fc6e2fdb51",
+  "parent": "ab9b96eb2f93373949c253933eddb46f6772bbf4",
+  "subject": "fix: normalize method in findRoute (#6838)",
+  "question": "normalize method in findRoute",
+  "gold": [
+   "lib/route.js"
+  ]
+ },
+ {
+  "hash": "325682c9e5abb4dce494770c7cdf27139934347d",
+  "parent": "ff7eff5eec8a820b2c6f79b477e1a784bbf42341",
+  "subject": "fix(validation): correctly update falsy values from validator (#6483)",
+  "question": "correctly update falsy values from validator",
+  "gold": [
+   "lib/validation.js"
+  ]
+ },
+ {
+  "hash": "01ca8393b9d10a897f0d2daedbe2f9eb90076ef5",
+  "parent": "b6cdc6a40598d15f38fe7d399eb17f4b84b7bf06",
+  "subject": "fix: uncatchable throws in writeHead when using async hook (#6881)",
+  "question": "uncatchable throws in writeHead when using async hook",
+  "gold": [
+   "lib/hooks.js"
+  ]
+ },
+ {
+  "hash": "29bdcbb91f1318dc90ae8c0e52ab6f4e13c42744",
+  "parent": "01ca8393b9d10a897f0d2daedbe2f9eb90076ef5",
+  "subject": "fix: honor quoted-string in Content-Type parameter values (#6865)",
+  "question": "honor quoted-string in Content-Type parameter values",
+  "gold": [
+   "lib/content-type.js"
+  ]
+ },
+ {
+  "hash": "0e9a3b35d8b13c9f261bf29bef46168a5d43c28f",
+  "parent": "b93d611c7cefc2cd4a0b6f05cc864f2b6c397a6d",
+  "subject": "fix: add http method override warning (#6879)",
+  "question": "add http method override warning",
+  "gold": [
+   "fastify.js",
+   "lib/warnings.js"
+  ]
+ },
+ {
+  "hash": "9ba6d6016fa932118e6cb2a2f68617cab0824f12",
+  "parent": "74c44c94afea276256721316d25218d1cdd1aae4",
+  "subject": "fix: do not force close in-flight connections on 'idle' (#6889)",
+  "question": "do not force close in-flight connections on 'idle'",
+  "gold": [
+   "fastify.js"
+  ]
+ },
+ {
+  "hash": "7299a57d3fdce7da49f2c6d19ba08dc673e53f22",
+  "parent": "043baf988048c08ee87190193089a3b714f163fe",
+  "subject": "fix: clear trailer state when removing all trailers (#6845)",
+  "question": "clear trailer state when removing all trailers",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "9eaef5123b8824ac64e2b30692e78320d3bb8987",
+  "parent": "39e87e892da468bbffd4aeb4360c92dca22f4b53",
+  "subject": "fix: pass null instead of undefined to requestCompleted on success (#6837)",
+  "question": "pass null instead of undefined to requestCompleted on success",
+  "gold": [
+   "lib/log-controller.js"
+  ]
+ },
+ {
+  "hash": "27938ac777c15482a81881b29f86c82b025f7fae",
+  "parent": "a2f590563f111ebc8e92b8f17701909e9b19d4b7",
+  "subject": "fix: recognize constructor-assigned built-in properties as decorator dependencies (#6892)",
+  "question": "recognize constructor-assigned built-in properties as decorator dependencies",
+  "gold": [
+   "lib/decorate.js"
+  ]
+ },
+ {
+  "hash": "16a74e7cb2d1abdc2feca9097f2936fe8b851a5c",
+  "parent": "27938ac777c15482a81881b29f86c82b025f7fae",
+  "subject": "fix: reset lastIndex before testing global/sticky content-type RegExp parsers (#6846)",
+  "question": "reset lastIndex before testing global/sticky content-type RegExp parsers",
+  "gold": [
+   "lib/content-type-parser.js"
+  ]
+ },
+ {
+  "hash": "e4ffc205328db294d550c5855d2573b33f5e9d62",
+  "parent": "ed664c344f4d7e0171f252d5e886db6d7d241770",
+  "subject": "fix: remove raw response headers (#6860)",
+  "question": "remove raw response headers",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "15c2fb1933461f846a6160923a2bc4e091039826",
+  "parent": "eaff726a68c629c1aedc99f96b3c4b95dfdb38d1",
+  "subject": "fix(content-type): return undefined for invalid media types (#6942)",
+  "question": "return undefined for invalid media types",
+  "gold": [
+   "lib/content-type.js"
+  ]
+ },
+ {
+  "hash": "f5ef34443c5be0cfc7fbde44f84253ef5d0ec66e",
+  "parent": "9a1535bcfe2a780cc6f9c6555df86e5072ca9a29",
+  "subject": "fix: run preClose hook exactly once per declaring instance (#6940)",
+  "question": "run preClose hook exactly once per declaring instance",
+  "gold": [
+   "fastify.js"
+  ]
+ },
+ {
+  "hash": "6e95cb9f6de47deaf145138661c70a1eec34ec97",
+  "parent": "d693f43d890f07a8852b4737b048ed76458139a2",
+  "subject": "Fix prefix route options url (#6719)",
+  "question": "Fix prefix route options url",
+  "gold": [
+   "lib/route.js"
+  ]
+ },
+ {
+  "hash": "af079bd4c60c3cbebedc7640517d7288468fb5eb",
+  "parent": "6e95cb9f6de47deaf145138661c70a1eec34ec97",
+  "subject": "fix: disable numeric trustProxy hop-count trust",
+  "question": "disable numeric trustProxy hop-count trust",
+  "gold": [
+   "lib/request.js"
+  ]
+ },
+ {
+  "hash": "9493c0fb716cb7eb7c3568702912e3abb92f3193",
+  "parent": "af079bd4c60c3cbebedc7640517d7288468fb5eb",
+  "subject": "fix(validation): preserve coerced root values",
+  "question": "preserve coerced root values",
+  "gold": [
+   "lib/validation.js"
+  ]
+ },
+ {
+  "hash": "4176096a31f5b4c31512c36f578b08a596a72435",
+  "parent": "83e69762aff047940b376fc2a266d143499ef727",
+  "subject": "fix: callNotFound should run not-found preHandler regardless of registration order (#6965)",
+  "question": "callNotFound should run not-found preHandler regardless of registration order",
+  "gold": [
+   "lib/four-oh-four.js"
+  ]
+ },
+ {
+  "hash": "3aa8dfd7298c6e02399a7b3c29c637eb092dc9ef",
+  "parent": "af6e2e433cfa2b4531e6297738da2acd66207742",
+  "subject": "fix(validation): normalize header names in every schema subschema",
+  "question": "normalize header names in every schema subschema",
+  "gold": [
+   "lib/validation.js",
+   "lib/warnings.js"
+  ]
+ },
+ {
+  "hash": "0c170ca13f70aafa8ade685406c913591900e1f4",
+  "parent": "3aa8dfd7298c6e02399a7b3c29c637eb092dc9ef",
+  "subject": "fix(validation): compile boolean false request schemas",
+  "question": "compile boolean false request schemas",
+  "gold": [
+   "lib/route.js",
+   "lib/schemas.js",
+   "lib/validation.js"
+  ]
+ },
+ {
+  "hash": "d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+  "parent": "0c170ca13f70aafa8ade685406c913591900e1f4",
+  "subject": "fix: reject malformed URLs before custom 404 handlers",
+  "question": "reject malformed URLs before custom 404 handlers",
+  "gold": [
+   "lib/four-oh-four.js"
+  ]
+ },
+ {
+  "hash": "a34c3e530ffcbe3740b044a1599bea77ccc71d67",
+  "parent": "d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+  "subject": "fix(validation): do not unwrap async validator results",
+  "question": "do not unwrap async validator results",
+  "gold": [
+   "lib/validation.js"
+  ]
+ },
+ {
+  "hash": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+  "parent": "2e3ebc5f984e0744b0738faff207cbac1875c3b3",
+  "subject": "fix: omit absent compileSerializationSchema metadata instead of passing null (#7001)",
+  "question": "omit absent compileSerializationSchema metadata instead of passing null",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "bc25b7499acedb803ef3cef644d0d56cf4e7c725",
+  "parent": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+  "subject": "fix: remove error when HTTP QUERY request has empty body (#6929)",
+  "question": "remove error when HTTP QUERY request has empty body",
+  "gold": [
+   "lib/errors.js",
+   "lib/handle-request.js"
+  ]
+ },
+ {
+  "hash": "19d5be0daf1c0daace758efe3ea788f924ca1224",
+  "parent": "d174a98e1a541639878d9f25b3738c78aa5c0165",
+  "subject": "fix: resolve reply.mediaType from raw response headers (#7054)",
+  "question": "resolve reply.mediaType from raw response headers",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "5c081d4b7237f0eb2db9f1204dc6400e3aa1325e",
+  "parent": "b7eb53e41e1db355ddd2a04f2fbbfca7962a7bd9",
+  "subject": "fix: copy a set-cookie array passed to reply.header instead of storing it (#7068)",
+  "question": "copy a set-cookie array passed to reply.header instead of storing it",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+  "parent": "e222f53aa267080b349eacdeaff03ea9a061e8c7",
+  "subject": "fix(reply): send stream trailers after the stream actually finishes (#6953)",
+  "question": "send stream trailers after the stream actually finishes",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "hash": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+  "parent": "f736849a10a9b2ca57fb09437feb8294cda76234",
+  "subject": "fix: clamp error statusCode between 400 and 599 with 500 fallback (#7089)",
+  "question": "clamp error statusCode between 400 and 599 with 500 fallback",
+  "gold": [
+   "lib/error-handler.js",
+   "lib/error-status.js"
+  ]
+ },
+ {
+  "hash": "37df44a421817e7bb048fce834bf691abb0999d6",
+  "parent": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+  "subject": "fix: contain synchronous throws from custom content type parsers (#7118)",
+  "question": "contain synchronous throws from custom content type parsers",
+  "gold": [
+   "lib/content-type-parser.js"
+  ]
+ }
+]

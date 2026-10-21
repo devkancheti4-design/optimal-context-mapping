@@ -1,0 +1,3128 @@
+{
+ "grep": [
+  {
+   "hash": "260e5d4bd3",
+   "question": "stop islanding a catch callback, which diverged silently",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/bench/compile-matrix.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "d6ca12ae3e",
+   "question": "infer recursive getter options in discriminatedUnion",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/zod/src/v4/classic/tests/union.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/lazy.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "ca246d2670",
+   "question": "drop empty alternation branch from datetime pattern",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": false
+  },
+  {
+   "hash": "87ffeb0f50",
+   "question": "an absent key on the middle rung supplies nothing",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/bench/compile-matrix.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "28e1ebd89d",
+   "question": "measure string length in Unicode code points",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/classic/tests/codec.test.ts",
+    "packages/zod/src/v4/mini/tests/codec.test.ts",
+    "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/bench/compile-matrix.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.05555555555555555,
+   "first_is_test": true
+  },
+  {
+   "hash": "830ba31479",
+   "question": "validate the address, and return the string that was validated",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/bench/compile-passthrough.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v3/tests/promise.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "b63db248ab",
+   "question": "keep a memoized node's cached issues private to the cache",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/visit.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": false
+  },
+  {
+   "hash": "6574e7842b",
+   "question": "stop catch resurrecting issues an optional already resolved",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "036b39f4d2",
+   "question": "require seconds once a datetime carries a Z or an offset",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/bench/compile-matrix.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.04,
+   "first_is_test": true
+  },
+  {
+   "hash": "51a1368ad4",
+   "question": "let the includes(position) pattern match at or after the offset",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "scripts/triage-signal.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "scripts/check-comments.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.08333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "168122fca5",
+   "question": "carry a pipe's own checks through z.output",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.015873015873015872,
+   "first_is_test": false
+  },
+  {
+   "hash": "2125d30ce5",
+   "question": "accept exact decimal multiples in multipleOf",
+   "gold": [
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/number.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/zod/src/v4/core/errors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.07142857142857142,
+   "first_is_test": false
+  },
+  {
+   "hash": "53cec2a0d0",
+   "question": "resolve z.input past a preprocess transform",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/index.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/tests/index.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.009900990099009901,
+   "first_is_test": true
+  },
+  {
+   "hash": "3a49696865",
+   "question": "make record input keys optional when the value can fill them",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/error-utils.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": false
+  },
+  {
+   "hash": "a825c1b08c",
+   "question": "empty enums and literals match nothing",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema-methods.test.ts",
+    "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "7cfc012238",
+   "question": "keep a wrapper's stored value only on the side it belongs to",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/core/visit.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/classic/tests/intersection.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/bench/compile-matrix.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.03225806451612903,
+   "first_is_test": false
+  },
+  {
+   "hash": "a87ac3665f",
+   "question": "distinguish number and bigint formats at the type level",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/mini/tests/index.test.ts",
+    "packages/zod/src/v4/core/checks.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "badf0b7894",
+   "question": "build the catch context from the input that failed",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v3/tests/error.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "7b612b536d",
+   "question": "fold an intersection of object schemas into one object",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "7ce3e77dfb",
+   "question": "run a wrapper's inner schema on its own payload",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/catch.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "9d5b20ef6c",
+   "question": "restrict the first ULID character to [0-7]",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v4/locales/lt.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/refine.test.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.058823529411764705,
+   "first_is_test": true
+  },
+  {
+   "hash": "97edaf7dc4",
+   "question": "don't throw from safeParse on bigint multipleOf(0n)",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "files": [
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/number.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": false
+  },
+  {
+   "hash": "8d896186ca",
+   "question": "stop emitting a multipleOf that JSON Schema rejects",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "212b941791",
+   "question": "let a prototype method getter answer a bare call so vi.spyOn works",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/instance-footprint.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "eab51ff359",
+   "question": "emit record numeric keys as strings in toJSONSchema",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/record.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/schemas.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.14285714285714285,
+   "first_is_test": true
+  },
+  {
+   "hash": "84e416fbf4",
+   "question": "stop the cycle walk from firing a default factory",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v3/tests/default.test.ts",
+    "packages/zod/src/v3/tests/catch.test.ts",
+    "packages/zod/src/v3/types.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.14285714285714285,
+   "first_is_test": false
+  },
+  {
+   "hash": "f83ab51129",
+   "question": "reject component-only strings from z.emoji()",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/api.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.14285714285714285,
+   "first_is_test": true
+  },
+  {
+   "hash": "eca9687153",
+   "question": "enforce the six JSON Schema keywords fromJSONSchema silently dropped",
+   "gold": [
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": true
+  },
+  {
+   "hash": "cafbee4772",
+   "question": "parse recursive schemas built by a factory",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "6f0483671e",
+   "question": "derive JSON Schema constraints by folding checks in the converter",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v3/tests/error.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/api.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": true
+  },
+  {
+   "hash": "36f17960d1",
+   "question": "stop the memoizer from pinning a finished parse",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/catch.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "574d480fb4",
+   "question": "clarify Tajik discriminator value message",
+   "gold": [
+    "packages/zod/src/v4/locales/tg.ts"
+   ],
+   "files": [
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/tests/error-utils.test.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v3/locales/en.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.014084507042253521,
+   "first_is_test": false
+  },
+  {
+   "hash": "dd9c36fa2d",
+   "question": "defer recursive object index inference",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "b12aa523e7",
+   "question": "preserve unique tags with defaulted discriminators",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/optional.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "9446b5cc14",
+   "question": "preserve undefined prefault outputs and object keys",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/classic/tests/partial.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "a2ba4a6798",
+   "question": "declare record output and input as members, not base type arguments",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/instance-footprint.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.125,
+   "first_is_test": true
+  },
+  {
+   "hash": "a0ebf970f2",
+   "question": "check array, set and map size bounds before parsing elements",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "311cd74b27",
+   "question": "run a record's key schema on an own __proto__ key",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true
+  },
+  {
+   "hash": "40a5dba080",
+   "question": "add Sizable.map to es, fr, he, hr and lt, and check Sizable parity from source",
+   "gold": [
+    "packages/zod/src/v4/locales/es.ts",
+    "packages/zod/src/v4/locales/fr.ts",
+    "packages/zod/src/v4/locales/he.ts",
+    "packages/zod/src/v4/locales/hr.ts",
+    "packages/zod/src/v4/locales/lt.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.034482758620689655,
+   "first_is_test": false
+  },
+  {
+   "hash": "680d19f7d1",
+   "question": "report a union option that only checks rejected",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "scripts/compile-fuzz.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/assignability.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  }
+ ],
+ "bm25": [
+  {
+   "hash": "260e5d4bd3",
+   "question": "stop islanding a catch callback, which diverged silently",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/bench/compile-matrix.ts",
+    "packages/zod/src/v3/tests/base.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/bench/memory/retainers.ts",
+    "packages/zod/src/v4/mini/tests/apply.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/detached-methods.test.ts",
+    "packages/zod/src/v4/classic/tests/apply.test.ts",
+    "packages/zod/src/v4/core/tests/compile-off-by-default.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": true
+  },
+  {
+   "hash": "d6ca12ae3e",
+   "question": "infer recursive getter options in discriminatedUnion",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/zod/src/v4/classic/tests/union.test.ts",
+    "packages/zod/src/v4/classic/deep-partial.ts",
+    "packages/zod/src/v4/mini/deep-partial.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v3/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/classic/tests/lazy.test.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0625,
+   "first_is_test": true
+  },
+  {
+   "hash": "ca246d2670",
+   "question": "drop empty alternation branch from datetime pattern",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v4/core/json-schema-generator.ts",
+    "packages/zod/src/v4/core/tests/treeshake.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+    "packages/bench/compile-codec-direction.ts",
+    "packages/zod/src/v4/mini/tests/codec.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "87ffeb0f50",
+   "question": "an absent key on the middle rung supplies nothing",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/optin-ladder.test.ts",
+    "packages/zod/src/v4/core/tests/treeshake.test.ts",
+    "packages/treeshake/locale-treeshake.test.ts",
+    "packages/zod/src/v4/classic/tests/optional.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "28e1ebd89d",
+   "question": "measure string length in Unicode code points",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/bench/memory/harness.ts",
+    "packages/bench/memory/prop-slack.ts",
+    "packages/bench/memory/schema-footprint.ts",
+    "packages/zod/src/v3/tests/complex.test.ts",
+    "packages/bench/memory/calibrate.ts",
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/treeshake/locale-treeshake.test.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v3/tests/object.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.03125,
+   "first_is_test": false
+  },
+  {
+   "hash": "830ba31479",
+   "question": "validate the address, and return the string that was validated",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/bench/compile-passthrough.ts",
+    "packages/zod/src/v3/tests/promise.test.ts",
+    "packages/zod/src/v4/classic/tests/promise.test.ts",
+    "packages/bench/compile-array-build.ts",
+    "packages/bench/compile-validate-vs-parse.ts",
+    "packages/zod/src/v4/locales/az.ts",
+    "packages/zod/src/v4/locales/en.ts",
+    "packages/zod/src/v3/benchmarks/realworld.ts",
+    "packages/bench/compile-codec-direction.ts",
+    "packages/bench/compile-object-build.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.034482758620689655,
+   "first_is_test": false
+  },
+  {
+   "hash": "b63db248ab",
+   "question": "keep a memoized node's cached issues private to the cache",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/visit.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/classic/tests/lazy.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "scripts/check-comments.ts",
+    "packages/docs/loaders/stars.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/bench/memory/harness.ts",
+    "packages/zod/src/v4/classic/tests/jitless-allows-eval.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "6574e7842b",
+   "question": "stop catch resurrecting issues an optional already resolved",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/docs/loaders/get-llm-text.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts",
+    "packages/zod/src/v4/classic/tests/catch.test.ts",
+    "packages/zod/src/v3/tests/catch.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/partial.test.ts",
+    "packages/zod/src/v3/tests/error.test.ts",
+    "scripts/write-stub-package-jsons.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.06666666666666667,
+   "first_is_test": true
+  },
+  {
+   "hash": "036b39f4d2",
+   "question": "require seconds once a datetime carries a Z or an offset",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/datetime.test.ts",
+    "packages/zod/src/v4/classic/tests/codec-examples.test.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "play.ts",
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/bench/compile-matrix.ts",
+    "packages/docs/components/platinum.tsx"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.14285714285714285,
+   "first_is_test": true
+  },
+  {
+   "hash": "51a1368ad4",
+   "question": "let the includes(position) pattern match at or after the offset",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v4/classic/tests/datetime.test.ts",
+    "scripts/check-comments.ts",
+    "packages/bench/memory/leaks.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v3/locales/en.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.08333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "168122fca5",
+   "question": "carry a pipe's own checks through z.output",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/locales/parity.test.ts",
+    "packages/zod/src/v4/classic/tests/lazy.test.ts",
+    "packages/zod/src/v4/classic/tests/catch.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/instanceof.test.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/classic/tests/intersection.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.03225806451612903,
+   "first_is_test": false
+  },
+  {
+   "hash": "2125d30ce5",
+   "question": "accept exact decimal multiples in multipleOf",
+   "gold": [
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/number.test.ts",
+    "packages/zod/src/v4/classic/tests/optional.test.ts",
+    "packages/zod/src/v4/classic/tests/detached-methods.test.ts",
+    "packages/zod/src/v3/locales/en.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/zod/src/v4/classic/tests/assignability.test.ts",
+    "packages/zod/src/v4/locales/en.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/global-config.test.ts",
+    "packages/zod/src/v4/classic/tests/optin-ladder.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.007751937984496124,
+   "first_is_test": true
+  },
+  {
+   "hash": "53cec2a0d0",
+   "question": "resolve z.input past a preprocess transform",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/preprocess-types.test.ts",
+    "packages/zod/src/v4/classic/tests/preprocess.test.ts",
+    "packages/zod/src/v4/classic/tests/optin-ladder.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/assignability.test.ts",
+    "packages/zod/src/v4/classic/tests/index.test.ts",
+    "packages/zod/src/v4/mini/tests/index.test.ts",
+    "packages/bench/memory/survey.ts",
+    "packages/zod/src/v3/tests/preprocess.test.ts",
+    "packages/zod/src/v3/tests/complex.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.00847457627118644,
+   "first_is_test": true
+  },
+  {
+   "hash": "3a49696865",
+   "question": "make record input keys optional when the value can fill them",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/optional.test.ts",
+    "packages/zod/src/v4/classic/tests/detached-methods.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true
+  },
+  {
+   "hash": "a825c1b08c",
+   "question": "empty enums and literals match nothing",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/docs/next.config.mjs",
+    "packages/zod/src/v4/classic/tests/to-json-schema-methods.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/bench/memory/prop-slack.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/classic/tests/set.test.ts",
+    "packages/zod/src/v4/classic/tests/map.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": true
+  },
+  {
+   "hash": "7cfc012238",
+   "question": "keep a wrapper's stored value only on the side it belongs to",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/core/visit.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/compile.ts",
+    "packages/zod/src/v4/classic/tests/intersection.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": false
+  },
+  {
+   "hash": "a87ac3665f",
+   "question": "distinguish number and bigint formats at the type level",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/in-out.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/locales/hr.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/locales/pt.ts",
+    "packages/zod/src/v4/locales/pt-BR.ts",
+    "packages/zod/src/v4/locales/ro.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": true
+  },
+  {
+   "hash": "badf0b7894",
+   "question": "build the catch context from the input that failed",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/resolution/test-resolution.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/tsc/bisect.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v3/tests/tuple.test.ts",
+    "packages/docs/loaders/stars.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "scripts/compile-fuzz.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.058823529411764705,
+   "first_is_test": false
+  },
+  {
+   "hash": "7b612b536d",
+   "question": "fold an intersection of object schemas into one object",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v3/tests/complex.test.ts",
+    "packages/zod/src/v4/classic/deep-partial.ts",
+    "packages/zod/src/v4/mini/deep-partial.ts",
+    "packages/bench/compile-vs-arktype.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/zod/src/v4/core/visit.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "7ce3e77dfb",
+   "question": "run a wrapper's inner schema on its own payload",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/catch.test.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/tests/compile-global.test.ts",
+    "packages/zod/src/v4/classic/in-out.ts",
+    "scripts/compile-fuzz.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": false
+  },
+  {
+   "hash": "9d5b20ef6c",
+   "question": "restrict the first ULID character to [0-7]",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/locales/lt.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v3/tests/validations.test.ts",
+    "packages/zod/src/v4/classic/tests/validations.test.ts",
+    "scripts/check-comments.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v3/locales/en.ts",
+    "packages/zod/src/v4/classic/tests/preprocess.test.ts",
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.1,
+   "first_is_test": false
+  },
+  {
+   "hash": "97edaf7dc4",
+   "question": "don't throw from safeParse on bigint multipleOf(0n)",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/number.test.ts",
+    "packages/zod/src/v3/tests/bigint.test.ts",
+    "packages/zod/src/v4/classic/tests/bigint.test.ts",
+    "packages/zod/src/v3/tests/error.test.ts",
+    "packages/zod/src/v4/classic/tests/error.test.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/zod/src/v3/tests/number.test.ts",
+    "packages/zod/src/v4/classic/tests/primitive.test.ts",
+    "packages/zod/src/v4/classic/tests/index.test.ts",
+    "packages/zod/src/v4/mini/tests/index.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.07692307692307693,
+   "first_is_test": true
+  },
+  {
+   "hash": "8d896186ca",
+   "question": "stop emitting a multipleOf that JSON Schema rejects",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/credit-card.test.ts",
+    "packages/bench/memory/retainers.ts",
+    "packages/zod/src/v4/classic/tests/tuple.test.ts",
+    "packages/bench/compile-matrix.ts",
+    "packages/zod/src/v4/classic/tests/union.test.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "212b941791",
+   "question": "let a prototype method getter answer a bare call so vi.spyOn works",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/instance-footprint.test.ts",
+    "packages/zod/src/v4/classic/errors.ts",
+    "packages/zod/src/v4/classic/tests/jitless-allows-eval.test.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/detached-methods.test.ts",
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/core/core.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "eab51ff359",
+   "question": "emit record numeric keys as strings in toJSONSchema",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/json-schema-generator.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/record.test.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/bench/memory/retainers.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "84e416fbf4",
+   "question": "stop the cycle walk from firing a default factory",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/bench/memory/retainers.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/bench/memory/schema-footprint.ts",
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/bench/benchUtil.ts",
+    "packages/bench/memory/harness.ts",
+    "packages/zod/src/v3/benchmarks/primitives.ts",
+    "packages/zod/src/v3/benchmarks/object.ts",
+    "packages/bench/memory/breakdown.ts",
+    "packages/zod/src/v3/benchmarks/union.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "f83ab51129",
+   "question": "reject component-only strings from z.emoji()",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v3/tests/string.test.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/continuability.test.ts",
+    "packages/docs/components/heading.tsx",
+    "packages/docs/components/accordion.tsx",
+    "packages/docs/next.config.mjs",
+    "packages/zod/src/v4/locales/he.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true
+  },
+  {
+   "hash": "eca9687153",
+   "question": "enforce the six JSON Schema keywords fromJSONSchema silently dropped",
+   "gold": [
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/docs/components/ecosystem.tsx",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/bench/memory/leaks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/core/tests/treeshake.test.ts",
+    "packages/zod/src/v4/classic/tests/detached-methods.test.ts",
+    "packages/zod/src/v4/classic/tests/registries.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "cafbee4772",
+   "question": "parse recursive schemas built by a factory",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/bench/memory/snapshot.ts",
+    "packages/treeshake/default-locale.test.ts",
+    "packages/docs/next.config.mjs",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/parse.ts",
+    "packages/zod/src/v4/core/core.ts",
+    "packages/zod/src/v4/classic/tests/deep-partial.test.ts",
+    "packages/treeshake/bundle-size.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "6f0483671e",
+   "question": "derive JSON Schema constraints by folding checks in the converter",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/standard-schema.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/standard-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/registries.test.ts",
+    "packages/zod/src/v4/core/index.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/apply.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.1111111111111111,
+   "first_is_test": false
+  },
+  {
+   "hash": "36f17960d1",
+   "question": "stop the memoizer from pinning a finished parse",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/mini/tests/cyclic-data.test.ts",
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/zod/src/v4/core/index.ts",
+    "packages/zod/src/v4/mini/external.ts",
+    "packages/zod/src/v4/classic/external.ts",
+    "packages/bench/memory/retainers.ts",
+    "packages/zod/src/v4/classic/tests/validate.test.ts",
+    "packages/zod/src/v4/core/core.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "574d480fb4",
+   "question": "clarify Tajik discriminator value message",
+   "gold": [
+    "packages/zod/src/v4/locales/tg.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/tests/locales/tg.test.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v3/tests/discriminated-unions.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v3/locales/en.ts",
+    "packages/zod/src/v3/ZodError.ts",
+    "packages/zod/src/v4/classic/tests/error-utils.test.ts",
+    "packages/zod/src/v4/locales/tg.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/classic/tests/preprocess.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.125,
+   "first_is_test": true
+  },
+  {
+   "hash": "dd9c36fa2d",
+   "question": "defer recursive object index inference",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/preprocess-types.test.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/docs/next.config.mjs",
+    "packages/tsc/generate.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/cyclic-data.test.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/docs/app/llms-full.txt/route.ts",
+    "packages/zod/src/v3/ZodError.ts",
+    "packages/zod/src/v4/core/tests/recursive-tuples.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.019230769230769232,
+   "first_is_test": true
+  },
+  {
+   "hash": "b12aa523e7",
+   "question": "preserve unique tags with defaulted discriminators",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/mini/src/tests/index.test.ts",
+    "packages/zod/src/v4/classic/tests/array.test.ts",
+    "packages/integration/fixtures/internal-types/mini-cjs-test.cts",
+    "packages/integration/fixtures/internal-types/mini.ts",
+    "packages/docs/components/sidebar-item.tsx",
+    "packages/zod/src/v4/classic/tests/optional.test.ts",
+    "packages/integration/fixtures/internal-types/index.ts",
+    "packages/integration/fixtures/internal-types/cjs-test.cts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.05555555555555555,
+   "first_is_test": true
+  },
+  {
+   "hash": "9446b5cc14",
+   "question": "preserve undefined prefault outputs and object keys",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/deep-partial.ts",
+    "packages/zod/src/v4/mini/deep-partial.ts",
+    "packages/zod/src/v4/classic/tests/partial.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/classic/tests/catch.test.ts",
+    "packages/zod/src/v4/classic/tests/prefault.test.ts",
+    "packages/zod/src/v4/classic/tests/optin-ladder.test.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/zod/src/v4/index.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": false
+  },
+  {
+   "hash": "a2ba4a6798",
+   "question": "declare record output and input as members, not base type arguments",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/core.ts",
+    "packages/zod/src/v4/classic/tests/instance-footprint.test.ts",
+    "packages/zod/src/v4/classic/tests/assignability.test.ts",
+    "packages/zod/src/v4/core/standard-schema.ts",
+    "packages/treeshake/bundle-size.test.ts",
+    "packages/zod/src/v3/ZodError.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+    "packages/zod/src/v3/standard-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.04,
+   "first_is_test": false
+  },
+  {
+   "hash": "a0ebf970f2",
+   "question": "check array, set and map size bounds before parsing elements",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/zsf.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/classic/tests/array.test.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/zod/src/v4/classic/tests/validate.test.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/bench/memory/snapshot.ts",
+    "packages/zod/src/v4/core/checks.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false
+  },
+  {
+   "hash": "311cd74b27",
+   "question": "run a record's key schema on an own __proto__ key",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/classic/tests/object.test.ts",
+    "packages/zod/src/v4/classic/tests/record.test.ts",
+    "packages/zod/src/v4/classic/tests/intersection.test.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/errors.ts",
+    "packages/zod/src/v4/classic/tests/error-utils.test.ts",
+    "packages/zod/src/v4/classic/tests/instance-footprint.test.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": true
+  },
+  {
+   "hash": "40a5dba080",
+   "question": "add Sizable.map to es, fr, he, hr and lt, and check Sizable parity from source",
+   "gold": [
+    "packages/zod/src/v4/locales/es.ts",
+    "packages/zod/src/v4/locales/fr.ts",
+    "packages/zod/src/v4/locales/he.ts",
+    "packages/zod/src/v4/locales/hr.ts",
+    "packages/zod/src/v4/locales/lt.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/tests/locales/parity.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/tests/compile.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v3/types.ts",
+    "packages/bench/moltar-libs.ts",
+    "packages/zod/src/v4/classic/tests/redos.test.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/validate.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.011627906976744186,
+   "first_is_test": true
+  },
+  {
+   "hash": "680d19f7d1",
+   "question": "report a union option that only checks rejected",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+    "scripts/compile-fuzz.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/mini/tests/index.test.ts",
+    "packages/zod/src/v4/classic/tests/union.test.ts",
+    "packages/zod/src/v4/classic/tests/assignability.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": true
+  }
+ ],
+ "prior": [
+  {
+   "hash": "260e5d4bd3",
+   "question": "stop islanding a catch callback, which diverged silently",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "d6ca12ae3e",
+   "question": "infer recursive getter options in discriminatedUnion",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/api.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "ca246d2670",
+   "question": "drop empty alternation branch from datetime pattern",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "87ffeb0f50",
+   "question": "an absent key on the middle rung supplies nothing",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "28e1ebd89d",
+   "question": "measure string length in Unicode code points",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": false
+  },
+  {
+   "hash": "830ba31479",
+   "question": "validate the address, and return the string that was validated",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "b63db248ab",
+   "question": "keep a memoized node's cached issues private to the cache",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "6574e7842b",
+   "question": "stop catch resurrecting issues an optional already resolved",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "036b39f4d2",
+   "question": "require seconds once a datetime carries a Z or an offset",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.05,
+   "first_is_test": false
+  },
+  {
+   "hash": "51a1368ad4",
+   "question": "let the includes(position) pattern match at or after the offset",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.06666666666666667,
+   "first_is_test": false
+  },
+  {
+   "hash": "168122fca5",
+   "question": "carry a pipe's own checks through z.output",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "2125d30ce5",
+   "question": "accept exact decimal multiples in multipleOf",
+   "gold": [
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": false
+  },
+  {
+   "hash": "53cec2a0d0",
+   "question": "resolve z.input past a preprocess transform",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "3a49696865",
+   "question": "make record input keys optional when the value can fill them",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "a825c1b08c",
+   "question": "empty enums and literals match nothing",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "7cfc012238",
+   "question": "keep a wrapper's stored value only on the side it belongs to",
+   "gold": [
+    "packages/zod/src/v4/classic/in-out.ts",
+    "packages/zod/src/v4/core/visit.ts",
+    "packages/zod/src/v4/mini/in-out.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "a87ac3665f",
+   "question": "distinguish number and bigint formats at the type level",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "badf0b7894",
+   "question": "build the catch context from the input that failed",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "7b612b536d",
+   "question": "fold an intersection of object schemas into one object",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": false
+  },
+  {
+   "hash": "7ce3e77dfb",
+   "question": "run a wrapper's inner schema on its own payload",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "9d5b20ef6c",
+   "question": "restrict the first ULID character to [0-7]",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "97edaf7dc4",
+   "question": "don't throw from safeParse on bigint multipleOf(0n)",
+   "gold": [
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/compile.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.08333333333333333,
+   "first_is_test": false
+  },
+  {
+   "hash": "8d896186ca",
+   "question": "stop emitting a multipleOf that JSON Schema rejects",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.125,
+   "first_is_test": false
+  },
+  {
+   "hash": "212b941791",
+   "question": "let a prototype method getter answer a bare call so vi.spyOn works",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": false
+  },
+  {
+   "hash": "eab51ff359",
+   "question": "emit record numeric keys as strings in toJSONSchema",
+   "gold": [
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.16666666666666666,
+   "first_is_test": false
+  },
+  {
+   "hash": "84e416fbf4",
+   "question": "stop the cycle walk from firing a default factory",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "f83ab51129",
+   "question": "reject component-only strings from z.emoji()",
+   "gold": [
+    "packages/zod/src/v4/core/regexes.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.05555555555555555,
+   "first_is_test": false
+  },
+  {
+   "hash": "eca9687153",
+   "question": "enforce the six JSON Schema keywords fromJSONSchema silently dropped",
+   "gold": [
+    "packages/zod/src/v4/classic/from-json-schema.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.08333333333333333,
+   "first_is_test": false
+  },
+  {
+   "hash": "cafbee4772",
+   "question": "parse recursive schemas built by a factory",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/memoizer.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "6f0483671e",
+   "question": "derive JSON Schema constraints by folding checks in the converter",
+   "gold": [
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/core/regexes.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+    "packages/zod/src/v4/classic/tests/string.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "36f17960d1",
+   "question": "stop the memoizer from pinning a finished parse",
+   "gold": [
+    "packages/zod/src/v4/core/memoizer.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "574d480fb4",
+   "question": "clarify Tajik discriminator value message",
+   "gold": [
+    "packages/zod/src/v4/locales/tg.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "dd9c36fa2d",
+   "question": "defer recursive object index inference",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "b12aa523e7",
+   "question": "preserve unique tags with defaulted discriminators",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "9446b5cc14",
+   "question": "preserve undefined prefault outputs and object keys",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/mini/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "play.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "a2ba4a6798",
+   "question": "declare record output and input as members, not base type arguments",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "a0ebf970f2",
+   "question": "check array, set and map size bounds before parsing elements",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/core/util.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "311cd74b27",
+   "question": "run a record's key schema on an own __proto__ key",
+   "gold": [
+    "packages/zod/src/v4/core/compile.ts",
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "40a5dba080",
+   "question": "add Sizable.map to es, fr, he, hr and lt, and check Sizable parity from source",
+   "gold": [
+    "packages/zod/src/v4/locales/es.ts",
+    "packages/zod/src/v4/locales/fr.ts",
+    "packages/zod/src/v4/locales/he.ts",
+    "packages/zod/src/v4/locales/hr.ts",
+    "packages/zod/src/v4/locales/lt.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false
+  },
+  {
+   "hash": "680d19f7d1",
+   "question": "report a union option that only checks rejected",
+   "gold": [
+    "packages/zod/src/v4/core/schemas.ts"
+   ],
+   "files": [
+    "packages/zod/src/v4/core/schemas.ts",
+    "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+    "packages/zod/src/v4/classic/schemas.ts",
+    "play.ts",
+    "packages/zod/src/v4/core/util.ts",
+    "packages/zod/src/v4/core/to-json-schema.ts",
+    "packages/zod/src/v4/core/json-schema-processors.ts",
+    "packages/zod/src/v4/mini/schemas.ts",
+    "packages/zod/src/v4/core/checks.ts",
+    "packages/zod/src/v4/classic/tests/from-json-schema.test.ts"
+   ],
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false
+  }
+ ]
+}

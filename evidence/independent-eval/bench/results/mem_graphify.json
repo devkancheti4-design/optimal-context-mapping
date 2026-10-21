@@ -1,0 +1,1833 @@
+{
+ "before_para": [
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/error-serializer.js",
+    "test/reply-media-type.test.js",
+    "test/stream-serializers.test.js",
+    "lib/reply.js",
+    "test/schema-validation.test.js"
+   ],
+   "tokens": 1642,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": true,
+   "files": [
+    "test/max-requests-per-socket.test.js",
+    "test/trust-proxy.test.js",
+    "test/async-await.test.js",
+    "lib/request.js",
+    "test/types/instance.tst.ts"
+   ],
+   "tokens": 3563,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0625,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/init.test.js",
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/types/logger.tst.ts",
+    "test/http-methods/report.test.js",
+    "test/async-await.test.js"
+   ],
+   "tokens": 1650,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/content-parser.test.js",
+    "lib/reply.js",
+    "lib/symbols.js",
+    "lib/errors.js",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 4079,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/http2/closing.test.js",
+    "test/404s.test.js",
+    "examples/benchmark/webstream.js",
+    "fastify.js",
+    "test/buffer.test.js"
+   ],
+   "tokens": 1656,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": true,
+   "files": [
+    "test/plugin.3.test.js",
+    "test/esm/plugin.mjs",
+    "test/types/logger.tst.ts",
+    "lib/plugin-utils.js",
+    "test/reply-error.test.js"
+   ],
+   "tokens": 1641,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.1111111111111111,
+   "first_is_test": true,
+   "files": [
+    "test/keep-alive-timeout.test.js",
+    "test/internals/hook-runner.test.js",
+    "test/max-requests-per-socket.test.js",
+    "test/logger/logger-test-utils.js",
+    "test/listen.1.test.js"
+   ],
+   "tokens": 1657,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/plugin.3.test.js",
+    "examples/http2.js",
+    "test/request-error.test.js",
+    "lib/route.js",
+    "fastify.js"
+   ],
+   "tokens": 3267,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/internals/decorator.test.js",
+    "lib/reply.js",
+    "test/diagnostics-channel/sync-request-reply.test.js",
+    "lib/schema-controller.js",
+    "test/helper.js"
+   ],
+   "tokens": 292,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/route-hooks.test.js",
+    "lib/reply.js",
+    "lib/route.js",
+    "types/hooks.d.ts",
+    "test/max-requests-per-socket.test.js"
+   ],
+   "tokens": 1642,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "examples/benchmark/webstream.js",
+    "lib/reply.js",
+    "test/stream.4.test.js",
+    "lib/symbols.js",
+    "test/logger/logger-test-utils.js"
+   ],
+   "tokens": 1628,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/request-port.test.js",
+    "lib/request.js",
+    "lib/log-controller.js",
+    "test/esm/named-exports.mjs",
+    "fastify.js"
+   ],
+   "tokens": 2086,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "test/types/route.tst.ts",
+    "test/custom-http-server.test.js",
+    "lib/validation.js",
+    "lib/handle-request.js"
+   ],
+   "tokens": 1653,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/internals/validation.test.js",
+    "lib/request.js",
+    "test/https/custom-https-server.test.js",
+    "test/trust-proxy.test.js"
+   ],
+   "tokens": 227,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "examples/benchmark/hooks-benchmark-async-await.js",
+    "test/async_hooks.test.js",
+    "test/internals/content-type-parser.test.js",
+    "test/async-await.test.js",
+    "types/hooks.d.ts"
+   ],
+   "tokens": 1650,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "lib/content-type-parser.js",
+    "test/trust-proxy.test.js"
+   ],
+   "tokens": 181,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true,
+   "files": [
+    "test/http-methods/custom-http-methods.test.js",
+    "lib/request.js",
+    "lib/warnings.js",
+    "test/http2/unknown-http-method.test.js",
+    "lib/reply.js"
+   ],
+   "tokens": 1635,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.25,
+   "first_is_test": false,
+   "files": [
+    "lib/server.js",
+    "test/custom-http-server.test.js",
+    "types/instance.d.ts",
+    "fastify.js",
+    "lib/symbols.js"
+   ],
+   "tokens": 1639,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/reply-trailers.test.js",
+    "lib/reply.js",
+    "fastify.js",
+    "lib/content-type-parser.js",
+    "test/helper.js"
+   ],
+   "tokens": 1649,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true,
+   "files": [
+    "test/listen.5.test.js",
+    "test/logger/logger-test-utils.js",
+    "lib/log-controller.js"
+   ],
+   "tokens": 146,
+   "memory_hit": false
+  }
+ ],
+ "before_new": [
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/internals/decorator.test.js",
+    "test/decorator-instance-properties.test.js",
+    "lib/schema-controller.js"
+   ],
+   "tokens": 152,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/post-empty-body.test.js",
+    "fastify.js",
+    "lib/symbols.js",
+    "lib/errors.js"
+   ],
+   "tokens": 1653,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "lib/reply.js",
+    "test/internals/validation.test.js",
+    "test/internals/decorator.test.js",
+    "lib/content-type.js"
+   ],
+   "tokens": 1630,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "types/type-provider.d.ts",
+    "lib/content-type.js",
+    "lib/reply.js"
+   ],
+   "tokens": 154,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/close.test.js",
+    "test/http2/closing.test.js",
+    "lib/content-type-parser.js",
+    "types/hooks.d.ts",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 1649,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/serialize-response.test.js",
+    "lib/route.js",
+    "test/fix-6411.test.js",
+    "fastify.js",
+    "lib/validation.js"
+   ],
+   "tokens": 2596,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": true,
+   "files": [
+    "fastify.d.ts",
+    "test/trust-proxy.test.js",
+    "test/schema-feature.test.js",
+    "lib/log-controller.js",
+    "lib/request.js"
+   ],
+   "tokens": 1652,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/decorator.test.js",
+    "lib/error-handler.js",
+    "test/fix-root-primitive-coercion.test.js",
+    "test/trust-proxy.test.js",
+    "fastify.js"
+   ],
+   "tokens": 4429,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.08333333333333333,
+   "first_is_test": false,
+   "files": [
+    "lib/hooks.js",
+    "lib/reply.js",
+    "lib/content-type-parser.js",
+    "lib/handle-request.js",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 1640,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": true,
+   "files": [
+    "test/schema-validation.test.js",
+    "lib/schemas.js",
+    "test/delete.test.js",
+    "lib/reply.js",
+    "lib/validation.js"
+   ],
+   "tokens": 1637,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/schemas.js",
+    "lib/request.js",
+    "test/internals/validation.test.js",
+    "test/internals/decorator.test.js",
+    "lib/content-type.js"
+   ],
+   "tokens": 1642,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/404.test.js",
+    "test/404s.test.js",
+    "test/https/custom-https-server.test.js",
+    "lib/head-route.js",
+    "lib/hooks.js"
+   ],
+   "tokens": 1655,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/route.3.test.js",
+    "test/async-await.test.js",
+    "github/scripts/lint-ecosystem.js",
+    "test/helper.js",
+    "fastify.js"
+   ],
+   "tokens": 1644,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "types/utils.d.ts",
+    "test/nullable-validation.test.js",
+    "lib/logger-factory.js"
+   ],
+   "tokens": 1661,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.05555555555555555,
+   "first_is_test": true,
+   "files": [
+    "test/internals/validation.test.js",
+    "test/custom-http-server.test.js",
+    "lib/content-type-parser.js",
+    "test/types/logger.tst.ts",
+    "test/custom-querystring-parser.test.js"
+   ],
+   "tokens": 1669,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/internals/errors.test.js",
+    "lib/reply.js",
+    "lib/errors.js",
+    "test/logger/logger-test-utils.js"
+   ],
+   "tokens": 1644,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/http-methods/copy.test.js",
+    "test/logger/logger-test-utils.js",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 1658,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/helper.js",
+    "test/reply-trailers.test.js",
+    "fastify.js",
+    "types/instance.d.ts"
+   ],
+   "tokens": 1636,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/error-handler.js",
+    "test/500s.test.js",
+    "test/http2/secure-with-fallback.test.js",
+    "test/types/logger.tst.ts",
+    "lib/symbols.js"
+   ],
+   "tokens": 1654,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true,
+   "files": [
+    "test/types/serverFactory.tst.ts",
+    "test/https/custom-https-server.test.js",
+    "lib/content-type-parser.js",
+    "fastify.js",
+    "lib/symbols.js"
+   ],
+   "tokens": 1658,
+   "memory_hit": false
+  }
+ ],
+ "teach_replies": [
+  [
+   [
+    "ContentType",
+    "schemas.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_1999b9fa_use_contenttype_parser_for_response_schema_lookup.md\n"
+  ],
+  [
+   [
+    "buildRequestWithTrustProxy()",
+    "request.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_0ff2f43e_guard_forwarded_host_and_protocol_on_socket_presen.md\n"
+  ],
+  [
+   [
+    "error-handler.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_3eba4283_enable_diagnostics_tracking_for_async_error_handle.md\n"
+  ],
+  [
+   [
+    "send()",
+    "reply.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_ee5ea06c_ignore_duplicate_trailer_completions.md\n"
+  ],
+  [
+   [
+    "ContentType",
+    "reply.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_97220ff9_chunk_large_http_2_buffer_replies.md\n"
+  ],
+  [
+   [
+    "{\n  FST_ERR_PLUGIN_VERSION_MISMATCH,\n  FST_ERR_PLUGIN_NOT_PRESENT_IN_INSTANCE,\n  FST_ERR_PLUGIN_INVALID_ASYNC_HANDLER,\n  FST_ERR_PLUGIN_DEPENDENCY_NOT_REGISTERED\n}",
+    "plugin-utils.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_4f9fe976_replace_assertionerror_with_fst_err_plugin_depende.md\n"
+  ],
+  [
+   [
+    "setupResponseListeners()",
+    "reply.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_6b9f43fa_clear_socket__meta_after_response_to_prevent_keep.md\n"
+  ],
+  [
+   [
+    "buildRoutePrefix()",
+    "plugin-override.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205402_13da2c83_avoid_double_slash_when_joining_nested_prefixes.md\n"
+  ],
+  [
+   [
+    "decorateConstructor()",
+    "decorate.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_1a9c25a4_make_hasrequestdecorator_hasreplydecorator_recogni.md\n"
+  ],
+  [
+   [
+    ".hijack()",
+    "reply.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_1b1d4e3d_clear_socket__meta_on_reply_hijack___when_ontimeou.md\n"
+  ],
+  [
+   [
+    "content-type.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_a9bf27f6_use_contenttype_to_detect__json__and__charset__in.md\n"
+  ],
+  [
+   [
+    "get()",
+    "request.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_564543cc_derive_request_port_from_request_host.md\n"
+  ],
+  [
+   [
+    "findRoute()",
+    "route.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_21aa269a_normalize_method_in_findroute.md\n"
+  ],
+  [
+   [
+    "answer()",
+    "validation.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_6477265d_correctly_update_falsy_values_from_validator.md\n"
+  ],
+  [
+   [
+    "wrap()",
+    "hooks.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_83155647_uncatchable_throws_in_writehead_when_using_async_h.md\n"
+  ],
+  [
+   [
+    "{ FifoMap: Fifo }",
+    "content-type.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205403_9a3a98ba_honor_quoted_string_in_content_type_parameter_valu.md\n"
+  ],
+  [
+   [
+    "warnings.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205404_985becb4_add_http_method_override_warning.md\n"
+  ],
+  [
+   [
+    "RFC-10008",
+    "fastify.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205404_b381efcd_do_not_force_close_in_flight_connections_on__idle.md\n"
+  ],
+  [
+   [
+    "onSendEnd()",
+    "reply.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205404_8128b8c9_clear_trailer_state_when_removing_all_trailers.md\n"
+  ],
+  [
+   [
+    ".incomingRequest()",
+    "log-controller.js"
+   ],
+   0,
+   "Saved to graphify-out/memory/query_20261020_205404_585ca8a1_pass_null_instead_of_undefined_to_requestcompleted.md\n"
+  ]
+ ],
+ "update": [
+  0,
+  ": 3560 nodes, 5317 edges, 283 communities\n[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out\nCode graph updated. For doc/paper/image changes run /graphify --update in your AI assistant.\nTip: set GEMINI_API_KEY or GOOGLE_API_KEY to use Gemini for semantic extraction.\n"
+ ],
+ "reflect": [
+  0,
+  "Reflected 20 memories (20 useful, 0 dead ends, 0 corrected) -> graphify-out/reflections/LESSONS.md\n"
+ ],
+ "after_same": [
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/schema-validation.test.js",
+    "test/helper.js",
+    "lib/reply.js",
+    "fastify.js"
+   ],
+   "tokens": 1639,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/max-requests-per-socket.test.js",
+    "test/types/instance.tst.ts",
+    "fastify.d.ts",
+    "test/hooks.test.js",
+    "test/types/fastify.tst.ts"
+   ],
+   "tokens": 1665,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.07142857142857142,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/types/instance.tst.ts",
+    "test/types/logger.tst.ts",
+    "test/async-await.test.js",
+    "lib/head-route.js"
+   ],
+   "tokens": 1675,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/hook-runner.test.js",
+    "test/route-hooks.test.js",
+    "test/url-rewriting.test.js"
+   ],
+   "tokens": 3150,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/custom-http-server.test.js",
+    "test/buffer.test.js",
+    "lib/errors.js"
+   ],
+   "tokens": 1390,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-utils.js",
+    "test/plugin.3.test.js",
+    "lib/reply.js",
+    "lib/warnings.js",
+    "lib/errors.js"
+   ],
+   "tokens": 1690,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": true,
+   "files": [
+    "test/keep-alive-timeout.test.js",
+    "test/max-requests-per-socket.test.js",
+    "fastify.js",
+    "types/instance.d.ts",
+    "lib/reply.js"
+   ],
+   "tokens": 1699,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/plugin.3.test.js",
+    "fastify.js"
+   ],
+   "tokens": 1265,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/schema-controller.js",
+    "test/register.test.js",
+    "test/decorator-instance-properties.test.js"
+   ],
+   "tokens": 280,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/route-hooks.test.js",
+    "lib/reply.js",
+    "test/max-requests-per-socket.test.js"
+   ],
+   "tokens": 1701,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/stream.4.test.js"
+   ],
+   "tokens": 1625,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/request-port.test.js",
+    "lib/request.js",
+    "test/router-compile.test.js",
+    "test/esm/named-exports.mjs",
+    "fastify.js"
+   ],
+   "tokens": 1655,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/schemas.js",
+    "test/http2/unknown-http-method.test.js",
+    "test/internals/validation.test.js",
+    "fastify.js"
+   ],
+   "tokens": 4948,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/route.3.test.js",
+    "test/internals/validation.test.js",
+    "test/types/logger.tst.ts",
+    "test/404s.test.js"
+   ],
+   "tokens": 1740,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "examples/benchmark/hooks-benchmark-async-await.js",
+    "test/async_hooks.test.js",
+    "test/internals/content-type-parser.test.js",
+    "test/async-await.test.js",
+    "types/hooks.d.ts"
+   ],
+   "tokens": 1665,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "lib/content-type-parser.js"
+   ],
+   "tokens": 362,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "fastify.js",
+    "lib/noop-set.js",
+    "test/custom-http-server.test.js",
+    "lib/warnings.js",
+    "test/http2/unknown-http-method.test.js"
+   ],
+   "tokens": 1637,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "types/instance.d.ts",
+    "fastify.js",
+    "test/reply-error.test.js",
+    "test/logger/request.test.js",
+    "test/url-rewriting.test.js"
+   ],
+   "tokens": 2753,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/reply-trailers.test.js",
+    "lib/reply.js",
+    "test/helper.js",
+    "fastify.js",
+    "types/hooks.d.ts"
+   ],
+   "tokens": 1665,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/nullable-validation.test.js",
+    "lib/log-controller.js",
+    "types/type-provider.d.ts",
+    "test/internals/reply.test.js",
+    "lib/logger-factory.js"
+   ],
+   "tokens": 3306,
+   "memory_hit": true
+  }
+ ],
+ "after_para": [
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/error-serializer.js",
+    "test/reply-media-type.test.js",
+    "test/stream-serializers.test.js",
+    "lib/reply.js",
+    "test/schema-validation.test.js"
+   ],
+   "tokens": 1641,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/max-requests-per-socket.test.js",
+    "test/async-await.test.js",
+    "test/types/instance.tst.ts",
+    "fastify.d.ts",
+    "test/helper.js"
+   ],
+   "tokens": 3590,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0625,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/init.test.js",
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/types/logger.tst.ts",
+    "test/http-methods/report.test.js",
+    "test/async-await.test.js"
+   ],
+   "tokens": 1656,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/content-parser.test.js",
+    "lib/reply.js",
+    "lib/symbols.js",
+    "lib/errors.js",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 3619,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/http2/closing.test.js",
+    "test/404s.test.js",
+    "examples/benchmark/webstream.js",
+    "fastify.js",
+    "test/buffer.test.js"
+   ],
+   "tokens": 1651,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/plugin.3.test.js",
+    "test/esm/plugin.mjs",
+    "test/types/logger.tst.ts",
+    "test/reply-error.test.js",
+    "test/inject.test.js"
+   ],
+   "tokens": 1653,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.1111111111111111,
+   "first_is_test": true,
+   "files": [
+    "test/keep-alive-timeout.test.js",
+    "test/internals/hook-runner.test.js",
+    "test/max-requests-per-socket.test.js",
+    "test/logger/logger-test-utils.js",
+    "test/listen.1.test.js"
+   ],
+   "tokens": 1694,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/plugin.3.test.js",
+    "examples/http2.js",
+    "test/request-error.test.js",
+    "lib/route.js",
+    "fastify.js"
+   ],
+   "tokens": 3771,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/internals/decorator.test.js",
+    "lib/reply.js",
+    "test/diagnostics-channel/sync-request-reply.test.js",
+    "lib/schema-controller.js",
+    "test/helper.js"
+   ],
+   "tokens": 282,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/route-hooks.test.js",
+    "lib/reply.js",
+    "lib/route.js",
+    "types/hooks.d.ts",
+    "test/max-requests-per-socket.test.js"
+   ],
+   "tokens": 1642,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "examples/benchmark/webstream.js",
+    "lib/reply.js",
+    "test/stream.4.test.js"
+   ],
+   "tokens": 1626,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/request-port.test.js",
+    "lib/request.js",
+    "lib/log-controller.js",
+    "test/esm/named-exports.mjs",
+    "fastify.js"
+   ],
+   "tokens": 2084,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "test/types/route.tst.ts",
+    "test/custom-http-server.test.js",
+    "lib/validation.js",
+    "lib/handle-request.js"
+   ],
+   "tokens": 1649,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/internals/validation.test.js",
+    "lib/request.js",
+    "test/https/custom-https-server.test.js"
+   ],
+   "tokens": 265,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "examples/benchmark/hooks-benchmark-async-await.js",
+    "test/async_hooks.test.js",
+    "test/internals/content-type-parser.test.js",
+    "test/async-await.test.js",
+    "types/hooks.d.ts"
+   ],
+   "tokens": 1646,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "lib/content-type-parser.js"
+   ],
+   "tokens": 296,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true,
+   "files": [
+    "test/http-methods/custom-http-methods.test.js",
+    "lib/request.js",
+    "lib/warnings.js",
+    "test/http2/unknown-http-method.test.js",
+    "lib/reply.js"
+   ],
+   "tokens": 1653,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "types/instance.d.ts",
+    "fastify.js",
+    "test/reply-error.test.js",
+    "test/logger/request.test.js",
+    "test/url-rewriting.test.js"
+   ],
+   "tokens": 2753,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/hook-runner.test.js",
+    "test/route-hooks.test.js",
+    "test/url-rewriting.test.js"
+   ],
+   "tokens": 3417,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true,
+   "files": [
+    "test/listen.5.test.js",
+    "test/logger/logger-test-utils.js",
+    "lib/log-controller.js"
+   ],
+   "tokens": 145,
+   "memory_hit": false
+  }
+ ],
+ "after_new": [
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/internals/decorator.test.js",
+    "test/decorator-instance-properties.test.js",
+    "lib/schema-controller.js"
+   ],
+   "tokens": 250,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/post-empty-body.test.js",
+    "fastify.js",
+    "lib/symbols.js",
+    "lib/errors.js"
+   ],
+   "tokens": 1657,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "lib/reply.js",
+    "test/internals/validation.test.js",
+    "test/internals/decorator.test.js",
+    "lib/content-type.js"
+   ],
+   "tokens": 1632,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "types/type-provider.d.ts",
+    "lib/content-type.js",
+    "lib/reply.js"
+   ],
+   "tokens": 152,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/close.test.js",
+    "test/http2/closing.test.js",
+    "lib/content-type-parser.js",
+    "types/hooks.d.ts",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 1652,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "test/serialize-response.test.js",
+    "lib/route.js",
+    "test/fix-6411.test.js",
+    "fastify.js",
+    "lib/validation.js"
+   ],
+   "tokens": 2600,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": true,
+   "files": [
+    "fastify.d.ts",
+    "test/trust-proxy.test.js",
+    "test/schema-feature.test.js",
+    "lib/log-controller.js",
+    "lib/request.js"
+   ],
+   "tokens": 1643,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/decorator.test.js",
+    "lib/error-handler.js",
+    "test/fix-root-primitive-coercion.test.js",
+    "fastify.js",
+    "lib/reply.js"
+   ],
+   "tokens": 4272,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.08333333333333333,
+   "first_is_test": false,
+   "files": [
+    "lib/hooks.js",
+    "lib/reply.js",
+    "lib/content-type-parser.js",
+    "lib/handle-request.js",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 1649,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.2,
+   "first_is_test": true,
+   "files": [
+    "test/schema-validation.test.js",
+    "lib/schemas.js",
+    "test/delete.test.js",
+    "lib/reply.js",
+    "lib/validation.js"
+   ],
+   "tokens": 1640,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/schemas.js",
+    "lib/request.js",
+    "test/internals/validation.test.js",
+    "test/internals/decorator.test.js",
+    "lib/content-type.js"
+   ],
+   "tokens": 1645,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/404.test.js",
+    "test/404s.test.js",
+    "test/https/custom-https-server.test.js",
+    "lib/head-route.js",
+    "lib/hooks.js"
+   ],
+   "tokens": 1655,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/route.3.test.js",
+    "test/async-await.test.js",
+    "github/scripts/lint-ecosystem.js",
+    "test/helper.js",
+    "fastify.js"
+   ],
+   "tokens": 1641,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "types/utils.d.ts",
+    "test/nullable-validation.test.js",
+    "lib/logger-factory.js"
+   ],
+   "tokens": 1665,
+   "memory_hit": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.05555555555555555,
+   "first_is_test": true,
+   "files": [
+    "test/internals/validation.test.js",
+    "test/custom-http-server.test.js",
+    "lib/content-type-parser.js",
+    "test/types/logger.tst.ts",
+    "test/custom-querystring-parser.test.js"
+   ],
+   "tokens": 1670,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/internals/errors.test.js",
+    "lib/reply.js",
+    "lib/errors.js",
+    "test/logger/logger-test-utils.js"
+   ],
+   "tokens": 1644,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/http-methods/copy.test.js"
+   ],
+   "tokens": 1656,
+   "memory_hit": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/helper.js",
+    "test/reply-trailers.test.js",
+    "fastify.js",
+    "types/instance.d.ts"
+   ],
+   "tokens": 1638,
+   "memory_hit": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/error-handler.js",
+    "test/500s.test.js",
+    "test/http2/secure-with-fallback.test.js",
+    "test/types/logger.tst.ts",
+    "lib/symbols.js"
+   ],
+   "tokens": 1653,
+   "memory_hit": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": true,
+   "files": [
+    "test/types/serverFactory.tst.ts",
+    "test/https/custom-https-server.test.js",
+    "lib/content-type-parser.js",
+    "fastify.js",
+    "lib/symbols.js"
+   ],
+   "tokens": 1642,
+   "memory_hit": true
+  }
+ ]
+}

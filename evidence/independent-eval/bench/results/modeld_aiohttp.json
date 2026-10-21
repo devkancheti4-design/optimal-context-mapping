@@ -1,0 +1,926 @@
+[
+ {
+  "hash": "4eb358863b",
+  "question": "resolve race condition in TCPConnector.close()",
+  "gold": [
+   "aiohttp/connector.py"
+  ],
+  "files": [
+   "docs/code/client_middleware_cookbook.py",
+   "aiohttp/connector.py",
+   "tests/test_base_protocol.py",
+   "tests/test_client_connection.py",
+   "tests/test_web_functional.py",
+   "tests/test_resolver.py",
+   "tests/test_websocket_writer.py"
+  ],
+  "tokens": 507,
+  "query_s": 0.08,
+  "build_s": 146.9,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "a927da1643",
+  "question": "Fix pipelined request after websocket rejection failing",
+  "gold": [
+   "aiohttp/web_protocol.py"
+  ],
+  "files": [
+   "examples/combined_middleware.py",
+   "examples/token_refresh_middleware.py",
+   "tests/test_web_websocket.py",
+   "tests/test_run_app.py",
+   "tests/test_client_middleware.py",
+   "tests/test_web_websocket_functional.py",
+   "tests/test_multipart.py"
+  ],
+  "tokens": 611,
+  "query_s": 0.05,
+  "build_s": 1.6,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "4160fb1c2b",
+  "question": "Fix gunicorn endless restarting",
+  "gold": [
+   "aiohttp/worker.py"
+  ],
+  "files": [
+   "aiohttp/worker.py",
+   "aiohttp/__init__.py",
+   "aiohttp/web_app.py",
+   "tests/test_worker.py"
+  ],
+  "tokens": 525,
+  "query_s": 0.06,
+  "build_s": 38.9,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "5c293f4f71",
+  "question": "Fix read timeout on a connection returned to the pool",
+  "gold": [
+   "aiohttp/client_proto.py"
+  ],
+  "files": [
+   "aiohttp/client_proto.py",
+   "aiohttp/client.py",
+   "aiohttp/client_reqrep.py",
+   "aiohttp/connector.py",
+   "tests/test_client_ws.py",
+   "tests/test_client_functional.py"
+  ],
+  "tokens": 473,
+  "query_s": 0.07,
+  "build_s": 5.1,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "f5e63e8567",
+  "question": "Fix IndexError in parse_content_disposition when param value is empty",
+  "gold": [
+   "aiohttp/multipart.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "aiohttp/helpers.py",
+   "tests/test_multipart_helpers.py",
+   "tests/test_cookie_helpers.py"
+  ],
+  "tokens": 538,
+  "query_s": 0.03,
+  "build_s": 1.1,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "47fb6ae354",
+  "question": "Fix decompressing frames without negotiation",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/client.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/_websocket/writer.py",
+   "aiohttp/_websocket/reader_c.py",
+   "tests/test_run_app.py",
+   "tests/test_web_websocket_functional.py"
+  ],
+  "tokens": 757,
+  "query_s": 0.03,
+  "build_s": 1.0,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "7dde53eda2",
+  "question": "Fix case sensitivity",
+  "gold": [
+   "aiohttp/client.py",
+   "aiohttp/hdrs.py",
+   "aiohttp/helpers.py",
+   "aiohttp/http_parser.py",
+   "aiohttp/web_response.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "tools/gen.py",
+   "tests/test_cookie_helpers.py",
+   "tests/test_resolver.py",
+   "tests/test_client_middleware_digest_auth.py"
+  ],
+  "tokens": 622,
+  "query_s": 0.03,
+  "build_s": 0.9,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "5ff087abcd",
+  "question": "Fix parse_content_disposition rejecting headers with OWS around disposition type",
+  "gold": [
+   "aiohttp/multipart.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "aiohttp/client_reqrep.py",
+   "aiohttp/payload.py",
+   "aiohttp/helpers.py",
+   "tests/test_web_functional.py"
+  ],
+  "tokens": 631,
+  "query_s": 0.02,
+  "build_s": 1.0,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "8ef76ab802",
+  "question": "Fix body reads after failed WS upgrade",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ],
+  "files": [
+   "aiohttp/web_ws.py",
+   "aiohttp/client_ws.py",
+   "aiohttp/multipart.py",
+   "tests/test_web_websocket_functional.py",
+   "tests/test_client_ws.py",
+   "tests/test_web_sendfile_functional.py"
+  ],
+  "tokens": 655,
+  "query_s": 0.03,
+  "build_s": 0.7,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "8040e0ea63",
+  "question": "Fix Windows localhost resolution without active network",
+  "gold": [
+   "aiohttp/resolver.py"
+  ],
+  "files": [
+   "aiohttp/connector.py",
+   "examples/combined_middleware.py",
+   "aiohttp/web_urldispatcher.py",
+   "tests/test_connector.py",
+   "tests/test_resolver.py",
+   "tests/test_client_functional.py"
+  ],
+  "tokens": 716,
+  "query_s": 0.1,
+  "build_s": 1.2,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "fd07a7a7d7",
+  "question": "Fix OWS in Content-Disposition",
+  "gold": [
+   "aiohttp/multipart.py"
+  ],
+  "files": [
+   "aiohttp/payload.py",
+   "aiohttp/multipart.py",
+   "aiohttp/client_reqrep.py",
+   "tests/test_multipart.py",
+   "tests/test_client_response.py",
+   "tests/test_web_functional.py"
+  ],
+  "tokens": 607,
+  "query_s": 0.03,
+  "build_s": 1.9,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "20cde095cf",
+  "question": "Fix empty domain issue in DigestAuthMiddleware",
+  "gold": [
+   "aiohttp/client_middleware_digest_auth.py"
+  ],
+  "files": [
+   "aiohttp/client_middleware_digest_auth.py",
+   "aiohttp/web_urldispatcher.py",
+   "tests/test_client_middleware_digest_auth.py",
+   "tests/test_cookiejar.py"
+  ],
+  "tokens": 664,
+  "query_s": 0.02,
+  "build_s": 1.3,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "7d7892044c",
+  "question": "Fix Digest challenge with multiple schemes",
+  "gold": [
+   "aiohttp/client_middleware_digest_auth.py"
+  ],
+  "files": [
+   "aiohttp/client_middleware_digest_auth.py",
+   "tests/test_client_middleware_digest_auth.py"
+  ],
+  "tokens": 544,
+  "query_s": 0.03,
+  "build_s": 0.9,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "fe353185eb",
+  "question": "Fix IndexError in parser on edge case",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "aiohttp/http_parser.py",
+   "tools/cleanup_changes.py",
+   "aiohttp/cookiejar.py",
+   "tests/test_resolver.py",
+   "tests/test_cookie_helpers.py"
+  ],
+  "tokens": 645,
+  "query_s": 0.02,
+  "build_s": 1.5,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "9e00085c95",
+  "question": "Fix parse_mimetype producing spurious empty-key parameter for whitespace-only segments after semicolons",
+  "gold": [
+   "aiohttp/helpers.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "aiohttp/helpers.py",
+   "aiohttp/client_middleware_digest_auth.py",
+   "tests/test_multipart_helpers.py",
+   "tests/test_cookie_helpers.py",
+   "tests/test_helpers.py"
+  ],
+  "tokens": 595,
+  "query_s": 0.03,
+  "build_s": 0.8,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "c620e623db",
+  "question": "Fix Python parser not rejecting LF early",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ],
+  "files": [
+   "tools/cleanup_changes.py",
+   "aiohttp/http_parser.py",
+   "aiohttp/multipart.py",
+   "tests/test_http_parser.py",
+   "tests/test_websocket_parser.py"
+  ],
+  "tokens": 823,
+  "query_s": 0.03,
+  "build_s": 0.9,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "2b9068690a",
+  "question": "Fix StreamResponse.last_modified rounding inconsistency between datetime and timestamp",
+  "gold": [
+   "aiohttp/web_response.py"
+  ],
+  "files": [
+   "aiohttp/web_response.py",
+   "aiohttp/cookiejar.py",
+   "tests/test_web_response.py"
+  ],
+  "tokens": 468,
+  "query_s": 0.04,
+  "build_s": 4.5,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "2a6c672fc4",
+  "question": "Fix raw path",
+  "gold": [
+   "aiohttp/http_parser.py",
+   "aiohttp/web_request.py"
+  ],
+  "files": [
+   "aiohttp/web_routedef.py",
+   "aiohttp/web_urldispatcher.py",
+   "aiohttp/web_middlewares.py",
+   "aiohttp/web_request.py",
+   "tests/test_web_request.py"
+  ],
+  "tokens": 351,
+  "query_s": 0.03,
+  "build_s": 2.6,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.25,
+  "first_is_test": false
+ },
+ {
+  "hash": "a47a63e008",
+  "question": "Fix websocket regression",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ],
+  "files": [
+   "aiohttp/_websocket/writer.py",
+   "tests/test_client_ws_functional.py",
+   "tests/test_web_websocket_functional.py",
+   "tests/test_websocket_parser.py",
+   "tests/test_websocket_writer.py",
+   "tests/test_cookiejar.py"
+  ],
+  "tokens": 694,
+  "query_s": 0.03,
+  "build_s": 2.0,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "26fde219b3",
+  "question": "Fix parser when paused at end of content-length",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ],
+  "files": [
+   "aiohttp/http_parser.py",
+   "aiohttp/streams.py",
+   "aiohttp/client_proto.py",
+   "tests/test_http_parser.py"
+  ],
+  "tokens": 672,
+  "query_s": 0.03,
+  "build_s": 1.2,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "d041d4d0fd",
+  "question": "Fix excessive CPU use on decompressing small members",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/compression_utils.py"
+  ],
+  "files": [
+   "aiohttp/compression_utils.py",
+   "aiohttp/multipart.py",
+   "tests/test_compression_utils.py",
+   "tests/test_http_parser.py",
+   "tests/test_streams.py"
+  ],
+  "tokens": 1037,
+  "query_s": 0.03,
+  "build_s": 1.6,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "716c83d2b6",
+  "question": "Fix pipelining a rejected upgrade",
+  "gold": [
+   "aiohttp/web_protocol.py"
+  ],
+  "files": [
+   "aiohttp/web_protocol.py",
+   "aiohttp/http_parser.py",
+   "tests/test_web_websocket_functional.py",
+   "tests/test_web_functional.py",
+   "tests/test_websocket_parser.py",
+   "tests/test_http_parser.py"
+  ],
+  "tokens": 777,
+  "query_s": 0.02,
+  "build_s": 2.1,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "8c8906a19f",
+  "question": "Fix oversized frames on websocket messages",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ],
+  "files": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/_websocket/writer.py",
+   "tests/test_websocket_parser.py",
+   "tests/test_web_websocket_functional.py"
+  ],
+  "tokens": 603,
+  "query_s": 0.03,
+  "build_s": 2.2,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "3d850ee9b9",
+  "question": "Fix limit on message tail",
+  "gold": [
+   "aiohttp/web_protocol.py"
+  ],
+  "files": [
+   "aiohttp/http_parser.py",
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/connector.py",
+   "aiohttp/web_protocol.py",
+   "tests/test_http_parser.py"
+  ],
+  "tokens": 679,
+  "query_s": 0.04,
+  "build_s": 0.9,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.25,
+  "first_is_test": false
+ },
+ {
+  "hash": "2d9c5c1062",
+  "question": "Fix multipart base64 edge cases",
+  "gold": [
+   "aiohttp/multipart.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "tests/test_web_request.py",
+   "tests/test_cookie_helpers.py",
+   "tests/test_client_middleware_digest_auth.py"
+  ],
+  "tokens": 608,
+  "query_s": 0.02,
+  "build_s": 1.2,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "0b6c9170e0",
+  "question": "Fix Cython code on 32 bit",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ],
+  "files": [
+   "setup.py",
+   "aiohttp/_websocket/reader_py.py"
+  ],
+  "tokens": 511,
+  "query_s": 0.03,
+  "build_s": 0.9,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "b2b2bce03c",
+  "question": "Fix infinite loop parsing the Forwarded header",
+  "gold": [
+   "aiohttp/web_request.py"
+  ],
+  "files": [
+   "aiohttp/http_parser.py",
+   "aiohttp/web_request.py",
+   "tests/test_web_request.py"
+  ],
+  "tokens": 702,
+  "query_s": 0.03,
+  "build_s": 0.8,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "fdebfa2b81",
+  "question": "Fix Cython 3.3.0 compiler crash when compiling the WebSocket reader",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ],
+  "files": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/_websocket/reader.py",
+   "setup.py",
+   "tests/test_websocket_parser.py"
+  ],
+  "tokens": 605,
+  "query_s": 0.02,
+  "build_s": 0.9,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "0ae507423f",
+  "question": "Fix memory consumption on empty/small messages",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/client.py",
+   "aiohttp/client_ws.py",
+   "aiohttp/web_ws.py"
+  ],
+  "files": [
+   "aiohttp/http_parser.py",
+   "aiohttp/web_protocol.py",
+   "aiohttp/payload.py",
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/streams.py",
+   "tests/test_http_writer.py",
+   "tests/test_cookiejar.py",
+   "tests/test_benchmarks_http_websocket.py",
+   "tests/test_http_parser.py"
+  ],
+  "tokens": 633,
+  "query_s": 0.02,
+  "build_s": 1.2,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.25,
+  "first_is_test": false
+ },
+ {
+  "hash": "502dcec072",
+  "question": "Fix 2 flow control stalls",
+  "gold": [
+   "aiohttp/_websocket/writer.py",
+   "aiohttp/web_protocol.py"
+  ],
+  "files": [
+   "aiohttp/_websocket/writer.py",
+   "aiohttp/base_protocol.py",
+   "aiohttp/hdrs.py",
+   "tests/test_benchmarks_multipart.py",
+   "tests/test_websocket_parser.py"
+  ],
+  "tokens": 758,
+  "query_s": 0.03,
+  "build_s": 3.9,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "60e5cb30e1",
+  "question": "Fix mutable morsels",
+  "gold": [
+   "aiohttp/cookiejar.py"
+  ],
+  "files": [
+   "aiohttp/cookiejar.py",
+   "aiohttp/_cookie_helpers.py",
+   "aiohttp/helpers.py",
+   "aiohttp/web_app.py",
+   "tests/test_cookie_helpers.py",
+   "tests/test_cookiejar.py"
+  ],
+  "tokens": 565,
+  "query_s": 0.03,
+  "build_s": 3.0,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "9b27347e61",
+  "question": "Fix head request parsing",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ],
+  "files": [
+   "aiohttp/client.py",
+   "aiohttp/http_parser.py",
+   "aiohttp/test_utils.py",
+   "tests/test_http_parser.py",
+   "tests/test_client_request.py",
+   "tests/test_client_session.py"
+  ],
+  "tokens": 567,
+  "query_s": 0.04,
+  "build_s": 1.0,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "6a07c171ef",
+  "question": "Fix host-only state on cookie expiration",
+  "gold": [
+   "aiohttp/abc.py",
+   "aiohttp/cookiejar.py"
+  ],
+  "files": [
+   "aiohttp/cookiejar.py",
+   "aiohttp/abc.py",
+   "tests/test_cookiejar.py"
+  ],
+  "tokens": 746,
+  "query_s": 0.03,
+  "build_s": 0.8,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "9e08ba02ab",
+  "question": "Fix cookie overflow",
+  "gold": [
+   "aiohttp/client.py",
+   "aiohttp/cookiejar.py"
+  ],
+  "files": [
+   "aiohttp/_cookie_helpers.py",
+   "tests/test_client_functional.py",
+   "tests/test_cookiejar.py",
+   "tests/test_cookie_helpers.py",
+   "tests/test_web_request.py"
+  ],
+  "tokens": 666,
+  "query_s": 0.03,
+  "build_s": 1.8,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "e11d283620",
+  "question": "Fix secure shared cookie",
+  "gold": [
+   "aiohttp/cookiejar.py"
+  ],
+  "files": [
+   "aiohttp/cookiejar.py",
+   "tests/test_cookiejar.py"
+  ],
+  "tokens": 482,
+  "query_s": 0.05,
+  "build_s": 5.6,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "95081f8a35",
+  "question": "Fix treat_as_secure_origin on request cookies",
+  "gold": [
+   "aiohttp/abc.py",
+   "aiohttp/client.py",
+   "aiohttp/cookiejar.py"
+  ],
+  "files": [
+   "aiohttp/cookiejar.py",
+   "tests/test_cookiejar.py"
+  ],
+  "tokens": 491,
+  "query_s": 0.03,
+  "build_s": 1.5,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "ced8133ea4",
+  "question": "Fix read_chunk() on body parts with a zero Content-Length",
+  "gold": [
+   "aiohttp/multipart.py"
+  ],
+  "files": [
+   "aiohttp/multipart.py",
+   "aiohttp/payload.py",
+   "tests/test_http_parser.py",
+   "tests/test_multipart.py"
+  ],
+  "tokens": 544,
+  "query_s": 0.03,
+  "build_s": 1.5,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "48f7b3d20c",
+  "question": "Fix crash reusing connections when keepalive_timeout is None",
+  "gold": [
+   "aiohttp/connector.py"
+  ],
+  "files": [
+   "aiohttp/web_protocol.py",
+   "aiohttp/connector.py"
+  ],
+  "tokens": 757,
+  "query_s": 0.04,
+  "build_s": 4.4,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "a6306fc439",
+  "question": "Fix readuntil() missing a separator split across chunks",
+  "gold": [
+   "aiohttp/streams.py"
+  ],
+  "files": [
+   "aiohttp/streams.py",
+   "tests/test_streams.py"
+  ],
+  "tokens": 613,
+  "query_s": 0.04,
+  "build_s": 1.3,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "1f9c4a579b",
+  "question": "Fix handling of absolute-form request",
+  "gold": [
+   "aiohttp/web_request.py",
+   "aiohttp/web_urldispatcher.py"
+  ],
+  "files": [
+   "aiohttp/web_request.py",
+   "aiohttp/http_parser.py",
+   "aiohttp/web_protocol.py",
+   "tests/test_web_request.py",
+   "tests/test_web_functional.py",
+   "tests/test_web_middleware.py"
+  ],
+  "tokens": 522,
+  "query_s": 0.04,
+  "build_s": 6.3,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ }
+]

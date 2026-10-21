@@ -1,0 +1,378 @@
+[
+ {
+  "hash": "4eb358863b3797af1e5a6712b02a01f4a7fe985d",
+  "parent": "4ef04d66fa450156a5cc39c2ec4f00d4ca623d5b",
+  "subject": "fix(connector): resolve race condition in TCPConnector.close() (#12787)",
+  "question": "resolve race condition in TCPConnector.close()",
+  "gold": [
+   "aiohttp/connector.py"
+  ]
+ },
+ {
+  "hash": "a927da1643b764bccfab91a0a683697b21333c05",
+  "parent": "4eb358863b3797af1e5a6712b02a01f4a7fe985d",
+  "subject": "Fix pipelined request after websocket rejection failing (#12796)",
+  "question": "Fix pipelined request after websocket rejection failing",
+  "gold": [
+   "aiohttp/web_protocol.py"
+  ]
+ },
+ {
+  "hash": "4160fb1c2b09a077d1fc1eb37b840ec333e110eb",
+  "parent": "2e2b936bd9f12c25f42d399f7bb4dd6cff54a777",
+  "subject": "Fix gunicorn endless restarting (#12879) (#12881)",
+  "question": "Fix gunicorn endless restarting",
+  "gold": [
+   "aiohttp/worker.py"
+  ]
+ },
+ {
+  "hash": "5c293f4f71f6188b446afd331afa47262a874f4f",
+  "parent": "7b0b01350ce8fd7ddb63b69c51ff9db6451c507a",
+  "subject": "Fix read timeout on a connection returned to the pool (#12954)",
+  "question": "Fix read timeout on a connection returned to the pool",
+  "gold": [
+   "aiohttp/client_proto.py"
+  ]
+ },
+ {
+  "hash": "f5e63e856708076a5a5d0500cb19b798cb0a94c2",
+  "parent": "ea0c52e9982cce5da4e2e0ba90daba33b4a4189e",
+  "subject": "Fix IndexError in parse_content_disposition when param value is empty (#12948)",
+  "question": "Fix IndexError in parse_content_disposition when param value is empty",
+  "gold": [
+   "aiohttp/multipart.py"
+  ]
+ },
+ {
+  "hash": "47fb6ae354d4fa22048f4dbe7dbf82b625f0a2f6",
+  "parent": "c5293938af13b3efbcd77619d34501cbaa255c2a",
+  "subject": "Fix decompressing frames without negotiation (#12976) (#12978)",
+  "question": "Fix decompressing frames without negotiation",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/client.py"
+  ]
+ },
+ {
+  "hash": "7dde53eda27089940c2f72d74913b65d7c847822",
+  "parent": "47fb6ae354d4fa22048f4dbe7dbf82b625f0a2f6",
+  "subject": "Fix case sensitivity (#12931) (#12980)",
+  "question": "Fix case sensitivity",
+  "gold": [
+   "aiohttp/client.py",
+   "aiohttp/hdrs.py",
+   "aiohttp/helpers.py",
+   "aiohttp/http_parser.py",
+   "aiohttp/web_response.py"
+  ]
+ },
+ {
+  "hash": "5ff087abcde85d0bef9b65bbde67d1131f5331b5",
+  "parent": "7987bd2ccfc6fc48adca7e97ab57abebbd67179e",
+  "subject": "Fix parse_content_disposition rejecting headers with OWS around disposition type (#12997)",
+  "question": "Fix parse_content_disposition rejecting headers with OWS around disposition type",
+  "gold": [
+   "aiohttp/multipart.py"
+  ]
+ },
+ {
+  "hash": "8ef76ab8029d0f2d88449fe115feb42ded646c7c",
+  "parent": "664d695c9278e90be29a16d959ed0e0b73447afc",
+  "subject": "Fix body reads after failed WS upgrade (#13016)",
+  "question": "Fix body reads after failed WS upgrade",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ]
+ },
+ {
+  "hash": "8040e0ea638ec345b21e6f553b24000e5af64fd0",
+  "parent": "649887ca860437e610fc4af5c8363a9be6f19681",
+  "subject": "Fix Windows localhost resolution without active network (#12700)",
+  "question": "Fix Windows localhost resolution without active network",
+  "gold": [
+   "aiohttp/resolver.py"
+  ]
+ },
+ {
+  "hash": "fd07a7a7d7cdff58ca2a98c6c7a26149562e13a7",
+  "parent": "ce99eac8db1073e4bbe4c8b3d0913900e0b3a758",
+  "subject": "Fix OWS in Content-Disposition (#13069)",
+  "question": "Fix OWS in Content-Disposition",
+  "gold": [
+   "aiohttp/multipart.py"
+  ]
+ },
+ {
+  "hash": "20cde095cf3e8f7fab2926a1bbbbe8e6ad189381",
+  "parent": "4002772f6d1f0700efbac85e507fede89bd76972",
+  "subject": "Fix empty domain issue in DigestAuthMiddleware (#12983)",
+  "question": "Fix empty domain issue in DigestAuthMiddleware",
+  "gold": [
+   "aiohttp/client_middleware_digest_auth.py"
+  ]
+ },
+ {
+  "hash": "7d7892044c6fe663a566e78c58e5fd25ac6d57b1",
+  "parent": "20cde095cf3e8f7fab2926a1bbbbe8e6ad189381",
+  "subject": "Fix Digest challenge with multiple schemes (#12984)",
+  "question": "Fix Digest challenge with multiple schemes",
+  "gold": [
+   "aiohttp/client_middleware_digest_auth.py"
+  ]
+ },
+ {
+  "hash": "fe353185eb5c6eb87cb3cca92213c7098aa42437",
+  "parent": "4416d89e73f4a09339eb08fabef3fa010ec9184f",
+  "subject": "Fix IndexError in parser on edge case (#13001)",
+  "question": "Fix IndexError in parser on edge case",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ]
+ },
+ {
+  "hash": "9e00085c958fbcd40de37867e773bf7cd3bbee0c",
+  "parent": "fe353185eb5c6eb87cb3cca92213c7098aa42437",
+  "subject": "Fix parse_mimetype producing spurious empty-key parameter for whitespace-only segments after semicolons (#13010)",
+  "question": "Fix parse_mimetype producing spurious empty-key parameter for whitespace-only segments after semicolons",
+  "gold": [
+   "aiohttp/helpers.py"
+  ]
+ },
+ {
+  "hash": "c620e623db233f245ab9ce6990ed7ac014ac6d13",
+  "parent": "2781b9562ca57585ab6dc7a4207ec1a4b6fdc2da",
+  "subject": "Fix Python parser not rejecting LF early (#13136) (#13148)",
+  "question": "Fix Python parser not rejecting LF early",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ]
+ },
+ {
+  "hash": "2b9068690af7f868ccd01552c58cf045afc6d9f6",
+  "parent": "0ed510d8dc9f6397878fe775ac7e2fbd0b13641f",
+  "subject": "Fix StreamResponse.last_modified rounding inconsistency between datetime and timestamp (#13170)",
+  "question": "Fix StreamResponse.last_modified rounding inconsistency between datetime and timestamp",
+  "gold": [
+   "aiohttp/web_response.py"
+  ]
+ },
+ {
+  "hash": "2a6c672fc47bcb1ce7c13f045c95abe9b7a7a2ac",
+  "parent": "ef0e0c574197bc7efa5e50f87f62d07102969a90",
+  "subject": "Fix raw path (#13175) (#13189)",
+  "question": "Fix raw path",
+  "gold": [
+   "aiohttp/http_parser.py",
+   "aiohttp/web_request.py"
+  ]
+ },
+ {
+  "hash": "a47a63e008d02ff7c3a0b28452919df120cdacea",
+  "parent": "073ee844bc1dfa30db191118c7f2cf119c96debb",
+  "subject": "Fix websocket regression (#13302)",
+  "question": "Fix websocket regression",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ]
+ },
+ {
+  "hash": "26fde219b38ab0416f47b8165769d9df3f2ffece",
+  "parent": "6264834e7023aadd85646fd79637942b9edbe22b",
+  "subject": "Fix parser when paused at end of content-length (#13349)",
+  "question": "Fix parser when paused at end of content-length",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ]
+ },
+ {
+  "hash": "d041d4d0fd48c3f0832084d33be16cf1c4835f85",
+  "parent": "840c5e391f327315b104e460b945d0a4e549ffea",
+  "subject": "Fix excessive CPU use on decompressing small members (#13362)",
+  "question": "Fix excessive CPU use on decompressing small members",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/compression_utils.py"
+  ]
+ },
+ {
+  "hash": "716c83d2b697e56fd74f95a1aa3a451fd2fb02e8",
+  "parent": "11ad70407e324d37d6dec741edb94caaf2e20396",
+  "subject": "Fix pipelining a rejected upgrade (#13468) (#13472)",
+  "question": "Fix pipelining a rejected upgrade",
+  "gold": [
+   "aiohttp/web_protocol.py"
+  ]
+ },
+ {
+  "hash": "8c8906a19f64e52ef6a7d44d65217eb3c5af413f",
+  "parent": "069e9cfc913a937da353baaf8244ec8023d91eb3",
+  "subject": "Fix oversized frames on websocket messages (#13415)",
+  "question": "Fix oversized frames on websocket messages",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ]
+ },
+ {
+  "hash": "3d850ee9b92573c7e913821cbcb96005beb3f4df",
+  "parent": "7844dddfdf20836fc67bf89a7fda85356a934b76",
+  "subject": "Fix limit on message tail (#13501) (#13511)",
+  "question": "Fix limit on message tail",
+  "gold": [
+   "aiohttp/web_protocol.py"
+  ]
+ },
+ {
+  "hash": "2d9c5c1062eff0034fb3ab120897a6c1b3ff7041",
+  "parent": "2e64b0f1435d6268f24fba41ea190f4f13ef1b56",
+  "subject": "Fix multipart base64 edge cases (#13509)",
+  "question": "Fix multipart base64 edge cases",
+  "gold": [
+   "aiohttp/multipart.py"
+  ]
+ },
+ {
+  "hash": "0b6c9170e0099768987cb22e5aeabdb4fba34f41",
+  "parent": "2d9c5c1062eff0034fb3ab120897a6c1b3ff7041",
+  "subject": "Fix Cython code on 32 bit (#13514)",
+  "question": "Fix Cython code on 32 bit",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ]
+ },
+ {
+  "hash": "b2b2bce03c17521dc454cdd4a6e19ab0a08bce6b",
+  "parent": "956f140095b21a88e11def934d42de85cc0b2b6b",
+  "subject": "Fix infinite loop parsing the Forwarded header (#13229)",
+  "question": "Fix infinite loop parsing the Forwarded header",
+  "gold": [
+   "aiohttp/web_request.py"
+  ]
+ },
+ {
+  "hash": "fdebfa2b81c7f85c6dccddcbf4ab45d311970b03",
+  "parent": "664b1d2a705d86974ec516005fb8b40bc85f0c16",
+  "subject": "Fix Cython 3.3.0 compiler crash when compiling the WebSocket reader (#13521)",
+  "question": "Fix Cython 3.3.0 compiler crash when compiling the WebSocket reader",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ]
+ },
+ {
+  "hash": "0ae507423f681161efa77d20052b4054397c7fb6",
+  "parent": "ec9e59db6b7ea1e672c6f1efc1d26e1eef7bb5ab",
+  "subject": "Fix memory consumption on empty/small messages (#13393) (#13545) (#13546)",
+  "question": "Fix memory consumption on empty/small messages",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/client.py",
+   "aiohttp/client_ws.py",
+   "aiohttp/web_ws.py"
+  ]
+ },
+ {
+  "hash": "502dcec0728d0937fc2eacde3fd6e5133acf57ed",
+  "parent": "bcddd13c6f24a1d2f1060f9505b818a53738887c",
+  "subject": "Fix 2 flow control stalls (#13504)",
+  "question": "Fix 2 flow control stalls",
+  "gold": [
+   "aiohttp/_websocket/writer.py",
+   "aiohttp/web_protocol.py"
+  ]
+ },
+ {
+  "hash": "60e5cb30e19c8674971459e9594ed849f182dc77",
+  "parent": "f4619129023fe99229131b407040b76bd83a9839",
+  "subject": "Fix mutable morsels (#13637) (#13638)",
+  "question": "Fix mutable morsels",
+  "gold": [
+   "aiohttp/cookiejar.py"
+  ]
+ },
+ {
+  "hash": "9b27347e61454d9f8ca2055f4c67a37dee336e83",
+  "parent": "a8e283817003e9cd3b2a21ff127814f48d431558",
+  "subject": "Fix head request parsing (#13671) (#13673)",
+  "question": "Fix head request parsing",
+  "gold": [
+   "aiohttp/http_parser.py"
+  ]
+ },
+ {
+  "hash": "6a07c171ef9f3be583e2907dcd1931372efca8d6",
+  "parent": "9b27347e61454d9f8ca2055f4c67a37dee336e83",
+  "subject": "Fix host-only state on cookie expiration (#13674) (#13676)",
+  "question": "Fix host-only state on cookie expiration",
+  "gold": [
+   "aiohttp/abc.py",
+   "aiohttp/cookiejar.py"
+  ]
+ },
+ {
+  "hash": "9e08ba02abe573ce9e4cc541d4e3c3646adb43a7",
+  "parent": "9332972cfcb0f5a2b6677e7307819ab8f13b5d09",
+  "subject": "Fix cookie overflow (#13677)",
+  "question": "Fix cookie overflow",
+  "gold": [
+   "aiohttp/client.py",
+   "aiohttp/cookiejar.py"
+  ]
+ },
+ {
+  "hash": "e11d2836203a21bec59095498e578d37801027e7",
+  "parent": "25f30573cc01da08f5b962128eebb16b9701ada3",
+  "subject": "Fix secure shared cookie (#13830)",
+  "question": "Fix secure shared cookie",
+  "gold": [
+   "aiohttp/cookiejar.py"
+  ]
+ },
+ {
+  "hash": "95081f8a353be2873643ab6dd74904ca413e45e0",
+  "parent": "999c356d61e966faffa97b06ab0d0455226d36c5",
+  "subject": "Fix treat_as_secure_origin on request cookies (#13833) (#13836)",
+  "question": "Fix treat_as_secure_origin on request cookies",
+  "gold": [
+   "aiohttp/abc.py",
+   "aiohttp/client.py",
+   "aiohttp/cookiejar.py"
+  ]
+ },
+ {
+  "hash": "ced8133ea466a3bbe39d01a42bef79a5d2dbf1b5",
+  "parent": "ed74d78659100e8ac34bc53186b7aac2d5e03887",
+  "subject": "Fix read_chunk() on body parts with a zero Content-Length (#13760)",
+  "question": "Fix read_chunk() on body parts with a zero Content-Length",
+  "gold": [
+   "aiohttp/multipart.py"
+  ]
+ },
+ {
+  "hash": "48f7b3d20cd663a09d22305e55d1ce9f8833a9a1",
+  "parent": "45520f0c4a4fcc1abbde2c37550059481f724d52",
+  "subject": "Fix crash reusing connections when keepalive_timeout is None (#13757)",
+  "question": "Fix crash reusing connections when keepalive_timeout is None",
+  "gold": [
+   "aiohttp/connector.py"
+  ]
+ },
+ {
+  "hash": "a6306fc439f29b5295626c25475cc56b011a0742",
+  "parent": "be0278388d206682fb246fbf550f2d003f22cf93",
+  "subject": "Fix readuntil() missing a separator split across chunks (#13870)",
+  "question": "Fix readuntil() missing a separator split across chunks",
+  "gold": [
+   "aiohttp/streams.py"
+  ]
+ },
+ {
+  "hash": "1f9c4a579bf45f627f166cea25bae954ba7952a9",
+  "parent": "a2ca1884a95fafc480e36ea2b4f1fbb2ab45c49a",
+  "subject": "Fix handling of absolute-form request (#13983) (#13984)",
+  "question": "Fix handling of absolute-form request",
+  "gold": [
+   "aiohttp/web_request.py",
+   "aiohttp/web_urldispatcher.py"
+  ]
+ }
+]

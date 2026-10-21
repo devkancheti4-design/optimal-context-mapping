@@ -1,0 +1,1169 @@
+[
+ {
+  "hash": "260e5d4bd3",
+  "question": "stop islanding a catch callback, which diverged silently",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts"
+  ],
+  "files": [
+   "packages/zod/src/v3/tests/promise.test.ts",
+   "scripts/triage-signal.ts",
+   "packages/zod/src/v3/helpers/util.ts"
+  ],
+  "exit": 0,
+  "tokens": 1614,
+  "query_s": 0.6,
+  "build_s": 5.1,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "d6ca12ae3e",
+  "question": "infer recursive getter options in discriminatedUnion",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/memoizer.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/standard-schema.ts",
+   "packages/zod/src/v4/classic/compat.ts",
+   "packages/bench/lazy-box.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/core/errors.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/bench/metabench.ts"
+  ],
+  "exit": 0,
+  "tokens": 1632,
+  "query_s": 0.58,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "ca246d2670",
+  "question": "drop empty alternation branch from datetime pattern",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ],
+  "files": [
+   "packages/bench/compile-endswith.ts",
+   "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+   "packages/zod/src/v4/classic/iso.ts",
+   "packages/zod/src/v3/benchmarks/object.ts",
+   "packages/bench/compile-codec-direction.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/core/index.ts",
+   "packages/zod/src/v4/classic/from-json-schema.ts"
+  ],
+  "exit": 0,
+  "tokens": 1631,
+  "query_s": 0.57,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "87ffeb0f50",
+  "question": "an absent key on the middle rung supplies nothing",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/bench/memory/snapshot.ts",
+   "packages/bench/memory/breakdown.ts"
+  ],
+  "exit": 0,
+  "tokens": 839,
+  "query_s": 0.58,
+  "build_s": 5.6,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "28e1ebd89d",
+  "question": "measure string length in Unicode code points",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ],
+  "files": [
+   "packages/bench/memory/harness.ts",
+   "packages/zod/src/v4/classic/coerce.ts",
+   "packages/zod/src/v4/core/regexes.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v4/classic/tests/codec-examples.test.ts",
+   "packages/zod/src/v4/classic/checks.ts",
+   "packages/zod/src/v4/mini/checks.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts"
+  ],
+  "exit": 0,
+  "tokens": 1631,
+  "query_s": 0.58,
+  "build_s": 5.6,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "830ba31479",
+  "question": "validate the address, and return the string that was validated",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/coerce.ts",
+   "packages/bench/compile-object-build.ts",
+   "packages/bench/compile-array-build.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v3/tests/function.test.ts"
+  ],
+  "exit": 0,
+  "tokens": 208,
+  "query_s": 0.58,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "b63db248ab",
+  "question": "keep a memoized node's cached issues private to the cache",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/core/errors.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts"
+  ],
+  "exit": 0,
+  "tokens": 2841,
+  "query_s": 0.57,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "6574e7842b",
+  "question": "stop catch resurrecting issues an optional already resolved",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v3/tests/promise.test.ts",
+   "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+   "scripts/triage-signal.ts",
+   "packages/zod/src/v3/helpers/util.ts"
+  ],
+  "exit": 0,
+  "tokens": 1640,
+  "query_s": 0.58,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "036b39f4d2",
+  "question": "require seconds once a datetime carries a Z or an offset",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+   "packages/zod/src/v4/classic/iso.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/classic/tests/codec-examples.test.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts",
+   "packages/zod/src/v4/core/index.ts"
+  ],
+  "exit": 0,
+  "tokens": 1620,
+  "query_s": 0.57,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "51a1368ad4",
+  "question": "let the includes(position) pattern match at or after the offset",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts"
+  ],
+  "files": [
+   "packages/bench/compile-includes.ts",
+   "packages/bench/compile-matrix.ts",
+   "packages/zod/src/v3/tests/string.test.ts",
+   "packages/zod/src/v3/tests/date.test.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/index.ts",
+   "packages/zod/src/v3/tests/Mocker.ts"
+  ],
+  "exit": 0,
+  "tokens": 1628,
+  "query_s": 0.59,
+  "build_s": 5.9,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "168122fca5",
+  "question": "carry a pipe's own checks through z.output",
+  "gold": [
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/mini/in-out.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/bench/compile-codec-direction.ts",
+   "packages/bench/memory/throughput.ts",
+   "packages/bench/memory/own-props.ts",
+   "packages/zod/src/index.ts",
+   "packages/bench/memory/harness.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/bench/benchUtil.ts",
+   "packages/bench/compile-matrix.ts"
+  ],
+  "exit": 0,
+  "tokens": 1643,
+  "query_s": 0.59,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "2125d30ce5",
+  "question": "accept exact decimal multiples in multipleOf",
+  "gold": [
+   "packages/zod/src/v4/core/util.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+   "packages/zod/src/v4/mini/tests/standard-schema.test.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v4/mini/schemas.ts",
+   "packages/zod/src/v4/classic/checks.ts",
+   "packages/zod/src/v4/mini/checks.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts",
+   "packages/zod/src/v4/core/index.ts"
+  ],
+  "exit": 0,
+  "tokens": 1623,
+  "query_s": 0.58,
+  "build_s": 6.0,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "53cec2a0d0",
+  "question": "resolve z.input past a preprocess transform",
+  "gold": [
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/mini/in-out.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/classic/from-json-schema.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/core/visit.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/core/index.ts",
+   "packages/zod/src/v3/tests/Mocker.ts",
+   "packages/zod/src/v4/classic/checks.ts"
+  ],
+  "exit": 0,
+  "tokens": 1626,
+  "query_s": 0.56,
+  "build_s": 4.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "3a49696865",
+  "question": "make record input keys optional when the value can fill them",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/tests/object.test.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/bench/compile-codec-direction.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+   "packages/bench/benchUtil.ts",
+   "packages/bench/compile-base64-inline-vs-hoist.ts",
+   "packages/bench/discriminated-union.ts",
+   "packages/bench/instanceof.ts",
+   "packages/bench/libs.ts"
+  ],
+  "exit": 0,
+  "tokens": 1628,
+  "query_s": 0.55,
+  "build_s": 5.4,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "a825c1b08c",
+  "question": "empty enums and literals match nothing",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/bench/compile-matrix.ts",
+   "packages/zod/src/v3/benchmarks/object.ts",
+   "packages/zod/src/v3/tests/Mocker.ts",
+   "packages/zod/src/index.ts",
+   "packages/zod/src/v3/benchmarks/index.ts"
+  ],
+  "exit": 0,
+  "tokens": 1636,
+  "query_s": 0.56,
+  "build_s": 5.4,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "7cfc012238",
+  "question": "keep a wrapper's stored value only on the side it belongs to",
+  "gold": [
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/core/visit.ts",
+   "packages/zod/src/v4/mini/in-out.ts"
+  ],
+  "files": [
+   "packages/docs/components/sidebar-item.tsx",
+   "packages/docs/components/sidebar-logo.tsx",
+   "packages/zod/src/v3/types.ts",
+   "packages/bench/compile-wrapper-cost.ts",
+   "packages/zod/src/v3/tests/readonly.test.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/v3/helpers/util.ts",
+   "packages/bench/compile-base64-inline-vs-hoist.ts",
+   "packages/docs/app/(doc)/layout.tsx",
+   "packages/zod/src/v3/ZodError.ts"
+  ],
+  "exit": 0,
+  "tokens": 1676,
+  "query_s": 0.57,
+  "build_s": 5.5,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "a87ac3665f",
+  "question": "distinguish number and bigint formats at the type level",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/regexes.ts",
+   "packages/zod/src/v4/classic/coerce.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/tests/string-formats.test.ts",
+   "packages/bench/compile-codec-direction.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/core/index.ts"
+  ],
+  "exit": 0,
+  "tokens": 4109,
+  "query_s": 0.62,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.3333333333333333,
+  "first_is_test": false
+ },
+ {
+  "hash": "badf0b7894",
+  "question": "build the catch context from the input that failed",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "scripts/compile-fuzz.ts",
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/core/visit.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/index.ts",
+   "packages/zod/src/index.ts",
+   "packages/zod/src/v4/mini/in-out.ts",
+   "packages/zod/src/v4/classic/tests/deep-partial.test.ts"
+  ],
+  "exit": 0,
+  "tokens": 1636,
+  "query_s": 0.57,
+  "build_s": 5.6,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "7b612b536d",
+  "question": "fold an intersection of object schemas into one object",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+   "packages/zod/src/v4/classic/tests/recursive-types.test.ts"
+  ],
+  "exit": 0,
+  "tokens": 883,
+  "query_s": 0.6,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "7ce3e77dfb",
+  "question": "run a wrapper's inner schema on its own payload",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/bench/index.ts",
+   "packages/zod/src/v4/core/json-schema.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/bench/memory/own-props.ts",
+   "packages/bench/compile-wrapper-cost.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/index.ts",
+   "packages/zod/src/v4/core/memoizer.ts"
+  ],
+  "exit": 0,
+  "tokens": 1636,
+  "query_s": 0.61,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.16666666666666666,
+  "first_is_test": false
+ },
+ {
+  "hash": "9d5b20ef6c",
+  "question": "restrict the first ULID character to [0-7]",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/tests/template-literal.test.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v3/tests/firstpartyschematypes.test.ts",
+   "packages/zod/src/v4/locales/lt.ts",
+   "packages/bench/compile-helper-scope.ts",
+   "packages/zod/src/v3/helpers/util.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/errors.ts"
+  ],
+  "exit": 0,
+  "tokens": 1648,
+  "query_s": 0.61,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "97edaf7dc4",
+  "question": "don't throw from safeParse on bigint multipleOf(0n)",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/compile.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/parse.ts",
+   "packages/bench/bench-invalid.ts",
+   "packages/zod/src/v4/core/regexes.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v3/tests/readonly.test.ts",
+   "packages/zod/src/v3/helpers/util.ts",
+   "packages/zod/src/v4/classic/checks.ts",
+   "packages/zod/src/v4/mini/checks.ts",
+   "packages/zod/src/v4/core/core.ts"
+  ],
+  "exit": 0,
+  "tokens": 1640,
+  "query_s": 0.61,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.2,
+  "first_is_test": false
+ },
+ {
+  "hash": "8d896186ca",
+  "question": "stop emitting a multipleOf that JSON Schema rejects",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/json-schema.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "scripts/triage-signal.ts",
+   "packages/zod/src/v4/classic/checks.ts",
+   "packages/zod/src/v4/mini/checks.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts"
+  ],
+  "exit": 0,
+  "tokens": 1624,
+  "query_s": 0.61,
+  "build_s": 6.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.125,
+  "first_is_test": false
+ },
+ {
+  "hash": "212b941791",
+  "question": "let a prototype method getter answer a bare call so vi.spyOn works",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/tests/error-utils.test.ts",
+   "packages/zod/src/v4/mini/tests/prototypes.test.ts",
+   "packages/zod/src/v4/classic/tests/prototypes.test.ts",
+   "packages/zod/src/v4/classic/tests/to-json-schema-methods.test.ts",
+   "packages/bench/lazy-box.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "exit": 0,
+  "tokens": 892,
+  "query_s": 0.59,
+  "build_s": 5.9,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "eab51ff359",
+  "question": "emit record numeric keys as strings in toJSONSchema",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/json-schema-generator.ts",
+   "packages/zod/src/v4/classic/tests/object.test.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts",
+   "packages/zod/src/v4/core/index.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "exit": 0,
+  "tokens": 1642,
+  "query_s": 0.58,
+  "build_s": 6.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "84e416fbf4",
+  "question": "stop the cycle walk from firing a default factory",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ],
+  "files": [
+   "scripts/triage-signal.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/core/json-schema-generator.ts"
+  ],
+  "exit": 0,
+  "tokens": 1638,
+  "query_s": 0.58,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "f83ab51129",
+  "question": "reject component-only strings from z.emoji()",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/tests/error.test.ts",
+   "packages/zod/src/v3/tests/readonly.test.ts",
+   "packages/zod/src/v4/classic/tests/codec-examples.test.ts",
+   "packages/zod/src/v3/helpers/util.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v3/ZodError.ts",
+   "packages/zod/src/v3/tests/primitive.test.ts",
+   "packages/zod/src/v3/tests/object.test.ts",
+   "packages/zod/src/v3/tests/function.test.ts"
+  ],
+  "exit": 0,
+  "tokens": 1631,
+  "query_s": 0.58,
+  "build_s": 6.0,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "eca9687153",
+  "question": "enforce the six JSON Schema keywords fromJSONSchema silently dropped",
+  "gold": [
+   "packages/zod/src/v4/classic/from-json-schema.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/from-json-schema.ts",
+   "packages/zod/src/v4/mini/schemas.ts",
+   "packages/zod/src/v4/core/json-schema.ts",
+   "packages/zod/src/v3/tests/number.test.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/classic/tests/fix-json-issue.test.ts",
+   "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/classic/schemas.ts"
+  ],
+  "exit": 0,
+  "tokens": 1647,
+  "query_s": 0.62,
+  "build_s": 7.2,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "cafbee4772",
+  "question": "parse recursive schemas built by a factory",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/memoizer.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ],
+  "files": [
+   "scripts/compile-fuzz.ts",
+   "packages/zod/src/v4/core/memoizer.ts",
+   "packages/zod/src/v4/core/parse.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/parse.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/mini/schemas.ts",
+   "packages/zod/src/v4/core/errors.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/mini/external.ts"
+  ],
+  "exit": 0,
+  "tokens": 1628,
+  "query_s": 0.61,
+  "build_s": 8.6,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "6f0483671e",
+  "question": "derive JSON Schema constraints by folding checks in the converter",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/regexes.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/standard-schema.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/json-schema.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/errors.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/index.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts",
+   "packages/zod/src/v4/classic/from-json-schema.ts",
+   "packages/zod/src/v4/core/json-schema-generator.ts"
+  ],
+  "exit": 0,
+  "tokens": 4577,
+  "query_s": 0.59,
+  "build_s": 6.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "36f17960d1",
+  "question": "stop the memoizer from pinning a finished parse",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/memoizer.ts",
+   "packages/zod/src/v4/classic/parse.ts",
+   "packages/zod/src/v4/classic/tests/instance-footprint.test.ts",
+   "scripts/triage-signal.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/errors.ts"
+  ],
+  "exit": 0,
+  "tokens": 1619,
+  "query_s": 0.58,
+  "build_s": 6.2,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "574d480fb4",
+  "question": "clarify Tajik discriminator value message",
+  "gold": [
+   "packages/zod/src/v4/locales/tg.ts"
+  ],
+  "files": [
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v3/ZodError.ts",
+   "packages/zod/src/v3/tests/Mocker.ts",
+   "packages/zod/src/v3/tests/error.test.ts",
+   "packages/zod/src/v3/tests/tuple.test.ts",
+   "packages/zod/src/v4/core/json-schema-generator.ts"
+  ],
+  "exit": 0,
+  "tokens": 3357,
+  "query_s": 0.59,
+  "build_s": 6.3,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "dd9c36fa2d",
+  "question": "defer recursive object index inference",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/memoizer.ts",
+   "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/resolution/src/index.cts",
+   "packages/zod/src/index.ts",
+   "packages/mini/src/index.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/errors.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/classic/external.ts"
+  ],
+  "exit": 0,
+  "tokens": 1648,
+  "query_s": 0.65,
+  "build_s": 5.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.14285714285714285,
+  "first_is_test": false
+ },
+ {
+  "hash": "b12aa523e7",
+  "question": "preserve unique tags with defaulted discriminators",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/docs/components/sidebar-item.tsx",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/docs/app/(doc)/layout.tsx",
+   "packages/docs/components/inline-code-title.tsx"
+  ],
+  "exit": 0,
+  "tokens": 735,
+  "query_s": 0.6,
+  "build_s": 6.9,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "9446b5cc14",
+  "question": "preserve undefined prefault outputs and object keys",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/tests/object.test.ts",
+   "packages/zod/src/v3/tests/Mocker.ts",
+   "packages/bench/compile-codec-direction.ts",
+   "packages/bench/metabench.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v3/tests/primitive.test.ts",
+   "packages/zod/src/v3/benchmarks/primitives.ts",
+   "packages/zod/src/v3/types.ts"
+  ],
+  "exit": 0,
+  "tokens": 1627,
+  "query_s": 0.68,
+  "build_s": 11.1,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.16666666666666666,
+  "first_is_test": false
+ },
+ {
+  "hash": "a2ba4a6798",
+  "question": "declare record output and input as members, not base type arguments",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/bench/compile-base64-inline-vs-hoist.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts"
+  ],
+  "exit": 0,
+  "tokens": 230,
+  "query_s": 1.44,
+  "build_s": 22.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "a0ebf970f2",
+  "question": "check array, set and map size bounds before parsing elements",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ],
+  "files": [
+   "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v3/tests/date.test.ts",
+   "packages/zod/src/v4/classic/checks.ts",
+   "packages/zod/src/v4/mini/checks.ts",
+   "packages/zod/src/v4/classic/external.ts",
+   "packages/zod/src/v4/mini/external.ts",
+   "packages/zod/src/v4/core/index.ts",
+   "packages/zod/src/v4/classic/from-json-schema.ts"
+  ],
+  "exit": 0,
+  "tokens": 1646,
+  "query_s": 1.38,
+  "build_s": 20.1,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "311cd74b27",
+  "question": "run a record's key schema on an own __proto__ key",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/bench/index.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/bench/memory/snapshot.ts",
+   "packages/zod/src/v4/core/json-schema.ts",
+   "packages/zod/src/v4/core/core.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/errors.ts"
+  ],
+  "exit": 0,
+  "tokens": 1638,
+  "query_s": 1.75,
+  "build_s": 20.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.14285714285714285,
+  "first_is_test": false
+ },
+ {
+  "hash": "40a5dba080",
+  "question": "add Sizable.map to es, fr, he, hr and lt, and check Sizable parity from source",
+  "gold": [
+   "packages/zod/src/v4/locales/es.ts",
+   "packages/zod/src/v4/locales/fr.ts",
+   "packages/zod/src/v4/locales/he.ts",
+   "packages/zod/src/v4/locales/hr.ts",
+   "packages/zod/src/v4/locales/lt.ts"
+  ],
+  "files": [
+   "packages/docs/loaders/source.ts",
+   "packages/bench/memory/indent-leak.ts",
+   "packages/bench/compile-matrix.ts",
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/tests/locales/parity.test.ts",
+   "packages/zod/src/v4/locales/ru.ts",
+   "packages/zod/src/index.ts",
+   "packages/docs/app/(doc)/layout.tsx",
+   "packages/docs/loaders/get-llm-text.ts",
+   "packages/docs/app/llms-full.txt/route.ts"
+  ],
+  "exit": 0,
+  "tokens": 1637,
+  "query_s": 1.01,
+  "build_s": 26.5,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "680d19f7d1",
+  "question": "report a union option that only checks rejected",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "files": [
+   "packages/bench/memory/compiled-slope.ts",
+   "packages/bench/compile-matrix.ts",
+   "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+   "packages/zod/src/v3/tests/readonly.test.ts",
+   "packages/zod/src/v3/helpers/util.ts",
+   "scripts/triage-signal.ts",
+   "packages/zod/src/v3/types.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v3/ZodError.ts",
+   "packages/zod/src/index.ts"
+  ],
+  "exit": 0,
+  "tokens": 1638,
+  "query_s": 1.63,
+  "build_s": 28.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ }
+]

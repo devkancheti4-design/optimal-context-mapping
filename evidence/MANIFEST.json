@@ -3874,5 +3874,329 @@
   "from": "cortex-d/overlap.py",
   "sha256": "d669fae177e88cacbf14ede006edee92f0e90c4bf871d41404af3d22b7792833",
   "pre-registered": false
+ },
+ {
+  "file": "independent-eval/README.md",
+  "from": "independent-eval/README.md",
+  "sha256": "e8ee3ad29030cfa5099e610f535a3400f9ef712d32a79d680f13f3725ae8f418",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/REPORT.md",
+  "from": "independent-eval/REPORT.md",
+  "sha256": "d0d10b0c6ec9e7830ff96b781e2afcf7440ea2eec94c89e19146769dcb24fcc8",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_prep.py",
+  "from": "independent-eval/bench/agent_prep.py",
+  "sha256": "2680e94ace671cf358f20bff7be9dd59c71ae741cabd620e8d8a8230e30e7209",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_prep_b.py",
+  "from": "independent-eval/bench/agent_prep_b.py",
+  "sha256": "f477752d2d8586cdf589a5252b02b3d643eeda89ca82ecb8bc278c4d8360876e",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_prompt_paths.json",
+  "from": "independent-eval/bench/agent_prompt_paths.json",
+  "sha256": "6e18df520ae4604bd6643e1aa6d31ab41c72614d8dbc44dc981b75ca3c09b181",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_prompt_paths_b.json",
+  "from": "independent-eval/bench/agent_prompt_paths_b.json",
+  "sha256": "58a70b5d22cb183f46cde42a8f4b36d049583261b1987fe005a75396e9a63160",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_prompts.json",
+  "from": "independent-eval/bench/agent_prompts.json",
+  "sha256": "1bbc01f8f6286fc887b563f4fb1b7caf64503676def85d20153b8f911dd97852",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_results.tsv",
+  "from": "independent-eval/bench/agent_results.tsv",
+  "sha256": "34af97fd745c58caf9bed26aedfdf90955a2cb8fe1a499dc918713af16653ad1",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_results_b.tsv",
+  "from": "independent-eval/bench/agent_results_b.tsv",
+  "sha256": "7f0ede256fce9bce570611417875ed863abaa8484e6582b1607a2a2ac3ee3151",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_runs.tsv",
+  "from": "independent-eval/bench/agent_runs.tsv",
+  "sha256": "318399f4c3334d904f6ff03191d64869e2bfb0b2d124009722903636d6d01c7e",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_runs_b.tsv",
+  "from": "independent-eval/bench/agent_runs_b.tsv",
+  "sha256": "0ec4f52f50f542a87a10b4b3cc9aea2508ce4499d28f68082a4d09fafa63e11a",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_score.py",
+  "from": "independent-eval/bench/agent_score.py",
+  "sha256": "0b92ad9b3454257e23d7e1178ecd4f7bb0b04ad84ae7ba07a39a9a6218395ac6",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_score_b.py",
+  "from": "independent-eval/bench/agent_score_b.py",
+  "sha256": "60d6341127d0f6dc87b16b351cb7885c4680c2a633c46da78d1d53df6c1437c3",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_set.json",
+  "from": "independent-eval/bench/agent_set.json",
+  "sha256": "e8815d3f6524c56817587d3a97a21c7701e42a88cec9e19f44960ebd9409930f",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/agent_set_b.json",
+  "from": "independent-eval/bench/agent_set_b.json",
+  "sha256": "6768c4a1951c68ded4168322aba68ff0f979f0c23c4b407f102dbb9d9cbea5c2",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/analyze.py",
+  "from": "independent-eval/bench/analyze.py",
+  "sha256": "d0f0bd4005cba91778168584f15f73730f90582a86de4a8266985100b52b6ae4",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/analyze_team.py",
+  "from": "independent-eval/bench/analyze_team.py",
+  "sha256": "0917eee2f114ac5ba95d9f2a35e900157d267fc114cfe8b2b1217c7b3b9d4364",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/common.py",
+  "from": "independent-eval/bench/common.py",
+  "sha256": "f3e6e0ea68191fdd8d91e68caee4e36f23fd1024251501d5f8dac7f6777a8136",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/mem_graphify.py",
+  "from": "independent-eval/bench/mem_graphify.py",
+  "sha256": "ce17cf9ee7495cb042eea58d6d97d683952a150b3f61d18c023be6fda0de5c66",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/mem_modeld.py",
+  "from": "independent-eval/bench/mem_modeld.py",
+  "sha256": "37ae59d174ffac576bad93183e72235ae3420f5c267eae3eb4c2265a736bc8ba",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/mem_prep.py",
+  "from": "independent-eval/bench/mem_prep.py",
+  "sha256": "d1a2776347d86c520a42aa9797582c9c430b6f2178808f140e5613c47902060d",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/mem_set.json",
+  "from": "independent-eval/bench/mem_set.json",
+  "sha256": "8fae96315f0a9140c9fd7bf0aff364509984f6384b2719eec17922c2e15d8bc2",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_aiohttp.json",
+  "from": "independent-eval/bench/q_aiohttp.json",
+  "sha256": "1036f843daf2d7722cacabecf62f23ebf411133bf77a2bbd1a33e08651cf4051",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_fastify.json",
+  "from": "independent-eval/bench/q_fastify.json",
+  "sha256": "9a2aafe55c816ea04b5aa67b228d1d592ccafb28f31bf1acdf5241079063152b",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_saleor.json",
+  "from": "independent-eval/bench/q_saleor.json",
+  "sha256": "ab5cafae93120450dc3b39cc85b0e82659d8e11fd1ad5168fdc7dfec68299dab",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_saleor_g0.json",
+  "from": "independent-eval/bench/q_saleor_g0.json",
+  "sha256": "6a97edacb6ef216406151e39398784f0cd70dc21eff09384c8a21a6591ed40ca",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_saleor_g1.json",
+  "from": "independent-eval/bench/q_saleor_g1.json",
+  "sha256": "6b9326b6048b67fb24e07da3a45bd298f74216c2bb56e1d3803f18f02029e27a",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_saleor_g2.json",
+  "from": "independent-eval/bench/q_saleor_g2.json",
+  "sha256": "355d158b3c231c0f027513ea2f479b1b70e97b070a2f95d72cc0b17cb68a91d1",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_smoke.json",
+  "from": "independent-eval/bench/q_smoke.json",
+  "sha256": "180ecf6e5f69f3cbffeab3ea88ebb014de4b2dcb87de076ce788c9fd2c08a69c",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/q_zod.json",
+  "from": "independent-eval/bench/q_zod.json",
+  "sha256": "47d79577a90620f8873ec84fb26e96a79feb0c2f4a3db2e25f08ede5746b2a74",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/questions.py",
+  "from": "independent-eval/bench/questions.py",
+  "sha256": "bbcc456cd519f729d9f0e37e43e9f664e107e6c2b7b4c10c9231b0d06c6cac65",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/reworded.tsv",
+  "from": "independent-eval/bench/reworded.tsv",
+  "sha256": "307cc24acf3adcf26523b371d5182f8751c9386bbe1cc75804e7355ac496af0f",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/run_baselines.py",
+  "from": "independent-eval/bench/run_baselines.py",
+  "sha256": "4bdebc4c46c4ba3b17d7103ca75ec02ffdf5f11bf9355fd73e5f999f81d424bf",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/run_graphify.py",
+  "from": "independent-eval/bench/run_graphify.py",
+  "sha256": "a4cb4b800f96a677346ab472b0ed5e2794c0556fd419d25a899bbb5a341feac5",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/run_modeld.py",
+  "from": "independent-eval/bench/run_modeld.py",
+  "sha256": "e5ed87920123c018f42c6335dfcff705829f5772e2d5be1c5175f11cb2ce5f32",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/run_modeld_team.py",
+  "from": "independent-eval/bench/run_modeld_team.py",
+  "sha256": "7bad7917e6b90fcc82145107523289d4d9ee99751d9f9075b1ab3862e43a81db",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/teach_lines.tsv",
+  "from": "independent-eval/bench/teach_lines.tsv",
+  "sha256": "92683456e0ec32d7673d301900778e1786a2d0fd8fd8420007a2be6ddd1cbac0",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/team_questions.py",
+  "from": "independent-eval/bench/team_questions.py",
+  "sha256": "a4eb59941b80a7adcf59f4fb1bd1266e480ff817724b1cc12c649ee5e753959b",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/baselines_aiohttp.json",
+  "from": "independent-eval/bench/results/baselines_aiohttp.json",
+  "sha256": "c5305a03ea38855ef30b3bdbebbe586928d3f42839283033da5d3014cc5cf4e2",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/baselines_fastify.json",
+  "from": "independent-eval/bench/results/baselines_fastify.json",
+  "sha256": "edf52ea800201d9cc250705804b7f323d25da6b375778e7ae99dd9afe0e96897",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/baselines_zod.json",
+  "from": "independent-eval/bench/results/baselines_zod.json",
+  "sha256": "87d9287eea460cbb207edc822c470a0d47063ac4777a165715eaaf7cb1693a07",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/graphify_aiohttp.json",
+  "from": "independent-eval/bench/results/graphify_aiohttp.json",
+  "sha256": "62c4230834a39cbd0bef269717579ff4ebaed23e0a8d82761271f6a7d81abd7f",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/graphify_fastify.json",
+  "from": "independent-eval/bench/results/graphify_fastify.json",
+  "sha256": "b1494e1fa73d291e0b334a75dd2ed0a921c6dca20a5a5e976b45dc179b5c80a6",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/graphify_zod.json",
+  "from": "independent-eval/bench/results/graphify_zod.json",
+  "sha256": "0940c5eaadbb07443c51d3ca1a18041c1b4fb8c5adcb59b5a6bf1a89ca09cc4e",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/mem_graphify.json",
+  "from": "independent-eval/bench/results/mem_graphify.json",
+  "sha256": "6e0cce31e6efec82e4e070acf3c31d53423c9eb4b41da79d5ee4d0d94e0cdfe3",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/mem_modeld.json",
+  "from": "independent-eval/bench/results/mem_modeld.json",
+  "sha256": "8c0c3b9366accd7a27f48abf6a8964ff734e2cbe16eb47c94479e116c9ddf777",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/modeld_aiohttp.json",
+  "from": "independent-eval/bench/results/modeld_aiohttp.json",
+  "sha256": "a9c86c2564418077b6df8a29054c169b467dc64dbf6860ef6df1433dff64de09",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/modeld_fastify.json",
+  "from": "independent-eval/bench/results/modeld_fastify.json",
+  "sha256": "2423d313461dcbba2ea81098618ed9f38b788b0b4ff384ef43274305438d2d8c",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/modeld_zod.json",
+  "from": "independent-eval/bench/results/modeld_zod.json",
+  "sha256": "25056e6ea68439fe21d037b516e936f09e796f5032c81cabd3290da975fd0666",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/team_baselines.json",
+  "from": "independent-eval/bench/results/team_baselines.json",
+  "sha256": "a2cc251f878d2adbce7683d6e4608e189030fdd409e550327eebdf4b7fdd4026",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/team_graphify_0.json",
+  "from": "independent-eval/bench/results/team_graphify_0.json",
+  "sha256": "85fa307f41f9af5983dd6f9570b5645caee4338fd1da31ee7abacc5084a8f60c",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/team_graphify_1.json",
+  "from": "independent-eval/bench/results/team_graphify_1.json",
+  "sha256": "37a0761baaca15d80d31d622d94c904cab6289fbca4932f6ef0ea45da5069c49",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/team_graphify_2.json",
+  "from": "independent-eval/bench/results/team_graphify_2.json",
+  "sha256": "1a55b644afbe02ffa2a44424331fe8faae7225b3798327a003588e91ff1f2432",
+  "pre-registered": false
+ },
+ {
+  "file": "independent-eval/bench/results/team_modeld.json",
+  "from": "independent-eval/bench/results/team_modeld.json",
+  "sha256": "5b2c17db5b78e35536bf4f93f5e94ca042e0119ac0c58a48335215a52d648530",
+  "pre-registered": false
  }
 ]

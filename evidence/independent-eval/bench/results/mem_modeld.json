@@ -1,0 +1,1920 @@
+{
+ "before_para": [
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/schemas.js",
+    "test/internals/reply-serialize.test.js",
+    "test/reply-media-type.test.js"
+   ],
+   "tokens": 493,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "test/trust-proxy.test.js",
+    "test/internals/request.test.js"
+   ],
+   "tokens": 700,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/diagnostics-channel/error-request.test.js",
+    "test/diagnostics-channel/error-status.test.js"
+   ],
+   "tokens": 301,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js",
+    "test/route-prefix.test.js"
+   ],
+   "tokens": 647,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "examples/http2.js",
+    "lib/reply.js",
+    "test/http2/plain.test.js"
+   ],
+   "tokens": 483,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-utils.js",
+    "lib/errors.js",
+    "test/internals/plugin.test.js",
+    "test/internals/errors.test.js"
+   ],
+   "tokens": 448,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/close.test.js",
+    "test/handler-timeout.test.js",
+    "test/max-requests-per-socket.test.js"
+   ],
+   "tokens": 755,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/plugin-override.js",
+    "lib/four-oh-four.js",
+    "lib/server.js",
+    "test/route-prefix.test.js"
+   ],
+   "tokens": 573,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/decorate.js",
+    "test/decorator-instance-properties.test.js",
+    "test/decorator.test.js"
+   ],
+   "tokens": 492,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/reply.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 480,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/reply.test.js",
+    "test/content-type.test.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 632,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/log-controller.js",
+    "types/instance.d.ts",
+    "test/request-port.test.js",
+    "test/logger/options.test.js"
+   ],
+   "tokens": 747,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/reply.js",
+    "lib/validation.js",
+    "test/types/route.tst.ts",
+    "test/find-route.test.js"
+   ],
+   "tokens": 557,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "test/fix-6411.test.js",
+    "test/internals/request-validate.test.js",
+    "test/custom-parser.4.test.js",
+    "test/schema-validation.test.js"
+   ],
+   "tokens": 711,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/log-controller.js",
+    "lib/reply.js",
+    "lib/error-handler.js",
+    "lib/errors.js",
+    "test/encapsulated-error-handler.test.js"
+   ],
+   "tokens": 643,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/content-type.test.js"
+   ],
+   "tokens": 831,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "types/instance.d.ts",
+    "test/http-methods/custom-http-methods.test.js",
+    "test/internals/request.test.js",
+    "test/http2/unknown-http-method.test.js"
+   ],
+   "tokens": 618,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/server.js",
+    "lib/route.js",
+    "lib/errors.js",
+    "test/close.test.js",
+    "test/custom-http-server.test.js"
+   ],
+   "tokens": 547,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/reply-trailers.test.js",
+    "test/internals/hook-runner.test.js"
+   ],
+   "tokens": 369,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/log-controller.js",
+    "test/internals/logger.test.js"
+   ],
+   "tokens": 570,
+   "pointer": false
+  }
+ ],
+ "before_new": [
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/decorate.js",
+    "test/decorator-instance-properties.test.js"
+   ],
+   "tokens": 662,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/content-parser.test.js",
+    "types/content-type-parser.d.ts"
+   ],
+   "tokens": 595,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "types/reply.d.ts",
+    "lib/reply.js",
+    "lib/request.js",
+    "test/internals/reply.test.js"
+   ],
+   "tokens": 706,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "lib/schemas.js",
+    "lib/content-type-parser.js",
+    "lib/handle-request.js",
+    "types/instance.d.ts"
+   ],
+   "tokens": 566,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/four-oh-four.js",
+    "lib/route.js",
+    "test/close.test.js",
+    "test/types/hooks.tst.ts",
+    "test/internals/request.test.js"
+   ],
+   "tokens": 559,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "fastify.js",
+    "test/route-prefix.test.js",
+    "test/route.7.test.js"
+   ],
+   "tokens": 510,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "fastify.d.ts",
+    "lib/request.js",
+    "test/internals/initial-config.test.js",
+    "test/trust-proxy.test.js"
+   ],
+   "tokens": 532,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/content-type.test.js",
+    "test/fix-root-primitive-coercion.test.js",
+    "test/decorator.test.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 665,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/four-oh-four.js",
+    "test/404s.test.js",
+    "test/hooks.test.js",
+    "test/hooks.on-listen.test.js"
+   ],
+   "tokens": 606,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "lib/schemas.js",
+    "test/schema-validation.test.js"
+   ],
+   "tokens": 675,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "lib/schemas.js",
+    "lib/route.js",
+    "types/instance.d.ts",
+    "lib/config-validator.js"
+   ],
+   "tokens": 775,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/four-oh-four.js",
+    "fastify.js",
+    "test/404s.test.js",
+    "test/custom-http-server.test.js",
+    "test/router-compile.test.js"
+   ],
+   "tokens": 591,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "github/scripts/lint-ecosystem.js",
+    "scripts/validate-ecosystem-links.js",
+    "test/validation-error-handling.test.js",
+    "test/schema-special-usage.test.js"
+   ],
+   "tokens": 548,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "types/logger.d.ts",
+    "types/request.d.ts",
+    "types/instance.d.ts",
+    "test/internals/reply-serialize.test.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 780,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/handle-request.js",
+    "lib/content-type.js",
+    "lib/errors.js",
+    "lib/request.js",
+    "test/helper.js"
+   ],
+   "tokens": 743,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "types/type-provider.d.ts",
+    "lib/request.js",
+    "test/reply-media-type.test.js",
+    "test/handler-timeout.test.js"
+   ],
+   "tokens": 749,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/reply.test.js"
+   ],
+   "tokens": 471,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 344,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/error-handler.js",
+    "lib/error-status.js",
+    "test/diagnostics-channel/error-status.test.js",
+    "test/validation-error-handling.test.js",
+    "test/reply-error.test.js"
+   ],
+   "tokens": 610,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/content-parser.test.js",
+    "test/custom-parser.0.test.js",
+    "test/custom-parser.5.test.js"
+   ],
+   "tokens": 574,
+   "pointer": false
+  }
+ ],
+ "teach_replies": [
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 0 question vectors onto code; 1 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 0 question vectors onto code; 1 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 0 question vectors onto code; 1 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho",
+  "taught 1 question vectors onto code; 0 not placed (no path:line the workspace ho"
+ ],
+ "after_same": [
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/schemas.js",
+    "types/type-provider.d.ts",
+    "types/content-type-parser.d.ts"
+   ],
+   "tokens": 501,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "lib/reply.js",
+    "fastify.js",
+    "test/trust-proxy.test.js"
+   ],
+   "tokens": 441,
+   "pointer": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/diagnostics-channel/error-status.test.js",
+    "test/diagnostics-channel/async-request.test.js",
+    "test/diagnostics-channel/async-delay-request.test.js"
+   ],
+   "tokens": 546,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 300,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/http2/plain.test.js"
+   ],
+   "tokens": 360,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-utils.js",
+    "test/internals/errors.test.js",
+    "test/internals/plugin.test.js"
+   ],
+   "tokens": 426,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/hooks.test.js",
+    "test/close.test.js"
+   ],
+   "tokens": 404,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-override.js",
+    "lib/four-oh-four.js",
+    "lib/route.js",
+    "test/route-prefix.test.js"
+   ],
+   "tokens": 394,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/decorate.js",
+    "types/instance.d.ts",
+    "test/decorator-instance-properties.test.js"
+   ],
+   "tokens": 428,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 541,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/reply.test.js"
+   ],
+   "tokens": 567,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "test/trust-proxy.test.js"
+   ],
+   "tokens": 501,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/schemas.js",
+    "test/find-route.test.js"
+   ],
+   "tokens": 368,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "lib/config-validator.js"
+   ],
+   "tokens": 487,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/hooks.js",
+    "lib/reply.js",
+    "lib/log-controller.js",
+    "test/web-api.test.js"
+   ],
+   "tokens": 420,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/content-type.test.js"
+   ],
+   "tokens": 496,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "fastify.js",
+    "test/http-methods/custom-http-methods.test.js",
+    "test/helper.js"
+   ],
+   "tokens": 421,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "fastify.js",
+    "lib/server.js",
+    "test/close.test.js",
+    "test/internals/errors.test.js",
+    "test/custom-http-server.test.js"
+   ],
+   "tokens": 320,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 280,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/log-controller.js",
+    "lib/handle-request.js",
+    "test/internals/logger.test.js"
+   ],
+   "tokens": 362,
+   "pointer": true
+  }
+ ],
+ "after_para": [
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/schemas.js",
+    "test/internals/reply-serialize.test.js",
+    "test/reply-media-type.test.js"
+   ],
+   "tokens": 493,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "test/trust-proxy.test.js",
+    "test/internals/request.test.js"
+   ],
+   "tokens": 700,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/diagnostics-channel/error-request.test.js",
+    "test/diagnostics-channel/error-status.test.js"
+   ],
+   "tokens": 301,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/log-controller.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 380,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/http2/plain.test.js"
+   ],
+   "tokens": 265,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-utils.js",
+    "lib/errors.js",
+    "test/internals/plugin.test.js",
+    "test/internals/errors.test.js"
+   ],
+   "tokens": 448,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/close.test.js"
+   ],
+   "tokens": 529,
+   "pointer": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/plugin-override.js",
+    "lib/four-oh-four.js",
+    "lib/server.js",
+    "test/route-prefix.test.js"
+   ],
+   "tokens": 573,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/decorate.js",
+    "test/decorator-instance-properties.test.js",
+    "test/decorator.test.js"
+   ],
+   "tokens": 492,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/route.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 503,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/reply.test.js",
+    "test/content-type.test.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 632,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "lib/reply.js",
+    "lib/log-controller.js",
+    "types/instance.d.ts"
+   ],
+   "tokens": 384,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/reply.js",
+    "lib/validation.js",
+    "test/types/route.tst.ts",
+    "test/find-route.test.js"
+   ],
+   "tokens": 557,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "test/fix-6411.test.js",
+    "test/internals/request-validate.test.js"
+   ],
+   "tokens": 397,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/hooks.js",
+    "lib/log-controller.js",
+    "lib/reply.js",
+    "lib/error-handler.js",
+    "test/encapsulated-error-handler.test.js"
+   ],
+   "tokens": 446,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/content-type.test.js"
+   ],
+   "tokens": 520,
+   "pointer": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "types/instance.d.ts",
+    "test/http-methods/custom-http-methods.test.js",
+    "test/internals/request.test.js",
+    "test/http2/unknown-http-method.test.js"
+   ],
+   "tokens": 618,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/server.js",
+    "lib/route.js",
+    "lib/errors.js",
+    "test/close.test.js",
+    "test/custom-http-server.test.js"
+   ],
+   "tokens": 547,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 280,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/log-controller.js",
+    "test/internals/logger.test.js"
+   ],
+   "tokens": 570,
+   "pointer": false
+  }
+ ],
+ "after_new": [
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/decorate.js",
+    "test/decorator-instance-properties.test.js"
+   ],
+   "tokens": 662,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/content-parser.test.js",
+    "types/content-type-parser.d.ts"
+   ],
+   "tokens": 595,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "types/reply.d.ts",
+    "lib/reply.js",
+    "lib/request.js",
+    "test/internals/reply.test.js"
+   ],
+   "tokens": 706,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "lib/schemas.js",
+    "lib/content-type-parser.js",
+    "lib/handle-request.js",
+    "types/instance.d.ts"
+   ],
+   "tokens": 566,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/four-oh-four.js",
+    "lib/route.js",
+    "test/close.test.js",
+    "test/types/hooks.tst.ts",
+    "test/internals/request.test.js"
+   ],
+   "tokens": 559,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "fastify.js",
+    "test/route-prefix.test.js",
+    "test/route.7.test.js"
+   ],
+   "tokens": 510,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": true,
+   "files": [
+    "fastify.d.ts",
+    "lib/request.js",
+    "test/internals/initial-config.test.js",
+    "test/trust-proxy.test.js"
+   ],
+   "tokens": 532,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.3333333333333333,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-override.js",
+    "lib/content-type.js",
+    "lib/validation.js",
+    "lib/reply.js"
+   ],
+   "tokens": 487,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/four-oh-four.js",
+    "test/404s.test.js",
+    "test/hooks.test.js",
+    "test/hooks.on-listen.test.js"
+   ],
+   "tokens": 606,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "lib/schemas.js",
+    "test/schema-validation.test.js"
+   ],
+   "tokens": 675,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "lib/schemas.js",
+    "lib/route.js",
+    "types/instance.d.ts",
+    "lib/config-validator.js"
+   ],
+   "tokens": 775,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/four-oh-four.js",
+    "fastify.js",
+    "test/404s.test.js",
+    "test/custom-http-server.test.js",
+    "test/router-compile.test.js"
+   ],
+   "tokens": 591,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "github/scripts/lint-ecosystem.js",
+    "scripts/validate-ecosystem-links.js",
+    "test/validation-error-handling.test.js",
+    "test/schema-special-usage.test.js"
+   ],
+   "tokens": 548,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "types/logger.d.ts",
+    "types/request.d.ts",
+    "types/instance.d.ts",
+    "test/internals/reply-serialize.test.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 780,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/handle-request.js",
+    "lib/content-type.js",
+    "lib/errors.js",
+    "lib/request.js",
+    "test/helper.js"
+   ],
+   "tokens": 743,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "types/type-provider.d.ts",
+    "lib/request.js",
+    "test/reply-media-type.test.js",
+    "test/handler-timeout.test.js"
+   ],
+   "tokens": 749,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/reply.test.js"
+   ],
+   "tokens": 471,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 344,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/error-handler.js",
+    "lib/error-status.js",
+    "test/diagnostics-channel/error-status.test.js",
+    "test/validation-error-handling.test.js",
+    "test/reply-error.test.js"
+   ],
+   "tokens": 610,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type-parser.js",
+    "test/content-parser.test.js",
+    "test/custom-parser.0.test.js",
+    "test/custom-parser.5.test.js"
+   ],
+   "tokens": 574,
+   "pointer": false
+  }
+ ],
+ "carried": {
+  "entries": 17,
+  "carried": 17,
+  "moved": 0,
+  "reformatted": 0,
+  "abstained": 0,
+  "pruned": 0,
+  "vectors taught": 17,
+  "life sha": "81b63380957d49e9"
+ },
+ "rebuilt_para": [
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/schemas.js",
+    "test/internals/reply-serialize.test.js",
+    "test/reply-media-type.test.js"
+   ],
+   "tokens": 493,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "test/trust-proxy.test.js",
+    "test/internals/request.test.js"
+   ],
+   "tokens": 700,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": true,
+   "files": [
+    "test/diagnostics-channel/async-error-handler.test.js",
+    "test/diagnostics-channel/error-request.test.js",
+    "test/diagnostics-channel/error-status.test.js"
+   ],
+   "tokens": 301,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/log-controller.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 380,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/http2/plain.test.js"
+   ],
+   "tokens": 265,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/plugin-utils.js",
+    "lib/errors.js",
+    "test/internals/plugin.test.js",
+    "test/internals/errors.test.js"
+   ],
+   "tokens": 448,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/close.test.js"
+   ],
+   "tokens": 529,
+   "pointer": true
+  },
+  {
+   "top1": false,
+   "top5": true,
+   "top1_notests": false,
+   "top5_notests": true,
+   "rr": 0.5,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/plugin-override.js",
+    "lib/four-oh-four.js",
+    "lib/server.js",
+    "test/route-prefix.test.js"
+   ],
+   "tokens": 573,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/decorate.js",
+    "test/decorator-instance-properties.test.js",
+    "test/decorator.test.js"
+   ],
+   "tokens": 492,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "lib/route.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 503,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/internals/reply.test.js",
+    "test/content-type.test.js",
+    "test/hooks.test.js"
+   ],
+   "tokens": 632,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/request.js",
+    "lib/reply.js",
+    "lib/log-controller.js",
+    "types/instance.d.ts"
+   ],
+   "tokens": 384,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "lib/reply.js",
+    "lib/validation.js",
+    "test/types/route.tst.ts",
+    "test/find-route.test.js"
+   ],
+   "tokens": 557,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/validation.js",
+    "test/fix-6411.test.js",
+    "test/internals/request-validate.test.js"
+   ],
+   "tokens": 397,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/hooks.js",
+    "lib/log-controller.js",
+    "lib/reply.js",
+    "lib/error-handler.js",
+    "test/encapsulated-error-handler.test.js"
+   ],
+   "tokens": 446,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/content-type.js",
+    "test/content-type.test.js"
+   ],
+   "tokens": 520,
+   "pointer": true
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/route.js",
+    "types/instance.d.ts",
+    "test/http-methods/custom-http-methods.test.js",
+    "test/internals/request.test.js",
+    "test/http2/unknown-http-method.test.js"
+   ],
+   "tokens": 618,
+   "pointer": false
+  },
+  {
+   "top1": false,
+   "top5": false,
+   "top1_notests": false,
+   "top5_notests": false,
+   "rr": 0.0,
+   "first_is_test": false,
+   "files": [
+    "lib/server.js",
+    "lib/route.js",
+    "lib/errors.js",
+    "test/close.test.js",
+    "test/custom-http-server.test.js"
+   ],
+   "tokens": 547,
+   "pointer": false
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/reply.js",
+    "test/reply-trailers.test.js"
+   ],
+   "tokens": 280,
+   "pointer": true
+  },
+  {
+   "top1": true,
+   "top5": true,
+   "top1_notests": true,
+   "top5_notests": true,
+   "rr": 1.0,
+   "first_is_test": false,
+   "files": [
+    "lib/log-controller.js",
+    "test/internals/logger.test.js"
+   ],
+   "tokens": 570,
+   "pointer": false
+  }
+ ]
+}

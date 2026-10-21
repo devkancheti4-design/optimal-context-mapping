@@ -1,0 +1,137 @@
+[
+ {
+  "repo": "aiohttp",
+  "i": 20,
+  "question": "Fix excessive CPU use on decompressing small members",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/compression_utils.py"
+  ],
+  "reworded": "Why was the decompressor eating so much CPU when it dealt with tiny members, and what changed to stop that?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "aiohttp",
+  "i": 9,
+  "question": "Fix Windows localhost resolution without active network",
+  "gold": [
+   "aiohttp/resolver.py"
+  ],
+  "reworded": "How do we keep localhost resolving properly on Windows when the machine has no active network connection?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "aiohttp",
+  "i": 25,
+  "question": "Fix Cython code on 32 bit",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ],
+  "reworded": "What was altered so the Cython code behaves correctly on 32-bit platforms?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "aiohttp",
+  "i": 3,
+  "question": "Fix read timeout on a connection returned to the pool",
+  "gold": [
+   "aiohttp/client_proto.py"
+  ],
+  "reworded": "Was there a bug where a read timeout was still in effect on a connection after it had been handed back to the pool, and how did we resolve it?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "fastify",
+  "i": 20,
+  "question": "recognize constructor-assigned built-in properties as decorator dependencies",
+  "gold": [
+   "lib/decorate.js"
+  ],
+  "reworded": "Do built-in properties that get set inside a constructor now count as dependencies for decorators?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "fastify",
+  "i": 9,
+  "question": "clear socket._meta on reply.hijack() when onTimeout is registered",
+  "gold": [
+   "lib/reply.js",
+   "lib/route.js"
+  ],
+  "reworded": "When onTimeout is registered and someone calls reply.hijack(), is socket._meta now wiped?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "fastify",
+  "i": 25,
+  "question": "Fix prefix route options url",
+  "gold": [
+   "lib/route.js"
+  ],
+  "reworded": "How did we correct the url shown in the options of a route that is registered under a prefix?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "fastify",
+  "i": 3,
+  "question": "ignore duplicate trailer completions",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "reworded": "What happens now if trailers get reported as finished more than once, are the repeat completions just skipped?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "zod",
+  "i": 20,
+  "question": "restrict the first ULID character to [0-7]",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ],
+  "reworded": "Why does the leading character of a ULID now have to fall within [0-7]?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "zod",
+  "i": 9,
+  "question": "let the includes(position) pattern match at or after the offset",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts"
+  ],
+  "reworded": "Can the includes(position) pattern now match text that starts exactly at the offset or anywhere after it?",
+  "mem_readout_starts": "meaning and keyword matches)\n\n1. [zod_md",
+  "taught": null
+ },
+ {
+  "repo": "zod",
+  "i": 25,
+  "question": "stop the cycle walk from firing a default factory",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ],
+  "reworded": "Why does walking through a cycle no longer trigger a default factory?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ },
+ {
+  "repo": "zod",
+  "i": 3,
+  "question": "an absent key on the middle rung supplies nothing",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ],
+  "reworded": "If a key is missing on the middle rung, does it now contribute nothing at all?",
+  "mem_readout_starts": "the code a taught question's vector poin",
+  "taught": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); lear"
+ }
+]

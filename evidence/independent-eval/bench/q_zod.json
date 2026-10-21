@@ -1,0 +1,402 @@
+[
+ {
+  "hash": "260e5d4bd3f2f1a395fce52d526383ba6181d318",
+  "parent": "11c9268b6025be7f2220ee83a1c3f28238a50b84",
+  "subject": "fix(v4): stop islanding a catch callback, which diverged silently",
+  "question": "stop islanding a catch callback, which diverged silently",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts"
+  ]
+ },
+ {
+  "hash": "d6ca12ae3e28b40392ec49323edc31a56a05ff3b",
+  "parent": "dc51404b2593b029166fd942319fda769f7ae631",
+  "subject": "fix(v4): infer recursive getter options in discriminatedUnion (#6422)",
+  "question": "infer recursive getter options in discriminatedUnion",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/api.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ]
+ },
+ {
+  "hash": "ca246d267001e2b64d43a5ff02699f1885e06227",
+  "parent": "17d1227ff61ff7c27ea11cd4ce31f84959534c8c",
+  "subject": "fix(v4): drop empty alternation branch from datetime pattern (#6439)",
+  "question": "drop empty alternation branch from datetime pattern",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ]
+ },
+ {
+  "hash": "87ffeb0f50d21881f64ed8926a5df8df6ff355e2",
+  "parent": "7785fc82a5247dc65cc27cac8f777f75dfa77f80",
+  "subject": "fix(v4): an absent key on the middle rung supplies nothing (#6434)",
+  "question": "an absent key on the middle rung supplies nothing",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "28e1ebd89d26147bacb164af988da6ed6de738d4",
+  "parent": "060bc9f3ec69bff2849f3cc7c17807b863f503b6",
+  "subject": "fix(v4): measure string length in Unicode code points (#6441)",
+  "question": "measure string length in Unicode code points",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ]
+ },
+ {
+  "hash": "830ba3147928b69fd80ef8e55341d4fd325b9c71",
+  "parent": "f101d8cada31bd99f2df5d5ce094c95b209b2950",
+  "subject": "fix(v4): validate the address, and return the string that was validated (#6442)",
+  "question": "validate the address, and return the string that was validated",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "b63db248abfcfeb7e444687815834618cf26a04a",
+  "parent": "463ebb30512e7b244f2dde197c5a188162b7c78a",
+  "subject": "fix(v4): keep a memoized node's cached issues private to the cache (#6443)",
+  "question": "keep a memoized node's cached issues private to the cache",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ]
+ },
+ {
+  "hash": "6574e7842b1a030f6987c80c268d713767df8b06",
+  "parent": "937b5d01a143c36bb53591fffb29c44412ac9fef",
+  "subject": "fix(v4): stop catch resurrecting issues an optional already resolved (#6440)",
+  "question": "stop catch resurrecting issues an optional already resolved",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "036b39f4d2aed770d894911299f249f06e1beed9",
+  "parent": "5825605edb86ef27f1e7b1eae832303f15724130",
+  "subject": "fix(v4)!: require seconds once a datetime carries a Z or an offset (#6457)",
+  "question": "require seconds once a datetime carries a Z or an offset",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ]
+ },
+ {
+  "hash": "51a1368ad449ba0a4dc6e2822dfcbb5ec891700c",
+  "parent": "a0bfdb39d0c5fdc066189da8e9786ebf4d6f12b1",
+  "subject": "fix(v4): let the includes(position) pattern match at or after the offset (#6024)",
+  "question": "let the includes(position) pattern match at or after the offset",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts"
+  ]
+ },
+ {
+  "hash": "168122fca54452aa30d7261c83df79b703b258d7",
+  "parent": "51a1368ad449ba0a4dc6e2822dfcbb5ec891700c",
+  "subject": "fix(v4): carry a pipe's own checks through z.output",
+  "question": "carry a pipe's own checks through z.output",
+  "gold": [
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/mini/in-out.ts"
+  ]
+ },
+ {
+  "hash": "2125d30ce58f66170682d5a50ee4a3e2eac568e3",
+  "parent": "168122fca54452aa30d7261c83df79b703b258d7",
+  "subject": "fix(v4): accept exact decimal multiples in multipleOf (#6223)",
+  "question": "accept exact decimal multiples in multipleOf",
+  "gold": [
+   "packages/zod/src/v4/core/util.ts"
+  ]
+ },
+ {
+  "hash": "53cec2a0d0941a69d8add934ac3a8695fb5fb14c",
+  "parent": "2125d30ce58f66170682d5a50ee4a3e2eac568e3",
+  "subject": "fix(v4): resolve z.input past a preprocess transform",
+  "question": "resolve z.input past a preprocess transform",
+  "gold": [
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/mini/in-out.ts"
+  ]
+ },
+ {
+  "hash": "3a49696865f3347a70852b544b0274692a00ad15",
+  "parent": "53cec2a0d0941a69d8add934ac3a8695fb5fb14c",
+  "subject": "fix(v4): make record input keys optional when the value can fill them (#6460)",
+  "question": "make record input keys optional when the value can fill them",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "a825c1b08c1e6ab4de83890bef053960fb8b814e",
+  "parent": "7c070db92e9b8bb4fa055343b3c9af477b2aae36",
+  "subject": "fix(v4): empty enums and literals match nothing (#6459)",
+  "question": "empty enums and literals match nothing",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "7cfc012238ca88ff4aa87a22e8fa08f5efb5b63d",
+  "parent": "a825c1b08c1e6ab4de83890bef053960fb8b814e",
+  "subject": "fix(v4): keep a wrapper's stored value only on the side it belongs to",
+  "question": "keep a wrapper's stored value only on the side it belongs to",
+  "gold": [
+   "packages/zod/src/v4/classic/in-out.ts",
+   "packages/zod/src/v4/core/visit.ts",
+   "packages/zod/src/v4/mini/in-out.ts"
+  ]
+ },
+ {
+  "hash": "a87ac3665f90144aecf8860030a59eb45a41a2eb",
+  "parent": "6726c1dd5bf47a39a9b7f22a80df421630b95b9b",
+  "subject": "fix(v4)!: distinguish number and bigint formats at the type level (#6052)",
+  "question": "distinguish number and bigint formats at the type level",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ]
+ },
+ {
+  "hash": "badf0b7894a4f777d41fcd7ed2433e5f8c9c23ea",
+  "parent": "a82593c19b27a637fcde21e50c53cb51cc4e27f8",
+  "subject": "fix(v4): build the catch context from the input that failed (#6192)",
+  "question": "build the catch context from the input that failed",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "7b612b536d8bcb1dd160a705cc2d9a4109cb50b3",
+  "parent": "1c43b7745a47e2a8c46361cf92280a9c03d52797",
+  "subject": "fix(v4): fold an intersection of object schemas into one object (#6461)",
+  "question": "fold an intersection of object schemas into one object",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts"
+  ]
+ },
+ {
+  "hash": "7ce3e77dfbca80bfa2ab3c73a84e0454570d7158",
+  "parent": "7b612b536d8bcb1dd160a705cc2d9a4109cb50b3",
+  "subject": "fix(v4): run a wrapper's inner schema on its own payload (#6462)",
+  "question": "run a wrapper's inner schema on its own payload",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "9d5b20ef6c9dbff29a0fa272de4203201b23aa50",
+  "parent": "1cf9cd09271e637fe820be656699dac8664cb13e",
+  "subject": "fix(v4): restrict the first ULID character to [0-7] (#6095)",
+  "question": "restrict the first ULID character to [0-7]",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ]
+ },
+ {
+  "hash": "97edaf7dc4055935514de69dbd646c2fbe78b0f6",
+  "parent": "21a6f0cbd3bef24d47e488a48cc9cb4d0bf97743",
+  "subject": "fix(v4): don't throw from safeParse on bigint multipleOf(0n) (#6466)",
+  "question": "don't throw from safeParse on bigint multipleOf(0n)",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/compile.ts"
+  ]
+ },
+ {
+  "hash": "8d896186cadb6eac6327f46589eed8f8ca8ef26d",
+  "parent": "43f729db4aa0cedff6d6b3261f33f8556b3c7102",
+  "subject": "fix(v4): stop emitting a multipleOf that JSON Schema rejects (#6468)",
+  "question": "stop emitting a multipleOf that JSON Schema rejects",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts"
+  ]
+ },
+ {
+  "hash": "212b941791e7faae078e17645eb612824fd8f79a",
+  "parent": "d378c42aff6869f0929058a7923cd775880f5c4c",
+  "subject": "fix(v4): let a prototype method getter answer a bare call so vi.spyOn works (#6488)",
+  "question": "let a prototype method getter answer a bare call so vi.spyOn works",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ]
+ },
+ {
+  "hash": "eab51ff3592b2d11d863f4ee4d5452f31a3de1b6",
+  "parent": "7e24a24288183ce02554f1ded7775d0650a7b7e6",
+  "subject": "fix(v4): emit record numeric keys as strings in toJSONSchema (#6497)",
+  "question": "emit record numeric keys as strings in toJSONSchema",
+  "gold": [
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/to-json-schema.ts"
+  ]
+ },
+ {
+  "hash": "84e416fbf4740527bbc8f319634f4e1b065bb42c",
+  "parent": "1a16102a494b03ce1df7b80b663ae2df465f419e",
+  "subject": "fix(v4): stop the cycle walk from firing a default factory (#6500)",
+  "question": "stop the cycle walk from firing a default factory",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ]
+ },
+ {
+  "hash": "f83ab51129038a2f868ee11dda906ed78ae2e478",
+  "parent": "74f9a6d3f2818f24e6df5394b8b6e60acb176463",
+  "subject": "fix(v4): reject component-only strings from z.emoji() (#6532)",
+  "question": "reject component-only strings from z.emoji()",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ]
+ },
+ {
+  "hash": "eca96871536603076bdd00b8779b947144133aa4",
+  "parent": "81ded9918fe39d51b232be72f23ba0d5fb6a837e",
+  "subject": "fix(v4): enforce the six JSON Schema keywords fromJSONSchema silently dropped (#6535)",
+  "question": "enforce the six JSON Schema keywords fromJSONSchema silently dropped",
+  "gold": [
+   "packages/zod/src/v4/classic/from-json-schema.ts"
+  ]
+ },
+ {
+  "hash": "cafbee4772ef481611fef6f5fb9ed9a1b9597069",
+  "parent": "4d7308828b1a56768741d7cfd6cf476eaead45af",
+  "subject": "fix(v4): parse recursive schemas built by a factory (#6530)",
+  "question": "parse recursive schemas built by a factory",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/memoizer.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ]
+ },
+ {
+  "hash": "6f0483671e622d5d01a1e17f69af0825137c7830",
+  "parent": "e4d67f3ea42de031f1f644a1efd7bd0a306dde56",
+  "subject": "fix(v4): derive JSON Schema constraints by folding checks in the converter (#6554)",
+  "question": "derive JSON Schema constraints by folding checks in the converter",
+  "gold": [
+   "packages/zod/src/v4/classic/schemas.ts",
+   "packages/zod/src/v4/core/checks.ts",
+   "packages/zod/src/v4/core/json-schema-processors.ts",
+   "packages/zod/src/v4/core/regexes.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ]
+ },
+ {
+  "hash": "36f17960d1defca5d0896d9424f4e1059fbbf081",
+  "parent": "22bed613281143efa3815fe26ab666c6c56586af",
+  "subject": "fix(v4): stop the memoizer from pinning a finished parse (#6572)",
+  "question": "stop the memoizer from pinning a finished parse",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ]
+ },
+ {
+  "hash": "574d480fb443d3fd396efbcb8230f3dfee4a2cd2",
+  "parent": "c532d766de54e13aea5d03698980bf7d976fc544",
+  "subject": "fix(locales): clarify Tajik discriminator value message",
+  "question": "clarify Tajik discriminator value message",
+  "gold": [
+   "packages/zod/src/v4/locales/tg.ts"
+  ]
+ },
+ {
+  "hash": "dd9c36fa2ddcee79f71d19f9635586c7b65ead86",
+  "parent": "574d480fb443d3fd396efbcb8230f3dfee4a2cd2",
+  "subject": "fix(v4): defer recursive object index inference (#6580)",
+  "question": "defer recursive object index inference",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "b12aa523e7e2617c4296cccf9b24d6558ed23e95",
+  "parent": "dd9c36fa2ddcee79f71d19f9635586c7b65ead86",
+  "subject": "fix: preserve unique tags with defaulted discriminators (#6582)",
+  "question": "preserve unique tags with defaulted discriminators",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "9446b5cc14c5bf137790f1f66abf602044871223",
+  "parent": "0c483c58849fdb6445aea4f54b1bac6b57ab3d22",
+  "subject": "fix: preserve undefined prefault outputs and object keys (#6587)",
+  "question": "preserve undefined prefault outputs and object keys",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/mini/schemas.ts"
+  ]
+ },
+ {
+  "hash": "a2ba4a67986a3e6b2b131be30084a2f460d9ea67",
+  "parent": "c42596bd1c87e941d7241d10e012c5c196adcc10",
+  "subject": "fix(types): declare record output and input as members, not base type arguments (#6645)",
+  "question": "declare record output and input as members, not base type arguments",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "a0ebf970f2d752e5f58527cd2942ff48be4f46bd",
+  "parent": "a2ba4a67986a3e6b2b131be30084a2f460d9ea67",
+  "subject": "fix(v4): check array, set and map size bounds before parsing elements (#6652)",
+  "question": "check array, set and map size bounds before parsing elements",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts",
+   "packages/zod/src/v4/core/util.ts"
+  ]
+ },
+ {
+  "hash": "311cd74b2765ff7c7b58add60e37c5a0ea7a1972",
+  "parent": "b500a2ee95134f81d74da7911d7378dd2853d042",
+  "subject": "fix(v4): run a record's key schema on an own __proto__ key (#6660)",
+  "question": "run a record's key schema on an own __proto__ key",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ },
+ {
+  "hash": "40a5dba080b065cc430e5b0e64a8058d68c1660d",
+  "parent": "311cd74b2765ff7c7b58add60e37c5a0ea7a1972",
+  "subject": "fix(locales): add Sizable.map to es, fr, he, hr and lt, and check Sizable parity from source (#6661)",
+  "question": "add Sizable.map to es, fr, he, hr and lt, and check Sizable parity from source",
+  "gold": [
+   "packages/zod/src/v4/locales/es.ts",
+   "packages/zod/src/v4/locales/fr.ts",
+   "packages/zod/src/v4/locales/he.ts",
+   "packages/zod/src/v4/locales/hr.ts",
+   "packages/zod/src/v4/locales/lt.ts"
+  ]
+ },
+ {
+  "hash": "680d19f7d1e042e55934209caeb79bc843b94f44",
+  "parent": "40a5dba080b065cc430e5b0e64a8058d68c1660d",
+  "subject": "fix(v4): report a union option that only checks rejected (#6662)",
+  "question": "report a union option that only checks rejected",
+  "gold": [
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ }
+]

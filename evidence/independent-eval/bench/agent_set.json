@@ -1,0 +1,101 @@
+[
+ {
+  "repo": "aiohttp",
+  "i": 20,
+  "question": "Fix excessive CPU use on decompressing small members",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py",
+   "aiohttp/compression_utils.py"
+  ]
+ },
+ {
+  "repo": "aiohttp",
+  "i": 9,
+  "question": "Fix Windows localhost resolution without active network",
+  "gold": [
+   "aiohttp/resolver.py"
+  ]
+ },
+ {
+  "repo": "aiohttp",
+  "i": 25,
+  "question": "Fix Cython code on 32 bit",
+  "gold": [
+   "aiohttp/_websocket/reader_py.py"
+  ]
+ },
+ {
+  "repo": "aiohttp",
+  "i": 3,
+  "question": "Fix read timeout on a connection returned to the pool",
+  "gold": [
+   "aiohttp/client_proto.py"
+  ]
+ },
+ {
+  "repo": "fastify",
+  "i": 20,
+  "question": "recognize constructor-assigned built-in properties as decorator dependencies",
+  "gold": [
+   "lib/decorate.js"
+  ]
+ },
+ {
+  "repo": "fastify",
+  "i": 9,
+  "question": "clear socket._meta on reply.hijack() when onTimeout is registered",
+  "gold": [
+   "lib/reply.js",
+   "lib/route.js"
+  ]
+ },
+ {
+  "repo": "fastify",
+  "i": 25,
+  "question": "Fix prefix route options url",
+  "gold": [
+   "lib/route.js"
+  ]
+ },
+ {
+  "repo": "fastify",
+  "i": 3,
+  "question": "ignore duplicate trailer completions",
+  "gold": [
+   "lib/reply.js"
+  ]
+ },
+ {
+  "repo": "zod",
+  "i": 20,
+  "question": "restrict the first ULID character to [0-7]",
+  "gold": [
+   "packages/zod/src/v4/core/regexes.ts"
+  ]
+ },
+ {
+  "repo": "zod",
+  "i": 9,
+  "question": "let the includes(position) pattern match at or after the offset",
+  "gold": [
+   "packages/zod/src/v4/core/checks.ts"
+  ]
+ },
+ {
+  "repo": "zod",
+  "i": 25,
+  "question": "stop the cycle walk from firing a default factory",
+  "gold": [
+   "packages/zod/src/v4/core/memoizer.ts"
+  ]
+ },
+ {
+  "repo": "zod",
+  "i": 3,
+  "question": "an absent key on the middle rung supplies nothing",
+  "gold": [
+   "packages/zod/src/v4/core/compile.ts",
+   "packages/zod/src/v4/core/schemas.ts"
+  ]
+ }
+]

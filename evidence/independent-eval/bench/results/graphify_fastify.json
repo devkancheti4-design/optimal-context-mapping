@@ -1,0 +1,1125 @@
+[
+ {
+  "hash": "c06fc06d33",
+  "question": "use ContentType parser for response schema lookup",
+  "gold": [
+   "lib/schemas.js"
+  ],
+  "files": [
+   "lib/content-type-parser.js",
+   "test/schema-validation.test.js",
+   "test/helper.js",
+   "lib/reply.js",
+   "fastify.js",
+   "lib/symbols.js",
+   "lib/errors.js",
+   "test/hooks.test.js",
+   "lib/plugin-override.js",
+   "test/logger/instantiation.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1641,
+  "query_s": 0.5,
+  "build_s": 3.5,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "21b4c3c101",
+  "question": "guard forwarded host and protocol on socket presence",
+  "gold": [
+   "lib/request.js"
+  ],
+  "files": [
+   "test/max-requests-per-socket.test.js",
+   "test/trust-proxy.test.js",
+   "fastify.d.ts",
+   "lib/request.js",
+   "test/types/instance.test-d.ts",
+   "test/helper.js",
+   "test/hooks.test.js",
+   "test/types/fastify.test-d.ts",
+   "types/instance.d.ts",
+   "test/close.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1642,
+  "query_s": 0.5,
+  "build_s": 3.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.25,
+  "first_is_test": true
+ },
+ {
+  "hash": "6d202c6203",
+  "question": "enable diagnostics tracking for async error handlers",
+  "gold": [
+   "lib/error-handler.js",
+   "lib/handle-request.js",
+   "lib/symbols.js"
+  ],
+  "files": [
+   "test/diagnostics-channel/async-delay-request.test.js",
+   "test/types/instance.test-d.ts",
+   "test/types/logger.test-d.ts",
+   "test/async-await.test.js",
+   "lib/head-route.js",
+   "lib/route.js",
+   "test/helper.js",
+   "test/reply-error.test.js",
+   "test/inject.test.js",
+   "test/logger/request.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1653,
+  "query_s": 0.53,
+  "build_s": 4.0,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.06666666666666667,
+  "first_is_test": true
+ },
+ {
+  "hash": "9026164f5a",
+  "question": "ignore duplicate trailer completions",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "test/reply-trailers.test.js",
+   "lib/reply.js",
+   "test/helper.js",
+   "types/hooks.d.ts",
+   "lib/symbols.js",
+   "test/hooks.test.js",
+   "test/internals/reply.test.js",
+   "test/logger/instantiation.test.js",
+   "test/close.test.js",
+   "test/http2/closing.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1645,
+  "query_s": 0.56,
+  "build_s": 4.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "2bf4265b99",
+  "question": "chunk large HTTP/2 buffer replies",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "test/custom-http-server.test.js",
+   "test/http2/closing.test.js",
+   "test/buffer.test.js",
+   "lib/content-type-parser.js",
+   "lib/reply.js",
+   "fastify.js",
+   "lib/symbols.js",
+   "test/helper.js",
+   "lib/errors.js",
+   "lib/plugin-override.js"
+  ],
+  "exit": 0,
+  "tokens": 1659,
+  "query_s": 0.57,
+  "build_s": 4.5,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.2,
+  "first_is_test": true
+ },
+ {
+  "hash": "c647de44cc",
+  "question": "replace AssertionError with FST_ERR_PLUGIN_DEPENDENCY_NOT_REGISTERED in checkDependencies",
+  "gold": [
+   "lib/errors.js",
+   "lib/plugin-utils.js"
+  ],
+  "files": [
+   "lib/plugin-utils.js",
+   "test/plugin.3.test.js",
+   "test/esm/plugin.mjs",
+   "lib/reply.js",
+   "lib/warnings.js",
+   "lib/error-handler.js",
+   "types/logger.d.ts",
+   "fastify.js",
+   "lib/route.js",
+   "lib/symbols.js"
+  ],
+  "exit": 0,
+  "tokens": 1655,
+  "query_s": 0.62,
+  "build_s": 4.6,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "8b9c07b645",
+  "question": "clear socket._meta after response to prevent keep-alive leaks",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "test/keep-alive-timeout.test.js",
+   "test/max-requests-per-socket.test.js",
+   "lib/plugin-utils.js",
+   "fastify.js",
+   "types/instance.d.ts",
+   "lib/reply.js",
+   "fastify.d.ts",
+   "test/types/instance.tst.ts",
+   "lib/symbols.js",
+   "lib/server.js"
+  ],
+  "exit": 0,
+  "tokens": 1640,
+  "query_s": 0.6,
+  "build_s": 4.9,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.16666666666666666,
+  "first_is_test": true
+ },
+ {
+  "hash": "2f597a9297",
+  "question": "avoid double slash when joining nested prefixes",
+  "gold": [
+   "lib/plugin-override.js"
+  ],
+  "files": [
+   "test/plugin.3.test.js",
+   "fastify.js"
+  ],
+  "exit": 0,
+  "tokens": 1416,
+  "query_s": 0.6,
+  "build_s": 4.9,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "cc8d9a3c96",
+  "question": "make hasRequestDecorator/hasReplyDecorator recognize constructor-assigned built-in properties",
+  "gold": [
+   "lib/decorate.js",
+   "lib/reply.js",
+   "lib/request.js"
+  ],
+  "files": [
+   "lib/schema-controller.js",
+   "test/register.test.js"
+  ],
+  "exit": 0,
+  "tokens": 173,
+  "query_s": 0.6,
+  "build_s": 5.0,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "7f6d319806",
+  "question": "clear socket._meta on reply.hijack() when onTimeout is registered",
+  "gold": [
+   "lib/reply.js",
+   "lib/route.js"
+  ],
+  "files": [
+   "test/route-hooks.test.js",
+   "lib/reply.js",
+   "test/max-requests-per-socket.test.js",
+   "lib/plugin-utils.js"
+  ],
+  "exit": 0,
+  "tokens": 1659,
+  "query_s": 0.69,
+  "build_s": 6.0,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "6f63ce9324",
+  "question": "use ContentType to detect `json` and `charset` in reply.send",
+  "gold": [
+   "lib/content-type-parser.js",
+   "lib/content-type.js",
+   "lib/handle-request.js",
+   "lib/reply.js",
+   "lib/request.js"
+  ],
+  "files": [
+   "lib/reply.js",
+   "lib/content-type.js",
+   "test/stream.4.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1637,
+  "query_s": 0.57,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "6ac2e95370",
+  "question": "derive request.port from request.host",
+  "gold": [
+   "lib/request.js"
+  ],
+  "files": [
+   "test/request-port.test.js",
+   "lib/request.js",
+   "test/esm/named-exports.mjs",
+   "fastify.js",
+   "test/esm/other.mjs",
+   "test/esm/plugin.mjs",
+   "test/esm/index.test.js",
+   "test/esm/esm.test.mjs"
+  ],
+  "exit": 0,
+  "tokens": 1651,
+  "query_s": 0.72,
+  "build_s": 5.9,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "6682c4f9a7",
+  "question": "normalize method in findRoute",
+  "gold": [
+   "lib/route.js"
+  ],
+  "files": [
+   "lib/route.js",
+   "lib/schemas.js",
+   "test/http2/unknown-http-method.test.js",
+   "test/internals/validation.test.js",
+   "fastify.js",
+   "lib/reply.js",
+   "lib/symbols.js",
+   "lib/error-handler.js",
+   "lib/errors.js",
+   "lib/validation.js"
+  ],
+  "exit": 0,
+  "tokens": 4878,
+  "query_s": 0.79,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "325682c9e5",
+  "question": "correctly update falsy values from validator",
+  "gold": [
+   "lib/validation.js"
+  ],
+  "files": [
+   "test/route.3.test.js",
+   "test/trust-proxy.test.js",
+   "lib/request.js",
+   "test/helper.js",
+   "test/types/logger.tst.ts",
+   "test/404s.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1816,
+  "query_s": 0.69,
+  "build_s": 7.4,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "01ca8393b9",
+  "question": "uncatchable throws in writeHead when using async hook",
+  "gold": [
+   "lib/hooks.js"
+  ],
+  "files": [
+   "examples/benchmark/hooks-benchmark-async-await.js",
+   "test/async_hooks.test.js",
+   "test/internals/content-type-parser.test.js",
+   "test/async-await.test.js",
+   "types/hooks.d.ts",
+   "test/helper.js"
+  ],
+  "exit": 0,
+  "tokens": 1655,
+  "query_s": 0.7,
+  "build_s": 6.6,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "29bdcbb91f",
+  "question": "honor quoted-string in Content-Type parameter values",
+  "gold": [
+   "lib/content-type.js"
+  ],
+  "files": [
+   "lib/content-type.js",
+   "lib/content-type-parser.js",
+   "test/trust-proxy.test.js"
+  ],
+  "exit": 0,
+  "tokens": 202,
+  "query_s": 0.65,
+  "build_s": 7.6,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "0e9a3b35d8",
+  "question": "add http method override warning",
+  "gold": [
+   "fastify.js",
+   "lib/warnings.js"
+  ],
+  "files": [
+   "fastify.js",
+   "lib/noop-set.js",
+   "test/custom-http-server.test.js",
+   "lib/warnings.js",
+   "test/http2/unknown-http-method.test.js",
+   "lib/route.js",
+   "lib/content-type-parser.js",
+   "lib/server.js",
+   "lib/validation.js",
+   "test/schema-feature.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1650,
+  "query_s": 1.49,
+  "build_s": 8.4,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "9ba6d6016f",
+  "question": "do not force close in-flight connections on 'idle'",
+  "gold": [
+   "fastify.js"
+  ],
+  "files": [
+   "lib/server.js",
+   "test/custom-http-server.test.js",
+   "types/instance.d.ts",
+   "fastify.js",
+   "lib/symbols.js",
+   "lib/hooks.js",
+   "lib/errors.js",
+   "lib/warnings.js",
+   "test/internals/server.test.js",
+   "lib/promise.js"
+  ],
+  "exit": 0,
+  "tokens": 1635,
+  "query_s": 0.77,
+  "build_s": 9.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.25,
+  "first_is_test": false
+ },
+ {
+  "hash": "7299a57d3f",
+  "question": "clear trailer state when removing all trailers",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "test/reply-trailers.test.js",
+   "lib/reply.js",
+   "fastify.js",
+   "lib/content-type-parser.js",
+   "lib/server.js",
+   "test/helper.js",
+   "lib/decorate.js",
+   "test/hooks.on-listen.test.js",
+   "test/fastify-instance.test.js",
+   "test/internals/decorator.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1655,
+  "query_s": 0.82,
+  "build_s": 7.1,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "9eaef5123b",
+  "question": "pass null instead of undefined to requestCompleted on success",
+  "gold": [
+   "lib/log-controller.js"
+  ],
+  "files": [
+   "test/nullable-validation.test.js",
+   "test/http-methods/get.test.js",
+   "types/type-provider.d.ts",
+   "lib/log-controller.js",
+   "test/bundler/esbuild/bundler-test.js",
+   "test/bundler/webpack/bundler-test.js",
+   "test/internals/reply.test.js",
+   "lib/logger-factory.js",
+   "test/logger/logging.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1662,
+  "query_s": 0.77,
+  "build_s": 9.0,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.25,
+  "first_is_test": true
+ },
+ {
+  "hash": "27938ac777",
+  "question": "recognize constructor-assigned built-in properties as decorator dependencies",
+  "gold": [
+   "lib/decorate.js"
+  ],
+  "files": [
+   "test/internals/decorator.test.js",
+   "test/decorator-instance-properties.test.js",
+   "lib/schema-controller.js"
+  ],
+  "exit": 0,
+  "tokens": 144,
+  "query_s": 1.04,
+  "build_s": 6.3,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "16a74e7cb2",
+  "question": "reset lastIndex before testing global/sticky content-type RegExp parsers",
+  "gold": [
+   "lib/content-type-parser.js"
+  ],
+  "files": [
+   "lib/content-type-parser.js",
+   "test/post-empty-body.test.js",
+   "fastify.js",
+   "lib/symbols.js",
+   "lib/errors.js",
+   "lib/plugin-override.js",
+   "lib/warnings.js",
+   "lib/content-type.js"
+  ],
+  "exit": 0,
+  "tokens": 1663,
+  "query_s": 0.7,
+  "build_s": 6.0,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "e4ffc20532",
+  "question": "remove raw response headers",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "lib/content-type-parser.js",
+   "lib/reply.js",
+   "test/internals/decorator.test.js",
+   "lib/content-type.js",
+   "test/internals/plugin.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1621,
+  "query_s": 0.57,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": false
+ },
+ {
+  "hash": "15c2fb1933",
+  "question": "return undefined for invalid media types",
+  "gold": [
+   "lib/content-type.js"
+  ],
+  "files": [
+   "types/type-provider.d.ts",
+   "lib/content-type.js",
+   "lib/reply.js"
+  ],
+  "exit": 0,
+  "tokens": 153,
+  "query_s": 0.5,
+  "build_s": 4.4,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "f5ef34443c",
+  "question": "run preClose hook exactly once per declaring instance",
+  "gold": [
+   "fastify.js"
+  ],
+  "files": [
+   "test/close.test.js",
+   "test/http2/closing.test.js",
+   "test/internals/logger.test.js",
+   "types/hooks.d.ts"
+  ],
+  "exit": 0,
+  "tokens": 1650,
+  "query_s": 0.59,
+  "build_s": 5.6,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "6e95cb9f6d",
+  "question": "Fix prefix route options url",
+  "gold": [
+   "lib/route.js"
+  ],
+  "files": [
+   "test/serialize-response.test.js",
+   "lib/route.js",
+   "test/fix-6411.test.js",
+   "fastify.js",
+   "lib/error-handler.js",
+   "lib/schemas.js",
+   "lib/validation.js",
+   "lib/head-route.js"
+  ],
+  "exit": 0,
+  "tokens": 2601,
+  "query_s": 0.52,
+  "build_s": 5.7,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.5,
+  "first_is_test": true
+ },
+ {
+  "hash": "af079bd4c6",
+  "question": "disable numeric trustProxy hop-count trust",
+  "gold": [
+   "lib/request.js"
+  ],
+  "files": [
+   "fastify.d.ts",
+   "test/trust-proxy.test.js",
+   "test/schema-feature.test.js",
+   "lib/log-controller.js",
+   "lib/request.js",
+   "test/helper.js",
+   "test/logger/logger-test-utils.js",
+   "lib/symbols.js",
+   "test/internals/reply.test.js",
+   "test/hooks.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1639,
+  "query_s": 0.51,
+  "build_s": 5.8,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.2,
+  "first_is_test": true
+ },
+ {
+  "hash": "9493c0fb71",
+  "question": "preserve coerced root values",
+  "gold": [
+   "lib/validation.js"
+  ],
+  "files": [
+   "test/decorator.test.js",
+   "lib/error-handler.js",
+   "test/trust-proxy.test.js",
+   "fastify.js",
+   "lib/reply.js",
+   "lib/route.js",
+   "lib/request.js",
+   "lib/symbols.js",
+   "test/helper.js",
+   "lib/four-oh-four.js"
+  ],
+  "exit": 0,
+  "tokens": 4244,
+  "query_s": 0.51,
+  "build_s": 5.4,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "4176096a31",
+  "question": "callNotFound should run not-found preHandler regardless of registration order",
+  "gold": [
+   "lib/four-oh-four.js"
+  ],
+  "files": [
+   "lib/hooks.js",
+   "lib/reply.js",
+   "test/internals/logger.test.js",
+   "lib/handle-request.js",
+   "types/instance.d.ts",
+   "fastify.js",
+   "lib/route.js",
+   "lib/symbols.js",
+   "lib/server.js",
+   "lib/four-oh-four.js"
+  ],
+  "exit": 0,
+  "tokens": 1651,
+  "query_s": 0.54,
+  "build_s": 5.5,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.1,
+  "first_is_test": false
+ },
+ {
+  "hash": "3aa8dfd729",
+  "question": "normalize header names in every schema subschema",
+  "gold": [
+   "lib/validation.js",
+   "lib/warnings.js"
+  ],
+  "files": [
+   "test/schema-validation.test.js",
+   "lib/schemas.js",
+   "test/delete.test.js",
+   "lib/reply.js",
+   "lib/route.js",
+   "test/internals/validation.test.js",
+   "lib/symbols.js",
+   "test/helper.js",
+   "lib/error-handler.js",
+   "lib/errors.js"
+  ],
+  "exit": 0,
+  "tokens": 1633,
+  "query_s": 0.56,
+  "build_s": 5.3,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.09090909090909091,
+  "first_is_test": true
+ },
+ {
+  "hash": "0c170ca13f",
+  "question": "compile boolean false request schemas",
+  "gold": [
+   "lib/route.js",
+   "lib/schemas.js",
+   "lib/validation.js"
+  ],
+  "files": [
+   "lib/schemas.js",
+   "lib/request.js",
+   "lib/validation.js",
+   "lib/route.js",
+   "test/internals/handle-request.test.js",
+   "lib/warnings.js",
+   "test/internals/decorator.test.js",
+   "lib/content-type.js",
+   "lib/reply.js",
+   "lib/symbols.js"
+  ],
+  "exit": 0,
+  "tokens": 1638,
+  "query_s": 0.56,
+  "build_s": 5.4,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "d66ebd121c",
+  "question": "reject malformed URLs before custom 404 handlers",
+  "gold": [
+   "lib/four-oh-four.js"
+  ],
+  "files": [
+   "test/diagnostics-channel/404.test.js",
+   "test/404s.test.js",
+   "test/https/custom-https-server.test.js",
+   "lib/head-route.js",
+   "lib/hooks.js",
+   "lib/reply.js",
+   "lib/route.js",
+   "lib/request.js",
+   "test/helper.js",
+   "test/logger/logger-test-utils.js"
+  ],
+  "exit": 0,
+  "tokens": 1648,
+  "query_s": 0.51,
+  "build_s": 5.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "a34c3e530f",
+  "question": "do not unwrap async validator results",
+  "gold": [
+   "lib/validation.js"
+  ],
+  "files": [
+   "test/route.3.test.js",
+   "test/async-await.test.js",
+   "github/scripts/lint-ecosystem.js",
+   "test/helper.js",
+   "fastify.js",
+   "fastify.d.ts",
+   "lib/symbols.js",
+   "lib/server.js",
+   "test/types/register.tst.ts",
+   "lib/error-handler.js"
+  ],
+  "exit": 0,
+  "tokens": 1640,
+  "query_s": 0.57,
+  "build_s": 5.4,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.0,
+  "first_is_test": true
+ },
+ {
+  "hash": "c3051e5b60",
+  "question": "omit absent compileSerializationSchema metadata instead of passing null",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "lib/reply.js",
+   "types/utils.d.ts",
+   "test/nullable-validation.test.js",
+   "lib/logger-factory.js"
+  ],
+  "exit": 0,
+  "tokens": 1663,
+  "query_s": 0.6,
+  "build_s": 6.0,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "bc25b7499a",
+  "question": "remove error when HTTP QUERY request has empty body",
+  "gold": [
+   "lib/errors.js",
+   "lib/handle-request.js"
+  ],
+  "files": [
+   "test/internals/validation.test.js",
+   "test/custom-http-server.test.js",
+   "lib/content-type-parser.js",
+   "test/types/logger.tst.ts",
+   "test/custom-querystring-parser.test.js",
+   "test/post-empty-body.test.js",
+   "test/reply-error.test.js",
+   "test/content-type-parser-async-context.test.js",
+   "test/http2/plain.test.js",
+   "test/inject.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1671,
+  "query_s": 0.88,
+  "build_s": 6.2,
+  "build_ok": true,
+  "top1": false,
+  "top5": false,
+  "top1_notests": false,
+  "top5_notests": false,
+  "rr": 0.05555555555555555,
+  "first_is_test": true
+ },
+ {
+  "hash": "19d5be0daf",
+  "question": "resolve reply.mediaType from raw response headers",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "lib/content-type.js",
+   "test/internals/errors.test.js",
+   "lib/reply.js",
+   "lib/errors.js",
+   "test/logger/logger-test-utils.js",
+   "test/internals/hook-runner.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1632,
+  "query_s": 1.41,
+  "build_s": 9.3,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": false,
+  "top5_notests": true,
+  "rr": 0.3333333333333333,
+  "first_is_test": false
+ },
+ {
+  "hash": "5c081d4b72",
+  "question": "copy a set-cookie array passed to reply.header instead of storing it",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "lib/reply.js",
+   "test/http-methods/copy.test.js",
+   "test/logger/logger-test-utils.js"
+  ],
+  "exit": 0,
+  "tokens": 1650,
+  "query_s": 1.57,
+  "build_s": 14.7,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "a479a7ce59",
+  "question": "send stream trailers after the stream actually finishes",
+  "gold": [
+   "lib/reply.js"
+  ],
+  "files": [
+   "lib/reply.js",
+   "test/helper.js",
+   "test/reply-trailers.test.js",
+   "fastify.js",
+   "types/instance.d.ts",
+   "types/hooks.d.ts",
+   "lib/symbols.js",
+   "test/internals/reply.test.js",
+   "test/hooks.test.js",
+   "test/schema-feature.test.js"
+  ],
+  "exit": 0,
+  "tokens": 1630,
+  "query_s": 0.81,
+  "build_s": 14.7,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "9e9f61a6bf",
+  "question": "clamp error statusCode between 400 and 599 with 500 fallback",
+  "gold": [
+   "lib/error-handler.js",
+   "lib/error-status.js"
+  ],
+  "files": [
+   "lib/error-handler.js",
+   "test/500s.test.js",
+   "test/http2/secure-with-fallback.test.js",
+   "test/types/logger.tst.ts",
+   "lib/symbols.js",
+   "test/reply-error.test.js",
+   "test/build-certificate.js",
+   "test/inject.test.js",
+   "lib/reply.js",
+   "lib/schemas.js"
+  ],
+  "exit": 0,
+  "tokens": 1647,
+  "query_s": 1.43,
+  "build_s": 12.6,
+  "build_ok": true,
+  "top1": true,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 1.0,
+  "first_is_test": false
+ },
+ {
+  "hash": "37df44a421",
+  "question": "contain synchronous throws from custom content type parsers",
+  "gold": [
+   "lib/content-type-parser.js"
+  ],
+  "files": [
+   "test/types/serverFactory.tst.ts",
+   "test/https/custom-https-server.test.js",
+   "lib/content-type-parser.js",
+   "fastify.js",
+   "lib/symbols.js",
+   "lib/errors.js",
+   "lib/plugin-override.js",
+   "lib/warnings.js",
+   "test/build-certificate.js",
+   "lib/content-type.js"
+  ],
+  "exit": 0,
+  "tokens": 1648,
+  "query_s": 0.57,
+  "build_s": 7.3,
+  "build_ok": true,
+  "top1": false,
+  "top5": true,
+  "top1_notests": true,
+  "top5_notests": true,
+  "rr": 0.3333333333333333,
+  "first_is_test": true
+ }
+]

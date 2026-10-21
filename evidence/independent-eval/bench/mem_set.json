@@ -1,0 +1,342 @@
+{
+ "taught": [
+  {
+   "question": "use ContentType parser for response schema lookup",
+   "paraphrase": "How is the serializer schema chosen for a reply based on its media type?",
+   "gold": [
+    "lib/schemas.js"
+   ],
+   "file": "lib/schemas.js",
+   "line": 13,
+   "found_at_head": true
+  },
+  {
+   "question": "guard forwarded host and protocol on socket presence",
+   "paraphrase": "Reading the hostname and protocol from X-Forwarded headers crashes when there is no socket. Where is that?",
+   "gold": [
+    "lib/request.js"
+   ],
+   "file": "lib/request.js",
+   "line": 124,
+   "found_at_head": true
+  },
+  {
+   "question": "enable diagnostics tracking for async error handlers",
+   "paraphrase": "Where do async error handlers report to diagnostics_channel?",
+   "gold": [
+    "lib/error-handler.js",
+    "lib/handle-request.js",
+    "lib/symbols.js"
+   ],
+   "file": "lib/error-handler.js",
+   "line": 1,
+   "found_at_head": false
+  },
+  {
+   "question": "ignore duplicate trailer completions",
+   "paraphrase": "Where are trailer completion callbacks handled so that a second completion is dropped?",
+   "gold": [
+    "lib/reply.js"
+   ],
+   "file": "lib/reply.js",
+   "line": 931,
+   "found_at_head": true
+  },
+  {
+   "question": "chunk large HTTP/2 buffer replies",
+   "paraphrase": "How does fastify split a big Buffer payload when replying over http2?",
+   "gold": [
+    "lib/reply.js"
+   ],
+   "file": "lib/reply.js",
+   "line": 64,
+   "found_at_head": true
+  },
+  {
+   "question": "replace AssertionError with FST_ERR_PLUGIN_DEPENDENCY_NOT_REGISTERED in checkDependencies",
+   "paraphrase": "Which error is thrown when a plugin's dependency has not been registered?",
+   "gold": [
+    "lib/errors.js",
+    "lib/plugin-utils.js"
+   ],
+   "file": "lib/plugin-utils.js",
+   "line": 13,
+   "found_at_head": true
+  },
+  {
+   "question": "clear socket._meta after response to prevent keep-alive leaks",
+   "paraphrase": "Where is per-socket metadata cleaned up after a response, so keep-alive sockets don't leak memory?",
+   "gold": [
+    "lib/reply.js"
+   ],
+   "file": "lib/reply.js",
+   "line": 995,
+   "found_at_head": true
+  },
+  {
+   "question": "avoid double slash when joining nested prefixes",
+   "paraphrase": "Why do nested plugin prefixes end up with '//' in the route path?",
+   "gold": [
+    "lib/plugin-override.js"
+   ],
+   "file": "lib/plugin-override.js",
+   "line": 85,
+   "found_at_head": true
+  },
+  {
+   "question": "make hasRequestDecorator/hasReplyDecorator recognize constructor-assigned built-in properties",
+   "paraphrase": "Where does the check for whether a request or reply decorator exists look at properties set in the constructor?",
+   "gold": [
+    "lib/decorate.js",
+    "lib/reply.js",
+    "lib/request.js"
+   ],
+   "file": "lib/decorate.js",
+   "line": 50,
+   "found_at_head": true
+  },
+  {
+   "question": "clear socket._meta on reply.hijack() when onTimeout is registered",
+   "paraphrase": "When a route has an onTimeout hook and the reply is hijacked, where is the socket metadata released?",
+   "gold": [
+    "lib/reply.js",
+    "lib/route.js"
+   ],
+   "file": "lib/reply.js",
+   "line": 145,
+   "found_at_head": true
+  },
+  {
+   "question": "use ContentType to detect `json` and `charset` in reply.send",
+   "paraphrase": "How does reply.send decide that a payload is JSON and which charset to use?",
+   "gold": [
+    "lib/content-type-parser.js",
+    "lib/content-type.js",
+    "lib/handle-request.js",
+    "lib/reply.js",
+    "lib/request.js"
+   ],
+   "file": "lib/content-type.js",
+   "line": 1,
+   "found_at_head": false
+  },
+  {
+   "question": "derive request.port from request.host",
+   "paraphrase": "How is the port of an incoming request computed?",
+   "gold": [
+    "lib/request.js"
+   ],
+   "file": "lib/request.js",
+   "line": 267,
+   "found_at_head": true
+  },
+  {
+   "question": "normalize method in findRoute",
+   "paraphrase": "Does findRoute handle lowercase HTTP methods?",
+   "gold": [
+    "lib/route.js"
+   ],
+   "file": "lib/route.js",
+   "line": 184,
+   "found_at_head": true
+  },
+  {
+   "question": "correctly update falsy values from validator",
+   "paraphrase": "Why are falsy values returned by a custom validator ignored when updating the request body?",
+   "gold": [
+    "lib/validation.js"
+   ],
+   "file": "lib/validation.js",
+   "line": 382,
+   "found_at_head": true
+  },
+  {
+   "question": "uncatchable throws in writeHead when using async hook",
+   "paraphrase": "Errors thrown in writeHead can't be caught when an async hook is used. Where does that happen?",
+   "gold": [
+    "lib/hooks.js"
+   ],
+   "file": "lib/hooks.js",
+   "line": 160,
+   "found_at_head": true
+  },
+  {
+   "question": "honor quoted-string in Content-Type parameter values",
+   "paraphrase": "Where are Content-Type parameters with quoted values parsed?",
+   "gold": [
+    "lib/content-type.js"
+   ],
+   "file": "lib/content-type.js",
+   "line": 6,
+   "found_at_head": true
+  },
+  {
+   "question": "add http method override warning",
+   "paraphrase": "Where is the warning for overriding a request's HTTP method declared?",
+   "gold": [
+    "fastify.js",
+    "lib/warnings.js"
+   ],
+   "file": "lib/warnings.js",
+   "line": 1,
+   "found_at_head": false
+  },
+  {
+   "question": "do not force close in-flight connections on 'idle'",
+   "paraphrase": "On close, why are in-flight connections forcibly closed when forceCloseConnections is 'idle'?",
+   "gold": [
+    "fastify.js"
+   ],
+   "file": "fastify.js",
+   "line": 401,
+   "found_at_head": true
+  },
+  {
+   "question": "clear trailer state when removing all trailers",
+   "paraphrase": "Removing every trailer leaves stale trailer state behind. Where?",
+   "gold": [
+    "lib/reply.js"
+   ],
+   "file": "lib/reply.js",
+   "line": 612,
+   "found_at_head": true
+  },
+  {
+   "question": "pass null instead of undefined to requestCompleted on success",
+   "paraphrase": "What argument is passed to the requestCompleted log callback when a request succeeds?",
+   "gold": [
+    "lib/log-controller.js"
+   ],
+   "file": "lib/log-controller.js",
+   "line": 55,
+   "found_at_head": true
+  }
+ ],
+ "untaught": [
+  {
+   "question": "recognize constructor-assigned built-in properties as decorator dependencies",
+   "gold": [
+    "lib/decorate.js"
+   ]
+  },
+  {
+   "question": "reset lastIndex before testing global/sticky content-type RegExp parsers",
+   "gold": [
+    "lib/content-type-parser.js"
+   ]
+  },
+  {
+   "question": "remove raw response headers",
+   "gold": [
+    "lib/reply.js"
+   ]
+  },
+  {
+   "question": "return undefined for invalid media types",
+   "gold": [
+    "lib/content-type.js"
+   ]
+  },
+  {
+   "question": "run preClose hook exactly once per declaring instance",
+   "gold": [
+    "fastify.js"
+   ]
+  },
+  {
+   "question": "Fix prefix route options url",
+   "gold": [
+    "lib/route.js"
+   ]
+  },
+  {
+   "question": "disable numeric trustProxy hop-count trust",
+   "gold": [
+    "lib/request.js"
+   ]
+  },
+  {
+   "question": "preserve coerced root values",
+   "gold": [
+    "lib/validation.js"
+   ]
+  },
+  {
+   "question": "callNotFound should run not-found preHandler regardless of registration order",
+   "gold": [
+    "lib/four-oh-four.js"
+   ]
+  },
+  {
+   "question": "normalize header names in every schema subschema",
+   "gold": [
+    "lib/validation.js",
+    "lib/warnings.js"
+   ]
+  },
+  {
+   "question": "compile boolean false request schemas",
+   "gold": [
+    "lib/route.js",
+    "lib/schemas.js",
+    "lib/validation.js"
+   ]
+  },
+  {
+   "question": "reject malformed URLs before custom 404 handlers",
+   "gold": [
+    "lib/four-oh-four.js"
+   ]
+  },
+  {
+   "question": "do not unwrap async validator results",
+   "gold": [
+    "lib/validation.js"
+   ]
+  },
+  {
+   "question": "omit absent compileSerializationSchema metadata instead of passing null",
+   "gold": [
+    "lib/reply.js"
+   ]
+  },
+  {
+   "question": "remove error when HTTP QUERY request has empty body",
+   "gold": [
+    "lib/errors.js",
+    "lib/handle-request.js"
+   ]
+  },
+  {
+   "question": "resolve reply.mediaType from raw response headers",
+   "gold": [
+    "lib/reply.js"
+   ]
+  },
+  {
+   "question": "copy a set-cookie array passed to reply.header instead of storing it",
+   "gold": [
+    "lib/reply.js"
+   ]
+  },
+  {
+   "question": "send stream trailers after the stream actually finishes",
+   "gold": [
+    "lib/reply.js"
+   ]
+  },
+  {
+   "question": "clamp error statusCode between 400 and 599 with 500 fallback",
+   "gold": [
+    "lib/error-handler.js",
+    "lib/error-status.js"
+   ]
+  },
+  {
+   "question": "contain synchronous throws from custom content type parsers",
+   "gold": [
+    "lib/content-type-parser.js"
+   ]
+  }
+ ]
+}
