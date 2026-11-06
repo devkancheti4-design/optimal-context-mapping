@@ -1,0 +1,28 @@
+## perfect lessons, the first wording taught; plain wordings for taught, sibling and unrelated, template wordings for named
+next day, cold map, taught facts             n=60   lesson led   0.0%  fact in readout  30.0%  tokens   504
+next day, with lessons, taught facts         n=60   lesson led  53.3%  fact in readout  66.7%  tokens   655
+next day, with lessons, named control        n=12   lesson led 100.0%  fact in readout 100.0%  tokens   864
+next day, cold map, named control            n=12   lesson led   0.0%  fact in readout  58.3%  tokens   539
+next day, with lessons, new questions        n=18   lesson led  11.1%  fact in readout  22.2%  tokens   577
+next day, cold map, new questions            n=18   lesson led   0.0%  fact in readout  16.7%  tokens   535
+teammate, with lessons                       n=60   lesson led  61.7%  fact in readout  73.3%  tokens   702
+a year later, with lessons, same             n=28   lesson led  50.0%  fact in readout  57.1%  tokens   692
+a year later, cold map, same                 n=28   lesson led   0.0%  fact in readout  14.3%  tokens   526
+a year later, with lessons, moved            n=8    lesson led  50.0%  fact in readout  62.5%  tokens   758
+a year later, cold map, moved                n=8    lesson led   0.0%  fact in readout  25.0%  tokens   569
+a year later, with lessons, changed          n=24   lesson led  37.5%  fact in readout  50.0%  tokens   643
+a year later, cold map, changed              n=24   lesson led   0.0%  fact in readout  20.8%  tokens   532
+with 200 more lessons                        n=60   lesson led  55.0%  fact in readout  75.0%  tokens   683
+reflex next day: lesson led 65%, fact in readout 85%; cold fact in readout 45%; extra lessons: ['taught, 108 lessons']
+scikit-learn next day: lesson led 55%, fact in readout 60%; cold fact in readout 20%; extra lessons: ['taught, 220 lessons']
+sphinx next day: lesson led 40%, fact in readout 55%; cold fact in readout 25%; extra lessons: ['taught, 209 lessons']
+
+## lessons through the rebuilds, perfect lessons
+reflex | first: 24 held, 0 without a place | mate: 24 held, 0 without a place | T1: 24 held, 5 without a place | T2: 24 held, 6 without a place
+scikit-learn | first: 24 held, 0 without a place | mate: 24 held, 0 without a place | T1: 24 held, 1 without a place | T2: 24 held, 6 without a place
+sphinx | first: 23 held, 0 without a place | mate: 23 held, 0 without a place | T1: 23 held, 3 without a place | T2: 23 held, 3 without a place
+
+## lessons through the rebuilds, the agent's own
+reflex | first: 42 held, 0 without a place | mate: 54 held, 0 without a place | T1: 54 held, 14 without a place | T2: 68 held, 16 without a place
+scikit-learn | first: 49 held, 0 without a place | mate: 64 held, 0 without a place | T1: 64 held, 2 without a place | T2: 81 held, 18 without a place
+sphinx | first: 43 held, 0 without a place | mate: 56 held, 0 without a place | T1: 56 held, 7 without a place | T2: 68 held, 7 without a place

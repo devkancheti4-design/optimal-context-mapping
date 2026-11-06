@@ -1,0 +1,943 @@
+[
+ {
+  "repo": "astropy/astropy",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "746796143cb666c4349caaa4494b1a6bb90f7349",
+    "committed": "2025-10-31T17:18:42Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "a852af71d66ee4fa8110cba8242a42d88873f557",
+    "committed": "2026-04-30T23:37:42Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "e18d4357efdabe9d6042ede63779006949f30fe8",
+    "committed": "2026-10-31T06:50:39Z"
+   }
+  ],
+  "facts": 12522,
+  "askable": 5654,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 4164,
+     "gone": 11,
+     "changed": 3
+    },
+    "base": {
+     "same": 888,
+     "changed": 1,
+     "moved": 1
+    },
+    "const": {
+     "same": 238,
+     "gone": 1,
+     "changed": 1
+    },
+    "default": {
+     "same": 345,
+     "gone": 1
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 4156,
+     "gone": 19,
+     "changed": 3
+    },
+    "base": {
+     "same": 888,
+     "changed": 1,
+     "moved": 1
+    },
+    "const": {
+     "same": 237,
+     "gone": 2,
+     "changed": 1
+    },
+    "default": {
+     "same": 344,
+     "gone": 1,
+     "changed": 1
+    }
+   }
+  }
+ },
+ {
+  "repo": "conan-io/conan",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "e81de97b7d308f34fceca1a485a5cd1b838b587e",
+    "committed": "2025-10-30T07:18:58Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "f5c1225b0cd0b82d7a1462d007db2f6b4bff1a20",
+    "committed": "2026-04-30T14:43:17Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "a283bdbb1352a668b1d0c0f8ed49cb5623b83970",
+    "committed": "2026-10-31T19:08:58Z"
+   }
+  ],
+  "facts": 4162,
+  "askable": 2127,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 1774,
+     "gone": 38,
+     "changed": 16
+    },
+    "base": {
+     "same": 88,
+     "gone": 1
+    },
+    "const": {
+     "same": 172,
+     "gone": 4,
+     "moved": 1
+    },
+    "default": {
+     "same": 33
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 1768,
+     "gone": 44,
+     "changed": 16
+    },
+    "base": {
+     "same": 88,
+     "gone": 1
+    },
+    "const": {
+     "same": 171,
+     "gone": 5,
+     "moved": 1
+    },
+    "default": {
+     "same": 32,
+     "changed": 1
+    }
+   }
+  }
+ },
+ {
+  "repo": "django/django",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "05ba1a9228128614fb3c475f1c4bdf0160f44dba",
+    "committed": "2025-10-31T13:33:27Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "9f790ef1a0f356cf6342b5d57bbaeac35aed0d9f",
+    "committed": "2026-04-30T23:52:11Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "a05e16a7230fe33d3f43f4a3aaed103cebb42efc",
+    "committed": "2026-10-31T02:48:02Z"
+   }
+  ],
+  "facts": 14357,
+  "askable": 8728,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 6519,
+     "gone": 22,
+     "changed": 3
+    },
+    "const": {
+     "same": 885,
+     "moved": 3,
+     "gone": 1
+    },
+    "base": {
+     "same": 1202,
+     "gone": 4,
+     "changed": 3
+    },
+    "default": {
+     "same": 85,
+     "gone": 1
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 6481,
+     "gone": 52,
+     "changed": 11
+    },
+    "const": {
+     "same": 884,
+     "changed": 1,
+     "moved": 3,
+     "gone": 1
+    },
+    "base": {
+     "same": 1198,
+     "gone": 8,
+     "changed": 3
+    },
+    "default": {
+     "gone": 12,
+     "same": 71,
+     "changed": 3
+    }
+   }
+  }
+ },
+ {
+  "repo": "pallets/flask",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "88a65bb374e87a18816a780dbd4ae69d307aa85c",
+    "committed": "2025-10-14T20:26:26Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "2ac89889f4cc330eabd50f295dcef02828522c69",
+    "committed": "2026-04-09T04:04:03Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+    "committed": "2026-10-30T15:05:20Z"
+   }
+  ],
+  "facts": 533,
+  "askable": 314,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 269,
+     "gone": 3
+    },
+    "base": {
+     "same": 30
+    },
+    "default": {
+     "same": 4,
+     "changed": 2
+    },
+    "const": {
+     "same": 6
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 269,
+     "gone": 3
+    },
+    "base": {
+     "same": 30
+    },
+    "default": {
+     "same": 4,
+     "changed": 2
+    },
+    "const": {
+     "same": 6
+    }
+   }
+  }
+ },
+ {
+  "repo": "matplotlib/matplotlib",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "134000ba19a4354da2ad1084627039e05c936754",
+    "committed": "2025-10-31T20:56:50Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "014076e2126a05954904c46589d87b4957ace9de",
+    "committed": "2026-04-30T21:58:33Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "0a12b8d20862d2238ffda6ccd458dc4add36e9d5",
+    "committed": "2026-10-31T17:35:30Z"
+   }
+  ],
+  "facts": 10975,
+  "askable": 4973,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 3975,
+     "gone": 39,
+     "changed": 5
+    },
+    "const": {
+     "same": 154,
+     "changed": 2,
+     "gone": 8
+    },
+    "default": {
+     "same": 225
+    },
+    "base": {
+     "same": 560,
+     "changed": 3,
+     "gone": 2
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 3963,
+     "gone": 51,
+     "changed": 5
+    },
+    "const": {
+     "same": 153,
+     "changed": 2,
+     "gone": 9
+    },
+    "default": {
+     "same": 223,
+     "gone": 2
+    },
+    "base": {
+     "same": 559,
+     "changed": 4,
+     "gone": 2
+    }
+   }
+  }
+ },
+ {
+  "repo": "pylint-dev/pylint",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "f8f6ccd2839fdb2a1be57c5c0304260dc04a8431",
+    "committed": "2025-10-28T05:50:30Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "0b7333f43886e12b946592a0ad09b546f477371b",
+    "committed": "2026-04-28T05:05:46Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "278fc1bec30e8dba13b073e2b43dbb98daacc8cd",
+    "committed": "2026-10-27T21:35:26Z"
+   }
+  ],
+  "facts": 2794,
+  "askable": 1508,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 1126
+    },
+    "const": {
+     "same": 174
+    },
+    "base": {
+     "same": 204
+    },
+    "default": {
+     "same": 4
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 1120,
+     "gone": 6
+    },
+    "const": {
+     "gone": 3,
+     "same": 170,
+     "moved": 1
+    },
+    "base": {
+     "same": 201,
+     "gone": 3
+    },
+    "default": {
+     "same": 4
+    }
+   }
+  }
+ },
+ {
+  "repo": "pytest-dev/pytest",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "7ba4d698ad22c6b231f5d459ade2a863c4e94c79",
+    "committed": "2025-10-31T11:45:13Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "602fc183e54f7652d164f85782c3bba0c96d96d9",
+    "committed": "2026-04-29T08:50:07Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "dfd896bc5d8ff61877d28b15dfd8033ec87cbe1c",
+    "committed": "2026-10-31T09:14:58Z"
+   }
+  ],
+  "facts": 2487,
+  "askable": 1406,
+  "rates": {
+   "2026-05-01": {
+    "const": {
+     "same": 47
+    },
+    "where": {
+     "same": 1225,
+     "gone": 4
+    },
+    "base": {
+     "same": 108,
+     "gone": 2
+    },
+    "default": {
+     "same": 19,
+     "gone": 1
+    }
+   },
+   "2026-11-01": {
+    "const": {
+     "same": 43,
+     "moved": 2,
+     "gone": 2
+    },
+    "where": {
+     "same": 1191,
+     "gone": 23,
+     "changed": 15
+    },
+    "base": {
+     "same": 103,
+     "gone": 7
+    },
+    "default": {
+     "same": 17,
+     "gone": 2,
+     "moved": 1
+    }
+   }
+  }
+ },
+ {
+  "repo": "reflex-dev/reflex",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "62264f1769953b8e9c934524283990a4fe51c7c3",
+    "committed": "2025-10-30T20:11:16Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "fbc5a58ec35d5a24bc5062bb947a56c3290ea65c",
+    "committed": "2026-04-30T23:59:11Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "aeea15a3e41a866e57a762268b7c1e9ffedac789",
+    "committed": "2026-10-30T15:00:50Z"
+   }
+  ],
+  "facts": 4381,
+  "askable": 2995,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 387,
+     "changed": 1207,
+     "gone": 126
+    },
+    "base": {
+     "moved": 490,
+     "same": 39,
+     "gone": 68,
+     "changed": 18
+    },
+    "default": {
+     "moved": 5,
+     "same": 1
+    },
+    "const": {
+     "moved": 578,
+     "changed": 13,
+     "gone": 57,
+     "same": 6
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 370,
+     "changed": 1193,
+     "gone": 157
+    },
+    "base": {
+     "moved": 483,
+     "same": 37,
+     "gone": 72,
+     "changed": 23
+    },
+    "default": {
+     "moved": 5,
+     "same": 1
+    },
+    "const": {
+     "moved": 558,
+     "changed": 28,
+     "gone": 64,
+     "same": 4
+    }
+   }
+  }
+ },
+ {
+  "repo": "psf/requests",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "70298332899f25826e35e42f8d83425124f755a5",
+    "committed": "2025-10-15T11:45:42Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "8f6cda9969f4a98c45ea2922f6bcbefc02256202",
+    "committed": "2026-04-30T17:05:37Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "3c7baaa05ab4aa49cc819ce3a819d260de19c157",
+    "committed": "2026-10-26T17:14:41Z"
+   }
+  ],
+  "facts": 411,
+  "askable": 249,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 206
+    },
+    "default": {
+     "same": 2
+    },
+    "const": {
+     "same": 5
+    },
+    "base": {
+     "same": 36
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 200,
+     "gone": 6
+    },
+    "default": {
+     "same": 2
+    },
+    "const": {
+     "same": 5
+    },
+    "base": {
+     "same": 33,
+     "gone": 3
+    }
+   }
+  }
+ },
+ {
+  "repo": "scikit-learn/scikit-learn",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "d41f7340dca3319bba1b3b67659f11769904d7f0",
+    "committed": "2025-10-31T15:54:00Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "4fd35ca21add0a9fb2ce0e51c412cdf13f59c147",
+    "committed": "2026-04-30T10:27:49Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "360f3ebf7021c37db6acc8ecc06bed8cfbbe035c",
+    "committed": "2026-10-30T14:47:07Z"
+   }
+  ],
+  "facts": 9968,
+  "askable": 2837,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 2006,
+     "gone": 11
+    },
+    "const": {
+     "same": 50
+    },
+    "default": {
+     "same": 391,
+     "gone": 5,
+     "changed": 2
+    },
+    "base": {
+     "same": 366,
+     "changed": 6
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 1963,
+     "gone": 34,
+     "changed": 20
+    },
+    "const": {
+     "same": 46,
+     "changed": 4
+    },
+    "default": {
+     "same": 381,
+     "gone": 5,
+     "changed": 10,
+     "moved": 2
+    },
+    "base": {
+     "same": 359,
+     "changed": 10,
+     "gone": 3
+    }
+   }
+  }
+ },
+ {
+  "repo": "sphinx-doc/sphinx",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "de745a9eaa2c1b40a70d835e7a99a832f405afb6",
+    "committed": "2025-10-29T23:53:15Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "cc7c6f435ad37bb12264f8118c8461b230e6830c",
+    "committed": "2025-12-31T15:07:44Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "035a07c32c3241fd3356f4d827800c1f88525272",
+    "committed": "2026-10-29T22:42:18Z"
+   }
+  ],
+  "facts": 5882,
+  "askable": 3891,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 3150,
+     "gone": 25,
+     "changed": 17
+    },
+    "base": {
+     "same": 466,
+     "gone": 2,
+     "changed": 2,
+     "moved": 2
+    },
+    "const": {
+     "same": 197,
+     "changed": 1
+    },
+    "default": {
+     "same": 29
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 3150,
+     "gone": 25,
+     "changed": 17
+    },
+    "base": {
+     "same": 466,
+     "gone": 2,
+     "changed": 2,
+     "moved": 2
+    },
+    "const": {
+     "same": 197,
+     "changed": 1
+    },
+    "default": {
+     "same": 29
+    }
+   }
+  }
+ },
+ {
+  "repo": "sqlfluff/sqlfluff",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "881e317ea43b461fab3f496b36a2fe4857317720",
+    "committed": "2025-10-29T11:21:34Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "08e473acc54e0e2c7511562b3f23726d4375fffd",
+    "committed": "2026-04-29T19:59:33Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "0bbacd2c31762ca8ce70f2ba6ceac1273709440d",
+    "committed": "2026-10-30T21:14:07Z"
+   }
+  ],
+  "facts": 5178,
+  "askable": 3745,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 1723,
+     "gone": 20,
+     "changed": 1
+    },
+    "base": {
+     "same": 991,
+     "gone": 20,
+     "changed": 1,
+     "moved": 1
+    },
+    "const": {
+     "same": 928,
+     "gone": 20,
+     "changed": 2,
+     "moved": 1
+    },
+    "default": {
+     "same": 37
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 1597,
+     "gone": 140,
+     "changed": 7
+    },
+    "base": {
+     "same": 865,
+     "gone": 140,
+     "moved": 7,
+     "changed": 1
+    },
+    "const": {
+     "same": 806,
+     "gone": 137,
+     "moved": 7,
+     "changed": 1
+    },
+    "default": {
+     "same": 37
+    }
+   }
+  }
+ },
+ {
+  "repo": "streamlink/streamlink",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "4274168c458ffe0274c02ce747f6258448bf851e",
+    "committed": "2025-10-31T07:21:51Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "ece43d00aac8f49ea0b7ec60fbf85e83e92f1f7e",
+    "committed": "2026-04-30T19:14:36Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "a685512a746a99a429b2678e2718c1ee85ba9f6c",
+    "committed": "2026-10-29T18:55:43Z"
+   }
+  ],
+  "facts": 5582,
+  "askable": 3664,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 2358,
+     "gone": 5
+    },
+    "base": {
+     "same": 421,
+     "gone": 6
+    },
+    "const": {
+     "same": 849,
+     "changed": 3,
+     "gone": 3
+    },
+    "default": {
+     "same": 18,
+     "gone": 1
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 2341,
+     "gone": 22
+    },
+    "base": {
+     "same": 416,
+     "gone": 11
+    },
+    "const": {
+     "same": 839,
+     "gone": 13,
+     "changed": 3
+    },
+    "default": {
+     "same": 18,
+     "gone": 1
+    }
+   }
+  }
+ },
+ {
+  "repo": "sympy/sympy",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "afcfad317160434a3f902efab38bf9137e68ff45",
+    "committed": "2025-10-31T21:26:29Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "39e29cd3ec2358e6c97b1ea275ba6df3460c0bf1",
+    "committed": "2026-04-30T17:25:29Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "ddcde486d659487aad2df8edb029a078aa473cc5",
+    "committed": "2026-10-31T23:47:32Z"
+   }
+  ],
+  "facts": 30178,
+  "askable": 15103,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 12415,
+     "gone": 29,
+     "changed": 1
+    },
+    "const": {
+     "same": 633,
+     "changed": 1
+    },
+    "base": {
+     "same": 1667,
+     "gone": 1,
+     "changed": 1
+    },
+    "default": {
+     "same": 355
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 12359,
+     "gone": 85,
+     "changed": 1
+    },
+    "const": {
+     "same": 633,
+     "changed": 1
+    },
+    "base": {
+     "same": 1645,
+     "gone": 7,
+     "changed": 17
+    },
+    "default": {
+     "same": 353,
+     "changed": 2
+    }
+   }
+  }
+ },
+ {
+  "repo": "pydata/xarray",
+  "pins": [
+   {
+    "date": "2025-11-01",
+    "sha": "7f57f0125f534114967f68a6194cebc1f1219454",
+    "committed": "2025-10-29T16:23:08Z"
+   },
+   {
+    "date": "2026-05-01",
+    "sha": "8ee87f14cd7f26f181821f6d171d7f01c3ce11e4",
+    "committed": "2026-04-28T09:17:42Z"
+   },
+   {
+    "date": "2026-11-01",
+    "sha": "2846938bbb820c5108bec6e9c80c785c0c8bf2b1",
+    "committed": "2026-10-31T19:06:15Z"
+   }
+  ],
+  "facts": 5580,
+  "askable": 2011,
+  "rates": {
+   "2026-05-01": {
+    "where": {
+     "same": 1711,
+     "gone": 10
+    },
+    "const": {
+     "same": 21
+    },
+    "base": {
+     "same": 131,
+     "gone": 1
+    },
+    "default": {
+     "same": 136,
+     "gone": 1
+    }
+   },
+   "2026-11-01": {
+    "where": {
+     "same": 1694,
+     "gone": 27
+    },
+    "const": {
+     "same": 20,
+     "gone": 1
+    },
+    "base": {
+     "same": 126,
+     "gone": 6
+    },
+    "default": {
+     "same": 135,
+     "gone": 2
+    }
+   }
+  }
+ }
+]

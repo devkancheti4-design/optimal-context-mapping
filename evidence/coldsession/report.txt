@@ -1,0 +1,524 @@
+===== all three repositories; the notes arm finished only on reflex and scikit-learn
+repositories: reflex, scikit-learn, sphinx; answers: 947; failed calls, counted as not right: 0; spent so far $7.951
+
+S1 the first time (the taught facts)
+  alone                              (none)
+  notes                              n=45   right  80.0%  stale   0.0%  hedged  0.0%  requests  9.91  tokens    47531  $0.00962  tokens per right    59414
+  map                                (none)
+  modeld                             n=60   right  78.3%  stale   0.0%  hedged  0.0%  requests  7.37  tokens    29060  $0.00639  tokens per right    37098
+
+S2 the next day (the taught facts)
+  alone                              n=60   right  73.3%  stale   0.0%  hedged  0.0%  requests 12.80  tokens    70034  $0.01320  tokens per right    95500
+  notes                              n=40   right  70.0%  stale   0.0%  hedged  0.0%  requests  9.20  tokens    44977  $0.00946  tokens per right    64253
+  map                                n=60   right  70.0%  stale   0.0%  hedged  0.0%  requests  7.80  tokens    37290  $0.00764  tokens per right    53272
+  modeld                             n=60   right  81.7%  stale   0.0%  hedged  0.0%  requests  7.98  tokens    34983  $0.00733  tokens per right    42836
+
+S3 a teammate (the taught facts)
+  alone                              (none)
+  notes                              n=40   right  87.5%  stale   0.0%  hedged  0.0%  requests  7.33  tokens    43563  $0.00877  tokens per right    49787
+  map                                (none)
+  modeld                             n=60   right  71.7%  stale   0.0%  hedged  0.0%  requests  6.67  tokens    30910  $0.00630  tokens per right    43130
+
+S4 a year later (the taught facts)
+  alone                              n=60   right  61.7%  stale   6.7%  hedged  0.0%  requests 13.98  tokens    93405  $0.01614  tokens per right   151468
+  notes                              n=40   right  75.0%  stale   7.5%  hedged  0.0%  requests  9.35  tokens    71230  $0.01162  tokens per right    94974
+  map                                n=60   right  58.3%  stale   5.0%  hedged  0.0%  requests 10.40  tokens    52264  $0.01042  tokens per right    89595
+  modeld                             n=60   right  63.3%  stale   5.0%  hedged  0.0%  requests  7.83  tokens    38923  $0.00771  tokens per right    61458
+
+S5 the next day, with 200 more lessons on disk (the taught facts)
+  alone                              (none)
+  notes                              n=40   right  80.0%  stale   0.0%  hedged  0.0%  requests  9.00  tokens    90208  $0.01228  tokens per right   112760
+  map                                (none)
+  modeld                             n=60   right  76.7%  stale   0.0%  hedged  0.0%  requests  6.43  tokens    25799  $0.00569  tokens per right    33651
+
+S4 by what happened to the fact
+  same, alone                        n=28   right  67.9%  stale   0.0%  hedged  0.0%  requests 13.89  tokens    90956  $0.01597  tokens per right   134041
+  same, notes                        n=18   right  72.2%  stale   0.0%  hedged  0.0%  requests  8.22  tokens    60570  $0.00972  tokens per right    83866
+  same, map                          n=28   right  64.3%  stale   0.0%  hedged  0.0%  requests 10.29  tokens    46175  $0.00981  tokens per right    71828
+  same, modeld                       n=28   right  75.0%  stale   0.0%  hedged  0.0%  requests  6.54  tokens    29522  $0.00616  tokens per right    39362
+  moved, alone                       n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens   106486  $0.01904  tokens per right   212971
+  moved, notes                       n=6    right  83.3%  stale   0.0%  hedged  0.0%  requests 13.50  tokens   125329  $0.01881  tokens per right   150395
+  moved, map                         n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests 13.00  tokens    88223  $0.01542  tokens per right   176446
+  moved, modeld                      n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests 12.12  tokens    75108  $0.01350  tokens per right   150215
+  changed, alone                     n=24   right  58.3%  stale  16.7%  hedged  0.0%  requests 13.42  tokens    91902  $0.01537  tokens per right   157546
+  changed, notes                     n=16   right  75.0%  stale  18.8%  hedged  0.0%  requests  9.06  tokens    62935  $0.01107  tokens per right    83914
+  changed, map                       n=24   right  54.2%  stale  12.5%  hedged  0.0%  requests  9.67  tokens    47380  $0.00946  tokens per right    87471
+  changed, modeld                    n=24   right  54.2%  stale  12.5%  hedged  0.0%  requests  7.92  tokens    37830  $0.00759  tokens per right    69840
+
+S4 at each repository's own mix of same, moved and changed, from all its checkable facts
+  alone    right  71.0%  stale   2.1%  tokens   97090  tokens per right  136655
+  notes    right  80.5%  stale   3.1%  tokens   72206  tokens per right   89720
+  map      right  66.9%  stale   0.2%  tokens   56060  tokens per right   83760
+  modeld   right  73.1%  stale   0.2%  tokens   38953  tokens per right   53276
+
+S2 new questions, never asked before
+  sibling, alone                     n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  8.00  tokens    22093  $0.00674  tokens per right    22093
+  sibling, notes                     n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  4.67  tokens    15636  $0.00502  tokens per right    15636
+  sibling, map                       n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  7.67  tokens    34675  $0.00711  tokens per right    34675
+  sibling, modeld                    n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  8.00  tokens    32919  $0.00715  tokens per right    32919
+  unrelated, alone                   n=15   right  66.7%  stale   0.0%  hedged  0.0%  requests 11.53  tokens    54025  $0.01127  tokens per right    81037
+  unrelated, notes                   n=9    right  66.7%  stale   0.0%  hedged  0.0%  requests  6.22  tokens    27618  $0.00670  tokens per right    41427
+  unrelated, map                     n=15   right  66.7%  stale   0.0%  hedged  0.0%  requests  7.00  tokens    25632  $0.00581  tokens per right    38448
+  unrelated, modeld                  n=15   right  66.7%  stale   0.0%  hedged  0.0%  requests  6.33  tokens    22944  $0.00554  tokens per right    34417
+
+The named control: the question gives the code's exact name
+  S1, alone                          (none)
+  S1, notes                          n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  6.50  tokens    25236  $0.00578  tokens per right    25236
+  S1, map                            (none)
+  S1, modeld                         n=12   right 100.0%  stale   0.0%  hedged  0.0%  requests  4.67  tokens    16740  $0.00390  tokens per right    16740
+  S2, alone                          n=12   right  91.7%  stale   0.0%  hedged  0.0%  requests  5.50  tokens     9577  $0.00261  tokens per right    10448
+  S2, notes                          n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  3.50  tokens     9724  $0.00301  tokens per right     9724
+  S2, map                            n=12   right 100.0%  stale   0.0%  hedged  0.0%  requests  4.25  tokens    12857  $0.00304  tokens per right    12857
+  S2, modeld                         n=12   right 100.0%  stale   0.0%  hedged  0.0%  requests  1.75  tokens     4108  $0.00113  tokens per right     4108
+
+What the model already knows, with no code and no tools
+  guess, first wording               n=72   right  25.0%  stale   0.0%  hedged  0.0%  requests  1.00  tokens       76  $0.00008  tokens per right      304
+
+Model D and the others, same facts
+  alone vs modeld S2, n=60: modeld uses 0.50x alone's tokens (0.36 to 0.65); right, alone minus modeld: -8.3 points (-18.3 to +1.7)
+  alone vs modeld S4, n=60: modeld uses 0.42x alone's tokens (0.31 to 0.53); right, alone minus modeld: -1.7 points (-13.3 to +10.0)
+  notes vs modeld S1, n=45: modeld uses 0.46x notes's tokens (0.31 to 0.64); right, notes minus modeld: -2.2 points (-13.3 to +8.9)
+  notes vs modeld S2, n=40: modeld uses 0.80x notes's tokens (0.57 to 1.04); right, notes minus modeld: -5.0 points (-22.5 to +12.5)
+  notes vs modeld S3, n=40: modeld uses 0.64x notes's tokens (0.40 to 0.96); right, notes minus modeld: +17.5 points (+7.5 to +30.0)
+  notes vs modeld S4, n=40: modeld uses 0.61x notes's tokens (0.45 to 0.80); right, notes minus modeld: +17.5 points (+7.5 to +30.0)
+  notes vs modeld S5, n=40: modeld uses 0.35x notes's tokens (0.24 to 0.45); right, notes minus modeld: +10.0 points (-2.5 to +22.5)
+  map vs modeld S2, n=60: modeld uses 0.94x map's tokens (0.74 to 1.19); right, map minus modeld: -11.7 points (-21.7 to -1.7)
+  map vs modeld S4, n=60: modeld uses 0.74x map's tokens (0.58 to 0.94); right, map minus modeld: -5.0 points (-16.7 to +6.7)
+  first time: modeld S1 uses 0.41x the tokens of alone, n=60; right, modeld minus alone: +5.0 points (-10.0 to +20.0)
+
+How Model D answered
+  S1: one read 2 of 60, explored 58
+  S2: one read 12 of 60, explored 48
+  S3: one read 19 of 60, explored 41
+  S4: one read 15 of 60, explored 45
+  S5: one read 16 of 60, explored 44
+
+Predictions
+  P1 first time: HELD. 0.41x alone's tokens (needs at most 0.50), right +5.0 points (needs at least -5), n=60
+  P2 next day: FAILED. one read 20% (needs at least 60%), 0.50x alone's tokens (needs at most 0.20), right +8.3 points (needs at least -5), n=60
+  P3 teammate: FAILED. 0.88x session 2's tokens (needs at most 1.25), right -10.0 points (needs at least -5), n=60
+  P4 a year later, facts that stayed true: FAILED. one read 31% (needs at least 40%), 0.42x alone's tokens (needs at most 0.50), right +5.6 points (needs at least -5), n=36
+  P5 facts that changed: FAILED. Model D stale 12.5% of 24 (needs at most 10%), notes stale 18.8% of 16 (needs at least 50%)
+  P6 notes cheaper next day, a prediction against Model D: FAILED. Model D uses 0.80x the notes file's tokens, n=40
+  P7 more on disk: FAILED. 0.35x the notes file's tokens (needs under 1), right -10.0 points (needs at least -5), n=40
+  P8 what memory adds: FAILED. 0.94x memory-off tokens (needs at most 0.50); right +11.7 points, n=60
+
+
+===== reflex and scikit-learn only, where every arm finished
+repositories: reflex, scikit-learn; answers: 704; failed calls, counted as not right: 0; spent so far $7.951
+
+S1 the first time (the taught facts)
+  alone                              (none)
+  notes                              n=40   right  80.0%  stale   0.0%  hedged  0.0%  requests  9.65  tokens    47054  $0.00950  tokens per right    58817
+  map                                (none)
+  modeld                             n=40   right  82.5%  stale   0.0%  hedged  0.0%  requests  6.30  tokens    21569  $0.00514  tokens per right    26144
+
+S2 the next day (the taught facts)
+  alone                              n=40   right  67.5%  stale   0.0%  hedged  0.0%  requests 12.78  tokens    71644  $0.01323  tokens per right   106140
+  notes                              n=40   right  70.0%  stale   0.0%  hedged  0.0%  requests  9.20  tokens    44977  $0.00946  tokens per right    64253
+  map                                n=40   right  65.0%  stale   0.0%  hedged  0.0%  requests  7.85  tokens    38482  $0.00782  tokens per right    59203
+  modeld                             n=40   right  75.0%  stale   0.0%  hedged  0.0%  requests  8.03  tokens    35816  $0.00753  tokens per right    47754
+
+S3 a teammate (the taught facts)
+  alone                              (none)
+  notes                              n=40   right  87.5%  stale   0.0%  hedged  0.0%  requests  7.33  tokens    43563  $0.00877  tokens per right    49787
+  map                                (none)
+  modeld                             n=40   right  70.0%  stale   0.0%  hedged  0.0%  requests  6.25  tokens    28063  $0.00583  tokens per right    40089
+
+S4 a year later (the taught facts)
+  alone                              n=40   right  60.0%  stale  10.0%  hedged  0.0%  requests 13.88  tokens    97391  $0.01630  tokens per right   162319
+  notes                              n=40   right  75.0%  stale   7.5%  hedged  0.0%  requests  9.35  tokens    71230  $0.01162  tokens per right    94974
+  map                                n=40   right  65.0%  stale   5.0%  hedged  0.0%  requests 10.38  tokens    53142  $0.01052  tokens per right    81757
+  modeld                             n=40   right  57.5%  stale   7.5%  hedged  0.0%  requests  8.62  tokens    43741  $0.00856  tokens per right    76071
+
+S5 the next day, with 200 more lessons on disk (the taught facts)
+  alone                              (none)
+  notes                              n=40   right  80.0%  stale   0.0%  hedged  0.0%  requests  9.00  tokens    90208  $0.01228  tokens per right   112760
+  map                                (none)
+  modeld                             n=40   right  70.0%  stale   0.0%  hedged  0.0%  requests  7.42  tokens    31660  $0.00686  tokens per right    45228
+
+S4 by what happened to the fact
+  same, alone                        n=18   right  66.7%  stale   0.0%  hedged  0.0%  requests 13.56  tokens    93883  $0.01591  tokens per right   140824
+  same, notes                        n=18   right  72.2%  stale   0.0%  hedged  0.0%  requests  8.22  tokens    60570  $0.00972  tokens per right    83866
+  same, map                          n=18   right  72.2%  stale   0.0%  hedged  0.0%  requests  9.83  tokens    43657  $0.00931  tokens per right    60449
+  same, modeld                       n=18   right  66.7%  stale   0.0%  hedged  0.0%  requests  7.00  tokens    33420  $0.00674  tokens per right    50130
+  moved, alone                       n=6    right  50.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens   115423  $0.01999  tokens per right   230846
+  moved, notes                       n=6    right  83.3%  stale   0.0%  hedged  0.0%  requests 13.50  tokens   125329  $0.01881  tokens per right   150395
+  moved, map                         n=6    right  50.0%  stale   0.0%  hedged  0.0%  requests 15.50  tokens   107934  $0.01890  tokens per right   215868
+  moved, modeld                      n=6    right  50.0%  stale   0.0%  hedged  0.0%  requests 13.33  tokens    77755  $0.01442  tokens per right   155510
+  changed, alone                     n=16   right  56.2%  stale  25.0%  hedged  0.0%  requests 13.44  tokens    94577  $0.01535  tokens per right   168136
+  changed, notes                     n=16   right  75.0%  stale  18.8%  hedged  0.0%  requests  9.06  tokens    62935  $0.01107  tokens per right    83914
+  changed, map                       n=16   right  62.5%  stale  12.5%  hedged  0.0%  requests  9.06  tokens    43265  $0.00873  tokens per right    69224
+  changed, modeld                    n=16   right  50.0%  stale  18.8%  hedged  0.0%  requests  8.69  tokens    42596  $0.00841  tokens per right    85192
+
+S4 at each repository's own mix of same, moved and changed, from all its checkable facts
+  alone    right  71.6%  stale   3.2%  tokens  102790  tokens per right  143571
+  notes    right  80.5%  stale   3.1%  tokens   72206  tokens per right   89720
+  map      right  75.4%  stale   0.2%  tokens   58729  tokens per right   77863
+  modeld   right  64.8%  stale   0.3%  tokens   47150  tokens per right   72816
+
+S2 new questions, never asked before
+  sibling, alone                     n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  8.00  tokens    22093  $0.00674  tokens per right    22093
+  sibling, notes                     n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  4.67  tokens    15636  $0.00502  tokens per right    15636
+  sibling, map                       n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  7.67  tokens    34675  $0.00711  tokens per right    34675
+  sibling, modeld                    n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  8.00  tokens    32919  $0.00715  tokens per right    32919
+  unrelated, alone                   n=9    right  66.7%  stale   0.0%  hedged  0.0%  requests  9.67  tokens    39459  $0.00855  tokens per right    59188
+  unrelated, notes                   n=9    right  66.7%  stale   0.0%  hedged  0.0%  requests  6.22  tokens    27618  $0.00670  tokens per right    41427
+  unrelated, map                     n=9    right  66.7%  stale   0.0%  hedged  0.0%  requests  5.22  tokens    18355  $0.00415  tokens per right    27532
+  unrelated, modeld                  n=9    right  66.7%  stale   0.0%  hedged  0.0%  requests  5.56  tokens    19608  $0.00466  tokens per right    29412
+
+The named control: the question gives the code's exact name
+  S1, alone                          (none)
+  S1, notes                          n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  6.50  tokens    25236  $0.00578  tokens per right    25236
+  S1, map                            (none)
+  S1, modeld                         n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  5.25  tokens    22540  $0.00497  tokens per right    22540
+  S2, alone                          n=8    right  87.5%  stale   0.0%  hedged  0.0%  requests  6.12  tokens    11805  $0.00302  tokens per right    13491
+  S2, notes                          n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  3.50  tokens     9724  $0.00301  tokens per right     9724
+  S2, map                            n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  4.50  tokens    16900  $0.00371  tokens per right    16900
+  S2, modeld                         n=8    right 100.0%  stale   0.0%  hedged  0.0%  requests  2.12  tokens     5623  $0.00152  tokens per right     5623
+
+What the model already knows, with no code and no tools
+  guess, first wording               n=48   right  22.9%  stale   0.0%  hedged  0.0%  requests  1.00  tokens       76  $0.00008  tokens per right      332
+
+Model D and the others, same facts
+  alone vs modeld S2, n=40: modeld uses 0.50x alone's tokens (0.33 to 0.70); right, alone minus modeld: -7.5 points (-22.5 to +7.5)
+  alone vs modeld S4, n=40: modeld uses 0.45x alone's tokens (0.32 to 0.58); right, alone minus modeld: +2.5 points (-12.5 to +17.5)
+  notes vs modeld S1, n=40: modeld uses 0.46x notes's tokens (0.30 to 0.63); right, notes minus modeld: -2.5 points (-12.5 to +7.5)
+  notes vs modeld S2, n=40: modeld uses 0.80x notes's tokens (0.57 to 1.04); right, notes minus modeld: -5.0 points (-22.5 to +12.5)
+  notes vs modeld S3, n=40: modeld uses 0.64x notes's tokens (0.40 to 0.96); right, notes minus modeld: +17.5 points (+7.5 to +30.0)
+  notes vs modeld S4, n=40: modeld uses 0.61x notes's tokens (0.45 to 0.80); right, notes minus modeld: +17.5 points (+7.5 to +30.0)
+  notes vs modeld S5, n=40: modeld uses 0.35x notes's tokens (0.24 to 0.45); right, notes minus modeld: +10.0 points (-2.5 to +22.5)
+  map vs modeld S2, n=40: modeld uses 0.93x map's tokens (0.70 to 1.22); right, map minus modeld: -10.0 points (-25.0 to +2.5)
+  map vs modeld S4, n=40: modeld uses 0.82x map's tokens (0.62 to 1.06); right, map minus modeld: +7.5 points (-2.5 to +17.5)
+  first time: modeld S1 uses 0.30x the tokens of alone, n=40; right, modeld minus alone: +15.0 points (-2.5 to +35.0)
+
+How Model D answered
+  S1: one read 1 of 40, explored 39
+  S2: one read 8 of 40, explored 32
+  S3: one read 13 of 40, explored 27
+  S4: one read 8 of 40, explored 32
+  S5: one read 10 of 40, explored 30
+
+Predictions
+  P1 first time: HELD. 0.30x alone's tokens (needs at most 0.50), right +15.0 points (needs at least -5), n=40
+  P2 next day: FAILED. one read 20% (needs at least 60%), 0.50x alone's tokens (needs at most 0.20), right +7.5 points (needs at least -5), n=40
+  P3 teammate: FAILED. 0.78x session 2's tokens (needs at most 1.25), right -5.0 points (needs at least -5), n=40
+  P4 a year later, facts that stayed true: FAILED. one read 25% (needs at least 40%), 0.45x alone's tokens (needs at most 0.50), right +0.0 points (needs at least -5), n=24
+  P5 facts that changed: FAILED. Model D stale 18.8% of 16 (needs at most 10%), notes stale 18.8% of 16 (needs at least 50%)
+  P6 notes cheaper next day, a prediction against Model D: FAILED. Model D uses 0.80x the notes file's tokens, n=40
+  P7 more on disk: FAILED. 0.35x the notes file's tokens (needs under 1), right -10.0 points (needs at least -5), n=40
+  P8 what memory adds: FAILED. 0.93x memory-off tokens (needs at most 0.50); right +10.0 points, n=40
+
+
+===== reflex
+repositories: reflex; answers: 352; failed calls, counted as not right: 0; spent so far $7.951
+
+S1 the first time (the taught facts)
+  alone                              (none)
+  notes                              n=20   right  85.0%  stale   0.0%  hedged  0.0%  requests  9.00  tokens    39756  $0.00828  tokens per right    46772
+  map                                (none)
+  modeld                             n=20   right  85.0%  stale   0.0%  hedged  0.0%  requests  6.10  tokens    21916  $0.00497  tokens per right    25784
+
+S2 the next day (the taught facts)
+  alone                              n=20   right  75.0%  stale   0.0%  hedged  0.0%  requests 12.25  tokens    62767  $0.01217  tokens per right    83690
+  notes                              n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  8.65  tokens    40637  $0.00879  tokens per right    58052
+  map                                n=20   right  60.0%  stale   0.0%  hedged  0.0%  requests  7.10  tokens    35935  $0.00722  tokens per right    59891
+  modeld                             n=20   right  80.0%  stale   0.0%  hedged  0.0%  requests  7.40  tokens    31468  $0.00699  tokens per right    39335
+
+S3 a teammate (the taught facts)
+  alone                              (none)
+  notes                              n=20   right  85.0%  stale   0.0%  hedged  0.0%  requests  7.00  tokens    43338  $0.00834  tokens per right    50986
+  map                                (none)
+  modeld                             n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  5.30  tokens    21654  $0.00480  tokens per right    30935
+
+S4 a year later (the taught facts)
+  alone                              n=20   right  50.0%  stale   5.0%  hedged  0.0%  requests 14.05  tokens   109942  $0.01721  tokens per right   219884
+  notes                              n=20   right  65.0%  stale   5.0%  hedged  0.0%  requests  9.90  tokens    79887  $0.01238  tokens per right   122903
+  map                                n=20   right  60.0%  stale   0.0%  hedged  0.0%  requests 10.50  tokens    56143  $0.01085  tokens per right    93572
+  modeld                             n=20   right  50.0%  stale   0.0%  hedged  0.0%  requests  9.20  tokens    49715  $0.00945  tokens per right    99429
+
+S5 the next day, with 200 more lessons on disk (the taught facts)
+  alone                              (none)
+  notes                              n=20   right  80.0%  stale   0.0%  hedged  0.0%  requests  8.40  tokens    63255  $0.01012  tokens per right    79069
+  map                                (none)
+  modeld                             n=20   right  75.0%  stale   0.0%  hedged  0.0%  requests  6.15  tokens    24227  $0.00549  tokens per right    32302
+
+S4 by what happened to the fact
+  same, alone                        n=8    right  37.5%  stale   0.0%  hedged  0.0%  requests 12.38  tokens    95734  $0.01513  tokens per right   255291
+  same, notes                        n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests  7.62  tokens    65161  $0.00908  tokens per right   130321
+  same, map                          n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests  7.50  tokens    37066  $0.00724  tokens per right    74132
+  same, modeld                       n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests  5.25  tokens    30189  $0.00544  tokens per right    60377
+  moved, alone                       n=4    right  50.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens   105464  $0.01943  tokens per right   210927
+  moved, notes                       n=4    right  75.0%  stale   0.0%  hedged  0.0%  requests 12.25  tokens   100590  $0.01623  tokens per right   134120
+  moved, map                         n=4    right  50.0%  stale   0.0%  hedged  0.0%  requests 15.25  tokens    98902  $0.01806  tokens per right   197804
+  moved, modeld                      n=4    right  50.0%  stale   0.0%  hedged  0.0%  requests 13.00  tokens    66941  $0.01376  tokens per right   133882
+  changed, alone                     n=8    right  62.5%  stale  12.5%  hedged  0.0%  requests 14.75  tokens   126389  $0.01818  tokens per right   202222
+  changed, notes                     n=8    right  75.0%  stale  12.5%  hedged  0.0%  requests 11.00  tokens    84262  $0.01375  tokens per right   112349
+  changed, map                       n=8    right  75.0%  stale   0.0%  hedged  0.0%  requests 11.12  tokens    53841  $0.01086  tokens per right    71788
+  changed, modeld                    n=8    right  50.0%  stale   0.0%  hedged  0.0%  requests 11.25  tokens    60628  $0.01129  tokens per right   121255
+
+S4 at each repository's own mix of same, moved and changed, from all its checkable facts
+  alone    right  53.8%  stale   5.8%  tokens  113614  tokens per right  210986
+  notes    right  71.2%  stale   5.8%  tokens   87670  tokens per right  123153
+  map      right  61.5%  stale   0.0%  tokens   68727  tokens per right  111733
+  modeld   right  50.0%  stale   0.0%  tokens   58430  tokens per right  116861
+
+S2 new questions, never asked before
+  sibling, alone                     (none)
+  sibling, notes                     (none)
+  sibling, map                       (none)
+  sibling, modeld                    (none)
+  unrelated, alone                   n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests  8.17  tokens    27080  $0.00639  tokens per right    40620
+  unrelated, notes                   n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests  5.67  tokens    22883  $0.00618  tokens per right    34324
+  unrelated, map                     n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests  3.67  tokens     8398  $0.00258  tokens per right    12597
+  unrelated, modeld                  n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests  4.00  tokens     8381  $0.00258  tokens per right    12571
+
+The named control: the question gives the code's exact name
+  S1, alone                          (none)
+  S1, notes                          n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  3.50  tokens     5812  $0.00197  tokens per right     5812
+  S1, map                            (none)
+  S1, modeld                         n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  2.75  tokens     4990  $0.00157  tokens per right     4990
+  S2, alone                          n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  5.00  tokens     3916  $0.00148  tokens per right     3916
+  S2, notes                          n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  2.50  tokens     6406  $0.00207  tokens per right     6406
+  S2, map                            n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  2.25  tokens     2645  $0.00096  tokens per right     2645
+  S2, modeld                         n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  1.00  tokens      944  $0.00032  tokens per right      944
+
+What the model already knows, with no code and no tools
+  guess, first wording               n=24   right  16.7%  stale   0.0%  hedged  0.0%  requests  1.00  tokens       69  $0.00007  tokens per right      414
+
+Model D and the others, same facts
+  alone vs modeld S2, n=20: modeld uses 0.50x alone's tokens (0.27 to 0.76); right, alone minus modeld: -5.0 points (-25.0 to +15.0)
+  alone vs modeld S4, n=20: modeld uses 0.45x alone's tokens (0.28 to 0.65); right, alone minus modeld: +0.0 points (-20.0 to +20.0)
+  notes vs modeld S1, n=20: modeld uses 0.55x notes's tokens (0.28 to 0.84); right, notes minus modeld: +0.0 points (-15.0 to +15.0)
+  notes vs modeld S2, n=20: modeld uses 0.77x notes's tokens (0.47 to 1.09); right, notes minus modeld: -10.0 points (-35.0 to +15.0)
+  notes vs modeld S3, n=20: modeld uses 0.50x notes's tokens (0.22 to 0.88); right, notes minus modeld: +15.0 points (+0.0 to +30.0)
+  notes vs modeld S4, n=20: modeld uses 0.62x notes's tokens (0.38 to 0.89); right, notes minus modeld: +15.0 points (+0.0 to +30.0)
+  notes vs modeld S5, n=20: modeld uses 0.38x notes's tokens (0.21 to 0.51); right, notes minus modeld: +5.0 points (-10.0 to +20.0)
+  map vs modeld S2, n=20: modeld uses 0.88x map's tokens (0.53 to 1.43); right, map minus modeld: -20.0 points (-40.0 to -5.0)
+  map vs modeld S4, n=20: modeld uses 0.89x map's tokens (0.55 to 1.33); right, map minus modeld: +10.0 points (-10.0 to +30.0)
+  first time: modeld S1 uses 0.35x the tokens of alone, n=20; right, modeld minus alone: +10.0 points (-15.0 to +35.0)
+
+How Model D answered
+  S1: one read 0 of 20, explored 20
+  S2: one read 7 of 20, explored 13
+  S3: one read 8 of 20, explored 12
+  S4: one read 5 of 20, explored 15
+  S5: one read 8 of 20, explored 12
+
+Predictions
+  P1 first time: HELD. 0.35x alone's tokens (needs at most 0.50), right +10.0 points (needs at least -5), n=20
+  P2 next day: FAILED. one read 35% (needs at least 60%), 0.50x alone's tokens (needs at most 0.20), right +5.0 points (needs at least -5), n=20
+  P3 teammate: FAILED. 0.69x session 2's tokens (needs at most 1.25), right -10.0 points (needs at least -5), n=20
+  P4 a year later, facts that stayed true: HELD. one read 42% (needs at least 40%), 0.43x alone's tokens (needs at most 0.50), right +8.3 points (needs at least -5), n=12
+  P5 facts that changed: FAILED. Model D stale 0.0% of 8 (needs at most 10%), notes stale 12.5% of 8 (needs at least 50%)
+  P6 notes cheaper next day, a prediction against Model D: FAILED. Model D uses 0.77x the notes file's tokens, n=20
+  P7 more on disk: FAILED. 0.38x the notes file's tokens (needs under 1), right -5.0 points (needs at least -5), n=20
+  P8 what memory adds: FAILED. 0.88x memory-off tokens (needs at most 0.50); right +20.0 points, n=20
+
+
+===== scikit-learn
+repositories: scikit-learn; answers: 352; failed calls, counted as not right: 0; spent so far $7.951
+
+S1 the first time (the taught facts)
+  alone                              (none)
+  notes                              n=20   right  75.0%  stale   0.0%  hedged  0.0%  requests 10.30  tokens    54352  $0.01073  tokens per right    72469
+  map                                (none)
+  modeld                             n=20   right  80.0%  stale   0.0%  hedged  0.0%  requests  6.50  tokens    21221  $0.00531  tokens per right    26526
+
+S2 the next day (the taught facts)
+  alone                              n=20   right  60.0%  stale   0.0%  hedged  0.0%  requests 13.30  tokens    80521  $0.01429  tokens per right   134202
+  notes                              n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  9.75  tokens    49318  $0.01014  tokens per right    70454
+  map                                n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  8.60  tokens    41029  $0.00841  tokens per right    58613
+  modeld                             n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  8.65  tokens    40164  $0.00806  tokens per right    57377
+
+S3 a teammate (the taught facts)
+  alone                              (none)
+  notes                              n=20   right  90.0%  stale   0.0%  hedged  0.0%  requests  7.65  tokens    43788  $0.00920  tokens per right    48653
+  map                                (none)
+  modeld                             n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  7.20  tokens    34471  $0.00687  tokens per right    49244
+
+S4 a year later (the taught facts)
+  alone                              n=20   right  70.0%  stale  15.0%  hedged  0.0%  requests 13.70  tokens    84841  $0.01539  tokens per right   121201
+  notes                              n=20   right  85.0%  stale  10.0%  hedged  0.0%  requests  8.80  tokens    62573  $0.01087  tokens per right    73616
+  map                                n=20   right  70.0%  stale  10.0%  hedged  0.0%  requests 10.25  tokens    50140  $0.01018  tokens per right    71629
+  modeld                             n=20   right  65.0%  stale  15.0%  hedged  0.0%  requests  8.05  tokens    37767  $0.00767  tokens per right    58103
+
+S5 the next day, with 200 more lessons on disk (the taught facts)
+  alone                              (none)
+  notes                              n=20   right  80.0%  stale   0.0%  hedged  0.0%  requests  9.60  tokens   117162  $0.01443  tokens per right   146452
+  map                                (none)
+  modeld                             n=20   right  65.0%  stale   0.0%  hedged  0.0%  requests  8.70  tokens    39092  $0.00823  tokens per right    60142
+
+S4 by what happened to the fact
+  same, alone                        n=10   right  90.0%  stale   0.0%  hedged  0.0%  requests 14.50  tokens    92401  $0.01654  tokens per right   102668
+  same, notes                        n=10   right  90.0%  stale   0.0%  hedged  0.0%  requests  8.70  tokens    56898  $0.01023  tokens per right    63220
+  same, map                          n=10   right  90.0%  stale   0.0%  hedged  0.0%  requests 11.70  tokens    48931  $0.01098  tokens per right    54367
+  same, modeld                       n=10   right  80.0%  stale   0.0%  hedged  0.0%  requests  8.40  tokens    36005  $0.00777  tokens per right    45007
+  moved, alone                       n=2    right  50.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens   135342  $0.02112  tokens per right   270684
+  moved, notes                       n=2    right 100.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens   174808  $0.02396  tokens per right   174808
+  moved, map                         n=2    right  50.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens   125998  $0.02056  tokens per right   251996
+  moved, modeld                      n=2    right  50.0%  stale   0.0%  hedged  0.0%  requests 14.00  tokens    99384  $0.01573  tokens per right   198767
+  changed, alone                     n=8    right  50.0%  stale  37.5%  hedged  0.0%  requests 12.12  tokens    62764  $0.01252  tokens per right   125529
+  changed, notes                     n=8    right  75.0%  stale  25.0%  hedged  0.0%  requests  7.12  tokens    41609  $0.00839  tokens per right    55479
+  changed, map                       n=8    right  50.0%  stale  25.0%  hedged  0.0%  requests  7.00  tokens    32688  $0.00659  tokens per right    65376
+  changed, modeld                    n=8    right  50.0%  stale  37.5%  hedged  0.0%  requests  6.12  tokens    24564  $0.00553  tokens per right    49128
+
+S4 at each repository's own mix of same, moved and changed, from all its checkable facts
+  alone    right  89.3%  stale   0.6%  tokens   91966  tokens per right  102937
+  notes    right  89.8%  stale   0.4%  tokens   56741  tokens per right   63207
+  map      right  89.3%  stale   0.4%  tokens   48730  tokens per right   54543
+  modeld   right  79.5%  stale   0.6%  tokens   35871  tokens per right   45117
+
+S2 new questions, never asked before
+  sibling, alone                     n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  8.00  tokens    22093  $0.00674  tokens per right    22093
+  sibling, notes                     n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  4.67  tokens    15636  $0.00502  tokens per right    15636
+  sibling, map                       n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  7.67  tokens    34675  $0.00711  tokens per right    34675
+  sibling, modeld                    n=3    right 100.0%  stale   0.0%  hedged  0.0%  requests  8.00  tokens    32919  $0.00715  tokens per right    32919
+  unrelated, alone                   n=3    right  66.7%  stale   0.0%  hedged  0.0%  requests 12.67  tokens    64216  $0.01286  tokens per right    96324
+  unrelated, notes                   n=3    right  66.7%  stale   0.0%  hedged  0.0%  requests  7.33  tokens    37088  $0.00772  tokens per right    55632
+  unrelated, map                     n=3    right  66.7%  stale   0.0%  hedged  0.0%  requests  8.33  tokens    38268  $0.00728  tokens per right    57402
+  unrelated, modeld                  n=3    right  66.7%  stale   0.0%  hedged  0.0%  requests  8.67  tokens    42062  $0.00881  tokens per right    63093
+
+The named control: the question gives the code's exact name
+  S1, alone                          (none)
+  S1, notes                          n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  9.50  tokens    44659  $0.00959  tokens per right    44659
+  S1, map                            (none)
+  S1, modeld                         n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  7.75  tokens    40089  $0.00836  tokens per right    40089
+  S2, alone                          n=4    right  75.0%  stale   0.0%  hedged  0.0%  requests  7.25  tokens    19693  $0.00456  tokens per right    26257
+  S2, notes                          n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  4.50  tokens    13042  $0.00395  tokens per right    13042
+  S2, map                            n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  6.75  tokens    31156  $0.00646  tokens per right    31156
+  S2, modeld                         n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  3.25  tokens    10303  $0.00272  tokens per right    10303
+
+What the model already knows, with no code and no tools
+  guess, first wording               n=24   right  29.2%  stale   0.0%  hedged  0.0%  requests  1.00  tokens       83  $0.00009  tokens per right      285
+
+Model D and the others, same facts
+  alone vs modeld S2, n=20: modeld uses 0.50x alone's tokens (0.26 to 0.82); right, alone minus modeld: -10.0 points (-30.0 to +10.0)
+  alone vs modeld S4, n=20: modeld uses 0.45x alone's tokens (0.28 to 0.61); right, alone minus modeld: +5.0 points (-15.0 to +25.0)
+  notes vs modeld S1, n=20: modeld uses 0.39x notes's tokens (0.23 to 0.58); right, notes minus modeld: -5.0 points (-20.0 to +10.0)
+  notes vs modeld S2, n=20: modeld uses 0.81x notes's tokens (0.50 to 1.20); right, notes minus modeld: +0.0 points (-25.0 to +30.0)
+  notes vs modeld S3, n=20: modeld uses 0.79x notes's tokens (0.43 to 1.39); right, notes minus modeld: +20.0 points (+5.0 to +40.0)
+  notes vs modeld S4, n=20: modeld uses 0.60x notes's tokens (0.41 to 0.90); right, notes minus modeld: +20.0 points (+5.0 to +40.0)
+  notes vs modeld S5, n=20: modeld uses 0.33x notes's tokens (0.20 to 0.47); right, notes minus modeld: +15.0 points (-5.0 to +35.0)
+  map vs modeld S2, n=20: modeld uses 0.98x map's tokens (0.71 to 1.33); right, map minus modeld: +0.0 points (-20.0 to +20.0)
+  map vs modeld S4, n=20: modeld uses 0.75x map's tokens (0.56 to 0.97); right, map minus modeld: +5.0 points (+0.0 to +15.0)
+  first time: modeld S1 uses 0.26x the tokens of alone, n=20; right, modeld minus alone: +20.0 points (-5.0 to +45.0)
+
+How Model D answered
+  S1: one read 1 of 20, explored 19
+  S2: one read 1 of 20, explored 19
+  S3: one read 5 of 20, explored 15
+  S4: one read 3 of 20, explored 17
+  S5: one read 2 of 20, explored 18
+
+Predictions
+  P1 first time: HELD. 0.26x alone's tokens (needs at most 0.50), right +20.0 points (needs at least -5), n=20
+  P2 next day: FAILED. one read 5% (needs at least 60%), 0.50x alone's tokens (needs at most 0.20), right +10.0 points (needs at least -5), n=20
+  P3 teammate: HELD. 0.86x session 2's tokens (needs at most 1.25), right +0.0 points (needs at least -5), n=20
+  P4 a year later, facts that stayed true: FAILED. one read 8% (needs at least 40%), 0.47x alone's tokens (needs at most 0.50), right -8.3 points (needs at least -5), n=12
+  P5 facts that changed: FAILED. Model D stale 37.5% of 8 (needs at most 10%), notes stale 25.0% of 8 (needs at least 50%)
+  P6 notes cheaper next day, a prediction against Model D: FAILED. Model D uses 0.81x the notes file's tokens, n=20
+  P7 more on disk: FAILED. 0.33x the notes file's tokens (needs under 1), right -15.0 points (needs at least -5), n=20
+  P8 what memory adds: FAILED. 0.98x memory-off tokens (needs at most 0.50); right +0.0 points, n=20
+
+
+===== sphinx
+repositories: sphinx; answers: 243; failed calls, counted as not right: 0; spent so far $7.951
+
+S1 the first time (the taught facts)
+  alone                              (none)
+  notes                              n=5    right  80.0%  stale   0.0%  hedged  0.0%  requests 12.00  tokens    51350  $0.01054  tokens per right    64187
+  map                                (none)
+  modeld                             n=20   right  70.0%  stale   0.0%  hedged  0.0%  requests  9.50  tokens    44044  $0.00890  tokens per right    62920
+
+S2 the next day (the taught facts)
+  alone                              n=20   right  85.0%  stale   0.0%  hedged  0.0%  requests 12.85  tokens    66812  $0.01315  tokens per right    78603
+  notes                              (none)
+  map                                n=20   right  80.0%  stale   0.0%  hedged  0.0%  requests  7.70  tokens    34907  $0.00727  tokens per right    43634
+  modeld                             n=20   right  95.0%  stale   0.0%  hedged  0.0%  requests  7.90  tokens    33316  $0.00695  tokens per right    35070
+
+S3 a teammate (the taught facts)
+  alone                              (none)
+  notes                              (none)
+  map                                (none)
+  modeld                             n=20   right  75.0%  stale   0.0%  hedged  0.0%  requests  7.50  tokens    36605  $0.00722  tokens per right    48807
+
+S4 a year later (the taught facts)
+  alone                              n=20   right  65.0%  stale   0.0%  hedged  0.0%  requests 14.20  tokens    85433  $0.01582  tokens per right   131435
+  notes                              (none)
+  map                                n=20   right  45.0%  stale   5.0%  hedged  0.0%  requests 10.45  tokens    50507  $0.01021  tokens per right   112238
+  modeld                             n=20   right  75.0%  stale   0.0%  hedged  0.0%  requests  6.25  tokens    29288  $0.00601  tokens per right    39051
+
+S5 the next day, with 200 more lessons on disk (the taught facts)
+  alone                              (none)
+  notes                              (none)
+  map                                (none)
+  modeld                             n=20   right  90.0%  stale   0.0%  hedged  0.0%  requests  4.45  tokens    14077  $0.00335  tokens per right    15642
+
+S4 by what happened to the fact
+  same, alone                        n=10   right  70.0%  stale   0.0%  hedged  0.0%  requests 14.50  tokens    85689  $0.01607  tokens per right   122412
+  same, notes                        (none)
+  same, map                          n=10   right  50.0%  stale   0.0%  hedged  0.0%  requests 11.10  tokens    50707  $0.01070  tokens per right   101414
+  same, modeld                       n=10   right  90.0%  stale   0.0%  hedged  0.0%  requests  5.70  tokens    22504  $0.00511  tokens per right    25005
+  moved, alone                       n=2    right  50.0%  stale   0.0%  hedged  0.0%  requests 16.00  tokens    79674  $0.01617  tokens per right   159347
+  moved, notes                       (none)
+  moved, map                         n=2    right  50.0%  stale   0.0%  hedged  0.0%  requests  5.50  tokens    29092  $0.00497  tokens per right    58183
+  moved, modeld                      n=2    right  50.0%  stale   0.0%  hedged  0.0%  requests  8.50  tokens    67165  $0.01074  tokens per right   134330
+  changed, alone                     n=8    right  62.5%  stale   0.0%  hedged  0.0%  requests 13.38  tokens    86552  $0.01542  tokens per right   138484
+  changed, notes                     (none)
+  changed, map                       n=8    right  37.5%  stale  12.5%  hedged  0.0%  requests 10.88  tokens    55611  $0.01092  tokens per right   148296
+  changed, modeld                    n=8    right  62.5%  stale   0.0%  hedged  0.0%  requests  6.38  tokens    28298  $0.00595  tokens per right    45278
+
+S4 at each repository's own mix of same, moved and changed, from all its checkable facts
+  alone    right  70.0%  stale   0.0%  tokens   85690  tokens per right  122500
+  map      right  49.9%  stale   0.1%  tokens   50721  tokens per right  101574
+  modeld   right  89.8%  stale   0.0%  tokens   22557  tokens per right   25109
+
+S2 new questions, never asked before
+  sibling, alone                     (none)
+  sibling, notes                     (none)
+  sibling, map                       (none)
+  sibling, modeld                    (none)
+  unrelated, alone                   n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests 14.33  tokens    75873  $0.01535  tokens per right   113810
+  unrelated, notes                   (none)
+  unrelated, map                     n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests  9.67  tokens    36547  $0.00831  tokens per right    54820
+  unrelated, modeld                  n=6    right  66.7%  stale   0.0%  hedged  0.0%  requests  7.50  tokens    27949  $0.00686  tokens per right    41924
+
+The named control: the question gives the code's exact name
+  S1, alone                          (none)
+  S1, notes                          (none)
+  S1, map                            (none)
+  S1, modeld                         n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  3.50  tokens     5140  $0.00177  tokens per right     5140
+  S2, alone                          n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  4.25  tokens     5122  $0.00180  tokens per right     5122
+  S2, notes                          (none)
+  S2, map                            n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  3.75  tokens     4769  $0.00169  tokens per right     4769
+  S2, modeld                         n=4    right 100.0%  stale   0.0%  hedged  0.0%  requests  1.00  tokens     1078  $0.00037  tokens per right     1078
+
+What the model already knows, with no code and no tools
+  guess, first wording               n=24   right  29.2%  stale   0.0%  hedged  0.0%  requests  1.00  tokens       76  $0.00008  tokens per right      260
+
+Model D and the others, same facts
+  alone vs modeld S2, n=20: modeld uses 0.50x alone's tokens (0.29 to 0.71); right, alone minus modeld: -10.0 points (-25.0 to +0.0)
+  alone vs modeld S4, n=20: modeld uses 0.34x alone's tokens (0.15 to 0.57); right, alone minus modeld: -10.0 points (-30.0 to +10.0)
+  notes vs modeld S1, n=5: modeld uses 0.46x notes's tokens (0.13 to 1.70); right, notes minus modeld: +0.0 points (-60.0 to +60.0)
+  notes vs modeld S2: no pairs
+  notes vs modeld S3: no pairs
+  notes vs modeld S4: no pairs
+  notes vs modeld S5: no pairs
+  map vs modeld S2, n=20: modeld uses 0.95x map's tokens (0.60 to 1.63); right, map minus modeld: -15.0 points (-30.0 to +0.0)
+  map vs modeld S4, n=20: modeld uses 0.58x map's tokens (0.28 to 0.94); right, map minus modeld: -30.0 points (-55.0 to -5.0)
+  first time: modeld S1 uses 0.66x the tokens of alone, n=20; right, modeld minus alone: -15.0 points (-40.0 to +10.0)
+
+How Model D answered
+  S1: one read 1 of 20, explored 19
+  S2: one read 4 of 20, explored 16
+  S3: one read 6 of 20, explored 14
+  S4: one read 7 of 20, explored 13
+  S5: one read 6 of 20, explored 14
+
+Predictions
+  P1 first time: FAILED. 0.66x alone's tokens (needs at most 0.50), right -15.0 points (needs at least -5), n=20
+  P2 next day: FAILED. one read 20% (needs at least 60%), 0.50x alone's tokens (needs at most 0.20), right +10.0 points (needs at least -5), n=20
+  P3 teammate: FAILED. 1.10x session 2's tokens (needs at most 1.25), right -20.0 points (needs at least -5), n=20
+  P4 a year later, facts that stayed true: HELD. one read 42% (needs at least 40%), 0.35x alone's tokens (needs at most 0.50), right +16.7 points (needs at least -5), n=12
+  P5 facts that changed: FAILED. Model D stale 0.0% of 8 (needs at most 10%), notes stale 0.0% of 0 (needs at least 50%)

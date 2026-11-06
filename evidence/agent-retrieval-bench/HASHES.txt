@@ -1,0 +1,17 @@
+c33562861649361b01edafd76bdfd5269665bcb90c468b6b1fe8af5aff8ee87b  PROTOCOL.md
+674055c59bc68f15c36581a8137e8b39ad2cd052d8c1e7de9b6f7bcbf74794cb  run.py
+9d0ff50155fa4f65c1bbb632abc4f1f11393c50fa7b0a9249e06128b368b6266  v2_trace2code/samples.jsonl
+written 2026-11-05T13:56:43Z, before any Model D result on this benchmark
+5cdbbd60a9fc791aa99a44e923dcc2010e6df311e004f550f0c4b19f922e14dd  PROTOCOL.md.deviations
+7ab72d39517858365ccea18b6e26b1c0ba2b2972c4878ca5a28c80c7e94c69cc  run_tracks.sh
+31d97ffe815dda8730149880c0159239a986eceb306e5a5df816dfc420717cef  v2_edit2ripple/samples.jsonl
+543267024f7f06127c50664a3a1b8825d3c213e4b12dbbfabf9a3346902ad796  v2_comment2context/samples.jsonl
+712b2699d3f963c2f940688ae5248304263c4ecda1b3831b2801c95712a50b85  v2_code2test/samples.jsonl
+recorded 2026-11-06 after the run; the same hashes are in logs/tracks.log from each track's start, and in the benchmark's docs/community_results.md
+1b9b3aaa50ab8936e4cca1c9222d98bd33c25b2542ba77c2fdf40d1405ae3108  pack.py
+89c71feb3cb3aa2031e89cab56a80282a955010965ca3f2d50b1359f843583f5  report.py
+0258ae0edb169146026edf5e8596c527c393d3d8b029c96efc87583b132cd24c  report.txt
+740d3b7a7904bac6248feb32dfc5e6e497611cf8a8b9b6a5e6916b4e77c7accf  RESULTS.md
+e306955c770dcf334ed1e22b9ea50680ef297988211b255926e4b74c777e535a  results/modeld-0.5.3.jsonl.gz
+4bb998a395af127eafa35fd8326f1f7f27e36f4236de0912960ccffc45a9a676  results/modeld-0.5.3-trail-off.jsonl.gz
+results written 2026-11-05T22:43:06Z

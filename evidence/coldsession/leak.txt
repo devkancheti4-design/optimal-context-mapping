@@ -1,0 +1,12 @@
+== reflex
+next day: of 20: lesson lane opened 13, top lesson in the fact's file 9, fact's line in the readout 11, in the readout or 40 lines around the top lesson 11, answered in one read 7; had the line but searched 4; readout tokens 723
+teammate: of 20: lesson lane opened 13, top lesson in the fact's file 8, fact's line in the readout 11, in the readout or 40 lines around the top lesson 11, answered in one read 8; had the line but searched 3; readout tokens 740
+year later: of 20: lesson lane opened 12, top lesson in the fact's file 10, fact's line in the readout 12, in the readout or 40 lines around the top lesson 12, answered in one read 5; had the line but searched 7; readout tokens 852
+== scikit-learn
+next day: of 20: lesson lane opened 10, top lesson in the fact's file 4, fact's line in the readout 5, in the readout or 40 lines around the top lesson 5, answered in one read 1; had the line but searched 4; readout tokens 880
+teammate: of 20: lesson lane opened 16, top lesson in the fact's file 9, fact's line in the readout 9, in the readout or 40 lines around the top lesson 10, answered in one read 5; had the line but searched 6; readout tokens 951
+year later: of 20: lesson lane opened 11, top lesson in the fact's file 7, fact's line in the readout 6, in the readout or 40 lines around the top lesson 6, answered in one read 3; had the line but searched 3; readout tokens 992
+== sphinx
+next day: of 20: lesson lane opened 7, top lesson in the fact's file 6, fact's line in the readout 5, in the readout or 40 lines around the top lesson 5, answered in one read 4; had the line but searched 2; readout tokens 742
+teammate: of 20: lesson lane opened 11, top lesson in the fact's file 9, fact's line in the readout 9, in the readout or 40 lines around the top lesson 10, answered in one read 6; had the line but searched 3; readout tokens 738
+year later: of 20: lesson lane opened 10, top lesson in the fact's file 8, fact's line in the readout 9, in the readout or 40 lines around the top lesson 9, answered in one read 7; had the line but searched 2; readout tokens 792

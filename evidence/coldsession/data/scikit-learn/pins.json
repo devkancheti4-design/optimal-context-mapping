@@ -1,0 +1,18 @@
+{
+ "repo": "scikit-learn/scikit-learn",
+ "T0": {
+  "sha": "d41f7340dca3319bba1b3b67659f11769904d7f0",
+  "committed": "2025-10-31T15:54:00Z",
+  "date": "2025-11-01"
+ },
+ "T1": {
+  "sha": "4fd35ca21add0a9fb2ce0e51c412cdf13f59c147",
+  "committed": "2026-04-30T10:27:49Z",
+  "date": "2026-05-01"
+ },
+ "T2": {
+  "sha": "360f3ebf7021c37db6acc8ecc06bed8cfbbe035c",
+  "committed": "2026-10-30T14:47:07Z",
+  "date": "2026-11-01"
+ }
+}

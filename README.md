@@ -4,13 +4,43 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23289068.svg)](https://doi.org/10.5281/zenodo.23289068)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
-**What your AI coding agent learns about your codebase lives in its context: gone when the session ends, and paid
-for again once the prompt cache expires (an hour at most on Claude). Model D keeps it on disk, as Cortex D: a context
-graph of the repository. It tells the agent where to look in every new session, and never lets it pay twice for the same
-question.**
+**A coding agent forgets what it learns about your code. Model D keeps the map of your repository on your disk, as
+Cortex D, so the next session and your teammates don't start from zero.**
 
-On a real team's year of work (Django's 288 fixes from 2022), the same Claude agent cost **2.09x less with Model D**
-(95% interval 1.84x–2.39x), at the same accuracy: 252 vs 253 right.
+---
+
+## Key points
+
+**The bottleneck.** What an agent learns about your code lives in its context, and that doesn't last:
+- **The cache expires.** Claude's prompt cache runs out after 5 minutes without use by default, and after 1 hour at
+  most. After that, the same context costs full price again instead of about a tenth of it.
+- **The session ends.** Everything in it is gone. The next session, or a teammate, reads the same files again and pays
+  for them again.
+
+**How Model D gets around it.** It keeps the map outside the session, on your disk, where no cache timer applies. It
+doesn't extend Claude's cache. It leaves much less to pay for again.
+
+| what you get | measured result | measured on |
+|---|---|---|
+| **New sessions cost less** | 34,983 tokens per question vs 70,034 for the agent alone, at about the same accuracy | ColdSession |
+| **It holds up a year later** | 38,923 vs 93,405 tokens per question, after a year of real commits | ColdSession |
+| **A real team's year costs less** | 2.09x cheaper (1.84x–2.39x), 252 vs 253 right | Django's 288 fixes from 2022, Claude ([team-year](evidence/team-year)) |
+| **Reworded questions find the line** | a perfect lesson brings the right line 66.7% of the time vs 30.0% without; 22 facts gained, 0 lost | ColdSession |
+| **Teammates share it** | 0 lessons lost on a teammate's own build of the same commit | ColdSession |
+| **Lessons follow the code** | about 80% survive a year of commits; in one restructure, 279 of 400 followed their code into new packages | ColdSession |
+| **Lessons don't turn into old answers** | it stores pointers, not answers; after a rebuild, a lesson on an edited line steps aside instead of guessing | ColdSession |
+| **Ranking is free** | no model calls to rank; a first look is about 400–700 tokens | [Results](#results) |
+
+[ColdSession](evidence/coldsession) is our own benchmark: 3 public Python repositories, one model (Gemini 3.5
+Flash-Lite), 60 lookup questions per session, graded by a program. Its plan was hashed before it ran.
+
+**Know this before relying on it:**
+- **Most of the saving comes from the map.** Next-day tokens go from 70,034 alone to 37,290 with memory off, then to
+  34,983 with memory on. On heavily reworded questions, lessons add right answers (+11.7 points) more than they save
+  tokens.
+- **It's not a better cold file finder.** On Agent Retrieval Bench, with nothing taught, it ranks 7th of 9 on MRR
+  ([agent-retrieval-bench](evidence/agent-retrieval-bench)).
+- **It saves little on one-off work,** writing fixes or code review. See [Limits](#limits-stated-plainly).
 
 ---
 
@@ -42,13 +72,15 @@ modeld cortex                          # see Cortex D, your repository's context
 client.
 1. **It builds Cortex D, a context graph of your codebase, once, on your machine.** Every piece of code becomes a 1,024-bit
    fingerprint, and every question your agents answer becomes a link from that question to the line that answered it.
-   The graph lives on disk, so it outlasts any session or cache, and a rebuild carries every link into the new code:
-   replaying Graphify's last 50 fixes as 50 fresh sessions, 45 of 46 links were still found at the end.
+   The graph lives on disk, so it outlasts any session or cache, and a rebuild carries each link whose exact line
+   still exists into the new code: replaying Graphify's last 50 fixes as 50 fresh sessions, 45 of 46 links were still
+   found at the end.
 2. **Before the agent spends a token, it points it to the likely code** (about 400–700 tokens), so the agent searches
    less. The pointing costs nothing: it is arithmetic, not a model call.
-3. **When the agent finds an answer, Model D pins the question to that line.** The same question later, in any
-   wording, costs one cheap read ($0.0004) instead of a new search.
-4. **It stores pointers, never answers.** The agent always reads the current code, so nothing goes stale.
+3. **When the agent finds an answer, Model D pins the question to that line.** The same question later, when its
+   wording lands on the lesson, costs one cheap read ($0.0004) instead of a new search.
+4. **It stores pointers, never answers.** A rebuild keeps pointers only to lines that still exist, so a lesson can't
+   hand back an old answer.
 
 **It is not** an agent. It does not write code, run tests or plan work; your agent does that. Nor is its graph a
 call or import graph: it links questions to code, and leaves the code's structure to the agent reading it. It saves most where
@@ -65,7 +97,8 @@ Cortex D is what Model D keeps between sessions, made visible with `modeld corte
 - **files linked by meaning:** each file to its nearest files, whether or not either imports the other.
 
 It is built from the workspace in seconds, with no model calls. It lives on disk, so it outlasts the session, the
-prompt cache and the teammate who taught it, and a rebuild carries every link into the new code.
+prompt cache and the teammate who taught it, and a rebuild carries each link whose exact line still exists into the new
+code.
 
 **On Django** (the same commit Graphify 0.9.92 was run on):
 
@@ -99,6 +132,10 @@ Every test plan was written and hashed before it ran. The raw rows are in [`evid
 | A TypeScript codebase it had never seen (offline, no model) | right file first 31% vs 16% for grep; top 5 60% vs 42% (0.5.2: 25%, 56%) | 241 real honojs/hono fixes, each against the code right before it ([new-codebase-hono](evidence/new-codebase-hono), [tests-trail](evidence/tests-trail)) |
 | Writing fixes | not cheaper ($0.197 vs $0.160 per fix) | 19 Django issues |
 | Code review | about 1.3x at most | SWR-Bench pilot, partial ([swr-pilot](evidence/swr-pilot)) |
+| New sessions, a teammate, a year of real commits | 2.0–2.4x fewer tokens per question at about the same accuracy; lowest tokens per right answer in every session | ColdSession, our own benchmark: reflex, scikit-learn and sphinx, Gemini 3.5 Flash-Lite ([coldsession](evidence/coldsession)) |
+| Finding files cold, nothing taught | MRR 0.190, 7th of 9; Recall@20 0.472, 8th of 9 | Agent Retrieval Bench, 345 samples ([agent-retrieval-bench](evidence/agent-retrieval-bench)) |
+
+The last two rows print their numbers with their own `report.py` or `score.py`, not `verify.py`.
 
 **In one line:** 1.3x to 2.8x cheaper, depending on how much your work repeats; 2.09x on a real team's year.
 
@@ -332,6 +369,16 @@ modeld measure compare ~/before-transcripts ~/after-transcripts     # the real b
     288.
   - 0.5.1 recovers most of it (99, with the top 5 at 176 vs 197), while reworded repeats stay at 107 of 114.
   - `OCM_RELATION_LIMIT=off` restores 0.5.0.
+- **Heavily reworded questions often miss the lesson.** With perfect lessons, the lesson opened on about half of them.
+  With an agent's own lessons, only 20–32% were answered in one read, so the next day cost about as much as the first
+  time ([coldsession](evidence/coldsession)).
+- **Editing a line drops its lesson.** A lesson follows its exact line. On `requests`, adding type hints dropped 12 of
+  24 lessons, though the facts hadn't changed. Those questions go back to being explored.
+- **A plain notes file can be right more often later on.** For a teammate it was right 87.5% of the time vs Model D's
+  70%, and a year later 75% vs 57.5%, at about 1.6x the tokens. Its tokens doubled with 200 more lessons on disk, while
+  Model D's stayed flat.
+- **Failure traces pull in test files.** On `trace2code` in Agent Retrieval Bench, tests filled 59% of the top 5, though
+  none of the 127 right files was a test.
 - **Tests after code can hide a test that is the answer.** If the question doesn't say "test" (or spec, pytest,
   fixture...), test files go last. In every measured set the answer was code, so this risk is unmeasured.
   `OCM_TESTS_TRAIL=off` turns it off.

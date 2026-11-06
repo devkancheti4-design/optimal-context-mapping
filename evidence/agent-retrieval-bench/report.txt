@@ -1,0 +1,99 @@
+# Agent Retrieval Bench, Model D 0.5.3
+
+## Integrity
+modeld-0.5.3 345 distinct samples; MRR and Recall recomputed from the stored list match the benchmark's own sample_metrics
+modeld-0.5.3-trail-off 345 distinct samples; MRR and Recall recomputed from the stored list match the benchmark's own sample_metrics
+gold files 514, not in Model D's list 2
+
+## Per track, and all 345 (BCY over all 345 is the sample-weighted mean of the tracks)
+track n MRR(95%) R@5 R@10 R@20 BCY@4k BCY@8k BCY@16k BCY@32k first-readout-has-gold first-readout-tokens best-official-MRR Oko-MRR
+trace2code 101 0.2243 (0.1654 to 0.2884) 0.3102 0.3845 0.4785 0.2244 0.3152 0.4142 0.4785 0.386 562 0.2742 0.736
+edit2ripple 58 0.2292 (0.1617 to 0.3068) 0.3003 0.4023 0.5086 0.2256 0.3261 0.4253 0.5029 0.345 816 0.2877 0.226
+comment2context 80 0.1518 (0.1088 to 0.2033) 0.1854 0.3146 0.4521 0.1062 0.2396 0.3604 0.4479 0.237 679 0.3043 0.28
+code2test 106 0.1659 (0.1170 to 0.2208) 0.1682 0.2862 0.4610 0.1321 0.2107 0.3459 0.4610 0.236 729 0.3225 0.279
+all 345 0.1904 (0.1617 to 0.2210) 0.2360 0.3411 0.4721 0.1688 0.2674 0.3826 0.4701 0.299 683 0.2379 0.4043
+R@20 over all 345: 0.4721 (0.4244 to 0.5201)
+
+## Rank on each measure
+Recall@20 rank among 8 official + Model D: 8 of 9; with Oko 0.9.1 and CodeNib: 11 of 15
+    Qwen3-Embedding-8B 0.7029, RepoMap 0.6333, Qwen3-Embedding-4B 0.6306, pplx-embed-v1-4b 0.6072, nomic-embed-code 0.5244, Lexical 0.4940, jina-code-embeddings-0.5b 0.4823, MODEL D 0.4721, BM25 0.4452
+MRR rank among 8 official + Model D: 7 of 9; with Oko 0.9.1 and CodeNib: 10 of 15
+    Qwen3-Embedding-4B 0.2379, Qwen3-Embedding-8B 0.2336, pplx-embed-v1-4b 0.2267, RepoMap 0.2158, nomic-embed-code 0.1986, jina-code-embeddings-0.5b 0.1914, MODEL D 0.1904, Lexical 0.1574, BM25 0.1520
+BCY@8k rank among 8 official + Model D: 7 of 9; with Oko 0.9.1 and CodeNib: 10 of 15
+    RepoMap 0.3788, Qwen3-Embedding-8B 0.3732, pplx-embed-v1-4b 0.3549, Qwen3-Embedding-4B 0.3409, jina-code-embeddings-0.5b 0.2783, nomic-embed-code 0.2781, MODEL D 0.2674, Lexical 0.2650, BM25 0.2051
+
+## Predictions
+R1 trace2code MRR > .2742: 0.2243 FAILED
+R2 trace2code MRR < .736: 0.2243 HELD
+R3 all 345 MRR > .2379 and < .4043: 0.1904 FAILED
+R4 code2test weakest and < .3225: {'trace2code': 0.2243, 'edit2ripple': 0.2292, 'comment2context': 0.1518, 'code2test': 0.1659} FAILED
+
+## Diagnostic: the tests-after-code rule off (OCM_TESTS_TRAIL=off). The rule works inside one readout, on queries it doesn't read as about tests
+track rule-off-MRR queries-about-tests samples-changed better-with-rule-off worse-with-rule-off MRR(off-on)
+trace2code 0.2243 101/101 0 0 0 +0.0000 (+0.0000 to +0.0000)
+edit2ripple 0.2462 27/58 4 4 0 +0.0171 (+0.0009 to +0.0448)
+comment2context 0.1582 33/80 3 3 0 +0.0064 (+0.0000 to +0.0191)
+code2test 0.1670 93/106 5 5 0 +0.0010 (+0.0002 to +0.0023)
+all 0.1950 254/345 12 12 0 +0.0047 (+0.0007 to +0.0102)
+
+## After the fact: what kind of file the task needs, and what Model D's top 5 holds
+trace2code gold files that are tests 0/127; tests in Model D's top 5: 59%
+edit2ripple gold files that are tests 48/99; tests in Model D's top 5: 13%
+comment2context gold files that are tests 62/140; tests in Model D's top 5: 25%
+code2test gold files that are tests 146/148; tests in Model D's top 5: 19%
+
+## After the fact: the saved lists reordered, not a run of Model D. Same files, tests moved to the end or the front of the whole list
+trace2code tests last MRR 0.3766 R@5 0.4092 R@10 0.5132 R@20 0.6403 MRR change +0.1523 (+0.1093 to +0.2007)
+code2test tests first MRR 0.4485 R@5 0.5434 R@10 0.6487 R@20 0.7132 MRR change +0.2826 (+0.2250 to +0.3430)
+all 345 with trace2code changed only: MRR 0.2350
+all 345 with both changed: MRR 0.3218
+code2test queries name no task: the fields are changed_file, pr_title and pr_body, so tests-first needs the task from outside the query
+
+## After the fact: query length (the embedder reads 128 tokens including 2 special ones; run.py passes the whole query)
+queries over 126 tokens: 265 of 345
+trace2code up to 126 n=12 MRR 0.363 R@20 0.750
+trace2code longer n=89 MRR 0.206 R@20 0.442
+edit2ripple longer n=58 MRR 0.229 R@20 0.509
+comment2context up to 126 n=26 MRR 0.166 R@20 0.564
+comment2context longer n=54 MRR 0.145 R@20 0.398
+code2test up to 126 n=42 MRR 0.191 R@20 0.529
+code2test longer n=64 MRR 0.150 R@20 0.417
+all up to 126 n=80 MRR 0.209 R@20 0.573
+all longer n=265 MRR 0.185 R@20 0.442
+
+## After the fact: by language and repository, against a random order of the same list
+Go n=142 MRR 0.280 R@20 0.594
+Python n=104 MRR 0.123 R@20 0.317
+Rust n=54 MRR 0.141 R@20 0.539
+TypeScript/JavaScript n=36 MRR 0.132 R@20 0.389
+Java n=9 MRR 0.078 R@20 0.278
+without gin-gonic/gin: n=257 MRR 0.1576 R@20 0.4009
+all 345: MRR 0.1904, random order 0.0246; samples below their random-order expectation: 84
+gin-gonic/gin n=88 MRR 0.286 random 0.054 R@20 0.680
+etcd-io/etcd n=41 MRR 0.257 random 0.011 R@20 0.438
+tokio-rs/tokio n=38 MRR 0.163 random 0.013 R@20 0.621
+huggingface/transformers n=36 MRR 0.139 random 0.002 R@20 0.472
+pallets/click n=26 MRR 0.031 random 0.051 R@20 0.096
+vitejs/vite n=25 MRR 0.124 random 0.005 R@20 0.340
+huggingface/diffusers n=16 MRR 0.069 random 0.006 R@20 0.250
+caddyserver/caddy n=13 MRR 0.316 random 0.026 R@20 0.500
+clap-rs/clap n=10 MRR 0.081 random 0.019 R@20 0.350
+spring-projects/spring-boot n=8 MRR 0.088 random 0.002 R@20 0.312
+pytest-dev/pytest n=7 MRR 0.303 random 0.019 R@20 0.310
+astral-sh/ruff n=6 MRR 0.102 random 0.002 R@20 0.333
+vuejs/core n=6 MRR 0.221 random 0.010 R@20 0.583
+pypa/pip n=5 MRR 0.342 random 0.020 R@20 0.500
+microsoft/playwright n=4 MRR 0.084 random 0.004 R@20 0.500
+scrapy/scrapy n=3 MRR 0.090 random 0.016 R@20 0.500
+fastapi/fastapi n=3 MRR 0.356 random 0.005 R@20 0.111
+ipython/ipython n=2 MRR 0.267 random 0.017 R@20 1.000
+tox-dev/tox n=2 MRR 0.033 random 0.025 R@20 0.500
+HypothesisWorks/hypothesis n=1 MRR 0.002 random 0.019 R@20 0.000
+eslint/eslint n=1 MRR 0.002 random 0.004 R@20 0.000
+numpy/numpy n=1 MRR 0.014 random 0.009 R@20 0.000
+pydantic/pydantic n=1 MRR 0.042 random 0.011 R@20 0.000
+python/mypy n=1 MRR 0.015 random 0.011 R@20 0.000
+mockito/mockito n=1 MRR 0.001 random 0.007 R@20 0.000
+
+## Cost
+model calls: none. ask, next and the ranking per sample: mean 0.44 s. index builds, all snapshots: 13194 s (includes a paused and resumed run, so indicative)

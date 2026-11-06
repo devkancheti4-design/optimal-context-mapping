@@ -1,0 +1,23 @@
+{
+ "where": {
+  "same": 370,
+  "changed": 1193,
+  "gone": 157
+ },
+ "base": {
+  "moved": 483,
+  "same": 37,
+  "gone": 72,
+  "changed": 23
+ },
+ "default": {
+  "moved": 5,
+  "same": 1
+ },
+ "const": {
+  "moved": 558,
+  "changed": 28,
+  "gone": 64,
+  "same": 4
+ }
+}

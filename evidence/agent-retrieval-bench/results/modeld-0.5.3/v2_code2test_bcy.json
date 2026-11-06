@@ -1,0 +1,150 @@
+{
+  "budgets": [
+    4000,
+    8000,
+    16000,
+    32000
+  ],
+  "corpus_manifest": "data/corpus/v2_code2test/corpus_manifest.jsonl",
+  "coverage_thresholds": [
+    1,
+    16,
+    32,
+    64,
+    128
+  ],
+  "generated_at": "2026-11-05T22:34:50+00:00",
+  "packing_protocol": {
+    "boundary_rule": "greedy by file rank; if a file exceeds the remaining budget, include a token-boundary prefix and stop",
+    "canonical_renderer": "### {path}\\n{corpus file text}\\n",
+    "coverage_rule": "for threshold tau, gold file g is covered when at least min(tau, L_g) non-header content tokens are packed, where L_g is its available corpus-text length; canonical BCY uses tau=1",
+    "file_text_source": "kind=file rows in the released corpus chunk files",
+    "known_limitations": [
+      "Released corpus file chunks are truncated by the corpus builder, so long files use the available canonical corpus text.",
+      "Current details artifacts store top-20 file lists, so BCY at larger budgets is computed from the stored top-20 prefix.",
+      "BCY is recall-like over labeled gold files and does not require treating unjudged files as waste."
+    ],
+    "rank_source": "stored top_files from each details row; chunk-level systems are file-deduplicated before packing"
+  },
+  "paths": {
+    "json": "results/modeld-0.5.3/v2_code2test_bcy.json",
+    "markdown": "results/modeld-0.5.3/v2_code2test_bcy.md"
+  },
+  "runs": [
+    {
+      "by_task": {
+        "code2test": {
+          "BCY@16000": 0.34591194968553457,
+          "BCY@32000": 0.4610062893081761,
+          "BCY@4000": 0.1320754716981132,
+          "BCY@8000": 0.21069182389937105,
+          "coverage_sensitivity": {
+            "16000": {
+              "1": 0.34591194968553457,
+              "128": 0.34591194968553457,
+              "16": 0.34591194968553457,
+              "32": 0.34591194968553457,
+              "64": 0.34591194968553457
+            },
+            "32000": {
+              "1": 0.4610062893081761,
+              "128": 0.4610062893081761,
+              "16": 0.4610062893081761,
+              "32": 0.4610062893081761,
+              "64": 0.4610062893081761
+            },
+            "4000": {
+              "1": 0.1320754716981132,
+              "128": 0.12735849056603774,
+              "16": 0.12735849056603774,
+              "32": 0.12735849056603774,
+              "64": 0.12735849056603774
+            },
+            "8000": {
+              "1": 0.21069182389937105,
+              "128": 0.21069182389937105,
+              "16": 0.21069182389937105,
+              "32": 0.21069182389937105,
+              "64": 0.21069182389937105
+            }
+          },
+          "missing_ranked_files@16000": 0.0,
+          "missing_ranked_files@32000": 0.0,
+          "missing_ranked_files@4000": 0.0,
+          "missing_ranked_files@8000": 0.0,
+          "packed_files@16000": 12.79245283018868,
+          "packed_files@32000": 19.87735849056604,
+          "packed_files@4000": 3.7830188679245285,
+          "packed_files@8000": 7.0,
+          "partial_files@16000": 0.9339622641509434,
+          "partial_files@32000": 0.1509433962264151,
+          "partial_files@4000": 1.0,
+          "partial_files@8000": 1.0,
+          "samples": 106,
+          "used_tokens@16000": 15762.009433962265,
+          "used_tokens@32000": 26437.254716981133,
+          "used_tokens@4000": 4000.0,
+          "used_tokens@8000": 8000.0
+        }
+      },
+      "details_path": "results/modeld-0.5.3/v2_code2test_details.jsonl",
+      "family": "modeld",
+      "label": "modeld-0.5.3",
+      "overall": {
+        "BCY@16000": 0.34591194968553457,
+        "BCY@32000": 0.4610062893081761,
+        "BCY@4000": 0.1320754716981132,
+        "BCY@8000": 0.21069182389937105,
+        "coverage_sensitivity": {
+          "16000": {
+            "1": 0.34591194968553457,
+            "128": 0.34591194968553457,
+            "16": 0.34591194968553457,
+            "32": 0.34591194968553457,
+            "64": 0.34591194968553457
+          },
+          "32000": {
+            "1": 0.4610062893081761,
+            "128": 0.4610062893081761,
+            "16": 0.4610062893081761,
+            "32": 0.4610062893081761,
+            "64": 0.4610062893081761
+          },
+          "4000": {
+            "1": 0.1320754716981132,
+            "128": 0.12735849056603774,
+            "16": 0.12735849056603774,
+            "32": 0.12735849056603774,
+            "64": 0.12735849056603774
+          },
+          "8000": {
+            "1": 0.21069182389937105,
+            "128": 0.21069182389937105,
+            "16": 0.21069182389937105,
+            "32": 0.21069182389937105,
+            "64": 0.21069182389937105
+          }
+        },
+        "missing_ranked_files@16000": 0.0,
+        "missing_ranked_files@32000": 0.0,
+        "missing_ranked_files@4000": 0.0,
+        "missing_ranked_files@8000": 0.0,
+        "packed_files@16000": 12.79245283018868,
+        "packed_files@32000": 19.87735849056604,
+        "packed_files@4000": 3.7830188679245285,
+        "packed_files@8000": 7.0,
+        "partial_files@16000": 0.9339622641509434,
+        "partial_files@32000": 0.1509433962264151,
+        "partial_files@4000": 1.0,
+        "partial_files@8000": 1.0,
+        "samples": 106,
+        "used_tokens@16000": 15762.009433962265,
+        "used_tokens@32000": 26437.254716981133,
+        "used_tokens@4000": 4000.0,
+        "used_tokens@8000": 8000.0
+      },
+      "samples": 106
+    }
+  ],
+  "tokenizer": "regex_code_tokenizer_v1"
+}

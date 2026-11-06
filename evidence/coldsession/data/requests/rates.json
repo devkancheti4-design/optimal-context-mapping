@@ -1,0 +1,16 @@
+{
+ "where": {
+  "same": 200,
+  "gone": 6
+ },
+ "default": {
+  "same": 2
+ },
+ "const": {
+  "same": 5
+ },
+ "base": {
+  "same": 33,
+  "gone": 3
+ }
+}

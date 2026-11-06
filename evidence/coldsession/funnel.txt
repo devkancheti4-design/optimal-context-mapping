@@ -1,0 +1,27 @@
+== reflex
+taught facts 20; a lesson stored 19; the agent cited the fact's file 15; within 3 lines of the fact 15
+modeld_first: entries 42, without a place now 0
+modeld_mate: entries 54, without a place now 0
+modeld_T1: entries 54, without a place now 14
+modeld_T2: entries 68, without a place now 16
+next day: the lesson lane opened 13 of 20; opened and shows the fact's file 12; answered in one read 7
+teammate: the lesson lane opened 20 of 20; opened and shows the fact's file 19; answered in one read 8
+year later: the lesson lane opened 20 of 20; opened and shows the fact's file 16; answered in one read 5
+== scikit-learn
+taught facts 20; a lesson stored 19; the agent cited the fact's file 11; within 3 lines of the fact 7
+modeld_first: entries 49, without a place now 0
+modeld_mate: entries 64, without a place now 0
+modeld_T1: entries 64, without a place now 2
+modeld_T2: entries 81, without a place now 18
+next day: the lesson lane opened 10 of 20; opened and shows the fact's file 4; answered in one read 1
+teammate: the lesson lane opened 20 of 20; opened and shows the fact's file 16; answered in one read 5
+year later: the lesson lane opened 20 of 20; opened and shows the fact's file 16; answered in one read 3
+== sphinx
+taught facts 20; a lesson stored 18; the agent cited the fact's file 15; within 3 lines of the fact 11
+modeld_first: entries 43, without a place now 0
+modeld_mate: entries 56, without a place now 0
+modeld_T1: entries 56, without a place now 7
+modeld_T2: entries 68, without a place now 7
+next day: the lesson lane opened 7 of 20; opened and shows the fact's file 6; answered in one read 4
+teammate: the lesson lane opened 19 of 20; opened and shows the fact's file 18; answered in one read 6
+year later: the lesson lane opened 19 of 20; opened and shows the fact's file 19; answered in one read 7
