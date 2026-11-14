@@ -39,11 +39,14 @@ def read_spec(name):
     config.json, config_sentence_transformers.json, sentence_bert_config.json, config.json). Refuses a model with no
     pooling config, or one that needs trust_remote_code. Never branches on a model's name: only its files and the table."""
     import json
+    local = os.environ.get("OCM_OFFLINE") == "1"           # offline: the local cache only; the Hub is never asked
+    if local:                                              # before huggingface_hub is imported, so its later model
+        os.environ.setdefault("HF_HUB_OFFLINE", "1"); os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")   # load is too
     from huggingface_hub import hf_hub_download
 
     def read(fname):
         try:
-            return json.load(open(hf_hub_download(name, fname)))
+            return json.load(open(hf_hub_download(name, fname, local_files_only=local)))
         except Exception:
             return None
     cfg = read("config.json") or {}
