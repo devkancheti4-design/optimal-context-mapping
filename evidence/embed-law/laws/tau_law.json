@@ -1,0 +1,78 @@
+{
+ "rows": 80,
+ "dropped": [],
+ "material_identity": {
+  "n": 2097122,
+  "differ": 0,
+  "first": [],
+  "xf_30": 969249,
+  "xf_max": 969249
+ },
+ "domain": [
+  30720,
+  2147483647
+ ],
+ "reference": "(int)((((long long)(x & 1023)) * (long long)xf_ref(x >> 10) + 2097152LL) >> 22)",
+ "TAU_P1": {
+  "expr": null,
+  "tried": [
+   [
+    3,
+    "sphere: no expression of size <= 3 \u2014 every cut widened, the space closed empty"
+   ],
+   [
+    4,
+    "sphere: no expression of size <= 4 \u2014 every cut widened, the space closed empty"
+   ],
+   [
+    5,
+    "sphere: no expression of size <= 5 \u2014 every cut widened, the space closed empty"
+   ]
+  ],
+  "pose": "pose 1: integers only"
+ },
+ "TAU": {
+  "expr": "((2097152 + ((int)((unsigned)((x & 1023)) * (unsigned)((((x) >> 10) >= 30 ? (int)__builtin_floor(2097152.0 * (__builtin_sqrt(2.0 * __builtin_log((double)((x) >> 10))) - __builtin_sqrt(2.0 * __builtin_log((double)((x) >> 10) / 3.0))) + 0.5) : 0))))) >> 22)",
+  "size": null,
+  "ladder": 5,
+  "secs": 0.825,
+  "evals": 31007,
+  "note": "sphere: minimal in D\u2229I\u2229I2",
+  "minimal": true,
+  "intent": "arith",
+  "consts": [
+   2097152
+  ],
+  "material": [
+   "LO10",
+   "XFN",
+   "MUL",
+   ">>22"
+  ],
+  "rows": 80,
+  "generation": 3,
+  "alive": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "ticks": [
+   56287,
+   56360,
+   21053,
+   56287
+  ],
+  "windows": [
+   78.0,
+   82.5,
+   175.0,
+   88.1
+  ],
+  "exact_by": "compiler",
+  "proof": "-O3: 2147452928 inputs, 0 wrong, 20.2 s | -O1: 2147452928 inputs, 0 wrong, 20.3 s",
+  "proven": true,
+  "pose": "pose 2: with the declared factor table"
+ },
+ "float_vs_integer": "-O3: example: lift98=643 N=40 float=141.499966759 int=142\nexample: lift98=515 N=69 float=104.500001659 int=104\nexample: lift98=476 N=75 float=95.500004615 int=95\n65589 of 2147452928 inputs differ (33846 one higher), all within 0.000119 of a half"
+}

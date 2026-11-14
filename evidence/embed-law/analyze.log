@@ -1,0 +1,23 @@
+model              arm       G1 line   G1 file   G2 lead  G3 wrong
+bge-base           frozen   50 / 90    41 / 90  135 / 216   8 / 72 
+bge-base           read     50 / 90    41 / 90  135 / 216   8 / 72 
+bge-base           L1       50 / 90    41 / 90  141 / 216   8 / 72 
+bge-base           L2       50 / 90    41 / 90  134 / 216   8 / 72 
+all-MiniLM-L6-v2   frozen   39 / 90    20 / 90   42 / 216   2 / 72 
+all-MiniLM-L6-v2   read     41 / 90    20 / 90  101 / 216   4 / 72 
+all-MiniLM-L6-v2   L1       41 / 90    20 / 90  108 / 216   4 / 72 
+all-MiniLM-L6-v2   L2       41 / 90    20 / 90   81 / 216   4 / 72 
+E1 {"held": false, "numbers_off_today": {"gap": [68, 74], "relation_limit": [31, 37], "cert_gap": [34, 41], "cert_near": [8, 10]}, "repos_with_identical_readouts": 2, "repos": 6}
+E2 {"held": true, "identical": 6, "repos": 6}
+E3 {"held": true, "note": "same numbers on the map with 12 lessons as without; calibrate() reads units and model files only"}
+E4 {"held": true, "device": "cpu", "geometry": {"sigma0": 35.7250869343446, "median": 509.0, "lift84": 37.0, "lift98": 80.0, "n_units": 11339, "n_queries": 2000, "seed": 0}, "thresholds": {"tau": 10, "near": 10, "delta": 10, "gap": 80, "relation_limit": 36, "cert_gap": 40, "cert_near": 10, "cortex_gap": 80, "learned_near": 10}}
+E5 {"held": true, "traced": {"bge-base": {"pooling": "cls", "normalize": true, "query_prompt": "Represent this sentence for searching relevant passages: ", "document_prompt": "", "max_length": 128, "sources": {"pooling": "1_Pooling/config.json", "normalize": "modules.json", "prompts": "declared table: \"For s2p(short query to long passage) retrieval task, suggest to use encode_queries() which will au
+E6 {"held": true, "sphinx": {"units": 41641, "pseudo_queries": 2000, "seconds": 24.6, "device": "mps", "max_rss_mb_model_loaded": 600, "max_rss_mb_after": 724, "tokens": 0, "thresholds": {"tau": 10, "near": 10, "delta": 10, "gap": 80, "relation_limit": 36, "cert_gap": 40, "cert_near": 10, "cortex_gap": 80, "learned_near": 10}}, "l2_calibration_seconds": {"bge-base": [15.75, 15.2, 14.4, 14.96, 13.47, 
+E7 {"held": true, "carries": {"bge-base": {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}, "MiniLM frozen": {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}, "MiniLM read": {"entries": 12, "carried": 12, "moved":
+E8 {"command": "zsh ~/neos/sandbox/embed_law/reproduce.sh", "exists": true}
+P1 {"held": false, "expected": "fail on E1 (stated before any other model was measured)", "failing": ["E1"]}
+P2 all-MiniLM-L6-v2 {"held": false, "g2_L1_minus_frozen": [66, 50.0, 83.0], "g3_L1_minus_frozen": [2, 0.0, 5.0], "interval_rules_out_loss": false, "note": "held on the point estimates; [sum, 2.5%, 97.5%] over 10,000 fact resamples"}
+P3 bge-base vs all-MiniLM-L6-v2 {"held": true, "g2_spread_frozen": 0.4306, "g2_spread_L1": 0.1528}
+P4 bge-base vs all-MiniLM-L6-v2 {"held": false, "sigma0_L1": {"bge-base": 30.947281177789645, "all-MiniLM-L6-v2": 32.052091629657404}, "rel_diff_L1": 0.0357, "rel_diff_L2_per_map": [0.2535, 0.2125, 0.3256, 0.4281, 0.1738, 0.4008], "note": "relative to bge-base, the control"}
+P5 {"held": false, "first_half_sigma0_within_10pct_of_37": true, "sigma0_L2": {"artemis": 38.70811549053596, "FrontierAgent": 34.91931374546199, "DeepInfer": 35.7250869343446, "sphinx": 36.10663164412293, "textual": 36.49858543879593, "celery": 36.97554283823489}, "second_half_L2_changes_nothing": false, "thresholds_moved": {"artemis": {"tau": [10, 8], "near": [10, 8], "delta": [10, 8], "gap": [82, 7
+decomposition all-MiniLM-L6-v2 (not a prediction) {"read - frozen (part A alone)": {"g1l": [2, -4.0, 8.0], "g2": [59, 43.0, 76.0], "g3": [2, 0.0, 5.0]}, "L1 - read (thresholds alone)": {"g1l": [0, 0.0, 0.0], "g2": [7, 3.0, 12.0], "g3": [0, 0.0, 0.0]}, "L2 - read (thresholds alone)": {"g1l": [0, 0.0, 0.0], "g2": [-20, -29.0, -12.0], "g3": [0, 0.0, 0.0]}}
