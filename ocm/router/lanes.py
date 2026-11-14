@@ -38,6 +38,10 @@ CERT_MIN_OVER_OWN = _bits("OCM_CERT_MIN_OVER_OWN")   # bits; when set, the taugh
 class Lanes:
     def __init__(self, mem, global_rows, db, RL):
         self.m, self.RL = mem, RL
+        # the embedding law: this map's thresholds, derived from its measured geometry (manifest calibration). None: the
+        # numbers measured once on bge-base. An explicit OCM_RELATION_LIMIT still wins, and "off" still turns it off.
+        self.th = (getattr(mem, "calibration", None) or {}).get("thresholds")
+        self.rl = RELATION_LIMIT if (_os.environ.get("OCM_RELATION_LIMIT", "").strip() or not self.th) else self.th["relation_limit"]
         self.g = np.asarray(global_rows); self.local = {int(gj): i for i, gj in enumerate(self.g)}
         self.con = sqlite3.connect(db, check_same_thread=False); self.dfc = {}
 
@@ -72,8 +76,8 @@ class Lanes:
         pool = np.arange(len(strong)) if allow is None else np.flatnonzero(np.asarray(allow[:len(strong)], bool))
         if not len(pool):                                                 # nothing in scope: the whole workspace
             pool, allow = np.arange(len(strong)), None
-        if RELATION_LIMIT is not None and len(pool) and int(cue[pool].max()) >= 0 \
-                and int(cue[pool].max()) - int(own[pool].max()) < RELATION_LIMIT:
+        if self.rl is not None and len(pool) and int(cue[pool].max()) >= 0 \
+                and int(cue[pool].max()) - int(own[pool].max()) < self.rl:
             strong, cue = own.copy(), np.full_like(cue, -1)               # nothing taught is related enough: the code decides
         sp = strong[pool]
         key = sp * 1025 + weak[pool]
@@ -98,16 +102,17 @@ class Lanes:
         over_own = int(cue[j1]) - int(own[pool].max()) if cue[j1] >= 0 else None   # the cue's margin over any code text
         if cert >= 0 and CERT_MIN_OVER_OWN is not None and over_own < CERT_MIN_OVER_OWN:
             cert = -1                       # the taught question must explain this one better than any code does
-        obs = {"cert_lead": cert, "top_lead": best - second, "n_near": int((sp >= best - RL.NEAR).sum()),
+        near, tau = (self.th["near"], self.th["tau"]) if self.th else (RL.NEAR, RL.TAU)
+        obs = {"cert_lead": cert, "top_lead": best - second, "n_near": int((sp >= best - near).sum()),
                "best_minus_med": best - int(np.median(sp)),
                "idf": max([math.log(N9 / self.df(w)) for w in allw if self.df(w) > 0] or [0.0]),
-               "key_lead": RL.TAU if keyhit else 0, "shared": bool(set(mean20[:10]) & set(kw)),
+               "key_lead": tau if keyhit else 0, "shared": bool(set(mean20[:10]) & set(kw)),
                "cue_lift": lift, "over_own": over_own, "from_cue": bool(cue[j1] >= own[j1] and cue[j1] >= 0), "top": j1}
         lanes = {0: mean20[:1], 1: mean20[:10], 2: kw, 3: list(dict.fromkeys(mean20[:5] + kw[:5])), 4: mean20}
         return lanes, obs
 
     def byte(self, obs, tried):
-        return self.RL.observe(obs["cert_lead"], obs["top_lead"], obs["n_near"], obs["best_minus_med"], obs["idf"], obs["key_lead"], obs["shared"], tried)
+        return self.RL.observe(obs["cert_lead"], obs["top_lead"], obs["n_near"], obs["best_minus_med"], obs["idf"], obs["key_lead"], obs["shared"], tried, th=self.th)
 
     def readout(self, rows):
         m = self.m

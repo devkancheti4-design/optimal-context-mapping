@@ -28,14 +28,16 @@ L_AGREE    = lambda x: (1 & (x >> 6))
 L_TRIED    = lambda x: (x >> 7)
 DIGSLOT    = 32
 
-def observe(cert_lead, top_lead, n_near, best_minus_med, idf, key_lead, shared, tried):
-    """the eight bits, all measurable for free before Claude is called"""
-    return ((1 if cert_lead >= DELTA else 0)
-          | (1 if top_lead  >= TAU   else 0) << 1
+def observe(cert_lead, top_lead, n_near, best_minus_med, idf, key_lead, shared, tried, th=None):
+    """the eight bits, all measurable for free before Claude is called. th: the map's thresholds from the embedding
+    law (its manifest's calibration); None: the numbers above, measured once on bge-base."""
+    delta, tau, gap = (th["delta"], th["tau"], th["gap"]) if th else (DELTA, TAU, GAP)
+    return ((1 if cert_lead >= delta else 0)
+          | (1 if top_lead  >= tau   else 0) << 1
           | (1 if n_near    >= C     else 0) << 2
-          | (1 if best_minus_med <= GAP else 0) << 3
+          | (1 if best_minus_med <= gap else 0) << 3
           | (1 if idf >= observe.THETA  else 0) << 4
-          | (1 if key_lead >= TAU    else 0) << 5
+          | (1 if key_lead >= tau    else 0) << 5
           | (1 if shared             else 0) << 6
           | (1 if tried              else 0) << 7)
 observe.THETA = 6.0

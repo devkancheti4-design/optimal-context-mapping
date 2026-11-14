@@ -34,6 +34,7 @@ def context_graph(folder, k=3, log=print):
     from .server import Workspace
     from .units import DOCS, is_test
     w = Workspace(folder); m = w.mem
+    gap = ((getattr(m, "calibration", None) or {}).get("thresholds") or {}).get("cortex_gap", GAP)   # the embedding law, or 74
     n = min(w.meta["units"], len(m.texts))
     src = np.array(m.src[:n]); fp = _fingerprints(m, n)
     keep = np.flatnonzero(src >= 0)
@@ -63,7 +64,7 @@ def context_graph(folder, k=3, log=print):
     edges, seen = [], set()
     for i in range(nf):
         for j, ag in zip(near[i], agree[i]):
-            if ag - med >= GAP and (min(i, j), max(i, j)) not in seen:
+            if ag - med >= gap and (min(i, j), max(i, j)) not in seen:
                 seen.add((min(i, j), max(i, j)))
                 edges.append({"source": nodes[i]["id"], "target": nodes[j]["id"], "kind": "meaning", "over_median": int(ag - med)})
     nq = 0
@@ -75,9 +76,9 @@ def context_graph(folder, k=3, log=print):
         nodes.append({"id": qid, "kind": "question", "text": key, "at": f"{rel(p)}:{line}", "line": (v.get("code") or "").strip()})
         edges.append({"source": qid, "target": nodes[i]["id"], "kind": "taught", "line": int(line)})
     stats = {"files": nf, "units": int(len(keep)), "questions": nq, "meaning_edges": len(seen),
-             "taught_edges": nq, "median_agreement_bits": med, "gap_bits": GAP, "k": k}
+             "taught_edges": nq, "median_agreement_bits": med, "gap_bits": gap, "k": k}
     log(f"Cortex D of {os.path.abspath(folder)}: {nf:,} files ({len(keep):,} pieces of code), {nq:,} taught "
-        f"questions, {len(seen):,} meaning edges (k = {k}, at least {GAP} bits over the median {med})")
+        f"questions, {len(seen):,} meaning edges (k = {k}, at least {gap} bits over the median {med})")
     return {"workspace": os.path.basename(os.path.abspath(folder)), "built": datetime.date.today().isoformat(),
             "stats": stats, "nodes": nodes, "edges": edges}
 

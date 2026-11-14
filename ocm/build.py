@@ -14,12 +14,14 @@ from .units import files, units
 THETA_DEFAULT = 9.349                     # the router law's 44% rule on code questions (measured on transformers)
 
 
-def build(roots, out, model=None, device=None, log=print, carry=None, prune_after=None, cache=None):
+def build(roots, out, model=None, device=None, log=print, carry=None, prune_after=None, cache=None, read=False, calibrate=None):
+    """read: part A of the embedding law (how to embed, from the model's own files). calibrate="L2": part B at build
+    time -- the map's own geometry and the thresholds derived from it, stored in its manifest."""
     if os.path.exists(os.path.join(out, "memory", "manifest.json")):
         raise SystemExit(f"{out} already holds a workspace; remove it or choose another --out")
     os.makedirs(out, exist_ok=True)
     roots = {os.path.basename(os.path.abspath(r).rstrip("/")) or "root": os.path.abspath(r) for r in roots}
-    m = Memory.create(os.path.join(out, "memory"), bits=1024, seed=0, model=model, device=device)
+    m = Memory.create(os.path.join(out, "memory"), bits=1024, seed=0, model=model, device=device, read=read)
     cache = cache or os.environ.get("MODELD_CACHE")
     if cache:                                  # rebuilds embed only the units whose text changed
         from .embed_cache import CachedEmbedder
@@ -41,12 +43,19 @@ def build(roots, out, model=None, device=None, log=print, carry=None, prune_afte
     t0, seen, spans = time.time(), set(), []
     for s in range(0, len(U), 2048):
         chunk = [u for u in U[s:s + 2048] if u[0] not in seen]; seen.update(u[0] for u in chunk)
-        for (t, sid, a, last), b in zip(chunk, m.measure([u[0] for u in chunk])):
+        for (t, sid, a, last), b in zip(chunk, m.measure([u[0] for u in chunk], document=True)):
             m._add_fact(t, sid, a, 0, True, b); spans.append([a, last])
         if len(m.pending_f) >= 200_000:
             m.save()
         log(f"  {min(s + 2048, len(U)):,} / {len(U):,} units, {time.time() - t0:.0f}s")
     m.save()
+    if calibrate:
+        from .calibrate import calibrate as _calibrate
+        try:
+            c = _calibrate(m, calibrate)
+            log(f"  calibrated ({calibrate}): sigma0 {c['geometry']['sigma0']:.1f} bits; thresholds {c['thresholds']} ({c['seconds']}s)")
+        except ValueError as e:                # too small or degenerate for the laws: an uncalibrated map uses today's numbers
+            log(f"  not calibrated: {e}; the map keeps today's numbers")
     db = os.path.join(out, "keyword.db")
     con = sqlite3.connect(db); con.execute("create virtual table s using fts5(t)")
     con.executemany("insert into s(rowid, t) values (?, ?)", ((j + 1, t) for j, t in enumerate(m.texts))); con.commit(); con.close()
@@ -71,7 +80,9 @@ def main(argv=None):
     ap.add_argument("--carry", help="an earlier workspace whose taught knowledge (its Life) is carried into this one")
     ap.add_argument("--prune-after", type=int, metavar="N",
                     help="with --carry: remove a taught entry whose line has not been found in N carries in a row")
+    ap.add_argument("--read", action="store_true", help="embed the way the model's own files say (pooling, prompts, length)")
+    ap.add_argument("--calibrate", choices=["L2"], help="measure this map's geometry and derive its thresholds at build time")
     a = ap.parse_args(argv)
     if a.prune_after is not None and (a.prune_after < 1 or not a.carry):
         ap.error("--prune-after needs --carry and a whole number of at least 1")
-    build(a.folders, a.out, a.model, a.device, carry=a.carry, prune_after=a.prune_after, cache=a.cache)
+    build(a.folders, a.out, a.model, a.device, carry=a.carry, prune_after=a.prune_after, cache=a.cache, read=a.read, calibrate=a.calibrate)
