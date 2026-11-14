@@ -1,0 +1,139 @@
+reproduce.sh 2026-11-14 19:00:06 in ~/neos/sandbox/embed_law_e8
+d69097646b5aee2b8759177cd34197ebcdd06acf57ba6bc7e9a84d1aa27b594f  PROTOCOL.md
+== Stage 1: where 37 and 8 come from (bge-base)
+where                        units   query sd  q84-med  q98-med   pairs sd pairs mu
+20 Newsgroups sample         20000       30.9     32.0     68.0       34.5    512.1
+artemis                      33411       38.7     38.0     82.0       44.0    517.8
+FrontierAgent                27517       34.9     36.0     77.0       41.3    513.4
+DeepInfer                    11339       35.7     37.0     80.0       40.9    512.4
+sphinx                       41641       36.1     37.0     80.0       42.0    512.5
+textual                      35389       36.5     37.0     81.0       41.6    517.7
+celery                       38549       37.0     39.0     82.0       40.6    512.3
+{'questions': 244, 'sd_median': 30.79143108532514, 'sd_mean': 31.13818495159617, 'q84_minus_median': 32.0, 'q98_minus_median': 69.0, 'best_wrong_minus_median': 153.0}
+{"sizes": [2222, 6666, 20000], "best_wrong_median": [638.0, 652.0, 662.5], "measured_shift": [14.0, 10.5], "measured_shift_mean": [12.10655737704918, 11.704918032786885], "gaussian_evt_shift": [8.329696884140647, 7.825004717277241], "sd_median": 30.79143108532514}
+== the integer laws, each by a fresh, strictly alive colony, proven
+      proof on [0, 511]: PROVEN  -O3: 512 inputs, 0 wrong, 0.00 s | -O1: 512 inputs, 0 wrong, 0.00 s
+      all int32: 4294956166 of 4294967296 differ (from -2147483648 to 2147483647)
+    CNEAR        multiply-shift constants (brute force on [0, 511]): multiplier 1107, offset 2006, shift 12
+    CNEAR        ladder 2  abstained: sphere: no expression of size <= 2 — every cut widened, the space closed empty
+    CNEAR        ((2006 + ((int)((unsigned)(x) * (unsigned)(1107)))) >> (12 & 31)) ladder 3    1.26s       6,891 evals  gen 0->2  ticks [9483, 9590, 4385, 9483]
+      proof on [0, 511]: PROVEN  -O3: 512 inputs, 0 wrong, 0.00 s | -O1: 512 inputs, 0 wrong, 0.00 s
+      all int32: 4294741502 of 4294967296 differ (from -2147483648 to 2147483647)
+wrote laws.json: {'SEL': '((x & ((x + 4) >> 31)) + (x & ((4 - x) >> 31)))', 'CGAP': '((1990 + ((int)((unsigned)(x) * (unsigned)(4539)))) >> (12 & 31))', 'CNEAR': '((2006 + ((int)((unsigned)(x) * (unsigned)(1107)))) >> (12 & 31))'}
+    GAPW         ladder 3  abstained: sphere: no expression of size <= 3 — every cut widened, the space closed empty
+    GAPW         ((x & 1023) - ((((x & 1023) - ((x >> 10) & 1023)) & ((((x & 1023) - ((x >> 10) & 1023)) + 4) >> 31)) + (((x & 1023) - ((x >> 10) & 1023)) & ((4 - (((x & 1023) - ((x >> 10) & 1023)))) >> 31)))) ladder 4    0.07s         807 evals  gen 0->3  ticks [1513, 1728, 569, 1513]
+      proof on all 2^20 packed inputs: PROVEN  -O3: 1048576 inputs, 0 wrong, 0.00 s | -O1: 1048576 inputs, 0 wrong, 0.00 s
+wrote whole_laws.json: {'RLIM': '((x & 1023) - ((((x & 1023) - ((x >> 10) & 1023)) & ((((x & 1023) - ((x >> 10) & 1023)) + 4) >> 31)) + (((x & 1023) - ((x >> 10) & 1023)) & ((4 - (((x & 1023) - ((x >> 10) & 1023)))) >> 31))))', 'GAPW': '((x & 1023) - ((((x & 1023) - ((x >> 10) & 1023)) & ((((x & 1023) - ((x >> 10) & 1023)) + 4) >> 31)) + (((x & 1023) - ((x >> 10) & 1023)) & ((4 - (((x & 1023) - ((x >> 10) & 1023)))) >> 31))))'}
+== L1: one reference geometry per model
+{"model": "BAAI/bge-base-en-v1.5", "sigma0": 30.947281177789645, "lift84": 32.0, "lift98": 68.0, "n_queries": 2000, "seconds": 197.6} | L1 thresholds: {'tau': 8, 'near': 8, 'delta': 8, 'gap': 68, 'relation_limit': 31, 'cert_gap': 34, 'cert_near': 8, 'cortex_gap': 68, 'learned_near': 8}
+{"model": "sentence-transformers/all-MiniLM-L6-v2", "sigma0": 32.052091629657404, "lift84": 33.0, "lift98": 73.0, "n_queries": 2000, "seconds": 42.2} | L1 thresholds: {'tau': 8, 'near': 8, 'delta': 8, 'gap': 73, 'relation_limit': 32, 'cert_gap': 35, 'cert_near': 9, 'cortex_gap': 73, 'learned_near': 9}
+== bge-base: E2 (control vs branch on 0.5.3 maps), L1, L2
+{"arm": "frozen", "code": "control", "g1_line": 9, "g1_file": 7, "g1_n": 15, "g2_lead": 26, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "60050e4e9894423d", "s": 6.6}
+{"arm": "frozen", "code": "branch", "g1_line": 9, "g1_file": 7, "g1_n": 15, "g2_lead": 26, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "60050e4e9894423d", "s": 4.5}
+{"arm": "L1", "code": "branch", "g1_line": 9, "g1_file": 7, "g1_n": 15, "g2_lead": 26, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "60050e4e9894423d", "s": 4.5}
+{"arm": "L2", "code": "branch", "g1_line": 9, "g1_file": 7, "g1_n": 15, "g2_lead": 25, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "b44a17d873854b0b", "s": 2.1}
+{"arm": "frozen", "code": "control", "g1_line": 12, "g1_file": 10, "g1_n": 15, "g2_lead": 25, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "453c90fccec1c861", "s": 4.9}
+{"arm": "frozen", "code": "branch", "g1_line": 12, "g1_file": 10, "g1_n": 15, "g2_lead": 25, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "453c90fccec1c861", "s": 4.3}
+{"arm": "L1", "code": "branch", "g1_line": 12, "g1_file": 10, "g1_n": 15, "g2_lead": 27, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "09c4b10949d125d7", "s": 4.3}
+{"arm": "L2", "code": "branch", "g1_line": 12, "g1_file": 10, "g1_n": 15, "g2_lead": 25, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "453c90fccec1c861", "s": 2.0}
+{"arm": "frozen", "code": "control", "g1_line": 10, "g1_file": 4, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "1e565056b1a9d158", "s": 5.4}
+{"arm": "frozen", "code": "branch", "g1_line": 10, "g1_file": 4, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "1e565056b1a9d158", "s": 4.3}
+{"arm": "L1", "code": "branch", "g1_line": 10, "g1_file": 4, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "1e565056b1a9d158", "s": 4.4}
+{"arm": "L2", "code": "branch", "g1_line": 10, "g1_file": 4, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "1e565056b1a9d158", "s": 1.7}
+{"arm": "frozen", "code": "control", "g1_line": 6, "g1_file": 6, "g1_n": 15, "g2_lead": 21, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "fe5b1ef54fe9391b", "s": 5.8}
+{"arm": "frozen", "code": "branch", "g1_line": 6, "g1_file": 6, "g1_n": 15, "g2_lead": 21, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "fe5b1ef54fe9391b", "s": 4.5}
+{"arm": "L1", "code": "branch", "g1_line": 6, "g1_file": 6, "g1_n": 15, "g2_lead": 23, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "be60518ae5ee71f5", "s": 4.5}
+{"arm": "L2", "code": "branch", "g1_line": 6, "g1_file": 6, "g1_n": 15, "g2_lead": 21, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "fe5b1ef54fe9391b", "s": 2.1}
+{"arm": "frozen", "code": "control", "g1_line": 4, "g1_file": 5, "g1_n": 15, "g2_lead": 19, "g2_n": 36, "g3_wrong": 4, "g3_n": 12, "digest": "67315ececeb56c6b", "s": 5.7}
+{"arm": "frozen", "code": "branch", "g1_line": 4, "g1_file": 5, "g1_n": 15, "g2_lead": 19, "g2_n": 36, "g3_wrong": 4, "g3_n": 12, "digest": "67315ececeb56c6b", "s": 4.4}
+{"arm": "L1", "code": "branch", "g1_line": 4, "g1_file": 5, "g1_n": 15, "g2_lead": 21, "g2_n": 36, "g3_wrong": 4, "g3_n": 12, "digest": "2bd3c700ba83c61e", "s": 4.4}
+{"arm": "L2", "code": "branch", "g1_line": 4, "g1_file": 5, "g1_n": 15, "g2_lead": 19, "g2_n": 36, "g3_wrong": 4, "g3_n": 12, "digest": "67315ececeb56c6b", "s": 2.0}
+{"arm": "frozen", "code": "control", "g1_line": 9, "g1_file": 9, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "44c286c9949cee41", "s": 5.2}
+{"arm": "frozen", "code": "branch", "g1_line": 9, "g1_file": 9, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "44c286c9949cee41", "s": 4.4}
+{"arm": "L1", "code": "branch", "g1_line": 9, "g1_file": 9, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "820709dee9036d84", "s": 4.4}
+{"arm": "L2", "code": "branch", "g1_line": 9, "g1_file": 9, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "44c286c9949cee41", "s": 2.2}
+== MiniLM: maps (frozen = 0.5.3's way, read = part A), then the four arms
+control all-MiniLM-L6-v2 artemis built in 94.6s
+branch all-MiniLM-L6-v2 artemis built in 103.3s
+control all-MiniLM-L6-v2 FrontierAgent built in 87.2s
+branch all-MiniLM-L6-v2 FrontierAgent built in 92.4s
+control all-MiniLM-L6-v2 DeepInfer built in 43.2s
+branch all-MiniLM-L6-v2 DeepInfer built in 53.8s
+control all-MiniLM-L6-v2 sphinx built in 101.4s
+branch all-MiniLM-L6-v2 sphinx built in 118.5s
+control all-MiniLM-L6-v2 textual built in 69.6s
+branch all-MiniLM-L6-v2 textual built in 95.6s
+control all-MiniLM-L6-v2 celery built in 132.6s
+branch all-MiniLM-L6-v2 celery built in 98.1s
+{"arm": "frozen", "code": "control", "g1_line": 6, "g1_file": 3, "g1_n": 15, "g2_lead": 13, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "d85617d8499b22ad", "s": 5.2}
+{"arm": "read", "code": "branch", "g1_line": 8, "g1_file": 4, "g1_n": 15, "g2_lead": 20, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "7df7de79e9f02d3c", "s": 4.1}
+{"arm": "L1", "code": "branch", "g1_line": 8, "g1_file": 4, "g1_n": 15, "g2_lead": 23, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "34386146489f7085", "s": 4.1}
+{"arm": "L2", "code": "branch", "g1_line": 8, "g1_file": 4, "g1_n": 15, "g2_lead": 17, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "9363654f73274c6d", "s": 1.6}
+{"arm": "frozen", "code": "control", "g1_line": 9, "g1_file": 5, "g1_n": 15, "g2_lead": 8, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "42baedb73289c78b", "s": 3.8}
+{"arm": "read", "code": "branch", "g1_line": 9, "g1_file": 6, "g1_n": 15, "g2_lead": 17, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "ac16176e8964f5e8", "s": 3.9}
+{"arm": "L1", "code": "branch", "g1_line": 9, "g1_file": 6, "g1_n": 15, "g2_lead": 18, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "2c07b14c0f882ac9", "s": 4.2}
+{"arm": "L2", "code": "branch", "g1_line": 9, "g1_file": 6, "g1_n": 15, "g2_lead": 15, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "947974145316d8f7", "s": 1.6}
+{"arm": "frozen", "code": "control", "g1_line": 9, "g1_file": 6, "g1_n": 15, "g2_lead": 8, "g2_n": 36, "g3_wrong": 1, "g3_n": 12, "digest": "02e12500ba8afa04", "s": 4.0}
+{"arm": "read", "code": "branch", "g1_line": 8, "g1_file": 4, "g1_n": 15, "g2_lead": 21, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "246d794277349e47", "s": 4.3}
+{"arm": "L1", "code": "branch", "g1_line": 8, "g1_file": 4, "g1_n": 15, "g2_lead": 22, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "7b801d40d6c987c8", "s": 3.8}
+{"arm": "L2", "code": "branch", "g1_line": 8, "g1_file": 4, "g1_n": 15, "g2_lead": 18, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "125dd7bdf9f343be", "s": 1.5}
+{"arm": "frozen", "code": "control", "g1_line": 5, "g1_file": 1, "g1_n": 15, "g2_lead": 4, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "00f526a59650b73d", "s": 4.9}
+{"arm": "read", "code": "branch", "g1_line": 5, "g1_file": 1, "g1_n": 15, "g2_lead": 13, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "13b81cce1cba6ee6", "s": 4.1}
+{"arm": "L1", "code": "branch", "g1_line": 5, "g1_file": 1, "g1_n": 15, "g2_lead": 14, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "d4f283dd23e08f4d", "s": 4.1}
+{"arm": "L2", "code": "branch", "g1_line": 5, "g1_file": 1, "g1_n": 15, "g2_lead": 8, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "fb35df4476f6e534", "s": 1.7}
+{"arm": "frozen", "code": "control", "g1_line": 5, "g1_file": 3, "g1_n": 15, "g2_lead": 5, "g2_n": 36, "g3_wrong": 1, "g3_n": 12, "digest": "eaea6eaca33bd30d", "s": 4.1}
+{"arm": "read", "code": "branch", "g1_line": 4, "g1_file": 2, "g1_n": 15, "g2_lead": 15, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "7b968222a28c79b5", "s": 4.2}
+{"arm": "L1", "code": "branch", "g1_line": 4, "g1_file": 2, "g1_n": 15, "g2_lead": 16, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "8daee123d39a5716", "s": 4.9}
+{"arm": "L2", "code": "branch", "g1_line": 4, "g1_file": 2, "g1_n": 15, "g2_lead": 12, "g2_n": 36, "g3_wrong": 2, "g3_n": 12, "digest": "463a6cbb61054e45", "s": 1.6}
+{"arm": "frozen", "code": "control", "g1_line": 5, "g1_file": 2, "g1_n": 15, "g2_lead": 4, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "fff78a294d49d361", "s": 4.3}
+{"arm": "read", "code": "branch", "g1_line": 7, "g1_file": 3, "g1_n": 15, "g2_lead": 15, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "2c09eacf90798c94", "s": 4.8}
+{"arm": "L1", "code": "branch", "g1_line": 7, "g1_file": 3, "g1_n": 15, "g2_lead": 15, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "80fc7148d54995b4", "s": 4.0}
+{"arm": "L2", "code": "branch", "g1_line": 7, "g1_file": 3, "g1_n": 15, "g2_lead": 11, "g2_n": 36, "g3_wrong": 0, "g3_n": 12, "digest": "3bc1901bcb08e106", "s": 1.5}
+== E3 + E4 (CPU, twice), E6 (cost on the largest map), E7 (lessons carried under every model)
+{"device": "cpu", "E4_twice_identical": true, "E3_with_lessons_identical": true, "cues_after_teaching": 12, "geometry": {"sigma0": 35.7250869343446, "median": 509.0, "lift84": 37.0, "lift98": 80.0, "n_units": 11339, "n_queries": 2000, "seed": 0}, "thresholds": {"tau": 10, "near": 10, "delta": 10, "gap": 80, "relation_limit": 36, "cert_gap": 40, "cert_near": 10, "cortex_gap": 80, "learned_near": 10}}
+{"units": 41641, "pseudo_queries": 2000, "seconds": 14.2, "device": "mps", "max_rss_mb_model_loaded": 602, "max_rss_mb_after": 759, "tokens": 0, "thresholds": {"tau": 10, "near": 10, "delta": 10, "gap": 80, "relation_limit": 36, "cert_gap": 40, "cert_near": 10, "cortex_gap": 80, "learned_near": 10}}
+bge-base       {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}
+MiniLM frozen  {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}
+MiniLM read    {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}
+E7: carried lessons identical under every model: True
+== TAU, authored after the geometry it is checked on (its rows include every measured lift98 and N)
+    TAU          ladder 4  abstained: sphere: no expression of size <= 4 — every cut widened, the space closed empty
+    TAU          ((2097152 + ((int)((unsigned)((x & 1023)) * (unsigned)((((x) >> 10) >= 30 ? (int)__builtin_floor(2097152.0 * (__builtin_sqrt(2.0 * __builtin_log((double)((x) >> 10))) - __builtin_sqrt(2.0 * __builtin_log((double)((x) >> 10) / 3.0))) + 0.5) : 0))))) >> 22) ladder 5    1.03s      31,007 evals  gen 0->3  ticks [55468, 55480, 21012, 55468]
+      proof on all 2,147,452,928 inputs of the domain: PROVEN  -O3: 2147452928 inputs, 0 wrong, 19.8 s | -O1: 2147452928 inputs, 0 wrong, 19.9 s
+float formula vs integer definition: -O3: example: lift98=643 N=40 float=141.499966759 int=142
+example: lift98=515 N=69 float=104.500001659 int=104
+example: lift98=476 N=75 float=95.500004615 int=95
+65589 of 2147452928 inputs differ (33846 one higher), all within 0.000119 of a half
+wrote tau_law.json: {'TAU_P1': 'abstained', 'TAU': '((2097152 + ((int)((unsigned)((x & 1023)) * (unsigned)((((x) >> 10) >= 30 ? (int)__builtin_floor(2097152.0 * (__builtin_sqrt(2.0 * __builtin_log((double)((x) >> 10))) - __builtin_sqrt(2.0 * __builtin_log((double)((x) >> 10) / 3.0))) + 0.5) : 0))))) >> 22)'}
+== Stage 3 and Stage 4
+recorded calibrations: 25, recomputed identically: 25
+  of them with a fractional lift98 (where TAU now reads round(lift98)): [116.89838625941775]
+RLIM vs s + SEL(a84 - s) on all 1,048,576 inputs: 0 differ; GAPW vs s2 + SEL(a98 - s2): 0 differ
+TAUW vs (a98 * XF(N) + 2^21) >> 22 on 7,291,366 inputs (every N at a98 = 68, 117, 1023; 1,000,000 random): 0 differ
+WIRING VERIFIED
+model              arm       G1 line   G1 file   G2 lead  G3 wrong
+bge-base           frozen   50 / 90    41 / 90  135 / 216   8 / 72 
+bge-base           read     50 / 90    41 / 90  135 / 216   8 / 72 
+bge-base           L1       50 / 90    41 / 90  141 / 216   8 / 72 
+bge-base           L2       50 / 90    41 / 90  134 / 216   8 / 72 
+all-MiniLM-L6-v2   frozen   39 / 90    20 / 90   42 / 216   2 / 72 
+all-MiniLM-L6-v2   read     41 / 90    20 / 90  101 / 216   4 / 72 
+all-MiniLM-L6-v2   L1       41 / 90    20 / 90  108 / 216   4 / 72 
+all-MiniLM-L6-v2   L2       41 / 90    20 / 90   81 / 216   4 / 72 
+E1 {"held": false, "numbers_off_today": {"gap": [68, 74], "relation_limit": [31, 37], "cert_gap": [34, 41], "cert_near": [8, 10]}, "repos_with_identical_readouts": 2, "repos": 6}
+E2 {"held": true, "identical": 6, "repos": 6}
+E3 {"held": true, "note": "same numbers on the map with 12 lessons as without; calibrate() reads units and model files only"}
+E4 {"held": true, "device": "cpu", "geometry": {"sigma0": 35.7250869343446, "median": 509.0, "lift84": 37.0, "lift98": 80.0, "n_units": 11339, "n_queries": 2000, "seed": 0}, "thresholds": {"tau": 10, "near": 10, "delta": 10, "gap": 80, "relation_limit": 36, "cert_gap": 40, "cert_near": 10, "cortex_gap": 80, "learned_near": 10}}
+E5 {"held": true, "traced": {"bge-base": {"pooling": "cls", "normalize": true, "query_prompt": "Represent this sentence for searching relevant passages: ", "document_prompt": "", "max_length": 128, "sources": {"pooling": "1_Pooling/config.json", "normalize": "modules.json", "prompts": "declared table: \"For s2p(short query to long passage) retrieval task, suggest to use encode_queries() which will au
+E6 {"held": true, "sphinx": {"units": 41641, "pseudo_queries": 2000, "seconds": 14.2, "device": "mps", "max_rss_mb_model_loaded": 602, "max_rss_mb_after": 759, "tokens": 0, "thresholds": {"tau": 10, "near": 10, "delta": 10, "gap": 80, "relation_limit": 36, "cert_gap": 40, "cert_near": 10, "cortex_gap": 80, "learned_near": 10}}, "l2_calibration_seconds": {"bge-base": [23.76, 20.89, 20.39, 20.29, 16.94
+E7 {"held": true, "carries": {"bge-base": {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}, "MiniLM frozen": {"entries": 12, "carried": 12, "moved": 0, "reformatted": 0, "abstained": 0, "pruned": 0, "vectors taught": 12, "life sha": "aedd4b9bf73cedbb"}, "MiniLM read": {"entries": 12, "carried": 12, "moved":
+E8 {"command": "zsh ~/neos/sandbox/embed_law/reproduce.sh", "exists": true}
+P1 {"held": false, "expected": "fail on E1 (stated before any other model was measured)", "failing": ["E1"]}
+P2 all-MiniLM-L6-v2 {"held": false, "g2_L1_minus_frozen": [66, 50.0, 83.0], "g3_L1_minus_frozen": [2, 0.0, 5.0], "interval_rules_out_loss": false, "note": "held on the point estimates; [sum, 2.5%, 97.5%] over 10,000 fact resamples"}
+P3 bge-base vs all-MiniLM-L6-v2 {"held": true, "g2_spread_frozen": 0.4306, "g2_spread_L1": 0.1528}
+P4 bge-base vs all-MiniLM-L6-v2 {"held": false, "sigma0_L1": {"bge-base": 30.947281177789645, "all-MiniLM-L6-v2": 32.052091629657404}, "rel_diff_L1": 0.0357, "rel_diff_L2_per_map": [0.2535, 0.2125, 0.3256, 0.4281, 0.1738, 0.4008], "note": "relative to bge-base, the control"}
+P5 {"held": false, "first_half_sigma0_within_10pct_of_37": true, "sigma0_L2": {"artemis": 38.70811549053596, "FrontierAgent": 34.91931374546199, "DeepInfer": 35.7250869343446, "sphinx": 36.10663164412293, "textual": 36.49858543879593, "celery": 36.97554283823489}, "second_half_L2_changes_nothing": false, "thresholds_moved": {"artemis": {"tau": [10, 8], "near": [10, 8], "delta": [10, 8], "gap": [82, 7
+decomposition all-MiniLM-L6-v2 (not a prediction) {"read - frozen (part A alone)": {"g1l": [2, -4.0, 8.0], "g2": [59, 43.0, 76.0], "g3": [2, 0.0, 5.0]}, "L1 - read (thresholds alone)": {"g1l": [0, 0.0, 0.0], "g2": [7, 3.0, 12.0], "g3": [0, 0.0, 0.0]}, "L2 - read (thresholds alone)": {"g1l": [0, 0.0, 0.0], "g2": [-20, -29.0, -12.0], "g3": [0, 0.0, 0.0]}}
+302M	maps/all-MiniLM-L6-v2
+free: 2.9Gi
+reproduce.sh done 2026-11-14 19:40:16

@@ -5,7 +5,8 @@ Model D's router thresholds are derived from each embedding model's own measured
 - **Branch:** `embed-law`, in the worktree `~/optimal-context-mapping-embed-law`. Not committed.
 - **Offline:** no Claude, no API. Embeddings only.
 - **Panel:** bge-base (the control) and all-MiniLM-L6-v2, the two models already cached. The disk was below the 2.5 GB floor for downloads.
-- **Pre-registration:** PROTOCOL.md was hashed at 18:17 IST, before MiniLM was measured. Amendment 1 is at the end of HASHES.txt.
+- **Pre-registration:** PROTOCOL.md was hashed at 18:17 IST, before MiniLM was measured. Amendments 1–4 are at the end of HASHES.txt: the whole laws, the E8 runner, the offline fix, the comparator.
+- **E8:** held. One command regenerated every number exactly, in a fresh folder.
 
 ## Verdict
 
@@ -75,7 +76,7 @@ The rules themselves (σ₀, 2σ₀, the 4-bit tolerance, the extreme-value form
 | E5 from the files | held. bge reads as first token, normalised, bge's instruction (from the declared table quoting its card), 128 tokens. MiniLM reads as mean pooling, normalised, no prompt, 128 tokens (its own limit is 256). gpt2 is refused for having no pooling config. The only use of a model's name is the declared prompt table. |
 | E6 free | held. 0 tokens. L2 calibration takes 13–16 s per map for bge and 5–7 s for MiniLM. On sphinx (41,641 units): 24.6 s, with memory going from 600 to 724 MB. |
 | E7 lessons | held: 12 of 12 carried under bge, MiniLM frozen and MiniLM read, all with the identical Life (sha `aedd4b9bf73cedbb`) |
-| E8 reproducible | the one command exists: `zsh ~/neos/sandbox/embed_law/reproduce.sh`. Each of its steps has been run, but **not yet as one command end to end.** |
+| E8 reproducible | **held.** `zsh e8.sh` copied the harness byte for byte into a fresh folder (`~/neos/sandbox/embed_law_e8`) and ran its one command, `reproduce.sh`, from 19:00:06 to 19:40:16. Every number came back exactly: Stage 1; both L1 geometries; all 48 gate runs, readouts byte-identical; E3–E7; results.json; all 12 MiniLM maps, byte for byte apart from timestamps. All six laws came back with the same expressions, proofs and even evaluation counts; only the colonies' clocks (ticks) differ. See E8_COMPARE.md. |
 
 ## Stage 4: the gates
 
@@ -104,7 +105,7 @@ The differences below are paired over facts, with 95% bootstrap intervals (10,00
 
 ### Predictions
 
-- **P1, E1 to E8 hold: failed,** on E1 only, as stated before measuring. E8 has not yet been run as one command.
+- **P1, E1 to E8 hold: failed,** on E1 only, as stated before measuring.
 - **P2, MiniLM under L1 scores at least as well as frozen on G2 and pulls no more wrong lines on G3: failed.** G2 gained +66 (+50 to +83), which held. G3 had +2 wrong pulls (0 to +5), which did not. Those two come from Part A (read − frozen +2), not from the thresholds (L1 − read: 0).
 - **P3, the G2 spread between models is smaller under L1 than frozen: held.** It fell from 0.43 to 0.15 (share of taught-line leads).
 - **P4, σ₀ differs by at least 20% between models: failed on the reference corpus.** Under L1 it's 30.9 against 32.1, a 3.6% difference. On code maps (L2) it differs by 17–43%, with 5 of 6 maps at 20% or more.
@@ -130,6 +131,18 @@ The differences below are paired over facts, with 95% bootstrap intervals (10,00
 | all-MiniLM-L6-v2 | L2 celery | 38,549 | 51.8 | 58 | 116.90 | 58 | 117 | 14 | 58/14 |
 | 0.5.3 today | frozen | | | | | 37 | 74 | 8 | 41/10 |
 
+## Offline: a flaw E8 found, and its fix
+
+The protocol says everything runs offline. Part A's reader (`read_spec`) didn't: it ran before the embedder turned the Hugging Face Hub off. So every read-mode map build and both L1 references sent metadata requests (HEAD) to huggingface.co, asking whether the model's config files had changed. This happened in the original runs too, where error output was discarded.
+
+- **No downloads:** nothing was downloaded. No file in the model cache changed that day, and both models still point at the same cached commits. No number is affected.
+- **Hidden fragility:** with the Hub unreachable, the old reader **refused** both models ("no pooling config") even though their files were cached.
+- **Fix (Amendment 3):** with `OCM_OFFLINE=1`, the reader reads the local cache only and turns the Hub off before `huggingface_hub` is imported, so the model load that follows stays off too.
+- **Test:** against a local stand-in for the Hub, the old reader made 6 connection attempts. The fixed reader, a full gate run and an L1 reference each made 0, with specs, readouts and geometry identical to the record.
+- **In the live E8 run:** the steps that started before the fix sent the same 7 requests the original runs did. Every step after it sent none.
+
+Amendment 4: E8's comparator was made to compare a gzip file decompressed. A gzip header stamps the time the file was written, which also changes the manifest's hash of it. Fields that only newer script versions write, and free-text labels, are reported instead of counted. Every field and every number the record has is still compared exactly.
+
 ## Cost
 
 - **Build, MiniLM on the Apple GPU:** 37–90 s per map. The frozen and read builds are within 15% of each other.
@@ -141,7 +154,6 @@ The differences below are paired over facts, with 95% bootstrap intervals (10,00
 
 - **Five panel models were not run:** bge-small, bge-large, e5-base-v2, arctic-embed-m-v1.5 and Qwen3-Embedding-0.6B. The disk was below the download floor. With two models, P3's spread rests on a single pair.
 - **G4** (ColdSession, after its later rebuilds) was not run.
-- **E8** has not yet been run as one command, end to end.
 - **Outside the protocol's scope:** live token savings, collections over about 100,000 units, questions over 128 tokens, languages other than English.
 
 ## Files (all in ~/neos/sandbox/embed_law)
@@ -149,5 +161,6 @@ The differences below are paired over facts, with 95% bootstrap intervals (10,00
 - **Pre-registration:** PROTOCOL.md; HASHES.txt (Amendment 1 at the end).
 - **Results:** results.json (every E check, prediction, total and interval); runs/ (every gate run, with verbatim readouts).
 - **Laws:** laws/laws.json (SEL, CGAP, CNEAR); laws/whole_laws.json (RLIM, GAPW); laws/tau_law.json (both TAU poses, the proof, the float comparison).
-- **Scripts:** analyze.py, verify_wiring.py, reproduce.sh.
+- **Scripts:** analyze.py, verify_wiring.py, reproduce.sh (the one command), e8.sh and e8_compare.py (E8: regenerate into a fresh folder, compare every number).
+- **E8's regeneration:** `~/neos/sandbox/embed_law_e8`, with E8_COMPARE.md, e8_compare.json, reproduce.log and stderr.log.
 - **Branch changes:** ocm/embed_laws.py, ocm/calibrate.py, ocm/cmlm_vector/embed.py, ocm/cmlm_vector/memory.py, ocm/router/{router,lanes}.py, ocm/graph.py, ocm/build.py. Not committed.

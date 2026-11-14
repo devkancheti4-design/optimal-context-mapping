@@ -37,3 +37,22 @@ d7698a58c951cd24c211630e3b64aedf3a2b5f816886c7a13b5dd53ad3b6da3a  ~/optimal-cont
 56bc9943e22386508008740a8bb69bdd759f50e0faa1b9dc674d89a467b36366  reproduce.sh
 09ce995d1df646707d707cc6ebfc8af5d7074a70e39a268a758c49fcb91b6cc3  e8.sh
 c126208e7eb296412094b75182b29ebdb267d87ea6b09456b62fd4df0a785e09  e8_compare.py
+
+# AMENDMENT 3, recorded 2026-11-14 19:33:46 IST; the fix was written at 19:31:17, while E8 was running. No number changes.
+# Part A's reader (read_spec) now honours OCM_OFFLINE: it reads the local Hugging Face cache only and turns the Hub off
+#   before huggingface_hub is imported. Before, it ran ahead of the embedder's offline switch, so every read-mode build
+#   and both L1 references sent HEAD requests to huggingface.co (nothing was downloaded: no cache file changed today);
+#   with the Hub unreachable, the old reader refused both models although their files were cached.
+# Checked against a local stand-in for the Hub (scratchpad verify_offline.py): old reader 6 connection attempts; fixed
+#   reader 0, with both models' specs equal to the record; a gate run (MiniLM DeepInfer L2) 0 attempts, readouts
+#   byte-identical; an L1 reference (MiniLM) 0 attempts, geometry identical.
+# E8 steps that started after 19:31:17 ran on the fixed reader: the last MiniLM map builds, MiniLM's gate runs, E3-E7,
+#   TAU and the analysis.
+26de5f5bc23a83671b0d8676e77d3f8376371915b7297a836fff61e4c2cad357  ~/optimal-context-mapping-embed-law/ocm/cmlm_vector/embed.py
+
+# AMENDMENT 4, recorded 2026-11-14 19:36:49 IST, during E8 (before its comparison step). No number changes.
+# e8_compare.py compared too literally: rows.jsonl.gz is now compared decompressed (its gzip header carries the time it
+#   was written, which also changes the manifest's hash of it); fields only the regeneration has (record files written
+#   by earlier versions of l1_reference.py and of the strict wrapper) and free-text labels are reported, not counted.
+#   Every field and every number the record has is still compared exactly.
+85ab51ed9c1cf419224150b141f67387c5a61cd3a86ac8d54fab4a19d57cfc26  e8_compare.py

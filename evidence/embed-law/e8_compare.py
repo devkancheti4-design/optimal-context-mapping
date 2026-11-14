@@ -3,15 +3,21 @@
     python3 -I e8_compare.py RECORD_DIR REGEN_DIR     -> REGEN_DIR/E8_COMPARE.md and REGEN_DIR/e8_compare.json
 Must come back exactly: Stage 1; both L1 geometries; all 48 gate runs (every readout, byte for byte) with their
 calibrations; E3/E4, E6's counts and thresholds, E7; the laws' expressions and proofs; results.json; the MiniLM maps
-(fingerprints, planes, mean, spans, keyword index). Reported beside them, not required: wall time and memory, and each
-colony's own clock (generation, ticks, windows, evaluations, the rung and path it was found on), which runs on real time."""
-import glob, hashlib, json, os, re, sqlite3, sys
+(fingerprints, planes, mean, spans, keyword index, rows).
+Reported beside them, not required: wall time and memory; each colony's own clock (generation, ticks, windows,
+evaluations, the rung and path it was found on), which runs on real time; build timestamps, and the time a gzip header
+carries (rows.jsonl.gz is compared decompressed, so the manifest's hash of the compressed file is set aside); fields
+that only the regeneration has (a record file written by an earlier version of its script has fewer fields: every field
+it has is compared); free-text labels ('reference')."""
+import glob, gzip, hashlib, json, os, re, sqlite3, sys
 
 TIMING = {'seconds', 's', 'embed_s', 'secs', 'max_rss_mb_model_loaded', 'max_rss_mb_after', 'created', 'built',
           'l2_calibration_seconds'}
 COLONY = {'generation', 'alive', 'ticks', 'windows', 'evals', 'note', 'minimal', 'ladder'}
+LABELS = {'reference'}
 REPOS = ['artemis', 'FrontierAgent', 'DeepInfer', 'sphinx', 'textual', 'celery']
 N = 'all-MiniLM-L6-v2'
+ABSENT = '<absent>'
 
 
 def sha(p):
@@ -43,24 +49,30 @@ def norm(x, drop):
     return x
 
 
-def diff(a, b, path='', out=None, limit=12):
+def diff(a, b, path='', out=None):
     out = [] if out is None else out
-    if len(out) >= limit:
-        return out
     if isinstance(a, dict) and isinstance(b, dict):
         for k in sorted(set(a) | set(b), key=str):
             if k not in a or k not in b:
-                out.append((path + '/' + str(k), a.get(k, '<absent>'), b.get(k, '<absent>')))
+                out.append((path + '/' + str(k), a.get(k, ABSENT), b.get(k, ABSENT)))
             else:
-                diff(a[k], b[k], path + '/' + str(k), out, limit)
+                diff(a[k], b[k], path + '/' + str(k), out)
     elif isinstance(a, list) and isinstance(b, list):
         if len(a) != len(b):
             out.append((path, 'length %d' % len(a), 'length %d' % len(b)))
         for i, (u, v) in enumerate(zip(a, b)):
-            diff(u, v, '%s[%d]' % (path, i), out, limit)
+            diff(u, v, '%s[%d]' % (path, i), out)
     elif a != b:
         out.append((path, a, b))
     return out
+
+
+def labels(x, path=''):
+    if isinstance(x, dict):
+        return {p: v for k, v in x.items() for p, v in (labels(v, path + '/' + k).items() if k not in LABELS else [(path + '/' + k, v)])}
+    if isinstance(x, list):
+        return {p: v for i, u in enumerate(x) for p, v in labels(u, '%s[%d]' % (path, i)).items()}
+    return {}
 
 
 def load(p):
@@ -68,11 +80,16 @@ def load(p):
 
 
 def cmp_json(rec, reg, drop):
+    """(identical, value differences, fields only in the regeneration, label differences)."""
     a, b = load(rec), load(reg)
     if b is None:
-        return False, [('', 'present', 'NOT REGENERATED')]
-    d = diff(norm(a, drop), norm(b, drop))
-    return not d, d
+        return False, [('', 'present', 'NOT REGENERATED')], [], []
+    d = diff(norm(a, drop | LABELS), norm(b, drop | LABELS))
+    real = [x for x in d if x[1] != ABSENT]
+    added = [x[0] for x in d if x[1] == ABSENT]
+    la, lb = labels(a), labels(b)
+    lab = [(p, la.get(p), lb.get(p)) for p in sorted(set(la) | set(lb)) if la.get(p) != lb.get(p)]
+    return not real, real, added, lab
 
 
 def map_files(root):
@@ -84,26 +101,40 @@ def map_files(root):
 
 
 def cmp_map(rec, reg):
-    """Byte for byte, except the two build timestamps (manifest 'created', workspace 'built'); a keyword index whose
-    bytes differ is compared row by row."""
+    """Byte for byte, except: the build timestamps (manifest 'created', workspace 'built'); a .gz file, compared
+    decompressed (its header carries the time it was written), with the manifest's hash of it set aside; a keyword
+    index whose bytes differ, compared row by row."""
     A, B = map_files(rec), map_files(reg)
-    notes = []
+    if not B:
+        return False, [('', 'NOT REGENERATED', '')], [], []
+    notes, set_aside = [], []
     if set(A) != set(B):
         notes.append(('files', sorted(set(A) - set(B))[:5], sorted(set(B) - set(A))[:5]))
     for rel in sorted(set(A) & set(B)):
         if sha(A[rel]) == sha(B[rel]):
             continue
-        if rel.endswith('manifest.json') or rel == 'workspace.json':
-            d = diff(norm(load(A[rel]), TIMING), norm(load(B[rel]), TIMING))
+        if rel.endswith('.gz'):
+            if gzip.open(A[rel]).read() != gzip.open(B[rel]).read():
+                notes.append((rel, 'content differs', ''))
+            else:
+                set_aside.append(rel + ' (gzip header time)')
+        elif rel.endswith('manifest.json') or rel == 'workspace.json':
+            na, nb = norm(load(A[rel]), TIMING), norm(load(B[rel]), TIMING)
+            for j in (na, nb):
+                if isinstance(j.get('files'), dict):
+                    j['files'] = {k: v for k, v in j['files'].items() if not k.endswith('.gz')}
+            d = diff(na, nb)
             if d:
                 notes.append((rel, d[:3], ''))
+            else:
+                set_aside.append(rel + (' (build timestamp)' if rel == 'workspace.json' else ' (build timestamp, hash of the .gz)'))
         elif rel.endswith('keyword.db'):
             q = lambda p: sqlite3.connect(f'file:{p}?mode=ro', uri=True).execute('select rowid, t from s order by rowid').fetchall()
             if q(A[rel]) != q(B[rel]):
                 notes.append((rel, 'rows differ', ''))
         else:
             notes.append((rel, 'bytes differ', ''))
-    return not notes, notes, len(A)
+    return not notes, notes, [], sorted(set(os.path.basename(x.split(' ')[0]) + x[x.index(' '):] for x in set_aside))
 
 
 def build_times(text):
@@ -119,12 +150,8 @@ def compare(src, out):
     R['E3/E4, E6, E7'] = {f: cmp_json(os.path.join(src, 'runs', f), os.path.join(out, 'runs', f), TIMING) for f in ('e4_e3.json', 'e6.json', 'e7.json')}
     R['laws: expressions and proofs'] = {f: cmp_json(os.path.join(src, 'laws', f), os.path.join(out, 'laws', f), TIMING | COLONY) for f in ('laws.json', 'whole_laws.json', 'tau_law.json')}
     R['results.json'] = {'results.json': cmp_json(os.path.join(src, 'results.json'), os.path.join(out, 'results.json'), TIMING)}
-    maps = {}
-    for arm in ('frozen', 'read'):
-        for r in REPOS:
-            ok, notes, n = cmp_map(os.path.join(src, 'maps', N, arm, r), os.path.join(out, 'maps', N, arm, r))
-            maps[f'{arm}/{r} ({n} files)'] = (ok, notes)
-    R[f'MiniLM maps (byte for byte)'] = maps
+    R['MiniLM maps (byte for byte)'] = {f'{arm}/{r}': cmp_map(os.path.join(src, 'maps', N, arm, r), os.path.join(out, 'maps', N, arm, r))
+                                        for arm in ('frozen', 'read') for r in REPOS}
     digests = sum((load(os.path.join(src, 'runs', f)) or {}).get('digest') == (load(os.path.join(out, 'runs', f)) or {}).get('digest') for f in gates)
     clocks = {}
     for f, keys in (('laws.json', ('SEL', 'CGAP', 'CNEAR')), ('whole_laws.json', ('RLIM', 'GAPW')), ('tau_law.json', ('TAU',))):
@@ -137,31 +164,42 @@ def compare(src, out):
     return R, digests, len(gates), clocks, build_times(rec_log), build_times(log), times
 
 
-def report(src, out, R, digests, ngates, clocks, bt_rec, bt_reg, times, pre):
-    held = all(ok for sec in R.values() for ok, _ in sec.values())
+def report(src, out, R, digests, ngates, clocks, bt_rec, bt_reg, times, pre, name='E8_COMPARE'):
+    held = all(v[0] for sec in R.values() for v in sec.values())
     L = ['# E8: one command, end to end', '',
          f'- Record: `{src}`; regeneration: `{out}`, made by `zsh e8.sh`, which copied the harness there byte for byte and ran its `reproduce.sh`.',
-         f'- Started {times[0] if times else "?"}, finished {times[-1] if len(times) > 1 else "?"}.',
-         f'- Code: all {len(pre[0])} files HASHES.txt lists had their latest recorded hash before the run ({len(pre[1])} differed).',
+         f'- Started {times[0] if times else "?"}, finished {times[-1] if len(times) > 1 else "not yet"}.',
+         f'- Code: {len(pre[0])} files are listed in HASHES.txt; {len(pre[1])} differ from their latest recorded hash now.',
          f'- **E8 {"HOLDS" if held else "DOES NOT HOLD"}**: every number that must come back {"came back exactly" if held else "did not; the differences are below"}. '
          f'Gate readouts: {digests} of {ngates} runs byte-identical by digest.', '',
-         '| what | compared | identical | first differences |', '|---|---|---|---|']
-    for name, sec in R.items():
-        bad = [(k, d) for k, (ok, d) in sec.items() if not ok]
+         '| what | compared | identical | value differences |', '|---|---|---|---|']
+    for name_, sec in R.items():
+        bad = [(k, v[1]) for k, v in sec.items() if not v[0]]
         first = '; '.join('%s: %s' % (k, str(d[:2])[:160]) for k, d in bad[:2]) or '—'
-        L.append(f'| {name} | {len(sec)} | {len(sec) - len(bad)} | {first} |')
+        L.append(f'| {name_} | {len(sec)} | {len(sec) - len(bad)} | {first} |')
+    added = {f'{s}: {k}': v[2] for s, sec in R.items() for k, v in sec.items() if v[2]}
+    labs = {f'{s}: {k}': v[3] for s, sec in R.items() for k, v in sec.items() if v[3] and not s.startswith('MiniLM')}
+    aside = sorted({x for s, sec in R.items() if s.startswith('MiniLM') for v in sec.values() for x in v[3]})
+    L += ['', '## Set aside, and why', '',
+          '- **Fields only the regeneration has** (the record\'s file was written by an earlier version of its script; every field the record has was compared):']
+    L += [f'  - {k}: {", ".join(sorted(set(re.sub(r"\[\d+\]", "", p) for p in v)))[:300]}' for k, v in added.items()] or ['  - none']
+    L += ['- **Free-text labels that differ:**'] + ([f'  - {k}: {str(v[:1])[:220]}' for k, v in labs.items()] or ['  - none'])
+    L += ['- **MiniLM maps, bytes that differ but carry no number** (every other file byte-identical): ' + ('; '.join(aside) or 'none')]
     L += ['', '## Reported, not required', '', '### MiniLM build times (s)', '', '| map | record | regenerated |', '|---|---|---|']
     for k in sorted(set(bt_rec) | set(bt_reg)):
         L.append(f'| {k[0]} {k[1]} | {bt_rec.get(k, "")} | {bt_reg.get(k, "")} |')
-    L += ['', '### Each colony\'s own clock (found on real time, so it varies run to run)', '',
+    L += ['', '### Each colony\'s own clock (it runs on real time, so it varies run to run)', '',
           '| law | record: rung, generation, evaluations, ticks | regenerated: rung, generation, evaluations, ticks |', '|---|---|---|']
     for k, v in clocks.items():
         f = lambda d: f"{d['ladder']}, gen {d['generation']}, {d['evals']} evals, ticks {d['ticks']}"
         L.append(f"| {k} | {f(v['record'])} | {f(v['regenerated'])} |")
-    open(os.path.join(out, 'E8_COMPARE.md'), 'w').write('\n'.join(L) + '\n')
-    json.dump(dict(held=held, digests_identical=digests, gate_runs=ngates, sections={n: {k: dict(identical=ok, differences=[list(map(str, x)) for x in d])
-              for k, (ok, d) in s.items()} for n, s in R.items()}, colony_clocks=clocks, precheck_mismatches=pre[1], times=times),
-              open(os.path.join(out, 'e8_compare.json'), 'w'), indent=1, default=str)
+    open(os.path.join(out, name + '.md'), 'w').write('\n'.join(L) + '\n')
+    json.dump(dict(held=held, digests_identical=digests, gate_runs=ngates,
+                   sections={n: {k: dict(identical=v[0], value_differences=[list(map(str, x)) for x in v[1]], only_in_regeneration=v[2],
+                                         labels_or_set_aside=[list(map(str, x)) if isinstance(x, tuple) else x for x in v[3]])
+                                 for k, v in s.items()} for n, s in R.items()},
+                   colony_clocks=clocks, precheck_mismatches=pre[1], times=times),
+              open(os.path.join(out, name.lower() + '.json'), 'w'), indent=1, default=str)
     return held
 
 
