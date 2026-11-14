@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7556.76it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7560.11it/s]
+where                        units   query sd  q84-med  q98-med   pairs sd pairs mu
+20 Newsgroups sample         20000       30.9     32.0     68.0       34.5    512.1
+artemis                      33411       38.7     38.0     82.0       44.0    517.8
+FrontierAgent                27517       34.9     36.0     77.0       41.3    513.4
+DeepInfer                    11339       35.7     37.0     80.0       40.9    512.4
+sphinx                       41641       36.1     37.0     80.0       42.0    512.5
+textual                      35389       36.5     37.0     81.0       41.6    517.7
+celery                       38549       37.0     39.0     82.0       40.6    512.3
+exit 0

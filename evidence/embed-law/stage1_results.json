@@ -1,0 +1,182 @@
+{
+ "model": "BAAI/bge-base-en-v1.5",
+ "control": "~/eval/repos/modelD",
+ "corpus": {
+  "corpus": "20 Newsgroups (fts9m.db)",
+  "sentences": 277681,
+  "sample": 20000,
+  "device": "mps",
+  "embed_s": 85.5,
+  "per_query": {
+   "n_queries": 2000,
+   "sd_median": 30.947281177789645,
+   "sd_mean": 31.40691901900699,
+   "sd_p10": 27.604349408165984,
+   "sd_p90": 36.085075142190504,
+   "median_of_medians": 510.0,
+   "q84_minus_median": 32.0,
+   "q98_minus_median": 68.0
+  },
+  "random_pairs": {
+   "n_pairs": 199987,
+   "mean": 512.0683594433639,
+   "sd": 34.51131393168844,
+   "median": 510.0,
+   "q84": 545.0,
+   "q98": 589.0,
+   "max": 1024.0
+  }
+ },
+ "maps": [
+  {
+   "repo": "artemis",
+   "units": 33411,
+   "files": 760,
+   "device": "mps",
+   "per_query": {
+    "n_queries": 2000,
+    "sd_median": 38.70811549053596,
+    "sd_mean": 39.032551489846156,
+    "sd_p10": 31.909394647955367,
+    "sd_p90": 46.27518783472666,
+    "median_of_medians": 515.0,
+    "q84_minus_median": 38.0,
+    "q98_minus_median": 82.0
+   },
+   "random_pairs": {
+    "n_pairs": 199990,
+    "mean": 517.7805690284514,
+    "sd": 43.95391233754638,
+    "median": 515.0,
+    "q84": 559.0,
+    "q98": 616.0,
+    "max": 921.0
+   }
+  },
+  {
+   "repo": "FrontierAgent",
+   "units": 27517,
+   "files": 721,
+   "device": "mps",
+   "per_query": {
+    "n_queries": 2000,
+    "sd_median": 34.91931374546199,
+    "sd_mean": 36.40673098660328,
+    "sd_p10": 30.34729126129709,
+    "sd_p90": 44.61646795356569,
+    "median_of_medians": 511.0,
+    "q84_minus_median": 36.0,
+    "q98_minus_median": 77.0
+   },
+   "random_pairs": {
+    "n_pairs": 199991,
+    "mean": 513.4367196523843,
+    "sd": 41.31678500295416,
+    "median": 510.0,
+    "q84": 550.0,
+    "q98": 610.0,
+    "max": 986.0
+   }
+  },
+  {
+   "repo": "DeepInfer",
+   "units": 11339,
+   "files": 326,
+   "device": "mps",
+   "per_query": {
+    "n_queries": 2000,
+    "sd_median": 35.7250869343446,
+    "sd_mean": 36.13372134112382,
+    "sd_p10": 31.10245751701957,
+    "sd_p90": 41.93115433116485,
+    "median_of_medians": 509.0,
+    "q84_minus_median": 37.0,
+    "q98_minus_median": 80.0
+   },
+   "random_pairs": {
+    "n_pairs": 199978,
+    "mean": 512.397273700107,
+    "sd": 40.867584691424355,
+    "median": 509.0,
+    "q84": 550.0,
+    "q98": 607.0,
+    "max": 872.0
+   }
+  },
+  {
+   "repo": "sphinx",
+   "units": 41641,
+   "files": 1531,
+   "device": "mps",
+   "per_query": {
+    "n_queries": 2000,
+    "sd_median": 36.10663164412293,
+    "sd_mean": 37.55454984203707,
+    "sd_p10": 31.12044780905758,
+    "sd_p90": 45.46187627703711,
+    "median_of_medians": 510.0,
+    "q84_minus_median": 37.0,
+    "q98_minus_median": 80.0
+   },
+   "random_pairs": {
+    "n_pairs": 199995,
+    "mean": 512.5342383559589,
+    "sd": 42.01769637527151,
+    "median": 508.0,
+    "q84": 550.0,
+    "q98": 608.0,
+    "max": 1024.0
+   }
+  },
+  {
+   "repo": "textual",
+   "units": 35389,
+   "files": 1321,
+   "device": "mps",
+   "per_query": {
+    "n_queries": 2000,
+    "sd_median": 36.49858543879593,
+    "sd_mean": 36.985560455212614,
+    "sd_p10": 30.959940445997074,
+    "sd_p90": 43.54600899061878,
+    "median_of_medians": 515.0,
+    "q84_minus_median": 37.0,
+    "q98_minus_median": 81.0
+   },
+   "random_pairs": {
+    "n_pairs": 199991,
+    "mean": 517.6824157087069,
+    "sd": 41.55243244342625,
+    "median": 514.0,
+    "q84": 556.0,
+    "q98": 613.0,
+    "max": 936.0
+   }
+  },
+  {
+   "repo": "celery",
+   "units": 38549,
+   "files": 793,
+   "device": "mps",
+   "per_query": {
+    "n_queries": 2000,
+    "sd_median": 36.97554283823489,
+    "sd_mean": 37.08160678069025,
+    "sd_p10": 31.650931773553644,
+    "sd_p90": 42.64958537918739,
+    "median_of_medians": 510.0,
+    "q84_minus_median": 39.0,
+    "q98_minus_median": 82.0
+   },
+   "random_pairs": {
+    "n_pairs": 199993,
+    "mean": 512.2793997789922,
+    "sd": 40.63632579822948,
+    "median": 509.0,
+    "q84": 551.0,
+    "q98": 602.0,
+    "max": 1024.0
+   }
+  }
+ ]
+}

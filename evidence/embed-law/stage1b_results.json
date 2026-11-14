@@ -1,0 +1,8 @@
+{
+ "questions": 244,
+ "sd_median": 30.79143108532514,
+ "sd_mean": 31.13818495159617,
+ "q84_minus_median": 32.0,
+ "q98_minus_median": 69.0,
+ "best_wrong_minus_median": 153.0
+}

@@ -1,0 +1,755 @@
+{
+ "held": true,
+ "digests_identical": 48,
+ "gate_runs": 48,
+ "sections": {
+  "Stage 1": {
+   "stage1_results.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "stage1b_results.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "stage1d_results.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   }
+  },
+  "L1 geometries": {
+   "l1_bge-base.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/device",
+     "/model",
+     "/pooling",
+     "/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "l1_all-MiniLM-L6-v2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   }
+  },
+  "gate runs (every readout)": {
+   "E2_DeepInfer_branch.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_DeepInfer_control.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_FrontierAgent_branch.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_FrontierAgent_control.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_artemis_branch.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_artemis_control.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_celery_branch.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_celery_control.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_sphinx_branch.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_sphinx_control.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_textual_branch.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "E2_textual_control.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_DeepInfer_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_DeepInfer_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_DeepInfer_frozen.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_DeepInfer_read.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_FrontierAgent_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_FrontierAgent_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_FrontierAgent_frozen.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_FrontierAgent_read.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_artemis_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_artemis_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_artemis_frozen.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_artemis_read.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_celery_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_celery_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_celery_frozen.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_celery_read.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_sphinx_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_sphinx_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_sphinx_frozen.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_sphinx_read.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_textual_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_textual_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_textual_frozen.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "all-MiniLM-L6-v2_textual_read.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "bge_DeepInfer_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/calibration/geometry/device",
+     "/calibration/geometry/model",
+     "/calibration/geometry/pooling",
+     "/calibration/geometry/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/calibration/geometry/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "bge_DeepInfer_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "bge_FrontierAgent_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/calibration/geometry/device",
+     "/calibration/geometry/model",
+     "/calibration/geometry/pooling",
+     "/calibration/geometry/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/calibration/geometry/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "bge_FrontierAgent_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "bge_artemis_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/calibration/geometry/device",
+     "/calibration/geometry/model",
+     "/calibration/geometry/pooling",
+     "/calibration/geometry/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/calibration/geometry/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "bge_artemis_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "bge_celery_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/calibration/geometry/device",
+     "/calibration/geometry/model",
+     "/calibration/geometry/pooling",
+     "/calibration/geometry/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/calibration/geometry/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "bge_celery_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "bge_sphinx_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/calibration/geometry/device",
+     "/calibration/geometry/model",
+     "/calibration/geometry/pooling",
+     "/calibration/geometry/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/calibration/geometry/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "bge_sphinx_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "bge_textual_L1.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/calibration/geometry/device",
+     "/calibration/geometry/model",
+     "/calibration/geometry/pooling",
+     "/calibration/geometry/query_prompt"
+    ],
+    "labels_or_set_aside": [
+     [
+      "/calibration/geometry/reference",
+      "fts9m.db 20,000-sentence sample (seed 0), bge-base, mps",
+      "fts9m.db 20,000-sentence sample (seed 0)"
+     ]
+    ]
+   },
+   "bge_textual_L2.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   }
+  },
+  "E3/E4, E6, E7": {
+   "e4_e3.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "e6.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "e7.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   }
+  },
+  "laws: expressions and proofs": {
+   "laws.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [
+     "/SEL/exact_by"
+    ],
+    "labels_or_set_aside": []
+   },
+   "whole_laws.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   },
+   "tau_law.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   }
+  },
+  "results.json": {
+   "results.json": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": []
+   }
+  },
+  "MiniLM maps (byte for byte)": {
+   "frozen/artemis": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "frozen/FrontierAgent": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "frozen/DeepInfer": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "frozen/sphinx": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "frozen/textual": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "frozen/celery": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "read/artemis": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "read/FrontierAgent": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "read/DeepInfer": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "read/sphinx": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "read/textual": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   },
+   "read/celery": {
+    "identical": true,
+    "value_differences": [],
+    "only_in_regeneration": [],
+    "labels_or_set_aside": [
+     "manifest.json (build timestamp, hash of the .gz)",
+     "rows.jsonl.gz (gzip header time)",
+     "workspace.json (build timestamp)"
+    ]
+   }
+  }
+ },
+ "colony_clocks": {
+  "SEL": {
+   "record": {
+    "ladder": 3,
+    "generation": 2,
+    "evals": 496,
+    "ticks": [
+     1302,
+     1364,
+     516,
+     1302
+    ],
+    "note": "sphere: forced +-join \u2014 exact, minimality not proved",
+    "secs": 0.519
+   },
+   "regenerated": {
+    "ladder": 3,
+    "generation": 2,
+    "evals": 496,
+    "ticks": [
+     1302,
+     1364,
+     516,
+     1302
+    ],
+    "note": "sphere: forced +-join \u2014 exact, minimality not proved",
+    "secs": 0.517
+   }
+  },
+  "CGAP": {
+   "record": {
+    "ladder": 3,
+    "generation": 2,
+    "evals": 8499,
+    "ticks": [
+     10731,
+     10742,
+     5361,
+     10731
+    ],
+    "note": "sphere: minimal in D\u2229I\u2229I2",
+    "secs": 1.058
+   },
+   "regenerated": {
+    "ladder": 3,
+    "generation": 2,
+    "evals": 8499,
+    "ticks": [
+     11475,
+     11640,
+     5520,
+     11475
+    ],
+    "note": "sphere: minimal in D\u2229I\u2229I2",
+    "secs": 1.729
+   }
+  },
+  "CNEAR": {
+   "record": {
+    "ladder": 3,
+    "generation": 2,
+    "evals": 6891,
+    "ticks": [
+     8187,
+     8235,
+     3783,
+     8187
+    ],
+    "note": "sphere: minimal in D\u2229I\u2229I2",
+    "secs": 1.176
+   },
+   "regenerated": {
+    "ladder": 3,
+    "generation": 2,
+    "evals": 6891,
+    "ticks": [
+     9483,
+     9590,
+     4385,
+     9483
+    ],
+    "note": "sphere: minimal in D\u2229I\u2229I2",
+    "secs": 1.257
+   }
+  },
+  "RLIM": {
+   "record": {
+    "ladder": 4,
+    "generation": 3,
+    "evals": 811,
+    "ticks": [
+     1517,
+     1559,
+     586,
+     1517
+    ],
+    "note": "sphere: forced --join \u2014 exact, minimality not proved",
+    "secs": 0.071
+   },
+   "regenerated": {
+    "ladder": 4,
+    "generation": 3,
+    "evals": 811,
+    "ticks": [
+     1517,
+     1813,
+     586,
+     1517
+    ],
+    "note": "sphere: forced --join \u2014 exact, minimality not proved",
+    "secs": 0.07
+   }
+  },
+  "GAPW": {
+   "record": {
+    "ladder": 4,
+    "generation": 3,
+    "evals": 807,
+    "ticks": [
+     1304,
+     1729,
+     472,
+     1304
+    ],
+    "note": "sphere: forced --join \u2014 exact, minimality not proved",
+    "secs": 0.106
+   },
+   "regenerated": {
+    "ladder": 4,
+    "generation": 3,
+    "evals": 807,
+    "ticks": [
+     1513,
+     1728,
+     569,
+     1513
+    ],
+    "note": "sphere: forced --join \u2014 exact, minimality not proved",
+    "secs": 0.069
+   }
+  },
+  "TAU": {
+   "record": {
+    "ladder": 5,
+    "generation": 3,
+    "evals": 31007,
+    "ticks": [
+     56287,
+     56360,
+     21053,
+     56287
+    ],
+    "note": "sphere: minimal in D\u2229I\u2229I2",
+    "secs": 0.825
+   },
+   "regenerated": {
+    "ladder": 5,
+    "generation": 3,
+    "evals": 31007,
+    "ticks": [
+     55468,
+     55480,
+     21012,
+     55468
+    ],
+    "note": "sphere: minimal in D\u2229I\u2229I2",
+    "secs": 1.031
+   }
+  }
+ },
+ "precheck_mismatches": [],
+ "times": [
+  "2026-11-14 19:00:06",
+  "2026-11-14 19:40:16"
+ ]
+}

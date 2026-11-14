@@ -1,0 +1,62 @@
+[
+ {
+  "label": "old reader (before the fix)",
+  "connections": 6,
+  "first_requests": [
+   "HEAD /BAAI/bge-base-en-v1.5/resolve/main/config.json HTTP/1.1",
+   "HEAD /BAAI/bge-base-en-v1.5/resolve/main/modules.json HTTP/1.1"
+  ],
+  "hub_warnings": 0,
+  "rc": 0,
+  "err": [],
+  "specs_equal_record": {
+   "bge-base": false,
+   "all-MiniLM-L6-v2": false
+  },
+  "gpt2": "refused: refused: gpt2 has no pooling config (modules.json and its Po"
+ },
+ {
+  "label": "fixed reader",
+  "connections": 0,
+  "first_requests": [],
+  "hub_warnings": 0,
+  "rc": 0,
+  "err": [],
+  "specs_equal_record": {
+   "bge-base": true,
+   "all-MiniLM-L6-v2": true
+  },
+  "gpt2": "refused: refused: gpt2 has no pooling config (modules.json and its Po"
+ },
+ {
+  "label": "fixed code, gate run (MiniLM DeepInfer, L2: loads the model, calibrates)",
+  "connections": 0,
+  "first_requests": [],
+  "hub_warnings": 0,
+  "rc": 0,
+  "err": [
+   "Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]",
+   "Loading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 103/103 [00:00<00:00, 4696.10it/s]"
+  ],
+  "digest_equals_record": true
+ },
+ {
+  "label": "fixed code, L1 reference (MiniLM: reads its files, embeds 20,000 sentences)",
+  "connections": 0,
+  "first_requests": [],
+  "hub_warnings": 0,
+  "rc": 0,
+  "err": [
+   "Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]",
+   "Loading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 103/103 [00:00<00:00, 7012.86it/s]"
+  ],
+  "geometry_equals_record": {
+   "sigma0": true,
+   "lift84": true,
+   "lift98": true,
+   "median": true,
+   "n_units": true,
+   "n_queries": true
+  }
+ }
+]

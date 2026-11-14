@@ -1,0 +1,140 @@
+{
+ "SEL": {
+  "expr": "((x & ((x + 4) >> 31)) + (x & ((4 - x) >> 31)))",
+  "size": 7,
+  "ladder": 3,
+  "secs": 0.519,
+  "evals": 496,
+  "note": "sphere: forced +-join \u2014 exact, minimality not proved",
+  "minimal": false,
+  "intent": "mask",
+  "consts": [
+   4
+  ],
+  "material": [],
+  "rows": 2049,
+  "generation": 2,
+  "alive": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "ticks": [
+   1302,
+   1364,
+   516,
+   1302
+  ],
+  "windows": [
+   163.0,
+   79.4,
+   83.6,
+   187.0
+  ],
+  "proof": "-O3: 2049 inputs, 0 wrong, 0.00 s | -O1: 2049 inputs, 0 wrong, 0.00 s",
+  "proven": true,
+  "int32_edge": "9 of 4294967296 differ (from -2147483648 to 2147483647)",
+  "domain": [
+   -1024,
+   1024
+  ],
+  "reference": "((x < -4 || x > 4) ? x : 0)"
+ },
+ "CGAP": {
+  "expr": "((1990 + ((int)((unsigned)(x) * (unsigned)(4539)))) >> (12 & 31))",
+  "size": 7,
+  "ladder": 3,
+  "secs": 1.058,
+  "evals": 8499,
+  "note": "sphere: minimal in D\u2229I\u2229I2",
+  "minimal": true,
+  "intent": "arith",
+  "consts": [
+   4539,
+   1990,
+   12
+  ],
+  "material": [
+   "MUL",
+   "SHRV"
+  ],
+  "rows": 512,
+  "generation": 2,
+  "alive": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "ticks": [
+   10731,
+   10742,
+   5361,
+   10731
+  ],
+  "windows": [
+   378.0,
+   80.0,
+   455.0,
+   86.9
+  ],
+  "exact_by": "compiler",
+  "proof": "-O3: 512 inputs, 0 wrong, 0.00 s | -O1: 512 inputs, 0 wrong, 0.00 s",
+  "proven": true,
+  "int32_edge": "4294956166 of 4294967296 differ (from -2147483648 to 2147483647)",
+  "domain": [
+   0,
+   511
+  ],
+  "reference": "((82 * x + 37) / 74)"
+ },
+ "CNEAR": {
+  "expr": "((2006 + ((int)((unsigned)(x) * (unsigned)(1107)))) >> (12 & 31))",
+  "size": 7,
+  "ladder": 3,
+  "secs": 1.176,
+  "evals": 6891,
+  "note": "sphere: minimal in D\u2229I\u2229I2",
+  "minimal": true,
+  "intent": "arith",
+  "consts": [
+   1107,
+   2006,
+   12
+  ],
+  "material": [
+   "MUL",
+   "SHRV"
+  ],
+  "rows": 512,
+  "generation": 2,
+  "alive": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "ticks": [
+   8187,
+   8235,
+   3783,
+   8187
+  ],
+  "windows": [
+   415.0,
+   220.0,
+   452.0,
+   188.0
+  ],
+  "exact_by": "compiler",
+  "proof": "-O3: 512 inputs, 0 wrong, 0.00 s | -O1: 512 inputs, 0 wrong, 0.00 s",
+  "proven": true,
+  "int32_edge": "4294741502 of 4294967296 differ (from -2147483648 to 2147483647)",
+  "domain": [
+   0,
+   511
+  ],
+  "reference": "((20 * x + 37) / 74)"
+ }
+}

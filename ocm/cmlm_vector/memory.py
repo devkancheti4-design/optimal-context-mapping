@@ -61,6 +61,13 @@ class Memory:
         self.mean = np.load(mp) if os.path.exists(mp) else None          # frozen at the first ingest; never changes
         self.query_prefix = self.man.get("query_prefix", "")
         self.gap, self.near = self.man.get("gap", 0.04), self.man.get("near", 0.01)
+        # the embedding law: how this map embeds (part A, read from the model's files) and its measured geometry with the
+        # thresholds derived from it (part B). A map without them (any 0.5.3 map) behaves exactly as before.
+        self.spec = self.man.get("embed")
+        self.doc_prefix = (self.spec or {}).get("document_prompt", "")
+        self.calibration = self.man.get("calibration")
+        th = (self.calibration or {}).get("thresholds")
+        self.learned_near_bits = th["learned_near"] if th else NEAR * self.bits
         self._embedder = None
         self.fshards, self.cshards = [], []
         self.texts, self.src, self.pos, self.turn, self.selfcue = [], [], [], [], []
@@ -92,22 +99,27 @@ class Memory:
         self._arrays()
 
     @classmethod
-    def create(cls, path, bits=1024, seed=0, model=None, device=None, gap=0.04, near=0.01):
-        from .embed import DEFAULT_MODEL, pick_device
+    def create(cls, path, bits=1024, seed=0, model=None, device=None, gap=0.04, near=0.01, read=False):
+        """read=True: part A of the embedding law -- pooling, normalisation, prompts and length read from the model's own
+        files and recorded in the manifest. read=False: 0.5.3's way (first token for every model, bge's prompt table)."""
+        from .embed import DEFAULT_MODEL, pick_device, read_spec
         if os.path.exists(os.path.join(path, "manifest.json")):
             raise FileExistsError(f"{path} already holds a memory")
-        os.makedirs(path, exist_ok=True)
         model = model or DEFAULT_MODEL
+        spec = read_spec(model) if read else None                         # refuses before anything is written
+        os.makedirs(path, exist_ok=True)
         from .embed import shared
-        dim = shared(model, device).dim
+        dim = shared(model, device, spec).dim
         planes = np.random.default_rng(seed).standard_normal((dim, bits)).astype(np.float32)
         np.save(os.path.join(path, "planes.npy"), planes)
         from . import __version__
         from .embed import QUERY_PREFIX
         man = {"format": FORMAT, "package": "cmlm-vector", "version": __version__, "model": model, "device": pick_device(device),
-               "query_prefix": QUERY_PREFIX.get(model, ""),
+               "query_prefix": spec["query_prompt"] if spec else QUERY_PREFIX.get(model, ""),
                "dim": dim, "bits": bits, "seed": seed, "gap": gap, "near": near, "law_n": 8, "law_min": 12, "law_window": 50,
                "created": time.strftime("%Y-%m-%dT%H:%M:%S"), "shards": [], "files": {}}
+        if spec:
+            man["embed"] = spec
         json.dump(man, open(os.path.join(path, "manifest.json"), "w"), indent=1)
         m = cls(path); m.save(); return m
 
@@ -171,13 +183,19 @@ class Memory:
         if self._embedder is None:
             from .embed import shared
             # the device the memory was built on, unless overridden: CPU and GPU can differ in a borderline bit
-            self._embedder = shared(self.man["model"], os.environ.get("CMLM_DEVICE") or self.man.get("device"))
+            self._embedder = shared(self.man["model"], os.environ.get("CMLM_DEVICE") or self.man.get("device"), self.spec)
         return self._embedder
 
-    def measure(self, texts, keep_float=False, query=False):
+    def measure(self, texts, keep_float=False, query=False, document=False):
         """Sign bits of each text's embedding, centred on the memory's frozen mean when it has one. query=True puts
-        the model's search instruction first: for a question matched against stored statements."""
-        texts = [self.query_prefix + t for t in texts] if (query and self.query_prefix) else list(texts)
+        the model's search instruction first: for a question matched against stored statements. document=True puts the
+        model's document prompt first, when its files (or the declared table) give one: for a stored unit."""
+        if query and self.query_prefix:
+            texts = [self.query_prefix + t for t in texts]
+        elif document and self.doc_prefix:
+            texts = [self.doc_prefix + t for t in texts]
+        else:
+            texts = list(texts)
         v = self.embedder(texts)
         c = v - self.mean if self.mean is not None else v
         b = np.packbits(c @ self.planes > 0, axis=1)
@@ -250,6 +268,7 @@ class Memory:
         bits already stored were measured without it and a stored bit never changes."""
         if self.texts or self.cue_texts:
             raise ValueError("the mean is frozen before anything is stored")
+        texts = [self.doc_prefix + t for t in texts] if self.doc_prefix else texts       # centred as units are measured
         self.mean = self.embedder(texts).mean(axis=0).astype(np.float32)
         np.save(os.path.join(self.path, "mean.npy"), self.mean)
         self.man["center"] = {"texts": len(texts)}
@@ -272,7 +291,7 @@ class Memory:
                 return
             for s in range(0, len(buf), batch):
                 chunk = buf[s:s + batch]
-                got = self.measure([u[0] for u in chunk], keep_float)
+                got = self.measure([u[0] for u in chunk], keep_float, document=True)
                 bits, fl = got if keep_float else (got, None)
                 for (text, src, pos), b in zip(chunk, bits):
                     self._add_fact(text, src, pos, 0, True, b)
@@ -328,7 +347,7 @@ class Memory:
         for j in cand[:self.law.n]:
             sr = int((strong > strong[j]).sum() + (strong[:j] == strong[j]).sum())
             wr = int((weak > weak[j]).sum() + (weak[:j] == weak[j]).sum())
-            b = (sr == 0, wr == 0, strong[j] >= bs - NEAR * self.bits, weak[j] >= bw - NEAR * self.bits,
+            b = (sr == 0, wr == 0, strong[j] >= bs - self.learned_near_bits, weak[j] >= bw - self.learned_near_bits,
                  sr < 3, wr < 3, bool(qt & holds(self.texts[j])), sr < 3 and wr < 3)
             out.append(sum(int(v) << i for i, v in enumerate(b)))
         return out

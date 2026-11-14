@@ -1,0 +1,15 @@
+{
+ "sigma0": 32.052091629657404,
+ "median": 510.0,
+ "lift84": 33.0,
+ "lift98": 73.0,
+ "n_units": 20000,
+ "n_queries": 2000,
+ "seed": 0,
+ "reference": "fts9m.db 20,000-sentence sample (seed 0)",
+ "model": "sentence-transformers/all-MiniLM-L6-v2",
+ "device": "mps",
+ "pooling": "mean",
+ "query_prompt": "",
+ "seconds": 24.9
+}

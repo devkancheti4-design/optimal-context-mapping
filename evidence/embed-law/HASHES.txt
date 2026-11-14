@@ -1,0 +1,58 @@
+# SHA-256, recorded 2026-11-14 18:17:15 IST before any model other than bge-base was measured
+d69097646b5aee2b8759177cd34197ebcdd06acf57ba6bc7e9a84d1aa27b594f  PROTOCOL.md
+06afa202151fb1b38a6bfeb9e9a5534e19b82ea3734370ed08cd95a35d393f2b  laws/laws.json
+ea9ec205b98d07a3019e4615803003b1b8fde03ed1ed1d0337dc09981b764248  laws/strict_author.py
+ce1b844aa03e969fef1a60347a3a43e0d0d21b627f4bb5cde35d44b45c22444e  laws/author_laws.py
+b7e2f5d79180f368dcdef7ef77b795543e9c0995a6f4da9152d4273e1f95e487  ~/optimal-context-mapping-embed-law/ocm/calibrate.py
+c576b9268d5dcdb3e23b54c73c6d6947a9fbce7b20f20b0799c1962fe9f73771  ~/optimal-context-mapping-embed-law/ocm/embed_laws.py
+c08d995563bd7ca68b71cc609fde07b5f6a6e5ea9fb72de14c3f5fff915adfbb  ~/optimal-context-mapping-embed-law/ocm/cmlm_vector/embed.py
+
+# AMENDMENT 1, recorded 2026-11-14 18:51:18 IST, after every run in runs/ was made. No recorded number changes.
+# RELATION_LIMIT and GAP now call the engine's whole laws RLIM and GAPW (fresh colonies, generation 3, all four alive),
+#   proven equal to s + SEL(a84 - s) and s2 + SEL(a98 - s2) on all 2^20 packed inputs: identical outputs, by proof.
+# TAU now calls the engine's whole law TAUW over (round(lift98), N), built on the declared collection-size table
+#   XF(N) = round(2^21 (sqrt(2 ln N) - sqrt(2 ln N/3))); pose 1 (integers only) abstained up to size 5. This changes
+#   PROTOCOL.md's definition: TAU reads round(lift98), as GAP does, and the factor is rounded once at 2^-21, so it
+#   differs from the float formula on 65,589 of the 2,147,452,928 inputs of its domain (0.003%; each one bit, at a
+#   near-tie within 0.00012 of a half). On all 25 calibrations this study recorded it gives the same TAU
+#   (verify_wiring.py: 25 of 25), and two L2 arms re-run on the wired code gave byte-identical readouts.
+# build.py: a map outside the laws' domains (N < 30 or > 2,097,151 units) is left uncalibrated instead of failing.
+# Harness: author_tau.py counts a size it cannot parse as None; strict_author.py is unchanged.
+c4f757f2217bf54b02a38b9692c62d8a29ae54e799d8c3132c96d0da1cfca0db  laws/author_whole.py
+5d87b83f490ab6451f30ef99b411fa3875c7e3ddee084b52929d1732fa5aba56  laws/whole_laws.json
+a1ac29f35d528989016de41318addce322a615c14e897beb500868f61409d475  laws/author_tau.py
+9dac5a5525518be24dc584b47f9181c8583e46a205f8fc9ffc3bc2afa46d7dc5  laws/tau_law.json
+cf80b3ef4da72d60cc2ef437e4d03a752d01848df7a44d426f056b6fe947be8f  verify_wiring.py
+1c147667aeeaa6d74ea24cb80868a5f115c49a3f26aebbada7185774d36179cb  reproduce.sh
+cf83ad520fea5aa74854118435d22e39126b7be674050bfb583b284cbcf535df  analyze.py
+a4c7463ac2b869ba48bd3ae96456422d8bacb0707a66c924b9dc8e06312641ea  ~/optimal-context-mapping-embed-law/ocm/calibrate.py
+d7698a58c951cd24c211630e3b64aedf3a2b5f816886c7a13b5dd53ad3b6da3a  ~/optimal-context-mapping-embed-law/ocm/embed_laws.py
+90bbe2fbf0d0385cf1b60ac31c461f0218c69fc44aecccaa404d5b98be8edafc  ~/optimal-context-mapping-embed-law/ocm/build.py
+
+# AMENDMENT 2, recorded 2026-11-14 18:59:44 IST, before E8's end-to-end run. No number changes.
+# reproduce.sh now runs in the folder that holds it (a copy regenerates without touching the record), stops at any
+#   failed step (pipefail) with errors kept in stderr.log, and authors TAU after the geometry its rows include.
+# e8.sh copies the harness byte for byte into a fresh folder and runs reproduce.sh there; e8_compare.py checks these
+#   hashes first, then compares every regenerated number with the record.
+56bc9943e22386508008740a8bb69bdd759f50e0faa1b9dc674d89a467b36366  reproduce.sh
+09ce995d1df646707d707cc6ebfc8af5d7074a70e39a268a758c49fcb91b6cc3  e8.sh
+c126208e7eb296412094b75182b29ebdb267d87ea6b09456b62fd4df0a785e09  e8_compare.py
+
+# AMENDMENT 3, recorded 2026-11-14 19:33:46 IST; the fix was written at 19:31:17, while E8 was running. No number changes.
+# Part A's reader (read_spec) now honours OCM_OFFLINE: it reads the local Hugging Face cache only and turns the Hub off
+#   before huggingface_hub is imported. Before, it ran ahead of the embedder's offline switch, so every read-mode build
+#   and both L1 references sent HEAD requests to huggingface.co (nothing was downloaded: no cache file changed today);
+#   with the Hub unreachable, the old reader refused both models although their files were cached.
+# Checked against a local stand-in for the Hub (scratchpad verify_offline.py): old reader 6 connection attempts; fixed
+#   reader 0, with both models' specs equal to the record; a gate run (MiniLM DeepInfer L2) 0 attempts, readouts
+#   byte-identical; an L1 reference (MiniLM) 0 attempts, geometry identical.
+# E8 steps that started after 19:31:17 ran on the fixed reader: the last MiniLM map builds, MiniLM's gate runs, E3-E7,
+#   TAU and the analysis.
+26de5f5bc23a83671b0d8676e77d3f8376371915b7297a836fff61e4c2cad357  ~/optimal-context-mapping-embed-law/ocm/cmlm_vector/embed.py
+
+# AMENDMENT 4, recorded 2026-11-14 19:36:49 IST, during E8 (before its comparison step). No number changes.
+# e8_compare.py compared too literally: rows.jsonl.gz is now compared decompressed (its gzip header carries the time it
+#   was written, which also changes the manifest's hash of it); fields only the regeneration has (record files written
+#   by earlier versions of l1_reference.py and of the strict wrapper) and free-text labels are reported, not counted.
+#   Every field and every number the record has is still compared exactly.
+85ab51ed9c1cf419224150b141f67387c5a61cd3a86ac8d54fab4a19d57cfc26  e8_compare.py
