@@ -1,0 +1,1761 @@
+{
+ "repo": "encode/httpx @ b5addb64f0",
+ "fixes": 72,
+ "model_d": {
+  "right_first": 42,
+  "top5": 55,
+  "lines_top5": 20
+ },
+ "grep": {
+  "right_first": 23,
+  "top5": 54
+ },
+ "tokens_per_readout": 496,
+ "rows": [
+  {
+   "hash": "8a227c1f2b",
+   "author": "author 1",
+   "question": "Fix docstrings",
+   "gold": [
+    "httpcore/models.py"
+   ],
+   "first": [
+    "httpcore/models.py"
+   ],
+   "top5": [
+    "httpcore/models.py",
+    "setup.py",
+    "httpcore/utils.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 333,
+   "build_s": 7.4
+  },
+  {
+   "hash": "f9e3ad4c16",
+   "author": "author 2",
+   "question": "Fixed response repr.",
+   "gold": [
+    "http3/models.py"
+   ],
+   "first": [
+    "http3/models.py"
+   ],
+   "top5": [
+    "http3/models.py",
+    "http3/config.py",
+    "http3/concurrency.py",
+    "tests/models/test_responses.py",
+    "tests/models/test_headers.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 335,
+   "build_s": 4.8
+  },
+  {
+   "hash": "00e4fdb05d",
+   "author": "author 1",
+   "question": "Fix `URL.join(...)`",
+   "gold": [
+    "httpx/models.py"
+   ],
+   "first": [
+    "httpx/models.py"
+   ],
+   "top5": [
+    "httpx/models.py",
+    "httpx/client.py",
+    "mkdocs.yml"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 542,
+   "build_s": 4.2
+  },
+  {
+   "hash": "fb17459335",
+   "author": "author 3",
+   "question": "Fixed multipart header params encoding",
+   "gold": [
+    "httpx/multipart.py"
+   ],
+   "first": [
+    "httpx/multipart.py"
+   ],
+   "top5": [
+    "httpx/multipart.py",
+    "httpx/models.py",
+    "httpx/concurrency.py",
+    "tests/test_multipart.py",
+    "tests/models/test_requests.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 601,
+   "build_s": 0.4
+  },
+  {
+   "hash": "3451028251",
+   "author": "author 4",
+   "question": "Fix typos in docstrings",
+   "gold": [
+    "httpx/concurrency.py",
+    "httpx/interfaces.py"
+   ],
+   "first": [
+    "httpx/multipart.py"
+   ],
+   "top5": [
+    "httpx/multipart.py",
+    "setup.py",
+    "mkdocs.yml",
+    "tests/test_multipart.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 237,
+   "build_s": 1.6
+  },
+  {
+   "hash": "a0aff8d169",
+   "author": "author 5",
+   "question": "fixed __repr__ function of Headers and Url classes",
+   "gold": [
+    "httpx/models.py"
+   ],
+   "first": [
+    "httpx/models.py"
+   ],
+   "top5": [
+    "httpx/models.py",
+    "httpx/config.py",
+    "httpx/concurrency.py",
+    "tests/models/test_headers.py",
+    "tests/client/test_client.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 526,
+   "build_s": 0.6
+  },
+  {
+   "hash": "e9b20995f7",
+   "author": "author 6",
+   "question": "Fix typos in comments",
+   "gold": [
+    "httpx/models.py",
+    "httpx/status_codes.py"
+   ],
+   "first": [
+    "httpx/models.py"
+   ],
+   "top5": [
+    "httpx/models.py",
+    "setup.py",
+    "httpx/multipart.py",
+    "tests/test_decoders.py",
+    "tests/test_utils.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 362,
+   "build_s": 2.1
+  },
+  {
+   "hash": "ab9cd0ea11",
+   "author": "author 7",
+   "question": "Fix bug in calculating maximum frame size",
+   "gold": [
+    "httpx/concurrency/base.py",
+    "httpx/dispatch/http2.py"
+   ],
+   "first": [
+    "httpx/dispatch/wsgi.py"
+   ],
+   "top5": [
+    "httpx/dispatch/wsgi.py",
+    "setup.cfg",
+    "httpx/concurrency/base.py",
+    "codecov.yml",
+    "httpx/concurrency/asyncio.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 467,
+   "build_s": 1.1
+  },
+  {
+   "hash": "1b82a2a716",
+   "author": "author 8",
+   "question": "Fix invalid f-string",
+   "gold": [
+    "httpx/config.py"
+   ],
+   "first": [
+    "httpx/utils.py"
+   ],
+   "top5": [
+    "httpx/utils.py",
+    "httpx/models.py",
+    "httpx/multipart.py",
+    "tests/test_multipart.py",
+    "tests/test_api.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 459,
+   "build_s": 2.6
+  },
+  {
+   "hash": "cadb9a4d4c",
+   "author": "author 9",
+   "question": "Fix bug when using client without timeouts in Python 3.6",
+   "gold": [
+    "httpx/concurrency/asyncio.py"
+   ],
+   "first": [
+    "httpx/concurrency/asyncio.py"
+   ],
+   "top5": [
+    "httpx/concurrency/asyncio.py",
+    "httpx/concurrency/trio.py",
+    "httpx/exceptions.py",
+    "httpx/dispatch/http2.py",
+    "tests/test_timeouts.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 427,
+   "build_s": 0.4
+  },
+  {
+   "hash": "ea137a96d9",
+   "author": "author 10",
+   "question": "Fix wrongly deleted params introduced #408",
+   "gold": [
+    "httpx/api.py"
+   ],
+   "first": [
+    "httpx/models.py"
+   ],
+   "top5": [
+    "httpx/models.py",
+    "httpx/client.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 361,
+   "build_s": 0.8
+  },
+  {
+   "hash": "5aca0c0172",
+   "author": "author 1",
+   "question": "Fix redirect cookie behavior",
+   "gold": [
+    "httpx/middleware/redirect.py",
+    "noxfile.py"
+   ],
+   "first": [
+    "httpx/middleware/redirect.py"
+   ],
+   "top5": [
+    "httpx/middleware/redirect.py",
+    "httpx/status_codes.py",
+    "httpx/client.py",
+    "httpx/models.py",
+    "tests/client/test_cookies.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 576,
+   "build_s": 2.0
+  },
+  {
+   "hash": "a05ba2e914",
+   "author": "author 9",
+   "question": "Fix race condition on stream.read",
+   "gold": [
+    "httpx/concurrency/asyncio.py",
+    "httpx/concurrency/trio.py"
+   ],
+   "first": [
+    "httpx/concurrency/asyncio.py"
+   ],
+   "top5": [
+    "httpx/concurrency/asyncio.py",
+    "httpx/dispatch/http2.py",
+    "httpx/concurrency/trio.py",
+    ".travis.yml",
+    "tests/test_concurrency.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 705,
+   "build_s": 0.5
+  },
+  {
+   "hash": "d223de8ff3",
+   "author": "author 11",
+   "question": "Fixed version requirement for rfc3986. Issue reference #504",
+   "gold": [
+    "setup.py"
+   ],
+   "first": [
+    "httpx/concurrency/base.py"
+   ],
+   "top5": [
+    "httpx/concurrency/base.py",
+    "httpx/status_codes.py",
+    "setup.py",
+    "httpx/models.py",
+    "httpx/concurrency/asyncio.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 668,
+   "build_s": 3.1
+  },
+  {
+   "hash": "5ee512d803",
+   "author": "author 1",
+   "question": "Fix Host header and HSTS when the default port is explicitly included in URL",
+   "gold": [
+    "httpx/client.py",
+    "httpx/models.py"
+   ],
+   "first": [
+    "httpx/models.py"
+   ],
+   "top5": [
+    "httpx/models.py",
+    "httpx/dispatch/proxy_http.py",
+    "httpx/client.py",
+    "httpx/api.py",
+    "tests/models/test_url.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 681,
+   "build_s": 2.8
+  },
+  {
+   "hash": "387f04732b",
+   "author": "author 12",
+   "question": "Fixed redirect loop",
+   "gold": [
+    "httpx/client.py"
+   ],
+   "first": [
+    "httpx/exceptions.py"
+   ],
+   "top5": [
+    "httpx/exceptions.py",
+    "httpx/client.py",
+    "httpx/backends/asyncio.py",
+    "tests/client/test_redirects.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 377,
+   "build_s": 3.8
+  },
+  {
+   "hash": "be82404168",
+   "author": "author 1",
+   "question": "Fix urllib3 proxy instantiation",
+   "gold": [
+    "httpx/dispatch/urllib3.py"
+   ],
+   "first": [
+    "httpx/dispatch/urllib3.py"
+   ],
+   "top5": [
+    "httpx/dispatch/urllib3.py",
+    "httpx/dispatch/proxy_http.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 380,
+   "build_s": 1.0
+  },
+  {
+   "hash": "5a63540e8a",
+   "author": "author 1",
+   "question": "Fix for streaming a redirect response body with allow_redirects=False",
+   "gold": [
+    "httpx/client.py"
+   ],
+   "first": [
+    "httpx/client.py"
+   ],
+   "top5": [
+    "httpx/client.py",
+    "httpx/content_streams.py",
+    "tests/client/test_redirects.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 710,
+   "build_s": 0.1
+  },
+  {
+   "hash": "b1e99a5cf9",
+   "author": "author 13",
+   "question": "Fix ProxyMode for code in dispatch/proxy_http",
+   "gold": [
+    "httpx/config.py"
+   ],
+   "first": [
+    "httpx/dispatch/proxy_http.py"
+   ],
+   "top5": [
+    "httpx/dispatch/proxy_http.py",
+    "tests/dispatch/test_proxy_http.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 499,
+   "build_s": 0.2
+  },
+  {
+   "hash": "43ec09c3cb",
+   "author": "author 9",
+   "question": "Fix type checking breakage",
+   "gold": [
+    "httpx/_content_streams.py"
+   ],
+   "first": [
+    ".travis.yml"
+   ],
+   "top5": [
+    ".travis.yml",
+    "httpx/_models.py",
+    "httpx/_exceptions.py",
+    "httpx/_utils.py",
+    "httpx/_content_streams.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 422,
+   "build_s": 4.6
+  },
+  {
+   "hash": "430285f55b",
+   "author": "author 14",
+   "question": "Fix multipart edge cases with `data={}` and/or `files={}`",
+   "gold": [
+    "httpx/_content_streams.py"
+   ],
+   "first": [
+    "tests/test_multipart.py"
+   ],
+   "top5": [
+    "tests/test_multipart.py",
+    "tests/test_content_streams.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 382,
+   "build_s": 0.1
+  },
+  {
+   "hash": "fc980e7792",
+   "author": "author 15",
+   "question": "Fix Client Docstring and add AsyncClient to API docs",
+   "gold": [
+    "httpx/_client.py"
+   ],
+   "first": [
+    "docs/css/custom.css"
+   ],
+   "top5": [
+    "docs/css/custom.css",
+    ".travis.yml",
+    "docs/js/chat.js",
+    "docs/js/sidecar-1.5.0.js",
+    "tests/client/test_queryparams.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 330,
+   "build_s": 0.2
+  },
+  {
+   "hash": "d63108d613",
+   "author": "author 9",
+   "question": "Fix casing nits",
+   "gold": [
+    "httpx/_exceptions.py"
+   ],
+   "first": [
+    "docs/css/custom.css"
+   ],
+   "top5": [
+    "docs/css/custom.css",
+    "docs/js/sidecar-1.5.0.js",
+    "httpx/_decoders.py",
+    ".travis.yml",
+    "tests/test_decoders.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 266,
+   "build_s": 0.2
+  },
+  {
+   "hash": "94323f98ac",
+   "author": "author 15",
+   "question": "Fix support for generator-based WSGI apps",
+   "gold": [
+    "httpx/_dispatch/wsgi.py"
+   ],
+   "first": [
+    "httpx/_dispatch/wsgi.py"
+   ],
+   "top5": [
+    "httpx/_dispatch/wsgi.py",
+    "httpx/_client.py",
+    ".travis.yml",
+    "tests/test_wsgi.py",
+    "tests/client/test_auth.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 372,
+   "build_s": 0.1
+  },
+  {
+   "hash": "ab9ace2749",
+   "author": "author 9",
+   "question": "Fix bytes support in multipart uploads",
+   "gold": [
+    "httpx/_content_streams.py"
+   ],
+   "first": [
+    "httpx/_utils.py"
+   ],
+   "top5": [
+    "httpx/_utils.py",
+    "tests/test_multipart.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 634,
+   "build_s": 1.8
+  },
+  {
+   "hash": "e724abdcd1",
+   "author": "author 16",
+   "question": "Fix pool option warnings for default connection pool",
+   "gold": [
+    "httpx/_config.py",
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "httpx/_config.py"
+   ],
+   "top5": [
+    "httpx/_config.py",
+    "httpx/_client.py",
+    "httpx/_status_codes.py",
+    "httpx/_utils.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 612,
+   "build_s": 0.2
+  },
+  {
+   "hash": "ad5e6eb8b0",
+   "author": "author 17",
+   "question": "Fixes #1033 - Ensure that text that spans 3 invocations before newline is handled - don't clobber the buffer between invocations that haven't seen any lines.",
+   "gold": [
+    "httpx/_decoders.py"
+   ],
+   "first": [
+    "httpx/_decoders.py"
+   ],
+   "top5": [
+    "httpx/_decoders.py",
+    "httpx/_content_streams.py",
+    "tests/test_decoders.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 627,
+   "build_s": 1.8
+  },
+  {
+   "hash": "20f4911e80",
+   "author": "author 1",
+   "question": "Fixes for LineDecoding",
+   "gold": [
+    "httpx/_decoders.py"
+   ],
+   "first": [
+    "httpx/_decoders.py"
+   ],
+   "top5": [
+    "httpx/_decoders.py",
+    "httpx/_models.py",
+    "docs/js/sidecar-1.5.0.js",
+    "tests/test_decoders.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 306,
+   "build_s": 0.2
+  },
+  {
+   "hash": "0a38695063",
+   "author": "author 18",
+   "question": "Fixed warnings in unit tests suite, caused by #1127 PR",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "tests/test_status_codes.py"
+   ],
+   "top5": [
+    "tests/test_status_codes.py",
+    "httpx/_status_codes.py",
+    ".github/workflows/test-suite.yml",
+    "tests/client/test_proxies.py",
+    "tests/utils.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 328,
+   "build_s": 2.0
+  },
+  {
+   "hash": "4cf74bc405",
+   "author": "author 1",
+   "question": "Fix behaviour with multiple Set-Cookie headers",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "httpx/_exceptions.py",
+    "httpx/_client.py",
+    "tests/client/test_cookies.py",
+    "tests/models/test_headers.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 614,
+   "build_s": 0.5
+  },
+  {
+   "hash": "a226c60861",
+   "author": "author 19",
+   "question": "Fix #1146 Set default allow_redirects to true",
+   "gold": [
+    "httpx/_api.py",
+    "httpx/_client.py"
+   ],
+   "first": [
+    "httpx/_client.py"
+   ],
+   "top5": [
+    "httpx/_client.py",
+    "httpx/_status_codes.py",
+    "httpx/_api.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 786,
+   "build_s": 0.6
+  },
+  {
+   "hash": "19515e8a8b",
+   "author": "author 1",
+   "question": "Fix request auto headers",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "docs/css/custom.css",
+    "httpx/_client.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 473,
+   "build_s": 0.6
+  },
+  {
+   "hash": "642aabdac0",
+   "author": "author 20",
+   "question": "Fix HTTPError doc",
+   "gold": [
+    "httpx/_exceptions.py"
+   ],
+   "first": [
+    "httpx/_exceptions.py"
+   ],
+   "top5": [
+    "httpx/_exceptions.py",
+    "httpx/_auth.py",
+    "httpx/_transports/urllib3.py",
+    "httpx/__init__.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 656,
+   "build_s": 1.7
+  },
+  {
+   "hash": "e53f995994",
+   "author": "author 1",
+   "question": "Fix ASGITransport path escaping",
+   "gold": [
+    "httpx/_transports/asgi.py"
+   ],
+   "first": [
+    "httpx/_transports/asgi.py"
+   ],
+   "top5": [
+    "httpx/_transports/asgi.py",
+    "httpx/_client.py",
+    "httpx/_transports/wsgi.py",
+    "httpx/_models.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 535,
+   "build_s": 2.7
+  },
+  {
+   "hash": "d25f2bfeff",
+   "author": "author 1",
+   "question": "Fix stream unsetting auth",
+   "gold": [
+    "httpx/_client.py"
+   ],
+   "first": [
+    "httpx/_auth.py"
+   ],
+   "top5": [
+    "httpx/_auth.py",
+    "httpx/_models.py",
+    "httpx/_client.py",
+    "httpx/_transports/asgi.py",
+    "tests/client/test_auth.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 730,
+   "build_s": 0.1
+  },
+  {
+   "hash": "befa57c6f9",
+   "author": "author 1",
+   "question": "Fix response.elapsed",
+   "gold": [
+    "httpx/_client.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "httpx/_client.py",
+    "httpx/_utils.py",
+    "tests/models/test_responses.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 331,
+   "build_s": 0.2
+  },
+  {
+   "hash": "666cbbdfe8",
+   "author": "author 1",
+   "question": "Fix automatic .read() when Response instances are created with content=<str>",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "httpx/_status_codes.py",
+    "tests/test_decoders.py",
+    "tests/models/test_responses.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 638,
+   "build_s": 0.1
+  },
+  {
+   "hash": "9542a17831",
+   "author": "author 21",
+   "question": "Fix doc capitalization",
+   "gold": [
+    "httpx/_status_codes.py"
+   ],
+   "first": [
+    "docs/css/custom.css"
+   ],
+   "top5": [
+    "docs/css/custom.css",
+    "docs/js/sidecar-1.5.0.js",
+    ".github/workflows/publish.yml"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 237,
+   "build_s": 1.5
+  },
+  {
+   "hash": "24a55d73c3",
+   "author": "author 22",
+   "question": "Fix CertTypes",
+   "gold": [
+    "httpx/_types.py"
+   ],
+   "first": [
+    "httpx/_types.py"
+   ],
+   "top5": [
+    "httpx/_types.py",
+    "httpx/_transports/default.py",
+    "httpx/_api.py",
+    "httpx/_config.py",
+    "tests/test_utils.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 602,
+   "build_s": 0.3
+  },
+  {
+   "hash": "6cb1672459",
+   "author": "author 1",
+   "question": "Fix some cases of merging with base_url",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_client.py"
+   ],
+   "top5": [
+    "httpx/_client.py",
+    "httpx/_models.py",
+    "tests/client/test_client.py",
+    "tests/client/test_properties.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 578,
+   "build_s": 0.2
+  },
+  {
+   "hash": "c75ddc26c7",
+   "author": "author 1",
+   "question": "Fix Content-Length for unicode file contents with multipart",
+   "gold": [
+    "httpx/_multipart.py"
+   ],
+   "first": [
+    "httpx/_multipart.py"
+   ],
+   "top5": [
+    "httpx/_multipart.py",
+    "tests/test_multipart.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 440,
+   "build_s": 1.0
+  },
+  {
+   "hash": "52dd95fb5c",
+   "author": "author 23",
+   "question": "Fix extenstions typo in AsyncHTTPTransport",
+   "gold": [
+    "httpx/_transports/default.py"
+   ],
+   "first": [
+    "httpx/_transports/asgi.py"
+   ],
+   "top5": [
+    "httpx/_transports/asgi.py",
+    ".github/workflows/publish.yml",
+    "httpx/_transports/default.py",
+    "httpx/_multipart.py",
+    "httpx/_client.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 664,
+   "build_s": 0.3
+  },
+  {
+   "hash": "47d712c01c",
+   "author": "author 24",
+   "question": "Fix typo",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "docs/js/sidecar-1.5.0.js"
+   ],
+   "top5": [
+    "docs/js/sidecar-1.5.0.js",
+    ".github/workflows/publish.yml",
+    "setup.py",
+    "docs/css/custom.css"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 216,
+   "build_s": 2.0
+  },
+  {
+   "hash": "b169013115",
+   "author": "author 25",
+   "question": "Fix typo in wsgi.py",
+   "gold": [
+    "httpx/_transports/wsgi.py"
+   ],
+   "first": [
+    "httpx/_transports/wsgi.py"
+   ],
+   "top5": [
+    "httpx/_transports/wsgi.py",
+    "tests/test_wsgi.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 342,
+   "build_s": 0.3
+  },
+  {
+   "hash": "317653585c",
+   "author": "author 26",
+   "question": "Fix typo in RemoteProtocolError description",
+   "gold": [
+    "httpx/_exceptions.py"
+   ],
+   "first": [
+    "httpx/_exceptions.py"
+   ],
+   "top5": [
+    "httpx/_exceptions.py",
+    "httpx/_client.py",
+    "httpx/_transports/default.py",
+    "setup.py",
+    "httpx/__version__.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 483,
+   "build_s": 0.7
+  },
+  {
+   "hash": "10b60d47c7",
+   "author": "author 1",
+   "question": "Fix iter_bytes with empty content",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_content.py"
+   ],
+   "top5": [
+    "httpx/_content.py",
+    "httpx/_models.py",
+    "tests/models/test_responses.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 441,
+   "build_s": 0.1
+  },
+  {
+   "hash": "c24bbb85a6",
+   "author": "author 27",
+   "question": "Fix conditional imports for pyright",
+   "gold": [
+    "httpx/_compat.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "setup.cfg",
+    "httpx/_transports/base.py",
+    "tests/test_utils.py",
+    "tests/utils.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 314,
+   "build_s": 0.2
+  },
+  {
+   "hash": "d41840e18d",
+   "author": "author 1",
+   "question": "Fix typo.",
+   "gold": [
+    "httpx/_main.py"
+   ],
+   "first": [
+    "httpx/_decoders.py"
+   ],
+   "top5": [
+    "httpx/_decoders.py",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/workflows/publish.yml",
+    "tests/test_decoders.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 382,
+   "build_s": 1.1
+  },
+  {
+   "hash": "4882e98049",
+   "author": "author 1",
+   "question": "Fix response.url annotation",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "mkdocs.yml"
+   ],
+   "top5": [
+    "mkdocs.yml",
+    "httpx/_models.py",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    "httpx/_client.py",
+    "tests/test_decoders.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 582,
+   "build_s": 0.5
+  },
+  {
+   "hash": "efc841a9e8",
+   "author": "author 28",
+   "question": "Fix typo on _merge_url",
+   "gold": [
+    "httpx/_client.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "mkdocs.yml",
+    "httpx/_client.py",
+    "tests/models/test_url.py",
+    "tests/test_status_codes.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 467,
+   "build_s": 0.3
+  },
+  {
+   "hash": "82ba15b521",
+   "author": "author 29",
+   "question": "Fix typos",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_content.py",
+    "httpx/_models.py",
+    "httpx/_transports/base.py",
+    "httpx/_transports/default.py",
+    "httpx/_types.py",
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "httpx/_decoders.py"
+   ],
+   "top5": [
+    "httpx/_decoders.py",
+    "setup.py",
+    "httpx/_utils.py",
+    "tests/test_decoders.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 380,
+   "build_s": 0.1
+  },
+  {
+   "hash": "b7dc0c3df6",
+   "author": "author 1",
+   "question": "Fix for stream uploads that subclass SyncByteStream/AsyncByteStream",
+   "gold": [
+    "httpx/_content.py"
+   ],
+   "first": [
+    "httpx/_client.py"
+   ],
+   "top5": [
+    "httpx/_client.py",
+    "httpx/_content.py",
+    "httpx/_multipart.py",
+    "tests/test_content.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 501,
+   "build_s": 0.2
+  },
+  {
+   "hash": "321d4aa509",
+   "author": "author 25",
+   "question": "Fix Headers.update to correctly handle repeated headers",
+   "gold": [
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "httpx/_client.py",
+    "httpx/_main.py",
+    "tests/conftest.py",
+    "tests/client/test_headers.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 591,
+   "build_s": 0.4
+  },
+  {
+   "hash": "2814fd379c",
+   "author": "author 30",
+   "question": "Fix console markup escaping issue",
+   "gold": [
+    "httpx/_main.py"
+   ],
+   "first": [
+    "httpx/_main.py"
+   ],
+   "top5": [
+    "httpx/_main.py",
+    "mkdocs.yml",
+    "httpx/_utils.py",
+    "httpx/_models.py",
+    "tests/test_multipart.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 544,
+   "build_s": 0.2
+  },
+  {
+   "hash": "c82885ac04",
+   "author": "author 31",
+   "question": "Fix cli docs --proxies #2124",
+   "gold": [
+    "httpx/_main.py"
+   ],
+   "first": [
+    "httpx/_utils.py"
+   ],
+   "top5": [
+    "httpx/_utils.py",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/workflows/publish.yml",
+    "httpx/_client.py",
+    "docs/js/chat.js"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 464,
+   "build_s": 0.7
+  },
+  {
+   "hash": "d5900cd40e",
+   "author": "author 1",
+   "question": "Fix empty query params",
+   "gold": [
+    "httpx/_urls.py"
+   ],
+   "first": [
+    "httpx/_urls.py"
+   ],
+   "top5": [
+    "httpx/_urls.py",
+    "httpx/_client.py",
+    "tests/models/test_url.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 580,
+   "build_s": 1.3
+  },
+  {
+   "hash": "f0fd91925b",
+   "author": "author 25",
+   "question": "fix type annotation for MockTransport",
+   "gold": [
+    "httpx/_transports/mock.py"
+   ],
+   "first": [
+    "httpx/_transports/mock.py"
+   ],
+   "top5": [
+    "httpx/_transports/mock.py",
+    "httpx/__init__.py",
+    "httpx/_client.py",
+    "tests/client/test_auth.py",
+    "tests/client/test_client.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 493,
+   "build_s": 1.5
+  },
+  {
+   "hash": "c1cc6b2462",
+   "author": "author 32",
+   "question": "Fixes #2666: None is the default value of file for httpx.NetRCAuth",
+   "gold": [
+    "httpx/_auth.py"
+   ],
+   "first": [
+    "httpx/_auth.py"
+   ],
+   "top5": [
+    "httpx/_auth.py",
+    "httpx/_models.py",
+    "httpx/_multipart.py",
+    "tests/client/test_auth.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 456,
+   "build_s": 0.6
+  },
+  {
+   "hash": "15d09a3bbc",
+   "author": "author 33",
+   "question": "NO_PROXY should support IPv4, IPv6 and localhost",
+   "gold": [
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "httpx/_client.py"
+   ],
+   "top5": [
+    "httpx/_client.py",
+    "httpx/_utils.py",
+    "tests/client/test_proxies.py"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 872,
+   "build_s": 0.1
+  },
+  {
+   "hash": "9ae170a936",
+   "author": "author 1",
+   "question": "Fix optional percent encoding behaviour.",
+   "gold": [
+    "httpx/_urlparse.py"
+   ],
+   "first": [
+    "httpx/_urlparse.py"
+   ],
+   "top5": [
+    "httpx/_urlparse.py",
+    "tests/models/test_responses.py",
+    "tests/models/test_url.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 415,
+   "build_s": 0.2
+  },
+  {
+   "hash": "32e25497a3",
+   "author": "author 34",
+   "question": "Fix ruff error and script",
+   "gold": [
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "pyproject.toml"
+   ],
+   "top5": [
+    "pyproject.toml",
+    ".github/workflows/publish.yml",
+    ".github/workflows/test-suite.yml",
+    "httpx/_transports/wsgi.py",
+    "httpx/_models.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 503,
+   "build_s": 0.2
+  },
+  {
+   "hash": "ee432c0d30",
+   "author": "author 1",
+   "question": "Fix for gen-delims escaping behaviour in path/query/fragment",
+   "gold": [
+    "httpx/_urlparse.py"
+   ],
+   "first": [
+    "httpx/_urlparse.py"
+   ],
+   "top5": [
+    "httpx/_urlparse.py",
+    "pyproject.toml"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 611,
+   "build_s": 0.2
+  },
+  {
+   "hash": "a682f6f1c7",
+   "author": "author 3",
+   "question": "Fix exception suppression in asgi transport",
+   "gold": [
+    "httpx/_transports/asgi.py"
+   ],
+   "first": [
+    "httpx/_transports/asgi.py"
+   ],
+   "top5": [
+    "httpx/_transports/asgi.py",
+    "httpx/_exceptions.py",
+    "tests/test_asgi.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 603,
+   "build_s": 0.2
+  },
+  {
+   "hash": "301b8fb03a",
+   "author": "author 35",
+   "question": "Fix URLPattern examples",
+   "gold": [
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "httpx/_utils.py"
+   ],
+   "top5": [
+    "httpx/_utils.py",
+    "httpx/_client.py",
+    "tests/test_utils.py",
+    "tests/models/test_url.py",
+    "tests/client/test_proxies.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 567,
+   "build_s": 0.2
+  },
+  {
+   "hash": "e63b6594f2",
+   "author": "author 36",
+   "question": "Fix encode host",
+   "gold": [
+    "httpx/_urlparse.py"
+   ],
+   "first": [
+    "httpx/_urlparse.py"
+   ],
+   "top5": [
+    "httpx/_urlparse.py",
+    "docs/js/chat.js",
+    "httpx/_client.py",
+    "httpx/_urls.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 353,
+   "build_s": 0.3
+  },
+  {
+   "hash": "1e11096473",
+   "author": "author 37",
+   "question": "Fixed `iter_text` adding an empty string",
+   "gold": [
+    "httpx/_decoders.py",
+    "httpx/_models.py"
+   ],
+   "first": [
+    "httpx/_models.py"
+   ],
+   "top5": [
+    "httpx/_models.py",
+    "httpx/_urlparse.py",
+    "httpx/_decoders.py",
+    "tests/models/test_responses.py",
+    "tests/test_decoders.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 592,
+   "build_s": 0.7
+  },
+  {
+   "hash": "3b9060ee11",
+   "author": "author 38",
+   "question": "Fix environment proxies",
+   "gold": [
+    "httpx/_utils.py"
+   ],
+   "first": [
+    "httpx/_utils.py"
+   ],
+   "top5": [
+    "httpx/_utils.py",
+    "httpx/_client.py",
+    "tests/test_utils.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 437,
+   "build_s": 0.2
+  },
+  {
+   "hash": "99cba6ac64",
+   "author": "author 39",
+   "question": "Fix RFC 2069 mode digest authentication",
+   "gold": [
+    "httpx/_auth.py"
+   ],
+   "first": [
+    "httpx/_auth.py"
+   ],
+   "top5": [
+    "httpx/_auth.py",
+    "httpx/_status_codes.py",
+    "httpx/_urlparse.py",
+    "tests/client/test_auth.py",
+    "tests/test_auth.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 861,
+   "build_s": 0.2
+  },
+  {
+   "hash": "6d852d319a",
+   "author": "author 40",
+   "question": "Fix client.send() timeout new Request instance",
+   "gold": [
+    "httpx/_client.py"
+   ],
+   "first": [
+    "httpx/_client.py"
+   ],
+   "top5": [
+    "httpx/_client.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 529,
+   "build_s": 0.8
+  },
+  {
+   "hash": "a33c87852b",
+   "author": "author 1",
+   "question": "Fix `extensions` type annotation.",
+   "gold": [
+    "httpx/_models.py",
+    "httpx/_types.py"
+   ],
+   "first": [
+    "mkdocs.yml"
+   ],
+   "top5": [
+    "mkdocs.yml",
+    "httpx/_client.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 431,
+   "build_s": 0.2
+  },
+  {
+   "hash": "89599a9541",
+   "author": "author 1",
+   "question": "Fix `verify=False`, `cert=...` case.",
+   "gold": [
+    "httpx/_config.py"
+   ],
+   "first": [
+    "httpx/_config.py"
+   ],
+   "top5": [
+    "httpx/_config.py",
+    "httpx/_client.py",
+    "tests/test_config.py"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 681,
+   "build_s": 0.2
+  },
+  {
+   "hash": "4189b7f051",
+   "author": "author 38",
+   "question": "fix typo",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_models.py"
+   ],
+   "first": [
+    "pyproject.toml"
+   ],
+   "top5": [
+    "pyproject.toml",
+    "httpx/_urlparse.py",
+    ".github/workflows/publish.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    "tests/test_decoders.py"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 242,
+   "build_s": 0.2
+  }
+ ]
+}

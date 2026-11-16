@@ -1,0 +1,68 @@
+[
+ {
+  "kind": "docs",
+  "wording": "same",
+  "q": "What Go version does gin require?",
+  "lane": "CERTIFIED",
+  "opens": true,
+  "line_in_readout": true,
+  "old_answer_shown": false,
+  "tokens": 204,
+  "head": "(readout: the code a taught question's vector points to (ranked by meaning, not verified: use it only if it answers the question))"
+ },
+ {
+  "kind": "docs",
+  "wording": "other",
+  "q": "Minimum Go toolchain needed to use this library?",
+  "lane": "MIX",
+  "opens": false,
+  "line_in_readout": true,
+  "old_answer_shown": false,
+  "tokens": 310,
+  "head": "(readout: meaning and keyword matches)"
+ },
+ {
+  "kind": "CI",
+  "wording": "same",
+  "q": "Which Go versions does CI test against?",
+  "lane": "CERTIFIED",
+  "opens": true,
+  "line_in_readout": true,
+  "old_answer_shown": false,
+  "tokens": 267,
+  "head": "(readout: the code a taught question's vector points to (ranked by meaning, not verified: use it only if it answers the question))"
+ },
+ {
+  "kind": "CI",
+  "wording": "other",
+  "q": "What's the Go version matrix in the GitHub Actions pipeline?",
+  "lane": "MIX",
+  "opens": false,
+  "line_in_readout": false,
+  "old_answer_shown": false,
+  "tokens": 505,
+  "head": "(readout: meaning and keyword matches)"
+ },
+ {
+  "kind": "release history",
+  "wording": "same",
+  "q": "What is the latest release in the changelog?",
+  "lane": "MIX",
+  "opens": false,
+  "line_in_readout": false,
+  "old_answer_shown": false,
+  "tokens": 486,
+  "head": "(readout: meaning and keyword matches)"
+ },
+ {
+  "kind": "release history",
+  "wording": "other",
+  "q": "What's the newest version listed in the release notes?",
+  "lane": "MIX",
+  "opens": false,
+  "line_in_readout": false,
+  "old_answer_shown": false,
+  "tokens": 574,
+  "head": "(readout: meaning and keyword matches)"
+ }
+]

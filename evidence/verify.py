@@ -359,6 +359,31 @@ if os.path.isdir(f"{E}/prove-learn"):
         line(f"{name}: lessons still found at the last fix", f"{last['carried']} of {last['lessons']}", "prove-learn rows")
         line(f"{name}: right file first, cold -> with the graph", f"{sum(x['md_first'] for x in rows_)} -> {sum(x['mem_first'] for x in rows_)} of {len(rows_)}", "prove-learn rows")
 
+# --- 11e. modeld prove on gin and httpx, and the memory on questions that aren't fixes (both exploratory) ---------
+if os.path.isdir(f"{E}/prove-gin-httpx"):
+    section("modeld prove on gin (Go) and httpx (Python), every fix in the window (evidence/prove-gin-httpx, exploratory)")
+    for name in ("gin", "httpx"):
+        R = load(f"prove-gin-httpx/{name}.long.json")["rows"]
+        n10, n01, p = mcnemar([r["md_first"] for r in R], [r["grep_first"] for r in R])
+        line(f"{name}: right file first / top 5, Model D vs grep", f"{sum(r['md_first'] for r in R)}/{sum(r['md_top5'] for r in R)} vs {sum(r['grep_first'] for r in R)}/{sum(r['grep_top5'] for r in R)} of {len(R)}", "prove-gin-httpx rows")
+        line(f"{name}: right file first, paired (MD only / grep only, p)", f"{n10} / {n01}, p = {p:.2g}", "prove-gin-httpx rows")
+    R = load("prove-gin-httpx/gin.learn.json")["rows"]
+    line("gin, last 26 fixes: right file first, cold -> with memory", f"{sum(r['md_first'] for r in R)} -> {sum(r['mem_first'] for r in R)}", "prove-gin-httpx rows")
+    line("gin, last 26 fixes: lessons still found at the last fix", f"{R[-1]['carried']} of {R[-1]['lessons']}", "prove-gin-httpx rows")
+
+if os.path.isdir(f"{E}/memory-test"):
+    section("The memory on questions that aren't fixes: gin and httpx, a year apart (evidence/memory-test, exploratory)")
+    MT = load("memory-test/memtest_questions.json")["repos"]
+    mt = lambda name: load(f"memory-test/data/memtest/{name}.json")
+    placed = {r: [not t["reply"].startswith("taught 0") for t in mt(f"{r}.teach")] for r in MT}
+    n_q, n_p = sum(len(v["questions"]) for v in MT.values()), sum(sum(v) for v in placed.values())
+    opened = lambda ph: sum(x["opens"] and ok for r in MT for x, ok in zip(mt(f"{r}.{ph}")[0::2], placed[r]))
+    in_readout = lambda ph: sum(x["line_in_readout"] for r in MT for x in mt(f"{r}.{ph}")[0::2])
+    line("lessons placed by teach", f"{n_p} of {n_q}", "memtest rows")
+    line("lessons opened: next session / teammate / copy / a year later", " / ".join(str(opened(ph)) for ph in ("next", "mate", "copy", "later")) + f" of {n_p}", "memtest rows")
+    line("answer line, same words: cold / taught / year later / fresh", " / ".join(str(in_readout(ph)) for ph in ("cold", "next", "later", "fresh")) + f" of {n_q}", "memtest rows")
+    line("old answers shown, a year later", f"{sum(x['old_answer_shown'] for r in MT for ph in ('later', 'fresh') for x in mt(f'{r}.{ph}'))}", "memtest rows")
+
 # --- 12. Every evidence file is present and unchanged ---------------------------------------------------------------
 section("Every file listed in MANIFEST.json, present with its recorded SHA-256")
 M = load("MANIFEST.json")

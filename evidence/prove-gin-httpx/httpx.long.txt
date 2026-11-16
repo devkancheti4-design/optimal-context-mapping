@@ -1,0 +1,95 @@
+W1106 19:27:19.193000 16712 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Replaying up to 200 recent fix commits of <work>/demo/httpx, each against the code right before it (zero tokens; the first build embeds the whole repository)
+
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 17340.84it/s]
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19037.62it/s]
+    1/72  right  grep miss   Fix docstrings
+    2/72  right  grep top 5  Fixed response repr.
+    3/72  right  grep top 5  Fix `URL.join(...)`
+    4/72  right  grep top 5  Fixed multipart header params encoding
+    5/72  miss   grep miss   Fix typos in docstrings
+    6/72  right  grep right  fixed __repr__ function of Headers and Url classes
+    7/72  right  grep miss   Fix typos in comments
+    8/72  top 5  grep top 5  Fix bug in calculating maximum frame size
+    9/72  miss   grep top 5  Fix invalid f-string
+   10/72  right  grep right  Fix bug when using client without timeouts in Python 3.6
+   11/72  miss   grep top 5  Fix wrongly deleted params introduced #408
+   12/72  right  grep right  Fix redirect cookie behavior
+   13/72  right  grep right  Fix race condition on stream.read
+   14/72  top 5  grep top 5  Fixed version requirement for rfc3986. Issue reference #504
+   15/72  right  grep right  Fix Host header and HSTS when the default port is explicitly
+   16/72  top 5  grep top 5  Fixed redirect loop
+   17/72  right  grep top 5  Fix urllib3 proxy instantiation
+   18/72  right  grep right  Fix for streaming a redirect response body with allow_redire
+   19/72  miss   grep miss   Fix ProxyMode for code in dispatch/proxy_http
+   20/72  top 5  grep miss   Fix type checking breakage
+   21/72  miss   grep right  Fix multipart edge cases with `data={}` and/or `files={}`
+   22/72  miss   grep top 5  Fix Client Docstring and add AsyncClient to API docs
+   23/72  miss   grep miss   Fix casing nits
+   24/72  right  grep miss   Fix support for generator-based WSGI apps
+   25/72  miss   grep top 5  Fix bytes support in multipart uploads
+   26/72  right  grep top 5  Fix pool option warnings for default connection pool
+   27/72  right  grep right  Fixes #1033 - Ensure that text that spans 3 invocations befo
+   28/72  right  grep miss   Fixes for LineDecoding
+   29/72  miss   grep miss   Fixed warnings in unit tests suite, caused by #1127 PR
+   30/72  right  grep top 5  Fix behaviour with multiple Set-Cookie headers
+   31/72  right  grep right  Fix #1146 Set default allow_redirects to true
+   32/72  right  grep right  Fix request auto headers
+   33/72  right  grep top 5  Fix HTTPError doc
+   34/72  right  grep top 5  Fix ASGITransport path escaping
+   35/72  top 5  grep top 5  Fix stream unsetting auth
+   36/72  top 5  grep top 5  Fix response.elapsed
+   37/72  right  grep right  Fix automatic .read() when Response instances are created wi
+   38/72  miss   grep miss   Fix doc capitalization
+   39/72  right  grep top 5  Fix CertTypes
+   40/72  right  grep right  Fix some cases of merging with base_url
+   41/72  right  grep top 5  Fix Content-Length for unicode file contents with multipart
+   42/72  top 5  grep right  Fix extenstions typo in AsyncHTTPTransport
+   43/72  miss   grep miss   Fix typo
+   44/72  right  grep right  Fix typo in wsgi.py
+   45/72  right  grep top 5  Fix typo in RemoteProtocolError description
+   46/72  top 5  grep top 5  Fix iter_bytes with empty content
+   47/72  miss   grep miss   Fix conditional imports for pyright
+   48/72  miss   grep miss   Fix typo.
+   49/72  top 5  grep top 5  Fix response.url annotation
+   50/72  top 5  grep right  Fix typo on _merge_url
+   51/72  top 5  grep miss   Fix typos
+   52/72  top 5  grep top 5  Fix for stream uploads that subclass SyncByteStream/AsyncByt
+   53/72  right  grep top 5  Fix Headers.update to correctly handle repeated headers
+   54/72  right  grep right  Fix console markup escaping issue
+   55/72  miss   grep top 5  Fix cli docs --proxies #2124
+   56/72  right  grep right  Fix empty query params
+   57/72  right  grep miss   fix type annotation for MockTransport
+   58/72  right  grep miss   Fixes #2666: None is the default value of file for httpx.Net
+   59/72  top 5  grep top 5  NO_PROXY should support IPv4, IPv6 and localhost
+   60/72  right  grep right  Fix optional percent encoding behaviour.
+   61/72  miss   grep miss   Fix ruff error and script
+   62/72  right  grep right  Fix for gen-delims escaping behaviour in path/query/fragment
+   63/72  right  grep top 5  Fix exception suppression in asgi transport
+   64/72  right  grep top 5  Fix URLPattern examples
+   65/72  right  grep right  Fix encode host
+   66/72  right  grep top 5  Fixed `iter_text` adding an empty string
+   67/72  right  grep top 5  Fix environment proxies
+   68/72  right  grep right  Fix RFC 2069 mode digest authentication
+   69/72  right  grep right  Fix client.send() timeout new Request instance
+   70/72  miss   grep top 5  Fix `extensions` type annotation.
+   71/72  right  grep right  Fix `verify=False`, `cert=...` case.
+   72/72  miss   grep miss   fix typo
+
+72 real fixes, true answers from git:
+
+                                       Model D    grep-first
+  right file first                    42 (58%)      23 (32%)
+  right file in the top 5             55 (76%)      54 (75%)
+  changed line in the top 5           20 (28%)             -
+
+  With 72 fixes these shares can move by up to about ±12 points by chance; --fixes 200 gives a steadier read.
+  496 tokens per readout. Model D is cold here, nothing taught. --learn replays the memory a team's agents build up, fix by fix, at zero tokens.
+  every question and answer: <work>/demo/out/httpx.long.json
+real 83.48
+user 15.93
+sys 6.26

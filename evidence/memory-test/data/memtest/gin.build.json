@@ -1,0 +1,58 @@
+{
+ "builds": [
+  {
+   "args": [
+    "<work>/gin",
+    "--cache",
+    "<work>/gin.cache.sqlite"
+   ],
+   "seconds": 2.5,
+   "lines": [
+    "workspace ready: <work>/gin/modeld-out (4,578 units from 118 files; 0 newly embedded, the rest from the cache)"
+   ]
+  },
+  {
+   "args": [
+    "<work>/gin",
+    "--out",
+    "<work>/gin.mate",
+    "--carry",
+    "<work>/gin/modeld-out",
+    "--cache",
+    "<work>/gin.cache.sqlite"
+   ],
+   "seconds": 2.5,
+   "lines": [
+    "workspace ready: <work>/gin.mate (4,578 units from 118 files; 0 newly embedded, the rest from the cache)",
+    "carried from <work>/gin/modeld-out: 9 of 9 taught entries (0 moved, 0 found after reformatting), 0 abstained (their line is gone), 0 pruned; Life sha cc5be9efb939ba5e"
+   ]
+  },
+  {
+   "args": [
+    "<work>/gin",
+    "--cache",
+    "<work>/gin.cache.sqlite"
+   ],
+   "seconds": 2.5,
+   "lines": [
+    "workspace ready: <tmp> (5,008 units from 122 files; 0 newly embedded, the rest from the cache)",
+    "carried from <work>/gin/modeld-out: 7 of 9 taught entries (5 moved, 0 found after reformatting), 2 abstained (their line is gone), 0 pruned; Life sha 7929d89ca1c28288"
+   ]
+  },
+  {
+   "args": [
+    "<work>/gin",
+    "--out",
+    "<work>/gin.fresh",
+    "--cache",
+    "<work>/gin.cache.sqlite"
+   ],
+   "seconds": 2.2,
+   "lines": [
+    "workspace ready: <work>/gin.fresh (5,008 units from 122 files; 0 newly embedded, the rest from the cache)"
+   ]
+  }
+ ],
+ "commits_between": 118,
+ "diff": "61 files changed, 4771 insertions(+), 2445 deletions(-)"
+}

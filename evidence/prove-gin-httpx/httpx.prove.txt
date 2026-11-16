@@ -1,0 +1,26 @@
+W1106 16:59:22.793000 57711 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Replaying up to 50 recent fix commits of <work>/demo/httpx, each against the code right before it (zero tokens; the first build embeds the whole repository)
+
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8740.33it/s]
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22763.42it/s]
+    1/3  miss   grep top 5  Fix `extensions` type annotation.
+    2/3  right  grep right  Fix `verify=False`, `cert=...` case.
+    3/3  miss   grep miss   fix typo
+
+3 real fixes, true answers from git:
+
+                                       Model D    grep-first
+  right file first                     1 (33%)       1 (33%)
+  right file in the top 5              1 (33%)       2 (67%)
+  changed line in the top 5            1 (33%)             -
+
+  With 3 fixes these shares can move by up to about ±57 points by chance; --fixes 200 gives a steadier read.
+  451 tokens per readout. Model D is cold here, nothing taught. --learn replays the memory a team's agents build up, fix by fix, at zero tokens.
+  every question and answer: <work>/demo/out/httpx.prove.json
+real 34.33
+user 5.66
+sys 1.36

@@ -1,0 +1,58 @@
+{
+ "builds": [
+  {
+   "args": [
+    "<work>/httpx",
+    "--cache",
+    "<work>/httpx.cache.sqlite"
+   ],
+   "seconds": 2.3,
+   "lines": [
+    "workspace ready: <work>/httpx/modeld-out (5,360 units from 100 files; 0 newly embedded, the rest from the cache)"
+   ]
+  },
+  {
+   "args": [
+    "<work>/httpx",
+    "--out",
+    "<work>/httpx.mate",
+    "--carry",
+    "<work>/httpx/modeld-out",
+    "--cache",
+    "<work>/httpx.cache.sqlite"
+   ],
+   "seconds": 2.5,
+   "lines": [
+    "workspace ready: <work>/httpx.mate (5,360 units from 100 files; 0 newly embedded, the rest from the cache)",
+    "carried from <work>/httpx/modeld-out: 11 of 11 taught entries (0 moved, 0 found after reformatting), 0 abstained (their line is gone), 0 pruned; Life sha 931c293acc5b1720"
+   ]
+  },
+  {
+   "args": [
+    "<work>/httpx",
+    "--cache",
+    "<work>/httpx.cache.sqlite"
+   ],
+   "seconds": 2.6,
+   "lines": [
+    "workspace ready: <tmp> (5,375 units from 100 files; 0 newly embedded, the rest from the cache)",
+    "carried from <work>/httpx/modeld-out: 10 of 11 taught entries (1 moved, 0 found after reformatting), 1 abstained (their line is gone), 0 pruned; Life sha 9492bdd2246517e6"
+   ]
+  },
+  {
+   "args": [
+    "<work>/httpx",
+    "--out",
+    "<work>/httpx.fresh",
+    "--cache",
+    "<work>/httpx.cache.sqlite"
+   ],
+   "seconds": 2.3,
+   "lines": [
+    "workspace ready: <work>/httpx.fresh (5,375 units from 100 files; 0 newly embedded, the rest from the cache)"
+   ]
+  }
+ ],
+ "commits_between": 20,
+ "diff": "28 files changed, 155 insertions(+), 100 deletions(-)"
+}

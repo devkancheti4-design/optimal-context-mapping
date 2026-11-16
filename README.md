@@ -27,7 +27,7 @@ doesn't extend Claude's cache. It leaves much less to pay for again.
 | **A real team's year costs less** | 2.09x cheaper (1.84x–2.39x), 252 vs 253 right | Django's 288 fixes from 2022, Claude ([team-year](evidence/team-year)) |
 | **Reworded questions find the line** | a perfect lesson brings the right line 66.7% of the time vs 30.0% without; 22 facts gained, 0 lost | ColdSession |
 | **Teammates share it** | 0 lessons lost on a teammate's own build of the same commit | ColdSession |
-| **Lessons follow the code** | about 80% survive a year of commits; in one restructure, 279 of 400 followed their code into new packages | ColdSession |
+| **Lessons follow the code** | about 80% survive a year of commits; in one restructure, 279 of 400 followed their code into new packages; on gin and httpx, 17 of 20 after a year, with no old answer shown (exploratory) | ColdSession; [memory-test](evidence/memory-test) |
 | **Lessons don't turn into old answers** | it stores pointers, not answers; after a rebuild, a lesson on an edited line steps aside instead of guessing | ColdSession |
 | **Ranking is free** | no model calls to rank; a first look is about 400–700 tokens | [Results](#results) |
 
@@ -118,8 +118,8 @@ answer is, and remembers it. It never draws a call graph or a blast radius. Buil
 
 ## Results
 
-Every test plan was written and hashed before it ran. The raw rows are in [`evidence/`](evidence), and
-`python evidence/verify.py` recomputes every number below.
+Every test plan was written and hashed before it ran, except in the row marked exploratory. The raw rows are in
+[`evidence/`](evidence), and `python evidence/verify.py` recomputes every number below.
 
 | work | result, against the same agent alone | measured on |
 |---|---|---|
@@ -130,6 +130,7 @@ Every test plan was written and hashed before it ran. The raw rows are in [`evid
 | Repository Q&A benchmark | 2.22x cheaper, score 61.0 vs 65.3 out of 100; a retest with caching on both sides: 1.90x, 73.3 vs 75.9 | SWE-QA: 336 questions in 7 repositories; the retest on 91 ([claude-api](evidence/claude-api)) |
 | Brand-new, scattered bugs | 1.33–1.50x | 114 Django bugs; sympy, scikit-learn, pytest; matplotlib, sphinx, requests, flask |
 | A TypeScript codebase it had never seen (offline, no model) | right file first 31% vs 16% for grep; top 5 60% vs 42% (0.5.2: 25%, 56%) | 241 real honojs/hono fixes, each against the code right before it ([new-codebase-hono](evidence/new-codebase-hono), [tests-trail](evidence/tests-trail)) |
+| A Go codebase and another Python one (offline, no model; exploratory) | right file first: gin 39% vs 26% for grep, httpx 58% vs 32%; top 5 about even (65% vs 58%, 76% vs 75%) | 149 real gin-gonic/gin and 72 encode/httpx fixes, each against the code right before it ([prove-gin-httpx](evidence/prove-gin-httpx)) |
 | Writing fixes | not cheaper ($0.197 vs $0.160 per fix) | 19 Django issues |
 | Code review | about 1.3x at most | SWR-Bench pilot, partial ([swr-pilot](evidence/swr-pilot)) |
 | New sessions, a teammate, a year of real commits | 2.0–2.4x fewer tokens per question at about the same accuracy; lowest tokens per right answer in every session | ColdSession, our own benchmark: reflex, scikit-learn and sphinx, Gemini 3.5 Flash-Lite ([coldsession](evidence/coldsession)) |
@@ -373,7 +374,8 @@ modeld measure compare ~/before-transcripts ~/after-transcripts     # the real b
   With an agent's own lessons, only 20–32% were answered in one read, so the next day cost about as much as the first
   time ([coldsession](evidence/coldsession)).
 - **Editing a line drops its lesson.** A lesson follows its exact line. On `requests`, adding type hints dropped 12 of
-  24 lessons, though the facts hadn't changed. Those questions go back to being explored.
+  24 lessons, though the facts hadn't changed. Those questions go back to being explored. On gin, a constant moved
+  into a `const (...)` block dropped its lesson the same way ([memory-test](evidence/memory-test)).
 - **A plain notes file can be right more often later on.** For a teammate it was right 87.5% of the time vs Model D's
   70%, and a year later 75% vs 57.5%, at about 1.6x the tokens. Its tokens doubled with 200 more lessons on disk, while
   Model D's stayed flat.
@@ -388,8 +390,9 @@ modeld measure compare ~/before-transcripts ~/after-transcripts     # the real b
   sections 10–11).
 - **Deep dives across many files save little:** a pointer marks one line, not a whole trail.
 - **The team server has no login yet,** and there is no SSO and no audit log. Run it inside your own network.
-- **Evidence:** mostly Python, plus one TypeScript project and one app with a React frontend. Every test was run by
-  us. Your codebase is the real test, which is why `forecast` and `prove` exist.
+- **Evidence:** mostly Python, plus one TypeScript project, one Go project (exploratory runs:
+  [prove-gin-httpx](evidence/prove-gin-httpx), [memory-test](evidence/memory-test)) and one app with a React frontend.
+  Every test was run by us. Your codebase is the real test, which is why `forecast` and `prove` exist.
 
 ---
 
@@ -414,7 +417,7 @@ Model D adds no model cost of its own, apart from the optional `cover`. It cuts 
 predictions that failed.
 
 ```bash
-python evidence/verify.py     # recomputes every number and checks all 627 evidence files against their hashes
+python evidence/verify.py     # recomputes every number and checks the 745 files in evidence/MANIFEST.json against their hashes
 ```
 
 ## Licence

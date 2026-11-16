@@ -1,0 +1,34 @@
+{
+ "repo": "gin",
+ "calls": [
+  {
+   "args": [
+    "ask",
+    "Which proxies does gin trust by default?"
+   ],
+   "out": "(readout: meaning and keyword matches)\n\n1. [gin/docs/doc.md:2445]\n**Attention:** Gin trusts all proxies by default if you don't specify a trusted proxy using the function above, **this is NOT safe**.\n\n2. [gin/gin.go:433]\n// SetTrustedProxies set a list of network origins (IPv4 addresses,\n// IPv4 CIDRs, IPv6 addresses or IPv6 CIDRs) from which to trust\n// request's headers that contain alternative client IP when\n// `(*gin.Engine).ForwardedByClientIP` is `true`. `TrustedProxies`\n// feature is enabled by default, and it also trusts all proxies\n// by default. If you want to disable this feature, use\n\n3. [gin/CHANGELOG.md:280]\nfor gin [#3081](https://github.com/gin-gonic/gin/pull/3081) * IPv6 add default trusted proxies [#3033](https://github.com/gin-gonic/gin/pull/3033)\n\n4. [gin/auth.go:19]\n// AuthProxyUserKey is the cookie name for proxy_user credential in basic auth for proxy.\nconst AuthProxyUserKey = \"proxy_user\"\n\n5. [gin/CHANGELOG.md:298]\n* TrustedProxies: make it backward-compatible [#2887](https://github.com/gin-gonic/gin/pull/2887), closed issue [#2819](https://github.com/gin-gonic/gin/issues/2819).\n\n6. [gin/docs/doc.md:2434]\n## Don't trust all proxies\n\n7. [gin/gin.go:551]\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n\n8. [gin/gin.go:567]\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n\n9. [gin/gin.go:590]\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n\n10. [gin/gin.go:612]\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n"
+  },
+  {
+   "args": [
+    "teach",
+    "Which proxies does gin trust by default?",
+    "gin.go:215"
+   ],
+   "out": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (1 examples)\n"
+  },
+  {
+   "args": [
+    "ask",
+    "Which proxies does gin trust by default?"
+   ],
+   "out": "(readout: the code a taught question's vector points to (ranked by meaning, not verified: use it only if it answers the question))\n\n1. [gin/gin.go:208]\n\t\tUseRawPath:             false,\n\t\tRemoveExtraSlash:       false,\n\t\tUnescapePathValues:     true,\n\t\tMaxMultipartMemory:     defaultMultipartMemory,\n\t\ttrees:                  make(methodTrees, 0, 9),\n\t\tdelims:                 render.Delims{Left: \"{{\", Right: \"}}\"},\n\t\tsecureJSONPrefix:       \"while(1);\",\n\t\ttrustedProxies:         []string{\"0.0.0.0/0\", \"::/0\"},\n\n2. [gin/docs/doc.md:2445]\n**Attention:** Gin trusts all proxies by default if you don't specify a trusted proxy using the function above, **this is NOT safe**.\n\n3. [gin/gin.go:433]\n// SetTrustedProxies set a list of network origins (IPv4 addresses,\n// IPv4 CIDRs, IPv6 addresses or IPv6 CIDRs) from which to trust\n// request's headers that contain alternative client IP when\n// `(*gin.Engine).ForwardedByClientIP` is `true`. `TrustedProxies`\n// feature is enabled by default, and it also trusts all proxies\n// by default. If you want to disable this feature, use\n\n4. [gin/CHANGELOG.md:280]\nfor gin [#3081](https://github.com/gin-gonic/gin/pull/3081) * IPv6 add default trusted proxies [#3033](https://github.com/gin-gonic/gin/pull/3033)\n\n5. [gin/auth.go:19]\n// AuthProxyUserKey is the cookie name for proxy_user credential in basic auth for proxy.\nconst AuthProxyUserKey = \"proxy_user\"\n"
+  },
+  {
+   "args": [
+    "ask",
+    "Out of the box, whose X-Forwarded-For header is believed?"
+   ],
+   "out": "(readout: meaning and keyword matches)\n\n1. [gin/docs/doc.md:2494]\nFor example, if your CDN puts // the client IP in X-CDN-Client-IP: router.TrustedPlatform = \"X-CDN-Client-IP\"\n\n2. [gin/docs/doc.md:2462]\nrouter.GET(\"/\", func(c *gin.Context) { // If the client is 192.168.1.2, use the X-Forwarded-For // header to deduce the original client IP from the trust- // worthy parts of that header. // Otherwise, simply return the direct client IP fmt.Printf(\"ClientIP: %s\\n\", c.ClientIP()) }) router.Run() } ```\n\n3. [gin/gin.go:484]\n\t\t// X-Forwarded-For is appended by proxy\n\t\t// Check IPs in reverse order and stop when find untrusted proxy\n\t\tif (i == 0) || (!engine.isTrustedProxy(ip)) {\n\t\t\treturn ipStr, true\n\t\t}\n\t}\n\treturn \"\", false\n}\n\n4. [gin/gin.go:123]\n\t// ForwardedByClientIP if enabled, client IP will be parsed from the request's headers that\n\t// match those stored at `(*gin.Engine).RemoteIPHeaders`. If no IP was\n\t// fetched, it falls back to the IP obtained from\n\t// `(*gin.Context).Request.RemoteAddr`.\n\tForwardedByClientIP bool\n\n5. [gin/gin.go:153]\n\t// TrustedPlatform if set to a constant of value gin.Platform*, trusts the headers set by\n\t// that platform, for example to determine the client IP\n\tTrustedPlatform string\n\n6. [gin/logger.go:246]\n\tout := conf.Output\n\tif out == nil {\n\t\tout = DefaultWriter\n\t}\n\n7. [gin/Makefile:23]\n\t\telif grep -q \"setup failed\" tmp.out; then \\\n\t\t\trm tmp.out; \\\n\t\t\texit 1; \\\n\t\tfi; \\\n\t\tif [ -f profile.out ]; then \\\n\t\t\tcat profile.out | grep -v \"mode:\" >> coverage.out; \\\n\t\t\trm profile.out; \\\n\t\tfi; \\\n\tdone\n\n8. [gin/Makefile:10]\n.PHONY: test\n# Run tests to verify code functionality.\ntest:\n\techo \"mode: count\" > coverage.out\n\tfor d in $(TESTFOLDER); do \\\n\t\t$(GO) test $(TESTTAGS) -v -covermode=count -coverprofile=profile.out $$d > tmp.out; \\\n\t\tcat tmp.out; \\\n\t\tif grep -q \"^--- FAIL\" tmp.out; then \\\n\t\t\trm tmp.out; \\\n\t\t\texit 1; \\\n\t\telif grep -q \"build failed\" tmp.out; then \\\n\t\t\trm tmp.out; \\\n\t\t\texit 1; \\\n\n9. [gin/context_test.go:1852]\n\tc.Request.Header.Del(\"X-Forwarded-For\")\n\tassert.Equal(t, \"10.10.10.10\", c.ClientIP())\n\n10. [gin/context_test.go:1911]\n\t// X-Forwarded-For has a non-IP element\n\t_ = c.engine.SetTrustedProxies([]string{\"40.40.40.40\"})\n\tc.Request.Header.Set(\"X-Forwarded-For\", \" blah \")\n\tassert.Equal(t, \"40.40.40.40\", c.ClientIP())\n"
+  }
+ ]
+}

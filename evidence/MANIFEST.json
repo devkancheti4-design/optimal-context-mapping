@@ -4216,5 +4216,257 @@
   "from": "independent-eval/env/modeld.lock.txt",
   "sha256": "1ed2e0b1a394def7f8794009b5f21831d26fe01b6856e83843523af9c5d406a7",
   "pre-registered": false
+ },
+ {
+  "file": "memory-test/RESULTS.md",
+  "from": "memory-test/RESULTS.md",
+  "sha256": "4464cd44a7d55a752221c8065e6fa458e2801142b60e3298e4337a375d699f0e",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/cli.json",
+  "from": "memory-test/data/memtest/cli.json",
+  "sha256": "a71e08420b299725d4b1f42140b38a9413946c4e1e4687c19582f43d8c92123a",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.build.json",
+  "from": "memory-test/data/memtest/gin.build.json",
+  "sha256": "79684deedde4e991bb7c1619cad3e32bfb61f1d3ca1c939a60029ed2c2843d35",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.cold.json",
+  "from": "memory-test/data/memtest/gin.cold.json",
+  "sha256": "5e87c6e4d501ba68846bdc6490219f8df512e1bdc47d915710570ea991156f52",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.copy.json",
+  "from": "memory-test/data/memtest/gin.copy.json",
+  "sha256": "f551cd6f4a71c7bcdb7ad2bc461f6865535af3e7120d33490ce138e094505aed",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.fresh.json",
+  "from": "memory-test/data/memtest/gin.fresh.json",
+  "sha256": "562b7eccea41a97b4dc7c404ce81fc57cf015ffc9c827d51efa8d686b7abf418",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.later.json",
+  "from": "memory-test/data/memtest/gin.later.json",
+  "sha256": "514648583a16f65d5f31fc5d67ee62e93b076f10c5913442c710c3c4ed9d1216",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.mate.json",
+  "from": "memory-test/data/memtest/gin.mate.json",
+  "sha256": "f551cd6f4a71c7bcdb7ad2bc461f6865535af3e7120d33490ce138e094505aed",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.next.json",
+  "from": "memory-test/data/memtest/gin.next.json",
+  "sha256": "f551cd6f4a71c7bcdb7ad2bc461f6865535af3e7120d33490ce138e094505aed",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.notes.json",
+  "from": "memory-test/data/memtest/gin.notes.json",
+  "sha256": "b7b5a83c303c2eaf3e7ea63dc938c81b0df3d67b06276827bce66d4733b0fdd3",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.recite.json",
+  "from": "memory-test/data/memtest/gin.recite.json",
+  "sha256": "f524e09e16d8efdbb360db45d76afaa12d0d342cf8d6ff7400593ddf48711a0d",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.recite_ask.json",
+  "from": "memory-test/data/memtest/gin.recite_ask.json",
+  "sha256": "040787a4beab5396c286e1992185cf31c870ae325d2b61da5eae793412b4c31f",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/gin.teach.json",
+  "from": "memory-test/data/memtest/gin.teach.json",
+  "sha256": "7baaa278da1fd317a6542bf12a801fa900b1e339439aa09b6e71d24aff9a00bf",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.build.json",
+  "from": "memory-test/data/memtest/httpx.build.json",
+  "sha256": "a2b16987456e1787a6237eae26de3125dd4c3dad886c46d795a4467fcd732146",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.cold.json",
+  "from": "memory-test/data/memtest/httpx.cold.json",
+  "sha256": "9df54d1dab342763bc5e8f7333a3b1debb7714e48b5840c5eea92c520104e99a",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.copy.json",
+  "from": "memory-test/data/memtest/httpx.copy.json",
+  "sha256": "863239e6194f5afae0239a4aba4941f669509018c8430ed1f04a7be630948162",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.fresh.json",
+  "from": "memory-test/data/memtest/httpx.fresh.json",
+  "sha256": "0819c1607b7273e2d6bbd9fd273acf813317d080509ba3b272e256133d0f7320",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.later.json",
+  "from": "memory-test/data/memtest/httpx.later.json",
+  "sha256": "0f7e9f2a16b007a1024c3dac225abc7c5fd4896e7fa7652def39870ceb88b82e",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.mate.json",
+  "from": "memory-test/data/memtest/httpx.mate.json",
+  "sha256": "863239e6194f5afae0239a4aba4941f669509018c8430ed1f04a7be630948162",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.next.json",
+  "from": "memory-test/data/memtest/httpx.next.json",
+  "sha256": "863239e6194f5afae0239a4aba4941f669509018c8430ed1f04a7be630948162",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.notes.json",
+  "from": "memory-test/data/memtest/httpx.notes.json",
+  "sha256": "47b691b49f1e829d7f2dc509df57017b439741d3935be639accc49328ba3f06e",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.recite.json",
+  "from": "memory-test/data/memtest/httpx.recite.json",
+  "sha256": "c328dc135b39b956a1f31a30a1d6a7c717188c8f0493a5b705bc045d3a4a0323",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.recite_ask.json",
+  "from": "memory-test/data/memtest/httpx.recite_ask.json",
+  "sha256": "c793aa4f0deb6abb5ae0789cf52547ca3a8302149ced78e48828e9204ab13d1d",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/httpx.teach.json",
+  "from": "memory-test/data/memtest/httpx.teach.json",
+  "sha256": "968aa122f07fea89dad14eb69e10d0dcb2523f0635fc80e9aff8b33df08d23ab",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/data/memtest/questions.sha256",
+  "from": "memory-test/data/memtest/questions.sha256",
+  "sha256": "6db0610918738594f9a51e6858a21e5a54889f65dc16ca2fa019b05414d63ab3",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/memtest.py",
+  "from": "memory-test/memtest.py",
+  "sha256": "bed14b7e8e109dbd0e7ad0c48a148555ed2a51bb2fd42f04a4ab980ca3b134c8",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/memtest_questions.json",
+  "from": "memory-test/memtest_questions.json",
+  "sha256": "d5ceae89135bda81972fb6939c43519b37c0e7f6b7db0eee9fe1d3d1ec7c5140",
+  "pre-registered": false
+ },
+ {
+  "file": "memory-test/summarize.py",
+  "from": "memory-test/summarize.py",
+  "sha256": "383838edc2cb340c3d3b5f1ab68478d3c8eaffb8ccb14ff0d79df6bf122f8d8c",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/RESULTS.md",
+  "from": "prove-gin-httpx/RESULTS.md",
+  "sha256": "f0eddd94d4f86dd1b3e43f129653e571487442ecd0034dd51065d04276d2db8c",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/gin.learn.json",
+  "from": "prove-gin-httpx/gin.learn.json",
+  "sha256": "1e2b61641c4906846c2d891890e953be8bfec7cabe1cfb092af87f8177502009",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/gin.learn.txt",
+  "from": "prove-gin-httpx/gin.learn.txt",
+  "sha256": "3e432e4c8829ac16ae31fcddda793949f31829469cf2cfd3ef592b384e6a75a4",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/gin.long.json",
+  "from": "prove-gin-httpx/gin.long.json",
+  "sha256": "bac4d193472574d46c6aabd3cee08fbb72d6d1afba137a4b7e5ad54fcbc5cb5a",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/gin.long.txt",
+  "from": "prove-gin-httpx/gin.long.txt",
+  "sha256": "0a7bedfcfb180eca4e4dd1274eb03f3750990071cbf39dc8d4d14ba35c182bd0",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/gin.prove.json",
+  "from": "prove-gin-httpx/gin.prove.json",
+  "sha256": "460b419f7d55cff1fc4c3a6769cc659c82e9574776c5524b637062d22c7a1300",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/gin.prove.txt",
+  "from": "prove-gin-httpx/gin.prove.txt",
+  "sha256": "d47dd5f61a6df87a5b0fd7c23bac773df0bb1db814cb34f9e5a122b611890aa9",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/httpx.learn.json",
+  "from": "prove-gin-httpx/httpx.learn.json",
+  "sha256": "0d9120fc31e8fe63871b0cba3e22ddaf2450f68d85184b6e9f0bf0b415cd366c",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/httpx.learn.txt",
+  "from": "prove-gin-httpx/httpx.learn.txt",
+  "sha256": "22fd6c42bb4a09e89240d801679df579f9e6600825f52e168603f6a094b74d77",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/httpx.long.json",
+  "from": "prove-gin-httpx/httpx.long.json",
+  "sha256": "98f5682829b9f2030052805faeb34cd754b4e59a22c5c7b791000d4547fa78a9",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/httpx.long.txt",
+  "from": "prove-gin-httpx/httpx.long.txt",
+  "sha256": "eb8d15d3dee5e32c45cdb048b3d660cc44f70c3800cedd4ca9b636dcc8ff3f2e",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/httpx.prove.json",
+  "from": "prove-gin-httpx/httpx.prove.json",
+  "sha256": "12673aaaf80288ae6a1b8fe68997f99a3e31c9dcdf608ddd2bbace7cd3778043",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/httpx.prove.txt",
+  "from": "prove-gin-httpx/httpx.prove.txt",
+  "sha256": "4f3abea57680abf4d675e3ccc5913f0fe5d877644b885232ff6fb051c4baf7d8",
+  "pre-registered": false
+ },
+ {
+  "file": "prove-gin-httpx/summarize.py",
+  "from": "prove-gin-httpx/summarize.py",
+  "sha256": "0aed80c49c35504c2e7daf15bfda07c16eac816450c31018124aaae072823073",
+  "pre-registered": false
  }
 ]

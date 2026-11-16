@@ -1,0 +1,172 @@
+W1106 19:28:44.714000 17984 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Replaying up to 200 recent fix commits of <work>/demo/gin, each against the code right before it (zero tokens; the first build embeds the whole repository)
+
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 21036.00it/s]
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 24705.24it/s]
+    1/149  miss   grep miss   fix #752 ignore appengine os.
+    2/149  miss   grep miss   Fix for #630
+    3/149  top 5  grep miss   Fix #723
+    4/149  miss   grep miss   Fix #198
+    5/149  right  grep top 5  Fixed typos in Context
+    6/149  miss   grep miss   fix typo
+    7/149  miss   grep miss   gofmt error.
+    8/149  right  grep right  build only from Go version 1.7 onward
+    9/149  right  grep miss   remove hard code for cache.
+   10/149  right  grep top 5  Fix time.Time binding
+   11/149  right  grep top 5  Fix minor type in context.go
+   12/149  right  grep right  switch sse import from gopkg to github
+   13/149  right  grep right  switch deprecated bindwith for mustbindwith
+   14/149  right  grep top 5  fix cleanPath spell
+   15/149  miss   grep right  remove todo
+   16/149  top 5  grep top 5  fix json sort the map keys
+   17/149  miss   grep miss   remove repeated static check.
+   18/149  miss   grep miss   fix composite literal uses unkeyed fields warnings, #1050
+   19/149  miss   grep miss   fix undefined ref
+   20/149  miss   grep miss   fix typo
+   21/149  top 5  grep miss   Fix golint warnings in utils.go
+   22/149  miss   grep right  Fix some golint warnings in gin.go
+   23/149  top 5  grep miss   Expose validator engine used by the default Validator
+   24/149  miss   grep miss   Fix documentation typo
+   25/149  miss   grep right  Fix typo in panic() message (extra single quote)
+   26/149  top 5  grep right  Fix #216: Enable to call binding multiple times in some form
+   27/149  miss   grep top 5  fix bug, return err when failed binding bool
+   28/149  miss   grep miss   Attempt to fix #1462
+   29/149  miss   grep top 5  fmt output log to os.Stderr
+   30/149  miss   grep miss   Fix typos
+   31/149  miss   grep miss   Fix typos
+   32/149  right  grep right  Fix panic stack trace being printed during recovery of broke
+   33/149  miss   grep miss   Fix typo
+   34/149  top 5  grep miss   fix bug
+   35/149  miss   grep miss   chore: attemp to fix #1700
+   36/149  right  grep right  fix mapping inner structs with correct tag
+   37/149  miss   grep miss   Fix case of GitHub
+   38/149  top 5  grep top 5  fix errcheck warnings
+   39/149  right  grep top 5  fix Context.Next() - recheck len of handlers every iteration
+   40/149  top 5  grep right  Fix not to pass formatted string to Fprintf's format specifi
+   41/149  top 5  grep miss   fix many redirects
+   42/149  right  grep top 5  Fix context.Copy() race condition
+   43/149  right  grep top 5  Support negotiation wildcards, fix #391
+   44/149  top 5  grep miss   fix #1804 which is caused by calling middleware twice.
+   45/149  miss   grep miss   Fix spelling.
+   46/149  right  grep right  Fix context.Params race condition on Copy()
+   47/149  top 5  grep right  Bugfix for the FullPath feature
+   48/149  top 5  grep miss   Fixed JSONP format (added semicolon)
+   49/149  right  grep right  fix GetPostFormMap
+   50/149  miss   grep miss   Fix 'errcheck' linter warnings
+   51/149  right  grep top 5  fix ignore walking on form mapping
+   52/149  right  grep top 5  fix comment in `mode.go`
+   53/149  right  grep right  fix maxParams bug
+   54/149  miss   grep miss   Fix spelling
+   55/149  miss   grep miss   Use json marshall in context json to fix breaking new line i
+   56/149  right  grep top 5  fix accept incoming network connections
+   57/149  right  grep right  fix missing initial sync.RWMutex
+   58/149  right  grep right  reassign fullpath when register new node which the same curr
+   59/149  miss   grep miss   Fix spelling
+   60/149  right  grep right  print headers without Authorization header on broken pipe
+   61/149  top 5  grep top 5  Fix typos in context.go
+   62/149  miss   grep miss   fix compile error from #2572
+   63/149  miss   grep top 5  fix error gin support min Go version
+   64/149  top 5  grep right  data race with trustedCIDRs
+   65/149  right  grep right  Fix conflict between param and exact path
+   66/149  miss   grep miss   Fixed typo in documentation
+   67/149  miss   grep miss   fix typo and add comments
+   68/149  miss   grep top 5  Fix insufficient slice check
+   69/149  miss   grep miss   Fix typo
+   70/149  top 5  grep miss   fix #2762
+   71/149  top 5  grep miss   fix #2786
+   72/149  right  grep miss   check obj type in protobufBinding
+   73/149  right  grep top 5  Fix grammatical and spelling errors in context.go
+   74/149  top 5  grep right  fix the misplacement of adding slashes
+   75/149  miss   grep miss   Fix typo
+   76/149  right  grep right  fix tsr with mixed static and wildcard paths
+   77/149  miss   grep miss   Fix grammar
+   78/149  miss   grep miss   typo
+   79/149  top 5  grep top 5  description error
+   80/149  top 5  grep top 5  description error
+   81/149  miss   grep miss   typo
+   82/149  miss   grep miss   typo
+   83/149  miss   grep miss   typo
+   84/149  right  grep top 5  wrong when wildcard follows named param
+   85/149  miss   grep miss   description error
+   86/149  top 5  grep top 5  description error
+   87/149  miss   grep miss   typo
+   88/149  top 5  grep miss   typo
+   89/149  miss   grep miss   Fix typo
+   90/149  top 5  grep miss   fix typo
+   91/149  right  grep top 5  missing `sameSite` when do context.reset()
+   92/149  right  grep right  the trusted proxies should support ipv6 address by default
+   93/149  miss   grep miss   Fix a syntax error in a code comment
+   94/149  right  grep top 5  Fix the value of ginSupportMinGoVer constant by semantic
+   95/149  right  grep top 5  Fix typos in RouterGroup method docs
+   96/149  miss   grep miss   FIX TYPO: Gin by default useR -> ... useS
+   97/149  top 5  grep right  spelling `covert` -> `convert`
+   98/149  top 5  grep miss   modify interface check way
+   99/149  miss   grep miss   redirectSlash bug
+  100/149  right  grep miss   missing route params for CreateTestContext
+  101/149  miss   grep miss   fix typo in comment
+  102/149  right  grep right  tree bug where loop index is not decremented.
+  103/149  right  grep top 5  panic on NegotiateFormat - index out of range
+  104/149  miss   grep top 5  Fix #3500 Add escape logic for header
+  105/149  right  grep top 5  fix lack of escaping of filename in Content-Disposition
+  106/149  top 5  grep right  fix Request.Context() checks
+  107/149  miss   grep miss   Add pointer support for url query params
+  108/149  right  grep right  correctly expand the capacity of params
+  109/149  right  grep top 5  catch-all conflicting wildcard
+  110/149  miss   grep miss   binding error while not upload file
+  111/149  top 5  grep top 5  Allow header according to RFC 7231 (HTTP 405)
+  112/149  top 5  grep top 5  dereference pointer to struct
+  113/149  right  grep right  Add fullPath in context copy
+  114/149  right  grep right  protect Context.Keys map when call Copy method
+  115/149  right  grep top 5  make context Value method adhere to Go standards
+  116/149  top 5  grep miss   query binding bug
+  117/149  top 5  grep top 5  data race warning for gin mode
+  118/149  top 5  grep top 5  check handler is nil
+  119/149  top 5  grep top 5  YAML judgment logic in Negotiate
+  120/149  right  grep right  verify URL is Non-nil in initQueryCache()
+  121/149  top 5  grep top 5  Do not panic when handling method not allowed on empty tree
+  122/149  right  grep top 5  Set default value for form fields
+  123/149  right  grep right  Keep panic infos consistent when wildcard type build faild
+  124/149  right  grep miss   prevent duplicate decoding and add validation in decodeToml
+  125/149  right  grep top 5  prevent middleware re-entry issue in HandleContext
+  126/149  right  grep right  sonic on arm64
+  127/149  top 5  grep miss   change Unwrap method receiver to value type
+  128/149  right  grep top 5  binding time with empty value
+  129/149  miss   grep miss   version number discrepancy
+  130/149  right  grep top 5  refine hijack behavior for response lifecycle
+  131/149  right  grep top 5  improve empty slice/array handling in form binding
+  132/149  top 5  grep top 5  close os.File in RunFd to prevent resource leak
+  133/149  right  grep right  literal colon routes not working with engine.Handler()
+  134/149  right  grep top 5  suppress http.ErrAbortHandler in recover
+  135/149  miss   grep top 5  empty value error
+  136/149  miss   grep miss   version mismatch
+  137/149  top 5  grep top 5  ClientIP handling for multiple X-Forwarded-For header values
+  138/149  miss   grep top 5  Correct typos, improve documentation clarity, and remove dea
+  139/149  top 5  grep miss   write content length in Data.Render
+  140/149  right  grep right  panic in findCaseInsensitivePathRec with RedirectFixedPath
+  141/149  right  grep top 5  panic on Hijack/CloseNotify when wrapper unsupported
+  142/149  top 5  grep top 5  Copy() copies Errors and Accepted fields
+  143/149  right  grep right  record recovered panics in c.Errors
+  144/149  right  grep right  skip chmod on pre-existing dirs in SaveUploadedFile
+  145/149  right  grep miss   handle missing HTML renderer
+  146/149  top 5  grep top 5  add default ReadHeaderTimeout to http.Server in Run methods
+  147/149  top 5  grep right  reset skipped-nodes stack on getValue entry to prevent slice
+  148/149  right  grep right  load Keys under the mutex in Copy
+  149/149  right  grep right  grow skippedNodes when pooled capacity is stale
+
+149 real fixes, true answers from git:
+
+                                       Model D    grep-first
+  right file first                    58 (39%)      38 (26%)
+  right file in the top 5             97 (65%)      87 (58%)
+  changed line in the top 5           39 (26%)             -
+
+  With 149 fixes these shares can move by up to about ±8 points by chance; --fixes 200 gives a steadier read.
+  541 tokens per readout. Model D is cold here, nothing taught. --learn replays the memory a team's agents build up, fix by fix, at zero tokens.
+  every question and answer: <work>/demo/out/gin.long.json
+real 69.68
+user 26.20
+sys 11.75

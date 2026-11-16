@@ -1,0 +1,652 @@
+{
+ "repo": "gin-gonic/gin @ 0f09c3a9b4",
+ "fixes": 26,
+ "model_d": {
+  "right_first": 15,
+  "top5": 22,
+  "lines_top5": 12
+ },
+ "grep": {
+  "right_first": 8,
+  "top5": 20
+ },
+ "tokens_per_readout": 525,
+ "rows": [
+  {
+   "hash": "e737e3e267",
+   "author": "author 83",
+   "question": "prevent duplicate decoding and add validation in decodeToml",
+   "gold": [
+    "binding/toml.go"
+   ],
+   "first": [
+    "binding/toml.go"
+   ],
+   "top5": [
+    "binding/toml.go",
+    "binding/msgpack.go",
+    "binding/yaml.go",
+    "binding/default_validator.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 516,
+   "build_s": 21.0
+  },
+  {
+   "hash": "8763f33c65",
+   "author": "author 84",
+   "question": "prevent middleware re-entry issue in HandleContext",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "recovery.go",
+    "tree.go",
+    "path.go",
+    "middleware_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 584,
+   "build_s": 0.2
+  },
+  {
+   "hash": "7a1b655074",
+   "author": "author 85",
+   "question": "sonic on arm64",
+   "gold": [
+    "internal/json/json.go",
+    "internal/json/sonic.go"
+   ],
+   "first": [
+    "internal/json/sonic.go"
+   ],
+   "top5": [
+    "internal/json/sonic.go",
+    "internal/json/json.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 206,
+   "build_s": 0.5
+  },
+  {
+   "hash": "b38c59de7f",
+   "author": "author 86",
+   "question": "change Unwrap method receiver to value type",
+   "gold": [
+    "errors.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "errors.go",
+    "response_writer.go",
+    "gin.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 460,
+   "build_s": 0.2
+  },
+  {
+   "hash": "674522db91",
+   "author": "author 87",
+   "question": "binding time with empty value",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "context.go",
+    "binding/form_mapping_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 425,
+   "build_s": 0.3
+  },
+  {
+   "hash": "5826722a87",
+   "author": "author 88",
+   "question": "version number discrepancy",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "version.go"
+   ],
+   "top5": [
+    "version.go",
+    "context.go",
+    ".github/workflows/goreleaser.yml",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 556,
+   "build_s": 1.7
+  },
+  {
+   "hash": "234a6d4c00",
+   "author": "author 1",
+   "question": "refine hijack behavior for response lifecycle",
+   "gold": [
+    "response_writer.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "response_writer_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 366,
+   "build_s": 1.3
+  },
+  {
+   "hash": "c3d1092b3b",
+   "author": "author 89",
+   "question": "improve empty slice/array handling in form binding",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "binding/default_validator.go",
+    "context.go",
+    "binding/multipart_form_mapping.go",
+    "binding/form_mapping_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 635,
+   "build_s": 0.4
+  },
+  {
+   "hash": "c3d5a28ed6",
+   "author": "author 89",
+   "question": "close os.File in RunFd to prevent resource leak",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "ginS/gins.go"
+   ],
+   "top5": [
+    "ginS/gins.go",
+    "gin.go",
+    "routergroup.go",
+    "binding/binding_test.go",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 590,
+   "build_s": 0.5
+  },
+  {
+   "hash": "5fad976b37",
+   "author": "author 90",
+   "question": "literal colon routes not working with engine.Handler()",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "ginS/gins.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 466,
+   "build_s": 0.4
+  },
+  {
+   "hash": "63dd3e60ca",
+   "author": "author 91",
+   "question": "suppress http.ErrAbortHandler in recover",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "routergroup.go",
+    "tree_test.go",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 681,
+   "build_s": 0.8
+  },
+  {
+   "hash": "b917b14ff9",
+   "author": "author 92",
+   "question": "empty value error",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "binding/json_test.go",
+    "internal/bytesconv/bytesconv_test.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 532,
+   "build_s": 0.3
+  },
+  {
+   "hash": "2a794cd0b0",
+   "author": "author 93",
+   "question": "version mismatch",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "version.go"
+   ],
+   "top5": [
+    "version.go",
+    "Makefile",
+    ".github/workflows/goreleaser.yml",
+    "context_test.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 623,
+   "build_s": 0.2
+  },
+  {
+   "hash": "9914178584",
+   "author": "author 94",
+   "question": "ClientIP handling for multiple X-Forwarded-For header values",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "context.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 683,
+   "build_s": 0.4
+  },
+  {
+   "hash": "8e07d37c63",
+   "author": "author 95",
+   "question": "Correct typos, improve documentation clarity, and remove dead code",
+   "gold": [
+    "context.go",
+    "errors.go",
+    "routergroup.go"
+   ],
+   "first": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml"
+   ],
+   "top5": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml",
+    ".goreleaser.yaml",
+    "Makefile",
+    "recovery.go",
+    "gin_integration_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 684,
+   "build_s": 1.0
+  },
+  {
+   "hash": "5c00df8afa",
+   "author": "author 96",
+   "question": "write content length in Data.Render",
+   "gold": [
+    "render/data.go"
+   ],
+   "first": [
+    "render/reader.go"
+   ],
+   "top5": [
+    "render/reader.go",
+    "render/text.go",
+    "render/data.go",
+    "render/render_test.go",
+    "render/render_msgpack_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 516,
+   "build_s": 0.4
+  },
+  {
+   "hash": "472d086af2",
+   "author": "author 97",
+   "question": "panic in findCaseInsensitivePathRec with RedirectFixedPath",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "tree_test.go",
+    "routes_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 440,
+   "build_s": 0.4
+  },
+  {
+   "hash": "d75fcd4c9a",
+   "author": "author 98",
+   "question": "panic on Hijack/CloseNotify when wrapper unsupported",
+   "gold": [
+    "response_writer.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "response_writer_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 290,
+   "build_s": 1.6
+  },
+  {
+   "hash": "293ad7edeb",
+   "author": "author 99",
+   "question": "Copy() copies Errors and Accepted fields",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "codec/json/api.go"
+   ],
+   "top5": [
+    "codec/json/api.go",
+    "context.go",
+    "binding/form_mapping.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 586,
+   "build_s": 0.2
+  },
+  {
+   "hash": "4a3eb31fb1",
+   "author": "author 100",
+   "question": "record recovered panics in c.Errors",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "recovery_test.go",
+    "routergroup_test.go",
+    "auth_test.go",
+    "gin_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 789,
+   "build_s": 0.2
+  },
+  {
+   "hash": "d9307dbcbb",
+   "author": "author 101",
+   "question": "skip chmod on pre-existing dirs in SaveUploadedFile",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "logger.go",
+    "test_helpers.go",
+    "context_test.go",
+    "response_writer_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 373,
+   "build_s": 0.2
+  },
+  {
+   "hash": "5c6a15f8f9",
+   "author": "author 102",
+   "question": "handle missing HTML renderer",
+   "gold": [
+    "context.go",
+    "render/html.go"
+   ],
+   "first": [
+    "render/html.go"
+   ],
+   "top5": [
+    "render/html.go",
+    "gin.go",
+    "ginS/gins.go",
+    "render/render_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 564,
+   "build_s": 0.3
+  },
+  {
+   "hash": "d8f2d588d7",
+   "author": "author 103",
+   "question": "add default ReadHeaderTimeout to http.Server in Run methods",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "binding/binding_nomsgpack.go",
+    "ginS/gins.go",
+    "response_writer_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 577,
+   "build_s": 0.6
+  },
+  {
+   "hash": "3b08cd7235",
+   "author": "author 104",
+   "question": "reset skipped-nodes stack on getValue entry to prevent slice overflow panic [#4818]",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "tree.go",
+    "logger.go",
+    "tree_test.go",
+    "logger_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 633,
+   "build_s": 0.2
+  },
+  {
+   "hash": "1bd0ecf2d3",
+   "author": "author 105",
+   "question": "load Keys under the mutex in Copy",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "gin.go",
+    "mode.go",
+    "logger.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 384,
+   "build_s": 0.2
+  },
+  {
+   "hash": "ea9fab99e0",
+   "author": "author 105",
+   "question": "grow skippedNodes when pooled capacity is stale",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "path_test.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 486,
+   "build_s": 0.2
+  }
+ ]
+}

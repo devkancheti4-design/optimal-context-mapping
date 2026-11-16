@@ -1,0 +1,49 @@
+W1106 17:00:34.602000 58689 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Replaying up to 50 recent fix commits of <work>/demo/gin, each against the code right before it (zero tokens; the first build embeds the whole repository)
+
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 21899.78it/s]
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 23681.84it/s]
+    1/26  right  grep miss   memory right  prevent duplicate decoding and add validation in decodeToml
+    2/26  right  grep top 5  memory right  prevent middleware re-entry issue in HandleContext
+    3/26  right  grep right  memory right  sonic on arm64
+    4/26  top 5  grep miss   memory top 5  change Unwrap method receiver to value type
+    5/26  right  grep top 5  memory right  binding time with empty value
+    6/26  miss   grep miss   memory miss   version number discrepancy
+    7/26  right  grep top 5  memory right  refine hijack behavior for response lifecycle
+    8/26  right  grep top 5  memory right  improve empty slice/array handling in form binding
+    9/26  top 5  grep top 5  memory top 5  close os.File in RunFd to prevent resource leak
+   10/26  right  grep right  memory right  literal colon routes not working with engine.Handler()
+   11/26  right  grep top 5  memory right  suppress http.ErrAbortHandler in recover
+   12/26  miss   grep top 5  memory right (taught pointer)  empty value error
+   13/26  miss   grep miss   memory right (taught pointer)  version mismatch
+   14/26  top 5  grep top 5  memory top 5  ClientIP handling for multiple X-Forwarded-For header values
+   15/26  miss   grep top 5  memory miss   Correct typos, improve documentation clarity, and remove dea
+   16/26  top 5  grep miss   memory top 5  write content length in Data.Render
+   17/26  right  grep right  memory right  panic in findCaseInsensitivePathRec with RedirectFixedPath
+   18/26  right  grep top 5  memory right  panic on Hijack/CloseNotify when wrapper unsupported
+   19/26  top 5  grep top 5  memory top 5  Copy() copies Errors and Accepted fields
+   20/26  right  grep right  memory right  record recovered panics in c.Errors
+   21/26  right  grep right  memory right  skip chmod on pre-existing dirs in SaveUploadedFile
+   22/26  right  grep miss   memory right  handle missing HTML renderer
+   23/26  top 5  grep top 5  memory top 5  add default ReadHeaderTimeout to http.Server in Run methods
+   24/26  top 5  grep right  memory top 5  reset skipped-nodes stack on getValue entry to prevent slice
+   25/26  right  grep right  memory right  load Keys under the mutex in Copy
+   26/26  right  grep right  memory right  grow skippedNodes when pooled capacity is stale
+
+26 real fixes, true answers from git:
+
+                                       Model D   with memory    grep-first
+  right file first                    15 (58%)      17 (65%)       8 (31%)
+  right file in the top 5             22 (85%)      24 (92%)      20 (77%)
+  changed line in the top 5           12 (46%)      13 (50%)             -
+
+  With 26 fixes these shares can move by up to about ±19 points by chance; --fixes 200 gives a steadier read.
+  525 tokens per readout. With memory: every fix was asked in a new session, as after the prompt cache expires: a fresh map of its own commit, with the context graph carried over from disk. Then it was taught where it landed (23 lessons, from 24 authors). At the last fix, 19 of 22 lessons were still found in the code. A taught pointer led 2 readouts and was right 2 times, 2 of them from a lesson another author's fix had taught.
+  every question and answer: <work>/demo/out/gin.learn.json
+real 17.70
+user 11.26
+sys 3.15

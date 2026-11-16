@@ -1,0 +1,33 @@
+{
+ "note": "Written before Model D was asked any of them. Answer lines found by reading the code with git grep. None is about a bug fix.",
+ "repos": {
+  "gin": {"url": "https://github.com/gin-gonic/gin.git", "t0": "9968c4b", "t2": "0f09c3a", "questions": [
+   {"kind": "a default", "q": "What port does gin listen on if I don't set one?", "other": "If nobody configures a port, what does the server bind to?", "at": "utils.go:148", "t0": "return \":8080\"", "t2": "return \":8080\""},
+   {"kind": "a limit", "q": "What is the default memory limit when parsing multipart forms?", "other": "How much of a file upload is kept in RAM before it spills to disk?", "at": "gin.go:26", "t0": "defaultMultipartMemory = 32 << 20", "t2": "defaultMultipartMemory = 32 << 20"},
+   {"kind": "architecture", "q": "How does gin store its routes for matching?", "other": "What data structure sits behind the router?", "at": "tree.go:109", "t0": "type node struct {", "t2": "type node struct {"},
+   {"kind": "how it works", "q": "Where does gin find the handler for a request path?", "other": "Which function walks the routing tree for an incoming URL?", "at": "tree.go:428", "t0": "func (n *node) getValue(", "t2": "func (n *node) getValue("},
+   {"kind": "entry point", "q": "Where does an HTTP request first enter gin?", "other": "What's the very first gin function a request hits from net/http?", "at": "gin.go:637", "t0": "func (engine *Engine) ServeHTTP(", "t2": "func (engine *Engine) ServeHTTP("},
+   {"kind": "docs", "q": "What Go version does gin require?", "other": "Minimum Go toolchain needed to use this library?", "at": "README.md:46", "t0": "version [1.24]", "t2": "version [1.26]"},
+   {"kind": "CI", "q": "Which Go versions does CI test against?", "other": "What's the Go version matrix in the GitHub Actions pipeline?", "at": ".github/workflows/gin.yml:36", "t0": "go: [\"1.24\", \"1.25\"]", "t2": "go: [\"1.26\", \"1.27\"]"},
+   {"kind": "tests", "q": "Where is the test for route wildcard conflicts?", "other": "Which test checks that clashing wildcard routes panic?", "at": "tree_test.go:394", "t0": "func TestTreeWildcardConflict(t *testing.T)", "t2": "func TestTreeWildcardConflict(t *testing.T)"},
+   {"kind": "release history", "q": "What is the latest release in the changelog?", "other": "What's the newest version listed in the release notes?", "at": "CHANGELOG.md:3", "t0": "## Gin v1.11.0", "t2": "## Gin v1.12.0"},
+   {"kind": "team rules", "q": "How many commits may a pull request have?", "other": "Do I need to squash my PR before submitting it?", "at": "CONTRIBUTING.md:35", "t0": "no more than two commits", "t2": "no more than two commits"},
+   {"kind": "security", "q": "Which proxies does gin trust by default?", "other": "Out of the box, whose X-Forwarded-For header is believed?", "at": "gin.go:215", "t0": "trustedProxies: []string{\"0.0.0.0/0\", \"::/0\"}", "t2": "trustedProxies: []string{\"0.0.0.0/0\", \"::/0\"}"},
+   {"kind": "errors", "q": "How does the recovery middleware handle a broken client connection?", "other": "What happens in the panic handler when the client hangs up mid-response?", "at": "recovery.go:60", "t0": "var brokenPipe bool", "t2": "var isBrokenPipe bool"}
+  ]},
+  "httpx": {"url": "https://github.com/encode/httpx.git", "t0": "e70d0b0", "t2": "b5addb6", "questions": [
+   {"kind": "a default", "q": "What is the default timeout in httpx?", "other": "How long does a call wait before giving up if I don't configure anything?", "at": "httpx/_config.py:246", "t0": "DEFAULT_TIMEOUT_CONFIG = Timeout(timeout=5.0)", "t2": "DEFAULT_TIMEOUT_CONFIG = Timeout(timeout=5.0)"},
+   {"kind": "a limit", "q": "What are the default connection pool limits?", "other": "How many sockets can a client keep open out of the box?", "at": "httpx/_config.py:247", "t0": "DEFAULT_LIMITS = Limits(max_connections=100, max_keepalive_connections=20)", "t2": "DEFAULT_LIMITS = Limits(max_connections=100, max_keepalive_connections=20)"},
+   {"kind": "a limit", "q": "How many redirects does httpx follow by default?", "other": "After how many hops does it stop chasing a moved URL?", "at": "httpx/_config.py:248", "t0": "DEFAULT_MAX_REDIRECTS = 20", "t2": "DEFAULT_MAX_REDIRECTS = 20"},
+   {"kind": "how it works", "q": "Where does the client run the auth flow for a request?", "other": "Which method drives the authentication challenge and retry loop?", "at": "httpx/_client.py:930", "t0": "def _send_handling_auth(", "t2": "def _send_handling_auth("},
+   {"kind": "docs", "q": "How do I install HTTP/2 support?", "other": "What's the pip extra for h2?", "at": "docs/http2.md:31", "t0": "pip install httpx[http2]", "t2": "pip install httpx[http2]"},
+   {"kind": "CI", "q": "Which Python versions does CI test?", "other": "What's the Python matrix in the GitHub Actions workflow?", "at": ".github/workflows/test-suite.yml:17", "t0": "python-version: [\"3.8\", \"3.9\"", "t2": "python-version: [\"3.9\", \"3.10\""},
+   {"kind": "tests", "q": "Where are the digest auth tests?", "other": "Which test file exercises digest authentication?", "at": "tests/test_auth.py:29", "t0": "def test_digest_auth_with_200()", "t2": "def test_digest_auth_with_200()"},
+   {"kind": "release history", "q": "What changed in the newest release?", "other": "Latest version in the release notes?", "at": "CHANGELOG.md:7", "t0": "## 0.28.1", "t2": "## 0.28.1"},
+   {"kind": "team rules", "q": "How do I run the test suite?", "other": "What's the command to execute the tests locally?", "at": "docs/contributing.md:67", "t0": "scripts/test", "t2": "scripts/test"},
+   {"kind": "packaging", "q": "What is the minimum Python version?", "other": "Oldest Python this package supports?", "at": "pyproject.toml:9", "t0": "requires-python = \">=3.8\"", "t2": "requires-python = \">=3.9\""},
+   {"kind": "errors", "q": "What exception is raised when reading the response times out?", "other": "Server stopped sending bytes and the clock ran out: what do I catch?", "at": "httpx/_exceptions.py:146", "t0": "class ReadTimeout(TimeoutException)", "t2": "class ReadTimeout(TimeoutException)"},
+   {"kind": "environment", "q": "Which environment variables set a proxy?", "other": "How do I point it at a corporate proxy without touching code?", "at": "docs/environment_variables.md:24", "t0": "set the proxy to be used", "t2": "set the proxy to be used"}
+  ]}
+ }
+}

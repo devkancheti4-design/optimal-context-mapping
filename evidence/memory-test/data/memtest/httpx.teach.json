@@ -1,0 +1,62 @@
+[
+ {
+  "q": "What is the default timeout in httpx?",
+  "at": "httpx/_config.py:246",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (1 examples)"
+ },
+ {
+  "q": "What are the default connection pool limits?",
+  "at": "httpx/_config.py:247",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (2 examples)"
+ },
+ {
+  "q": "How many redirects does httpx follow by default?",
+  "at": "httpx/_config.py:248",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (3 examples)"
+ },
+ {
+  "q": "Where does the client run the auth flow for a request?",
+  "at": "httpx/_client.py:930",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (4 examples)"
+ },
+ {
+  "q": "How do I install HTTP/2 support?",
+  "at": "docs/http2.md:31",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (5 examples)"
+ },
+ {
+  "q": "Which Python versions does CI test?",
+  "at": ".github/workflows/test-suite.yml:17",
+  "reply": "taught 0 question vectors onto code; 1 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (5 examples)"
+ },
+ {
+  "q": "Where are the digest auth tests?",
+  "at": "tests/test_auth.py:29",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (6 examples)"
+ },
+ {
+  "q": "What changed in the newest release?",
+  "at": "CHANGELOG.md:7",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (7 examples)"
+ },
+ {
+  "q": "How do I run the test suite?",
+  "at": "docs/contributing.md:67",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (8 examples)"
+ },
+ {
+  "q": "What is the minimum Python version?",
+  "at": "pyproject.toml:9",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (9 examples)"
+ },
+ {
+  "q": "What exception is raised when reading the response times out?",
+  "at": "httpx/_exceptions.py:146",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (10 examples)"
+ },
+ {
+  "q": "Which environment variables set a proxy?",
+  "at": "docs/environment_variables.md:24",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: strong {} weak {TYPE}, not yet active (11 examples)"
+ }
+]
