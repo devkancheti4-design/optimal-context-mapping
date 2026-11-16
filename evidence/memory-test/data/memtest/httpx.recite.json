@@ -1,0 +1,7 @@
+[
+ {
+  "q": "Which Python versions does CI test?",
+  "at": "httpx/.github/workflows/test-suite.yml:17",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:l"
+ }
+]

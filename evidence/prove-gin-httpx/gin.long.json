@@ -1,0 +1,3686 @@
+{
+ "repo": "gin-gonic/gin @ 0f09c3a9b4",
+ "fixes": 149,
+ "model_d": {
+  "right_first": 58,
+  "top5": 97,
+  "lines_top5": 39
+ },
+ "grep": {
+  "right_first": 38,
+  "top5": 87
+ },
+ "tokens_per_readout": 541,
+ "rows": [
+  {
+   "hash": "b26d956e07",
+   "author": "author 1",
+   "question": "fix #752 ignore appengine os.",
+   "gold": [
+    "logger.go"
+   ],
+   "first": [
+    "utils.go"
+   ],
+   "top5": [
+    "utils.go",
+    "gin.go",
+    "ginS/gins.go",
+    "context.go",
+    "mode.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 440,
+   "build_s": 9.9
+  },
+  {
+   "hash": "c8b35d3445",
+   "author": "author 2",
+   "question": "Fix for #630",
+   "gold": [
+    "errors.go"
+   ],
+   "first": [
+    "examples/realtime-advanced/stats.go"
+   ],
+   "top5": [
+    "examples/realtime-advanced/stats.go",
+    "examples/realtime-advanced/resources/room_login.templ.html",
+    "response_writer.go",
+    "logger.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 872,
+   "build_s": 0.3
+  },
+  {
+   "hash": "7e58c80a7c",
+   "author": "author 3",
+   "question": "Fix #723",
+   "gold": [
+    "context.go",
+    "gin.go"
+   ],
+   "first": [
+    "codecov.yml"
+   ],
+   "top5": [
+    "codecov.yml",
+    "response_writer.go",
+    "gin.go",
+    "tree.go",
+    "response_writer_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 712,
+   "build_s": 0.1
+  },
+  {
+   "hash": "963acc4b0c",
+   "author": "author 3",
+   "question": "Fix #198",
+   "gold": [
+    "context.go",
+    "render/data.go",
+    "render/html.go",
+    "render/json.go",
+    "render/redirect.go",
+    "render/render.go",
+    "render/text.go",
+    "render/xml.go",
+    "render/yaml.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "tree.go",
+    "gin.go",
+    "githubapi_test.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 967,
+   "build_s": 0.5
+  },
+  {
+   "hash": "2d8477fc42",
+   "author": "author 4",
+   "question": "Fixed typos in Context",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "render/text.go",
+    "examples/realtime-advanced/resources/room_login.templ.html",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 687,
+   "build_s": 0.3
+  },
+  {
+   "hash": "38cc731224",
+   "author": "author 5",
+   "question": "fix typo",
+   "gold": [
+    "fs.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "recovery.go",
+    "path.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 715,
+   "build_s": 0.5
+  },
+  {
+   "hash": "b1a15020d0",
+   "author": "author 1",
+   "question": "gofmt error.",
+   "gold": [
+    "mode.go"
+   ],
+   "first": [
+    "errors.go"
+   ],
+   "top5": [
+    "errors.go",
+    "gin.go",
+    "errors_test.go",
+    "render/render_test.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 433,
+   "build_s": 0.1
+  },
+  {
+   "hash": "70d0a4c5ba",
+   "author": "author 1",
+   "question": "build only from Go version 1.7 onward",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "examples/app-engine/app.yaml",
+    "path.go",
+    "render/yaml.go",
+    "examples/app-engine/hello.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 254,
+   "build_s": 0.4
+  },
+  {
+   "hash": "d17e0a31b8",
+   "author": "author 1",
+   "question": "remove hard code for cache.",
+   "gold": [
+    "gin1.7.go"
+   ],
+   "first": [
+    "gin1.7.go"
+   ],
+   "top5": [
+    "gin1.7.go",
+    "examples/realtime-chat/rooms.go",
+    "logger.go",
+    "binding/msgpack.go",
+    "path.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 267,
+   "build_s": 0.1
+  },
+  {
+   "hash": "6a3a8ae61b",
+   "author": "author 6",
+   "question": "Fix time.Time binding",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "binding/protobuf.go",
+    "context_test.go",
+    "binding/validate_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 306,
+   "build_s": 0.2
+  },
+  {
+   "hash": "d4a53101c3",
+   "author": "author 7",
+   "question": "Fix minor type in context.go",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "errors.go",
+    "gin.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 392,
+   "build_s": 0.1
+  },
+  {
+   "hash": "9a79e3f144",
+   "author": "author 3",
+   "question": "switch sse import from gopkg to github",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "examples/realtime-advanced/resources/room_login.templ.html",
+    "Makefile",
+    "binding/example/test.pb.go",
+    "middleware_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 191,
+   "build_s": 0.6
+  },
+  {
+   "hash": "68aa2c38da",
+   "author": "author 3",
+   "question": "switch deprecated bindwith for mustbindwith",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "deprecated.go",
+    "binding/form_mapping.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 520,
+   "build_s": 0.1
+  },
+  {
+   "hash": "df67c64479",
+   "author": "author 8",
+   "question": "fix cleanPath spell",
+   "gold": [
+    "path.go"
+   ],
+   "first": [
+    "path.go"
+   ],
+   "top5": [
+    "path.go",
+    "tree.go",
+    "gin.go",
+    "path_test.go",
+    "routes_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 644,
+   "build_s": 0.4
+  },
+  {
+   "hash": "71d3ae4f92",
+   "author": "author 9",
+   "question": "remove todo",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "ginS/gins.go"
+   ],
+   "top5": [
+    "ginS/gins.go",
+    "routergroup.go",
+    "examples/realtime-chat/rooms.go",
+    "examples/realtime-chat/main.go",
+    "path.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 350,
+   "build_s": 0.3
+  },
+  {
+   "hash": "e23842ecab",
+   "author": "author 1",
+   "question": "fix json sort the map keys",
+   "gold": [
+    "binding/json.go",
+    "errors.go",
+    "render/json.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "render/json.go",
+    "binding/json.go",
+    "errors.go",
+    "githubapi_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 612,
+   "build_s": 0.4
+  },
+  {
+   "hash": "8436a9d829",
+   "author": "author 9",
+   "question": "remove repeated static check.",
+   "gold": [
+    "render/render.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "routergroup.go",
+    "ginS/gins.go",
+    ".travis.yml",
+    "binding/example/test.proto"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 577,
+   "build_s": 0.1
+  },
+  {
+   "hash": "4b54b86272",
+   "author": "author 9",
+   "question": "fix composite literal uses unkeyed fields warnings, #1050",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "context.go",
+    "utils.go",
+    "examples/upload-file/multiple/main.go",
+    "examples/upload-file/single/main.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 621,
+   "build_s": 1.1
+  },
+  {
+   "hash": "f1edd2c2d1",
+   "author": "author 10",
+   "question": "fix undefined ref",
+   "gold": [
+    "ginS/gins.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "utils.go",
+    "githubapi_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 608,
+   "build_s": 0.6
+  },
+  {
+   "hash": "b1ee49de8c",
+   "author": "author 8",
+   "question": "fix typo",
+   "gold": [
+    "deprecated.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "Makefile",
+    "recovery.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 766,
+   "build_s": 0.2
+  },
+  {
+   "hash": "6626358d4f",
+   "author": "author 11",
+   "question": "Fix golint warnings in utils.go",
+   "gold": [
+    "utils.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "errors.go",
+    "render/yaml.go",
+    "utils.go",
+    "utils_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 210,
+   "build_s": 1.3
+  },
+  {
+   "hash": "a712f77d7a",
+   "author": "author 11",
+   "question": "Fix some golint warnings in gin.go",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    ".travis.yml"
+   ],
+   "top5": [
+    ".travis.yml",
+    "render/yaml.go",
+    "errors.go",
+    "Makefile",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 525,
+   "build_s": 0.1
+  },
+  {
+   "hash": "6d913fc343",
+   "author": "author 12",
+   "question": "Expose validator engine used by the default Validator",
+   "gold": [
+    "binding/binding.go",
+    "binding/default_validator.go",
+    "binding/json.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "binding/default_validator.go",
+    "binding/binding.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 229,
+   "build_s": 0.9
+  },
+  {
+   "hash": "6ad7b9c9d3",
+   "author": "author 13",
+   "question": "Fix documentation typo",
+   "gold": [
+    "utils.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "doc.go",
+    "Makefile",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 661,
+   "build_s": 0.3
+  },
+  {
+   "hash": "6e09ef03b0",
+   "author": "author 14",
+   "question": "Fix typo in panic() message (extra single quote)",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "routergroup.go",
+    "examples/upload-file/single/public/index.html",
+    "examples/realtime-advanced/routes.go",
+    "examples/realtime-chat/template.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 680,
+   "build_s": 0.8
+  },
+  {
+   "hash": "995fa8e9ce",
+   "author": "author 15",
+   "question": "Fix #216: Enable to call binding multiple times in some formats",
+   "gold": [
+    "binding/binding.go",
+    "binding/json.go",
+    "binding/msgpack.go",
+    "binding/protobuf.go",
+    "binding/xml.go",
+    "context.go"
+   ],
+   "first": [
+    "binding/form.go"
+   ],
+   "top5": [
+    "binding/form.go",
+    "context.go",
+    "binding/json.go",
+    "deprecated.go",
+    "examples/upload-file/multiple/public/index.html"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 648,
+   "build_s": 0.1
+  },
+  {
+   "hash": "5636afe02d",
+   "author": "author 16",
+   "question": "fix bug, return err when failed binding bool",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form.go"
+   ],
+   "top5": [
+    "binding/form.go",
+    "binding/binding_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 460,
+   "build_s": 0.3
+  },
+  {
+   "hash": "7e64d32269",
+   "author": "author 8",
+   "question": "Attempt to fix #1462",
+   "gold": [
+    "test_helpers.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "tree.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 709,
+   "build_s": 1.0
+  },
+  {
+   "hash": "402ef120e1",
+   "author": "author 1",
+   "question": "fmt output log to os.Stderr",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "logger.go"
+   ],
+   "top5": [
+    "logger.go",
+    "mode.go",
+    "recovery.go",
+    "examples/graceful-shutdown/close/server.go",
+    "examples/http2/main.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 465,
+   "build_s": 1.7
+  },
+  {
+   "hash": "f83cdb357e",
+   "author": "author 17",
+   "question": "Fix typos",
+   "gold": [
+    "ginS/gins.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "Makefile",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 762,
+   "build_s": 0.6
+  },
+  {
+   "hash": "7a374f9a47",
+   "author": "author 17",
+   "question": "Fix typos",
+   "gold": [
+    "binding/binding.go",
+    "binding/protobuf.go",
+    "context.go",
+    "logger.go",
+    "routergroup.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "Makefile",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 762,
+   "build_s": 0.2
+  },
+  {
+   "hash": "37854ee10f",
+   "author": "author 18",
+   "question": "Fix panic stack trace being printed during recovery of broken pipe",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "debug_test.go",
+    "recovery_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 691,
+   "build_s": 0.3
+  },
+  {
+   "hash": "d6b2c13b18",
+   "author": "author 19",
+   "question": "Fix typo",
+   "gold": [
+    "mode.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "Makefile",
+    "recovery.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 768,
+   "build_s": 0.2
+  },
+  {
+   "hash": "98c7ac7202",
+   "author": "author 20",
+   "question": "fix bug",
+   "gold": [
+    "routergroup.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "logger.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "routergroup.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 761,
+   "build_s": 0.4
+  },
+  {
+   "hash": "1b34e8e8de",
+   "author": "author 20",
+   "question": "chore: attemp to fix #1700",
+   "gold": [
+    "tools.go"
+   ],
+   "first": [
+    "context_17.go"
+   ],
+   "top5": [
+    "context_17.go",
+    "context_pre17.go",
+    "Makefile",
+    "tree.go",
+    "gin.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 826,
+   "build_s": 0.5
+  },
+  {
+   "hash": "49e4b0c60c",
+   "author": "author 21",
+   "question": "fix mapping inner structs with correct tag",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "binding/binding_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 680,
+   "build_s": 0.1
+  },
+  {
+   "hash": "d8fb18c33b",
+   "author": "author 22",
+   "question": "Fix case of GitHub",
+   "gold": [
+    "routergroup.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "logger.go",
+    "binding/binding.go",
+    "binding/form_mapping.go",
+    "githubapi_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 922,
+   "build_s": 0.2
+  },
+  {
+   "hash": "b056a34bdc",
+   "author": "author 21",
+   "question": "fix errcheck warnings",
+   "gold": [
+    "binding/form.go",
+    "context.go",
+    "gin.go",
+    "recovery.go",
+    "render/json.go",
+    "render/protobuf.go",
+    "render/text.go",
+    "render/yaml.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "recovery.go",
+    "tree.go",
+    "gin.go",
+    "recovery_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 759,
+   "build_s": 0.1
+  },
+  {
+   "hash": "4867ff9634",
+   "author": "author 21",
+   "question": "fix Context.Next() - recheck len of handlers every iteration",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "routergroup.go",
+    "tree.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 679,
+   "build_s": 0.4
+  },
+  {
+   "hash": "b4f5155982",
+   "author": "author 19",
+   "question": "Fix not to pass formatted string to Fprintf's format specifier parameter",
+   "gold": [
+    "logger.go"
+   ],
+   "first": [
+    "debug.go"
+   ],
+   "top5": [
+    "debug.go",
+    "logger.go",
+    "render/text.go",
+    "auth.go",
+    "context.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 449,
+   "build_s": 0.1
+  },
+  {
+   "hash": "a768f064d5",
+   "author": "author 21",
+   "question": "fix many redirects",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "render/redirect.go"
+   ],
+   "top5": [
+    "render/redirect.go",
+    "gin.go",
+    "routergroup.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 699,
+   "build_s": 0.1
+  },
+  {
+   "hash": "e207a3ce65",
+   "author": "author 23",
+   "question": "Fix context.Copy() race condition",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "test_helpers.go",
+    "path.go",
+    "routergroup.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 476,
+   "build_s": 0.4
+  },
+  {
+   "hash": "2dd3193006",
+   "author": "author 24",
+   "question": "Support negotiation wildcards, fix #391",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "utils.go",
+    "tree.go",
+    "context_test.go",
+    "binding/binding_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 418,
+   "build_s": 0.2
+  },
+  {
+   "hash": "4a23c4f7b9",
+   "author": "author 19",
+   "question": "fix #1804 which is caused by calling middleware twice.",
+   "gold": [
+    "routergroup.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "binding/json.go",
+    "response_writer.go",
+    "context.go",
+    "routergroup.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 666,
+   "build_s": 0.6
+  },
+  {
+   "hash": "11407e73ad",
+   "author": "author 22",
+   "question": "Fix spelling.",
+   "gold": [
+    "ginS/gins.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "tree.go",
+    "response_writer.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 743,
+   "build_s": 0.4
+  },
+  {
+   "hash": "6e320c97e8",
+   "author": "author 25",
+   "question": "Fix context.Params race condition on Copy()",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "githubapi_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 441,
+   "build_s": 0.7
+  },
+  {
+   "hash": "f65018d7b1",
+   "author": "author 26",
+   "question": "Bugfix for the FullPath feature",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "path.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 519,
+   "build_s": 0.4
+  },
+  {
+   "hash": "01ca625b98",
+   "author": "author 27",
+   "question": "Fixed JSONP format (added semicolon)",
+   "gold": [
+    "render/json.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "render/json.go",
+    "debug.go",
+    "context_test.go",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 567,
+   "build_s": 0.3
+  },
+  {
+   "hash": "b8b2fada5c",
+   "author": "author 28",
+   "question": "fix GetPostFormMap",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "binding/binding_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 559,
+   "build_s": 0.2
+  },
+  {
+   "hash": "393a63f3b0",
+   "author": "author 21",
+   "question": "Fix 'errcheck' linter warnings",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "render/yaml.go",
+    "context.go",
+    "logger_test.go",
+    "render/render_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 350,
+   "build_s": 0.3
+  },
+  {
+   "hash": "db9174ae0c",
+   "author": "author 21",
+   "question": "fix ignore walking on form mapping",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "binding/form_mapping_test.go",
+    "binding/form_mapping_benchmark_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 359,
+   "build_s": 0.2
+  },
+  {
+   "hash": "70ca31bc11",
+   "author": "author 29",
+   "question": "fix comment in `mode.go`",
+   "gold": [
+    "mode.go"
+   ],
+   "first": [
+    "mode.go"
+   ],
+   "top5": [
+    "mode.go",
+    "mode_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 244,
+   "build_s": 0.1
+  },
+  {
+   "hash": "7c21e04f62",
+   "author": "author 20",
+   "question": "fix maxParams bug",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 285,
+   "build_s": 1.2
+  },
+  {
+   "hash": "b8a7b6d194",
+   "author": "author 22",
+   "question": "Fix spelling",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "tree.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 686,
+   "build_s": 0.3
+  },
+  {
+   "hash": "5f56109bcf",
+   "author": "author 30",
+   "question": "Use json marshall in context json to fix breaking new line issue. Fixes #2209",
+   "gold": [
+    "render/json.go"
+   ],
+   "first": [
+    "internal/json/jsoniter.go"
+   ],
+   "top5": [
+    "internal/json/jsoniter.go",
+    "errors.go",
+    "context.go",
+    "internal/json/json.go",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 816,
+   "build_s": 0.4
+  },
+  {
+   "hash": "2ff2b19e14",
+   "author": "author 31",
+   "question": "fix accept incoming network connections",
+   "gold": [
+    "utils.go"
+   ],
+   "first": [
+    "utils.go"
+   ],
+   "top5": [
+    "utils.go",
+    "context.go",
+    "gin.go",
+    "gin_integration_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 614,
+   "build_s": 0.1
+  },
+  {
+   "hash": "298ebca691",
+   "author": "author 1",
+   "question": "fix missing initial sync.RWMutex",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    ".travis.yml",
+    "gin.go",
+    "binding/default_validator.go",
+    "gin_integration_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 391,
+   "build_s": 0.3
+  },
+  {
+   "hash": "a6e8665e42",
+   "author": "author 32",
+   "question": "reassign fullpath when register new node which the same current node",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "context.go",
+    "path.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 492,
+   "build_s": 0.5
+  },
+  {
+   "hash": "3100b7cb05",
+   "author": "author 22",
+   "question": "Fix spelling",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "tree.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 740,
+   "build_s": 0.4
+  },
+  {
+   "hash": "a7a6986d73",
+   "author": "author 33",
+   "question": "print headers without Authorization header on broken pipe",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "auth.go",
+    "context.go",
+    "render/reader.go",
+    "recovery_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 504,
+   "build_s": 0.1
+  },
+  {
+   "hash": "7742ff50e0",
+   "author": "author 34",
+   "question": "Fix typos in context.go",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "errors.go"
+   ],
+   "top5": [
+    "errors.go",
+    "context.go",
+    "tree.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 650,
+   "build_s": 0.3
+  },
+  {
+   "hash": "3b5e861bb1",
+   "author": "author 20",
+   "question": "fix compile error from #2572",
+   "gold": [
+    "internal/bytesconv/bytesconv.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "errors.go",
+    "context.go",
+    "render/render_test.go",
+    "errors_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 460,
+   "build_s": 0.1
+  },
+  {
+   "hash": "f4bc259de3",
+   "author": "author 35",
+   "question": "fix error gin support min Go version",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "render/yaml.go",
+    "fs.go",
+    ".travis.yml",
+    "version.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 239,
+   "build_s": 0.2
+  },
+  {
+   "hash": "03e5e05ae0",
+   "author": "author 36",
+   "question": "data race with trustedCIDRs",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "context.go",
+    "gin_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 238,
+   "build_s": 0.6
+  },
+  {
+   "hash": "2921582d11",
+   "author": "author 37",
+   "question": "Fix conflict between param and exact path",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "path.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 474,
+   "build_s": 0.3
+  },
+  {
+   "hash": "328d0b8076",
+   "author": "author 38",
+   "question": "Fixed typo in documentation",
+   "gold": [
+    "fs.go"
+   ],
+   "first": [
+    "doc.go"
+   ],
+   "top5": [
+    "doc.go",
+    "tree.go",
+    "recovery.go",
+    "path_test.go",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 606,
+   "build_s": 0.2
+  },
+  {
+   "hash": "be860ec157",
+   "author": "author 39",
+   "question": "fix typo and add comments",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "path_test.go",
+    "render/render_test.go",
+    "context_test.go",
+    "render/render_msgpack_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 797,
+   "build_s": 0.3
+  },
+  {
+   "hash": "1d0f938f28",
+   "author": "author 40",
+   "question": "Fix insufficient slice check",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "binding/default_validator.go"
+   ],
+   "top5": [
+    "binding/default_validator.go",
+    "binding/form_mapping.go",
+    ".github/workflows/gin.yml",
+    "binding/default_validator_test.go",
+    "binding/binding_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 478,
+   "build_s": 0.2
+  },
+  {
+   "hash": "372cc4a010",
+   "author": "author 41",
+   "question": "Fix typo",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "recovery.go",
+    "tree.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 759,
+   "build_s": 0.2
+  },
+  {
+   "hash": "d4ca9a0fb1",
+   "author": "author 42",
+   "question": "fix #2762",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    ".github/workflows/gin.yml"
+   ],
+   "top5": [
+    ".github/workflows/gin.yml",
+    "testdata/protoexample/test.pb.go",
+    "debug.go",
+    "ginS/gins.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 872,
+   "build_s": 0.1
+  },
+  {
+   "hash": "0a55865c3f",
+   "author": "author 42",
+   "question": "fix #2786",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "routergroup.go"
+   ],
+   "top5": [
+    "routergroup.go",
+    "codecov.yml",
+    "ginS/gins.go",
+    "testdata/protoexample/test.pb.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 774,
+   "build_s": 0.3
+  },
+  {
+   "hash": "eab47b5423",
+   "author": "author 43",
+   "question": "check obj type in protobufBinding",
+   "gold": [
+    "binding/protobuf.go"
+   ],
+   "first": [
+    "binding/protobuf.go"
+   ],
+   "top5": [
+    "binding/protobuf.go",
+    "render/protobuf.go",
+    "context.go",
+    "binding/default_validator.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 358,
+   "build_s": 0.6
+  },
+  {
+   "hash": "97b3c0d88a",
+   "author": "author 44",
+   "question": "Fix grammatical and spelling errors in context.go",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "errors.go",
+    "logger.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 266,
+   "build_s": 0.2
+  },
+  {
+   "hash": "1c2aa59b20",
+   "author": "author 45",
+   "question": "fix the misplacement of adding slashes",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "path.go"
+   ],
+   "top5": [
+    "path.go",
+    "tree.go",
+    "gin.go",
+    "path_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 614,
+   "build_s": 0.3
+  },
+  {
+   "hash": "d4e72a17f7",
+   "author": "author 46",
+   "question": "Fix typo",
+   "gold": [
+    "errors.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "recovery.go",
+    "tree.go",
+    "path.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 704,
+   "build_s": 0.2
+  },
+  {
+   "hash": "cbdd47a7e1",
+   "author": "author 47",
+   "question": "fix tsr with mixed static and wildcard paths",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "ginS/gins.go",
+    "utils.go",
+    "routes_test.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 624,
+   "build_s": 0.1
+  },
+  {
+   "hash": "6aee45608d",
+   "author": "author 48",
+   "question": "Fix grammar",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "tree.go",
+    "ginS/gins.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 658,
+   "build_s": 0.2
+  },
+  {
+   "hash": "823adfc91a",
+   "author": "author 49",
+   "question": "typo",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "render/json.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 300,
+   "build_s": 0.2
+  },
+  {
+   "hash": "ffb3b73430",
+   "author": "author 49",
+   "question": "description error",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "errors.go"
+   ],
+   "top5": [
+    "errors.go",
+    "testdata/protoexample/test.pb.go",
+    "Makefile",
+    "context.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 630,
+   "build_s": 0.1
+  },
+  {
+   "hash": "bc2417fc40",
+   "author": "author 49",
+   "question": "description error",
+   "gold": [
+    "context.go",
+    "gin.go"
+   ],
+   "first": [
+    "errors.go"
+   ],
+   "top5": [
+    "errors.go",
+    "testdata/protoexample/test.pb.go",
+    "Makefile",
+    "context.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 630,
+   "build_s": 0.1
+  },
+  {
+   "hash": "830a63d244",
+   "author": "author 49",
+   "question": "typo",
+   "gold": [
+    "gin.go",
+    "logger.go",
+    "recovery.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "render/json.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 300,
+   "build_s": 0.1
+  },
+  {
+   "hash": "504ec594f8",
+   "author": "author 49",
+   "question": "typo",
+   "gold": [
+    "gin.go",
+    "ginS/gins.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "render/json.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 300,
+   "build_s": 0.2
+  },
+  {
+   "hash": "ba7e58989c",
+   "author": "author 49",
+   "question": "typo",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "render/json.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 300,
+   "build_s": 0.1
+  },
+  {
+   "hash": "7d189814cb",
+   "author": "author 49",
+   "question": "wrong when wildcard follows named param",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 436,
+   "build_s": 0.1
+  },
+  {
+   "hash": "fb5f045417",
+   "author": "author 49",
+   "question": "description error",
+   "gold": [
+    "gin.go",
+    "mode.go"
+   ],
+   "first": [
+    "errors.go"
+   ],
+   "top5": [
+    "errors.go",
+    "testdata/protoexample/test.pb.go",
+    "Makefile",
+    "context.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 630,
+   "build_s": 0.1
+  },
+  {
+   "hash": "92a988d761",
+   "author": "author 49",
+   "question": "description error",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "errors.go"
+   ],
+   "top5": [
+    "errors.go",
+    "testdata/protoexample/test.pb.go",
+    "Makefile",
+    "context.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 630,
+   "build_s": 0.1
+  },
+  {
+   "hash": "8a0f95cc71",
+   "author": "author 49",
+   "question": "typo",
+   "gold": [
+    "binding/binding.go",
+    "binding/binding_nomsgpack.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "render/json.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 300,
+   "build_s": 0.1
+  },
+  {
+   "hash": "01363191be",
+   "author": "author 49",
+   "question": "typo",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "context.go",
+    "render/json.go",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 300,
+   "build_s": 0.2
+  },
+  {
+   "hash": "1b28e2b030",
+   "author": "author 50",
+   "question": "Fix typo",
+   "gold": [
+    "ginS/gins.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "recovery.go",
+    "tree.go",
+    "path.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 703,
+   "build_s": 0.3
+  },
+  {
+   "hash": "41d38fb68c",
+   "author": "author 51",
+   "question": "fix typo",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "recovery.go",
+    "tree.go",
+    "path.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 703,
+   "build_s": 0.1
+  },
+  {
+   "hash": "6854212698",
+   "author": "author 52",
+   "question": "missing `sameSite` when do context.reset()",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "test_helpers.go",
+    "context_test.go",
+    "path_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 380,
+   "build_s": 0.5
+  },
+  {
+   "hash": "87811a97bd",
+   "author": "author 53",
+   "question": "the trusted proxies should support ipv6 address by default",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "gin_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 506,
+   "build_s": 0.2
+  },
+  {
+   "hash": "815122a0f4",
+   "author": "author 54",
+   "question": "Fix a syntax error in a code comment",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "binding/default_validator.go"
+   ],
+   "top5": [
+    "binding/default_validator.go",
+    "Makefile",
+    "context.go",
+    "errors.go",
+    "render/redirect.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 599,
+   "build_s": 0.4
+  },
+  {
+   "hash": "088cdd74d4",
+   "author": "author 55",
+   "question": "Fix the value of ginSupportMinGoVer constant by semantic",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "debug.go"
+   ],
+   "top5": [
+    "debug.go",
+    ".goreleaser.yaml",
+    "tree.go",
+    "binding/form_mapping.go",
+    "gin.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 487,
+   "build_s": 0.2
+  },
+  {
+   "hash": "2ae6157049",
+   "author": "author 56",
+   "question": "Fix typos in RouterGroup method docs",
+   "gold": [
+    "routergroup.go"
+   ],
+   "first": [
+    "routergroup.go"
+   ],
+   "top5": [
+    "routergroup.go",
+    "routergroup_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 533,
+   "build_s": 0.3
+  },
+  {
+   "hash": "814cd188eb",
+   "author": "author 57",
+   "question": "FIX TYPO: Gin by default useR -> ... useS",
+   "gold": [
+    "routergroup.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "auth.go",
+    "context.go",
+    ".goreleaser.yaml",
+    "binding/binding.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 686,
+   "build_s": 0.2
+  },
+  {
+   "hash": "24a1d2adb9",
+   "author": "author 22",
+   "question": "spelling `covert` -> `convert`",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "Makefile"
+   ],
+   "top5": [
+    "Makefile",
+    "gin.go",
+    "path.go",
+    "binding/form_mapping.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 486,
+   "build_s": 0.2
+  },
+  {
+   "hash": "51aea73ba0",
+   "author": "author 58",
+   "question": "modify interface check way",
+   "gold": [
+    "binding/default_validator.go",
+    "errors.go",
+    "gin.go",
+    "response_writer.go",
+    "routergroup.go"
+   ],
+   "first": [
+    ".github/workflows/codeql.yml"
+   ],
+   "top5": [
+    ".github/workflows/codeql.yml",
+    "render/msgpack.go",
+    "context.go",
+    "routergroup.go",
+    "Makefile"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 431,
+   "build_s": 0.2
+  },
+  {
+   "hash": "8b9c55e8b0",
+   "author": "author 20",
+   "question": "redirectSlash bug",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    ".goreleaser.yaml",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 527,
+   "build_s": 0.1
+  },
+  {
+   "hash": "55e27f1246",
+   "author": "author 59",
+   "question": "missing route params for CreateTestContext",
+   "gold": [
+    "gin.go",
+    "test_helpers.go"
+   ],
+   "first": [
+    "test_helpers.go"
+   ],
+   "top5": [
+    "test_helpers.go",
+    "routes_test.go",
+    "context_test.go",
+    "tree_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 508,
+   "build_s": 0.1
+  },
+  {
+   "hash": "212267d671",
+   "author": "author 60",
+   "question": "fix typo in comment",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    ".goreleaser.yaml"
+   ],
+   "top5": [
+    ".goreleaser.yaml",
+    "render/json.go",
+    "Makefile",
+    "tree.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 523,
+   "build_s": 0.2
+  },
+  {
+   "hash": "8eb5f832ba",
+   "author": "author 61",
+   "question": "tree bug where loop index is not decremented.",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "path.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 671,
+   "build_s": 0.4
+  },
+  {
+   "hash": "7cb151bb4c",
+   "author": "author 62",
+   "question": "panic on NegotiateFormat - index out of range",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "utils.go",
+    "context_test.go",
+    "mode_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 678,
+   "build_s": 0.1
+  },
+  {
+   "hash": "4cee78f538",
+   "author": "author 63",
+   "question": "Fix #3500 Add escape logic for header",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "response_writer.go",
+    "Makefile",
+    "logger.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 564,
+   "build_s": 0.2
+  },
+  {
+   "hash": "2d4bbec941",
+   "author": "author 64",
+   "question": "fix lack of escaping of filename in Content-Disposition",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "path.go",
+    "context_test.go",
+    "render/render_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 490,
+   "build_s": 0.4
+  },
+  {
+   "hash": "bb1fc2e0fe",
+   "author": "author 65",
+   "question": "fix Request.Context() checks",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "context.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 607,
+   "build_s": 0.1
+  },
+  {
+   "hash": "44d0dd7092",
+   "author": "author 66",
+   "question": "Add pointer support for url query params",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    ".github/workflows/codeql.yml",
+    "path.go",
+    "tree.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 576,
+   "build_s": 0.2
+  },
+  {
+   "hash": "386d244068",
+   "author": "author 67",
+   "question": "correctly expand the capacity of params",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "context.go",
+    "gin.go",
+    "tree_test.go",
+    "routes_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 489,
+   "build_s": 0.2
+  },
+  {
+   "hash": "9f598a31aa",
+   "author": "author 68",
+   "question": "catch-all conflicting wildcard",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "utils.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 507,
+   "build_s": 0.2
+  },
+  {
+   "hash": "3dc1cd6572",
+   "author": "author 69",
+   "question": "binding error while not upload file",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form.go"
+   ],
+   "top5": [
+    "binding/form.go",
+    "binding/multipart_form_mapping.go",
+    "binding/multipart_form_mapping_test.go",
+    "binding/binding_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 558,
+   "build_s": 0.1
+  },
+  {
+   "hash": "86ff4a64c7",
+   "author": "author 70",
+   "question": "Allow header according to RFC 7231 (HTTP 405)",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "mode.go",
+    "errors.go",
+    "render/text.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 629,
+   "build_s": 0.2
+  },
+  {
+   "hash": "82bcd6d39b",
+   "author": "author 71",
+   "question": "dereference pointer to struct",
+   "gold": [
+    "binding/default_validator.go"
+   ],
+   "first": [
+    "deprecated.go"
+   ],
+   "top5": [
+    "deprecated.go",
+    "binding/protobuf.go",
+    "binding/default_validator.go",
+    "binding/binding.go",
+    "utils.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 458,
+   "build_s": 0.2
+  },
+  {
+   "hash": "09f8224593",
+   "author": "author 72",
+   "question": "Add fullPath in context copy",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 458,
+   "build_s": 0.2
+  },
+  {
+   "hash": "646312aef6",
+   "author": "author 73",
+   "question": "protect Context.Keys map when call Copy method",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "binding/json.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 381,
+   "build_s": 0.2
+  },
+  {
+   "hash": "2b1da2b0b3",
+   "author": "author 74",
+   "question": "make context Value method adhere to Go standards",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "context_test.go",
+    "binding/validate_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 775,
+   "build_s": 0.2
+  },
+  {
+   "hash": "8790d08909",
+   "author": "author 75",
+   "question": "query binding bug",
+   "gold": [
+    "binding/query.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "binding/query.go",
+    "binding/binding_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 294,
+   "build_s": 0.1
+  },
+  {
+   "hash": "7d147928ee",
+   "author": "author 76",
+   "question": "data race warning for gin mode",
+   "gold": [
+    "debug.go",
+    "mode.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "debug.go",
+    "mode.go",
+    "gin_integration_test.go",
+    "debug_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 385,
+   "build_s": 0.4
+  },
+  {
+   "hash": "36b0dede4b",
+   "author": "author 77",
+   "question": "check handler is nil",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "fs.go"
+   ],
+   "top5": [
+    "fs.go",
+    "context.go",
+    "tree_test.go",
+    "render/render_test.go",
+    "binding/validate_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 543,
+   "build_s": 0.3
+  },
+  {
+   "hash": "4f339e6a35",
+   "author": "author 78",
+   "question": "YAML judgment logic in Negotiate",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    ".goreleaser.yaml"
+   ],
+   "top5": [
+    ".goreleaser.yaml",
+    "context.go",
+    "utils.go",
+    "binding/binding_test.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 419,
+   "build_s": 0.2
+  },
+  {
+   "hash": "e0d46ded6c",
+   "author": "author 79",
+   "question": "verify URL is Non-nil in initQueryCache()",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "testdata/protoexample/test.pb.go",
+    "response_writer_test.go",
+    "tree_test.go",
+    "gin_integration_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 498,
+   "build_s": 0.1
+  },
+  {
+   "hash": "626d55b0c0",
+   "author": "author 80",
+   "question": "Do not panic when handling method not allowed on empty tree",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 569,
+   "build_s": 0.2
+  },
+  {
+   "hash": "28e57f58b1",
+   "author": "author 81",
+   "question": "Set default value for form fields",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "testdata/protoexample/test.pb.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 539,
+   "build_s": 0.5
+  },
+  {
+   "hash": "ea53388e6e",
+   "author": "author 82",
+   "question": "Keep panic infos consistent when wildcard type build faild",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "utils.go",
+    "Makefile",
+    "routergroup_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 373,
+   "build_s": 0.3
+  },
+  {
+   "hash": "e737e3e267",
+   "author": "author 83",
+   "question": "prevent duplicate decoding and add validation in decodeToml",
+   "gold": [
+    "binding/toml.go"
+   ],
+   "first": [
+    "binding/toml.go"
+   ],
+   "top5": [
+    "binding/toml.go",
+    "binding/msgpack.go",
+    "binding/yaml.go",
+    "binding/default_validator.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 516,
+   "build_s": 0.1
+  },
+  {
+   "hash": "8763f33c65",
+   "author": "author 84",
+   "question": "prevent middleware re-entry issue in HandleContext",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "recovery.go",
+    "tree.go",
+    "path.go",
+    "middleware_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 584,
+   "build_s": 0.1
+  },
+  {
+   "hash": "7a1b655074",
+   "author": "author 85",
+   "question": "sonic on arm64",
+   "gold": [
+    "internal/json/json.go",
+    "internal/json/sonic.go"
+   ],
+   "first": [
+    "internal/json/sonic.go"
+   ],
+   "top5": [
+    "internal/json/sonic.go",
+    "internal/json/json.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 206,
+   "build_s": 0.1
+  },
+  {
+   "hash": "b38c59de7f",
+   "author": "author 86",
+   "question": "change Unwrap method receiver to value type",
+   "gold": [
+    "errors.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "errors.go",
+    "response_writer.go",
+    "gin.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 460,
+   "build_s": 0.1
+  },
+  {
+   "hash": "674522db91",
+   "author": "author 87",
+   "question": "binding time with empty value",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "context.go",
+    "binding/form_mapping_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 425,
+   "build_s": 0.1
+  },
+  {
+   "hash": "5826722a87",
+   "author": "author 88",
+   "question": "version number discrepancy",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "version.go"
+   ],
+   "top5": [
+    "version.go",
+    "context.go",
+    ".github/workflows/goreleaser.yml",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 556,
+   "build_s": 0.2
+  },
+  {
+   "hash": "234a6d4c00",
+   "author": "author 1",
+   "question": "refine hijack behavior for response lifecycle",
+   "gold": [
+    "response_writer.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "response_writer_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 366,
+   "build_s": 0.2
+  },
+  {
+   "hash": "c3d1092b3b",
+   "author": "author 89",
+   "question": "improve empty slice/array handling in form binding",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "binding/default_validator.go",
+    "context.go",
+    "binding/multipart_form_mapping.go",
+    "binding/form_mapping_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 635,
+   "build_s": 0.1
+  },
+  {
+   "hash": "c3d5a28ed6",
+   "author": "author 89",
+   "question": "close os.File in RunFd to prevent resource leak",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "ginS/gins.go"
+   ],
+   "top5": [
+    "ginS/gins.go",
+    "gin.go",
+    "routergroup.go",
+    "binding/binding_test.go",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 590,
+   "build_s": 0.2
+  },
+  {
+   "hash": "5fad976b37",
+   "author": "author 90",
+   "question": "literal colon routes not working with engine.Handler()",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "ginS/gins.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 466,
+   "build_s": 0.2
+  },
+  {
+   "hash": "63dd3e60ca",
+   "author": "author 91",
+   "question": "suppress http.ErrAbortHandler in recover",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "routergroup.go",
+    "tree_test.go",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 681,
+   "build_s": 0.2
+  },
+  {
+   "hash": "b917b14ff9",
+   "author": "author 92",
+   "question": "empty value error",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "binding/json_test.go",
+    "internal/bytesconv/bytesconv_test.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 532,
+   "build_s": 0.1
+  },
+  {
+   "hash": "2a794cd0b0",
+   "author": "author 93",
+   "question": "version mismatch",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "version.go"
+   ],
+   "top5": [
+    "version.go",
+    "Makefile",
+    ".github/workflows/goreleaser.yml",
+    "context_test.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 623,
+   "build_s": 0.2
+  },
+  {
+   "hash": "9914178584",
+   "author": "author 94",
+   "question": "ClientIP handling for multiple X-Forwarded-For header values",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "context.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 683,
+   "build_s": 0.2
+  },
+  {
+   "hash": "8e07d37c63",
+   "author": "author 95",
+   "question": "Correct typos, improve documentation clarity, and remove dead code",
+   "gold": [
+    "context.go",
+    "errors.go",
+    "routergroup.go"
+   ],
+   "first": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml"
+   ],
+   "top5": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml",
+    ".goreleaser.yaml",
+    "Makefile",
+    "recovery.go",
+    "gin_integration_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 684,
+   "build_s": 0.2
+  },
+  {
+   "hash": "5c00df8afa",
+   "author": "author 96",
+   "question": "write content length in Data.Render",
+   "gold": [
+    "render/data.go"
+   ],
+   "first": [
+    "render/reader.go"
+   ],
+   "top5": [
+    "render/reader.go",
+    "render/text.go",
+    "render/data.go",
+    "render/render_test.go",
+    "render/render_msgpack_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 516,
+   "build_s": 0.2
+  },
+  {
+   "hash": "472d086af2",
+   "author": "author 97",
+   "question": "panic in findCaseInsensitivePathRec with RedirectFixedPath",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "tree_test.go",
+    "routes_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 440,
+   "build_s": 0.2
+  },
+  {
+   "hash": "d75fcd4c9a",
+   "author": "author 98",
+   "question": "panic on Hijack/CloseNotify when wrapper unsupported",
+   "gold": [
+    "response_writer.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "response_writer_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 290,
+   "build_s": 0.1
+  },
+  {
+   "hash": "293ad7edeb",
+   "author": "author 99",
+   "question": "Copy() copies Errors and Accepted fields",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "codec/json/api.go"
+   ],
+   "top5": [
+    "codec/json/api.go",
+    "context.go",
+    "binding/form_mapping.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 586,
+   "build_s": 0.1
+  },
+  {
+   "hash": "4a3eb31fb1",
+   "author": "author 100",
+   "question": "record recovered panics in c.Errors",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "recovery_test.go",
+    "routergroup_test.go",
+    "auth_test.go",
+    "gin_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 789,
+   "build_s": 0.1
+  },
+  {
+   "hash": "d9307dbcbb",
+   "author": "author 101",
+   "question": "skip chmod on pre-existing dirs in SaveUploadedFile",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "logger.go",
+    "test_helpers.go",
+    "context_test.go",
+    "response_writer_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 373,
+   "build_s": 0.1
+  },
+  {
+   "hash": "5c6a15f8f9",
+   "author": "author 102",
+   "question": "handle missing HTML renderer",
+   "gold": [
+    "context.go",
+    "render/html.go"
+   ],
+   "first": [
+    "render/html.go"
+   ],
+   "top5": [
+    "render/html.go",
+    "gin.go",
+    "ginS/gins.go",
+    "render/render_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 564,
+   "build_s": 0.1
+  },
+  {
+   "hash": "d8f2d588d7",
+   "author": "author 103",
+   "question": "add default ReadHeaderTimeout to http.Server in Run methods",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "binding/binding_nomsgpack.go",
+    "ginS/gins.go",
+    "response_writer_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 577,
+   "build_s": 0.1
+  },
+  {
+   "hash": "3b08cd7235",
+   "author": "author 104",
+   "question": "reset skipped-nodes stack on getValue entry to prevent slice overflow panic [#4818]",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "tree.go",
+    "logger.go",
+    "tree_test.go",
+    "logger_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 633,
+   "build_s": 0.1
+  },
+  {
+   "hash": "1bd0ecf2d3",
+   "author": "author 105",
+   "question": "load Keys under the mutex in Copy",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "gin.go",
+    "mode.go",
+    "logger.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 384,
+   "build_s": 0.1
+  },
+  {
+   "hash": "ea9fab99e0",
+   "author": "author 105",
+   "question": "grow skippedNodes when pooled capacity is stale",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "path_test.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 486,
+   "build_s": 0.1
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+[
+ {
+  "kind": "CI",
+  "wording": "same",
+  "q": "Which Python versions does CI test?",
+  "lane": "CERTIFIED",
+  "opens": true,
+  "line_in_readout": true,
+  "old_answer_shown": false,
+  "tokens": 290,
+  "head": "(readout: the code a taught question's vector points to (ranked by meaning, not verified: use it only if it answers the question))"
+ },
+ {
+  "kind": "CI",
+  "wording": "other",
+  "q": "What's the Python matrix in the GitHub Actions workflow?",
+  "lane": "MIX",
+  "opens": false,
+  "line_in_readout": true,
+  "old_answer_shown": false,
+  "tokens": 456,
+  "head": "(readout: meaning and keyword matches)"
+ }
+]

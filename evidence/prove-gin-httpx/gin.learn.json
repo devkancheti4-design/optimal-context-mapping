@@ -1,0 +1,924 @@
+{
+ "repo": "gin-gonic/gin @ 0f09c3a9b4",
+ "fixes": 26,
+ "model_d": {
+  "right_first": 15,
+  "top5": 22,
+  "lines_top5": 12
+ },
+ "grep": {
+  "right_first": 8,
+  "top5": 20
+ },
+ "tokens_per_readout": 525,
+ "rows": [
+  {
+   "hash": "e737e3e267",
+   "author": "author 83",
+   "question": "prevent duplicate decoding and add validation in decodeToml",
+   "gold": [
+    "binding/toml.go"
+   ],
+   "first": [
+    "binding/toml.go"
+   ],
+   "top5": [
+    "binding/toml.go",
+    "binding/msgpack.go",
+    "binding/yaml.go",
+    "binding/default_validator.go",
+    "binding/default_validator_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 516,
+   "build_s": 4.6,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "binding/toml.go"
+   ],
+   "from_memory": false,
+   "lessons": 0,
+   "carried": 0,
+   "taught": "binding/toml.go"
+  },
+  {
+   "hash": "8763f33c65",
+   "author": "author 84",
+   "question": "prevent middleware re-entry issue in HandleContext",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "recovery.go",
+    "tree.go",
+    "path.go",
+    "middleware_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 584,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "gin.go"
+   ],
+   "from_memory": false,
+   "lessons": 1,
+   "carried": 1,
+   "taught": "gin.go"
+  },
+  {
+   "hash": "7a1b655074",
+   "author": "author 85",
+   "question": "sonic on arm64",
+   "gold": [
+    "internal/json/json.go",
+    "internal/json/sonic.go"
+   ],
+   "first": [
+    "internal/json/sonic.go"
+   ],
+   "top5": [
+    "internal/json/sonic.go",
+    "internal/json/json.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 206,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "internal/json/sonic.go"
+   ],
+   "from_memory": false,
+   "lessons": 2,
+   "carried": 2,
+   "taught": "internal/json/json.go"
+  },
+  {
+   "hash": "b38c59de7f",
+   "author": "author 86",
+   "question": "change Unwrap method receiver to value type",
+   "gold": [
+    "errors.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "errors.go",
+    "response_writer.go",
+    "gin.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 460,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "binding/form_mapping.go"
+   ],
+   "from_memory": false,
+   "lessons": 3,
+   "carried": 3,
+   "taught": "errors.go"
+  },
+  {
+   "hash": "674522db91",
+   "author": "author 87",
+   "question": "binding time with empty value",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "context.go",
+    "binding/form_mapping_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 425,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "binding/form_mapping.go"
+   ],
+   "from_memory": false,
+   "lessons": 4,
+   "carried": 4,
+   "taught": "binding/form_mapping.go"
+  },
+  {
+   "hash": "5826722a87",
+   "author": "author 88",
+   "question": "version number discrepancy",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "version.go"
+   ],
+   "top5": [
+    "version.go",
+    "context.go",
+    ".github/workflows/goreleaser.yml",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 556,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "version.go"
+   ],
+   "from_memory": false,
+   "lessons": 5,
+   "carried": 5,
+   "taught": "debug.go"
+  },
+  {
+   "hash": "234a6d4c00",
+   "author": "author 1",
+   "question": "refine hijack behavior for response lifecycle",
+   "gold": [
+    "response_writer.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "response_writer_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 366,
+   "build_s": 0.2,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "response_writer.go"
+   ],
+   "from_memory": false,
+   "lessons": 6,
+   "carried": 6,
+   "taught": "response_writer.go"
+  },
+  {
+   "hash": "c3d1092b3b",
+   "author": "author 89",
+   "question": "improve empty slice/array handling in form binding",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "binding/form_mapping.go"
+   ],
+   "top5": [
+    "binding/form_mapping.go",
+    "binding/default_validator.go",
+    "context.go",
+    "binding/multipart_form_mapping.go",
+    "binding/form_mapping_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 635,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "binding/form_mapping.go"
+   ],
+   "from_memory": false,
+   "lessons": 7,
+   "carried": 7,
+   "taught": "binding/form_mapping.go"
+  },
+  {
+   "hash": "c3d5a28ed6",
+   "author": "author 89",
+   "question": "close os.File in RunFd to prevent resource leak",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "ginS/gins.go"
+   ],
+   "top5": [
+    "ginS/gins.go",
+    "gin.go",
+    "routergroup.go",
+    "binding/binding_test.go",
+    "routes_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 590,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "ginS/gins.go"
+   ],
+   "from_memory": false,
+   "lessons": 8,
+   "carried": 8,
+   "taught": "gin.go"
+  },
+  {
+   "hash": "5fad976b37",
+   "author": "author 90",
+   "question": "literal colon routes not working with engine.Handler()",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "ginS/gins.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 466,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "gin.go"
+   ],
+   "from_memory": false,
+   "lessons": 9,
+   "carried": 9,
+   "taught": "gin.go"
+  },
+  {
+   "hash": "63dd3e60ca",
+   "author": "author 91",
+   "question": "suppress http.ErrAbortHandler in recover",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "routergroup.go",
+    "tree_test.go",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 681,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "recovery.go"
+   ],
+   "from_memory": false,
+   "lessons": 10,
+   "carried": 10,
+   "taught": "recovery.go"
+  },
+  {
+   "hash": "b917b14ff9",
+   "author": "author 92",
+   "question": "empty value error",
+   "gold": [
+    "binding/form_mapping.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "binding/json_test.go",
+    "internal/bytesconv/bytesconv_test.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 532,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "binding/form_mapping.go"
+   ],
+   "from_memory": true,
+   "lessons": 11,
+   "carried": 11,
+   "taught": "binding/form_mapping.go"
+  },
+  {
+   "hash": "2a794cd0b0",
+   "author": "author 93",
+   "question": "version mismatch",
+   "gold": [
+    "debug.go"
+   ],
+   "first": [
+    "version.go"
+   ],
+   "top5": [
+    "version.go",
+    "Makefile",
+    ".github/workflows/goreleaser.yml",
+    "context_test.go",
+    "tree_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 623,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "debug.go"
+   ],
+   "from_memory": true,
+   "lessons": 12,
+   "carried": 12,
+   "taught": "debug.go"
+  },
+  {
+   "hash": "9914178584",
+   "author": "author 94",
+   "question": "ClientIP handling for multiple X-Forwarded-For header values",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "gin.go"
+   ],
+   "top5": [
+    "gin.go",
+    "context.go",
+    "context_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 683,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "gin.go"
+   ],
+   "from_memory": false,
+   "lessons": 13,
+   "carried": 12,
+   "taught": "context.go"
+  },
+  {
+   "hash": "8e07d37c63",
+   "author": "author 95",
+   "question": "Correct typos, improve documentation clarity, and remove dead code",
+   "gold": [
+    "context.go",
+    "errors.go",
+    "routergroup.go"
+   ],
+   "first": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml"
+   ],
+   "top5": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml",
+    ".goreleaser.yaml",
+    "Makefile",
+    "recovery.go",
+    "gin_integration_test.go"
+   ],
+   "md_first": false,
+   "md_top5": false,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 684,
+   "build_s": 0.2,
+   "mem_first": false,
+   "mem_top5": false,
+   "mem_line_top5": false,
+   "mem_lead": [
+    ".github/ISSUE_TEMPLATE/bug-report.yaml"
+   ],
+   "from_memory": false,
+   "lessons": 14,
+   "carried": 12,
+   "taught": "context.go"
+  },
+  {
+   "hash": "5c00df8afa",
+   "author": "author 96",
+   "question": "write content length in Data.Render",
+   "gold": [
+    "render/data.go"
+   ],
+   "first": [
+    "render/reader.go"
+   ],
+   "top5": [
+    "render/reader.go",
+    "render/text.go",
+    "render/data.go",
+    "render/render_test.go",
+    "render/render_msgpack_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 516,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "render/reader.go"
+   ],
+   "from_memory": false,
+   "lessons": 15,
+   "carried": 13,
+   "taught": null
+  },
+  {
+   "hash": "472d086af2",
+   "author": "author 97",
+   "question": "panic in findCaseInsensitivePathRec with RedirectFixedPath",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "tree_test.go",
+    "routes_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 440,
+   "build_s": 0.2,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "tree.go"
+   ],
+   "from_memory": false,
+   "lessons": 15,
+   "carried": 13,
+   "taught": "tree.go"
+  },
+  {
+   "hash": "d75fcd4c9a",
+   "author": "author 98",
+   "question": "panic on Hijack/CloseNotify when wrapper unsupported",
+   "gold": [
+    "response_writer.go"
+   ],
+   "first": [
+    "response_writer.go"
+   ],
+   "top5": [
+    "response_writer.go",
+    "response_writer_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 290,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "response_writer.go"
+   ],
+   "from_memory": false,
+   "lessons": 16,
+   "carried": 13,
+   "taught": "response_writer.go"
+  },
+  {
+   "hash": "293ad7edeb",
+   "author": "author 99",
+   "question": "Copy() copies Errors and Accepted fields",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "codec/json/api.go"
+   ],
+   "top5": [
+    "codec/json/api.go",
+    "context.go",
+    "binding/form_mapping.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 586,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "codec/json/api.go"
+   ],
+   "from_memory": false,
+   "lessons": 17,
+   "carried": 14,
+   "taught": null
+  },
+  {
+   "hash": "4a3eb31fb1",
+   "author": "author 100",
+   "question": "record recovered panics in c.Errors",
+   "gold": [
+    "recovery.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "recovery_test.go",
+    "routergroup_test.go",
+    "auth_test.go",
+    "gin_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 789,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "recovery.go"
+   ],
+   "from_memory": false,
+   "lessons": 17,
+   "carried": 14,
+   "taught": "recovery.go"
+  },
+  {
+   "hash": "d9307dbcbb",
+   "author": "author 101",
+   "question": "skip chmod on pre-existing dirs in SaveUploadedFile",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "logger.go",
+    "test_helpers.go",
+    "context_test.go",
+    "response_writer_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 373,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "context.go"
+   ],
+   "from_memory": false,
+   "lessons": 18,
+   "carried": 15,
+   "taught": "context.go"
+  },
+  {
+   "hash": "5c6a15f8f9",
+   "author": "author 102",
+   "question": "handle missing HTML renderer",
+   "gold": [
+    "context.go",
+    "render/html.go"
+   ],
+   "first": [
+    "render/html.go"
+   ],
+   "top5": [
+    "render/html.go",
+    "gin.go",
+    "ginS/gins.go",
+    "render/render_test.go",
+    "context_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": false,
+   "tokens": 564,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "render/html.go"
+   ],
+   "from_memory": false,
+   "lessons": 19,
+   "carried": 16,
+   "taught": "render/html.go"
+  },
+  {
+   "hash": "d8f2d588d7",
+   "author": "author 103",
+   "question": "add default ReadHeaderTimeout to http.Server in Run methods",
+   "gold": [
+    "gin.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "gin.go",
+    "binding/binding_nomsgpack.go",
+    "ginS/gins.go",
+    "response_writer_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": false,
+   "grep_top5": true,
+   "tokens": 577,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "context.go"
+   ],
+   "from_memory": false,
+   "lessons": 20,
+   "carried": 17,
+   "taught": null
+  },
+  {
+   "hash": "3b08cd7235",
+   "author": "author 104",
+   "question": "reset skipped-nodes stack on getValue entry to prevent slice overflow panic [#4818]",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "recovery.go"
+   ],
+   "top5": [
+    "recovery.go",
+    "tree.go",
+    "logger.go",
+    "tree_test.go",
+    "logger_test.go"
+   ],
+   "md_first": false,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 633,
+   "build_s": 0.1,
+   "mem_first": false,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "recovery.go"
+   ],
+   "from_memory": false,
+   "lessons": 20,
+   "carried": 17,
+   "taught": "tree.go"
+  },
+  {
+   "hash": "1bd0ecf2d3",
+   "author": "author 105",
+   "question": "load Keys under the mutex in Copy",
+   "gold": [
+    "context.go"
+   ],
+   "first": [
+    "context.go"
+   ],
+   "top5": [
+    "context.go",
+    "tree.go",
+    "gin.go",
+    "mode.go",
+    "logger.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": false,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 384,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": false,
+   "mem_lead": [
+    "context.go"
+   ],
+   "from_memory": false,
+   "lessons": 21,
+   "carried": 18,
+   "taught": "context.go"
+  },
+  {
+   "hash": "ea9fab99e0",
+   "author": "author 105",
+   "question": "grow skippedNodes when pooled capacity is stale",
+   "gold": [
+    "tree.go"
+   ],
+   "first": [
+    "tree.go"
+   ],
+   "top5": [
+    "tree.go",
+    "gin.go",
+    "path_test.go",
+    "tree_test.go"
+   ],
+   "md_first": true,
+   "md_top5": true,
+   "md_line_top5": true,
+   "grep_first": true,
+   "grep_top5": true,
+   "tokens": 486,
+   "build_s": 0.1,
+   "mem_first": true,
+   "mem_top5": true,
+   "mem_line_top5": true,
+   "mem_lead": [
+    "tree.go"
+   ],
+   "from_memory": false,
+   "lessons": 22,
+   "carried": 19,
+   "taught": "tree.go"
+  }
+ ],
+ "memory": {
+  "right_first": 17,
+  "top5": 24,
+  "lines_top5": 13,
+  "pointer_led": 2,
+  "pointer_right": 2,
+  "from_teammate": 2,
+  "taught": 23,
+  "authors": 24,
+  "lessons_at_end": 22,
+  "carried_at_end": 19
+ }
+}

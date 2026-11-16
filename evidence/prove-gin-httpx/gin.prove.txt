@@ -1,0 +1,49 @@
+W1106 16:59:49.742000 58045 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Replaying up to 50 recent fix commits of <work>/demo/gin, each against the code right before it (zero tokens; the first build embeds the whole repository)
+
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19623.51it/s]
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 17931.31it/s]
+    1/26  right  grep miss   prevent duplicate decoding and add validation in decodeToml
+    2/26  right  grep top 5  prevent middleware re-entry issue in HandleContext
+    3/26  right  grep right  sonic on arm64
+    4/26  top 5  grep miss   change Unwrap method receiver to value type
+    5/26  right  grep top 5  binding time with empty value
+    6/26  miss   grep miss   version number discrepancy
+    7/26  right  grep top 5  refine hijack behavior for response lifecycle
+    8/26  right  grep top 5  improve empty slice/array handling in form binding
+    9/26  top 5  grep top 5  close os.File in RunFd to prevent resource leak
+   10/26  right  grep right  literal colon routes not working with engine.Handler()
+   11/26  right  grep top 5  suppress http.ErrAbortHandler in recover
+   12/26  miss   grep top 5  empty value error
+   13/26  miss   grep miss   version mismatch
+   14/26  top 5  grep top 5  ClientIP handling for multiple X-Forwarded-For header values
+   15/26  miss   grep top 5  Correct typos, improve documentation clarity, and remove dea
+   16/26  top 5  grep miss   write content length in Data.Render
+   17/26  right  grep right  panic in findCaseInsensitivePathRec with RedirectFixedPath
+   18/26  right  grep top 5  panic on Hijack/CloseNotify when wrapper unsupported
+   19/26  top 5  grep top 5  Copy() copies Errors and Accepted fields
+   20/26  right  grep right  record recovered panics in c.Errors
+   21/26  right  grep right  skip chmod on pre-existing dirs in SaveUploadedFile
+   22/26  right  grep miss   handle missing HTML renderer
+   23/26  top 5  grep top 5  add default ReadHeaderTimeout to http.Server in Run methods
+   24/26  top 5  grep right  reset skipped-nodes stack on getValue entry to prevent slice
+   25/26  right  grep right  load Keys under the mutex in Copy
+   26/26  right  grep right  grow skippedNodes when pooled capacity is stale
+
+26 real fixes, true answers from git:
+
+                                       Model D    grep-first
+  right file first                    15 (58%)       8 (31%)
+  right file in the top 5             22 (85%)      20 (77%)
+  changed line in the top 5           12 (46%)             -
+
+  With 26 fixes these shares can move by up to about ±19 points by chance; --fixes 200 gives a steadier read.
+  525 tokens per readout. Model D is cold here, nothing taught. --learn replays the memory a team's agents build up, fix by fix, at zero tokens.
+  every question and answer: <work>/demo/out/gin.prove.json
+real 37.88
+user 9.85
+sys 2.96

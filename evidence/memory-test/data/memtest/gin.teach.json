@@ -1,0 +1,62 @@
+[
+ {
+  "q": "What port does gin listen on if I don't set one?",
+  "at": "utils.go:148",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (1 examples)"
+ },
+ {
+  "q": "What is the default memory limit when parsing multipart forms?",
+  "at": "gin.go:26",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (2 examples)"
+ },
+ {
+  "q": "How does gin store its routes for matching?",
+  "at": "tree.go:109",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (3 examples)"
+ },
+ {
+  "q": "Where does gin find the handler for a request path?",
+  "at": "tree.go:428",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (4 examples)"
+ },
+ {
+  "q": "Where does an HTTP request first enter gin?",
+  "at": "gin.go:637",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (5 examples)"
+ },
+ {
+  "q": "What Go version does gin require?",
+  "at": "README.md:46",
+  "reply": "taught 0 question vectors onto code; 1 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (5 examples)"
+ },
+ {
+  "q": "Which Go versions does CI test against?",
+  "at": ".github/workflows/gin.yml:36",
+  "reply": "taught 0 question vectors onto code; 1 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (5 examples)"
+ },
+ {
+  "q": "Where is the test for route wildcard conflicts?",
+  "at": "tree_test.go:394",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (6 examples)"
+ },
+ {
+  "q": "What is the latest release in the changelog?",
+  "at": "CHANGELOG.md:3",
+  "reply": "taught 0 question vectors onto code; 1 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (6 examples)"
+ },
+ {
+  "q": "How many commits may a pull request have?",
+  "at": "CONTRIBUTING.md:35",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (7 examples)"
+ },
+ {
+  "q": "Which proxies does gin trust by default?",
+  "at": "gin.go:215",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (8 examples)"
+ },
+ {
+  "q": "How does the recovery middleware handle a broken client connection?",
+  "at": "recovery.go:60",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:line the workspace holds); learned law: the vector order, not yet active (9 examples)"
+ }
+]

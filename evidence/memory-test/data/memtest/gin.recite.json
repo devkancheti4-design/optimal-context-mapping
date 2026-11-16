@@ -1,0 +1,17 @@
+[
+ {
+  "q": "What Go version does gin require?",
+  "at": "gin/README.md:46",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:l"
+ },
+ {
+  "q": "Which Go versions does CI test against?",
+  "at": "gin/.github/workflows/gin.yml:36",
+  "reply": "taught 1 question vectors onto code; 0 not placed (no path:l"
+ },
+ {
+  "q": "What is the latest release in the changelog?",
+  "at": "gin/CHANGELOG.md:3",
+  "reply": "taught 0 question vectors onto code; 1 not placed (no path:l"
+ }
+]
